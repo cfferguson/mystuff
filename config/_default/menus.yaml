@@ -69,5 +69,5 @@ resources:
     weight: 1
   - name: Guides
     weight: 2
-  - name: Resources
+  - name: References
     weight: 3

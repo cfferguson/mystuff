@@ -1,8 +1,8 @@
 ---
 title: R
 menu:
-  resource:
-    parent: Resources
+  resources:
+    parent: References
 type: docs
 weight: 7
 output:

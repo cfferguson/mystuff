@@ -1,8 +1,8 @@
 ---
 title: Visualization
 menu:
-  resource:
-    parent: Resources
+  resources:
+    parent: References
 type: docs
 weight: 10
 output:
