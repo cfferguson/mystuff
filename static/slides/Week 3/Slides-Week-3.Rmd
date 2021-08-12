@@ -18,7 +18,6 @@ xaringanthemer::style_duo(
   header_font_google = xaringanthemer::google_font("Jost", "600"),
   text_font_google   = xaringanthemer::google_font("Jost", "400")
 )
-
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
@@ -65,10 +64,14 @@ But by using R (or any other data analysis package), we look at frequency distri
 
 ## Loading up local data
 
-To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv` command from the `readr` package within `tidyverse`.
+To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv()` command from the `readr` package within `tidyverse`.
 
-```{r echo = TRUE, eval = TRUE}
+```{r echo = TRUE, eval = FALSE}
 voter_fraud <- read_csv("2012_Voter_Fraud.csv")
+```
+
+```{r echo = FALSE, eval = TRUE}
+voter_fraud <- read_csv(here::here("static", "slides", "Week 3", "2012_Voter_Fraud.csv"))
 ```
 
 ---
@@ -82,7 +85,6 @@ Remember:
 >- `read_csv` with a `_` is tidy
 
 >- `read.csv` with a `.` is messy
-
 
 ---
 
@@ -114,7 +116,6 @@ We can only take a look at the column names by doing
 names(voter_fraud)
 ```
 
-
 ---
 
 Let's look at a frequency table for the variable `battleground`, which is a dummy variable for whether a state was a battleground or not during the 2012 US presidential election. Here
@@ -137,7 +138,6 @@ table(voter_fraud$battleground)
 
 ---
 
-
 Well that is great but what if we have a lot of values? For example, let's look at the variable `total` which gives us data for the number of articles by newspaper.
 
 ```{r echo = TRUE, eval = TRUE}
@@ -146,7 +146,6 @@ table(voter_fraud$total)
  
  
 ---
-
 
 ## Using the `freq` command (1/2)
 
@@ -187,14 +186,16 @@ Then to add the actual ranges , we can use the `recode` command from the `descr`
 
 ```{r echo = TRUE, eval = TRUE}
 voter_fraud$ranges <- recode(voter_fraud$total, 
-                                "0:9= '0 - 9 articles';
-                                10:19='10 - 19 articles';
-                                20:29= '20 - 29 articles';
-                                30:39= '30 - 39 articles';
+                                "0:9 = '0 - 9 articles';
+                                10:19 ='10 - 19 articles';
+                                20:29 = '20 - 29 articles';
+                                30:39 = '30 - 39 articles';
                                 40:49 = '40 - 49 articles'")
 ```
 
-What do you think is happening? Think about it for a minute before moving on. The thing about R as opposed to the click and run nature of say SPSS is that you are forced to know exactly what command is being run and what its doing to your data. Because of this, you are less likely to make a mistake or run a statistical analysis that runs but is garbage.
+What do you think is happening here? Think about it for a minute before moving on. 
+
+The thing about R as opposed to the click and run nature of most softwares (e.g. SAS, SPSS, MiniTab, etc.) is that you know exactly what command is being run and what its doing with your data. Because of this, you are more likely to understand what is going on and less likely to go through the motions to get a solution.
 
 ---
 
@@ -208,10 +209,10 @@ That is much better! Now did you figure it out? Here let's look at the chunk aga
 
 ```{r echo = TRUE, eval = FALSE}
 voter_fraud$ranges <- recode(voter_fraud$total, 
-                                "0:9= '0 - 9 articles';
-                                10:19='10 - 19 articles';
-                                20:29= '20 - 29 articles';
-                                30:39= '30 - 39 articles';
+                                "0:9 = '0 - 9 articles';
+                                10:19 ='10 - 19 articles';
+                                20:29 = '20 - 29 articles';
+                                30:39 = '30 - 39 articles';
                                 40:49 = '40 - 49 articles'")
 ```
 
@@ -283,9 +284,9 @@ For various programming reasons that are not worth discussing at this time, R do
 ?mode
 ```
 
-The `?` symbol prior to any command will give you information about that function provided you have that package loaded.  Yup its not clearly not written in plain English but it does tell you that the `mode` command means something else in R. 
+The `?` symbol prior to any command will give you information about that function provided you have that package loaded. Yes its not clearly not written in plain English, but it does tell you that the `mode` command means something else in R. 
 
-OK let's get back to the mode. To get the mode, we actually have to tell R how to go about calculating it. Below is a function that will help. In order for R to recognize it, you have to run the following sequence before using the command.
+OK let's get back to the mode we need. To get the mode, we actually have to tell R how to go about calculating it. Below is a function that will help. In order for R to recognize it, you have to run the following sequence before using the command.
 
 ```{r echo = TRUE, eval = TRUE}
 Mode <- function(x) {

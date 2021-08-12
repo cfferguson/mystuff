@@ -4,8 +4,9 @@
     <title>Distributions and Central Tendency</title>
     <meta charset="utf-8" />
     <meta name="author" content="Week 3" />
-    <link href="Slides-Week-3_files/tile-view-0.2.3/tile-view.css" rel="stylesheet" />
-    <script src="Slides-Week-3_files/tile-view-0.2.3/tile-view.js"></script>
+    <script src="Slides-Week-3_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-Week-3_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-3_files/tile-view-0.2.6/tile-view.js"></script>
     <link href="Slides-Week-3_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
     <link href="Slides-Week-3_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -69,35 +70,29 @@ But by using R (or any other data analysis package), we look at frequency distri
 
 ## Loading up local data
 
-To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv` command from the `readr` package within `tidyverse`.
+To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv()` command from the `readr` package within `tidyverse`.
 
 
 ```r
 voter_fraud &lt;- read_csv("2012_Voter_Fraud.csv")
 ```
 
+
 ```
-## Parsed with column specification:
-## cols(
-##   state = col_character(),
-##   newspaper = col_character(),
-##   total = col_double(),
-##   preelection = col_double(),
-##   postelection = col_double(),
-##   circulation = col_double(),
-##   battleground = col_double(),
-##   restrlaws2012 = col_double(),
-##   pct_black = col_double(),
-##   pct_white = col_double(),
-##   pct_hispanic = col_double(),
-##   pct_presvote_2008 = col_double(),
-##   pct_massconserv = col_double(),
-##   vep08_turnout = col_double(),
-##   pct_alec = col_double(),
-##   cases = col_double(),
-##   allcases = col_double(),
-##   gop_unified_state = col_double()
-## )
+## Rows: 50 Columns: 18
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (2): state, newspaper
+## dbl (16): total, preelection, postelection, circulation, battleground, restr...
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ---
@@ -112,7 +107,6 @@ Remember:
 
 &gt;- `read.csv` with a `.` is messy
 
-
 ---
 
 ## Getting an idea of the data
@@ -125,15 +119,15 @@ head(voter_fraud)
 ```
 
 ```
-## # A tibble: 6 x 18
-##   state newspaper total preelection postelection circulation battleground
-##   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Alab… Birmingh…     6           4            2      103729            0
-## 2 Alas… Anchorag…    11           4            7       58468            0
-## 3 Ariz… Tucson D…     1           1            0      102063            0
-## 4 Arka… Arkansas…    24          17            7       39215            0
-## 5 Cali… LA Times     20          13            7      657467            0
-## 6 Colo… Denver P…    21          20            1      340949            1
+## # A tibble: 6 × 18
+##   state      newspaper   total preelection postelection circulation battleground
+##   &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Alabama    Birmingham…     6           4            2      103729            0
+## 2 Alaska     Anchorage …    11           4            7       58468            0
+## 3 Arizona    Tucson Dai…     1           1            0      102063            0
+## 4 Arkansas   Arkansas D…    24          17            7       39215            0
+## 5 California LA Times       20          13            7      657467            0
+## 6 Colorado   Denver Post    21          20            1      340949            1
 ## # … with 11 more variables: restrlaws2012 &lt;dbl&gt;, pct_black &lt;dbl&gt;,
 ## #   pct_white &lt;dbl&gt;, pct_hispanic &lt;dbl&gt;, pct_presvote_2008 &lt;dbl&gt;,
 ## #   pct_massconserv &lt;dbl&gt;, vep08_turnout &lt;dbl&gt;, pct_alec &lt;dbl&gt;, cases &lt;dbl&gt;,
@@ -152,15 +146,15 @@ voter_fraud[1:6,]
 ```
 
 ```
-## # A tibble: 6 x 18
-##   state newspaper total preelection postelection circulation battleground
-##   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Alab… Birmingh…     6           4            2      103729            0
-## 2 Alas… Anchorag…    11           4            7       58468            0
-## 3 Ariz… Tucson D…     1           1            0      102063            0
-## 4 Arka… Arkansas…    24          17            7       39215            0
-## 5 Cali… LA Times     20          13            7      657467            0
-## 6 Colo… Denver P…    21          20            1      340949            1
+## # A tibble: 6 × 18
+##   state      newspaper   total preelection postelection circulation battleground
+##   &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Alabama    Birmingham…     6           4            2      103729            0
+## 2 Alaska     Anchorage …    11           4            7       58468            0
+## 3 Arizona    Tucson Dai…     1           1            0      102063            0
+## 4 Arkansas   Arkansas D…    24          17            7       39215            0
+## 5 California LA Times       20          13            7      657467            0
+## 6 Colorado   Denver Post    21          20            1      340949            1
 ## # … with 11 more variables: restrlaws2012 &lt;dbl&gt;, pct_black &lt;dbl&gt;,
 ## #   pct_white &lt;dbl&gt;, pct_hispanic &lt;dbl&gt;, pct_presvote_2008 &lt;dbl&gt;,
 ## #   pct_massconserv &lt;dbl&gt;, vep08_turnout &lt;dbl&gt;, pct_alec &lt;dbl&gt;, cases &lt;dbl&gt;,
@@ -186,7 +180,6 @@ names(voter_fraud)
 ## [13] "pct_massconserv"   "vep08_turnout"     "pct_alec"         
 ## [16] "cases"             "allcases"          "gop_unified_state"
 ```
-
 
 ---
 
@@ -217,7 +210,6 @@ table(voter_fraud$battleground)
 
 ---
 
-
 Well that is great but what if we have a lot of values? For example, let's look at the variable `total` which gives us data for the number of articles by newspaper.
 
 
@@ -235,7 +227,6 @@ table(voter_fraud$total)
  
  
 ---
-
 
 ## Using the `freq` command (1/2)
 
@@ -255,7 +246,7 @@ That seems like a lot. Let's plot them on a bar chart using the `freq` command f
 freq(voter_fraud$total, plot = TRUE)
 ```
 
-&lt;img src="Slides-Week-3_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-3_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
 
 ```
 ## voter_fraud$total 
@@ -318,14 +309,16 @@ Then to add the actual ranges , we can use the `recode` command from the `descr`
 
 ```r
 voter_fraud$ranges &lt;- recode(voter_fraud$total, 
-                                "0:9= '0 - 9 articles';
-                                10:19='10 - 19 articles';
-                                20:29= '20 - 29 articles';
-                                30:39= '30 - 39 articles';
+                                "0:9 = '0 - 9 articles';
+                                10:19 ='10 - 19 articles';
+                                20:29 = '20 - 29 articles';
+                                30:39 = '30 - 39 articles';
                                 40:49 = '40 - 49 articles'")
 ```
 
-What do you think is happening? Think about it for a minute before moving on. The thing about R as opposed to the click and run nature of say SPSS is that you are forced to know exactly what command is being run and what its doing to your data. Because of this, you are less likely to make a mistake or run a statistical analysis that runs but is garbage.
+What do you think is happening here? Think about it for a minute before moving on. 
+
+The thing about R as opposed to the click and run nature of most softwares (e.g. SAS, SPSS, MiniTab, etc.) is that you know exactly what command is being run and what its doing with your data. Because of this, you are more likely to understand what is going on and less likely to go through the motions to get a solution.
 
 ---
 
@@ -347,10 +340,10 @@ That is much better! Now did you figure it out? Here let's look at the chunk aga
 
 ```r
 voter_fraud$ranges &lt;- recode(voter_fraud$total, 
-                                "0:9= '0 - 9 articles';
-                                10:19='10 - 19 articles';
-                                20:29= '20 - 29 articles';
-                                30:39= '30 - 39 articles';
+                                "0:9 = '0 - 9 articles';
+                                10:19 ='10 - 19 articles';
+                                20:29 = '20 - 29 articles';
+                                30:39 = '30 - 39 articles';
                                 40:49 = '40 - 49 articles'")
 ```
 
@@ -372,7 +365,7 @@ Now let's plot the bar chart again but in this case, we'll be using our new colu
 freq(voter_fraud$ranges, plot = TRUE)
 ```
 
-![](Slides-Week-3_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+![](Slides-Week-3_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
 
 ```
 ## voter_fraud$ranges 
@@ -456,9 +449,9 @@ For various programming reasons that are not worth discussing at this time, R do
 ?mode
 ```
 
-The `?` symbol prior to any command will give you information about that function provided you have that package loaded.  Yup its not clearly not written in plain English but it does tell you that the `mode` command means something else in R. 
+The `?` symbol prior to any command will give you information about that function provided you have that package loaded. Yes its not clearly not written in plain English, but it does tell you that the `mode` command means something else in R. 
 
-OK let's get back to the mode. To get the mode, we actually have to tell R how to go about calculating it. Below is a function that will help. In order for R to recognize it, you have to run the following sequence before using the command.
+OK let's get back to the mode we need. To get the mode, we actually have to tell R how to go about calculating it. Below is a function that will help. In order for R to recognize it, you have to run the following sequence before using the command.
 
 
 ```r

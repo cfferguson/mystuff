@@ -4,9 +4,9 @@
     <title>Exploring NFL Ticket Prices in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Week 6" />
-    <script src="Slides-Week-6R_files/header-attrs-2.7/header-attrs.js"></script>
-    <link href="Slides-Week-6R_files/tile-view-0.2.3.9000/tile-view.css" rel="stylesheet" />
-    <script src="Slides-Week-6R_files/tile-view-0.2.3.9000/tile-view.js"></script>
+    <script src="Slides-Week-6R_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-Week-6R_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-6R_files/tile-view-0.2.6/tile-view.js"></script>
     <link href="Slides-Week-6R_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
     <link href="Slides-Week-6R_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -31,19 +31,26 @@ class: center, middle, inverse, title-slide
 # Bring in the data set
 
 
-```r
-prices &lt;- read_csv("2014-average-ticket-price.csv", 
-                   na = "NA")
+```
+## Rows: 99 Columns: 3
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (2): Event, Division
+## dbl (1): AverageTP
 ```
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   Event = col_character(),
-##   Division = col_character(),
-##   `Avg TP, $` = col_double()
-## )
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+
+```r
+prices &lt;- read_csv("2014-average-ticket-price.csv")
 ```
 ---
 
@@ -55,20 +62,20 @@ prices
 ```
 
 ```
-## # A tibble: 108 x 3
-##    Event                                                    Division `Avg TP, $`
-##    &lt;chr&gt;                                                    &lt;chr&gt;          &lt;dbl&gt;
-##  1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-N… AFC Nor…         202
-##  2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-S… AFC Nor…         199
-##  3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-S… AFC Nor…         196
-##  4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28… AFC Nor…         164
-##  5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-O… AFC Nor…         148
-##  6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-… AFC Nor…         137
-##  7 Cincinnati Bengals at Baltimore Ravens Tickets on 07-Se… AFC Nor…         135
-##  8 Cleveland Browns at Cincinnati Bengals Tickets on 06-No… AFC Nor…         102
-##  9 Pittsburgh Steelers at Cincinnati Bengals Tickets on 07… AFC Nor…          89
-## 10 Baltimore Ravens at Cleveland Browns Tickets on 21-Sep-… AFC Nor…          83
-## # … with 98 more rows
+## # A tibble: 99 × 3
+##    Event                                                      Division AverageTP
+##    &lt;chr&gt;                                                      &lt;chr&gt;        &lt;dbl&gt;
+##  1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-Nov… AFC Nor…       202
+##  2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-Sep… AFC Nor…       199
+##  3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-Sep… AFC Nor…       196
+##  4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28-D… AFC Nor…       164
+##  5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-Oct… AFC Nor…       148
+##  6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-20… AFC Nor…       137
+##  7 Cincinnati Bengals at Baltimore Ravens Tickets on 07-Sep-… AFC Nor…       135
+##  8 Cleveland Browns at Cincinnati Bengals Tickets on 06-Nov-… AFC Nor…       102
+##  9 Pittsburgh Steelers at Cincinnati Bengals Tickets on 07-D… AFC Nor…        89
+## 10 Baltimore Ravens at Cleveland Browns Tickets on 21-Sep-20… AFC Nor…        83
+## # … with 89 more rows
 ```
 
 ---
@@ -81,27 +88,26 @@ head(prices)
 ```
 
 ```
-## # A tibble: 6 x 3
-##   Event                                                     Division `Avg TP, $`
-##   &lt;chr&gt;                                                     &lt;chr&gt;          &lt;dbl&gt;
-## 1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-No… AFC Nor…         202
-## 2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-Se… AFC Nor…         199
-## 3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-Se… AFC Nor…         196
-## 4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28-… AFC Nor…         164
-## 5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-Oc… AFC Nor…         148
-## 6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-2… AFC Nor…         137
+## # A tibble: 6 × 3
+##   Event                                                       Division AverageTP
+##   &lt;chr&gt;                                                       &lt;chr&gt;        &lt;dbl&gt;
+## 1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-Nov-… AFC Nor…       202
+## 2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-Sep-… AFC Nor…       199
+## 3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-Sep-… AFC Nor…       196
+## 4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28-De… AFC Nor…       164
+## 5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-Oct-… AFC Nor…       148
+## 6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-201… AFC Nor…       137
 ```
 ---
 
 ## 1. What was the average ticket price for all 2014-2015 NFL games?
 
 
-
 ```r
-hist(prices$`Avg TP, $`)
+hist(prices$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-7-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -114,7 +120,7 @@ unique(prices$Division)
 
 ```
 ## [1] "AFC North" "AFC East"  "AFC West"  "AFC South" "NFC North" "NFC East" 
-## [7] "NFC West"  "NFC South" ""
+## [7] "NFC West"  "NFC South" NA
 ```
 
 ---
@@ -143,21 +149,21 @@ afc_north
 ```
 
 ```
-## # A tibble: 12 x 3
-##    Event                                                    Division `Avg TP, $`
-##    &lt;chr&gt;                                                    &lt;chr&gt;          &lt;dbl&gt;
-##  1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-N… AFC Nor…         202
-##  2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-S… AFC Nor…         199
-##  3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-S… AFC Nor…         196
-##  4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28… AFC Nor…         164
-##  5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-O… AFC Nor…         148
-##  6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-… AFC Nor…         137
-##  7 Cincinnati Bengals at Baltimore Ravens Tickets on 07-Se… AFC Nor…         135
-##  8 Cleveland Browns at Cincinnati Bengals Tickets on 06-No… AFC Nor…         102
-##  9 Pittsburgh Steelers at Cincinnati Bengals Tickets on 07… AFC Nor…          89
-## 10 Baltimore Ravens at Cleveland Browns Tickets on 21-Sep-… AFC Nor…          83
-## 11 Baltimore Ravens at Cincinnati Bengals Tickets on 26-Oc… AFC Nor…          83
-## 12 Cincinnati Bengals at Cleveland Browns Tickets on 14-De… AFC Nor…          81
+## # A tibble: 12 × 3
+##    Event                                                      Division AverageTP
+##    &lt;chr&gt;                                                      &lt;chr&gt;        &lt;dbl&gt;
+##  1 Baltimore Ravens at Pittsburgh Steelers Tickets on 02-Nov… AFC Nor…       202
+##  2 Pittsburgh Steelers at Baltimore Ravens Tickets on 11-Sep… AFC Nor…       199
+##  3 Cleveland Browns at Pittsburgh Steelers Tickets on 07-Sep… AFC Nor…       196
+##  4 Cincinnati Bengals at Pittsburgh Steelers Tickets on 28-D… AFC Nor…       164
+##  5 Pittsburgh Steelers at Cleveland Browns Tickets on 12-Oct… AFC Nor…       148
+##  6 Cleveland Browns at Baltimore Ravens Tickets on 28-Dec-20… AFC Nor…       137
+##  7 Cincinnati Bengals at Baltimore Ravens Tickets on 07-Sep-… AFC Nor…       135
+##  8 Cleveland Browns at Cincinnati Bengals Tickets on 06-Nov-… AFC Nor…       102
+##  9 Pittsburgh Steelers at Cincinnati Bengals Tickets on 07-D… AFC Nor…        89
+## 10 Baltimore Ravens at Cleveland Browns Tickets on 21-Sep-20… AFC Nor…        83
+## 11 Baltimore Ravens at Cincinnati Bengals Tickets on 26-Oct-… AFC Nor…        83
+## 12 Cincinnati Bengals at Cleveland Browns Tickets on 14-Dec-… AFC Nor…        81
 ```
 
 ---
@@ -166,10 +172,10 @@ afc_north
 
 
 ```r
-hist(afc_north$`Avg TP, $`)
+hist(afc_north$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-10-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-11-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -177,10 +183,10 @@ hist(afc_north$`Avg TP, $`)
 
 
 ```r
-hist(afc_east$`Avg TP, $`)
+hist(afc_east$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-11-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-12-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -188,10 +194,10 @@ hist(afc_east$`Avg TP, $`)
 
 
 ```r
-hist(afc_west$`Avg TP, $`)
+hist(afc_west$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-12-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-13-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -200,10 +206,10 @@ hist(afc_west$`Avg TP, $`)
 
 
 ```r
-hist(afc_south$`Avg TP, $`)
+hist(afc_south$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-13-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-14-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -212,10 +218,10 @@ hist(afc_south$`Avg TP, $`)
 
 
 ```r
-hist(nfc_north$`Avg TP, $`)
+hist(nfc_north$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-14-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-15-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -224,10 +230,10 @@ hist(nfc_north$`Avg TP, $`)
 &lt;center&gt;
 
 ```r
-hist(nfc_east$`Avg TP, $`)
+hist(nfc_east$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-15-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-16-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -236,10 +242,10 @@ hist(nfc_east$`Avg TP, $`)
 &lt;center&gt;
 
 ```r
-hist(nfc_west$`Avg TP, $`)
+hist(nfc_west$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-16-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-17-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -247,10 +253,10 @@ hist(nfc_west$`Avg TP, $`)
 
 
 ```r
-hist(nfc_south$`Avg TP, $`)
+hist(nfc_south$AverageTP)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-17-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-18-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -258,7 +264,7 @@ hist(nfc_south$`Avg TP, $`)
 
 
 ```r
-median(afc_north$`Avg TP, $`, na.rm = TRUE)
+median(afc_north$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -267,7 +273,7 @@ median(afc_north$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(afc_east$`Avg TP, $`, na.rm = TRUE)
+median(afc_east$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -276,7 +282,7 @@ median(afc_east$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(afc_west$`Avg TP, $`, na.rm = TRUE)
+median(afc_west$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -285,7 +291,7 @@ median(afc_west$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(afc_south$`Avg TP, $`, na.rm = TRUE)
+median(afc_south$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -298,7 +304,7 @@ median(afc_south$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(nfc_north$`Avg TP, $`, na.rm = TRUE)
+median(nfc_north$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -307,7 +313,7 @@ median(nfc_north$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(nfc_east$`Avg TP, $`, na.rm = TRUE)
+median(nfc_east$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -316,7 +322,7 @@ median(nfc_east$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(nfc_west$`Avg TP, $`, na.rm = TRUE)
+median(nfc_west$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -325,7 +331,7 @@ median(nfc_west$`Avg TP, $`, na.rm = TRUE)
 
 
 ```r
-median(nfc_south$`Avg TP, $`, na.rm = TRUE)
+median(nfc_south$AverageTP, na.rm = TRUE)
 ```
 
 ```
@@ -339,8 +345,8 @@ median(nfc_south$`Avg TP, $`, na.rm = TRUE)
 
 ```r
 x = 100
-mu_afc_north = mean(afc_north$`Avg TP, $`)
-sigma_afc_north = sd(afc_north$`Avg TP, $`)
+mu_afc_north = mean(afc_north$AverageTP)
+sigma_afc_north = sd(afc_north$AverageTP)
 ```
 
 
@@ -393,7 +399,7 @@ pnormGC(x,
         graph = TRUE)
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-29-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-30-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ```
 ## [1] 0.231279
@@ -403,10 +409,10 @@ pnormGC(x,
 
 
 ```r
-ggplot(afc_north, aes(x = str_wrap(Event, 30), y = `Avg TP, $`, fill = `Avg TP, $`)) +
+ggplot(afc_north, aes(x = str_wrap(Event, 30), y = AverageTP, fill = AverageTP)) +
   geom_col(show.legend = FALSE) +
-  geom_hline(aes(yintercept = median(`Avg TP, $`)), color = "#ee4035", size = 2, alpha = 0.5) +
-  geom_hline(aes(yintercept = mean(`Avg TP, $`)), color = "#0392cf", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = median(AverageTP)), color = "#ee4035", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = mean(AverageTP)), color = "#0392cf", size = 2, alpha = 0.5) +
   scale_fill_gradient(low = "#e5c3c6", high ="#bcd2d0") +
   ggtitle("Histogram of Average AFC North Ticket Prices by Event") +
   xlab("Event") +
@@ -417,11 +423,11 @@ ggplot(afc_north, aes(x = str_wrap(Event, 30), y = `Avg TP, $`, fill = `Avg TP, 
         panel.grid.minor = element_blank())
 ```
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-30-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-31-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-31-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-6R_files/figure-html/unnamed-chunk-32-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 

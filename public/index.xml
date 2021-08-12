@@ -1420,11 +1420,11 @@ This page contains instructions on what to submit by on a weekly basis.
             &lt;td align=&#34;right&#34; style=&#34;width:18%;text-align:right&#34;&gt;&lt;/td&gt;
             &lt;td style=&#34;width:50%;text-align:left&#34;&gt;&lt;span class=&#34;fake-header-table&#34;&gt;Concentration&lt;/span&gt;&lt;/td&gt;
 
-            &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Readings&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Lesson&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Example&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Assignment&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Due&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Readings&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Lesson&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Example&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Assignment&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Due&lt;/td&gt;
         &lt;/tr&gt;
 
     &lt;/tbody&gt;
@@ -1505,7 +1505,7 @@ This page contains instructions on what to submit by on a weekly basis.
 
         &lt;ul class=&#34;icon-list&#34;&gt;
             &lt;li&gt;&lt;i class=&#34;far fa-calendar fa-fw&#34;&gt;&lt;/i&gt; Forever aka for the next 16 weeks&lt;/li&gt;
-            &lt;li&gt;&lt;i class=&#34;far fa-calendar-alt fa-fw&#34;&gt;&lt;/i&gt; August 26 - December 11&lt;/li&gt;
+            &lt;li&gt;&lt;i class=&#34;far fa-calendar-alt fa-fw&#34;&gt;&lt;/i&gt; August 18 - December 17&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;far fa-clock fa-fw&#34;&gt;&lt;/i&gt; Thursdays from 4:00-6:50 PM&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fas fa-university fa-fw&#34;&gt;&lt;/i&gt; Allen Hall 510&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fab fa-slack fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://2021edp613.slack.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slack&lt;/a&gt;&lt;/li&gt;
