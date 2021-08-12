@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>So What&#39;s Due? | Statistical Methods I</title>
+    <title>About Everything Due | Statistical Methods I</title>
     <link>https://edp613.theoreticalphysed.com/due/</link>
       <atom:link href="https://edp613.theoreticalphysed.com/due/index.xml" rel="self" type="application/rss+xml" />
-    <description>So What&#39;s Due?</description>
+    <description>About Everything Due</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <image>
       <url>https://edp613.theoreticalphysed.com/img/course_info.png</url>
-      <title>So What&#39;s Due?</title>
+      <title>About Everything Due</title>
       <link>https://edp613.theoreticalphysed.com/due/</link>
     </image>
     

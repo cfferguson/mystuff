@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Helpful resources | Statistical Methods I</title>
+    <title>About the Resources | Statistical Methods I</title>
     <link>https://edp613.theoreticalphysed.com/resources/</link>
       <atom:link href="https://edp613.theoreticalphysed.com/resources/index.xml" rel="self" type="application/rss+xml" />
-    <description>Helpful resources</description>
+    <description>About the Resources</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://edp613.theoreticalphysed.com/img/course_info.png</url>
-      <title>Helpful resources</title>
+      <title>About the Resources</title>
       <link>https://edp613.theoreticalphysed.com/resources/</link>
     </image>
     
