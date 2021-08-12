@@ -11,6 +11,7 @@ output:
 library(tidyverse)
 library(psych)
 library(tigerstats)
+library(here)
 ```
 
 ```{r echo = FALSE, purl=FALSE}
@@ -20,7 +21,6 @@ xaringanthemer::style_duo(
   header_font_google = xaringanthemer::google_font("Jost", "600"),
   text_font_google   = xaringanthemer::google_font("Jost", "400")
 )
-
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
@@ -30,9 +30,12 @@ library(tidyverse)
 
 # Bring in the data set
 
-```{r echo = TRUE, eval = TRUE}
-prices <- read_csv("2014-average-ticket-price.csv", 
-                   na = "NA")
+```{r echo = FALSE, eval = TRUE}
+prices <- read_csv(here::here("static", "slides", "Week 6", "2014-average-ticket-price.csv"))
+```
+
+```{r echo = TRUE, eval = FALSE}
+prices <- read_csv("2014-average-ticket-price.csv")
 ```
 ---
 
@@ -53,9 +56,8 @@ head(prices)
 
 ## 1. What was the average ticket price for all 2014-2015 NFL games?
 
-
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(prices$`Avg TP, $`)
+hist(prices$AverageTP)
 ```
 
 ---
@@ -94,7 +96,7 @@ afc_north
 ## AFC North
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(afc_north$`Avg TP, $`)
+hist(afc_north$AverageTP)
 ```
 
 ---
@@ -102,7 +104,7 @@ hist(afc_north$`Avg TP, $`)
 ## AFC East: 
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(afc_east$`Avg TP, $`)
+hist(afc_east$AverageTP)
 ```
 
 ---
@@ -110,7 +112,7 @@ hist(afc_east$`Avg TP, $`)
 ## AFC West: 
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(afc_west$`Avg TP, $`)
+hist(afc_west$AverageTP)
 ```
 
 ---
@@ -119,7 +121,7 @@ hist(afc_west$`Avg TP, $`)
 
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(afc_south$`Avg TP, $`)
+hist(afc_south$AverageTP)
 ```
 
 ---
@@ -128,7 +130,7 @@ hist(afc_south$`Avg TP, $`)
 
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(nfc_north$`Avg TP, $`)
+hist(nfc_north$AverageTP)
 ```
 
 ---
@@ -137,7 +139,7 @@ hist(nfc_north$`Avg TP, $`)
 
 <center>
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(nfc_east$`Avg TP, $`)
+hist(nfc_east$AverageTP)
 ```
 
 ---
@@ -146,7 +148,7 @@ hist(nfc_east$`Avg TP, $`)
 
 <center>
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(nfc_west$`Avg TP, $`)
+hist(nfc_west$AverageTP)
 ```
 
 ---
@@ -154,7 +156,7 @@ hist(nfc_west$`Avg TP, $`)
 ## NFC South: 
 
 ```{r echo = TRUE, eval = TRUE, out.width="50%", fig.align='center'}
-hist(nfc_south$`Avg TP, $`)
+hist(nfc_south$AverageTP)
 ```
 
 ---
@@ -162,19 +164,19 @@ hist(nfc_south$`Avg TP, $`)
 ## AFC: 
 
 ```{r echo = TRUE, eval = TRUE}
-median(afc_north$`Avg TP, $`, na.rm = TRUE)
+median(afc_north$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(afc_east$`Avg TP, $`, na.rm = TRUE)
+median(afc_east$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(afc_west$`Avg TP, $`, na.rm = TRUE)
+median(afc_west$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(afc_south$`Avg TP, $`, na.rm = TRUE)
+median(afc_south$AverageTP, na.rm = TRUE)
 ```
 
 ---
@@ -182,19 +184,19 @@ median(afc_south$`Avg TP, $`, na.rm = TRUE)
 ## NFC
 
 ```{r echo = TRUE, eval = TRUE}
-median(nfc_north$`Avg TP, $`, na.rm = TRUE)
+median(nfc_north$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(nfc_east$`Avg TP, $`, na.rm = TRUE)
+median(nfc_east$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(nfc_west$`Avg TP, $`, na.rm = TRUE)
+median(nfc_west$AverageTP, na.rm = TRUE)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
-median(nfc_south$`Avg TP, $`, na.rm = TRUE)
+median(nfc_south$AverageTP, na.rm = TRUE)
 ```
 
 ---
@@ -203,8 +205,8 @@ median(nfc_south$`Avg TP, $`, na.rm = TRUE)
 
 ```{r echo = TRUE, eval = TRUE}
 x = 100
-mu_afc_north = mean(afc_north$`Avg TP, $`)
-sigma_afc_north = sd(afc_north$`Avg TP, $`)
+mu_afc_north = mean(afc_north$AverageTP)
+sigma_afc_north = sd(afc_north$AverageTP)
 ```
 
 ```{r echo = TRUE, eval = TRUE}
@@ -237,10 +239,10 @@ pnormGC(x,
 ---
 
 ```{r echo = TRUE, eval = TRUE, out.width="40%",  fig.align='center'}
-ggplot(afc_north, aes(x = str_wrap(Event, 30), y = `Avg TP, $`, fill = `Avg TP, $`)) +
+ggplot(afc_north, aes(x = str_wrap(Event, 30), y = AverageTP, fill = AverageTP)) +
   geom_col(show.legend = FALSE) +
-  geom_hline(aes(yintercept = median(`Avg TP, $`)), color = "#ee4035", size = 2, alpha = 0.5) +
-  geom_hline(aes(yintercept = mean(`Avg TP, $`)), color = "#0392cf", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = median(AverageTP)), color = "#ee4035", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = mean(AverageTP)), color = "#0392cf", size = 2, alpha = 0.5) +
   scale_fill_gradient(low = "#e5c3c6", high ="#bcd2d0") +
   ggtitle("Histogram of Average AFC North Ticket Prices by Event") +
   xlab("Event") +
@@ -254,10 +256,10 @@ ggplot(afc_north, aes(x = str_wrap(Event, 30), y = `Avg TP, $`, fill = `Avg TP, 
 ---
 
 ```{r echo = FALSE, eval = TRUE, out.width="80%",  fig.align='center'}
-ggplot(afc_north, aes(x = str_wrap(Event, 30), y = `Avg TP, $`, fill = `Avg TP, $`)) +
+ggplot(afc_north, aes(x = str_wrap(Event, 30), y = AverageTP, fill = AverageTP)) +
   geom_col(show.legend = FALSE) +
-  geom_hline(aes(yintercept = median(`Avg TP, $`)), color = "#ee4035", size = 2, alpha = 0.5) +
-  geom_hline(aes(yintercept = mean(`Avg TP, $`)), color = "#0392cf", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = median(AverageTP)), color = "#ee4035", size = 2, alpha = 0.5) +
+  geom_hline(aes(yintercept = mean(AverageTP)), color = "#0392cf", size = 2, alpha = 0.5) +
   scale_fill_gradient(low = "#e5c3c6", high ="#bcd2d0") +
   ggtitle("Histogram of Average AFC North Ticket Prices by Event") +
   xlab("Event") +

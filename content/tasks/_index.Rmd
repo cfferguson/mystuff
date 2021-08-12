@@ -1,0 +1,52 @@
+---
+title: "About the Tasks"
+menu:
+  tasks:
+    parent: Overview
+    weight: 1
+type: docs
+weight: 1
+---
+
+You will get the most of out this class if you:
+
+1. engage with the readings and materials,
+2. use R to complete any [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling){target="_blank"} or analysis,
+3. ask for help immediately after giving **it** (whatever it is) a good faith effort, and
+4. keep an open and honest line of communication with me and your peers if possible.
+
+Each type of assignment in this class helps with at least one one of these criteria.
+
+## Data Camp
+Some class sessions have [interactive lessons](/datacamp/) via [Data Camp](https://www.datacamp.com/). Your task is simply to go through these. 
+
+I will grade these short exercises using a check system:
+
+- ✔+: (*115% in gradebook*) Modules are 100% completed. Every task was attempted and answered, and most answers are correct. These are not earned often.
+- ✔: (*100% in gradebook*) Modules are 70–99% complete and most answers are correct or on point. This is the expected level of performance.
+- ✔−: (*50% in gradebook*) Modules are less than 70% complete and/or most answers are incorrect or off-point. This indicates that you need to improve next time. Hopefully people will not earn this often.
+
+Otherwise *0% in gradebook*.
+
+## Project
+While I do not grade with a rubric, you can get an idea of what to address by using this.
+
+## Homeworks
+On most weeks, you will be asked to submit a set of problems assigned after the prior week's class. These must be submitted at the start of the next class unless otherwise noted.^[Should we move to an online format, homeworks must be submitted as a single document on the Submission Portal within [ecampus](https://ecampus.wvu.edu/){target="_blank"} as a single cohesive document (in either in docx or pdf format).] Please adhere to the following format:
+
+1. Each item must be submitted on a separate page^[Front and back is fine].
+2. Show all work and do not assume any step.
+3. Write neatly and leave plenty of space for comments. If you have difficulties in presenting neat work or in spacing, then use a computer program like Word. Again, if you learn how to type your homework in [Rmarkdown](https://rmarkdown.rstudio.com/){target="_blank"}, you will earn an extra 5% on each submission where this is done. 
+
+## Quizzes and Regular Exams
+
+Exact dates will be posted here soon but you will have an announced quizzes, two exams and a final.
+
+## Final Exam
+
+The final exam is scheduled for **8 - 10 a.m. on Wednesday, December 15**. Please do not be late as extra time will not be given.
+
+<hr />
+
+### Need Help?
+I always prefer a face to face meeting if possible but since that's not possible, you can schedule a Zoom via the [Calendar](https://calendly.com/nopiecharts/short30){target="_blank"} or contact me within [Slack](http:/2021edp13.slack.com){target="_blank"} by tagging my name `@Dr. Abhik Roy` in a text box along with your message.

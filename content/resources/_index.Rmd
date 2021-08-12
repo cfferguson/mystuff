@@ -1,0 +1,11 @@
+---
+title: Helpful resources
+menu:
+  resource:
+    parent: Overview
+    weight: 1
+type: docs
+weight: 1
+---
+
+Here are multiple resources and guides related to data, R and other relevant topics. None of these are required but could be helpful in or beyond the course!

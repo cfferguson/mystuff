@@ -8,26 +8,26 @@ main:
   - name: Readings
     url: /readings/
     weight: 3
-  - name: Lessons
-    url: /lesson/
+  - name: Data Camp
+    url: /datacamp/
     weight: 4
   - name: Examples
-    url: /example/
+    url: /examples/
     weight: 5
-  - name: Assignments
-    url: /assignment/
+  - name: Tasks
+    url: /tasks/
     weight: 6
-  - name: Due?
+  - name: Everything Due
     url: /due/
     weight: 7
   - name: Resources
-    url: /resource/
+    url: /resources/
     weight: 8
   - name: Professor
     url: /professor/
     weight: 9
   - name: '<i class="fab fa-slack"></i>'
-    url: "https://2020edp619.slack.com"
+    url: "https://2021edp613.slack.com"
     weight: 10
   - name: '<i class="fab fa-r-project"></i>'
     url: "https://rstudio.cloud/"
@@ -38,24 +38,19 @@ readings:
     weight: 1
   - name: Readings
     weight: 2
-lesson:
+datacamp:
   - name: Overview
     weight: 1
   - name: Lessons
     weight: 2
-  - name: Walkthroughs
+examples:
+  - name: Overview
+    weight: 1
+  - name: R Walkthroughs
+    weight: 2
+  - name: Extra Material
     weight: 3
-example:
-  - name: Overview
-    weight: 1
-  - name: Examples
-    weight: 2
-due:
-  - name: Overview
-    weight: 1
-  - name: Due?
-    weight: 2
-assignment:
+tasks:
   - name: Overview
     weight: 1
   - name: Homeworks
@@ -64,7 +59,12 @@ assignment:
     weight: 3
   - name: Exams
     weight: 4
-resource:
+due:
+  - name: Overview
+    weight: 1
+  - name: Everything Due
+    weight: 2
+resources:
   - name: Resources
     weight: 1
   - name: Guides

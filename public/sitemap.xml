@@ -2,50 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://edp613.theoreticalphysed.com/resource/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/assignment/</loc>
+    <loc>https://edp613.theoreticalphysed.com/examples/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/example/</loc>
-  </url><url>
-    <loc>https://edp613.theoreticalphysed.com/lesson/</loc>
+    <loc>https://edp613.theoreticalphysed.com/datacamp/</loc>
   </url><url>
     <loc>https://edp613.theoreticalphysed.com/readings/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/citations/</loc>
+    <loc>https://edp613.theoreticalphysed.com/tasks/</loc>
+  </url><url>
+    <loc>https://edp613.theoreticalphysed.com/resources/citations/</loc>
   </url><url>
     <loc>https://edp613.theoreticalphysed.com/due/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/data/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/data/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/assignment/datacamp-assignment/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/design/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/design/</loc>
-  </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/install/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/install/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/markdown/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/look/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/r/</loc>
-  </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/rmarkdown/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/markdown/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/style/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/r/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/templates/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+    <loc>https://edp613.theoreticalphysed.com/resources/rmarkdown/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/unzipping/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <loc>https://edp613.theoreticalphysed.com/resources/style/</loc>
   </url><url>
-    <loc>https://edp613.theoreticalphysed.com/resource/visualization/</loc>
+    <loc>https://edp613.theoreticalphysed.com/resources/tableau/</loc>
+  </url><url>
+    <loc>https://edp613.theoreticalphysed.com/resources/visualization/</loc>
   </url><url>
     <loc>https://edp613.theoreticalphysed.com/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://edp613.theoreticalphysed.com/resources/unzipping/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://edp613.theoreticalphysed.com/authors/</loc>
   </url><url>
