@@ -89,15 +89,15 @@ We're going to touch on this now but come back to more of it later in the term w
 
 # Example
 
->- What is the sample space and probability distribution created by tossing a fair quarter?
+> What is the sample space and probability distribution created by tossing a fair quarter?
 
 --
 
->- Sample space: {*Heads*, *Tails*}
+>   >- Sample space: {*Heads*, *Tails*}
 
 --
 
->- Probability distribution: $\left\{\dfrac{1}{2}, \dfrac{1}{2}\right\}$
+>   >- Probability distribution: $\left\{\dfrac{1}{2}, \dfrac{1}{2}\right\}$
 
 ---
 
@@ -107,10 +107,9 @@ We're going to touch on this now but come back to more of it later in the term w
 
 >- The probability of an event is ALWAYS between 0 and 1. 
 
--- 
+--
 
 >- Assuming all outcomes are likely, the probability $P$ of an event $E$ can be found
-
 $$P(E) = \frac{\mathrm{Number\,\,of\,\,times\,\,an\,\,event\,\,will\,\,happen}}{\mathrm{Total\,\,number\,\,of\,\,events}}$$
 ---
 
@@ -120,11 +119,11 @@ $$P(E) = \frac{\mathrm{Number\,\,of\,\,times\,\,an\,\,event\,\,will\,\,happen}}{
 
 --
 
->- (a) The sample space of event $E=$ six sided dice is rolled is $P(E)=\{1,2,3,4,5,6\}$
+>   >- (a) The sample space of event $E=$ six sided dice is rolled is $P(E)=\{1,2,3,4,5,6\}$
 
 --
 
->- (b) The probability that someone will roll a 2 is $P(2)$ which can be found by $$P(2)=\dfrac{1}{6}$$
+>   >- (b) The probability that someone will roll a 2 is $P(2)$ which can be found by $$P(2)=\dfrac{1}{6}$$
 
 ---
 
@@ -134,12 +133,11 @@ $$P(E) = \frac{\mathrm{Number\,\,of\,\,times\,\,an\,\,event\,\,will\,\,happen}}{
 
 --
 
->- (a) The probability that someone will roll a 7 is $P(7)$ which can be found by $$P(7)=\dfrac{0}{6}$$ since the sample space is $P(E)=\{1,2,3,4,5,6\}$
+>   >- (a) The probability that someone will roll a 7 is $P(7)$ which can be found by $$P(7)=\dfrac{0}{6}$$ since the sample space is $P(E)=\{1,2,3,4,5,6\}$
 
 ---
 
->- (b) The probability that someone will roll less than a 3 is $P(<3)$ which can be found by 
-
+>   >- (b) The probability that someone will roll less than a 3 is $P(<3)$ which can be found by 
 \begin{aligned}
 P(<3)&=P(1)+P(2)\\\\
 &=\dfrac{1}{6} + \dfrac{1}{6}\\\\
@@ -181,44 +179,75 @@ P(<3)&=P(1)+P(2)\\\\
 
 --
 
->- The mean is calculated the ***exact same way*** as always but<br><br>
-    - is called the *mean of the sampling distribution*<br><br>
-    - has special variables:
-        - represented by $\mu_{\overline{Y}}$
-        - sample size is specifically for probabilities and represented by $M$<br><br>
-    - given by the formula: $$\mu_{\overline{Y}}=\dfrac{\overline{Y}}{M}$$
-  
+> The mean is calculated the ***exact same way*** as always but
 
+--
+
+>   >- is called the *mean of the sampling distribution*
+
+--
+
+>   >- has special variables:
+
+>   >   >- represented by $\mu_{\overline{Y}}$
+
+>   >   >- sample size is specifically for probabilities and represented by $M
+        
+--
+
+>   >- given by the formula:
+$$\mu_{\overline{Y}}=\dfrac{\overline{Y}}{M}$$
+  
 ---
 
 ## Sampling Distributions: Words and Notation - The Standard Deviation
 
 --
 
->- The standard deviation is calculated the ***exact same way*** as always but<br><br>
-    - is called the *standard error of the mean*<br><br>
-    - has special variables:
-        - represented by $\sigma_{\overline{Y}}$
-        - sample size is specifically for probabilities and represented by $N$<br><br>
-    - given by the formula: $$\sigma_{\overline{Y}}=\dfrac{\sigma}{\sqrt{N}}$$
+> The standard deviation is calculated the ***exact same way*** as always but
+
+--
+
+>   >- is called the *standard error of the mean*
+
+--
+
+>   >- has special variables:
+
+>   >   >- represented by $\sigma_{\overline{Y}}$
+
+>   >   >- sample size is specifically for probabilities and represented by $N$
+
+--
+
+>   >- given by the formula: $$\sigma_{\overline{Y}}=\dfrac{\sigma}{\sqrt{N}}$$
   
 
 ---
 
 ## Central Limit Theorem (CLT)
 
->- Officially: If $\overline{Y}$ is the mean of a large SRS ( $N>30$ ) from a population with mean $\mu$ and standard deviation $\sigma$, as $M$ increases, the distribution becoems normal.
+>- Officially: If $\overline{Y}$ is the mean of a large SRS ( $N>30$ ) from a population with mean $\mu$ and standard deviation $\sigma$, as $M$ increases, the distribution becomes normal.
 
 --
 
 >- In better terms: As you take more samples, especially big ones, your graph of the sample means will look more like a normal distribution.
 
-----
+--
 
->- Implications<br><br>
-    - If you add up the means from all of your samples and find the average, that number will be your *actual population mean*.<br><br>
-    - If you add up the standard deviations from all of your samples and find the average, that number will be your *actual population standard deviation*.<br><br>
-    - Helps you predict characteristics os a population.
+>- Implications
+
+--
+
+>   >- If you add up the means from all of your samples and find the average, that number will be your *actual population mean*.<br><br>
+    
+--
+
+>   >- If you add up the standard deviations from all of your samples and find the average, that number will be your *actual population standard deviation*.<br><br>
+    
+--
+
+>   >- Helps you predict characteristics of a population.
 
 ---
 
@@ -226,9 +255,15 @@ P(<3)&=P(1)+P(2)\\\\
 
 1. Be sure $N>30$
 
+--
+
 2. Find $\mu_{\overline{Y}}$ and  $\sigma_{\overline{Y}}$
 
+--
+
 3. Sketch a normal curve and shade in the area to be found.
+
+--
 
 4. Find the area using The Standard Normal Table (Appendix B).
 
@@ -238,24 +273,27 @@ P(<3)&=P(1)+P(2)\\\\
 
 According to the Nielsen Company, the mean number of TV sets in a U.S. household in 2008 was 2.83. Assume the standard deviation is 1.2. A sample of 85 households is drawn. What is the probability that the sample mean number of TV sets is between 2.5 and 3?
 
--- 
+--
 
 1. Clearly $85>30$, so we may assume a normal curve. 
 
 --
 
 2. We have $$\mu_{\overline{Y}}=2.83$$ with 
-\begin{eqnarray*}
-\sigma_{\overline{Y}}&=&\dfrac{1.2}{\sqrt{85}}\\\\
-&\approx&0.130158
-\end{eqnarray*}
+
+\begin{aligned}
+\sigma_{\overline{Y}}&=\dfrac{1.2}{\sqrt{85}}\\\\
+&\approx 0.130158
+\end{aligned}
+
 
 ---
 
 <ol start="3">
-    <li> <br>
-    
-    ```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '40%'}
+<li><br>
+
+````{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '40%'}
+
 minimum = 2.5
 maximum = 3
 m = 2.83
@@ -288,18 +326,23 @@ ggplot(data.frame(x = c(lb, ub)), aes(x = x)) +
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank()
         )
-```
+````
+
 </li>
-<br>
-<li>We have z-scores 
-\begin{eqnarray*}
-z&=&\dfrac{3-2.83}{0.130158}\\
-&\approx&1.31
-\end{eqnarray*}
-\begin{eqnarray*}
-z&=&\dfrac{2.5-2.83}{0.130158}\\
-&\approx&-2.54
-\end{eqnarray*}
+</ol>
+
+--
+
+<ol start="4">
+<li>We have z-scores
+\begin{aligned}
+z&=\dfrac{3-2.83}{0.130158}\\
+&\approx 1.31
+\end{aligned}
+\begin{aligned}
+z&=\dfrac{2.5-2.83}{0.130158}\\
+&\approx -2.54
+\end{aligned}
 </li>
 </ol>
 
@@ -307,27 +350,24 @@ z&=&\dfrac{2.5-2.83}{0.130158}\\
 
 So The Standard Normal Table tells us that this is $0.8994$. So there was about a 90% chance that a random household had between 2.5 and 3 TVs in 2008.
 
-
-
----
-
 ---
 
 ## Example
 
 It is estimated that the mean number of TV sets in a U.S. household in 2020 is 2.00. Assume the standard deviation is 0.8. A sample of 180 households is drawn. What is the probability that the sample mean number of TV sets is still between 2.5 and 3?
 
--- 
+--
 
 1. Clearly $180>30$, so we may assume a normal curve. 
 
 --
 
 2. We have $$\mu_{\overline{Y}}=2.00$$ with 
-\begin{eqnarray*}
-\sigma_{\overline{Y}}&=&\dfrac{0.8}{\sqrt{180}}\\\\
-&\approx&0.059628
-\end{eqnarray*}
+
+\begin{aligned}
+\sigma_{\overline{Y}}&=\dfrac{0.8}{\sqrt{180}}\\\\
+&\approx 0.059628
+\end{aligned}
 
 ---
 
@@ -371,13 +411,16 @@ ggplot(data.frame(x = c(lb, ub)), aes(x = x)) +
 </li>
 <br>
 <li>We have z-scores 
-\begin{eqnarray*}
-z&=&\dfrac{3-2.00}{0.059628}\\
-&\approx&16.77
-\end{eqnarray*}
-z&=&\dfrac{2.5-2.00}{0.059628}\\
-&\approx&8.38
-\end{eqnarray*}
+
+\begin{aligned}
+z&=\dfrac{3-2.00}{0.059628}\\
+&\approx 16.77
+\end{aligned}
+
+\begin{aligned}
+z&=\dfrac{2.5-2.00}{0.059628}\\
+&\approx 8.38
+\end{aligned}
 </li>
 </ol>
 

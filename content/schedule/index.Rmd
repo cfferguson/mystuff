@@ -23,15 +23,15 @@ fadue <- as.character(fa("folder-open", fill = "#2a6e84", height = "17px"))
 tableofcontent <- tibble(
   
   type <- c("Readings", 
-            "Lesson",
-            "Example",
-            "Assignment",
+            "Data Camp",
+            "Examples",
+            "Tasks",
             "Due"),
   
   location <- c("[Go](/readings/)",
-                "[Go](/lesson/)",
-                "[Go](/example/)",
-                "[Go](/assignment/)",
+                "[Go](/datacamp/)",
+                "[Go](/examples/)",
+                "[Go](/tasks/)",
                 "[Go](/due/)"),
   
   icon <- c(faread,

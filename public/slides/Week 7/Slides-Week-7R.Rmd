@@ -19,11 +19,10 @@ xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#fcbb86",
   text_bold_color = "#fc868c",
-   code_inline_color = "#86c7fc",
+  code_inline_color = "#86c7fc",
   header_font_google = xaringanthemer::google_font("Jost", "600"),
   text_font_google   = xaringanthemer::google_font("Jost", "400")
 )
-
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
@@ -45,7 +44,6 @@ stop <- as.character(fontawesome::fa("stop", fill = "#ff6347"))
 link <- as.character(fontawesome::fa("link", fill = "#5cb85c"))
 
 bookmark <- as.character(fontawesome::fa("bookmark", fill = "#5cb85c"))
-
 
 icon_desc <- tibble(
   
@@ -106,8 +104,9 @@ head(starwars)
 
 Tidy approach <br>
 ```{r echo = TRUE, eval = TRUE}
-nrow(starwars %>%
-       select(name))
+    starwars %>%
+       select(name) %>%
+       nrow()
 ```
 
 Base R approach <br>
@@ -136,6 +135,7 @@ glimpse(starwars)
 ```
 
 .right[`r fa("stop", fill = "#ff6347")`]
+
 ---
 
 ## Frequencies
@@ -145,7 +145,8 @@ starwars %>%
   count(sex)
 ```
 
-.right[`r fa("stop", fill = "#ff6347")`]
+.right[`r fontawesome::fa(name = "stop", fill = "#ff6347")`]
+
 ---
 
 ## Measures of Central Tendency
@@ -231,6 +232,7 @@ Mode <- function(x) {
 ```
 
 .right[`r fa("forward", fill = "#4682b4")`]
+
 ---
 
 Then you can find the `Mode`
@@ -376,7 +378,8 @@ starwars %>%
   na.omit() %>%
   mutate(`age range by species` = max - min) 
 ```
-.rleft[`r fa("bookmark", fill = "#5bc0de")`]
+
+.left[`r fa("bookmark", fill = "#5bc0de")`]
 
 ---
 

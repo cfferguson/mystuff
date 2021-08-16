@@ -65,15 +65,15 @@ We're going to touch on this now but come back to more of it later in the term w
 
 # Example
 
-&gt;- What is the sample space and probability distribution created by tossing a fair quarter?
+&gt; What is the sample space and probability distribution created by tossing a fair quarter?
 
 --
 
-&gt;- Sample space: {*Heads*, *Tails*}
+&gt;   &gt;- Sample space: {*Heads*, *Tails*}
 
 --
 
-&gt;- Probability distribution: `\(\left\{\dfrac{1}{2}, \dfrac{1}{2}\right\}\)`
+&gt;   &gt;- Probability distribution: `\(\left\{\dfrac{1}{2}, \dfrac{1}{2}\right\}\)`
 
 ---
 
@@ -83,10 +83,9 @@ We're going to touch on this now but come back to more of it later in the term w
 
 &gt;- The probability of an event is ALWAYS between 0 and 1. 
 
--- 
+--
 
 &gt;- Assuming all outcomes are likely, the probability `\(P\)` of an event `\(E\)` can be found
-
 `$$P(E) = \frac{\mathrm{Number\,\,of\,\,times\,\,an\,\,event\,\,will\,\,happen}}{\mathrm{Total\,\,number\,\,of\,\,events}}$$`
 ---
 
@@ -96,11 +95,11 @@ We're going to touch on this now but come back to more of it later in the term w
 
 --
 
-&gt;- (a) The sample space of event `\(E=\)` six sided dice is rolled is `\(P(E)=\{1,2,3,4,5,6\}\)`
+&gt;   &gt;- (a) The sample space of event `\(E=\)` six sided dice is rolled is `\(P(E)=\{1,2,3,4,5,6\}\)`
 
 --
 
-&gt;- (b) The probability that someone will roll a 2 is `\(P(2)\)` which can be found by `$$P(2)=\dfrac{1}{6}$$`
+&gt;   &gt;- (b) The probability that someone will roll a 2 is `\(P(2)\)` which can be found by `$$P(2)=\dfrac{1}{6}$$`
 
 ---
 
@@ -110,18 +109,17 @@ We're going to touch on this now but come back to more of it later in the term w
 
 --
 
-&gt;- (a) The probability that someone will roll a 7 is `\(P(7)\)` which can be found by `$$P(7)=\dfrac{0}{6}$$` since the sample space is `\(P(E)=\{1,2,3,4,5,6\}\)`
+&gt;   &gt;- (a) The probability that someone will roll a 7 is `\(P(7)\)` which can be found by `$$P(7)=\dfrac{0}{6}$$` since the sample space is `\(P(E)=\{1,2,3,4,5,6\}\)`
 
 ---
 
-&gt;- (b) The probability that someone will roll less than a 3 is `\(P(&lt;3)\)` which can be found by 
-
-\begin{aligned}
+&gt;   &gt;- (b) The probability that someone will roll less than a 3 is `\(P(&lt;3)\)` which can be found by 
+`\begin{aligned}
 P(&lt;3)&amp;=P(1)+P(2)\\\\
 &amp;=\dfrac{1}{6} + \dfrac{1}{6}\\\\
 &amp;= \dfrac{2}{6} \\\\
 &amp;= \dfrac{1}{3}
-\end{aligned}
+\end{aligned}`
 
 ---
 
@@ -157,44 +155,75 @@ P(&lt;3)&amp;=P(1)+P(2)\\\\
 
 --
 
-&gt;- The mean is calculated the ***exact same way*** as always but&lt;br&gt;&lt;br&gt;
-    - is called the *mean of the sampling distribution*&lt;br&gt;&lt;br&gt;
-    - has special variables:
-        - represented by `\(\mu_{\overline{Y}}\)`
-        - sample size is specifically for probabilities and represented by `\(M\)`&lt;br&gt;&lt;br&gt;
-    - given by the formula: `$$\mu_{\overline{Y}}=\dfrac{\overline{Y}}{M}$$`
-  
+&gt; The mean is calculated the ***exact same way*** as always but
 
+--
+
+&gt;   &gt;- is called the *mean of the sampling distribution*
+
+--
+
+&gt;   &gt;- has special variables:
+
+&gt;   &gt;   &gt;- represented by `\(\mu_{\overline{Y}}\)`
+
+&gt;   &gt;   &gt;- sample size is specifically for probabilities and represented by $M
+        
+--
+
+&gt;   &gt;- given by the formula:
+`$$\mu_{\overline{Y}}=\dfrac{\overline{Y}}{M}$$`
+  
 ---
 
 ## Sampling Distributions: Words and Notation - The Standard Deviation
 
 --
 
-&gt;- The standard deviation is calculated the ***exact same way*** as always but&lt;br&gt;&lt;br&gt;
-    - is called the *standard error of the mean*&lt;br&gt;&lt;br&gt;
-    - has special variables:
-        - represented by `\(\sigma_{\overline{Y}}\)`
-        - sample size is specifically for probabilities and represented by `\(N\)`&lt;br&gt;&lt;br&gt;
-    - given by the formula: `$$\sigma_{\overline{Y}}=\dfrac{\sigma}{\sqrt{N}}$$`
+&gt; The standard deviation is calculated the ***exact same way*** as always but
+
+--
+
+&gt;   &gt;- is called the *standard error of the mean*
+
+--
+
+&gt;   &gt;- has special variables:
+
+&gt;   &gt;   &gt;- represented by `\(\sigma_{\overline{Y}}\)`
+
+&gt;   &gt;   &gt;- sample size is specifically for probabilities and represented by `\(N\)`
+
+--
+
+&gt;   &gt;- given by the formula: `$$\sigma_{\overline{Y}}=\dfrac{\sigma}{\sqrt{N}}$$`
   
 
 ---
 
 ## Central Limit Theorem (CLT)
 
-&gt;- Officially: If `\(\overline{Y}\)` is the mean of a large SRS ( `\(N&gt;30\)` ) from a population with mean `\(\mu\)` and standard deviation `\(\sigma\)`, as `\(M\)` increases, the distribution becoems normal.
+&gt;- Officially: If `\(\overline{Y}\)` is the mean of a large SRS ( `\(N&gt;30\)` ) from a population with mean `\(\mu\)` and standard deviation `\(\sigma\)`, as `\(M\)` increases, the distribution becomes normal.
 
 --
 
 &gt;- In better terms: As you take more samples, especially big ones, your graph of the sample means will look more like a normal distribution.
 
-----
+--
 
-&gt;- Implications&lt;br&gt;&lt;br&gt;
-    - If you add up the means from all of your samples and find the average, that number will be your *actual population mean*.&lt;br&gt;&lt;br&gt;
-    - If you add up the standard deviations from all of your samples and find the average, that number will be your *actual population standard deviation*.&lt;br&gt;&lt;br&gt;
-    - Helps you predict characteristics os a population.
+&gt;- Implications
+
+--
+
+&gt;   &gt;- If you add up the means from all of your samples and find the average, that number will be your *actual population mean*.&lt;br&gt;&lt;br&gt;
+    
+--
+
+&gt;   &gt;- If you add up the standard deviations from all of your samples and find the average, that number will be your *actual population standard deviation*.&lt;br&gt;&lt;br&gt;
+    
+--
+
+&gt;   &gt;- Helps you predict characteristics of a population.
 
 ---
 
@@ -202,9 +231,15 @@ P(&lt;3)&amp;=P(1)+P(2)\\\\
 
 1. Be sure `\(N&gt;30\)`
 
+--
+
 2. Find `\(\mu_{\overline{Y}}\)` and  `\(\sigma_{\overline{Y}}\)`
 
+--
+
 3. Sketch a normal curve and shade in the area to be found.
+
+--
 
 4. Find the area using The Standard Normal Table (Appendix B).
 
@@ -214,35 +249,42 @@ P(&lt;3)&amp;=P(1)+P(2)\\\\
 
 According to the Nielsen Company, the mean number of TV sets in a U.S. household in 2008 was 2.83. Assume the standard deviation is 1.2. A sample of 85 households is drawn. What is the probability that the sample mean number of TV sets is between 2.5 and 3?
 
--- 
+--
 
 1. Clearly `\(85&gt;30\)`, so we may assume a normal curve. 
 
 --
 
 2. We have `$$\mu_{\overline{Y}}=2.83$$` with 
-\begin{eqnarray*}
-\sigma_{\overline{Y}}&amp;=&amp;\dfrac{1.2}{\sqrt{85}}\\\\
-&amp;\approx&amp;0.130158
-\end{eqnarray*}
+
+`\begin{aligned}
+\sigma_{\overline{Y}}&amp;=\dfrac{1.2}{\sqrt{85}}\\\\
+&amp;\approx 0.130158
+\end{aligned}`
+
 
 ---
 
 &lt;ol start="3"&gt;
-    &lt;li&gt; &lt;br&gt;
-    
-    &lt;img src="Slides-Week-7_files/figure-html/unnamed-chunk-4-1.png" width="40%" /&gt;
+&lt;li&gt;&lt;br&gt;
+
+&lt;img src="Slides-Week-7_files/figure-html/unnamed-chunk-4-1.png" width="40%" /&gt;
+
 &lt;/li&gt;
-&lt;br&gt;
-&lt;li&gt;We have z-scores 
-\begin{eqnarray*}
-z&amp;=&amp;\dfrac{3-2.83}{0.130158}\\
-&amp;\approx&amp;1.31
-\end{eqnarray*}
-\begin{eqnarray*}
-z&amp;=&amp;\dfrac{2.5-2.83}{0.130158}\\
-&amp;\approx&amp;-2.54
-\end{eqnarray*}
+&lt;/ol&gt;
+
+--
+
+&lt;ol start="4"&gt;
+&lt;li&gt;We have z-scores
+`\begin{aligned}
+z&amp;=\dfrac{3-2.83}{0.130158}\\
+&amp;\approx 1.31
+\end{aligned}`
+`\begin{aligned}
+z&amp;=\dfrac{2.5-2.83}{0.130158}\\
+&amp;\approx -2.54
+\end{aligned}`
 &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -250,27 +292,24 @@ z&amp;=&amp;\dfrac{2.5-2.83}{0.130158}\\
 
 So The Standard Normal Table tells us that this is `\(0.8994\)`. So there was about a 90% chance that a random household had between 2.5 and 3 TVs in 2008.
 
-
-
----
-
 ---
 
 ## Example
 
 It is estimated that the mean number of TV sets in a U.S. household in 2020 is 2.00. Assume the standard deviation is 0.8. A sample of 180 households is drawn. What is the probability that the sample mean number of TV sets is still between 2.5 and 3?
 
--- 
+--
 
 1. Clearly `\(180&gt;30\)`, so we may assume a normal curve. 
 
 --
 
 2. We have `$$\mu_{\overline{Y}}=2.00$$` with 
-\begin{eqnarray*}
-\sigma_{\overline{Y}}&amp;=&amp;\dfrac{0.8}{\sqrt{180}}\\\\
-&amp;\approx&amp;0.059628
-\end{eqnarray*}
+
+`\begin{aligned}
+\sigma_{\overline{Y}}&amp;=\dfrac{0.8}{\sqrt{180}}\\\\
+&amp;\approx 0.059628
+\end{aligned}`
 
 ---
 
@@ -281,13 +320,16 @@ It is estimated that the mean number of TV sets in a U.S. household in 2020 is 2
 &lt;/li&gt;
 &lt;br&gt;
 &lt;li&gt;We have z-scores 
-\begin{eqnarray*}
-z&amp;=&amp;\dfrac{3-2.00}{0.059628}\\
-&amp;\approx&amp;16.77
-\end{eqnarray*}
-z&amp;=&amp;\dfrac{2.5-2.00}{0.059628}\\
-&amp;\approx&amp;8.38
-\end{eqnarray*}
+
+`\begin{aligned}
+z&amp;=\dfrac{3-2.00}{0.059628}\\
+&amp;\approx 16.77
+\end{aligned}`
+
+`\begin{aligned}
+z&amp;=\dfrac{2.5-2.00}{0.059628}\\
+&amp;\approx 8.38
+\end{aligned}`
 &lt;/li&gt;
 &lt;/ol&gt;
 

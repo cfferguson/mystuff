@@ -494,6 +494,7 @@ movies_by_genre <- movies %>%
 
 movies_by_genre
 ```
+
 .right[`r fa("stop", fill = "#ff6347")`]
 
 ---
