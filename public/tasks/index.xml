@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About the Tasks | Statistical Methods I</title>
-    <link>https://edp613.theoreticalphysed.com/tasks/</link>
-      <atom:link href="https://edp613.theoreticalphysed.com/tasks/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://edp613.asocialdatascientist.com/tasks/</link>
+      <atom:link href="https://edp613.asocialdatascientist.com/tasks/index.xml" rel="self" type="application/rss+xml" />
     <description>About the Tasks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <image>
-      <url>https://edp613.theoreticalphysed.com/img/course_info.png</url>
+      <url>https://edp613.asocialdatascientist.com/img/course_info.png</url>
       <title>About the Tasks</title>
-      <link>https://edp613.theoreticalphysed.com/tasks/</link>
+      <link>https://edp613.asocialdatascientist.com/tasks/</link>
     </image>
     
   </channel>

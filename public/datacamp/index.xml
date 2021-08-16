@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About Data Camp | Statistical Methods I</title>
-    <link>https://edp613.theoreticalphysed.com/datacamp/</link>
-      <atom:link href="https://edp613.theoreticalphysed.com/datacamp/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://edp613.asocialdatascientist.com/datacamp/</link>
+      <atom:link href="https://edp613.asocialdatascientist.com/datacamp/index.xml" rel="self" type="application/rss+xml" />
     <description>About Data Camp</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <image>
-      <url>https://edp613.theoreticalphysed.com/img/course_info.png</url>
+      <url>https://edp613.asocialdatascientist.com/img/course_info.png</url>
       <title>About Data Camp</title>
-      <link>https://edp613.theoreticalphysed.com/datacamp/</link>
+      <link>https://edp613.asocialdatascientist.com/datacamp/</link>
     </image>
     
   </channel>

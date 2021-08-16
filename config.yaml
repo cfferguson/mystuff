@@ -1,4 +1,4 @@
-git@github.com: baseurl: https://edp613.theoreticalphysed.com/
+git@github.com: baseurl: https://edp613.asocialdatascientist.com/
 defaultContentLanguage: en
 title: "EDP 613"
 theme: hugo-academic
@@ -70,3 +70,5 @@ ignoreFiles:
   - _cache$
   - \.Rproj.user$
   - \.Rhistory$
+  - \.knit\.md$
+  - \.utf8\\.md$

@@ -39,7 +39,8 @@ unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
 
 checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
 
-dc_schedule <- read_csv("dc.csv") %>% 
+dc_schedule <- read_csv("dc.csv",
+                        show_col_types = FALSE) %>% 
                   as_tibble() %>%
               mutate(Required = case_when(
                 Required == "checked" ~ as.character(fontawesome::fa("check-circle", fill = "#428bca", height = "15px")),
@@ -71,4 +72,4 @@ kable(dc_schedule,
 ```
 
 ### Need Help?
-I always prefer a face to face meeting if possible but since that's not possible, you can schedule a Zoom via the [Calendar](https://calendly.com/nopiecharts/short30){target="_blank"} or contact me within [Slack](http:/2021edp13.slack.com){target="_blank"} by tagging my name `@Dr. Abhik Roy` in a text box along with your message.
+I always prefer a face to face meeting if possible but since that's not possible, you can schedule a Zoom via the [Calendar](https://calendly.com/nopiecharts/short30){target="_blank"} or contact me within [Slack](https://2021edp613.slack.com){target="_blank"} by tagging my name `@Dr. Abhik Roy` in a text box along with your message.
