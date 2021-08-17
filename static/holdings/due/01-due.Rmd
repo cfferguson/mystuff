@@ -70,14 +70,14 @@ Area = c(book,
          ),
 
 Description = c("Read chapter 2 in the text.",
-               "Look over the text PowerPoint and corresponding notes.",
-               "Watch a video on Social Explorer and the WVU Libraries Database.",
-               "Watch a video on Data Visualization.^[Optional but recommended]"),
+                "Look over the text PowerPoint and corresponding notes.",
+                "Watch a video on Social Explorer and the WVU Libraries Database.",
+                "Watch a video on Data Visualization.^[Optional but recommended]"),
 
 Location = c("[Link](/readings/02-readings/#book-stuff-1)", 
              "[Link](/lesson/02-lesson/#book-materials-1)",
-             "[Link](/example/02-example/#social-explorer-1)",
-             "[Link](/example/02-example/#crash-course-statistics-1)")
+             "[Link](/example/02-examples/#social-explorer-1)",
+             "[Link](/example/02-examples/#crash-course-statistics-1)")
 
 )
 
