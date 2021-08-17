@@ -40,11 +40,11 @@ tableofcontent <- tibble(
             faass,
             fadue),
   
-  descr <- c("This page contains the readings for the topic which should be the first place you go to.",
-             "Here are interactive lessons, slides, and/or walkthroughs that helps with any content.",
-             "Extra items that are picked or created to help you understand the current material exist on this page.",
-             "Instructions for all student related tasks including information about the tasks and deliverables are provided in this location.",
-             "This page contains instructions on what to submit by on a weekly basis."
+  descr <- c("Weekly readings.",
+             "R/RStudio Training modules created by Data Camp.",
+             "Interactive R lessons and additional materials.",
+             "Weekly tasks and deliverables.",
+             "Weekly submission information."
              ),
   
   .name_repair = "minimal"
@@ -64,7 +64,8 @@ tableofcontent %>%
 ```
 </center>
 
-<span style="font-size:17px">*Note: Assignments are due by* ***Wednesday at 11:59 PM*** *unless otherwise noted.*</span>
+<span style="font-size:17px">*Note: Assignments are due by* ***the beginning of class time each Thursday at 4:00 PM*** *unless otherwise noted.*^[If we go online for whatever reason, then submissions will be due at the same time within the eCampus portal]</span>
+
 <br>
 <br>
 

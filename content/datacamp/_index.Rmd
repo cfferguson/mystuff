@@ -26,12 +26,21 @@ Interactive training sections are provided on [Data Camp](https://www.datacamp.c
 </center>
 
 ### Advice
-Carve out some time everyday to go through these. If you try to complete everything in one sitting, it will probably be overwhelming! However if you have familiarity with some modules, please feel free to work ahead.
+Carve out some time everyday to go through these. If you try to complete everything in one sitting, it will probably be overwhelming! However if you have familiarity with some modules and anotehr is availible, please feel free to work ahead.
 
 ### Purpose
-The ultimate point of Data Camp is to get you familiarized with an environment that you likely have never seen or been exposed to. While you should absolutely go through each module, there is certainly no expectation that you will get everything right. In fact, the points that you incur don't mean anything as far as how you are assessed so please use hints as needed! As with any things data science, you'll learn by doing. If you are a polar personality type when it comes to work (i.e. primarily a perfectionist or mostly careless), then the modules will likely prove to be a challenge. It is highly unlikely that you will be able to comprehend everything by going beyond your limit or that it will just come to you so please work hard but also take breaks, swear^[and curse my name if you have to], and ask peers or me for help. Remember your [grading](/tasks/) is predicated on putting in a solid effort, rather than getting it right because there is no such thing in data science. 
-### Data Camp Schedule
+The ultimate point of Data Camp is to get you familiarized with an environment that you likely have never seen or been exposed to. While you should absolutely go through each module, there is certainly no expectation that you will get everything right. In fact, the points that you incur don't mean anything as far as how you are assessed so please use hints as needed! As with any things data science, you'll learn by doing. If you are a polar personality type when it comes to work (i.e. primarily a perfectionist or mostly careless), then the modules will likely prove to be a challenge. It is highly unlikely that you will be able to comprehend everything by going beyond your limit or that it will just come to you so please work hard but also take breaks, swear^[and curse my name if you have to], and ask peers or me for help.
 
+## Grading
+The emphasis on Data Camp involves putting in a solid effort, rather than completing everything correctly. The earned grade distribution is as follows:
+
+- *115%*: Modules are 100% completed. Every task was attempted and answered, and most answers are correct. These are not earned often.
+- *100%*: Modules are 70–99% complete and most answers are correct or on point. This is the expected level of performance.
+- *50%*: Modules are less than 70% complete and/or most answers are incorrect or off-point. This indicates that you need to improve next time. Hopefully people will not earn this often.
+
+Otherwise *0%*. 
+
+### Data Camp Schedule
 A *tentative* schedule is given below. The **Course** and **Chapter** names represent Data Camp titles^[Please note this is subject to change with notice.]:
 
 ```{r eval = TRUE, echo = FALSE, message=FALSE}

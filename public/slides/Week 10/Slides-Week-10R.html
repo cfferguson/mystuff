@@ -111,17 +111,16 @@ head(movies)
 
 ```
 ## # A tibble: 6 × 24
-##   title     year length budget rating votes    r1    r2    r3    r4    r5    r6    r7
-##   &lt;chr&gt;    &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 $         1971    121     NA    6.4   348   4.5   4.5   4.5   4.5  14.5  24.5  24.5
-## 2 $1000 a…  1939     71     NA    6      20   0    14.5   4.5  24.5  14.5  14.5  14.5
-## 3 $21 a D…  1941      7     NA    8.2     5   0     0     0     0     0    24.5   0  
-## 4 $40,000   1996     70     NA    8.2     6  14.5   0     0     0     0     0     0  
-## 5 $50,000…  1975     71     NA    3.4    17  24.5   4.5   0    14.5  14.5   4.5   0  
-## 6 $pent     2000     91     NA    4.3    45   4.5   4.5   4.5  14.5  14.5  14.5   4.5
-## # … with 11 more variables: r8 &lt;dbl&gt;, r9 &lt;dbl&gt;, r10 &lt;dbl&gt;, mpaa &lt;chr&gt;, Action &lt;int&gt;,
-## #   Animation &lt;int&gt;, Comedy &lt;int&gt;, Drama &lt;int&gt;, Documentary &lt;int&gt;, Romance &lt;int&gt;,
-## #   Short &lt;int&gt;
+##   title  year length budget rating votes    r1    r2    r3    r4    r5    r6    r7    r8    r9   r10 mpaa 
+##   &lt;chr&gt; &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;
+## 1 $      1971    121     NA    6.4   348   4.5   4.5   4.5   4.5  14.5  24.5  24.5  14.5   4.5   4.5 ""   
+## 2 $100…  1939     71     NA    6      20   0    14.5   4.5  24.5  14.5  14.5  14.5   4.5   4.5  14.5 ""   
+## 3 $21 …  1941      7     NA    8.2     5   0     0     0     0     0    24.5   0    44.5  24.5  24.5 ""   
+## 4 $40,…  1996     70     NA    8.2     6  14.5   0     0     0     0     0     0     0    34.5  45.5 ""   
+## 5 $50,…  1975     71     NA    3.4    17  24.5   4.5   0    14.5  14.5   4.5   0     0     0    24.5 ""   
+## 6 $pent  2000     91     NA    4.3    45   4.5   4.5   4.5  14.5  14.5  14.5   4.5   4.5  14.5  14.5 ""   
+## # … with 7 more variables: Action &lt;int&gt;, Animation &lt;int&gt;, Comedy &lt;int&gt;, Drama &lt;int&gt;, Documentary &lt;int&gt;,
+## #   Romance &lt;int&gt;, Short &lt;int&gt;
 ```
 
 ---
@@ -149,11 +148,10 @@ names(movies)
 ```
 
 ```
-##  [1] "title"       "year"        "length"      "budget"      "rating"     
-##  [6] "votes"       "r1"          "r2"          "r3"          "r4"         
-## [11] "r5"          "r6"          "r7"          "r8"          "r9"         
-## [16] "r10"         "mpaa"        "Action"      "Animation"   "Comedy"     
-## [21] "Drama"       "Documentary" "Romance"     "Short"
+##  [1] "title"       "year"        "length"      "budget"      "rating"      "votes"       "r1"         
+##  [8] "r2"          "r3"          "r4"          "r5"          "r6"          "r7"          "r8"         
+## [15] "r9"          "r10"         "mpaa"        "Action"      "Animation"   "Comedy"      "Drama"      
+## [22] "Documentary" "Romance"     "Short"
 ```
 
 You can see more about the functionality by looking at its [documentation](https://cran.r-project.org/web/packages/ggplot2movies/ggplot2movies.pdf). For now, here's what the variables mean:

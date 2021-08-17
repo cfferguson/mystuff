@@ -15,18 +15,7 @@ You will get the most of out this class if you:
 3. ask for help immediately after giving **it** (whatever it is) a good faith effort, and
 4. keep an open and honest line of communication with me and your peers if possible.
 
-Each type of assignment in this class helps with at least one one of these criteria.
-
-## Data Camp
-Some class sessions have [interactive lessons](/datacamp/) via [Data Camp](https://www.datacamp.com/). Your task is simply to go through these. 
-
-I will grade these short exercises using a check system:
-
-- ✔+: (*115% in gradebook*) Modules are 100% completed. Every task was attempted and answered, and most answers are correct. These are not earned often.
-- ✔: (*100% in gradebook*) Modules are 70–99% complete and most answers are correct or on point. This is the expected level of performance.
-- ✔−: (*50% in gradebook*) Modules are less than 70% complete and/or most answers are incorrect or off-point. This indicates that you need to improve next time. Hopefully people will not earn this often.
-
-Otherwise *0% in gradebook*.
+Below is a list of items considered to be class related tasks.
 
 ## Project
 While I do not grade with a rubric, you can get an idea of what to address by using this.
