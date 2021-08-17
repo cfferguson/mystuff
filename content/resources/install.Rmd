@@ -16,25 +16,21 @@ library(knitr)
 
 You will do all of your work in this class with the open source (and free!) programming language [R](https://cran.r-project.org/){target="_blank"}. You will use [RStudio](https://www.rstudio.com/){target="_blank"} as the main program to access R. Think of R as an engine and RStudio as a car dashboard—R handles all the calculations and the actual statistics, while RStudio provides a nice interface for running R code.
 
-
 ## RStudio.cloud
 
-R is free, but it can sometimes be a pain to install and configure. To make life easier, you can use the free [RStudio.cloud](http://rstudio.cloud/){target="_blank"} service *initially*, which lets you run a full instance of RStudio in your web browser. This means you won't have to install anything on your computer to get started with R! We will have a shared class workspace in RStudio.cloud that will let you quickly copy templates for labs and problem sets.
-
-Go to <https://rstudio.cloud/> and create an account. You'll receive a link to join the shared class workspace separately. If you don't get this link, let me know and I will invite you.
-
+Both R and RStudio are free, but it can sometimes be a pain to install and configure. To make life easier, you can use the free version of [RStudio.cloud](http://rstudio.cloud/){target="_blank"} which lets you run a full instance of RStudio in your web browser with some limited capacity. However this means you won't have to install anything on your computer to get started with R. Over the course of the semester, you may want to wean yourself off of the service and install both R and RStudio these things locally.
 
 ## RStudio on your computer
 
-RStudio.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets, more complicated analysis, or fancier graphics. Over the course of the semester, you should wean yourself off of RStudio.cloud and install all these things locally. This is also important if you want to customize fonts, since RStudio.cloud has extremely limited support for fonts other than Helvetica. 
+RStudio.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets, more complicated analysis, or fancier graphics. 
 
-Here's how you install all these things
+Here's how you install R and RStudio locally
 
 ### Install R
 
 First you need to install R itself (the engine).
 
-1. Go to the CRAN (Collective R Archive Network)^[It's a goofy name, but CRAN is where most R packages—and R itself—lives.] website: <https://cran.r-project.org/>
+1. Go to the CRAN (Collective R Archive Network)^[It's a goofy name, but CRAN is where most R packages—and R itself—lives.] website: [https://cran.r-project.org/](https://cran.r-project.org/){target="_blank"}
 
 2. Click on "Download R for `XXX`", where `XXX` is either Mac, Windows, or Linux:
       ```{r, echo=FALSE, out.width="40%"}
@@ -73,9 +69,9 @@ First you need to install R itself (the engine).
 
 Next, you need to install RStudio, the nicer graphical user interface (GUI) for R (the dashboard). Once R and RStudio are both installed, you can ignore R and only use RStudio. RStudio will use R automatically and you won't ever have to interact with it directly.
 
-1. Go to the free download location on RStudio's website: <https://www.rstudio.com/products/rstudio/download/#download>
+1. Download [RStudio](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}
 
-2. The website should automatically detect your operating system (macOS, Windows , Linux, etc.) and will display a big download button for it:
+2. The website should automatically detect your operating system (macOS, Windows, Linux, etc.) and will display a big download button for it:
 
     ```{r, echo=FALSE, out.width="75%"}
     include_graphics("/img/install/install-r-rstudio-mac.png", error = FALSE)

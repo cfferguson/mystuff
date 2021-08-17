@@ -25,6 +25,7 @@
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#class-slack-account-access&#34;&gt;Class Slack Account Access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#class-software&#34;&gt;Class Software&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#week-1-problem-set&#34;&gt;Week 1 Problem Set&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -60,9 +61,13 @@ tr:nth-child(even) { background: #ffffff;
 &lt;li&gt;Register if you already do not have an account. Note that you do not have to use your WVU account, but its not a bad idea.&lt;/li&gt;
 &lt;li&gt;Head to to the channel &lt;code&gt;#introduce-yourself&lt;/code&gt; and well introduce yourself by tell everyone about yourself, what you hope to achieve out of this course, and something about you that really defines who you are. For example, here is something about me:&lt;br&gt;
 &lt;br&gt;
-&lt;em&gt;I teach data visualization BUT I am also about 40% colorblind!&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;em&gt;I teach data visualization BUT I am also about 40% colorblind&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;(optional) Provide a picture if you are willing. I am a very visual person as are many other people so pictures help a great deal. However, you are not mandated to do so!&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;class-software&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Class Software&lt;/h3&gt;
+&lt;p&gt;Decide whether to sign up for &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-cloud&#34;&gt;RStudio.cloud&lt;/a&gt; or install a &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-on-your-computer&#34;&gt;local copy&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;week-1-problem-set&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Week 1 Problem Set&lt;/h3&gt;
@@ -172,7 +177,7 @@ At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, po
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You just need to know a little math to distinguis colors without ever seeing them&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You just need to know a little math to distinguish colors without ever seeing them&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

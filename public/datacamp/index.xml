@@ -12,5 +12,26 @@
       <link>https://edp613.asocialdatascientist.com/datacamp/</link>
     </image>
     
+    <item>
+      <title>The What and Why of Statistics</title>
+      <link>https://edp613.asocialdatascientist.com/datacamp/01-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/datacamp/01-module/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#data-camp&#34;&gt;Data Camp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;data-camp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data Camp&lt;/h2&gt;
+&lt;p&gt;This week please complete the &lt;strong&gt;Introduction to R&lt;/strong&gt; course on &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Data Camp&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

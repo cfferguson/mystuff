@@ -31,6 +31,314 @@
     </item>
     
     <item>
+      <title>The What and Why of Statistics</title>
+      <link>https://edp613.asocialdatascientist.com/datacamp/01-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/datacamp/01-module/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#data-camp&#34;&gt;Data Camp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;data-camp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data Camp&lt;/h2&gt;
+&lt;p&gt;This week please complete the &lt;strong&gt;Introduction to R&lt;/strong&gt; course on &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Data Camp&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The What and Why of Statistics</title>
+      <link>https://edp613.asocialdatascientist.com/due/01-due/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/due/01-due/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-1-after-class-ends&#34;&gt;What to do for Week 1 after class ends&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-2-before-coming-to-class&#34;&gt;What to do for Week 2 before coming to class&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;what-to-do-for-week-1-after-class-ends&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What to do for Week 1 after class ends&lt;/h3&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Submit
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;vertical-align: middle !important;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Location
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Read &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in the text
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/01-reading/#book-stuff&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Download Chapter 1 Powerpoint and Lecture Textbook Notes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/01-content/#textbook-notes&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Download Chapter 1 Powerpoint and Lecture Chapter Notes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/01-content/#in-class-notes&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Start the &lt;em&gt;Introduction to R&lt;/em&gt; module on Data Camp&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/01-module/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Complete problems 3, 4, 6, 7, and 8 in Chapter 1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/01-tasks/#week-1-problem-set&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Join the class Slack channel after recieving an invite
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/01-tasks/#class-slack-account-access&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Sign up for RStudio.cloud or download and install both R and RStudio
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/01-tasks/#class-software&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-to-do-for-week-2-before-coming-to-class&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What to do for Week 2 before coming to class&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Area
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;vertical-align: middle !important;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Location
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Read &lt;em&gt;The Organization and Graphic Representation of Data&lt;/em&gt; in the text
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/02-readings/#book-stuff&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 640 512&#34; style=&#34;height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M96 64h448v352h64V40c0-22.06-17.94-40-40-40H72C49.94 0 32 17.94 32 40v376h64V64zm528 384H480v-64H288v64H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Download Chapter 1 Powerpoint and Lecture Textbook Notes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/02-content/#textbook-notes&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 352 512&#34; style=&#34;height:1em;width:0.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#4682b4;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; vertical-align: middle !important;&#34;&gt;
+Watch a video on Data Visualization&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/02-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Due in two weeks&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;For preparation.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Optional but recommended&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The What and Why of Statistics</title>
+      <link>https://edp613.asocialdatascientist.com/readings/01-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/readings/01-reading/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#get-some-advice&#34;&gt;Get Some Advice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#review-syllabus&#34;&gt;Review Syllabus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#book-stuff&#34;&gt;Book Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;get-some-advice&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Get Some Advice&lt;/h3&gt;
+&lt;p&gt;First things first:
+&lt;br&gt;
+&lt;br&gt;
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/videos/snoop_syllabus.mp4&#34; width=&#34;320&#34; height=&#34;480&#34; frameBorder=&#34;0&#34;&gt;Read the syllabus.&lt;/iframe&gt;
+&lt;br&gt;
+&lt;br&gt;Far be it from us to disagree with Snoop, so you should probably go read the &lt;a href=&#34;https://edp613.asocialdatascientist.com/syllabus/&#34;&gt;syllabus&lt;/a&gt; as soon as possible!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;review-syllabus&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Review Syllabus&lt;/h3&gt;
+&lt;p&gt;Review the overviews of the other areas as well: &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/&#34;&gt;readings&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/&#34;&gt;data camp&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/&#34;&gt;materials&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/&#34;&gt;tasks&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/due/&#34;&gt;to do list&lt;/a&gt;, and &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/&#34;&gt;resources&lt;/a&gt; pages for this class.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;book-stuff&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Book Stuff&lt;/h3&gt;
+&lt;p&gt;Read Chapter 1: &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in Frankfort-Nachmias and Leon-Guerrero.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/materials/02-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/02-example/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#crash-course-statistics&#34;&gt;Crash Course Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;crash-course-statistics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Crash Course Statistics&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; target=&#34;_blank&#34;&gt;Crash Course Statistics&lt;/a&gt; is a freely available channel on YouTube which covers a range of topics in..well statistics. While I encourage you to watch all of their videos, the ones that really applies to Chapter 2 is one of two discussions on visualizations which you can see below.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hEWY6kkBdpo?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Most weeks I’ll post some external resources that may help you get the overall idea of what we are covering. These are &lt;strong&gt;optional&lt;/strong&gt;, but the presentations are generally engaging and the visuals are created by people who are more talented than me so it may be worth your time.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/readings/02-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/readings/02-reading/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#book-stuff&#34;&gt;Book Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;book-stuff&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Book Stuff&lt;/h3&gt;
+&lt;p&gt;Read Chapter 2: &lt;em&gt;The Organization and Graphic Presentation of Data&lt;/em&gt; in Frankfort-Nachmias and Leon-Guerrero.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Data</title>
       <link>https://edp613.asocialdatascientist.com/resources/data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -52,6 +360,49 @@
     
     <item>
       <title>The What and Why of Statistics</title>
+      <link>https://edp613.asocialdatascientist.com/materials/01-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/01-content/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#textbook-notes&#34;&gt;Textbook Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#in-class-notes&#34;&gt;In Class Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;textbook-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Textbook Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week1/SSDS_Ch1.pptx&#34; target=&#34;_blank&#34;&gt;Chapter 1 PowerPoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week1/SSDS_Ch1.docx&#34; target=&#34;_blank&#34;&gt;Chapter 1 Lecture Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-class-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;In Class Notes&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;posted at class time&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+- Download the class slides: Click on the presentation itself and then you may
+
+  + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
+  + Press the letter **O** at any point to see see a tile view of the slideshow.
+  + Use this [link](/slides/Week 1/Slides-Week-1.html){target=&#34;_blank&#34;} to view a larger version of slideshow in a new window.
+
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 1/Slides-Week-1.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
+
+You can download 
+
+- a [PDF](/slides/Week 1/Slides-Week-1.pdf){target=&#34;_blank&#34;} of the presentation. 
+
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The What and Why of Statistics</title>
       <link>https://edp613.asocialdatascientist.com/tasks/01-tasks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://edp613.asocialdatascientist.com/tasks/01-tasks/</guid>
@@ -63,6 +414,7 @@
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#class-slack-account-access&#34;&gt;Class Slack Account Access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#class-software&#34;&gt;Class Software&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#week-1-problem-set&#34;&gt;Week 1 Problem Set&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -98,9 +450,13 @@ tr:nth-child(even) { background: #ffffff;
 &lt;li&gt;Register if you already do not have an account. Note that you do not have to use your WVU account, but its not a bad idea.&lt;/li&gt;
 &lt;li&gt;Head to to the channel &lt;code&gt;#introduce-yourself&lt;/code&gt; and well introduce yourself by tell everyone about yourself, what you hope to achieve out of this course, and something about you that really defines who you are. For example, here is something about me:&lt;br&gt;
 &lt;br&gt;
-&lt;em&gt;I teach data visualization BUT I am also about 40% colorblind!&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;em&gt;I teach data visualization BUT I am also about 40% colorblind&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;(optional) Provide a picture if you are willing. I am a very visual person as are many other people so pictures help a great deal. However, you are not mandated to do so!&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;class-software&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Class Software&lt;/h3&gt;
+&lt;p&gt;Decide whether to sign up for &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-cloud&#34;&gt;RStudio.cloud&lt;/a&gt; or install a &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-on-your-computer&#34;&gt;local copy&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;week-1-problem-set&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Week 1 Problem Set&lt;/h3&gt;
@@ -210,8 +566,51 @@ At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, po
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You just need to know a little math to distinguis colors without ever seeing them&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You just need to know a little math to distinguish colors without ever seeing them&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/materials/02-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/02-content/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#textbook-notes&#34;&gt;Textbook Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#in-class-notes&#34;&gt;In Class Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;textbook-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Textbook Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week2/SSDS_Ch2.pptx&#34; target=&#34;_blank&#34;&gt;Chapter 2 PowerPoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week2/SSDS_Ch2.docx&#34; target=&#34;_blank&#34;&gt;Chapter 2 Lecture Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-class-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;In Class Notes&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;posted at class time&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+- Download the class slides: Click on the presentation itself and then you may
+
+  + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
+  + Press the letter **O** at any point to see see a tile view of the slideshow.
+  + Use this [link](/slides/Week 2/Slides-Week-2.html){target=&#34;_blank&#34;} to view a larger version of slideshow in a new window.
+
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 2/Slides-Week-2.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
+
+You can download 
+
+- a [PDF](/slides/Week 2/Slides-Week-2.pdf){target=&#34;_blank&#34;} of the presentation. 
+
+--&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -325,18 +724,17 @@ At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, po
 &lt;p&gt;You will do all of your work in this class with the open source (and free!) programming language &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt;. You will use &lt;a href=&#34;https://www.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt; as the main program to access R. Think of R as an engine and RStudio as a car dashboard—R handles all the calculations and the actual statistics, while RStudio provides a nice interface for running R code.&lt;/p&gt;
 &lt;div id=&#34;rstudio.cloud&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;RStudio.cloud&lt;/h2&gt;
-&lt;p&gt;R is free, but it can sometimes be a pain to install and configure. To make life easier, you can use the free &lt;a href=&#34;http://rstudio.cloud/&#34; target=&#34;_blank&#34;&gt;RStudio.cloud&lt;/a&gt; service &lt;em&gt;initially&lt;/em&gt;, which lets you run a full instance of RStudio in your web browser. This means you won’t have to install anything on your computer to get started with R! We will have a shared class workspace in RStudio.cloud that will let you quickly copy templates for labs and problem sets.&lt;/p&gt;
-&lt;p&gt;Go to &lt;a href=&#34;https://rstudio.cloud/&#34; class=&#34;uri&#34;&gt;https://rstudio.cloud/&lt;/a&gt; and create an account. You’ll receive a link to join the shared class workspace separately. If you don’t get this link, let me know and I will invite you.&lt;/p&gt;
+&lt;p&gt;Both R and RStudio are free, but it can sometimes be a pain to install and configure. To make life easier, you can use the free version of &lt;a href=&#34;http://rstudio.cloud/&#34; target=&#34;_blank&#34;&gt;RStudio.cloud&lt;/a&gt; which lets you run a full instance of RStudio in your web browser with some limited capacity. However this means you won’t have to install anything on your computer to get started with R. Over the course of the semester, you may want to wean yourself off of the service and install both R and RStudio these things locally.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;rstudio-on-your-computer&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;RStudio on your computer&lt;/h2&gt;
-&lt;p&gt;RStudio.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets, more complicated analysis, or fancier graphics. Over the course of the semester, you should wean yourself off of RStudio.cloud and install all these things locally. This is also important if you want to customize fonts, since RStudio.cloud has extremely limited support for fonts other than Helvetica.&lt;/p&gt;
-&lt;p&gt;Here’s how you install all these things&lt;/p&gt;
+&lt;p&gt;RStudio.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets, more complicated analysis, or fancier graphics.&lt;/p&gt;
+&lt;p&gt;Here’s how you install R and RStudio locally&lt;/p&gt;
 &lt;div id=&#34;install-r&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Install R&lt;/h3&gt;
 &lt;p&gt;First you need to install R itself (the engine).&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Go to the CRAN (Collective R Archive Network)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; website: &lt;a href=&#34;https://cran.r-project.org/&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go to the CRAN (Collective R Archive Network)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; website: &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34;&gt;https://cran.r-project.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Click on “Download R for &lt;code&gt;XXX&lt;/code&gt;”, where &lt;code&gt;XXX&lt;/code&gt; is either Mac, Windows, or Linux:
 &lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/install-r-links.png&#34; width=&#34;40%&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -362,8 +760,8 @@ At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, po
 &lt;h3&gt;Install RStudio&lt;/h3&gt;
 &lt;p&gt;Next, you need to install RStudio, the nicer graphical user interface (GUI) for R (the dashboard). Once R and RStudio are both installed, you can ignore R and only use RStudio. RStudio will use R automatically and you won’t ever have to interact with it directly.&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Go to the free download location on RStudio’s website: &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/#download&#34; class=&#34;uri&#34;&gt;https://www.rstudio.com/products/rstudio/download/#download&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The website should automatically detect your operating system (macOS, Windows , Linux, etc.) and will display a big download button for it:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Download &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/#download&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The website should automatically detect your operating system (macOS, Windows, Linux, etc.) and will display a big download button for it:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/install-r-rstudio-mac.png&#34; width=&#34;75%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/install-r-rstudio-windows.png&#34; width=&#34;75%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;If not, scroll down a little to the large table and choose the version of RStudio that matches your operating system.&lt;/p&gt;
@@ -1653,15 +2051,15 @@ Data Camp
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-R/RStudio Training modules created by Data Camp.
+R/RStudio Training modules.
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;font-weight: bold;&#34;&gt;
-Examples
+Materials
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/examples/&#34;&gt;Go&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/&#34;&gt;Go&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 352 512&#34; style=&#34;height:17px;width:11.69px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#eb7b59;overflow:visible;position:relative;&#34;&gt;
@@ -1669,7 +2067,7 @@ Examples
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-Interactive R lessons and additional materials.
+Interactive R lessons, examples, and other things.
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1690,7 +2088,7 @@ Weekly tasks and deliverables.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;font-weight: bold;&#34;&gt;
-Due
+To Do List
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/due/&#34;&gt;Go&lt;/a&gt;
@@ -1707,7 +2105,7 @@ Weekly submission information.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/center&gt;
-&lt;p&gt;&lt;span style=&#34;font-size:17px&#34;&gt;&lt;em&gt;Note: Assignments are due by&lt;/em&gt; &lt;strong&gt;&lt;em&gt;the beginning of class time each Thursday at 4:00 PM&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;unless otherwise noted.&lt;/em&gt;&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-size:17px&#34;&gt;&lt;em&gt;Note: Homeworks are due by&lt;/em&gt; &lt;strong&gt;&lt;em&gt;the beginning of class time each Thursday at 4:00 PM&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;unless otherwise noted.&lt;/em&gt;&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;hr style&#34;width:50%; margin-left:25% !important; margin-right:25% !important;&#34; /&gt;
@@ -1718,13 +2116,32 @@ Weekly submission information.
     &lt;tbody&gt;
         &lt;tr&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:18%;text-align:right&#34;&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:50%;text-align:left&#34;&gt;&lt;span class=&#34;fake-header-table&#34;&gt;Concentration&lt;/span&gt;&lt;/td&gt;
+            &lt;td style=&#34;width:50%;text-align:left&#34;&gt;&lt;span class=&#34;fake-header-table&#34;&gt;Content&lt;/span&gt;&lt;/td&gt;
 
             &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Readings&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Lesson&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Example&lt;/td&gt;
-            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Assignment&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Data Camp&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Materials&lt;/td&gt;
+            &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Tasks&lt;/td&gt;
             &lt;td style=&#34;width:8%;text-align:center;font-weight:bold&#34;&gt;Due&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&#34;right&#34; style=&#34;width:18%;text-align:right&#34;&gt;August 19, 2021&lt;/td&gt;
+            &lt;td style=&#34;width:50%;text-align:left&#34;&gt;The What and Why of Statistics&lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/01-reading/&#34;&gt;
+              &lt;font color=&#34;739670&#34;&gt;
+                    &lt;i class=&#34;fas fa-book fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/01-module/&#34;&gt;
+              &lt;font color=&#34;76487&#34;&gt;
+                    &lt;i class=&#34;fas fa-chalkboard fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/01-content/&#34;&gt;
+              &lt;font color=&#34;eb7b59&#34;&gt;
+                    &lt;i class=&#34;fas fa-lightbulb fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/01-homework/&#34;&gt;
+              &lt;font color=&#34;cf4647&#34;&gt;
+                    &lt;i class=&#34;fas fa-tasks fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/due/01-due/&#34;&gt;
+              &lt;font color=&#34;2a6e84&#34;&gt;
+                    &lt;i class=&#34;fas fa-folder-open fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
         &lt;/tr&gt;
 
     &lt;/tbody&gt;
@@ -1871,7 +2288,7 @@ Weekly submission information.
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;div id=&#34;r-and-rstudio&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;R and RStudio&lt;/h4&gt;
-&lt;p&gt;You will do all of your analysis with the open source (and free!) programming language &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt;. You will use &lt;a href=&#34;https://www.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt; as the main program to access R. &lt;strong&gt;Think of R as an engine and RStudio as a car dashboard&lt;/strong&gt; — R handles all the calculations produces the actual statistics and graphical output, while RStudio provides a nice interface for running R code. Please note that&lt;/p&gt;
+&lt;p&gt;You will do all of your analysis with the open source (and free!) programming language &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt;. You will use &lt;a href=&#34;https://www.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt; as the main program to access R. Think of R as an engine and RStudio as a car dashboard — R handles all the calculations produces the actual statistics and graphical output, while RStudio provides a nice interface for running R code. Please note that&lt;/p&gt;
 &lt;div class=&#34;text-center&#34;&gt;
 &lt;p&gt;&lt;strong&gt;you do not need to have any programming experience to use R&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;

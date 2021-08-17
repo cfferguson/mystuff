@@ -11,13 +11,13 @@ main:
   - name: Data Camp
     url: /datacamp/
     weight: 4
-  - name: Examples
-    url: /examples/
+  - name: Materials
+    url: /materials/
     weight: 5
   - name: Tasks
     url: /tasks/
     weight: 6
-  - name: Everything Due
+  - name: To Do List
     url: /due/
     weight: 7
   - name: Resources
@@ -41,15 +41,17 @@ readings:
 datacamp:
   - name: Overview
     weight: 1
-  - name: Lessons
+  - name: Modules
     weight: 2
-examples:
+materials:
   - name: Overview
     weight: 1
-  - name: R Walkthroughs
+  - name: Content
     weight: 2
-  - name: Extra Material
+  - name: R Walkthroughs
     weight: 3
+  - name: Examples
+    weight: 4
 tasks:
   - name: Overview
     weight: 1
@@ -62,7 +64,7 @@ tasks:
 due:
   - name: Overview
     weight: 1
-  - name: Week
+  - name: To Do
     weight: 2
 resources:
   - name: Overview
