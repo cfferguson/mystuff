@@ -69,7 +69,7 @@ You will do all of your analysis with the open source (and free!) programming la
 **you do not need to have any programming experience to use R**
 </div>
 
-R is free, but it can sometimes be a task to install and configure. To make life easier, you can opt to use the free [RStudio.cloud](http://rstudio.cloud/){target="_blank"} service, which lets you run a full instance of RStudio in your web browser. This is recommended for those of you who do not want to install programs right now, but please note that you will most likely have to download the desktop version in the near future.
+R is free, but it can sometimes be a task to install and configure. To make life easier, you can opt to use the free [RStudio.cloud](http://rstudio.cloud/){target="_blank"} service, which lets you run a full instance of RStudio in your web browser.
 
 The service is convenient, but please keep in mind that it can be slow and is not designed to handle large data sets or more complicated analysis and graphics. You also cannot customize much with RStudio.cloud. Over the course of the term, you'll want to get around to installing R, RStudio, and other R packages on your computer and wean yourself off of RStudio.cloud.
 
@@ -85,7 +85,7 @@ But there are multiple resources online to help.
 
 - Second two of the most important are [StackOverflow](https://stackoverflow.com/){target="_blank"} (a Q&A site with hundreds of thousands of answers to all sorts of programming questions) and [RStudio Community](https://community.rstudio.com/){target="_blank"} (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)). I freely admit that StackOverflow has saved me multiple hours of frustration. Just note if you have a syntax or process issue, both sites require you to produce a [minimally reproducible example](https://stackoverflow.com/help/minimal-reproducible-example){target="_blank"}.
 
-- Third using Twitter you can post R-related questions and content with [#rstats](https://twitter.com/search?q=%23rstats){target="_blank"}. The community there is exceptionally generous and helpful.
+- Third using Twitter you can post R-related questions and content with [#rstats](https://twitter.com/search?q=%23rstats){target="_blank"}. The community there is exceptionally helpful.
 
 - Fourth searching for help with R on Google (or another indexed search site) can sometimes be tricky because the program name is,for a lack of a better explanation, a single letter. 
 - Fifth we have a class chatroom which may be accessed via [Slack](https://2021edp613.slack.com){target="_blank"} where you can poise a question. **I will monitor Slack regularly and will respond relatively quickly.** Ask questions about the readings, exercises, and other course materials. You'll likely have similar questions as your peers and may be able to answer other peoples' questions too.
