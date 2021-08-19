@@ -14,14 +14,14 @@ editor_options:
   chunk_output_type: console
 ---
 
-### Textbook Notes
+### Textbook Notes and Presentation
 
 - [Chapter 1 PowerPoint](/lecture_notes/Week 1/SSDS_Ch1.pptx){target="_blank"} 
 - [Chapter 1 Lecture Notes](/lecture_notes/Week 1/SSDS_Ch1.docx){target="_blank"}
 
-### In Class Notes
+### In-class Presentation
 
-- Download the class slides: Click on the presentation itself and then you may
+- Click on the presentation itself and then you may
 
   + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
   + Press the letter **O** at any point to see see a tile view of the slideshow.
@@ -31,6 +31,4 @@ editor_options:
 knitr::include_url("/slides/Week 1/Slides-Week-1.html")
 ```
 
-You can download 
-
-- a [PDF](/slides/Week 1/Slides-Week-1.pdf){target="_blank"} of the presentation. 
+You can also download a copy of the presentation as a [PDF](/slides/Week 1/Slides-Week-1.pdf){target="_blank"}. 
