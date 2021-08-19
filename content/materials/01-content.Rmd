@@ -21,8 +21,6 @@ editor_options:
 
 ### In Class Notes
 
-*posted at class time*
-
 - Download the class slides: Click on the presentation itself and then you may
 
   + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.

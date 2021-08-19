@@ -69,25 +69,6 @@ qualquanidsol <-
   
 
 
-## ---- echo=FALSE--------------------------------------------------
-qualquanidsol %>%
-  kbl(col.names = c("", "Situation", "Type"), 
-      "html", 
-      escape = FALSE,
-      align = 'cll') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "5em") %>%
-  column_spec(2, width = "40em") %>%
-  column_spec(3, width = "20em") %>%
-  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
-  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
-  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
-  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")  %>%
-  row_spec(4, background = "#212121")
-
-
 ## ----eval = TRUE, echo = FALSE------------------------------------
 
 levels <- 
