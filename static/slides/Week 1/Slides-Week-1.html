@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The What and the Why of Statistics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Week 1" />
+    <script src="Slides-Week-1_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-Week-1_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-1_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-Week-1_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-Week-1_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <script src="Slides-Week-1_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="Slides-Week-1_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The What and the Why of Statistics
+## EDP 613
+### Week 1
+
+---
+
+
+
+
+
+
+
+
+# Basic Ideas
+
+&gt;- **Parameter** - A number describing an entire *population* 
+
+--
+
+&gt;- **Statistic** - A number describing a slice, or a *sample* of a *population* 
+
+---
+
+# Polar Views of the World
+
+**Frequentist Statisticians** believe that there is one and only one correct parameter that can be found by using multiple samples.
+
+  - parameters are fixed and data vary
+  - there is a single truth that can be found with enough indicators
+  - only objectibity can be used
+
+--
+
+**Bayesian Statisticians** believe that multiple parameters exist which are all based on varying probabilities.
+
+  - parameters vary and the data is fixed
+  - there are multiple truths and getting to any one is based on chance
+  - subjectivity is a built feature
+  
+---
+
+# Learning Statistics
+
+- You likely do not know enough about probability so for now assume that the frequentist point-of-view is correct. 
+
+--
+
+- It is easier to begin to learn statistics if you don't have to consider multiple outcomes in superposition.
+
+--
+
+- We will come back to the Bayesian vs. Frequentist arguement
+
+---
+
+# Start
+
+**Descriptive Statistics** - Mathematical techniques for organizing and summarizing a set of numerical data
+
+--
+
+# Finish
+
+**Inferential Statistics** - Generalizing from a sample to a population
+
+---
+
+# Definitions
+
+- Information is collected on *elements* or *individuals*
+
+--
+
+- The characteristics of the individuals about which we
+collect information are called *variables*
+
+--
+
+- The values of the variables that we obtain are called
+*data*
+
+---
+
+# Overarching Types of Data
+
+- *Qualitative variables* (aka *categorical variables*) classify
+elements into categories.
+
+--
+
+- *Quantitative variables* tell how much or how many of
+something there is.
+
+---
+
+# Example 
+
+Which of the following variables are qualitative and which
+are quantitative?
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The name of the schools in your district. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; The number of schools in your district. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The amount of each ingredient in a cake. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; The ingredients in a cake. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Solution 
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The name of the schools in your district. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Qualitative &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; The number of schools in your district. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Quantitative &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The amount of each ingredient in a cake. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Quantitative &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; The ingredients in a cake. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt; Qualitative &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Levels of Measurement
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt; Nominal &lt;/th&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt; Ordinal &lt;/th&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt; Interval &lt;/th&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt; Ratio &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; Naming, labeling, or classifying observations &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Ranks categories in order &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; Known equal intervals &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; vertical-align: middle !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; Includes a natural zero point &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 20em; background-color: #212121 !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ffffff;overflow:visible;position:relative;"&gt;&lt;path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Note
+
+Your textbook pools interval and ratio together as *interval-ratio*.
+
+---
+
+# Example 
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The (typical) letter grade distribution in a school &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Toppings on a cheeseburger &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Social economic status &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; A telephone number &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; Time &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; "&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Solution 
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; The (typical) letter grade distribution in a school &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Ordinal &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Toppings on a cheeseburger &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Nominal &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Social economic status &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Ordinal &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; A telephone number &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt; Ordinal &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; Time &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; "&gt; Interval Ratio &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Discrete and Continuous
+
+- *Discrete variables* are quantitative variables whose
+possible values can be listed
+  - possibly infinite
+  - obtained by counting
+
+- *Continuous variables* are quantitative variables that can take on any value in some interval.
+  - possibly infinite
+  - obtained by measuring
+  
+---
+
+# Example 
+
+Which of the following variables are discrete or continuous?
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Time it takes to get to school &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Water temperature &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Ratings on a 5-point rating scale &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; Number of cars currently in a parking lot &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+# Solution 
+
+
+
+&lt;center&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;vertical-align: middle !important;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Situation &lt;/th&gt;
+   &lt;th style="text-align:left;vertical-align: middle !important;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Time it takes to get to school &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Continuous &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;background-color: #212121 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Water temperature &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;background-color: #212121 !important;"&gt; Continuous &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; vertical-align: middle !important;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; vertical-align: middle !important;"&gt; Ratings on a 5-point rating scale &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; vertical-align: middle !important;"&gt; Discrete &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 5em; background-color: #212121 !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #212121 !important;"&gt; Number of cars currently in a parking lot &lt;/td&gt;
+   &lt;td style="text-align:left;width: 20em; background-color: #212121 !important;"&gt; Discrete &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+---
+
+## That's it. Take a break before our R session!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

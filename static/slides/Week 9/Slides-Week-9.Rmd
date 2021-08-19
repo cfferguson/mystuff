@@ -22,7 +22,6 @@ xaringanthemer::style_duo(
   header_font_google = xaringanthemer::google_font("Jost", "600"),
   text_font_google   = xaringanthemer::google_font("Jost", "400")
 )
-
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 

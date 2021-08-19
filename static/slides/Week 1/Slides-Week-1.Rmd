@@ -1,0 +1,496 @@
+---
+title: "The What and the Why of Statistics"
+subtitle: "EDP 613"
+author: "Week 1"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+---
+
+```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(clt)
+```
+
+```{r echo = FALSE, purl=FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#bff4ee",
+  header_font_google = xaringanthemer::google_font("Jost", "600"),
+  text_font_google   = xaringanthemer::google_font("Jost", "400")
+)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
+
+checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
+```
+
+# Basic Ideas
+
+>- **Parameter** - A number describing an entire *population* 
+
+--
+
+>- **Statistic** - A number describing a slice, or a *sample* of a *population* 
+
+---
+
+# Polar Views of the World
+
+**Frequentist Statisticians** believe that there is one and only one correct parameter that can be found by using multiple samples.
+
+  - parameters are fixed and data vary
+  - there is a single truth that can be found with enough indicators
+  - only objectibity can be used
+
+--
+
+**Bayesian Statisticians** believe that multiple parameters exist which are all based on varying probabilities.
+
+  - parameters vary and the data is fixed
+  - there are multiple truths and getting to any one is based on chance
+  - subjectivity is a built feature
+  
+---
+
+# Learning Statistics
+
+- You likely do not know enough about probability so for now assume that the frequentist point-of-view is correct. 
+
+--
+
+- It is easier to begin to learn statistics if you don't have to consider multiple outcomes in superposition.
+
+--
+
+- We will come back to the Bayesian vs. Frequentist arguement
+
+---
+
+# Start
+
+**Descriptive Statistics** - Mathematical techniques for organizing and summarizing a set of numerical data
+
+--
+
+# Finish
+
+**Inferential Statistics** - Generalizing from a sample to a population
+
+---
+
+# Definitions
+
+- Information is collected on *elements* or *individuals*
+
+--
+
+- The characteristics of the individuals about which we
+collect information are called *variables*
+
+--
+
+- The values of the variables that we obtain are called
+*data*
+
+---
+
+# Overarching Types of Data
+
+- *Qualitative variables* (aka *categorical variables*) classify
+elements into categories.
+
+--
+
+- *Quantitative variables* tell how much or how many of
+something there is.
+
+---
+
+# Example 
+
+Which of the following variables are qualitative and which
+are quantitative?
+
+```{r eval = TRUE, echo = FALSE}
+
+qualquanid <- 
+  tibble(
+    
+    Item <- c("1","2","3","4"),
+    
+    Situation <- c("The name of the schools in your district.",
+                   "The number of schools in your district.",
+                   "The amount of each ingredient in a cake.",
+                   "The ingredients in a cake."),
+    
+    Type <- c("",
+              "",
+              "",
+              ""),
+    
+      .name_repair = "minimal"
+    
+)
+
+```
+
+<center>
+```{r, echo=FALSE}
+qualquanid %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121") %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Solution 
+
+```{r eval = TRUE, echo = FALSE}
+
+qualquanidsol <- 
+  tibble(
+    
+    Item <- c("1","2","3","4"),
+    
+    Situation <- c("The name of the schools in your district.",
+                   "The number of schools in your district.",
+                   "The amount of each ingredient in a cake.",
+                   "The ingredients in a cake."),
+    
+    Type <- c("Qualitative",
+              "Quantitative",
+              "Quantitative",
+              "Qualitative"),
+    
+      .name_repair = "minimal"
+    
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+qualquanidsol %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121")  %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Levels of Measurement
+
+```{r eval = TRUE, echo = FALSE}
+
+levels <- 
+  tibble(
+  
+  Characteristic <- c("Naming, labeling, or classifying observations", 
+                    "Ranks categories in order",
+                    "Known equal intervals",
+                    "Includes a natural zero point"),
+  
+  Nominal <- c(checked,
+               "",
+               "",
+               ""),
+  
+  Ordinal <- c(checked,
+               checked,
+               "",
+               ""),
+  
+  Interval <- c(checked,
+                checked,
+                checked,
+                ""),
+  
+  Ratio <- c(checked,
+             checked,
+             checked,
+             checked),
+  
+  .name_repair = "minimal"
+  
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+levels %>%
+  kbl(col.names = c("", "Nominal", "Ordinal", "Interval", "Ratio"), 
+      "html", 
+      escape = FALSE,
+      align = 'cccc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "20em") %>%
+  column_spec(4, width = "20em") %>%
+  column_spec(5, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121")  %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Note
+
+Your textbook pools interval and ratio together as *interval-ratio*.
+
+---
+
+# Example 
+
+```{r eval = TRUE, echo = FALSE}
+
+nomordir <- 
+  tibble(
+    
+    Item <- c("1","2","3","4","5"),
+    
+    Situation <- c("The (typical) letter grade distribution in a school",
+                   "Toppings on a cheeseburger",
+                   "Social economic status",
+                   "A telephone number",
+                   "Time"),
+    
+      Type <- c("",
+              "",
+              "",
+              "",
+              ""),
+    
+      .name_repair = "minimal"
+    
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+nomordir %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121")  %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Solution 
+
+```{r eval = TRUE, echo = FALSE}
+
+nomordir_sol <- 
+  tibble(
+    
+    Item <- c("1","2","3","4","5"),
+    
+    Situation <- c("The (typical) letter grade distribution in a school",
+                   "Toppings on a cheeseburger",
+                   "Social economic status",
+                   "A telephone number",
+                   "Time"),
+    
+    Type <- c("Ordinal",
+              "Nominal",
+              "Ordinal",
+              "Ordinal",
+              "Interval Ratio"),
+    
+      .name_repair = "minimal"
+    
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+nomordir_sol %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121")  %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Discrete and Continuous
+
+- *Discrete variables* are quantitative variables whose
+possible values can be listed
+  - possibly infinite
+  - obtained by counting
+
+- *Continuous variables* are quantitative variables that can take on any value in some interval.
+  - possibly infinite
+  - obtained by measuring
+  
+---
+
+# Example 
+
+Which of the following variables are discrete or continuous?
+
+```{r eval = TRUE, echo = FALSE}
+
+disccont <- 
+  tibble(
+    
+    Item <- c("1","2","3","4"),
+    
+    Situation <- c("Time it takes to get to school",
+                   "Water temperature",
+                   "Ratings on a 5-point rating scale",
+                   "Number of cars currently in a parking lot"),
+    
+    Type <- c("",
+              "",
+              "",
+              ""),
+    
+      .name_repair = "minimal"
+    
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+disccont %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121")  %>%
+  row_spec(4, background = "#212121")
+```
+</center>
+
+---
+
+# Solution 
+
+```{r eval = TRUE, echo = FALSE}
+
+disccont_sol <- 
+  tibble(
+    
+    Item <- c("1","2","3","4"),
+    
+     Situation <- c("Time it takes to get to school",
+                   "Water temperature",
+                   "Ratings on a 5-point rating scale",
+                   "Number of cars currently in a parking lot"),
+    
+    Type <- c("Continuous",
+              "Continuous",
+              "Discrete",
+              "Discrete"),
+    
+      .name_repair = "minimal"
+    
+)
+  
+```
+
+<center>
+```{r, echo=FALSE}
+disccont_sol %>%
+  kbl(col.names = c("", "Situation", "Type"), 
+      "html", 
+      escape = FALSE,
+      align = 'cll') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "40em") %>%
+  column_spec(3, width = "20em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121") %>%
+  row_spec(4, background = "#212121") 
+```
+</center>
+
+---
+
+## That's it. Take a break before our R session!
