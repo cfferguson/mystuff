@@ -16,8 +16,8 @@ editor_options:
 
 ### Textbook Notes
 
-- [Chapter 1 PowerPoint](/lecture_notes/Week1/SSDS_Ch1.pptx){target="_blank"} 
-- [Chapter 1 Lecture Notes](/lecture_notes/Week1/SSDS_Ch1.docx){target="_blank"}
+- [Chapter 1 PowerPoint](/lecture_notes/Week 1/SSDS_Ch1.pptx){target="_blank"} 
+- [Chapter 1 Lecture Notes](/lecture_notes/Week 1/SSDS_Ch1.docx){target="_blank"}
 
 ### In Class Notes
 
