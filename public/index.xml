@@ -31,6 +31,42 @@
     </item>
     
     <item>
+      <title>Some of the Answers to Some of Your Network Questions</title>
+      <link>https://edp613.asocialdatascientist.com/readings/01-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/readings/01-reading/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#get-some-advice&#34;&gt;Get Some Advice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#review-syllabus&#34;&gt;Review Syllabus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#book-stuff&#34;&gt;Book Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;get-some-advice&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Get Some Advice&lt;/h3&gt;
+&lt;p&gt;First things first:
+&lt;br&gt;
+&lt;br&gt;
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/videos/snoop_syllabus.mp4&#34; width=&#34;320&#34; height=&#34;480&#34; frameBorder=&#34;0&#34;&gt;Read the syllabus.&lt;/iframe&gt;
+&lt;br&gt;
+&lt;br&gt;Far be it from us to disagree with Snoop, so you should probably go read the &lt;a href=&#34;https://edp613.asocialdatascientist.com/syllabus/&#34;&gt;syllabus&lt;/a&gt; as soon as possible!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;review-syllabus&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Review Syllabus&lt;/h3&gt;
+&lt;p&gt;Review the overviews of the other areas as well: &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/&#34;&gt;readings&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/&#34;&gt;data camp&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/&#34;&gt;materials&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/&#34;&gt;tasks&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/due/&#34;&gt;to do list&lt;/a&gt;, and &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/&#34;&gt;resources&lt;/a&gt; pages for this class.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;book-stuff&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Book Stuff&lt;/h3&gt;
+&lt;p&gt;Read Chapter 1: &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in Frankfort-Nachmias and Leon-Guerrero.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>The What and Why of Statistics</title>
       <link>https://edp613.asocialdatascientist.com/datacamp/01-module/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -246,42 +282,6 @@ Watch a video on Data Visualization&lt;a href=&#34;#fn3&#34; class=&#34;footnote
 &lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;For preparation.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Optional but recommended&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The What and Why of Statistics</title>
-      <link>https://edp613.asocialdatascientist.com/readings/01-reading/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://edp613.asocialdatascientist.com/readings/01-reading/</guid>
-      <description>
-&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#get-some-advice&#34;&gt;Get Some Advice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#review-syllabus&#34;&gt;Review Syllabus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#book-stuff&#34;&gt;Book Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;get-some-advice&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Get Some Advice&lt;/h3&gt;
-&lt;p&gt;First things first:
-&lt;br&gt;
-&lt;br&gt;
-&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/videos/snoop_syllabus.mp4&#34; width=&#34;320&#34; height=&#34;480&#34; frameBorder=&#34;0&#34;&gt;Read the syllabus.&lt;/iframe&gt;
-&lt;br&gt;
-&lt;br&gt;Far be it from us to disagree with Snoop, so you should probably go read the &lt;a href=&#34;https://edp613.asocialdatascientist.com/syllabus/&#34;&gt;syllabus&lt;/a&gt; as soon as possible!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;review-syllabus&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Review Syllabus&lt;/h3&gt;
-&lt;p&gt;Review the overviews of the other areas as well: &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/&#34;&gt;readings&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/&#34;&gt;data camp&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/&#34;&gt;materials&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/&#34;&gt;tasks&lt;/a&gt;, &lt;a href=&#34;https://edp613.asocialdatascientist.com/due/&#34;&gt;to do list&lt;/a&gt;, and &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/&#34;&gt;resources&lt;/a&gt; pages for this class.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;book-stuff&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Book Stuff&lt;/h3&gt;
-&lt;p&gt;Read Chapter 1: &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in Frankfort-Nachmias and Leon-Guerrero.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -2216,7 +2216,7 @@ Weekly submission information.
             &lt;li&gt;&lt;i class=&#34;fas fa-user fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://lshd.wvu.edu/faculty-staff/roy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Dr. Abhik Roy&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fas fa-university fa-fw&#34;&gt;&lt;/i&gt; Allen Hall 504O&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fas fa-envelope fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;mailto:Abhik.Roy@mail.wvu.edu&#34;&gt; Abhik.Roy@mail.wvu.edu&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;i class=&#34;fab fa-twitter fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://twitter.com/DrTheoreticalPE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; @DrTheoreticalPE&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;i class=&#34;fab fa-twitter fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://twitter.com/asocialdatasci&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; @asocialdatasci&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fas fa-calendar-check fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://calendly.com/nopiecharts/short30&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Schedule an appointment&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
@@ -2228,7 +2228,7 @@ Weekly submission information.
             &lt;li&gt;&lt;i class=&#34;far fa-calendar fa-fw&#34;&gt;&lt;/i&gt; Forever aka for the next 16 weeks&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;far fa-calendar-alt fa-fw&#34;&gt;&lt;/i&gt; August 18 - December 17&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;far fa-clock fa-fw&#34;&gt;&lt;/i&gt; Thursdays from 4:00-6:50 PM&lt;/li&gt;
-            &lt;li&gt;&lt;i class=&#34;fas fa-university fa-fw&#34;&gt;&lt;/i&gt; Allen Hall 510&lt;/li&gt;
+            &lt;li&gt;&lt;i class=&#34;fas fa-university fa-fw&#34;&gt;&lt;/i&gt; Allen Hall 808&lt;/li&gt;
             &lt;li&gt;&lt;i class=&#34;fab fa-slack fa-fw&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://2021edp613.slack.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slack&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
@@ -2298,11 +2298,11 @@ Weekly submission information.
 &lt;p&gt;Data science and statistical programming can be difficult. Computers are stupid and its always the tiny errors in your coding can result in tons of headache. People working in any syntax based software package at any level experience this!&lt;/p&gt;
 &lt;p&gt;But there are multiple resources online to help.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;First you will have access to &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Data Camp&lt;/a&gt; which allows you to relieve professional training that otherwise costs a lot of money. Is it perfect and flashy? Nope but it is interactive and if you pay attention, then R’s initial steep learning curve won’t feel like an uphill battle.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Second two of the most important are &lt;a href=&#34;https://stackoverflow.com/&#34; target=&#34;_blank&#34;&gt;StackOverflow&lt;/a&gt; (a Q&amp;amp;A site with hundreds of thousands of answers to all sorts of programming questions) and &lt;a href=&#34;https://community.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio Community&lt;/a&gt; (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)). I freely admit that StackOverflow has saved me multiple hours of frustration. Just note if you have a syntax or process issue, both sites require you to produce a &lt;a href=&#34;https://stackoverflow.com/help/minimal-reproducible-example&#34; target=&#34;_blank&#34;&gt;minimally reproducible example&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Third using Twitter you can post R-related questions and content with &lt;a href=&#34;https://twitter.com/search?q=%23rstats&#34; target=&#34;_blank&#34;&gt;#rstats&lt;/a&gt;. The community there is exceptionally helpful.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Fourth searching for help with R on Google (or another indexed search site) can sometimes be tricky because the program name is,for a lack of a better explanation, a single letter.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Fifth we have a class chatroom which may be accessed via &lt;a href=&#34;https://2021edp613.slack.com&#34; target=&#34;_blank&#34;&gt;Slack&lt;/a&gt; where you can poise a question. &lt;strong&gt;I will monitor Slack regularly and will respond relatively quickly.&lt;/strong&gt; Ask questions about the readings, exercises, and other course materials. You’ll likely have similar questions as your peers and may be able to answer other peoples’ questions too.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You will have access to &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Data Camp&lt;/a&gt; which allows you to relieve professional training that otherwise costs a lot of money. Is it perfect and flashy? Nope but it is interactive and if you pay attention, then R’s initial steep learning curve won’t feel like an uphill battle.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sites such as &lt;a href=&#34;https://stackoverflow.com/&#34; target=&#34;_blank&#34;&gt;StackOverflow&lt;/a&gt; (a Q&amp;amp;A site with hundreds of thousands of answers to all sorts of programming questions) and &lt;a href=&#34;https://community.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio Community&lt;/a&gt; (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)). I freely admit that StackOverflow has saved me multiple hours of frustration. Just note if you have a syntax or process issue, both sites require you to produce a &lt;a href=&#34;https://stackoverflow.com/help/minimal-reproducible-example&#34; target=&#34;_blank&#34;&gt;minimally reproducible example&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use Twitter to post R-related questions and content with &lt;a href=&#34;https://twitter.com/search?q=%23rstats&#34; target=&#34;_blank&#34;&gt;#rstats&lt;/a&gt;. The community there is exceptionally helpful.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Searching for help with R on Google (or another indexed search site) can sometimes be tricky because the program name is,for a lack of a better explanation, a single letter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The class chatroom at &lt;a href=&#34;http://2021edp613.slack.com&#34; target=&#34;_blank&#34;&gt;Slack&lt;/a&gt; where you can poise a question. &lt;strong&gt;I will monitor Slack regularly and will respond quickly.&lt;/strong&gt; (This is a rare instances where I keep notifications on so please utilize it!) Ask questions about the readings, exercises, and mini projects. You’ll likely have similar questions as your peers, and you’ll likely be able to answer other peoples’ questions too.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Sixth and lastly you can send items by Slack or email me with questions about content, R or whatever (after giving a graduate student effort of course). Please include the subject header &lt;strong&gt;EDP 613 “the title of your email”&lt;/strong&gt; where the title of your email is given without the quotes. Know that I will not just give you the answer, but am happy to push you in the right direction. If you do email me, please include the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A brief description of the problem and what you have done thus far including the line number of the issue (if applicable).&lt;/li&gt;
@@ -2421,7 +2421,7 @@ Range
 A
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
-90–100%
+&amp;gt; 90%
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;

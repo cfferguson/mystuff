@@ -31,7 +31,8 @@ gapminder_plot <-
   ggplot(OrchardSprays, aes(x=decrease,y=treatment,fill=treatment))+
   geom_density_ridges_gradient(scale=2.3,
                                show.legend = FALSE, 
-                               color = "#FFFFFF") + 
+                               color = "#FFFFFF",
+                               alpha = 0.5) + 
   theme_void()+
   scale_y_discrete(expand = c(1, 0)) +
   scale_x_continuous(expand = c(0.05, 0)) +
