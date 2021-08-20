@@ -70,13 +70,12 @@ ggsave(slack_icon,
        units = "mm"
       )
   
-  
 sticker(sin_w, 
-        package="EDP 613", 
+        package="Statistical Methods I", 
         p_size=14.5, 
         p_x=0.67,
         p_y=1.36,
-        s_x=1.0, 
+        s_x=1.1, 
         s_y=1.0, 
         s_width=1.5, 
         s_height=1.5,

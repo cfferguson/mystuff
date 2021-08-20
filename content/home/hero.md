@@ -17,7 +17,10 @@ design:
     gradient_end: '#928DAB'
 
     # Text color (true=light or false=dark).
-    text_color_light: true
+    text_color_light: false
+
+    image: gapminder_plot.png
+    
 
 cta_note:
   label: Fall 2021<br>Counseling & Learning Sciences<br>West Virginia University

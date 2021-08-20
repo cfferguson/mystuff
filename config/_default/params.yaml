@@ -37,7 +37,7 @@ font_size: "L"
 site_type: "Course"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description: "A foundational course with a sprinkling of Bayesian Statistics."
+description: "A foundational course with odds and ends"
 
 # Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
@@ -74,7 +74,7 @@ privacy_pack: false
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
 edit_page:
-  repo_url: 'https://github.com/piechartssuck/Courses/edp613'
+  repo_url: 'https://github.com/asocialdatascientist/Courses/edp613'
   content_dir: ''
   repo_branch: edp613
   editable:
@@ -96,9 +96,9 @@ course:
   semester: "Fall 2021"
   days: "Forever aka for the next 16 weeks"
   time: "Thursdays from 4:00-6:50 PM"
-  location: "Allen Hall 510"
+  location: "Allen Hall 808"
   dates: "August 18 - December 17"
-  github: piechartssuck/Courses/tree/edp613
+  github: asocialdatascientist/Courses/tree/edp613
   copyrightYear: "2021"
   slack: "https://2021edp613.slack.com"
 
@@ -106,8 +106,8 @@ instructor:
   name: Dr. Abhik Roy
   email: Abhik.Roy@mail.wvu.edu
   url: "https://lshd.wvu.edu/faculty-staff/roy"
-  twitter: DrTheoreticalPE
-  github: piechartssuck
+  twitter: @asocialdatasci
+  github: asocialdatascientist
   office: "Allen Hall 504O"
   contact_policy: >-
     Slack is the best way to get in contact with me. Response times are typically much quicker than the standard 24-48 hours given to emails. Please remember that life is somewhat chaotic at this time!
@@ -131,7 +131,7 @@ university:
 sharing_image: "course_info.png"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter: "piechartssuck"
+twitter: "asocialdatascientist"
 
 
 ############################
