@@ -28,20 +28,24 @@ library(ggridges)
 library(RColorBrewer)
 
 gapminder_plot <- 
-  ggplot(OrchardSprays, aes(x=decrease,y=treatment,fill=treatment))+
-  geom_density_ridges_gradient(scale=2.3,
+  ggplot(OrchardSprays, aes(x = decrease,
+                            y = treatment,
+                            fill = treatment))+
+  geom_density_ridges_gradient(scale = 2.3,
                                show.legend = FALSE, 
-                               color = "#FFFFFF",
-                               alpha = 0.5) + 
+                               color = "#FFFFFF") + 
   theme_void()+
   scale_y_discrete(expand = c(1, 0)) +
   scale_x_continuous(expand = c(0.05, 0)) +
-  scale_fill_brewer(palette = "Spectral"); gapminder_plot
+  scale_fill_viridis(discrete = TRUE, 
+                     alpha = 0.40,
+                     option = "D"); gapminder_plot
+  # scale_fill_brewer(palette = "Spectral")
 
 #* Save it as a standard static plot ----
 ggsave(gapminder_plot,
-       file="../static/img/gapminder_plot.png", 
-       bg="transparent",
+       file = "../static/img/gapminder_plot.png", 
+       bg = "transparent",
        width = 297,
        height = 210,
        units = "mm")
