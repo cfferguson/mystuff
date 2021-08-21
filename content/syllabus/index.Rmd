@@ -53,7 +53,7 @@ There are four optional texts and two software packages necessary for this cours
 
 We'll rely on the texts below:
 
-- Frankfort-Nachmias, C. and Leon-Guerrero, A. (2020). *Social Statistical for a Diverse Society* (9th ed.). Sage.
+- Frankfort-Nachmias, C. and Leon-Guerrero, A. (2020). *Social Statistical for a Diverse Society* (9th ed.). Sage.^[You can download a watermarked scan of the first two chapters from the [textbook website](https://us.sagepub.com/en-us/nam/social-statistics-for-a-diverse-society/book257698#preview){target="_blank"}.]
 
 - American Psychological Association. (2020). *Publication manual of the American Psychological Association* (7th ed.).
 
