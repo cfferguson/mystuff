@@ -213,7 +213,7 @@ This can sometimes be tedious when you’re installing lots of packages, though.
 &lt;p&gt;Go to the packages panel in RStudio, click on &lt;code&gt;Install&lt;/code&gt;, type &lt;code&gt;tidyverse&lt;/code&gt;, and press enter. You’ll see a bunch of output in the RStudio console as all the tidyverse packages are installed.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/install-r-tidyverse.png&#34; width=&#34;50%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Notice also that RStudio will generate a line of code for you and run it: &lt;code&gt;install.packages(&#34;tidyverse&#34;)&lt;/code&gt;. You can also just paste and run this instead of using the packages panel.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/installtidy_console.png&#34; width=&#34;50%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/img/install/installtidy_console.png&#34; width=&#34;90%&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnotes&#34;&gt;

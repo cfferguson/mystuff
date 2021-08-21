@@ -109,6 +109,6 @@ include_graphics("/img/install/install-r-tidyverse.png", error = FALSE)
 
 Notice also that RStudio will generate a line of code for you and run it: `install.packages("tidyverse")`. You can also just paste and run this instead of using the packages panel.
 
-```{r, echo=FALSE, out.width="50%"}
+```{r, echo=FALSE, out.width="90%"}
 include_graphics("/img/install/installtidy_console.png", error = FALSE)
 ```
