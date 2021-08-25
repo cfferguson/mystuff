@@ -7,11 +7,6 @@ menu:
     weight: 1
 type: docs
 weight: 1
-bibliography: "../../static/bib/references.bib"
-csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-output:
-  blogdown::html_page:
-    toc: true
 ---
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}

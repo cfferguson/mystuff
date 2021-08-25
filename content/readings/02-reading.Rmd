@@ -7,11 +7,6 @@ menu:
     weight: 2
 type: docs
 weight: 1
-bibliography: "../../static/bib/references.bib"
-csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-output:
-  blogdown::html_page:
-    toc: true
 ---
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
@@ -25,7 +20,7 @@ library(fontawesome)
 ```{r icontibble, echo=FALSE, message=FALSE}
 book <- tibble(
   
-  chapter <- c("1"),
+  chapter <- c("2"),
   
   title <- c("The Organization and Graphic Presentation of Data"),
   
