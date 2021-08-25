@@ -7,7 +7,7 @@ output:
 menu:
   materials:
     parent: Content
-    weight: 1
+    weight: 2
 type: docs
 weight: 2
 editor_options: 
@@ -16,8 +16,8 @@ editor_options:
 
 ### Textbook Notes
 
-- [Chapter 2 PowerPoint](/lecture_notes/Week2/SSDS_Ch2.pptx){target="_blank"} 
-- [Chapter 2 Lecture Notes](/lecture_notes/Week2/SSDS_Ch2.docx){target="_blank"}
+- [Chapter 2 PowerPoint](/lecture_notes/Week 2/SSDS_Ch2.pptx){target="_blank"} 
+- [Chapter 2 Lecture Notes](/lecture_notes/Week 2/SSDS_Ch2.docx){target="_blank"}
 
 ### In Class Notes
 

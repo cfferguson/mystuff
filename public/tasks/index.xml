@@ -22,13 +22,6 @@
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#class-slack-account-access&#34;&gt;Class Slack Account Access&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#class-software&#34;&gt;Class Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#week-1-problem-set&#34;&gt;Week 1 Problem Set&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 
 &lt;style&gt;
 span.boxed {
@@ -69,15 +62,52 @@ tr:nth-child(even) { background: #ffffff;
 &lt;h3&gt;Class Software&lt;/h3&gt;
 &lt;p&gt;Decide whether to sign up for &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-cloud&#34;&gt;RStudio.cloud&lt;/a&gt; or install a &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-on-your-computer&#34;&gt;local copy&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;week-1-problem-set&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Week 1 Problem Set&lt;/h3&gt;
-&lt;div id=&#34;assignment&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Assignment&lt;/h4&gt;
-&lt;p&gt;Chapter 1 Exercises: 3, 4, 6, 7, and 8. Please submit this at the beginning of class next week. Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/p&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3, 4, 6, 7, 8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+23-25
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
 --&gt;
-&lt;/div&gt;
 &lt;div id=&#34;solutions&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Solutions&lt;/h4&gt;
 &lt;p&gt;Posted after class day and time next week.&lt;/p&gt;
@@ -168,7 +198,6 @@ These codes are &lt;span class=&#34;boxed&#34;&gt;ordinal&lt;/span&gt; in scale 
 
 At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, political participation could be measured by the percentage of elections in which a person has voted since becoming eligible to vote, or the amount of money a person donated to political candidates during some specified time period. 
 
-
 &lt;/p&gt;
 &lt;/details&gt;
 --&gt;
@@ -179,6 +208,395 @@ At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, po
 &lt;ol&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You just need to know a little math to distinguish colors without ever seeing them&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/02-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/02-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 3, 4, 5, 6, 7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+68-74
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:
+- Please submit this at the beginning of class next week.
+- Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/p&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;p&gt;Posted after class day and time next week.&lt;/p&gt;
+&lt;!--
+&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+&lt;p&gt;
+
+a. Race is a &lt;span class=&#34;boxed&#34;&gt;nominal&lt;/span&gt;. variable; Since categories can be ordered, Class is an &lt;span class=&#34;boxed&#34;&gt;ordinal&lt;/span&gt; variable; Trauma is an &lt;span class=&#34;boxed&#34;&gt;interval&lt;/span&gt; variable.
+
+b. Frequency table for Race:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Race &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Non-White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 13 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+c. We have
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Classification &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Proportion &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 17/30 = 0.57 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Non-White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 13/30 = 0.43 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30/30 = 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;p&gt;
+Frequency and Percentage Distribution Table for Class:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Class &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Percent &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Lower &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Working &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 15 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 50 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Middle &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 11 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 36.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Upper &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+a. The smallest perceived class group is the &lt;span class=&#34;boxed&#34;&gt;upper class&lt;/span&gt;, making up only 3.3% of the survey.
+
+b. Together, the &lt;span class=&#34;boxed&#34;&gt;working&lt;/span&gt; and &lt;span class=&#34;boxed&#34;&gt;middle class&lt;/span&gt; make up 50% + 36.7% = 86.7% of the survey.
+&lt;/p&gt;
+&lt;/details&gt;
+
+
+&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;p&gt;
+
+Frequency table for Traumas:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Number of Traumas &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 0 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 2 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+a. Trauma is an &lt;span class=&#34;boxed&#34;&gt;interval- or ratio-level variable&lt;/span&gt;, since it has a real zero point and a meaningful numeric scale. 
+
+b. People in this survey are more likely to have experienced &lt;span class=&#34;boxed&#34;&gt;no traumas&lt;/span&gt; last year (50% of the group). 
+
+c. The proportion who experienced one or more traumas is calculated by first adding 36.7% and 13.3% equaling 50% and then divide that number by 100 to obtain the proportion, 0.50, or half the group. 
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;4&lt;/summary&gt;
+&lt;p&gt;
+Unfortunately since other visualizations have not been introduced, pie charts are likely the best method approach to present these data. 
+
+&lt;img src=&#34;https://edp613.asocialdatascientist.com/tasks/02-tasks_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;p&gt;
+
+&lt;span class=&#34;boxed&#34;&gt;Yes&lt;/span&gt; because &lt;span class=&#34;boxed&#34;&gt;79.2% had “hardly any” confidence in the press&lt;/span&gt;, compared to 19.3% of those who voted for Clinton.   
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;6&lt;/summary&gt;
+&lt;p&gt;
+
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; E-mail Hours Per Week &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Cumulative Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Percent &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Cumulative Percent &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;0&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;39&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;39&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;13&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;52&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;13&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;52&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;57&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;57&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;4&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;59&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;59&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;65&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;65&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;70&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;70&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;72&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;72&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;75&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;75&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;76&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;76&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;10 or more&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;23&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;23&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;Total&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;7&lt;/summary&gt;
+&lt;p&gt;
+
+According to this time series chart, rates of voting have consistently varied by race and Hispanic origin. The group with the largest increase in voting rates is Blacks, from 53% in 1996 to 66.6% in 2012. However, in 2016, the voting rates for Blacks declined to 59.6%--the lowest it has been since the 2000 election when it was 56.9%. Hispanic voting rates have, for the most part, remained stable, although with some fluctuation most notably from the 1992 election (51.6%) to the 1996 election (44%). As noted in the exercise, in the 2012 presidential election, Blacks had the highest voting rates for all groups, followed by non-Hispanic Whites, non-Hispanic other races, and Hispanics. White voting rates increased by 1.2% from 2012 to 2016. The highest voting rate for Whites was in 1992 (70.2%), 1992 for Hispanics (51.6%), 2012 for Blacks (66.6%), and 1992 for non-Hispanic other races (54%). 
+
+&lt;/p&gt;
+&lt;/details&gt;
+--&gt;
 &lt;/div&gt;
 </description>
     </item>

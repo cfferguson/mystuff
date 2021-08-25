@@ -14,5 +14,38 @@ output:
     toc: true
 ---
 
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+```
+
 ### Book Stuff
-Read Chapter 2: *The Organization and Graphic Presentation of Data* in Frankfort-Nachmias and Leon-Guerrero. 
+```{r icontibble, echo=FALSE, message=FALSE}
+book <- tibble(
+  
+  chapter <- c("1"),
+  
+  title <- c("The Organization and Graphic Presentation of Data"),
+  
+  text <- c("Social Statistics for a Diverse Society"),
+  
+  pages <- c("27-55"),
+  
+  .name_repair = "minimal"
+  
+)
+```
+
+<center>
+```{r, echo=FALSE}
+book %>%
+  kbl(col.names = c("Chapter", "Title", "Source", "Pages"), 
+      "html", 
+      escape = FALSE,
+      align = 'llll') %>%
+  column_spec(1, 
+              bold = TRUE)
+```
+</center>

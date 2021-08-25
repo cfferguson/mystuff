@@ -1,9 +1,6 @@
 ---
 title: "The What and Why of Statistics"
 linktitle: "Week 1: The What and Why of Statistics"
-output:
-  blogdown::html_page:
-    toc: true
 menu:
   tasks:
     parent: Homeworks
@@ -15,9 +12,10 @@ editor_options:
 ---
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
-library(dplyr)
+library(tidyverse)
 library(knitr)
 library(kableExtra)
+library(fontawesome)
 ```
 
 <style>
@@ -57,10 +55,39 @@ Please sign up for Slack!
 ### Class Software
 Decide whether to sign up for [RStudio.cloud](/resources/install/#rstudio-cloud) or install a [local copy](/resources/install/#rstudio-on-your-computer).
 
-### Week 1 Problem Set
+### Homework
+```{r icontibble, echo=FALSE, message=FALSE}
+book <- tibble(
+  
+  chapter <- c("1"),
+  
+  exercises <- c("3, 4, 6, 7, 8"),
+  
+  problems <- c("Social Statistics for a Diverse Society"),
+  
+  pages <- c("23-25"),
+  
+  .name_repair = "minimal"
+  
+)
+```
 
-#### Assignment
-Chapter 1 Exercises: 3, 4, 6, 7, and 8. Please submit this at the beginning of class next week. Remember to follow the [homework guidelines](/tasks/#homeworks) for consideration.
+<center>
+```{r, echo=FALSE}
+book %>%
+  kbl(col.names = c("Chapter", "Problems", "Source", "Pages"), 
+      "html", 
+      escape = FALSE,
+      align = 'clll') %>%
+  column_spec(1, 
+              bold = TRUE)
+```
+</center>
+
+Notes: 
+
+- Please submit this at the beginning of class next week.
+- Remember to follow the [homework guidelines](/tasks/#homeworks) for consideration.
 
 <!--
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"} by 11:59 PM next Wednesday.<br>
@@ -146,7 +173,6 @@ kable(dt,
 These codes are <span class="boxed">ordinal</span> in scale because the amount of political participation can be ranked from high to low. Other possible ordinal variables can be constructed from other sets of behaviors, such as working in a candidate’s campaign and signing a petition. The key points are to create a variable whose values can be ranked and whose values are not on an interval–ratio scale.
 
 At the <span class="boxed">interval–ratio</span> level, political participation could be measured by the percentage of elections in which a person has voted since becoming eligible to vote, or the amount of money a person donated to political candidates during some specified time period. 
-
 
 </p>
 </details>

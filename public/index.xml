@@ -61,7 +61,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;book-stuff&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Book Stuff&lt;/h3&gt;
-&lt;p&gt;Read Chapter 1: &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in Frankfort-Nachmias and Leon-Guerrero.&lt;/p&gt;
+&lt;p&gt;Read Chapter 1: &lt;em&gt;The What and the Why of Statistics&lt;/em&gt; in Frankfort-Nachmias, Leon-Guerrero &amp;amp; Davis.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -407,13 +407,6 @@ Watch a video on Data Visualization&lt;a href=&#34;#fn3&#34; class=&#34;footnote
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#class-slack-account-access&#34;&gt;Class Slack Account Access&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#class-software&#34;&gt;Class Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#week-1-problem-set&#34;&gt;Week 1 Problem Set&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 
 &lt;style&gt;
 span.boxed {
@@ -454,15 +447,52 @@ tr:nth-child(even) { background: #ffffff;
 &lt;h3&gt;Class Software&lt;/h3&gt;
 &lt;p&gt;Decide whether to sign up for &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-cloud&#34;&gt;RStudio.cloud&lt;/a&gt; or install a &lt;a href=&#34;https://edp613.asocialdatascientist.com/resources/install/#rstudio-on-your-computer&#34;&gt;local copy&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;week-1-problem-set&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Week 1 Problem Set&lt;/h3&gt;
-&lt;div id=&#34;assignment&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Assignment&lt;/h4&gt;
-&lt;p&gt;Chapter 1 Exercises: 3, 4, 6, 7, and 8. Please submit this at the beginning of class next week. Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/p&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3, 4, 6, 7, 8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+23-25
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
 --&gt;
-&lt;/div&gt;
 &lt;div id=&#34;solutions&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Solutions&lt;/h4&gt;
 &lt;p&gt;Posted after class day and time next week.&lt;/p&gt;
@@ -553,7 +583,6 @@ These codes are &lt;span class=&#34;boxed&#34;&gt;ordinal&lt;/span&gt; in scale 
 
 At the &lt;span class=&#34;boxed&#34;&gt;interval–ratio&lt;/span&gt; level, political participation could be measured by the percentage of elections in which a person has voted since becoming eligible to vote, or the amount of money a person donated to political candidates during some specified time period. 
 
-
 &lt;/p&gt;
 &lt;/details&gt;
 --&gt;
@@ -606,6 +635,395 @@ You can download
 
 - a [PDF](/slides/Week 2/Slides-Week-2.pdf){target=&#34;_blank&#34;} of the presentation. 
 
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/02-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/02-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 3, 4, 5, 6, 7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+68-74
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:
+- Please submit this at the beginning of class next week.
+- Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/p&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;p&gt;Posted after class day and time next week.&lt;/p&gt;
+&lt;!--
+&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+&lt;p&gt;
+
+a. Race is a &lt;span class=&#34;boxed&#34;&gt;nominal&lt;/span&gt;. variable; Since categories can be ordered, Class is an &lt;span class=&#34;boxed&#34;&gt;ordinal&lt;/span&gt; variable; Trauma is an &lt;span class=&#34;boxed&#34;&gt;interval&lt;/span&gt; variable.
+
+b. Frequency table for Race:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Race &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Non-White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 13 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+c. We have
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Classification &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Proportion &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 17/30 = 0.57 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Non-White &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 13/30 = 0.43 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30/30 = 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;p&gt;
+Frequency and Percentage Distribution Table for Class:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Class &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Percent &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Lower &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Working &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 15 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 50 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Middle &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 11 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 36.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Upper &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+a. The smallest perceived class group is the &lt;span class=&#34;boxed&#34;&gt;upper class&lt;/span&gt;, making up only 3.3% of the survey.
+
+b. Together, the &lt;span class=&#34;boxed&#34;&gt;working&lt;/span&gt; and &lt;span class=&#34;boxed&#34;&gt;middle class&lt;/span&gt; make up 50% + 36.7% = 86.7% of the survey.
+&lt;/p&gt;
+&lt;/details&gt;
+
+
+&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;p&gt;
+
+Frequency table for Traumas:
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Number of Traumas &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 0 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 2 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+a. Trauma is an &lt;span class=&#34;boxed&#34;&gt;interval- or ratio-level variable&lt;/span&gt;, since it has a real zero point and a meaningful numeric scale. 
+
+b. People in this survey are more likely to have experienced &lt;span class=&#34;boxed&#34;&gt;no traumas&lt;/span&gt; last year (50% of the group). 
+
+c. The proportion who experienced one or more traumas is calculated by first adding 36.7% and 13.3% equaling 50% and then divide that number by 100 to obtain the proportion, 0.50, or half the group. 
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;4&lt;/summary&gt;
+&lt;p&gt;
+Unfortunately since other visualizations have not been introduced, pie charts are likely the best method approach to present these data. 
+
+&lt;img src=&#34;https://edp613.asocialdatascientist.com/tasks/02-tasks_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;p&gt;
+
+&lt;span class=&#34;boxed&#34;&gt;Yes&lt;/span&gt; because &lt;span class=&#34;boxed&#34;&gt;79.2% had “hardly any” confidence in the press&lt;/span&gt;, compared to 19.3% of those who voted for Clinton.   
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;6&lt;/summary&gt;
+&lt;p&gt;
+
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; E-mail Hours Per Week &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Cumulative Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Percent &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Cumulative Percent &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;0&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;19&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;39&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;39&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;13&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;52&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;13&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;52&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;57&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;57&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;4&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;59&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;59&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;65&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;65&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;70&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;70&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;72&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;72&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;75&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;75&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;76&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;76&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;10 or more&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;23&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;23&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;Total&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2e4045 !important;&#34;&gt;99&lt;/span&gt; &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;color: white !important;background-color: #559e83 !important;&#34;&gt; &lt;span style=&#34; NA    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: NA !important;&#34;&gt;&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;7&lt;/summary&gt;
+&lt;p&gt;
+
+According to this time series chart, rates of voting have consistently varied by race and Hispanic origin. The group with the largest increase in voting rates is Blacks, from 53% in 1996 to 66.6% in 2012. However, in 2016, the voting rates for Blacks declined to 59.6%--the lowest it has been since the 2000 election when it was 56.9%. Hispanic voting rates have, for the most part, remained stable, although with some fluctuation most notably from the 1992 election (51.6%) to the 1996 election (44%). As noted in the exercise, in the 2012 presidential election, Blacks had the highest voting rates for all groups, followed by non-Hispanic Whites, non-Hispanic other races, and Hispanics. White voting rates increased by 1.2% from 2012 to 2016. The highest voting rate for Whites was in 1992 (70.2%), 1992 for Hispanics (51.6%), 2012 for Blacks (66.6%), and 1992 for non-Hispanic other races (54%). 
+
+&lt;/p&gt;
+&lt;/details&gt;
 --&gt;
 &lt;/div&gt;
 </description>
@@ -2275,7 +2693,7 @@ Weekly submission information.
 &lt;h3&gt;Texts&lt;/h3&gt;
 &lt;p&gt;We’ll rely on the texts below:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Frankfort-Nachmias, C. and Leon-Guerrero, A. (2020). &lt;em&gt;Social Statistical for a Diverse Society&lt;/em&gt; (9th ed.). Sage.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Frankfort-Nachmias, C. and Leon-Guerrero, A. (2020). &lt;em&gt;Social Statistical for a Diverse Society&lt;/em&gt; (9th ed.). Sage.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;American Psychological Association. (2020). &lt;em&gt;Publication manual of the American Psychological Association&lt;/em&gt; (7th ed.).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There will occasionally be additional articles and videos to read and watch. When this happens, links to these other resources will be included on the content page for that session.&lt;/p&gt;
@@ -2307,10 +2725,10 @@ Weekly submission information.
 &lt;ul&gt;
 &lt;li&gt;A brief description of the problem and what you have done thus far including the line number of the issue (if applicable).&lt;/li&gt;
 &lt;li&gt;A copy of your data set (if applicable).&lt;/li&gt;
-&lt;li&gt;A copy of your script or Rmarkdown document&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; with comments throughout so I know what you’ve tried historically leading up to the issue.&lt;/li&gt;
+&lt;li&gt;A copy of your script or Rmarkdown document&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; with comments throughout so I know what you’ve tried historically leading up to the issue.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I have a mail filter that will automatically bring your email to a top priority status.&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have a mail filter that will automatically bring your email to a top priority status.&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You should absolutely expect to struggle at times, but there is no better and more satisfying feeling than figuring things out for yourself! In the long run, you’re more likely to remember things you’ve figured out rather than those you’ve been shown or told.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2393,7 +2811,7 @@ In Class
 25
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
-FinalExam&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
+FinalExam&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 12em; &#34;&gt;
 In Class
@@ -2461,7 +2879,7 @@ F
 &lt;/center&gt;
 &lt;div id=&#34;rmarkdown&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Rmarkdown&lt;/h3&gt;
-&lt;p&gt;If you submit your work in &lt;a href=&#34;https://rmarkdown.rstudio.com/index.html&#34; target=&#34;_blank&#34;&gt;Rmarkdown&lt;/a&gt;, you may earn up to an extra five percent on any task (this includes quizzes and exams that aren’t focused on R). Additionally in lieu of showing step by step work, you may submit R code instead. In these instances, both the code used and output must be presented but you still must provide a written or typed interpretation in context.&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you submit your work in &lt;a href=&#34;https://rmarkdown.rstudio.com/index.html&#34; target=&#34;_blank&#34;&gt;Rmarkdown&lt;/a&gt;, you may earn up to an extra five percent on any task (this includes quizzes and exams that aren’t focused on R). Additionally in lieu of showing step by step work, you may submit R code instead. In these instances, both the code used and output must be presented but you still must provide a written or typed interpretation in context.&lt;a href=&#34;#fn5&#34; class=&#34;footnote-ref&#34; id=&#34;fnref5&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/center&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2472,7 +2890,7 @@ F
 &lt;iframe src=&#34;https://player.vimeo.com/video/270014784&#34; width=&#34;640&#34; height=&#34;360&#34; frameborder=&#34;0&#34; allow=&#34;fullscreen&#34; allowfullscreen style=&#34;display: block; margin: 0 auto 1rem;&#34;&gt;
 &lt;/iframe&gt;
 &lt;/center&gt;
-&lt;p&gt;Your hours (formerly known as office hours) are set times dedicated to you the student!&lt;a href=&#34;#fn5&#34; class=&#34;footnote-ref&#34; id=&#34;fnref5&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;). This means that I will be in my office or at home waiting for you to &lt;del&gt;come by&lt;/del&gt; talk to me remotely with whatever questions you have. This is the best and easiest way to find me and the best chance for discussing class material and concerns.&lt;/p&gt;
+&lt;p&gt;Your hours (formerly known as office hours) are set times dedicated to you the student!&lt;a href=&#34;#fn6&#34; class=&#34;footnote-ref&#34; id=&#34;fnref6&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;). This means that I will be in my office or at home waiting for you to &lt;del&gt;come by&lt;/del&gt; talk to me remotely with whatever questions you have. This is the best and easiest way to find me and the best chance for discussing class material and concerns.&lt;/p&gt;
 &lt;p&gt;Because of the pandemic, we cannot meet in person. I can meet you online via Zoom. You can request a meeting through either e-mail or Slack.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;conduct-and-expectations&#34; class=&#34;section level2&#34;&gt;
@@ -2491,7 +2909,7 @@ F
 &lt;br&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Technology use&lt;/strong&gt;: Use phones, computers, etc. responsibly. We’re all adults&lt;a href=&#34;#fn6&#34; class=&#34;footnote-ref&#34; id=&#34;fnref6&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Technology use&lt;/strong&gt;: Use phones, computers, etc. responsibly. We’re all adults&lt;a href=&#34;#fn7&#34; class=&#34;footnote-ref&#34; id=&#34;fnref7&#34;&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;My philosophy&lt;/strong&gt;:&lt;br&gt;&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Just assume that all submissions are formal and must be submitted with the appropriate use of language, grammar, syntax, etc. and follow standard APA 7th edition formatting guidelines where applicable.&lt;/li&gt;
@@ -2508,7 +2926,7 @@ F
 &lt;/div&gt;
 &lt;p&gt;On top of what’s noted above and I’m not sure how to articulate this any better - life sucks right now! It is likely by now you know people who have been hospitalized or passed away, lost their jobs, and/or tested positive for COVID-19. Additionally stresses in life are up. Given this, here is my promise to you:&lt;/p&gt;
 &lt;div class=&#34;text-center&#34;&gt;
-&lt;p&gt;&lt;strong&gt;If you keep an open line, show initiative, and let me know ahead of time if something is going not according to plan&lt;a href=&#34;#fn7&#34; class=&#34;footnote-ref&#34; id=&#34;fnref7&#34;&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;, I will do everything I can to help you learn everything you were hoping to learn from this class!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you keep an open line, show initiative, and let me know ahead of time if something is going not according to plan&lt;a href=&#34;#fn8&#34; class=&#34;footnote-ref&#34; id=&#34;fnref8&#34;&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;, I will do everything I can to help you learn everything you were hoping to learn from this class!&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2616,13 +3034,14 @@ F
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Please do not send a screenshot because neither R or I can run a picture of syntax.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;In this new normal, I receive an overwhelming number of emails per day and may miss yours if the header is not formatted properly.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Please note &lt;strong&gt;if you have an A going into the final exam, you do not need to take it!&lt;/strong&gt;&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;Note that certain items will explicitly ask for work to be shown by hand. In these cases, work in R will not be accepted.&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn5&#34;&gt;&lt;p&gt;There is some misunderstanding about what office hours actually are! &lt;a href=&#34;https://www.chronicle.com/article/Can-This-Man-Change-How-Elite/245714/&#34; target=&#34;_blank&#34;&gt;For some reason that is not clear, particular graduate students have noted in my course evaluations that they believe these to be the times I &lt;em&gt;should not&lt;/em&gt; be disturbed. This is not just a local issue!&lt;/a&gt;, which is the exact opposite of what they are for!&lt;a href=&#34;#fnref5&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn6&#34;&gt;&lt;p&gt;…most of the time.&lt;a href=&#34;#fnref6&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn7&#34;&gt;&lt;p&gt;I realize sometimes this just isn’t possible so contact me as soon as you can.&lt;a href=&#34;#fnref7&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You can download a watermarked scan of the first two chapters from the &lt;a href=&#34;https://us.sagepub.com/en-us/nam/social-statistics-for-a-diverse-society/book257698#preview&#34; target=&#34;_blank&#34;&gt;textbook website&lt;/a&gt;.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;Please do not send a screenshot because neither R or I can run a picture of syntax.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;In this new normal, I receive an overwhelming number of emails per day and may miss yours if the header is not formatted properly.&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;Please note &lt;strong&gt;if you have an A going into the final exam, you do not need to take it!&lt;/strong&gt;&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn5&#34;&gt;&lt;p&gt;Note that certain items will explicitly ask for work to be shown by hand. In these cases, work in R will not be accepted.&lt;a href=&#34;#fnref5&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn6&#34;&gt;&lt;p&gt;There is some misunderstanding about what office hours actually are! &lt;a href=&#34;https://www.chronicle.com/article/Can-This-Man-Change-How-Elite/245714/&#34; target=&#34;_blank&#34;&gt;For some reason that is not clear, particular graduate students have noted in my course evaluations that they believe these to be the times I &lt;em&gt;should not&lt;/em&gt; be disturbed. This is not just a local issue!&lt;/a&gt;, which is the exact opposite of what they are for!&lt;a href=&#34;#fnref6&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn7&#34;&gt;&lt;p&gt;…most of the time.&lt;a href=&#34;#fnref7&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn8&#34;&gt;&lt;p&gt;I realize sometimes this just isn’t possible so contact me as soon as you can.&lt;a href=&#34;#fnref8&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

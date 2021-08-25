@@ -14,6 +14,13 @@ output:
     toc: true
 ---
 
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+```
+
 ### Get Some Advice
 First things first:
 <br>
@@ -26,4 +33,30 @@ First things first:
 Review the overviews of the other areas as well: [readings](/readings/), [data camp](/datacamp/), [materials](/materials/), [tasks](/tasks/), [to do list](/due/), and [resources](/resources/) pages for this class.
 
 ### Book Stuff
-Read Chapter 1: *The What and the Why of Statistics* in Frankfort-Nachmias and Leon-Guerrero. 
+```{r icontibble, echo=FALSE, message=FALSE}
+book <- tibble(
+  
+  chapter <- c("1"),
+  
+  title <- c("The What and the Why of Statistics"),
+  
+  text <- c("Social Statistics for a Diverse Society"),
+  
+  pages <- c("1-19"),
+  
+  .name_repair = "minimal"
+  
+)
+```
+
+<center>
+```{r, echo=FALSE}
+book %>%
+  kbl(col.names = c("Chapter", "Title", "Source", "Pages"), 
+      "html", 
+      escape = FALSE,
+      align = 'llll') %>%
+  column_spec(1, 
+              bold = TRUE)
+```
+</center>
