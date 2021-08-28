@@ -20,7 +20,6 @@ design:
     text_color_light: false
 
     image: gapminder_plot.png
-    
 
 cta_note:
   label: Fall 2021<br>Counseling & Learning Sciences<br>West Virginia University

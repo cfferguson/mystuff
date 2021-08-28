@@ -11,24 +11,24 @@ lessons:
     tasks: "01-homework"
     due: "01-due"
 
-  # - title: 'The Organization and Graphic Presentation of Data'
-  #   session: 2
-  #   date: "September 9, 2020"
-  #   readings: "02-reading"
-  #   datacamp: "02-datacamp"
-  #   examples: "02-example"
-  #   tasks: "02-homework"
-  #   due: "02-due"
-  #
-  # - title: 'Measures of Central Tendency'
-  #   session: 3
-  #   date: "September 16, 2020"
-  #   readings: "03-reading"
-  #   datacamp: "03-datacamp"
-  #   examples: "03-example"
-  #   tasks: "03-homework"
-  #   due: "03-due"
-  #
+  - title: 'The Organization and Graphic Presentation of Data'
+    session: 2
+    date: "August 26, 2021"
+    readings: "02-reading"
+    datacamp: "02-datacamp"
+    examples: "02-example"
+    tasks: "02-homework"
+    due: "02-due"
+
+  - title: 'Measures of Central Tendency'
+    session: 3
+    date: "September 2, 2021"
+    readings: "03-reading"
+    datacamp: "03-datacamp"
+    examples: "03-example"
+    tasks: "03-homework"
+    due: "03-due"
+
   # - title: 'Measures of Variability'
   #   session: 4
   #   date: "September 23, 2020"

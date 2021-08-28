@@ -1,4 +1,4 @@
 Generate icons
 
-https://www.favicon-generator.org/
+https://favicomatic.com
 

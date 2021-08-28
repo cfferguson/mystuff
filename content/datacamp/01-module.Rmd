@@ -1,9 +1,6 @@
 ---
-title: "The What and Why of Statistics"
-linktitle: "Week 1: The What and Why of Statistics"
-output:
-  blogdown::html_page:
-    toc: true
+title: "Introduction to R"
+linktitle: "Introduction to R"
 menu:
   datacamp:
     parent: Modules
@@ -14,5 +11,60 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Data Camp
-This week please complete the **Introduction to R** course on [Data Camp](https://www.datacamp.com/){target="_blank"}. 
+```{r echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(fontawesome)
+```
+
+```{r eval = TRUE, echo = FALSE, message=FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
+
+checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
+
+dcico <- as.character("/logos/dc_small.png{width=20px}")
+
+dc_schedule <-  
+  read_csv("dc.csv",
+           show_col_types = FALSE) %>%
+  as_tibble() %>%
+                mutate(Required = case_when(
+                Required == "checked" ~ as.character(fontawesome::fa("check-circle", fill = "#428bca", height = "15px")),
+                Required == "unchecked" ~ as.character(fontawesome::fa("times-circle", fill = "#d9534f", height = "15px"))
+              )) %>%
+            mutate(across(everything(), as.character)) %>%
+              filter(Group == 1) %>% #CHANGE HERE
+              select(-Group, -Chapters_wide, -`Due by_short`) %>%
+              rename(`Due by` = `Due by_long`) %>%
+              rename(Chapters = Chapters_long)  %>%
+            filter_all(any_vars(!is.na(.))) %>% 
+            mutate(
+              across(everything(), ~replace_na(.x, ""))
+            ) %>%
+  select_if(~!all(is.na(.))) %>%
+  mutate(Link = str_replace_all(Link, "hyper", paste0("[![",dcico,"](/logos/dc-ico.png 'Slack Icon'){width=20px}]",
+                           "(https://www.datacamp.com/){target='_blank'}"
+  )))
+  
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(dc_schedule, 
+      escape = FALSE,
+      align = 'cccccllc') %>%
+  kable_styling(full_width = FALSE,
+                bootstrap_options = c("striped", "hover")) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "5em") %>%
+  column_spec(5, width = "15em") %>%
+  column_spec(6, width = "5em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(4, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(5, extra_css = 'vertical-align: middle !important;') 
+```

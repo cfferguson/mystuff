@@ -14,19 +14,25 @@ library(kableExtra)
 library(fontawesome)
 library(here)
 library(clt)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
 ```
 
 ```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#bff4ee",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
 
 checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
@@ -119,7 +125,7 @@ something there is.
 Which of the following variables are qualitative and which
 are quantitative?
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 qualquanid <- 
   tibble(
@@ -143,7 +149,7 @@ qualquanid <-
 ```
 
 <center>
-```{r, echo=FALSE}
+```{r, echo=FALSE, purl=FALSE}
 qualquanid %>%
   kbl(col.names = c("", "Situation", "Type"), 
       "html", 
@@ -167,7 +173,7 @@ qualquanid %>%
 
 # Solution 
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 qualquanidsol <- 
   tibble(
@@ -191,7 +197,7 @@ qualquanidsol <-
 ```
 
 <center>
-```{r, echo=FALSE}
+```{r, echo=FALSE, purl=FALSE}
 qualquanidsol %>%
   kbl(col.names = c("", "Situation", "Type"), 
       "html", 
@@ -215,7 +221,7 @@ qualquanidsol %>%
 
 # Levels of Measurement
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 levels <- 
   tibble(
@@ -252,7 +258,7 @@ levels <-
 ```
 
 <center>
-```{r, echo=FALSE}
+```{r, echo=FALSE, purl=FALSE}
 levels %>%
   kbl(col.names = c("", "Nominal", "Ordinal", "Interval", "Ratio"), 
       "html", 
@@ -284,7 +290,7 @@ Your textbook pools interval and ratio together as *interval-ratio*.
 
 # Example 
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 nomordir <- 
   tibble(
@@ -334,7 +340,7 @@ nomordir %>%
 
 # Solution 
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 nomordir_sol <- 
   tibble(
@@ -360,7 +366,7 @@ nomordir_sol <-
 ```
 
 <center>
-```{r, echo=FALSE}
+```{r, echo=FALSE, purl=FALSE}
 nomordir_sol %>%
   kbl(col.names = c("", "Situation", "Type"), 
       "html", 
@@ -399,7 +405,7 @@ possible values can be listed
 
 Which of the following variables are discrete or continuous?
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 disccont <- 
   tibble(
@@ -447,7 +453,7 @@ disccont %>%
 
 # Solution 
 
-```{r eval = TRUE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
 
 disccont_sol <- 
   tibble(
@@ -471,7 +477,7 @@ disccont_sol <-
 ```
 
 <center>
-```{r, echo=FALSE}
+```{r, echo=FALSE, purl=FALSE}
 disccont_sol %>%
   kbl(col.names = c("", "Situation", "Type"), 
       "html", 

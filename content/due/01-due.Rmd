@@ -94,7 +94,7 @@ Area = c(book,
          lightbulb),
 
 Description = c("Read *The Organization and Graphic Representation of Data* in the text",
-                "Download Chapter 2 Powerpoint and Lecture Textbook Notes ",
+                "Download Chapter 2 Powerpoint and Lecture Textbook Notes",
                 "Watch a video on Data Visualization^[Optional but recommended]"),
 
 Location = c("[Link](/readings/02-reading/#book-stuff)", 

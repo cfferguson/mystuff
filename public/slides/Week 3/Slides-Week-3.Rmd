@@ -11,12 +11,15 @@ output:
 library(knitr)
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, purl = FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#bb86fc",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#bff4ee",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
@@ -70,7 +73,7 @@ To explore this, let's load the 2012 voter fraud file first and assign it to a v
 voter_fraud <- read_csv("2012_Voter_Fraud.csv")
 ```
 
-```{r echo = FALSE, eval = TRUE}
+```{r echo = FALSE, eval = TRUE, purl=FALSE}
 voter_fraud <- read_csv(here::here("static", "slides", "Week 3", "2012_Voter_Fraud.csv"))
 ```
 
@@ -274,7 +277,7 @@ For the mode, we use
 mode(voter_fraud$total)
 ```
 
-Uh oh. What just happened? Move on and we'll briefly discuss.
+`mode` still doesn't work!
 
 ---
 
@@ -294,8 +297,8 @@ Mode <- function(x) {
   ux[which.max(tabulate(match(x, ux)))]
 }
 
-# Notice that 'Mode' is capitalized so tha R won't confuse it
-# with its internal command 'mode'!
+# Notice that 'Mode' is capitalized so that R won't confuse it
+# with its internal command 'mode'.
 ```
 
 Keep that chunk in a file somewhere. You don't have to know what it means or how to construct it or any of that. This is not a programming class. As long as you run that chunk before trying to find a mode, you'll be fine.

@@ -70,5 +70,3 @@ ignoreFiles:
   - _cache$
   - \.Rproj.user$
   - \.Rhistory$
-  - \.knit\.md$
-  - \.utf8\\.md$

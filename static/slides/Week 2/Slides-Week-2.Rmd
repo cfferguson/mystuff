@@ -1,5 +1,5 @@
 ---
-title: "What? How Can you Frame a Data?"
+title: "The Organization and Graphic Presentation of Data"
 subtitle: "EDP 613"
 author: "Week 2"
 output: 
@@ -7,132 +7,489 @@ output:
    css: xaringan-themer.css
 ---
 
-```{r echo = FALSE}
+<style>
+
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(clt)
+library(carData)
+library(DT)
+library(scales)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
+```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#bb86fc",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#bff4ee",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
-
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
-# Looking at Data Like You're Used to
->- We nearly always look at data by rows and columns! 
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
 
->- In Excel, that format is called a cell structure.
+checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
+```
 
->- In R, that format is called a data frame.
+# Basic Ideas
+
+>- **Distribution** - All of the possible values for a variable and how often they occur
+
+--
+
+>- **Frequency distribution** - A table that displays a distribution
+
+--
+
+>- **Relative frequency** -  How often something happens divided by all outcomes
 
 ---
 
-## First Things First!
-Let's do the following:
+# Professor Salaries
 
->- Create a folder with subfolders by class week (e.g. Week 2, Week 3, etc.) somewhere on your hard drive where you can stick all of the R stuff. 
+```{r, echo=FALSE}
+datasetSalaries <- 
+  carData::Salaries %>%
+  mutate(
+    rank = case_when(
+      rank == "AssocProf" ~ "Associate Professor",
+      rank == "AsstProf" ~ "Assistant Professor",
+      rank == "Prof" ~ "Professor"
+    ),
+    discipline = case_when(
+      discipline == "A" ~ "Theoretical",
+      discipline == "B" ~ "Applied"
+    )
+  ) %>%
+  mutate(
+    rank = as.factor(rank),
+    discipline = as.factor(discipline)
+  ) %>%
+  rename(Rank = rank,
+         Discipline = discipline,
+         'Years Since PhD' = yrs.since.phd,
+         'Years of Service' = yrs.service, 
+         Sex = sex, 
+         'Salary in USD' = salary)
 
->- Go back to RStudio.
-
->- Use **File > New File > R Script** to create a new script.
-
->- Save it with a name ending in `.r` or `.R` in the new folder or subfolder you created.
-
->- Type in `getwd()` in the Console. If that doesn't look right, do this: **Session > Set Working Directory > To Source File Location**
-
+datasetSalaries %>%
+  DT::datatable(
+    options = list(
+      pageLength = 5,
+      dom = "ftip",
+      ordering = FALSE,
+      columnDefs = list(list(className = 'dt-center', targets = 1:5)),
+      initComplete = JS("function(settings, json) {",
+                        "$(this.api().table().header()).css({'color': '#ffffff'});",
+                        "}")
+    ),
+    height = 300
+  )  
+```
+  
 ---
 
-## Data Frames: A Very Basic Rundown
+# Frequency Distribution Table
 
->- Shows data in rows and columns.
-
->- Is really good for manipulating data.
-
->- Closest thing to Excel.
-
----
-
-## Get the Gapminder data and load it up
-
-We will work with some of the data from the [Gapminder project](https://www.gapminder.org/).
-
-```{r echo = TRUE, eval = FALSE}
-install.packages("gapminder")
-```
-
-```{r echo = TRUE}
-library(gapminder)
-```
-
----
-
-## Look at the variables inside a data frame
-
->- To specify a single variable from a data frame, use the dollar sign `$`.
-
-```{r  echo = TRUE}
-head(gapminder$lifeExp)
-```
-
-```{r  echo = TRUE}
-summary(gapminder$lifeExp)
-```
-
----
-
-## Plotting
-
->- We can visualize the data.
-
-```{r echo = TRUE}
-hist(gapminder$lifeExp)
-```
-
----
-
-## Getting underlying information about our data
-
-```{r echo = TRUE}
-class(gapminder$continent)
-```
-
-
-```{r echo = TRUE}
-summary(gapminder$continent)
+```{r echo=FALSE}
+datasetSalaries %>%
+  group_by(Rank) %>%
+  count() %>%
+  rename(Frequency = n) %>%
+  kbl(col.names = c("Rank", "Frequency"),
+      align = "lc") 
 ```
 
 ---
 
-## Levels
+# Other Descriptive Information
 
-```{r echo = TRUE}
-levels(gapminder$continent)
-```
+>- **Proportion** - A relative frequency taken from the whole frequency and is normally between 0 and 1.
 
->- The __levels__ of the factor `continent` are "Africa", "Americas", etc.
+--
 
-```{r echo = TRUE}
-nlevels(gapminder$continent)
-```
+>- **Percentage** - A relative frequency taken from the whole frequency and is normally between 0 and 100.
 
->-  __nlevels__ tells you how many there are.
+--
 
----
-
-## We can see the data about levels
-
-```{r echo = TRUE}
-table(gapminder$continent)
-```
-
----
-
-## And we can even plot them!
-
-```{r echo = TRUE}
-barplot(table(gapminder$continent))
+```{r echo=FALSE}
+datasetSalaries %>%
+  group_by(Rank) %>%
+  summarise(Frequency = n()) %>%
+  mutate(Proportion = Frequency / sum(Frequency)) %>% 
+  mutate(Percent = round(Proportion * 100, 2)) %>%
+  kbl(col.names = c("Rank", "Frequency", "Proportion", "Percent"),
+      align = 'lccc')
 ```
 
 ---
+# Cumulative Distributions
 
-## That's it for today!
+>- **Cumulative frequency** - A table that displays the frequencies at or below a given category.
+
+--
+
+```{r echo=FALSE}
+datasetSalaries %>%
+  group_by(Rank) %>%
+  summarise(Frequency = n()) %>%
+  mutate(Proportion = Frequency / sum(Frequency)) %>% 
+  mutate(Percent = round(Proportion * 100, 2)) %>%
+  mutate(`Cumulative Proportion` = cumsum(Proportion))%>%
+  mutate(`Cumulative Percent` = cumsum(Percent))%>%
+  kbl(align = 'lccccc') 
+```
+
+---
+
+# Data Visualization
+
+---
+
+# Pie Charts
+
+>- discrete data .pull-right[.footnote[*Friends don't let friends use pie charts!*]]
+
+```{r echo=FALSE, fig.align='center', out.width="55%"}
+# Create Data
+data <- data.frame(
+  group=c("Thing 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5"),
+  value=c(13,7,9,21,2)
+)
+
+# Basic piechart
+p <- ggplot(data, aes(x="", 
+                 y=value, 
+                 fill=group)) +
+  geom_bar(stat = "identity", 
+           width = 1, 
+           color = "#212121") +
+  coord_polar("y", start=0) +
+  scale_fill_brewer(palette = "Spectral") + 
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF"))
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+
+```
+
+
+---
+
+# Bar Plot
+
+>- discrete data
+
+```{r echo=FALSE, fig.align='center', out.width="55%"}
+
+# Create data
+data <- data.frame(
+  group=c("Thing 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5"),
+  value=c(13,7,9,21,2)
+)
+
+# Barplot
+p <-
+  ggplot(data, aes(x=group, y=value, fill=group)) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_brewer(palette = "Spectral") + 
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF"))
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+
+```
+
+---
+
+# Histogram
+
+>- continuous data 
+
+```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="55%"}
+
+# dataset:
+set.seed(1)
+df <- 
+  data.frame(id=paste("ID",1:1000,sep="."),
+             val=rnorm(1000),
+             stringsAsFactors=FALSE)
+
+# basic histogram
+p <-
+  ggplot(df, 
+       aes(val)) +
+  geom_histogram(show.legend = FALSE,
+                 bins=30,
+                 aes(fill=..count..)) + 
+  scale_fill_distiller(palette = "Spectral") +
+  theme(
+    panel.background = element_rect(fill = "#212121"),
+    plot.background = element_rect(fill = "#212121", color = "#212121"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF"))
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+```
+
+---
+
+# Line graph
+
+>- continuous data 
+
+```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="55%"}
+
+# dataset:
+set.seed(2021)
+
+a2 <- data.frame(year = seq(0,25,length.out=50), 
+                 values = cumsum(rnorm(50)))
+
+p <- ggplot(a2, aes(x = year, 
+               y = values, 
+               color = values)) +
+  geom_line(size = 1.3,
+            show.legend = FALSE)  +
+  geom_point(size = 2.5,
+             show.legend = FALSE) +
+#  geom_smooth(aes(color=..y..), size=1.5, se=FALSE, method = "loess") +
+  scale_color_distiller(palette = "Spectral") +
+  theme_bw()+
+  theme(
+    panel.background = element_rect(fill = "#212121"),
+    plot.background = element_rect(fill = "#212121", color = "#212121"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF"))
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+```
+
+---
+
+# Special Distributions
+
+---
+
+>- Skewed left OR Negative skew
+
+```{r echo = FALSE, fig.align='center'}
+n <- 10000
+cust <- data.frame(cust_id=1:n,cust_rev <- rexp(n,.00001))
+powers <- function(base,exp) sapply(1:exp, function(exp) base^exp )
+
+p <- ggplot(cust, 
+       aes(cust_rev)) + 
+  geom_histogram(binwidth=1/3,
+                 aes(fill=..count..),
+                 show.legend = FALSE) + 
+  scale_x_log10(breaks=powers(10,8)) +
+  scale_fill_distiller(palette = "Spectral") +
+  theme(
+    panel.background = element_rect(fill = "#212121"),
+    plot.background = element_rect(fill = "#212121", color = "#212121"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF"))
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+
+```
+
+<center>
+mode < median < mean
+</center>
+
+---
+
+>- Skewed right OR Positive skew
+
+```{r echo = FALSE, fig.align='center'}
+reverselog_trans <- 
+  function(base = exp(1)) {
+  trans <- function(x) -log(x, base)
+  inv <- function(x) base^(-x)
+  trans_new(paste0("reverselog-", format(base)), trans, inv, 
+            log_breaks(base = base), 
+            domain = c(1e-100, Inf))
+}
+
+n <- 10000
+cust <- data.frame(cust_id=1:n,cust_rev <- rexp(n,.00001))
+powers <- function(base,exp) sapply(1:exp, function(exp) base^exp )
+
+p <- ggplot(cust, 
+       aes(cust_rev)) + 
+  geom_histogram(binwidth=1/3,
+                 aes(fill=..count..),
+                 show.legend = FALSE) + 
+   scale_x_continuous(trans=reverselog_trans(10), 
+                      breaks=powers(10,8)) +
+  scale_fill_distiller(palette = "Spectral") +
+  theme(
+    panel.background = element_rect(fill = "#212121"),
+    plot.background = element_rect(fill = "#212121", color = "#212121"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF")) 
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+
+```
+
+<center>
+mode > median > mean
+</center>
+
+---
+
+>- Normal distribution
+
+```{r echo = FALSE, fig.align='center'}
+n = 1000
+bin = 1/2
+mean = 0
+sd = 1
+set.seed(834)
+df <- data.frame(x = rnorm(n, mean, sd))
+
+p <- ggplot(df, aes(x = x, 
+               mean = mean, 
+               sd = sd, 
+               binwidth = bin, 
+               n = n)) +
+  theme_bw() +
+  geom_histogram(binwidth = bin,
+                 aes(fill=..count..),
+                 show.legend = FALSE) +
+  scale_fill_distiller(palette = "Spectral") +
+  theme(
+    panel.background = element_rect(fill = "#212121"),
+    plot.background = element_rect(fill = "#212121", color = "#212121"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  theme_void(base_family = "roboto") +
+  theme(legend.title = element_text(color = "#FFFFFF"),
+        legend.text = element_text(color = "#FFFFFF")) 
+
+
+grid::grid.draw(grid::rectGrob(
+  gp = grid::gpar(fill = "#212121",
+                  col = "#212121",
+                  lty = "blank")))
+
+print(p, 
+      newpage = FALSE)
+
+```
+
+<center>
+mode = median = mean
+</center>
+
+---
+
+<section>
+    <p>
+Remember that most of the time we're going to assume normality in this course!
+</p>
+</section>
+
+---
+
+## That's it. Take a break before our R session!

@@ -96,7 +96,6 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 #### Solutions
 Posted after class day and time next week.
 
-<!--
 <details><summary>3</summary>
 <p>
 
@@ -176,4 +175,3 @@ At the <span class="boxed">interval–ratio</span> level, political participatio
 
 </p>
 </details>
--->

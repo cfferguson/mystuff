@@ -438,7 +438,7 @@ mode(voter_fraud$total)
 ## [1] "numeric"
 ```
 
-Uh oh. What just happened? Move on and we'll briefly discuss.
+`mode` still doesn't work!
 
 ---
 
@@ -460,8 +460,8 @@ Mode &lt;- function(x) {
   ux[which.max(tabulate(match(x, ux)))]
 }
 
-# Notice that 'Mode' is capitalized so tha R won't confuse it
-# with its internal command 'mode'!
+# Notice that 'Mode' is capitalized so that R won't confuse it
+# with its internal command 'mode'.
 ```
 
 Keep that chunk in a file somewhere. You don't have to know what it means or how to construct it or any of that. This is not a programming class. As long as you run that chunk before trying to find a mode, you'll be fine.

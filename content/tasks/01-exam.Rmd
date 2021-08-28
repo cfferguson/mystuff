@@ -1,0 +1,72 @@
+---
+title: "Exam 1"
+linktitle: "Exam 1"
+menu:
+  tasks:
+    parent: Exams
+    weight: 1
+type: docs
+weight: 2
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+```
+
+<style>
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+</style>
+
+```{r icontibble, echo=FALSE, message=FALSE}
+book <- tibble(
+  
+  chapters <- c("1-5"),
+  
+  date <- c("9/23/21"),
+  
+  desc <- c("A written portion is followed by an R task"),
+  
+  cheat <- c("You may bring a single page standard A4 paper with formulas and definitions as needed. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included."),
+  
+  .name_repair = "minimal"
+  
+)
+```
+
+<center>
+```{r, echo=FALSE}
+book %>%
+  kbl(col.names = c("Chapters", "Date", "Description", "Cheat Sheet?"), 
+      "html", 
+      escape = FALSE,
+      align = 'clll') %>%
+  column_spec(1, 
+              bold = TRUE)
+```
+</center>
+

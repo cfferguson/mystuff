@@ -48,44 +48,59 @@ Please take your time going through these, especially the initial module. I sugg
 ## Installing R and RStudio
 Go to the [Installing R, RStudio, and tidyverse](/resources/install/) page under Resources to get both R and RStudio installed on your system.
 
-### Data Camp Schedule
-A *growing* schedule is given below. The **Course** and **Chapter** names represent Data Camp titles^[Please note this is subject to change with notice.]:
+## Schedule
+A *tentative* schedule is given below. The **Course** and **Chapter** names represent Data Camp titles^[Please note this is subject to change with notice.]:
 
 ```{r eval = TRUE, echo = FALSE, message=FALSE}
 unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
 
 checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
 
+dcico <- as.character("/logos/dc_small.png{width=20px}")
+
 dc_schedule <- read_csv("dc.csv",
-                        show_col_types = FALSE) %>% 
-                  as_tibble() %>%
-              mutate(Required = case_when(
+           show_col_types = FALSE) %>%
+  as_tibble() %>%
+                mutate(Required = case_when(
                 Required == "checked" ~ as.character(fontawesome::fa("check-circle", fill = "#428bca", height = "15px")),
                 Required == "unchecked" ~ as.character(fontawesome::fa("times-circle", fill = "#d9534f", height = "15px"))
               )) %>%
-            mutate(across(everything(), as.character)) %>%
-              select(-Group, -Chapters_wide, -`Due by_short`) %>%
+            mutate(across(everything(), as.character)) %>% 
+              select(-Group, -Chapters_wide, -Chapters_long, -`Due by_short`) %>%
               rename(`Due by` = `Due by_long`) %>%
-              rename(`Chapters covered` = Chapters_long)  %>%
+            drop_na(Module) %>%
             filter_all(any_vars(!is.na(.))) %>% 
             mutate(
               across(everything(), ~replace_na(.x, ""))
-            )
+            ) %>%
+  select_if(~!all(is.na(.)))  %>%
+  mutate(Link = str_replace_all(Link, "hyper", paste0("[![",dcico,"](/logos/dc-ico.png 'Data Camp Icon'){width=20px}]",
+                           "(https://www.datacamp.com/){target='_blank'}"
+  )))
+
 ```
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
 kable(dc_schedule, 
       escape = FALSE,
-      align = 'clcccll') %>%
+      align = 'clcccc') %>%
   kable_styling(full_width = FALSE,
                 bootstrap_options = c("striped", "hover")) %>%
   column_spec(1, width = "5em") %>%
   column_spec(2, width = "10em") %>%
   column_spec(3, width = "10em") %>%
   column_spec(4, width = "10em") %>%
-  column_spec(5, width = "10em") %>%
-  column_spec(6, width = "30em") %>%
-  column_spec(7, width = "50em") 
+  column_spec(5, width = "30em") %>%
+  column_spec(6, width = "5em") %>%
+  row_spec(0, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(2, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(3, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(4, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(5, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(6, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(7, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(8, extra_css = 'vertical-align: middle !important;') 
 ```
 
 <hr />

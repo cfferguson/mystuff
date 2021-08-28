@@ -72,9 +72,9 @@ ggsave(slack_icon,
   
 sticker(sin_w, 
         package="Statistical Methods I", 
-        p_size=14.5, 
+        p_size=10.5, 
         p_x=0.67,
-        p_y=1.36,
+        p_y=1.32,
         s_x=1.1, 
         s_y=1.0, 
         s_width=1.5, 
@@ -95,3 +95,9 @@ sticker(sin_w,
         h_color="#293840",
         filename="icon.png")
 
+ggsave("slack_icon.png",
+       sin_w,
+       width = 2480,
+       height = 2480,
+       units = "px",
+       bg = "#292a30")

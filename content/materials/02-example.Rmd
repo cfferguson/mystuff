@@ -1,6 +1,6 @@
 ---
 title: "The Organization and Graphic Presentation of Data"
-linktitle: "Week 2: The Organization and Graphic Presentation of Data"
+linktitle: "Week 2: The Organization and Graphic Presentation of Data Example"
 output:
   blogdown::html_page:
     toc: true

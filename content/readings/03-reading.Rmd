@@ -1,0 +1,56 @@
+---
+title: "Measures of Central Tendency"
+linktitle: "Week 3: Measures of Central Tendency"
+menu:
+  readings:
+    parent: Readings
+    weight: 3
+type: docs
+weight: 1
+---
+
+```{r echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(fontawesome)
+```
+
+```{r eval = TRUE, echo = FALSE, message=FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
+
+checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
+
+read_schedule <- read_csv("read.csv",
+                          show_col_types = FALSE) %>% 
+                  as_tibble() %>%
+                  mutate(Required = case_when(
+                  Required == "checked" ~ as.character(fontawesome::fa("check-circle", fill = "#428bca", height = "15px")),
+                Required == "unchecked" ~ as.character(fontawesome::fa("times-circle", fill = "#d9534f", height = "15px"))
+              )) %>%
+                  mutate(across(everything(), as.character)) %>%
+                    filter(Group == 3) %>% #CHANGE HERE
+                    select(-Group) %>%
+                  filter_all(any_vars(!is.na(.))) %>% 
+                  mutate(
+                    across(everything(), ~replace_na(.x, ""))
+                  ) %>%
+                select_if(~!all(is.na(.))) 
+  
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(read_schedule, 
+      escape = FALSE,
+      align = 'cllccccccccc') %>%
+  kable_styling(full_width = FALSE,
+                bootstrap_options = c("striped", "hover")) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "12em") %>%
+  column_spec(4, width = "5em") %>%
+  column_spec(5, width = "10em") %>%
+  column_spec(6, width = "10em") %>%
+  column_spec(7, width = "10em") 
+```
+
