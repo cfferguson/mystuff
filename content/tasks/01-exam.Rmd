@@ -47,11 +47,13 @@ book <- tibble(
   
   chapters <- c("1-5"),
   
-  date <- c("9/23/21"),
+  date <- c("9/16/21"),
   
   desc <- c("A written portion is followed by an R task"),
   
   cheat <- c("You may bring a single page standard A4 paper with formulas and definitions as needed. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included."),
+  
+  procedure <- c("You will be given the entire class length to complete this two part exam. The paper portion will be administered first and you may only use your cheat sheet and a calculator as resources. After submitting that potrtion, you will be given an R task. You may at that time use any online resources or notes you have brought to class."),
   
   .name_repair = "minimal"
   
@@ -61,10 +63,10 @@ book <- tibble(
 <center>
 ```{r, echo=FALSE}
 book %>%
-  kbl(col.names = c("Chapters", "Date", "Description", "Cheat Sheet?"), 
+  kbl(col.names = c("Chapters", "Date", "Description", "Cheat Sheet?", "Process"), 
       "html", 
       escape = FALSE,
-      align = 'clll') %>%
+      align = 'cllll') %>%
   column_spec(1, 
               bold = TRUE)
 ```
