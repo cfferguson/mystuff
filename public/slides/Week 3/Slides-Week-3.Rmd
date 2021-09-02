@@ -1,17 +1,63 @@
 ---
-title: "Distributions and Central Tendency"
+title: "Measures of Central Tendency"
 subtitle: "EDP 613"
 author: "Week 3"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+header-includes: 
+  - \usepackage{tikz}
 ---
 
-```{r setup, include=FALSE}
+<style>
+
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
 library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(patchwork)
+library(grid)
+library(gridExtra)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
 ```
 
-```{r echo = FALSE, purl = FALSE}
+```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#bff4ee",
@@ -24,311 +70,312 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
-# Prepping
-To repeat last week's idea: Everytime you start anything new in R and want a record, do the following:
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
 
-1. Open up a blank R script using the menu path **File > New File > R Script**.
-
-2. Save this script as `whatever.R` (replacing the term whatever) wherever you choose. Remember to note where the file is!
-
-3. After you have saved this file as `whatever.R`, go to the menu and select **Session > Set Working Directory > To Source File Location**.
-
----
-
-# Getting ready for this session
-
->- Get the file `2012 Voter Fraud.csv` and save it in the same location as this script. Similarly make sure you also have `2012_Voter_Fraud_Codebook.pdf`. This document provides information about every variable in this data set. If you pursue any data driven research, a codebook like this is essential for data sets!
-
->- Install the packages `car` and `descr`. Remember you can download it using **Tools > Install Packages** and typing in the name. Please make sure the **Install Dependencies** option has a checkmark beside of it. The install may take a minute.
-
-<center>
-<img src="install-packages.png" width="343" height="252" alt="Italian Trulli">
-</center>
-
----
-
->- Load up the packages along with `tidyverse`.
-
-```{r echo = TRUE, eval = TRUE, message=FALSE}
-library(tidyverse)
-library(car)
-library(descr)
-``` 
-
----
-
-# Frequency distributions
-
-Often the first thing we do when we encounter a new variable is to look at the variable's frequency distribution which in a nutshell tells us how many observations there are at different values of a variable. If we did not have a computer, we could look at data sheet and count them up by hand (depends on how much you LOVE counting data points). 
-
-But by using R (or any other data analysis package), we look at frequency distributions by using a frequency table. This table provides a summary of a variable's values in to a condensed and simplified presentation. We can use frequency tables to look at any variable from any data set. 
-
----
-
-## Loading up local data
-
-To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv()` command from the `readr` package within `tidyverse`.
-
-```{r echo = TRUE, eval = FALSE}
-voter_fraud <- read_csv("2012_Voter_Fraud.csv")
+checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
 ```
 
-```{r echo = FALSE, eval = TRUE, purl=FALSE}
-voter_fraud <- read_csv(here::here("static", "slides", "Week 3", "2012_Voter_Fraud.csv"))
+# Basic Idea
+
+The mean, median and mode are measures of central tendency and attempt to summarize the typical value of a variable.
+
+---
+
+# Why?
+
+These may help us draw conclusions about a specific group or compare different groups using a single numerical value.
+
+---
+
+# Recall Distributions
+
+```{r, echo=FALSE}
+set.seed(999)
+n <- 10000
+normal <- rnorm(n)
+
+draws <- list(
+  `Skewed Left\n\nmean < median < mode`  = c(normal[normal < 0] * 3, normal),
+  `Normal\n\nmean = median = mode` = normal,
+  `Skewed Right\n\nmean > median > mode` = c(normal[normal > 0] * 2.7, normal))
+
+random_data <- 
+  tibble::tibble(
+  example = factor(names(draws), 
+                   levels = c("Skewed Left\n\nmean < median < mode",
+                              "Normal\n\nmean = median = mode",
+                              "Skewed Right\n\nmean > median > mode")), 
+  values = draws
+) %>%
+  tidyr::unnest(values)
+
+distribution_list <- 
+  ggplot(random_data, 
+         aes(x = values)) + 
+  geom_histogram(
+    aes(y = after_stat(density),
+        fill = after_stat(density)), 
+    bins = 20, 
+    show.legend = FALSE
+  ) +
+  scale_fill_distiller(palette = "Spectral") +
+  stat_function(fun = dnorm, 
+                color = "#FFFFFF", 
+                size = 1.5,
+                alpha = 0.9) +
+  theme_void(base_family = "roboto") +
+  theme(plot.background = element_rect(fill = "#212121", 
+                                       color = "#212121"),
+        plot.title = element_text(hjust = 0.50,
+                                  color = "#FFFFFF"))
 ```
 
----
-
-## Side note
-
-R itself uses `read.csv` which can be a royal pain if you don't know what you're doing. Its strongly advised that you stick with the tidy way of loading data.
-
-Remember:
-
->- `read_csv` with a `_` is tidy
-
->- `read.csv` with a `.` is messy
-
----
-
-## Getting an idea of the data
-
-You can always view the data set by using `View(voter_fraud)` but in this instance, let's take a look at the first six lines of the data set. Remember we can do this by using
-
-```{r echo = TRUE, eval = TRUE}
-head(voter_fraud)
-```
-
----
-
-## Alternative
-
-... or we can do 
-
-```{r echo = TRUE, eval = TRUE}
-voter_fraud[1:6,]
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+distribution_list + 
+  facet_wrap("example",
+             scales = "free_x",
+             nrow = 3,
+             strip.position="left") +
+  theme(strip.text.y.left = element_text(angle = 0,
+                                         hjust = 0.50,
+                                         color = "#FFFFFF",
+                                         size = 12))
 ```
 
 ---
 
-## Just the (column) names please
+# Measures of Central Tendency: The Mean
 
-We can only take a look at the column names by doing
+>- The *average* number. 
 
-```{r echo = TRUE, eval = TRUE}
-names(voter_fraud)
+>- There are other types of means (e.g. geometric, harmonic, etc.) but we are only using the *arithmetic* mean.
+
+--
+
+>- Essentially the **balancing point** or center of mass of a distribution
+
+--
+
+>- Found by adding all data points and dividing by the number of data points
+
+--
+
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+knitr::include_graphics("img/mean balancing point.png")
 ```
 
 ---
 
-Let's look at a frequency table for the variable `battleground`, which is a dummy variable for whether a state was a battleground or not during the 2012 US presidential election. Here
+# Measures of Central Tendency: The Median
 
->- `1 = 'battleground state'` and
+>- The *middle* number
 
->- `0 = 'not battleground state'`
+--
 
-There a number of ways of displaying tabular information , but in this case we'll just use the built-in R function `table`
+>- Essentially the **point that cuts a data set in half**
 
-```{r echo = TRUE, eval = TRUE}
-table(voter_fraud$battleground)
+--
+
+>- Found by ordering data points from least to greatest or greatest to least and locating the middle number - if there are two middle data points, they are averaged
+
+--
+
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+knitr::include_graphics("img/median balancing point.png")
 ```
 
->- The first row of the output tells us the values (remember what `1` and `0` stand for - these are categorical variables even though they are represented numerically).
-
->- The second row gives is the number of observations for each value. So we have 
-  - 42 states battleground states and 
-  - 8 non battleground states. 
 
 ---
 
-Well that is great but what if we have a lot of values? For example, let's look at the variable `total` which gives us data for the number of articles by newspaper.
+# Measures of Central Tendency: The Mode
 
-```{r echo = TRUE, eval = TRUE}
-table(voter_fraud$total)
+>- The *most frequent* number
+
+--
+
+>- Essentially the point that occurs the most
+  
+--
+
+>- Found by determining the data point(s) that appear the most - if none exists, then there is no mode
+
+--
+
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+knitr::include_graphics("img/mode balancing point.png")
 ```
+
+---
+
+# Basic Procedure: The Mean
+
+>- **Mean** 
+  - Add the numbers up, divide by the total number of values in the set.
+  - Denoted by $\overline{Y}$
+
+--
+
+## Example
+
+Compute the mean for the following sample: $\{21.3, 31.4, 12.7, 41.6\}$
+
+--
+### Solution
+
+\begin{aligned}
+\overline{Y}&=\dfrac{21.3+31.4+12.7+41.6}{4}\\
+&=\dfrac{107}{4}\\
+&=26.75
+\end{aligned}
+
+---
+
+## Give it a Try
+
+Compute the mean for the following sample: $\{2, 5, 5, 7, 7, 8, 9\}$
+
+--
+
+### Solution
+
+\begin{aligned}
+\overline{Y}&=\dfrac{2+5+5+7+7+8+9}{6}\\\\
+&=\dfrac{43}{7}\\\\
+&\approx6.14
+\end{aligned}
+
+---
+
+# Basic Procedure: The Median
+
+>- **Median** 
+  - Put the numbers in order from least to greatest or greatest to least and find the middle number. 
+  - If there are two middle numbers, average them.
+
+--
+
+## Example
+
+Compute the median for the following sample: $\{2, 5, 5, 7, 7\}$
+
+---
+
+### Solution
+
+>- Since these data point are already in numerical order, we can use them as is without reordering.
+
+--
+
+>- $n=5$ which is an odd number so we can locate the median by $$\dfrac{n+1}{2}=\dfrac{5+1}{2}=\dfrac{6}{2}=3$$
+telling us to look in the *third position* from either side of the list of numbers.
+
+--
+
+>- In $$\{2, 5, 5, 7, 7\}$$ the middle number is $5$ so that must be the median!
+
+---
+
+## Give it a Try
+
+Compute the mean for the following sample: $\{21.3, 31.4, 12.7, 41.6\}$
+
+--
+
+### Solution
+
+>- Since these data point are NOT already in numerical order, we must reorder them.
+
+$$\{12.7, 21.3, 31.4, 41.6\}$$
+--
+
+>- $n=4$ which is an even number so we can locate the median by taking the mean of the the numbers in
+
+---
+
+  >+ $\dfrac{n}{2}=\dfrac{4}{2}=2$, or
+the *second position*
+
+--
+
+  >+ $\dfrac{n}{2}+1=\dfrac{4}{2}+1=3$, or the *third position*
  
- 
+--
+
+>- So the median is 
+
+$$\dfrac{21.3+31.4}{2} = 26.35$$
+
 ---
 
-## Using the `freq` command (1/2)
+# Basic Procedure: The Mode
 
-```{r echo = FALSE, eval = TRUE}
-table(voter_fraud$total)
+>- **Mode** 
+  - Find the number(s) that appear the most. 
+  - If none exists, then there is no mode.
+
+---
+
+## Example
+
+Compute the mode for the following sample: $\{2, 5, 5, 7, 7\}$
+
+--
+
+### Solution
+
+>- 
+```{r, echo=FALSE}
+freq <- 
+  tibble(
+    data = c(2,5,7),
+    
+    frequency = c(1,2,2)
+  )
+
 ```
 
-That seems like a lot. Let's plot them on a bar chart using the `freq` command from the `descr` package.
-
-```{r echo = TRUE, eval = TRUE, fig.width=7.8, fig.height=3.8, fig.align="center"}
-freq(voter_fraud$total, plot = TRUE)
+```{r, echo=FALSE}
+kbl(freq,
+    col.names = c("Data point", "Frequency"), 
+      "html", 
+      escape = FALSE,
+      align = 'cc') %>%
+  kable_styling(full_width = FALSE)
 ```
 
+--
+
+>- The data points 5 and 7 repeat twice while 2 only appears once. 
+
+--
+
+>- The modes are 5 and 7. 
+
+>- Known as *bimodal*. Three modes would be *trimodal* and so on.
 
 ---
 
+## Give it a Try
 
-## Using the `freq` command (2/2)
+Compute the mode for the following sample: $\{21.3, 31.4, 12.7, 41.6\}$
 
-... and you get something like this
+--
 
-<img src="freq-secondary-output.png" width="239" height="460" alt="Install Packages Window">
+### Solution
 
----
+>- No data point appears more than once points appear once.
 
-
-While you could present the results by going through each newspaper by stating 1 newspaper had zero articles, 1 newspaper had one article, 2 newspapers had two articles and so on. 
-
-This is time consuming and doesn’t really help in summarizing the information. Do we really need to display each individual newspaper and their counts? Seems a bit messy. One way to make the data easier to understand is to use ranges.
+>- Therefore there is no mode.
 
 ---
 
-We need to add a column to our data set and give it values for the ranges. We can simply add a column using the `$`. Because we want to add ranges, let's just call the new column by that term.
+# Something to Think About
 
-> `voter_fraud$ranges`
+>- A statistic is **resistant** if its value is not affected by extreme values (large or small) in the data set.
 
-Then to add the actual ranges , we can use the `recode` command from the `descr` package.
-
-```{r echo = TRUE, eval = TRUE}
-voter_fraud$ranges <- recode(voter_fraud$total, 
-                                "0:9 = '0 - 9 articles';
-                                10:19 ='10 - 19 articles';
-                                20:29 = '20 - 29 articles';
-                                30:39 = '30 - 39 articles';
-                                40:49 = '40 - 49 articles'")
-```
-
-What do you think is happening here? Think about it for a minute before moving on. 
-
-The thing about R as opposed to the click and run nature of most softwares (e.g. SAS, SPSS, MiniTab, etc.) is that you know exactly what command is being run and what its doing with your data. Because of this, you are more likely to understand what is going on and less likely to go through the motions to get a solution.
+>- Which of the measures of central tendency are resistant? 
 
 ---
 
-Even if you can't figure it out...that's OK! Let's run the `table` command again. Maybe that will help:
-
-```{r echo = TRUE, eval = TRUE}
-table(voter_fraud$ranges)
-```
-
-That is much better! Now did you figure it out? Here let's look at the chunk again:
-
-```{r echo = TRUE, eval = FALSE}
-voter_fraud$ranges <- recode(voter_fraud$total, 
-                                "0:9 = '0 - 9 articles';
-                                10:19 ='10 - 19 articles';
-                                20:29 = '20 - 29 articles';
-                                30:39 = '30 - 39 articles';
-                                40:49 = '40 - 49 articles'")
-```
-
-We actually did two things:
-
->- Inside the parenthesis: We made up our own ranges using all of the counts (e.g `0:9`) and told R to call them something else (e.g `0 - 9 articles`). 
-
->- Outside the parenthesis: We used the `recode` command to tell R to count everything in each of those ranges and to give us the total. 
-
-Try playing with the range to see if you can group the articles more efficiently. 
-
----
-
-Now let's plot the bar chart again but in this case, we'll be using our new column `ranges`.
-
-
-```{r echo = TRUE, eval = TRUE, fig.width=8, fig.height=4}
-freq(voter_fraud$ranges, plot = TRUE)
-```
-
-That's much better!
-
----
-
-
-There's actually an even easier way to do this totally in the `tidyverse` family but we'll get to that later in the term.
-
-Right now your job is just to get familiar with how logic is used in R. 
-
----
-
-# Measures of Central Tendency
-
-To take a look at how we assess the mean, median, and mode, let's use our original data set and first look at the `total` column which has the raw data counts. 
-
-```{r echo = TRUE, eval = TRUE, fig.width=10, fig.height=6}
-head(voter_fraud$total)
-```
-
----
-
-For the mean, we use
-```{r echo = TRUE, eval = TRUE, fig.width=10, fig.height=6}
-mean(voter_fraud$total)
-```
-
-
----
-
-For the median, we use
-```{r echo = TRUE, eval = TRUE, fig.width=10, fig.height=6}
-median(voter_fraud$total)
-```
-
----
-
-For the mode, we use
-```{r echo = TRUE, eval = TRUE, fig.width=10, fig.height=6}
-mode(voter_fraud$total)
-```
-
-`mode` still doesn't work!
-
----
-
-For various programming reasons that are not worth discussing at this time, R does not have a standard in-built function to calculate the mode. Try running   
-
-```{r echo = TRUE, eval = FALSE}
-?mode
-```
-
-The `?` symbol prior to any command will give you information about that function provided you have that package loaded. Yes its not clearly not written in plain English, but it does tell you that the `mode` command means something else in R. 
-
-OK let's get back to the mode we need. To get the mode, we actually have to tell R how to go about calculating it. Below is a function that will help. In order for R to recognize it, you have to run the following sequence before using the command.
-
-```{r echo = TRUE, eval = TRUE}
-Mode <- function(x) {
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
-
-# Notice that 'Mode' is capitalized so that R won't confuse it
-# with its internal command 'mode'.
-```
-
-Keep that chunk in a file somewhere. You don't have to know what it means or how to construct it or any of that. This is not a programming class. As long as you run that chunk before trying to find a mode, you'll be fine.
-
-```{r echo = TRUE, eval = TRUE}
-Mode(voter_fraud$total)
-```
-
----
-
-# On Your Own
-
-This is your chance to get some practice in and to ask questions. You won't get the opportunity to get help during quizzes and exams so take advantage now!
-
-Open up a new script and load up the `Box Office.csv` data set in R. This set was scraped from Rotten Tomatoes prior to Avengers: Endgame becoming the highest grossing movie of all time.
-
-Now try answering the following questions using R:
-
-1. What is the average number of positive reviews for the top five movies?
-
-2. What are the average number of negative reviews for the bottom five movies?
-
-3. How were movies released over the years? Provide counts and a visualization.
-
-4. Which measure of central tendency is the best to describe the average number of movies over the years? 
-
-5. Which year has the most number of ranked movies?  
-
-I'll post the solutions next week!
-
----
-
-## That's it for today!
+## That's it. We will work more with R next week!
