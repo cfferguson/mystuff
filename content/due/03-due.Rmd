@@ -6,7 +6,7 @@ output:
     toc: true
 menu:
   due:
-    parent: Due?
+    parent: "To Do"
     weight: 3
 type: docs
 weight: 1
@@ -32,17 +32,20 @@ wk_post <- tibble(
 Submit = c(unchecked,
            checked,
            checked,
+           checked,
            unchecked),
 
 Description = c("Review the solution set from the Chapter 2 homework set",
+                "Finish the *Introduction to R* module on Data Camp",
                 "Continue the *Introduction to the Tidyverse* module^[It is advised that you complete the *Introduction to R* module first]",
                "Complete problems 1, 2, 3, 4, 5, 6, 10 and 11 in Chapter 3",
                "Download the in-class Chapter 3 Slideshow"),
 
 Location = c( "[Link](/tasks/02-tasks/#solutions)",
+              "[Link](/datacamp/01-module/)",
               "[Link](/datacamp/03-module/)",
               "[Link](/tasks/03-tasks/#homework)",
-             "[Link](/materials/03-content/#in-class-notes)")
+              "[Link](/materials/03-content/#in-class-notes)")
 )
 
 ```
