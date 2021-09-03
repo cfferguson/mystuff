@@ -91,7 +91,7 @@ The What and the Why of Statistics
 Social Statistics for a Diverse Society
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-19-Jan
+1-19
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/01-reading/&#34;&gt;Week 1&lt;/a&gt;
@@ -311,6 +311,104 @@ Social Statistics for a Diverse Society
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-example/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-module/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measures of Variability</title>
+      <link>https://edp613.asocialdatascientist.com/readings/04-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/readings/04-reading/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Title
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Details
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Assigned
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Read Before
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Required
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Tasks
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Materials
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Example
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Data Camp
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 20em; &#34;&gt;
+Measures of Variability
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+113-134
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/04-reading/&#34;&gt;Week 4&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+9/2/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+9/9/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/04-tasks/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-content/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-example/&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-module/&#34;&gt;Link&lt;/a&gt;

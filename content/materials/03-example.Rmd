@@ -1,6 +1,6 @@
 ---
 title: "Measures of Central Tendency"
-linktitle: "Week 3: Measures of Central Tendency"
+linktitle: "Week 3: Measures of Central Tendency Example"
 output:
   blogdown::html_page:
     toc: true

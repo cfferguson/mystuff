@@ -1314,7 +1314,7 @@ The What and the Why of Statistics
 Social Statistics for a Diverse Society
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-19-Jan
+1-19
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/01-reading/&#34;&gt;Week 1&lt;/a&gt;
@@ -1633,69 +1633,162 @@ Social Statistics for a Diverse Society
     </item>
     
     <item>
-      <title>The Organization and Graphic Presentation of Data</title>
-      <link>https://edp613.asocialdatascientist.com/materials/02-example/</link>
+      <title>Measures of Central Tendency</title>
+      <link>https://edp613.asocialdatascientist.com/due/03-due/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://edp613.asocialdatascientist.com/materials/02-example/</guid>
+      <guid>https://edp613.asocialdatascientist.com/due/03-due/</guid>
       <description>
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#crash-course-statistics&#34;&gt;Crash Course Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-3-after-class-ends&#34;&gt;What to do for Week 3 after class ends&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-4-before-coming-to-class&#34;&gt;What to do for Week 4 before coming to class&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id=&#34;crash-course-statistics&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Crash Course Statistics&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; target=&#34;_blank&#34;&gt;Crash Course Statistics&lt;/a&gt; is a freely available channel on YouTube which covers a range of topics in..well statistics. While I encourage you to watch all of their videos, the ones that really applies to Chapter 2 is one of two discussions on visualizations which you can see below.&lt;/p&gt;
-&lt;p align=&#34;center&#34;&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hEWY6kkBdpo?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;/p&gt;
+&lt;div id=&#34;what-to-do-for-week-3-after-class-ends&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What to do for Week 3 after class ends&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Submit
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Location
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Review the solution set from the Chapter 2 homework set
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/02-tasks/#solutions&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Continue the &lt;em&gt;Introduction to the Tidyverse&lt;/em&gt; module&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-module/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Complete problems 1, 2, 3, 4, 5, 6, 10 and 11 in Chapter 3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/03-tasks/#homework&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Download the in-class Chapter 3 Slideshow
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-content/#in-class-notes&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-to-do-for-week-4-before-coming-to-class&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What to do for Week 4 before coming to class&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Area
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Location
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Read &lt;em&gt;Measures of Variability&lt;/em&gt; in the text
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/04-reading/#book-stuff&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 640 512&#34; style=&#34;height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M96 64h448v352h64V40c0-22.06-17.94-40-40-40H72C49.94 0 32 17.94 32 40v376h64V64zm528 384H480v-64H288v64H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Download Chapter 4 Powerpoint and Lecture Textbook Notes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-content/#textbook-notes&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 352 512&#34; style=&#34;height:1em;width:0.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 30em; &#34;&gt;
+Watch a video on the Measures of Central Tendency.&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Most weeks I’ll post some external resources that may help you get the overall idea of what we are covering. These are &lt;strong&gt;optional&lt;/strong&gt;, but the presentations are generally engaging and the visuals are created by very talented people so it may be worth your time.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;For grading.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;It is advised that you complete the &lt;em&gt;Introduction to R&lt;/em&gt; module first&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;For preparation.&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;Optional but recommended.&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Measures of Central Tendency</title>
-      <link>https://edp613.asocialdatascientist.com/materials/03-example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://edp613.asocialdatascientist.com/materials/03-example/</guid>
-      <description>
-&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#crash-course-statistics&#34;&gt;Crash Course Statistics&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;crash-course-statistics&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Crash Course Statistics&lt;/h3&gt;
-&lt;p&gt;This week we have another brief introduction from Crash Course Statistics. This time it is with a broad concept called &lt;strong&gt;Measures of Central Tendency&lt;/strong&gt;. Think about the terms, in that &lt;em&gt;something&lt;/em&gt; wants to be gauged towards the middle. But as you’ll learn soon, the middle isn’t always where you think it is!&lt;/p&gt;
-&lt;p align=&#34;center&#34;&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/kn83BA7cRNM&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Remember you can always access a Crash Course Statistics playlist using the following &lt;a href=&#34;https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- ### R Nuances
-The following video is a bit of a compilation of things that come up that are frustrating unless someone points them out. (*coming soon*)
-
-
-&lt;center&gt;
-&lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
-  &lt;source src=&#34;https://edp613.asocialdatascientist.com/videos/R_nuances.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
-&lt;/center&gt;
---&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -1788,6 +1881,141 @@ Social Statistics for a Diverse Society
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-example/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-module/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measures of Central Tendency</title>
+      <link>https://edp613.asocialdatascientist.com/materials/03-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/03-example/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#crash-course-statistics&#34;&gt;Crash Course Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;crash-course-statistics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Crash Course Statistics&lt;/h3&gt;
+&lt;p&gt;This week we have another brief introduction from Crash Course Statistics. This time it is with a broad concept called &lt;strong&gt;Measures of Central Tendency&lt;/strong&gt;. Think about the terms, in that &lt;em&gt;something&lt;/em&gt; wants to be gauged towards the middle. But as you’ll learn soon, the middle isn’t always where you think it is!&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/kn83BA7cRNM&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Remember you can always access a Crash Course Statistics playlist using the following &lt;a href=&#34;https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- ### R Nuances
+The following video is a bit of a compilation of things that come up that are frustrating unless someone points them out. (*coming soon*)
+
+
+&lt;center&gt;
+&lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
+  &lt;source src=&#34;https://edp613.asocialdatascientist.com/videos/R_nuances.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;/center&gt;
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measures of Variability</title>
+      <link>https://edp613.asocialdatascientist.com/readings/04-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/readings/04-reading/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Title
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Details
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Assigned
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Read Before
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Required
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Tasks
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Materials
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Example
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Data Camp
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 20em; &#34;&gt;
+Measures of Variability
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+113-134
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/04-reading/&#34;&gt;Week 4&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+9/2/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+9/9/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/04-tasks/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-content/&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-example/&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-module/&#34;&gt;Link&lt;/a&gt;
@@ -1905,6 +2133,12 @@ You will be given the entire class length to complete this two part exam. The pa
       <description>
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#textbook-notes-and-presentation&#34;&gt;Textbook Notes and Presentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#in-class-presentation&#34;&gt;In-class Presentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;div id=&#34;textbook-notes-and-presentation&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Textbook Notes and Presentation&lt;/h3&gt;
@@ -2596,6 +2830,356 @@ According to this time series chart, rates of voting have consistently varied by
     </item>
     
     <item>
+      <title>The Organization and Graphic Presentation of Data</title>
+      <link>https://edp613.asocialdatascientist.com/materials/02-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/02-example/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#crash-course-statistics&#34;&gt;Crash Course Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;crash-course-statistics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Crash Course Statistics&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; target=&#34;_blank&#34;&gt;Crash Course Statistics&lt;/a&gt; is a freely available channel on YouTube which covers a range of topics in..well statistics. While I encourage you to watch all of their videos, the ones that really applies to Chapter 2 is one of two discussions on visualizations which you can see below.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hEWY6kkBdpo?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Most weeks I’ll post some external resources that may help you get the overall idea of what we are covering. These are &lt;strong&gt;optional&lt;/strong&gt;, but the presentations are generally engaging and the visuals are created by very talented people so it may be worth your time.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measures of Central Tendency</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/03-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/03-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 3, 4, 5, 6, 10, 11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+75-97
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Posted after class day and time next week.&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+&lt;p&gt;
+
+a. The mode is &lt;span class=&#34;boxed&#34;&gt;Routine&lt;/span&gt;.
+
+b. The median is &lt;span class=&#34;boxed&#34;&gt;Routine&lt;/span&gt;.
+
+c. Based on the mode and median for this variable, most respondents indicate that their lives are &lt;span class=&#34;boxed&#34;&gt;Routine&lt;/span&gt;.
+
+d. &lt;span class=&#34;boxed&#34;&gt;A mean score is nonsense for nominal measurements&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;p&gt;
+
+a. The is &lt;span class=&#34;boxed&#34;&gt;ordinal&lt;/span&gt;.
+
+b. By using either figure related to the highest frequency or the highest percentage, the outcome is &lt;span class=&#34;boxed&#34;&gt;strongly agree&lt;/span&gt;.
+
+c. By using either related to the highest frequency or the highest percentage, the outcome is *strongly agree* for both years this indicating a high level of support. When combined *agree*,  more than half of the 2014 (32.5% + 25.3% = 57.5%) and (39.5% + 27.0% = 66.5%) 2018 GSS samples agree that homosexuals should have the right to marry.
+ 
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;p&gt;
+
+a. This has a level of an &lt;span class=&#34;boxed&#34;&gt;interval-ratio&lt;/span&gt;. Using frequencies^[You can also do this using cumulative percentages.], we have
+\begin{aligned}
+\dfrac{N+1}{2}&amp;= \dfrac{32+1}{2}\\\\
+&amp;= 16.5
+\end{aligned}
+Adding up the frequencies until locating the 16th and 17th cases yields the category &lt;span class=&#34;boxed&#34;&gt;40 hr worked last week&lt;/span&gt;.
+
+
+b. We have 
+
+- 25th percentile = $(32 × 0.25)$ implying the 8th case, or &lt;span class=&#34;boxed&#34;&gt;30 hr worked last week&lt;/span&gt;.
+- 50th percentile is simply the median implying the category &lt;span class=&#34;boxed&#34;&gt;40 hr worked last week&lt;/span&gt;.
+- 75th percentile = $(32 × 0.75)$ implying the 24th case, or &lt;span class=&#34;boxed&#34;&gt;40 hr worked last week&lt;/span&gt;.
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;4&lt;/summary&gt;
+&lt;p&gt;
+
+a. The mode category is &lt;span class=&#34;boxed&#34;&gt;agree&lt;/span&gt;.
+
+b. Using frequencies, we find that the median is 2, or &lt;span class=&#34;boxed&#34;&gt;agree&lt;/span&gt;.
+
+c. 
+
+- 20th percentile = $(835 × 0.20)$ implying the 167th case, or &lt;span class=&#34;boxed&#34;&gt;strongly agree&lt;/span&gt;.
+- 80th percentile = $(835 × 0.80)$ implying the 668th case, or &lt;span class=&#34;boxed&#34;&gt;agree&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;p&gt;
+
+a. 
+
+
+
+&lt;center&gt;
+
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Race &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Mode &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Median &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Black &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Seldom &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Sometimes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Hispanic &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Everyday &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Nearly everyday &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Everyday &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Most days &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/center&gt;
+
+b. Teens’ breakfast habits vary by race/ethnicity. Out of the three racial/ethnic groups, Black students were more likely to report seldom or sometimes eating breakfast. On the other hand, White and Hispanic students eat breakfast more frequently. The &lt;span class=&#34;boxed&#34;&gt;mode&lt;/span&gt; for White and Hispanic students is everyday. 
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;6&lt;/summary&gt;
+&lt;p&gt;
+
+The mode for both Males and Females is &lt;span class=&#34;boxed&#34;&gt;Working full-time&lt;/span&gt;. 
+
+Using frequencies, we have
+
+- Males: 
+\begin{aligned}
+\dfrac{N+1}{2}&amp;= \dfrac{596+1}{2}\\\\
+&amp;= 298.5
+\end{aligned}
+Adding up the frequencies until locating the 298th and 299th cases yields the category &lt;span class=&#34;boxed&#34;&gt;Working Full Time&lt;/span&gt;.
+
+- Females: 
+\begin{aligned}
+\dfrac{N+1}{2}&amp;= \dfrac{781+1}{2}\\\\
+&amp;= 391
+\end{aligned}
+Adding up the frequencies until locating the 391th case yields the category &lt;span class=&#34;boxed&#34;&gt;Working Full Time&lt;/span&gt;. Using either the mode or median implies that there are &lt;span class=&#34;boxed&#34;&gt;no substantial differences between males and females&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;10&lt;/summary&gt;
+&lt;p&gt;
+
+a. \
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Hours Worked Last Week &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Frequency &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Hours Worked Last Week x Frequency &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 20 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 25 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 50 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 28 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 28 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 29 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 29 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 30 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 3 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 32 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 32 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 40 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 14 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 560 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 50 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 52 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 52 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 55 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 55 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 60 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 64 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; 70 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 70 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 32 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;font-weight: bold;color: white !important;background-color: #559e83 !important;&#34;&gt; 1250 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+so we have 
+\begin{aligned}
+\overline{Y}&amp;=\dfrac{1250}{32}\\\\
+&amp;\approx 39.06
+\end{aligned}
+or about &lt;span class=&#34;boxed&#34;&gt;39 hours&lt;/span&gt;.
+
+b. Since the median was 40 hr worked last week, the distribution is slightly &lt;span class=&#34;boxed&#34;&gt;skewed in a positive direction&lt;/span&gt;. 
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;11&lt;/summary&gt;
+&lt;p&gt;
+Since Clinton and Sanders’ middle-class income amount is higher than the U.S. Census estimated mean or median, their definition of middle class is not based on the statistical middle. It is unclear what they were using but it was not based on the actual measure.
+&lt;/p&gt;
+&lt;/details&gt;
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Measures of Central Tendency</title>
       <link>https://edp613.asocialdatascientist.com/materials/03-content/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2606,6 +3190,7 @@ According to this time series chart, rates of voting have consistently varied by
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#textbook-notes&#34;&gt;Textbook Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#in-class-notes&#34;&gt;In Class Notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
@@ -2615,21 +3200,24 @@ According to this time series chart, rates of voting have consistently varied by
 &lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week%203/SSDS_Ch3.pptx&#34; target=&#34;_blank&#34;&gt;Chapter 3 PowerPoint&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week%203/SSDS_Ch3.docx&#34; target=&#34;_blank&#34;&gt;Chapter 3 Lecture Notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-class-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;In Class Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Download the class slides: Click on the presentation itself and then you may&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.&lt;/li&gt;
+&lt;li&gt;Press the letter &lt;strong&gt;O&lt;/strong&gt; at any point to see see a tile view of the slideshow.&lt;/li&gt;
+&lt;li&gt;Use this &lt;a href=&#34;https://edp613.asocialdatascientist.com/slides/Week%202/Slides-Week-3.html&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to view a larger version of slideshow in a new window.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 3/Slides-Week-3.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;You can download&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;a href=&#34;https://edp613.asocialdatascientist.com/slides/Week%203/Slides-Week-3.pdf&#34; target=&#34;_blank&#34;&gt;PDF&lt;/a&gt; of the presentation.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--
-### In Class Notes
-
-- Download the class slides: Click on the presentation itself and then you may
-
-  + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
-  + Press the letter **O** at any point to see see a tile view of the slideshow.
-  + Use this [link](/slides/Week 2/Slides-Week-2.html){target=&#34;_blank&#34;} to view a larger version of slideshow in a new window.
-
-&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 2/Slides-Week-2.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
-
-You can download 
-
-- a [PDF](/slides/Week 2/Slides-Week-2.pdf){target=&#34;_blank&#34;} of the presentation. 
-
 ### R Walkthrough
 
 Click on the presentation itself and then you may
@@ -2645,6 +3233,68 @@ You can download
 - a [PDF](/slides/Week 2/Slides-Week-2R.pdf){target=&#34;_blank&#34;} of the presentation above. 
 - a [script](/slides/Week 2/Slides-Week-2R.R){target=&#34;_blank&#34;} file of just the R chunks used in the presentation.
  --&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measures of Variability</title>
+      <link>https://edp613.asocialdatascientist.com/materials/04-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/materials/04-content/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#textbook-notes&#34;&gt;Textbook Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#in-class-notes&#34;&gt;In Class Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#r-walkthrough&#34;&gt;R Walkthrough&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;textbook-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Textbook Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/slides/Week%204/SSDS_Ch4.PPTX&#34; target=&#34;_blank&#34;&gt;Chapter 4 PowerPoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/lecture_notes/Week%204/SSDS_Ch4.docx&#34; target=&#34;_blank&#34;&gt;Chapter 4 Lecture Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-class-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;In Class Notes&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;posted during class time&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+- Download the class slides: Click on the presentation itself and then you may
+
+  + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
+  + Press the letter **O** at any point to see see a tile view of the slideshow.
+  + Use this [link](/slides/Week 2/Slides-Week-3.html){target=&#34;_blank&#34;} to view a larger version of slideshow in a new window.
+
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 3/Slides-Week-3.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
+
+You can download 
+
+- a [PDF](/slides/Week 4/Slides-Week-4.pdf){target=&#34;_blank&#34;} of the presentation. 
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;r-walkthrough&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;R Walkthrough&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;posted during class time&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+1. Download the data sets^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance.] and codebooks needed for this walkthrough. Put them wherever you want BUT please remember where they are.
+
+- [Week 3 Walkthrough Materials](/slides/Week 4/Week4data.zip){target=&#34;_blank&#34;}
+
+2. Click on the presentation itself and then you may
+
+- Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
+- Press the letter **O** at any point to see see a tile view of the slideshow.
+- Use this [link](/slides/Week 4/Slides-Week-4.html){target=&#34;_blank&#34;} to view a larger version of slideshow in a new window.
+
+&lt;iframe src=&#34;https://edp613.asocialdatascientist.com/slides/Week 4/Slides-Week-4.html&#34; width=&#34;672&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
+
+You can download a [PDF](/slides/Week 4/Slides-Week-4.pdf){target=&#34;_blank&#34;} of the presentation above. 
+--&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -4101,7 +4751,7 @@ Materials
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-Interactive R lessons, examples, and other things.
+Interactive R lessons, examples, and other specific content
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -4186,10 +4836,9 @@ Weekly submission information.
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-datacamp/&#34;&gt;
               &lt;font color=&#34;76487&#34;&gt;
                     &lt;i class=&#34;fas fa-chalkboard fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-lightbulb fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/02-content/&#34;&gt;
+              &lt;font color=&#34;eb7b59&#34;&gt;
+                    &lt;i class=&#34;fas fa-lightbulb fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/02-homework/&#34;&gt;
               &lt;font color=&#34;cf4647&#34;&gt;
                     &lt;i class=&#34;fas fa-tasks fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
@@ -4206,10 +4855,9 @@ Weekly submission information.
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-datacamp/&#34;&gt;
               &lt;font color=&#34;76487&#34;&gt;
                     &lt;i class=&#34;fas fa-chalkboard fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-lightbulb fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
+            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-content/&#34;&gt;
+              &lt;font color=&#34;eb7b59&#34;&gt;
+                    &lt;i class=&#34;fas fa-lightbulb fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/03-homework/&#34;&gt;
               &lt;font color=&#34;cf4647&#34;&gt;
                     &lt;i class=&#34;fas fa-tasks fa-lg fa-fw&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;

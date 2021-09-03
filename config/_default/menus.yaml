@@ -48,9 +48,9 @@ materials:
     weight: 1
   - name: Content
     weight: 2
-  - name: R Walkthroughs
-    weight: 3
   - name: Examples
+    weight: 3
+  - name: Walkthroughs
     weight: 4
 tasks:
   - name: Overview

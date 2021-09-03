@@ -42,7 +42,7 @@ tableofcontent <- tibble(
   
   descr <- c("Weekly readings.",
              "R/RStudio Training modules.",
-             "Interactive R lessons, examples, and other things.",
+             "Interactive R lessons, examples, and other specific content",
              "Weekly tasks and deliverables.",
              "Weekly submission information."
              ),

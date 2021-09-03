@@ -15,6 +15,7 @@ lessons:
     session: 2
     date: "August 26, 2021"
     readings: "02-reading"
+    materials: "02-content"
     datacamp: "02-datacamp"
     examples: "02-example"
     tasks: "02-homework"
@@ -24,6 +25,7 @@ lessons:
     session: 3
     date: "September 2, 2021"
     readings: "03-reading"
+    materials: "03-content"
     datacamp: "03-datacamp"
     examples: "03-example"
     tasks: "03-homework"

@@ -6,10 +6,10 @@ output:
     toc: true
 menu:
   materials:
-    parent: Example
+    parent: Examples
     weight: 2
 type: docs
-weight: 1
+weight: 2
 editor_options: 
   chunk_output_type: console
 ---
