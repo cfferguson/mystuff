@@ -83,9 +83,10 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 
 
 ### Solutions
-Posted after class day and time next week.
-
 <!--
+Posted after class day and time next week.
+-->
+
 <details><summary>1</summary>
 <p>
 
@@ -331,4 +332,3 @@ According to this time series chart, rates of voting have consistently varied by
 
 </p>
 </details>
--->
