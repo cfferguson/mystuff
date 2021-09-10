@@ -39,7 +39,7 @@ Submit = c(unchecked,
 Description = c("Review the solution set from the Chapter 3 homework set",
                "Begin the *Dr. Semmelweis and the Discovery of Handwashing* project on Data Camp",
                "Begin the *Introduction to Statistics in R* module on Data Camp",
-               "Complete problems 1, 2, 3, 4, 5, 6, 10 and 11 in Chapter 4",
+               "Complete problems 1, 2, 3, 7, 8, 11, 12, and 13 in Chapter 4",
                "Download the in-class Chapter 4 Slideshow",
                "Download the in-class R Walkthrough Slideshow"),
 
