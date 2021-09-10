@@ -5,7 +5,7 @@ output:
   blogdown::html_page:
     toc: true
 menu:
-  example:
+  materials:
     parent: Examples
     weight: 3
 type: docs

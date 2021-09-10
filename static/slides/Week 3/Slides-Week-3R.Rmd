@@ -5,10 +5,13 @@ author: "Week 3"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
 library(knitr)
+library(kableExtra)
+library(here)
 ```
 
 ```{r echo = FALSE, purl = FALSE}
@@ -24,12 +27,15 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
-# Prepping
-To repeat last week's idea: Everytime you start anything new in R and want a record, do the following:
+# Prepping a New R Script
 
 1. Open up a blank R script using the menu path **File > New File > R Script**.
 
-2. Save this script as `whatever.R` (replacing the term whatever) wherever you choose. Remember to note where the file is!
+--
+
+2. Save this script as `whatever.R` (replacing the term `whatever`) in your R folder. Remember to note where the file is!
+
+--
 
 3. After you have saved this file as `whatever.R`, go to the menu and select **Session > Set Working Directory > To Source File Location**.
 
@@ -127,6 +133,8 @@ Let's look at a frequency table for the variable `battleground`, which is a dumm
 
 >- `0 = 'not battleground state'`
 
+--
+
 There a number of ways of displaying tabular information , but in this case we'll just use the built-in R function `table`
 
 ```{r echo = TRUE, eval = TRUE}
@@ -162,9 +170,7 @@ That seems like a lot. Let's plot them on a bar chart using the `freq` command f
 freq(voter_fraud$total, plot = TRUE)
 ```
 
-
 ---
-
 
 ## Using the `freq` command (2/2)
 
@@ -173,7 +179,6 @@ freq(voter_fraud$total, plot = TRUE)
 <img src="freq-secondary-output.png" width="239" height="460" alt="Install Packages Window">
 
 ---
-
 
 While you could present the results by going through each newspaper by stating 1 newspaper had zero articles, 1 newspaper had one article, 2 newspapers had two articles and so on. 
 

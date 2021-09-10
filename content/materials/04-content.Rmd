@@ -14,6 +14,57 @@ editor_options:
   chunk_output_type: console
 ---
 
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<style>
+  .hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #761756;
+    -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+</style>
+
 ### Textbook Notes
 
 - [Chapter 4 PowerPoint](/slides/Week 4/SSDS_Ch4.PPTX){target="_blank"}
@@ -23,15 +74,14 @@ editor_options:
 *posted during class time*
 
 <!--
-- Download the class slides: Click on the presentation itself and then you may
 
-  + Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
-  + Press the letter **O** at any point to see see a tile view of the slideshow.
-  + Use this [link](/slides/Week 2/Slides-Week-3.html){target="_blank"} to view a larger version of slideshow in a new window.
+- Use this [link](/slides/Week 4/Slides-Week-4.html){target="_blank"} to view a larger version of slideshow in a new window.
 
 ```{r echo = FALSE}
-knitr::include_url("/slides/Week 3/Slides-Week-3.html")
+knitr::include_url("/slides/Week 4/Slides-Week-4.html")
 ```
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
 You can download 
 
@@ -39,22 +89,31 @@ You can download
 -->
 
 ### R Walkthrough
-*posted during class time*
-
 <!--
-1. Download the data sets^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance.] and codebooks needed for this walkthrough. Put them wherever you want BUT please remember where they are.
+*posted during class time*
+-->
+Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
-- [Week 3 Walkthrough Materials](/slides/Week 4/Week4data.zip){target="_blank"}
+```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
+loc <- here::here("static", "slides", "Week 4",  "EDP613Week4RMaterials.zip")
 
-2. Click on the presentation itself and then you may
-
-- Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
-- Press the letter **O** at any point to see see a tile view of the slideshow.
-- Use this [link](/slides/Week 4/Slides-Week-4.html){target="_blank"} to view a larger version of slideshow in a new window.
-
-```{r echo = FALSE}
-knitr::include_url("/slides/Week 4/Slides-Week-4.html")
+downloadthis::download_file(
+  path = loc,
+  output_name = "Week 4 R Walkthrough Materials",
+  button_label = "Download",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  class = "hvr-sweep-to-left"
+  )
 ```
 
-You can download a [PDF](/slides/Week 4/Slides-Week-4.pdf){target="_blank"} of the presentation above. 
--->
+<br>
+```{r echo = FALSE}
+knitr::include_url("/slides/Week 4/Slides-Week-4R.html")
+```
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+Want to see a larger version of the presentation? Click [link](/slides/Week 4/Slides-Week-24.html){target="_blank"}.
+

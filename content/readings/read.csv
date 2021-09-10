@@ -1,5 +1,5 @@
 ﻿Group,Chapter,Title,Source,Pages,Details,Assigned,Read Before,Required,Tasks,Materials,Example,Data Camp
-1,1,The What and the Why of Statistics,Social Statistics for a Diverse Society,1-19,[Week 1](/readings/01-reading/),8/19/21,8/26/21,checked,[Link](/tasks/01-tasks/),[Link](/materials/01-content/),,[Link](/datacamp/01-module/)
+1,1,The What and the Why of Statistics,Social Statistics for a Diverse Society,19-Jan,[Week 1](/readings/01-reading/),8/19/21,8/26/21,checked,[Link](/tasks/01-tasks/),[Link](/materials/01-content/),,[Link](/datacamp/01-module/)
 ,,,,,,,,,,,,
 2,2,The Organization and Graphic Presentation of Data,Social Statistics for a Diverse Society,27-55,[Week 2](/readings/02-reading/),8/19/21,8/26/21,checked,[Link](/tasks/02-tasks/),[Link](/materials/02-content/),[Link](/materials/02-example/),[Link](/datacamp/01-module/)
 ,,,,,,,,,,,,
@@ -7,9 +7,9 @@
 ,,,,,,,,,,,,
 4,4,Measures of Variability,Social Statistics for a Diverse Society,113-134,[Week 4](/readings/04-reading/),9/2/21,9/9/21,checked,[Link](/tasks/04-tasks/),[Link](/materials/04-content/),[Link](/materials/04-example/),[Link](/datacamp/02-module/)
 ,,,,,,,,,,,,
-5,5,The Normal Distribution,Social Statistics for a Diverse Society,151-168,[Week 5](/readings/05-reading/),9/9/21,9/23/21,checked,[Link](/tasks/05-tasks/),[Link](/materials/05-content/),[Link](/materials/05-example/),[Link](/datacamp/02-module/)
+5,5,The Normal Distribution,Social Statistics for a Diverse Society,151-168,[Week 5](/readings/05-reading/),9/9/21,9/16/21,checked,[Link](/tasks/05-tasks/),[Link](/materials/05-content/),[Link](/materials/05-example/),[Link](/datacamp/02-module/)
 ,,,,,,,,,,,,
-E1,,Descriptive Statistics,Exam 1,,,,,checked,[Exam 1](/tasks/01-exam/),,,[Link](/datacamp/03-module/)
+E1,,Descriptive Statistics,Exam 1,,[Exam 1](/tasks/01-exam/),9/23/21,,checked,[Exam 1](/tasks/01-exam/),,,[Link](/datacamp/03-module/)
 ,,,,,,,,,,,,
 6,6,Sampling and Sampling Distributions,Social Statistics for a Diverse Society,179-201,[Week 6](/readings/06-reading/),9/23/21,9/30/21,checked,[Link](/tasks/06-tasks/),[Link](/materials/06-content/),[Link](/materials/06-example/),[Link](/datacamp/04-module/)
 ,,,,,,,,,,,,

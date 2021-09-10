@@ -85,9 +85,10 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 
 
 ### Solutions
-*Posted after class day and time next week.*
-
 <!--
+*Posted after class day and time next week.*
+-->
+
 <details><summary>1</summary>
 <p>
 
@@ -232,4 +233,4 @@ b. Since the median was 40 hr worked last week, the distribution is slightly <sp
 Since Clinton and Sanders’ middle-class income amount is higher than the U.S. Census estimated mean or median, their definition of middle class is not based on the statistical middle. It is unclear what they were using but it was not based on the actual measure.
 </p>
 </details>
--->
+

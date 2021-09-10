@@ -111,12 +111,12 @@ instructor:
   office: "Allen Hall 504O"
   contact_policy: >-
     Slack is the best way to get in contact with me. Response times are typically much quicker than the standard 24-48 hours given to emails. Please remember that life is somewhat chaotic at this time!
-  appointment_url: "https://calendly.com/nopiecharts/short30"
-  office_hours: "TBD"
+  appointment_url: "https://calendly.com/nopiecharts"
+  office_hours: "By appointment"
 
 school:
   name: Counseling & Learning Sciences
-  url: "https://lshd.wvu.edu/"
+  url: "https://counselingandlearningsci.wvu.edu/"
 
 university:
   name: West Virginia University

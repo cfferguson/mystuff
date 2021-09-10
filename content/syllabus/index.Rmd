@@ -18,7 +18,9 @@ menu:
 library(dplyr)
 library(tibble)
 library(pander)
+library(knitr)
 library(kableExtra)
+library(here)
 ```
 
 `r blogdown::shortcode("courseinfo")`
@@ -63,7 +65,7 @@ There will occasionally be additional articles and videos to read and watch. Whe
 
 #### R and RStudio
 
-You will do all of your analysis with the open source (and free!) programming language [R](https://cran.r-project.org/){target="_blank"}. You will use [RStudio](https://www.rstudio.com/){target="_blank"} as the main program to access R. Think of R as an engine and RStudio as a car dashboard — R handles all the calculations produces the actual statistics and graphical output, while RStudio provides a nice interface for running R code. Please note that
+You will do all of your analysis with the open source (and free!) statistical programming language [R](https://cran.r-project.org/){target="_blank"}. You will use [RStudio](https://www.rstudio.com/){target="_blank"} as the main program to access R. Think of R as an engine and RStudio as a car dashboard — R handles all the calculations produces the actual statistics and graphical output, while RStudio provides a nice interface for running R code. Please note that
 
 <div class="text-center">
 **you do not need to have any programming experience to use R**
@@ -75,31 +77,21 @@ The service is convenient, but please keep in mind that it can be slow and is no
 
 You can [find instructions for installing R, RStudio, and all the tidyverse packages here](/resource/install/).
 
-### Online Help
+### Help
 
 Data science and statistical programming can be difficult. Computers are stupid and its always the tiny errors in your coding can result in tons of headache. People working in any syntax based software package at any level experience this!
 
-But there are multiple resources online to help.
+But there are multiple resources both online and locally that are available. Please take a moment to go through this slideshow for a short description of the main outlets.
 
-- You will have access to [Data Camp](https://www.datacamp.com/){target="_blank"} which allows you to relieve professional training that otherwise costs a lot of money. Is it perfect and flashy? Nope but it is interactive and if you pay attention, then R's initial steep learning curve won't feel like an uphill battle.
+Click on the presentation itself and then you may
 
-- Sites such as [StackOverflow](https://stackoverflow.com/){target="_blank"} (a Q&A site with hundreds of thousands of answers to all sorts of programming questions) and [RStudio Community](https://community.rstudio.com/){target="_blank"} (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)). I freely admit that StackOverflow has saved me multiple hours of frustration. Just note if you have a syntax or process issue, both sites require you to produce a [minimally reproducible example](https://stackoverflow.com/help/minimal-reproducible-example){target="_blank"}.
+- Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
+- Press the letter **O** at any point to see see a tile view of the slideshow.
+- Use this [link](/slides/Descriptions/Slides-Week-4.html){target="_blank"} to view a larger version of slideshow in a new window.
 
-- Use Twitter to post R-related questions and content with [#rstats](https://twitter.com/search?q=%23rstats){target="_blank"}. The community there is exceptionally helpful.
-
-- Searching for help with R on Google (or another indexed search site) can sometimes be tricky because the program name is,for a lack of a better explanation, a single letter. 
-
-- The class chatroom at [Slack](http://2021edp613.slack.com){target="_blank"} where you can poise a question. **I will monitor Slack regularly and will respond quickly.** (This is a rare instances where I  keep notifications on so please utilize it!) Ask questions about the readings, exercises, and mini projects. You'll likely have similar questions as your peers, and you'll likely be able to answer other peoples' questions too.
-
-- Sixth and lastly you can send items by Slack or email me with questions about content, R or whatever (after giving a graduate student effort of course). Please include the subject header **EDP 613 "the title of your email"** where the title of your email is given without the quotes. Know that I will not just give you the answer, but am happy to push you in the right direction. If you do email me, please include the following:
-
-  - A brief description of the problem and what you have done thus far including the line number of the issue (if applicable).
-  - A copy of your data set (if applicable).
-  - A copy of your script or Rmarkdown document^[Please do not send a screenshot because neither R or I can run a picture of syntax.] with comments throughout so I know what you've tried historically leading up to the issue.
-
-I have a mail filter that will automatically bring your email to a top priority status.^[In this new normal, I receive an overwhelming number of emails per day and may miss yours if the header is not formatted properly.] 
-
-You should absolutely expect to struggle at times, but there is no better and more satisfying feeling than figuring things out for yourself! In the long run, you're more likely to remember things you've figured out rather than those you've been shown or told.  
+```{r echo = FALSE}
+knitr::include_url("/slides/Week 4/Slides-MRE.html")
+```
 
 ## Assignments and Grades
 

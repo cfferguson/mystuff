@@ -50,8 +50,6 @@ materials:
     weight: 2
   - name: Examples
     weight: 3
-  - name: Walkthroughs
-    weight: 4
 tasks:
   - name: Overview
     weight: 1

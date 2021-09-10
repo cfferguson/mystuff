@@ -47,7 +47,7 @@ book <- tibble(
   
   chapters <- c("1-5"),
   
-  date <- c("9/16/21"),
+  date <- c("9/23/21"),
   
   desc <- c("A written portion is followed by an R task"),
   

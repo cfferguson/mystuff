@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>How to Ask for Help with R and RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Abhik Roy" />
+    <script src="Slides-MRE_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-MRE_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-MRE_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-MRE_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-MRE_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <script src="Slides-MRE_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="Slides-MRE_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# How to Ask for Help with R and RStudio
+### Dr. Abhik Roy
+
+---
+
+
+&lt;style&gt;
+
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+div.a {
+  text-align: center;
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+  font-size: 20px;
+  padding: 20px 80px 20px 80px;
+}
+
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+
+.remark-code {
+  font-size: 24px;
+}
+
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+&lt;/style&gt;
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+# Training
+
+&gt;- This is the most obvious one. You will have access to [Data Camp](https://www.datacamp.com/) which allows you to relieve professional training that otherwise costs a lot of money. Is it perfect and flashy? Nope but it is interactive and if you pay attention, then R's initial steep learning curve won't feel like an uphill battle. You can also download PDFs of the presentations and accompanying notes for reference. 
+
+--
+
+&gt;- You should always treat Data Camp as a first look at what can be done in R/RStudio, rather than what is needed to be successful in the course. The overall purpose is to get you familiarized with the environment, differing packages and commands, and the overall structure of the statistical software - ultimately the R related things we do in class will be the content you will be assessed on. However much like trying to read a language without knowing its structure, trying to understand a programming language without being familiar with its underlying logic is generally a waste of time. 
+
+---
+
+# External Resources - Websites
+
+  &gt;- &lt;span style='color:#5bc0de'&gt;Site&lt;/span&gt;: [StackOverflow](https://stackoverflow.com/) 
+  &gt;- &lt;span style='color:#c7bbc9'&gt;Description&lt;/span&gt;: A pure Q&amp;A site with what seems like an infinite number of posts that address all kinds of R related questions.
+  
+  &gt;&gt;- &lt;span style='color:#428bca'&gt;Positive&lt;/span&gt;: It is site of all help sites for R related issues. 
+  
+  &gt;&gt;- &lt;span style='color:#bbbbbb'&gt;Neutral&lt;/span&gt;: If you have any syntax related issue, you must produce a [minimally reproducible example](https://stackoverflow.com/help/minimal-reproducible-example). It is understandable why this required as it shows others that you've attempted to identify and solve an issue, but noneless learning how to construct one properly can be frustrating. Please please please do this or it is unlikely that someone will answer your question.
+  
+  &gt;&gt;- &lt;span style='color:#d9534f'&gt;Negative&lt;/span&gt;: The site is used by people at all levels and some of those who are hardcore programmers can be jerks. While there are categories and subcategories, the site is not necessarily set up in an intuative way. 
+
+---
+
+  &gt;- &lt;span style='color:#5bc0de'&gt;Site&lt;/span&gt;: [RStudio Community](https://community.rstudio.com/) 
+  &gt;- &lt;span style='color:#c7bbc9'&gt;Description&lt;/span&gt;: A pure Q&amp;A site created and maintained by RStudio employees, though recurring non-employees still answer questions as well.
+  
+  &gt;&gt;- &lt;span style='color:#428bca'&gt;Positive&lt;/span&gt;: There is a decent sized repository with a lot of support.
+  
+  &gt;&gt;- &lt;span style='color:#bbbbbb'&gt;Neutral&lt;/span&gt;: If you have any syntax related issue, you must produce a [minimally reproducible example](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061). It is understandable why this required as it shows others that you've attempted to identify and solve an issue, but noneless learning how to construct one properly can be frustrating. However unlike StackOverflow where you will get dinged, people tend to be a bit more forgiving and they will prompt and even help you produce one.
+  
+  &gt;&gt;- &lt;span style='color:#d9534f'&gt;Negative&lt;/span&gt;: The site is used by people at all levels, though the responses aren't necessarily always easy to implement nor is there really a coherant structure other than that of a messaging board. f you happen to come accross it while searching for a solution, then it is likely worth taking a look but there isn't a partucular reason to seek out the site.
+
+---
+
+  &gt;- &lt;span style='color:#5bc0de'&gt;Site&lt;/span&gt;: [#rstats](https://twitter.com/search?q=%23rstats) on Twitter.
+  &gt;- &lt;span style='color:#c7bbc9'&gt;Description&lt;/span&gt;: A crowdsourcing approach to getting help with R/RStudio within a social media platform.
+  
+  &gt;&gt;- &lt;span style='color:#428bca'&gt;Positive&lt;/span&gt;: Many users put off by StackOverflow use the` #rstats` hastag. Additionally since this is in real time, people tend to be more engaging and most programmers who may berate people don't seem to answer. Aditionally a majority of existing questions tend to be relatively simplistic and more apt for beginnneers simply due to the character limit imposed by the site.  
+  
+  &gt;&gt;- &lt;span style='color:#bbbbbb'&gt;Neutral&lt;/span&gt;: Though not as extensive as either StackOverflow or RStudio Community, you are more likely to get a specific response tio your question here. A minimally reporducible example is suggested, but not always necessitated. 
+  
+  &gt;&gt;- &lt;span style='color:#d9534f'&gt;Negative&lt;/span&gt;: Any tweet will likely get old very quickly which significantly shortens the timeframe to get an answer to a question. Simply reposting a tweet that hasn't been addressed will rarely work out so you really have two choices if you want answer on the platform: *reframe and repost* or *travel back in time*. Finally the indexing system on Twitter is a nightmare if you want to look at old `#rstats` posts - be prepared for a lot of scrolling.
+  
+---
+
+# Note
+
+Searching for help with R on any indexed search engine can sometimes be tricky because the program name is, for a lack of a better explanation, a single letter. However if you wish to use a search engine, then consider the following tips:
+
+- be very specific at first and then broaden your search terms
+
+- tack on a repository or site you believe will likely have the answer. For example, see how differently the two Google searches are
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Search terms &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Direct link &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; R ggplot fill aesthetic &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;html&gt;&lt;body&gt;&lt;img src="0" width="16" height="16"&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; R ggplot fill aesthetic Stackoverflow &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;html&gt;&lt;body&gt;&lt;img src="0" width="16" height="16"&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Arguably the best approach to finding something on the site is to search for the issue you are looking for using an engine like Google and then adding the term "Stackoverflow" to it - [e.g](https://www.google.com/search?q=R+how+to+turn+off+grid+ggplot+StackOverflow&amp;sxsrf=AOaemvL8E9gCshnwwOMJY3yHWoB52tOCyw%3A1631025906917&amp;ei=8no3YaagN8Sg5NoPtriAqAc&amp;oq=R+how+to+turn+off+grid+ggplot+StackOverflow&amp;gs_lcp=Cgdnd3Mtd2l6EAxKBAhBGABQAFgAYN4WaABwAngAgAEAiAEAkgEAmAEA&amp;sclient=gws-wiz&amp;ved=0ahUKEwim4bP-jO3yAhVEEFkFHTYcAHUQ4dUDCA4)
+
+---
+
+# Internal Resources - In House Messaging
+
+&gt;- &lt;span style='color:#5bc0de'&gt;Email&lt;/span&gt;: [#rstats](https://twitter.com/search?q=%23rstats).
+  &gt;- &lt;span style='color:#c7bbc9'&gt;Description&lt;/span&gt;: Its Email. Here's a [commercial from 1995](https://youtu.be/1npzZu83AfU) explaining what that is.
+  
+  &gt;&gt;- &lt;span style='color:#428bca'&gt;Positive&lt;/span&gt;: You have a local and remote record of everything sent and recieved right in your inbox. 
+  
+  &gt;&gt;- &lt;span style='color:#bbbbbb'&gt;Neutral&lt;/span&gt;: People usually have more than one question related to R/RStudio which often means there are multiple threads which aren't always discernable just from the subject header. However if you think ahead, have your email set up to group all of the emails in athreads together chronologically and use unique subject line text, then this may reduce or remove the burden associated with trying to figure out where a solkutiin might be buried.
+  
+  &gt;&gt;- &lt;span style='color:#d9534f'&gt;Negative&lt;/span&gt;: Response times are 24-48 hours whihc is good for issues that do not need to be dealt with immediately, but that is rarely the case.
+  
+---
+
+# Note
+
+After giving it a good effort and if you decide an email is your method of choice, please include the subject header **EDP 613** or **EDP613** and **"the title of your email"** whatever that may be. With these as a part of your subject line, your request receives a priority status. The downside of not formatting the header correctly is that I will not receive an alert resulting in a possible missed email. When sending this type of request, please adhere to the following guidelines:
+
+- Do not 
+      - send a screenshot because I can't run a picture of syntax through R or RStudio because computers are stupid
+      - copy and paste your syntax within the body of an email because that often involves me having to copy and paste the syntax back into a script which can be faifrly time consuming
+  
+- Write up a brief description of the problem and what you have done thus far including the line number of the issue if applicable
+  
+- Provide a copy of your data set if applicable
+  
+- Provide a copy of your script or Rmarkdown document with a *minimally reproducible example* the one shown on the next slide
+  
+---
+
+.center2[
+.tiny[
+
+```r
+library(tidyverse)
+library(gcookbook)
+library(ggthemes)
+
+climate_sub &lt;- 
+  climate %&gt;%
+  filter(Source == "NASA" &amp; Year &gt;= 1900) %&gt;%
+  mutate(pos = Anomaly10y &gt;= 0) 
+
+ggplot(climate_sub, 
+       aes(x = Year, 
+           y = Anomaly10y, 
+           fill = pos)) +
+  geom_col(position = "identity",
+           color = "#FFFFFF",
+           show.legend = FALSE) +
+  scale_fill_manual(values = c("#d9534f", "#428bca", "#eef3f8")) + 
+  theme_minimal() +
+  theme(plot.title = element_text(color = "#5a5255",
+                                  size = 20,
+                                  face = "bold"),
+        plot.caption = element_text(face = "italic"),
+        axis.title.x = element_text(margin = margin(t = 15, 
+                                                    b = 10),
+                                    color = "#5a5255",
+                                    size = 12),
+        axis.title.y = element_text(margin = margin(r = 15),
+                                    color = "#5a5255",
+                                    size = 12)) +
+  ylab("Temperature Anomaly (°C)") +
+  labs(title = "Ten Year Global Temperature Anomalies 1900-2011",
+       caption = "An anomaly is the difference from the baseline temperature calulated by taking the mean of the yearly temperatures from 1951-1980")
+```
+]
+]
+
+You can download a copy of the syntax within a [script](mre-question.R) by right clicking and saving the `mre-question.R` file
+
+  
+---
+  
+  &gt;- &lt;span style='color:#5bc0de'&gt;Slack&lt;/span&gt;: [#rstats](https://twitter.com/search?q=%23rstats).
+  &gt;- &lt;span style='color:#c7bbc9'&gt;Description&lt;/span&gt;: Slack can handle documents, files, and text just to name a few. However sometimes you just need help with a chunk of code. In these cases, Slack also works fairly well.
+  
+  &gt;&gt;- &lt;span style='color:#428bca'&gt;Positive&lt;/span&gt;: Like email, you have a local and remote record of everything sent and recieved right in a channel. Additionally you can communicate and address an issue often in real time. 
+  
+  &gt;&gt;- &lt;span style='color:#bbbbbb'&gt;Neutral&lt;/span&gt;: While R doesn't work within Slack, [sharing code snippets](https://slack.com/slack-tips/share-code-snippets) after you've run them in RStudio is relatively easy.
+  
+  &gt;&gt;- &lt;span style='color:#d9534f'&gt;Negative&lt;/span&gt;: Slack isn't necessarily intuitive or user friendly. Similar to Quaktrics, some of its best features require a working knowledge of programming. At some point you may will likely have to refer to a guide to get it to do what you want which is a lot when you're already learning the basics of R and RStudio. 
+
+---
+
+# Note
+
+After giving it a good effort and if you decide that Slack is your method of choice, you must first decide if the questions is specific to you or could be helpful to others. After picking the appropriate channel to post, please adhere to the following guidelines:
+
+- Do not 
+  - send a screenshot because I can't run a picture of syntax through R or RStudio because computers are stupid 
+  
+- If applicable
+  
+  - Provide a copy of your data set as a *csv* or *excel* file
+  
+  - Provide a copy of your script or Rmarkdown document with a *minimally reproducible example* like [this one](mre-question.R)
+  
+- If posting using a chunk of your code, please follow the steps outlined in next six slides 
+  
+---
+
+## Step 1
+
+.center2[
+![](/static/slides/Descriptions/Slides-MRE_files/slackcodechunk1.png)
+]
+
+---
+
+## Step 2
+
+.center2[
+![](/static/slides/Descriptions/Slides-MRE_files/slackcodechunk2.png)
+]
+
+---
+
+## Step 3
+
+.center2[
+![](/static/slides/Descriptions/Slides-MRE_files/slackcodechunk3.png)
+]
+
+---
+
+.center2[
+&lt;img src="Slides-MRE_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+Again you can download a copy of the syntax in a [script](mre-question.R) by right clicking and saving the `mre-question.R` file that will render a plot nearly the same as the one shown here
+
+---
+
+## Step 4
+
+.center2[
+![](/static/slides/Descriptions/Slides-MRE_files/slackcodechunk4.png)
+]
+
+---
+
+.center2[
+&lt;img src="Slides-MRE_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+You can download a copy of the corresponding syntax that created the output above in a [script](mre-response.R) by right clicking and saving the `mre-response.R` file
+
+---
+
+# One Final Thing
+
+You should absolutely expect to struggle at times, but there is no better and more satisfying feeling than figuring things out for yourself! In the long run, you're more likely to remember things you've figured out rather than those you've been shown or told.
+
+---
+
+## That's it. Please send along questions!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

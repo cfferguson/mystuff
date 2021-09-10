@@ -31,15 +31,15 @@ lessons:
     tasks: "03-homework"
     due: "03-due"
 
-  # - title: 'Measures of Variability'
-  #   session: 4
-  #   date: "September 23, 2020"
-  #   readings: "04-reading"
-  #   datacamp: "04-datacamp"
-  #   examples: "04-example"
-  #   tasks: "04-homework"
-  #   due: "04-due"
-  #
+  - title: 'Measures of Variability'
+    session: 4
+    date: "September 23, 2020"
+    readings: "04-reading"
+    datacamp: "04-datacamp"
+    examples: "04-example"
+    tasks: "04-homework"
+    due: "04-due"
+  
   # - title: 'The Normal Distribution'
   #   session: 5
   #   date: "September 30, 2020"

@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Distributions and Central Tendency</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Week 4" />
+    <script src="Slides-Week-4R_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-Week-4R_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-4R_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-Week-4R_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-Week-4R_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Distributions and Central Tendency
+## EDP 613
+### Week 4
+
+---
+
+&lt;script&gt;
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+  .hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #761756;
+    -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+
+&lt;/style&gt;
+
+
+
+
+
+# Prepping a New R Script
+
+1. Open up a blank R script using the menu path **File &gt; New File &gt; R Script**.
+
+--
+
+2. Save this script as `whatever.R` (replacing the term `whatever`) in your R folder. Remember to note where the file is!
+
+--
+
+3. After you have saved this file as `whatever.R`, go to the menu and select **Session &gt; Set Working Directory &gt; To Source File Location**.
+
+---
+
+# Getting ready for this session
+
+&gt;- Get the file `teampolview.csv` and save it in the same location as this script. 
+
+&gt;- Install the package `pacman`. Remember you can download it using **Tools &gt; Install Packages** and typing in the name. Please make sure the **Install Dependencies** option has a checkmark beside of it. The install may take a minute.
+
+&lt;center&gt;
+&lt;img src="install-packages.png" width="343" height="252" alt="Italian Trulli"&gt;
+&lt;/center&gt;
+
+---
+
+&gt;- `pacman` will automatically install a package if you don't have it and load it up for you. 
+
+
+```r
+pacman::p_load(tidyverse)
+```
+
+---
+
+# Use the Pipe
+
+- Here's what it looks like: `%&gt;%`. 
+
+--
+
+- In RStudio, you can take a shortcut: 
+
+  - For Windows: &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;M&lt;/kbd&gt; (Windows)
+
+  - For Macs: &lt;kbd&gt;Cmd&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;M&lt;/kbd&gt; (Mac)
+  
+
+---
+
+# Basic Logic
+
+
+```r
+"get up in the morning" %&gt;%
+  "drink a lot of coffee" %&gt;%
+  "come to work" %&gt;%
+  "do stuff" %&gt;%
+  "go home "%&gt;%
+  "eat" %&gt;%
+  "sleep (maybe)"
+```
+
+- works like layers
+
+- you can highlight parts of it to run
+
+---
+
+# Example
+
+- Use the default `starwars` data set
+
+--
+
+- type in `starwars`
+
+--
+
+
+
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+*starwars
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+# A tibble: 87 × 14
+   name   height  mass hair_color skin_color eye_color birth_year sex  
+   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;
+ 1 Luke …    172    77 blond      fair       blue            19   male 
+ 2 C-3PO     167    75 &lt;NA&gt;       gold       yellow         112   none 
+ 3 R2-D2      96    32 &lt;NA&gt;       white, bl… red             33   none 
+ 4 Darth…    202   136 none       white      yellow          41.9 male 
+ 5 Leia …    150    49 brown      light      brown           19   fema…
+ 6 Owen …    178   120 brown, gr… light      blue            52   male 
+ 7 Beru …    165    75 brown      light      blue            47   fema…
+ 8 R5-D4      97    32 &lt;NA&gt;       white, red red             NA   none 
+ 9 Biggs…    183    84 black      light      brown           24   male 
+10 Obi-W…    182    77 auburn, w… fair       blue-gray       57   male 
+# … with 77 more rows, and 6 more variables: gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+#   starships &lt;list&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+starwars %&gt;%
+* select(name, species, homeworld)
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+# A tibble: 87 × 3
+   name               species homeworld
+   &lt;chr&gt;              &lt;chr&gt;   &lt;chr&gt;    
+ 1 Luke Skywalker     Human   Tatooine 
+ 2 C-3PO              Droid   Tatooine 
+ 3 R2-D2              Droid   Naboo    
+ 4 Darth Vader        Human   Tatooine 
+ 5 Leia Organa        Human   Alderaan 
+ 6 Owen Lars          Human   Tatooine 
+ 7 Beru Whitesun lars Human   Tatooine 
+ 8 R5-D4              Droid   Tatooine 
+ 9 Biggs Darklighter  Human   Tatooine 
+10 Obi-Wan Kenobi     Human   Stewjon  
+# … with 77 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+* head()
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+# A tibble: 6 × 3
+  name           species homeworld
+  &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;    
+1 Luke Skywalker Human   Tatooine 
+2 C-3PO          Droid   Tatooine 
+3 R2-D2          Droid   Naboo    
+4 Darth Vader    Human   Tatooine 
+5 Leia Organa    Human   Alderaan 
+6 Owen Lars      Human   Tatooine 
+```
+]
+
+&lt;style&gt;
+.panel1-sw1-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw1-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw1-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+# Run a smaller chunk
+
+Highlight the first two lines and run it
+
+--
+
+&lt;center&gt;
+&lt;img src="runpart_run.gif" width="500" alt="Run Part of Chunk"&gt;
+&lt;/center&gt;
+
+---
+
+# Output
+
+&lt;center&gt;
+&lt;img src="runpart_out.gif" width="500" alt="Run Part of Chunk"&gt;
+&lt;/center&gt;
+
+---
+
+# Now on to Descriptives
+
+---
+
+# Frequency distributions
+
+- *Frequency distribution* tells us how many observations there are at different values of a variable. 
+
+--
+
+- You could count manually...but why?
+
+--
+
+- We can have R do the work for us using a *frequency table* 
+
+---
+
+## Single variable counts
+
+
+
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+*starwars
+```
+]
+ 
+.panel2-sw2-auto[
+
+```
+# A tibble: 87 × 14
+   name   height  mass hair_color skin_color eye_color birth_year sex  
+   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;
+ 1 Luke …    172    77 blond      fair       blue            19   male 
+ 2 C-3PO     167    75 &lt;NA&gt;       gold       yellow         112   none 
+ 3 R2-D2      96    32 &lt;NA&gt;       white, bl… red             33   none 
+ 4 Darth…    202   136 none       white      yellow          41.9 male 
+ 5 Leia …    150    49 brown      light      brown           19   fema…
+ 6 Owen …    178   120 brown, gr… light      blue            52   male 
+ 7 Beru …    165    75 brown      light      blue            47   fema…
+ 8 R5-D4      97    32 &lt;NA&gt;       white, red red             NA   none 
+ 9 Biggs…    183    84 black      light      brown           24   male 
+10 Obi-W…    182    77 auburn, w… fair       blue-gray       57   male 
+# … with 77 more rows, and 6 more variables: gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+#   starships &lt;list&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+starwars %&gt;%
+* select(name, species, homeworld)
+```
+]
+ 
+.panel2-sw2-auto[
+
+```
+# A tibble: 87 × 3
+   name               species homeworld
+   &lt;chr&gt;              &lt;chr&gt;   &lt;chr&gt;    
+ 1 Luke Skywalker     Human   Tatooine 
+ 2 C-3PO              Droid   Tatooine 
+ 3 R2-D2              Droid   Naboo    
+ 4 Darth Vader        Human   Tatooine 
+ 5 Leia Organa        Human   Alderaan 
+ 6 Owen Lars          Human   Tatooine 
+ 7 Beru Whitesun lars Human   Tatooine 
+ 8 R5-D4              Droid   Tatooine 
+ 9 Biggs Darklighter  Human   Tatooine 
+10 Obi-Wan Kenobi     Human   Stewjon  
+# … with 77 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+* count(species)
+```
+]
+ 
+.panel2-sw2-auto[
+
+```
+# A tibble: 38 × 2
+   species       n
+   &lt;chr&gt;     &lt;int&gt;
+ 1 Aleena        1
+ 2 Besalisk      1
+ 3 Cerean        1
+ 4 Chagrian      1
+ 5 Clawdite      1
+ 6 Droid         6
+ 7 Dug           1
+ 8 Ewok          1
+ 9 Geonosian     1
+10 Gungan        3
+# … with 28 more rows
+```
+]
+
+&lt;style&gt;
+.panel1-sw2-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw2-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw2-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Multiple variable counts
+
+
+
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+*starwars
+```
+]
+ 
+.panel2-sw3-auto[
+
+```
+# A tibble: 87 × 14
+   name   height  mass hair_color skin_color eye_color birth_year sex  
+   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;
+ 1 Luke …    172    77 blond      fair       blue            19   male 
+ 2 C-3PO     167    75 &lt;NA&gt;       gold       yellow         112   none 
+ 3 R2-D2      96    32 &lt;NA&gt;       white, bl… red             33   none 
+ 4 Darth…    202   136 none       white      yellow          41.9 male 
+ 5 Leia …    150    49 brown      light      brown           19   fema…
+ 6 Owen …    178   120 brown, gr… light      blue            52   male 
+ 7 Beru …    165    75 brown      light      blue            47   fema…
+ 8 R5-D4      97    32 &lt;NA&gt;       white, red red             NA   none 
+ 9 Biggs…    183    84 black      light      brown           24   male 
+10 Obi-W…    182    77 auburn, w… fair       blue-gray       57   male 
+# … with 77 more rows, and 6 more variables: gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+#   starships &lt;list&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+starwars %&gt;%
+* select(name, species, homeworld)
+```
+]
+ 
+.panel2-sw3-auto[
+
+```
+# A tibble: 87 × 3
+   name               species homeworld
+   &lt;chr&gt;              &lt;chr&gt;   &lt;chr&gt;    
+ 1 Luke Skywalker     Human   Tatooine 
+ 2 C-3PO              Droid   Tatooine 
+ 3 R2-D2              Droid   Naboo    
+ 4 Darth Vader        Human   Tatooine 
+ 5 Leia Organa        Human   Alderaan 
+ 6 Owen Lars          Human   Tatooine 
+ 7 Beru Whitesun lars Human   Tatooine 
+ 8 R5-D4              Droid   Tatooine 
+ 9 Biggs Darklighter  Human   Tatooine 
+10 Obi-Wan Kenobi     Human   Stewjon  
+# … with 77 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+* count(species, homeworld)
+```
+]
+ 
+.panel2-sw3-auto[
+
+```
+# A tibble: 58 × 3
+   species  homeworld       n
+   &lt;chr&gt;    &lt;chr&gt;       &lt;int&gt;
+ 1 Aleena   Aleen Minor     1
+ 2 Besalisk Ojom            1
+ 3 Cerean   Cerea           1
+ 4 Chagrian Champala        1
+ 5 Clawdite Zolan           1
+ 6 Droid    Naboo           1
+ 7 Droid    Tatooine        2
+ 8 Droid    &lt;NA&gt;            3
+ 9 Dug      Malastare       1
+10 Ewok     Endor           1
+# … with 48 more rows
+```
+]
+
+&lt;style&gt;
+.panel1-sw3-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw3-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw3-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+--
+
+Better but a large table is difficult to picture...
+
+---
+
+# Arranging Data
+
+We can arrange the data set
+
+
+
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+*starwars
+```
+]
+ 
+.panel2-sw4-auto[
+
+```
+# A tibble: 87 × 14
+   name   height  mass hair_color skin_color eye_color birth_year sex  
+   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;
+ 1 Luke …    172    77 blond      fair       blue            19   male 
+ 2 C-3PO     167    75 &lt;NA&gt;       gold       yellow         112   none 
+ 3 R2-D2      96    32 &lt;NA&gt;       white, bl… red             33   none 
+ 4 Darth…    202   136 none       white      yellow          41.9 male 
+ 5 Leia …    150    49 brown      light      brown           19   fema…
+ 6 Owen …    178   120 brown, gr… light      blue            52   male 
+ 7 Beru …    165    75 brown      light      blue            47   fema…
+ 8 R5-D4      97    32 &lt;NA&gt;       white, red red             NA   none 
+ 9 Biggs…    183    84 black      light      brown           24   male 
+10 Obi-W…    182    77 auburn, w… fair       blue-gray       57   male 
+# … with 77 more rows, and 6 more variables: gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+#   starships &lt;list&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+starwars %&gt;%
+* select(name, species, homeworld)
+```
+]
+ 
+.panel2-sw4-auto[
+
+```
+# A tibble: 87 × 3
+   name               species homeworld
+   &lt;chr&gt;              &lt;chr&gt;   &lt;chr&gt;    
+ 1 Luke Skywalker     Human   Tatooine 
+ 2 C-3PO              Droid   Tatooine 
+ 3 R2-D2              Droid   Naboo    
+ 4 Darth Vader        Human   Tatooine 
+ 5 Leia Organa        Human   Alderaan 
+ 6 Owen Lars          Human   Tatooine 
+ 7 Beru Whitesun lars Human   Tatooine 
+ 8 R5-D4              Droid   Tatooine 
+ 9 Biggs Darklighter  Human   Tatooine 
+10 Obi-Wan Kenobi     Human   Stewjon  
+# … with 77 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+* count(species, homeworld)
+```
+]
+ 
+.panel2-sw4-auto[
+
+```
+# A tibble: 58 × 3
+   species  homeworld       n
+   &lt;chr&gt;    &lt;chr&gt;       &lt;int&gt;
+ 1 Aleena   Aleen Minor     1
+ 2 Besalisk Ojom            1
+ 3 Cerean   Cerea           1
+ 4 Chagrian Champala        1
+ 5 Clawdite Zolan           1
+ 6 Droid    Naboo           1
+ 7 Droid    Tatooine        2
+ 8 Droid    &lt;NA&gt;            3
+ 9 Dug      Malastare       1
+10 Ewok     Endor           1
+# … with 48 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+  count(species, homeworld) %&gt;%
+* arrange(-n)
+```
+]
+ 
+.panel2-sw4-auto[
+
+```
+# A tibble: 58 × 3
+   species  homeworld     n
+   &lt;chr&gt;    &lt;chr&gt;     &lt;int&gt;
+ 1 Human    Tatooine      8
+ 2 Human    Naboo         5
+ 3 Human    &lt;NA&gt;          5
+ 4 Droid    &lt;NA&gt;          3
+ 5 Gungan   Naboo         3
+ 6 Human    Alderaan      3
+ 7 Droid    Tatooine      2
+ 8 Human    Corellia      2
+ 9 Human    Coruscant     2
+10 Kaminoan Kamino        2
+# … with 48 more rows
+```
+]
+
+&lt;style&gt;
+.panel1-sw4-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw4-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw4-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+--
+
+Well that's better but nothing really beats a picture so... 
+
+---
+
+# Let's Make a Bar Plot
+
+1. Assign the data to a variable
+
+```r
+sw_counts &lt;- 
+  starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+  count(species) 
+```
+
+---
+
+&lt;span&gt;2.&lt;/span&gt; Set up the visual using `ggplot()`
+
+
+count: false
+ 
+
+.panel1-sw5-auto[
+
+```r
+*ggplot(data = sw_counts,
+*      aes(x = species, y = n))
+```
+]
+ 
+.panel2-sw5-auto[
+![](Slides-Week-4R_files/figure-html/sw5_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw5-auto[
+
+```r
+ggplot(data = sw_counts,
+       aes(x = species, y = n)) +
+* geom_bar(stat = "identity")
+```
+]
+ 
+.panel2-sw5-auto[
+![](Slides-Week-4R_files/figure-html/sw5_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw5-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw5-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw5-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+--
+
+&lt;br&gt;
+- Well that looks terrible
+
+--
+
+- Maybe we can just look at a few of them
+
+---
+
+# Filtering Data
+
+
+```r
+sw_filtered &lt;- starwars %&gt;%
+  select(name, species, homeworld) %&gt;%
+  count(species, homeworld) %&gt;%
+  filter(species %in% c("Human", "Droid", "Gungan"))
+```
+
+---
+
+
+
+count: false
+ 
+
+.panel1-sw6-auto[
+
+```r
+*ggplot(data = sw_filtered,
+*      aes(
+*        x = species,
+*        y = n
+*        )
+*      )
+```
+]
+ 
+.panel2-sw6-auto[
+![](Slides-Week-4R_files/figure-html/sw6_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw6-auto[
+
+```r
+ggplot(data = sw_filtered,
+       aes(
+         x = species,
+         y = n
+         )
+       ) +
+* geom_bar(stat = "identity")
+```
+]
+ 
+.panel2-sw6-auto[
+![](Slides-Week-4R_files/figure-html/sw6_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw6-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw6-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw6-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Numerical
+
+
+
+count: false
+ 
+
+.panel1-sw7-auto[
+
+```r
+*ggplot(data = sw_filtered,
+*      aes(
+*        x = species,
+*        y = n,
+*        fill = n
+*        )
+*      )
+```
+]
+ 
+.panel2-sw7-auto[
+![](Slides-Week-4R_files/figure-html/sw7_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw7-auto[
+
+```r
+ggplot(data = sw_filtered,
+       aes(
+         x = species,
+         y = n,
+         fill = n
+         )
+       ) +
+* geom_bar(stat = "identity")
+```
+]
+ 
+.panel2-sw7-auto[
+![](Slides-Week-4R_files/figure-html/sw7_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw7-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw7-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw7-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Categorical
+
+
+
+count: false
+ 
+
+.panel1-sw8-auto[
+
+```r
+*ggplot(data = sw_filtered,
+*      aes(
+*        x = species,
+*        y = n,
+*        fill = species
+*        )
+*      )
+```
+]
+ 
+.panel2-sw8-auto[
+![](Slides-Week-4R_files/figure-html/sw8_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw8-auto[
+
+```r
+ggplot(data = sw_filtered,
+       aes(
+         x = species,
+         y = n,
+         fill = species
+         )
+       ) +
+* geom_bar(stat = "identity")
+```
+]
+ 
+.panel2-sw8-auto[
+![](Slides-Week-4R_files/figure-html/sw8_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw8-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw8-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw8-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Both!
+
+
+
+count: false
+ 
+
+.panel1-sw9-auto[
+
+```r
+*ggplot(data = sw_filtered,
+*      aes(
+*        x = species,
+*        y = n,
+*        fill = n
+*        )
+*      )
+```
+]
+ 
+.panel2-sw9-auto[
+![](Slides-Week-4R_files/figure-html/sw9_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw9-auto[
+
+```r
+ggplot(data = sw_filtered,
+       aes(
+         x = species,
+         y = n,
+         fill = n
+         )
+       ) +
+* geom_bar(stat = "identity")
+```
+]
+ 
+.panel2-sw9-auto[
+![](Slides-Week-4R_files/figure-html/sw9_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw9-auto[
+
+```r
+ggplot(data = sw_filtered,
+       aes(
+         x = species,
+         y = n,
+         fill = n
+         )
+       ) +
+  geom_bar(stat = "identity") +
+* facet_wrap(n ~ .)
+```
+]
+ 
+.panel2-sw9-auto[
+![](Slides-Week-4R_files/figure-html/sw9_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw9-auto {
+  color: white;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw9-auto {
+  color: white;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw9-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Loading up local data
+
+To explore this, let's load the 2012 voter fraud file first and assign it to a variable. We can do this using the `read_csv()` command from the `readr` package within `tidyverse`.
+
+
+```r
+voter_fraud &lt;- read_csv("2012_Voter_Fraud.csv")
+```
+
+
+
+---
+
+## Side note
+
+R itself uses `read.csv` which can be a royal pain if you don't know what you're doing. Its strongly advised that you stick with the tidy way of loading data.
+
+Remember:
+
+&gt;- `read_csv` with a `_` is tidy
+
+&gt;- `read.csv` with a `.` is messy
+
+---
+
+# Measures of Central Tendency
+
+To take a look at how we assess the mean, median, and mode, let's use our original data set and first look at the `total` column which has the raw data counts. 
+
+
+```r
+voter_fraud %&gt;%
+  select(total) 
+```
+
+```
+# A tibble: 50 × 1
+   total
+   &lt;dbl&gt;
+ 1     6
+ 2    11
+ 3     1
+ 4    24
+ 5    20
+ 6    21
+ 7     3
+ 8     9
+ 9    48
+10    20
+# … with 40 more rows
+```
+
+---
+
+For the mean, we use
+
+```r
+voter_fraud %&gt;%
+  summarize(Average = mean(total))
+```
+
+```
+# A tibble: 1 × 1
+  Average
+    &lt;dbl&gt;
+1    13.3
+```
+
+---
+
+For the median, we use
+
+```r
+voter_fraud %&gt;%
+  summarize(Average = median(total))
+```
+
+```
+# A tibble: 1 × 1
+  Average
+    &lt;dbl&gt;
+1      11
+```
+
+---
+
+For the mode, we use
+
+```r
+voter_fraud %&gt;%
+  summarize(Average = mode(total))
+```
+
+```
+# A tibble: 1 × 1
+  Average
+  &lt;chr&gt;  
+1 numeric
+```
+
+`mode` still doesn't work!
+
+---
+
+# A Mode You Can Use
+
+
+```r
+Mode &lt;- function(x) {
+  ux &lt;- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Notice that 'Mode' is capitalized so that R won't confuse it
+# with its internal command 'mode'.
+```
+
+---
+
+
+```r
+voter_fraud %&gt;%
+  summarize(Average = Mode(total))
+```
+
+```
+# A tibble: 1 × 1
+  Average
+    &lt;dbl&gt;
+1       4
+```
+
+---
+
+# On Your Own
+
+This is your chance to get some practice in and to ask questions. You won't get the opportunity to get help during quizzes and exams so take advantage now!
+
+Open up a new script and load up the `Box Office.csv` data set in R. This set was scraped from Rotten Tomatoes prior to Avengers: Endgame becoming the highest grossing movie of all time.
+
+Now try answering the following questions using R:
+
+1. What is the average number of positive reviews for the top five movies?
+
+2. What are the average number of negative reviews for the bottom five movies?
+
+3. How were movies released over the years? Provide counts and a visualization.
+
+4. Which measure of central tendency is the best to describe the average number of movies over the years? 
+
+5. Which year has the most number of ranked movies?  
+
+I'll post the solutions next week!
+
+---
+
+## That's it for today!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
