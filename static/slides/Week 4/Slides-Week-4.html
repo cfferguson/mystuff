@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Measures of Variability</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Week 4" />
+    <script src="Slides-Week-4_files/header-attrs-2.10/header-attrs.js"></script>
+    <link href="Slides-Week-4_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-4_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-Week-4_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-Week-4_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <script src="Slides-Week-4_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="Slides-Week-4_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Measures of Variability
+## EDP 613
+### Week 4
+
+---
+
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+
+text-align: center;
+
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#center {
+
+text-align: center;
+
+}
+
+&lt;/style&gt;
+
+
+
+
+
+
+
+# Before we Begin
+
+Remember that a statistic is **resistant** if its value is not affected by extreme values (large or small) in the data set. So
+
+--
+
+**Q**: Which of the measures of central tendency are resistant?
+
+--
+
+**A**: Since the &lt;span style="color:#5bc0de; font-style: italic;"&gt;median&lt;/span&gt; is simply the middle value, it is not affected by outliers and &lt;span style="color:#5bc0de"&gt;is&lt;/span&gt; therefore &lt;span style="color:#5bc0de"&gt;resistant&lt;/span&gt;.
+
+---
+
+# Basic Idea
+
+*Variability* basically tells us how far apart data points lie from each other and from the center of a distribution
+
+---
+
+# Why?
+
+&lt;span class="center"&gt;Generally&lt;/span&gt;
+&lt;br&gt;
+
+--
+
+.pull-left[
+The ***central tendency*** tells us where most of our points lie
+]
+
+--
+
+.pull-right[
+The ***variability*** summarizes how far apart the points are
+]
+
+---
+
+# What Does it Tell Us?
+
+&lt;img src="Slides-Week-4_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Measures of Variability
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.pull-left[
+&lt;p id="center" style="color:#f0b5d3; font-weight: bold; border:1px; border-style:solid; border-color:#f0b5d3; border-radius: 25px; padding: 0.3em;"&gt;
+Range
+&lt;/p&gt;
+]
+
+--
+
+.pull-right[
+&lt;p id="center" style="color:#f5ebd9; font-weight: bold; border:1px; border-style:solid; border-color:#f5ebd9; border-radius: 25px; padding: 0.3em;"&gt;
+Interquartile range
+&lt;/p&gt;
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.pull-left[
+&lt;p id="center" style="color:#99d2dd; font-weight: bold; border:1px; border-style:solid; border-color:#99d2dd; border-radius: 25px; padding: 0.3em;"&gt;
+Standard deviation
+&lt;/p&gt;
+]
+
+--
+
+.pull-right[
+&lt;p id="center" style="color:#e1e1f9; font-weight: bold; border:1px; border-style:solid; border-color:#e1e1f9; border-radius: 25px; padding: 0.3em;"&gt;
+Variance
+&lt;/p&gt;
+]
+
+---
+
+## The &lt;span style="color:#f0b5d3; font-weight: bold;"&gt;Range&lt;/span&gt;
+
+&lt;div class="center"&gt;
+&lt;p&gt;
+The &lt;span style="color:#f0b5d3; font-weight: bold; font-style:italic;"&gt;range&lt;/span&gt; of a data set is the difference between the largest value (Max) and the smallest value (Min)&lt;br&gt;
+\[\text{range} = \text{Max} − \text{Min}\]
+&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+### Example  
+
+Compute the &lt;span style="color:#f0b5d3; font-weight: bold;"&gt;range&lt;/span&gt; for the &lt;b&gt;sample&lt;/b&gt; of people
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+&lt;br&gt;
+
+----
+
+&lt;br&gt;
+While not necessary, putting the data set in numerical order reduces the likelihood of making a silly mistake
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### Steps
+
+We have `\(\,\text{Max}=7\,\)` and `\(\,\text{Min}=1\,\)` so
+`$$7-1=6$$`
+
+or in context &lt;b&gt;6 people&lt;/b&gt;
+
+---
+
+### Example
+
+Compute the &lt;span style="color:#f0b5d3; font-weight: bold;"&gt;range&lt;/span&gt; for the &lt;b&gt;sample&lt;/b&gt; $3.61, $3.84, $3.79, $3.61, $4.09, and $3.96.
+
+--
+
+&lt;br&gt;
+
+----
+
+&lt;br&gt;
+First for simplicity, we arrange the data set in numerical order
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 3.61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3.61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3.79 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3.84 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3.96 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.09 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### Steps
+
+`$$4.09-3.61=0.48$$`
+&lt;br&gt;
+or in context &lt;b&gt;$0.48&lt;/b&gt;
+
+---
+
+## The &lt;span style="color:#f5ebd9; font-weight: bold;"&gt;interquartile range&lt;/span&gt;
+
+Every data set has three quartiles
+
+&gt;- `\(Q_1\)`
+
+&gt;&gt;- first quartile
+&gt;&gt;- 25th percentile
+&gt;&gt;- separates the lower 25% of the data from the higher 75%
+
+--
+
+&gt;-  `\(Q_2\)`
+
+&gt;&gt;- second quartile
+&gt;&gt;- 50th percentile
+&gt;&gt;- separates the lower 50% of the data from the higher 50%%
+&gt;&gt;- aka the *median*
+    
+--
+
+&gt;- `\(Q_3\)`
+
+&gt;&gt;- third quartile
+&gt;&gt;- 75th percentile
+&gt;&gt;- separates the lower 75% of the data from the higher 25%
+    
+---
+
+&lt;div class="center"&gt;
+&lt;p&gt;
+The &lt;span style="color:#f5ebd9; font-style: italic;"&gt;interquartile range&lt;/span&gt; (IQR) is found by subtracting the first quartile from the third quartile&lt;br&gt;
+\[\text{IQR} = Q_3 − Q_1\]
+&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+### Outliers
+
+An *outlier* is a value that is considerably larger or smaller than most of the values in a data set
+
+---
+
+### Finding Outliers: IRQ Method
+
+1. Find the `\(\text{Min}\)` and `\(\text{Max}\)`
+
+--
+
+2. Find `\(Q_1\)`, `\(Q_2\)`, and `\(Q_3\)`
+
+--
+
+3. Compute the `\(\text{IQR}\)`
+
+--
+
+4. Compute the cutoff points for determining outliers - aka *outlier boundaries*
+
+--
+
+.pull-left[
+  &gt; Lower Outlier Boundary (LOB)
+  &lt;br&gt;&lt;br&gt;
+  `\(Q_1 − 1.5 \cdot\text{IQR}\)`
+]
+
+--
+
+.pull-right[
+  &gt; Upper Outlier Boundary (UOB)
+  &lt;br&gt;&lt;br&gt;
+  `\(Q_3 + 1.5 \cdot\text{IQR}\)`
+]
+
+--
+
+&lt;br&gt;
+`\(\,\,\,\,\,\,\)`&lt;span&gt;5.&lt;/span&gt; Any data point 
+
+--
+
+.pull-left[
+  &gt; Less than the LOB
+  &lt;br&gt;
+  is an outlier
+]
+
+--
+
+.pull-right[
+  &gt; Greater than the UOB
+  &lt;br&gt;
+  is an outlier
+]
+
+
+---
+
+### Example
+
+Over the span of 35 days, Jamie drives to work every weekday morning and keeps track of her time (in minutes) for some reason
+
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Construct a boxplot
+
+---
+
+### Steps
+
+1. We have 
+
+  - `\(\text{Max}\)`: &lt;b&gt;15 minutes&lt;/b&gt; 
+  
+--
+
+  - `\(\text{Min}\)`: &lt;b&gt;39 minutes&lt;/b&gt;
+
+---
+&lt;span&gt;2.&lt;/span&gt; To find the position of `\(Q_1\)`, we have
+
+`\begin{align}
+\dfrac{25}{100}\cdot 35 &amp;= 0.25\cdot 35\\\\
+&amp;=8.57\\\\
+&amp;\approx 9
+\end{align}`
+
+--
+
+`\(\,\,\,\,\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 9th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;17&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;21&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;24&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\,\,\,\,\)`or in context &lt;b&gt;19 minutes&lt;b&gt;
+
+---
+
+To find the position of `\(Q_2\)`, we have
+
+`\begin{align}
+\dfrac{50}{100}\cdot 35 &amp;= 0.50\cdot 35\\\\
+&amp;=17.50\\\\
+&amp;\approx 18
+\end{align}`
+`\(\,\,\,\,\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 18th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;17&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;21&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;22&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;31&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\,\,\,\,\)`or in context the *median* is &lt;b&gt;21 minutes&lt;/b&gt;
+
+---
+
+To find the position of `\(Q_3\)`, we have
+
+`\begin{align}
+\dfrac{75}{100}\cdot 35 &amp;= 0.75\cdot 35\\\\
+&amp;=26.25\\\\
+&amp;\approx 26
+\end{align}`
+`\(\,\,\,\,\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 26th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;17&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;19&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;21&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;22&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color:  !important;"&gt;36&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\,\,\,\,\)`or in context &lt;b&gt;22 minutes&lt;/b&gt;
+
+---
+
+&lt;span&gt;3.&lt;/span&gt; To find the range between quartiles, we have
+
+`\begin{align}
+\text{IQR} &amp;= 22-19\\
+&amp;=3
+\end{align}`
+`\(\,\,\,\,\,\,\)`or in context &lt;b&gt;3 minutes&lt;/b&gt;
+
+---
+
+&lt;span&gt;4.&lt;/span&gt; To find the boundaries, we have
+
+&lt;br&gt;
+`\begin{align}
+\text{LOB} &amp;= 19-1.5\cdot3\\
+&amp;=19-4.5\\
+&amp;=14.5
+\end{align}`
+
+`\begin{align}
+\text{UOB} &amp;= 22+1.5\cdot3\\
+&amp;=22+3\\
+&amp;=26.5
+\end{align}`
+&lt;br&gt;
+
+`\(\,\,\,\,\,\,\)`giving us &lt;b&gt;14.5&lt;/b&gt; and &lt;b&gt;26.5 minutes&lt;/b&gt;, respectively
+
+---
+
+
+## Five-number summary
+
+.pull-left[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p id="center"&gt;
+Report on
+&lt;/p&gt;
+]
+
+--
+
+.pull-right[
+&gt; `$$\text{Min}$$`
+&lt;br&gt;
+&gt; `$$Q_1$$`
+&lt;br&gt;
+&gt; `$$Q_2$$`
+&lt;br&gt;
+&gt; `$$Q_3$$`
+&lt;br&gt;
+&gt; `$$\text{Max}$$`
+]
+
+---
+
+&lt;img src="Slides-Week-4_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Example
+
+Following are the number of grams of carbohydrates in 12-ounce espresso beverages offered at Starbucks
+
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+&lt;br&gt;
+
+----
+
+&lt;br&gt;
+First we will benefit from reordering the data set
+
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### Steps
+
+1. We have 
+
+  - `\(\text{Min}\)`: &lt;b&gt;9 grams&lt;/b&gt; 
+
+  - `\(\text{Max}\)`: &lt;b&gt;59 grams&lt;/b&gt;  
+  
+---
+
+&lt;span&gt;2.&lt;/span&gt; To find the position of `\(Q_1\)`, we have
+
+`\begin{align}
+\dfrac{25}{100}\cdot 22 &amp;= 0.25\cdot 22\\
+&amp;=5.50\\
+&amp;\approx 6
+\end{align}`
+`\(\,\,\,\,\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 6th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;14&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\,\,\,\,\)`or in context &lt;b&gt;14 grams&lt;/b&gt;
+
+---
+
+To find the position of `\(Q_2\)`, we have
+
+`\begin{align}
+\dfrac{50}{100}\cdot 22 &amp;= 0.50\cdot 22\\
+&amp;=11
+\end{align}`
+`\(\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 11th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;27&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\)`or in context the *median* is &lt;b&gt;27 grams&lt;/b&gt;
+
+---
+
+To find the position of `\(Q_3\)`, we have
+
+`\begin{align}
+\dfrac{75}{100}\cdot 22 &amp;= 0.75\cdot 22\\
+&amp;=16.50\\
+&amp;\approx 17
+\end{align}`
+`\(\,\,\)`which tells to look for the &lt;span style="color:#f37735;"&gt;data point in the 17th position&lt;/span&gt;
+
+&lt;table style="color: #65737e; width: auto !important; margin-left: auto; margin-right: auto;" class="table"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style="     color: #f37735 !important;"&gt;41&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+`\(\,\,\)`or in context &lt;b&gt;41 grams&lt;/b&gt;
+
+---
+
+&lt;span&gt;3.&lt;/span&gt; To find the range between quartiles, we have
+
+`\begin{align}
+\text{IQR} &amp;= 41-14\\
+&amp;=27
+\end{align}`
+`\(\,\,\,\,\,\,\)`or in context &lt;b&gt;27 grams&lt;/b&gt;
+
+---
+
+&lt;span&gt;4.&lt;/span&gt; To find the boundaries, we have
+&lt;br&gt;
+`\begin{align}
+\text{LOB} &amp;= 14-1.5\cdot27\\
+&amp;=14-40.5\\
+&amp;=-26.5
+\end{align}`
+
+`\begin{align}
+\text{UOB} &amp;= 41+1.5\cdot27\\
+&amp;=41+40.5\\
+&amp;=81.5
+\end{align}`
+&lt;br&gt;
+`\(\,\,\,\,\,\,\)`giving us &lt;b&gt;-26.5&lt;/b&gt; and &lt;b&gt;81.5 grams&lt;/b&gt;, respectively
+
+.footnote[Realistically this is between 0 and 81.5 grams unless you can make a good argument that coffee can have negative grams of carbohydrates]
+
+---
+
+&lt;img src="Slides-Week-4_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## The &lt;span style="color:#99d2dd; font-weight: bold;"&gt;standard deviation&lt;/span&gt;
+
+In a nutshell, a &lt;span style="color:#99d2dd; font-style: italic;"&gt;standard deviation&lt;/span&gt; is just a number we use to tell how measurements for a group of things are spread out from the average which in our case is the mean 
+
+.pull-left[
+&lt;p id="center"&gt;
+&lt;b&gt;Population&lt;/b&gt;
+&lt;p&gt;
+`$$\sigma=\sqrt{\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{N}}}$$`
+]
+
+--
+
+.pull-right[
+&lt;p id="center"&gt;
+&lt;b&gt;Sample&lt;/b&gt;
+&lt;/p&gt;
+`$$s=\sqrt{\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{n-1}}}$$`
+]
+
+--
+
+&lt;p id="center"&gt;
+`Y` is a data point&lt;br&gt;&lt;br&gt;
+`\overline{Y}` is the mean
+&lt;/p&gt;
+
+--
+
+.pull-left[
+&lt;p id="center"&gt;`N` is the &lt;b&gt;population&lt;/b&gt; &lt;span style="color:#c2f2d0;"&gt;size&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+`\sigma` is the &lt;b&gt;population&lt;/b&gt; &lt;span style="color:#99d2dd; font-weight: bold;"&gt;standard deviation&lt;/span&gt;&lt;/p&gt;
+]
+
+.pull-right[
+&lt;p id="center"&gt;`n` is the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#c2f2d0;"&gt;size&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+`s` is the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#99d2dd; font-weight: bold;"&gt;standard deviation&lt;/span&gt;&lt;/p&gt;
+]
+
+--
+
+.footnote[If you want to know why we divide by `n-1` in a sample standard deviation, that is a pretty interesting topic and you can explore more about that over at [Khan Academy](https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/more-standard-deviation/v/review-and-intuition-why-we-divide-by-n-1-for-the-unbiased-sample-variance)]
+
+---
+
+### What Do These Look Like?
+
+&lt;img src="Slides-Week-4_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Example  
+
+Calculate the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#99d2dd; ; font-weight: bold;"&gt;standard deviation&lt;/span&gt; of the following set of data points by hand
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 69 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+&lt;br&gt;
+
+----
+&lt;br&gt;
+Again, putting the data set in numerical order can make it easier to track
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 69 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### Steps
+
+1. Compute the mean
+
+`\begin{align}
+\overline{Y} &amp;= \dfrac{32+41+46+52+60+69}{6}\\\\
+&amp;=\frac{300}{6}\\\\
+&amp;=50
+\end{align}`
+
+---
+
+&lt;span&gt;2.&lt;/span&gt; Compute the deviations and square them
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; `Y` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `Y-\overline{Y}` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `(Y-\overline{Y})^2` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; -18 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 324 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; -9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; -4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 69 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 361 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+&lt;span&gt;3.&lt;/span&gt; Calculate the sum of (the) squares
+
+`\begin{align}
+\left(Y-\overline{Y}\right)^2 &amp;= 324+81+16+4+100+361\\\\
+&amp;=886
+\end{align}`
+
+---
+
+&lt;span&gt;4.&lt;/span&gt; Divide by size
+
+`\begin{align}
+\dfrac{886}{6-1} &amp;= \dfrac{886}{5}\\\\
+&amp;=177.2
+\end{align}`
+
+---
+
+&lt;span&gt;5.&lt;/span&gt; Take the square root
+&lt;br&gt;
+
+`$$\sqrt{177.2}\approx 13.31$$`
+
+&lt;br&gt;
+`\(\,\,\,\,\,\,\)`implying that ***each data point deviates from the mean by 13.31 points on average*** 
+
+---
+
+## The &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;Variance&lt;/span&gt;
+
+In a nutshell, a &lt;span style="color:#e1e1f9; font-style: italic"&gt;variance&lt;/span&gt; is just a number we use to tell how measurements for a group of things are spread out from the average which in our case is the mean and the measure is always positive
+
+.pull-left[
+&lt;p id="center"&gt;
+&lt;b&gt;Population&lt;/b&gt;
+&lt;p&gt;
+`$$\sigma^2=\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{N}}$$`
+]
+
+--
+
+.pull-right[
+&lt;p id="center"&gt;
+&lt;b&gt;Sample&lt;/b&gt;
+&lt;/p&gt;
+`$$s^2=\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{n-1}}$$`
+]
+
+--
+
+&lt;p id="center"&gt;
+`Y` is a data point&lt;br&gt;&lt;br&gt;
+`\overline{Y}` is the mean
+&lt;/p&gt;
+
+--
+
+.pull-left[
+&lt;p id="center"&gt;`N` is the &lt;b&gt;population&lt;/b&gt; &lt;span style="color:#c2f2d0;"&gt;size&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+`\sigma` is the &lt;b&gt;population&lt;/b&gt; &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;variance&lt;/span&gt;&lt;/p&gt;
+]
+
+.pull-right[
+&lt;p id="center"&gt;`n` is the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#c2f2d0;"&gt;size&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+`s` is the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;variance&lt;/span&gt;&lt;/p&gt;
+]
+
+---
+
+### Example  
+
+Calculate the **variance** of the following set of data points by hand
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 69 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+We actually already calculated this! Let's go back to step 4
+
+--
+
+&lt;span&gt;4.&lt;/span&gt; Divide by size
+
+`\begin{align}
+\dfrac{886}{6-1} &amp;= \dfrac{886}{5}\\\\
+&amp;=177.2
+\end{align}`
+
+`\(\,\,\,\,\,\,\)`This is actually the &lt;b&gt;sample&lt;/b&gt; &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;variance&lt;/span&gt;
+
+---
+
+# Joined at the Hip
+
+
+&lt;br&gt;
+&lt;span class="center"&gt;The &lt;span style="color:#99d2dd; ; font-weight: bold;"&gt;standard deviation&lt;/span&gt; is just the square root of the &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;variance&lt;/span&gt;&lt;/span&gt;
+
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;span class="center"&gt;or equivalently&lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+&lt;span class="center"&gt;the &lt;span style="color:#e1e1f9; font-weight: bold;"&gt;variance&lt;/span&gt; is just the square of the &lt;span style="color:#99d2dd; ; font-weight: bold;"&gt;standard deviation&lt;/span&gt;&lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+&lt;span class="center"&gt;
+so&lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+&lt;span class="center"&gt;
+you can't have one without the other&lt;/span&gt;
+
+---
+
+## That's it. Let's take a break before working in R.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

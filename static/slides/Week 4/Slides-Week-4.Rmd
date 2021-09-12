@@ -1,0 +1,1379 @@
+---
+title: "Measures of Variability"
+subtitle: "EDP 613"
+author: "Week 4"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+   nature:
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+        scroll: false
+---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+
+text-align: center;
+
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#center {
+
+text-align: center;
+
+}
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
+```{r echo = FALSE, purl=FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#bff4ee",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
+
+checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
+```
+
+# Before we Begin
+
+Remember that a statistic is **resistant** if its value is not affected by extreme values (large or small) in the data set. So
+
+--
+
+**Q**: Which of the measures of central tendency are resistant?
+
+--
+
+**A**: Since the <span style="color:#5bc0de; font-style: italic;">median</span> is simply the middle value, it is not affected by outliers and <span style="color:#5bc0de">is</span> therefore <span style="color:#5bc0de">resistant</span>.
+
+---
+
+# Basic Idea
+
+*Variability* basically tells us how far apart data points lie from each other and from the center of a distribution
+
+---
+
+# Why?
+
+<span class="center">Generally</span>
+<br>
+
+--
+
+.pull-left[
+The ***central tendency*** tells us where most of our points lie
+]
+
+--
+
+.pull-right[
+The ***variability*** summarizes how far apart the points are
+]
+
+---
+
+# What Does it Tell Us?
+
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+mean_thing <- 10
+std_thing <- 5
+lcb <- ((mean_thing - (3 * std_thing)) - 5)
+ucb <- (((2 * mean_thing) + (3 * (2 * std_thing))) + 5)
+
+ggplot(data = data.frame(u = c(lcb, ucb)),
+       mapping = aes(x = u)) +
+  stat_function(mapping = aes(color = "Distbn. 1"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#428bca",
+                alpha = 0.9,
+                args = list(mean = 3.7 * mean_thing,
+                            sd = (1.5 * std_thing)),
+                show.legend = FALSE) +
+  stat_function(mapping = aes(color = "Distbn. 2"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#bbbbbb",
+                alpha = 0.7,
+                args = list(mean = (3.7 * mean_thing),
+                            sd = (2 * std_thing)),
+                show.legend = FALSE) +
+  stat_function(mapping = aes(color = "Distbn. 3"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#d64343",
+                alpha = 0.5,
+                args = list(mean = 3.7 * mean_thing,
+                            sd = (3 * std_thing)),
+                show.legend = FALSE) +
+  scale_color_manual(values = c("transparent", "transparent", "transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",colour = NA),
+        plot.background = element_rect(fill = "#212121",colour = NA)
+        ) + 
+  expand_limits(x = c(-45,0), 
+                y = 0)  +
+  annotate('text', 
+           x = -14, 
+           y = 0.045, 
+           label = 'Lower variability &\nhigher predictability', 
+           color = '#428bca',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate('text', 
+           x = -14, 
+           y = 0.025, 
+           label = 'Moderate variability &\nmoderate predictability', 
+           color = '#bbbbbb',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate('text', 
+           x = -14, 
+           y = 0.005, 
+           label = 'Higher variability &\nlower predictability', 
+           color = '#d64343',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate("segment", 
+           x = -8, 
+           xend = 30, 
+           y = 0.045, 
+           yend = 0.045,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed') +
+  annotate("segment", 
+           x = -8, 
+           xend = 24, 
+           y = 0.025, 
+           yend = 0.025,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed') +
+  annotate("segment", 
+           x = -8, 
+           xend = 5.8, 
+           y = 0.005, 
+           yend = 0.005,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed')
+```
+
+---
+
+# Measures of Variability
+
+--
+
+<br>
+<br>
+<br>
+.pull-left[
+<p id="center" style="color:#f0b5d3; font-weight: bold; border:1px; border-style:solid; border-color:#f0b5d3; border-radius: 25px; padding: 0.3em;">
+Range
+</p>
+]
+
+--
+
+.pull-right[
+<p id="center" style="color:#f5ebd9; font-weight: bold; border:1px; border-style:solid; border-color:#f5ebd9; border-radius: 25px; padding: 0.3em;">
+Interquartile range
+</p>
+]
+
+--
+
+<br>
+<br>
+<br>
+.pull-left[
+<p id="center" style="color:#99d2dd; font-weight: bold; border:1px; border-style:solid; border-color:#99d2dd; border-radius: 25px; padding: 0.3em;">
+Standard deviation
+</p>
+]
+
+--
+
+.pull-right[
+<p id="center" style="color:#e1e1f9; font-weight: bold; border:1px; border-style:solid; border-color:#e1e1f9; border-radius: 25px; padding: 0.3em;">
+Variance
+</p>
+]
+
+---
+
+## The <span style="color:#f0b5d3; font-weight: bold;">Range</span>
+
+<div class="center">
+<p>
+The <span style="color:#f0b5d3; font-weight: bold; font-style:italic;">range</span> of a data set is the difference between the largest value (Max) and the smallest value (Min)<br>
+\[\text{range} = \text{Max} − \text{Min}\]
+</p>
+</div>
+
+---
+
+### Example  
+
+Compute the <span style="color:#f0b5d3; font-weight: bold;">range</span> for the <b>sample</b> of people
+
+```{r echo=FALSE}
+spanning <- 
+  tibble(
+    
+    col1 = c(4),
+    
+    col2 = c(1),
+    
+    col3 = c(1),
+    
+    col4 = c(3),
+    
+    col5 = c(4),
+    
+    col6 = c(7)
+    
+  )
+
+spanning %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+```
+
+--
+
+<br>
+
+----
+
+<br>
+While not necessary, putting the data set in numerical order reduces the likelihood of making a silly mistake
+
+```{r echo=FALSE}
+spanning_ordered <-
+spanning %>%
+  gather() %>%
+  select(-key) %>%
+  arrange(value) %>%
+  rowid_to_column() %>%
+  add_column(text = "col") %>%
+  unite("position", text, rowid, sep = "") %>%
+  pivot_wider(names_from = position, values_from = value) 
+
+spanning_ordered %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+```
+
+---
+
+### Steps
+
+We have $\,\text{Max}=7\,$ and $\,\text{Min}=1\,$ so
+$$7-1=6$$
+
+or in context <b>6 people</b>
+
+---
+
+### Example
+
+Compute the <span style="color:#f0b5d3; font-weight: bold;">range</span> for the <b>sample</b> $3.61, $3.84, $3.79, $3.61, $4.09, and $3.96.
+
+--
+
+<br>
+
+----
+
+<br>
+First for simplicity, we arrange the data set in numerical order
+```{r echo=FALSE}
+money <- 
+  tibble(
+    
+    col1 = c(3.61),
+    
+    col2 = c(3.84),
+    
+    col3 = c(3.79),
+    
+    col4 = c(3.61),
+    
+    col5 = c(4.09),
+    
+    col6 = c(3.96)
+    
+  )
+
+money_ordered <-
+money %>%
+  gather() %>%
+  select(-key) %>%
+  arrange(value) %>%
+  rowid_to_column() %>%
+  add_column(text = "col") %>%
+  unite("position", text, rowid, sep = "") %>%
+  pivot_wider(names_from = position, values_from = value) 
+
+money_ordered %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+
+```
+
+---
+
+### Steps
+
+$$4.09-3.61=0.48$$
+<br>
+or in context <b>$0.48</b>
+
+---
+
+## The <span style="color:#f5ebd9; font-weight: bold;">interquartile range</span>
+
+Every data set has three quartiles
+
+>- $Q_1$
+
+>>- first quartile
+>>- 25th percentile
+>>- separates the lower 25% of the data from the higher 75%
+
+--
+
+>-  $Q_2$
+
+>>- second quartile
+>>- 50th percentile
+>>- separates the lower 50% of the data from the higher 50%%
+>>- aka the *median*
+    
+--
+
+>- $Q_3$
+
+>>- third quartile
+>>- 75th percentile
+>>- separates the lower 75% of the data from the higher 25%
+    
+---
+
+<div class="center">
+<p>
+The <span style="color:#f5ebd9; font-style: italic;">interquartile range</span> (IQR) is found by subtracting the first quartile from the third quartile<br>
+\[\text{IQR} = Q_3 − Q_1\]
+</p>
+</div>
+
+---
+
+### Outliers
+
+An *outlier* is a value that is considerably larger or smaller than most of the values in a data set
+
+---
+
+### Finding Outliers: IRQ Method
+
+1. Find the $\text{Min}$ and $\text{Max}$
+
+--
+
+2. Find $Q_1$, $Q_2$, and $Q_3$
+
+--
+
+3. Compute the $\text{IQR}$
+
+--
+
+4. Compute the cutoff points for determining outliers - aka *outlier boundaries*
+
+--
+
+.pull-left[
+  > Lower Outlier Boundary (LOB)
+  <br><br>
+  $Q_1 − 1.5 \cdot\text{IQR}$
+]
+
+--
+
+.pull-right[
+  > Upper Outlier Boundary (UOB)
+  <br><br>
+  $Q_3 + 1.5 \cdot\text{IQR}$
+]
+
+--
+
+<br>
+$\,\,\,\,\,\,$<span>5.</span> Any data point 
+
+--
+
+.pull-left[
+  > Less than the LOB
+  <br>
+  is an outlier
+]
+
+--
+
+.pull-right[
+  > Greater than the UOB
+  <br>
+  is an outlier
+]
+
+
+---
+
+### Example
+
+Over the span of 35 days, Jamie drives to work every weekday morning and keeps track of her time (in minutes) for some reason
+
+```{r echo = FALSE}
+
+timings <- 
+  tibble(
+  
+  col1 = c(15,19,20,21,23),
+  
+  col2 = c(17,19,20,21,24),
+  
+  col3 = c(17,19,20,21,26),
+  
+  col4 = c(17,19,21,22,31),
+  
+  col5 = c(17,19,21,22,36),
+  
+  col6 = c(18,20,21,22,38),
+  
+  col7 = c(19,20,21,23,39)
+  
+)
+```
+
+```{r,echo=FALSE}
+timings %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+Construct a boxplot
+
+---
+
+### Steps
+
+1. We have 
+
+  - $\text{Max}$: <b>15 minutes</b> 
+  
+--
+
+  - $\text{Min}$: <b>39 minutes</b>
+
+---
+<span>2.</span> To find the position of $Q_1$, we have
+
+\begin{align}
+\dfrac{25}{100}\cdot 35 &= 0.25\cdot 35\\\\
+&=8.57\\\\
+&\approx 9
+\end{align}
+
+--
+
+$\,\,\,\,\,\,$which tells to look for the <span style="color:#f37735;">data point in the 9th position</span>
+
+```{r echo = FALSE}
+timings %>%
+  mutate(col2 = cell_spec(col2, 
+                          "html",
+                          color = ifelse(col2 == "19", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+$\,\,\,\,\,\,$or in context <b>19 minutes<b>
+
+---
+
+To find the position of $Q_2$, we have
+
+\begin{align}
+\dfrac{50}{100}\cdot 35 &= 0.50\cdot 35\\\\
+&=17.50\\\\
+&\approx 18
+\end{align}
+$\,\,\,\,\,\,$which tells to look for the <span style="color:#f37735;">data point in the 18th position</span>
+
+```{r echo = FALSE}
+
+timings %>%
+  mutate(col4 = cell_spec(col4, 
+                          "html",
+                          color = ifelse(col4 == "21", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+$\,\,\,\,\,\,$or in context the *median* is <b>21 minutes</b>
+
+---
+
+To find the position of $Q_3$, we have
+
+\begin{align}
+\dfrac{75}{100}\cdot 35 &= 0.75\cdot 35\\\\
+&=26.25\\\\
+&\approx 26
+\end{align}
+$\,\,\,\,\,\,$which tells to look for the <span style="color:#f37735;">data point in the 26th position</span>
+
+```{r echo = FALSE}
+
+timings %>%
+  mutate(col5 = cell_spec(col5, 
+                          "html",
+                          color = ifelse(col5 == "22", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+$\,\,\,\,\,\,$or in context <b>22 minutes</b>
+
+---
+
+<span>3.</span> To find the range between quartiles, we have
+
+\begin{align}
+\text{IQR} &= 22-19\\
+&=3
+\end{align}
+$\,\,\,\,\,\,$or in context <b>3 minutes</b>
+
+---
+
+<span>4.</span> To find the boundaries, we have
+
+<br>
+\begin{align}
+\text{LOB} &= 19-1.5\cdot3\\
+&=19-4.5\\
+&=14.5
+\end{align}
+
+\begin{align}
+\text{UOB} &= 22+1.5\cdot3\\
+&=22+3\\
+&=26.5
+\end{align}
+<br>
+
+$\,\,\,\,\,\,$giving us <b>14.5</b> and <b>26.5 minutes</b>, respectively
+
+---
+
+
+## Five-number summary
+
+.pull-left[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p id="center">
+Report on
+</p>
+]
+
+--
+
+.pull-right[
+> $$\text{Min}$$
+<br>
+> $$Q_1$$
+<br>
+> $$Q_2$$
+<br>
+> $$Q_3$$
+<br>
+> $$\text{Max}$$
+]
+
+---
+
+```{r echo=FALSE, fig.align='center', fig.width=12, fig.height=10}
+timings_plot <- 
+  timings %>%
+  gather(key,
+         value) %>%
+  select(-key) %>%
+  add_column(thing = "banana") %>%
+  ggplot(aes(x = thing,
+             y = value,
+             fill = factor(thing))) + 
+  scale_fill_manual(values = "#5bc0de") +
+  geom_boxplot(width = 0.6,
+               show.legend = FALSE,
+               color = "#ffffff") +
+  stat_boxplot(geom ='errorbar', 
+               width = 0.1,
+               color = "#ffffff") +
+  stat_summary(geom="text",
+               fun = quantile,
+               color = "#ffffff",
+               aes(x = thing,
+                   y = value,
+                   label = sprintf("%1.1f", 10^..y..), 
+                   color = thing),
+               position = position_nudge(x=0.45), 
+               size = 5.5,
+               show.legend = FALSE) +
+  scale_y_log10() +
+  coord_flip(xlim = c(0, 2),
+             ylim = ) +
+  theme_void() +
+  theme_void(base_family = "roboto") +
+  theme(plot.background = element_rect(fill = "#212121", 
+                                       color = "#212121")) +
+  expand_limits(y=c(NA, 21))
+
+timings_plot
+
+```
+
+---
+
+### Example
+
+Following are the number of grams of carbohydrates in 12-ounce espresso beverages offered at Starbucks
+
+```{r echo = FALSE}
+
+espresso <- 
+  tibble(
+    
+    col1 = c(14,14),
+    
+    col2 = c(43,25),
+    
+    col3 = c(38,26),
+    
+    col4 = c(44,9),
+    
+    col5 = c(31,46),
+    
+    col6 = c(27,30),
+    
+    col7 = c(39,24),
+    
+    col8 = c(59,41),
+    
+    col9 = c(9,26),
+    
+    col10 = c(10,27),
+    
+    col11 = c(54,14)
+    
+  )
+
+```
+
+```{r,echo=FALSE}
+espresso %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+
+```
+
+--
+
+<br>
+
+----
+
+<br>
+First we will benefit from reordering the data set
+
+```{r echo=FALSE, message=FALSE, results='hide'}
+espresso_order <-
+  espresso %>%
+  gather() %>%
+  select(-key) %>%
+  arrange(value) %>%
+  rowid_to_column() %>%
+  add_column(text = "col") %>%
+  unite("position", text, rowid, sep = "") %>%
+  pivot_wider(names_from = position, values_from = value) 
+```
+
+```{r echo=FALSE, message=FALSE}
+espresso_order %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 22)) %>%
+    kable_styling(full_width = FALSE) 
+```
+
+---
+
+### Steps
+
+1. We have 
+
+  - $\text{Min}$: <b>9 grams</b> 
+
+  - $\text{Max}$: <b>59 grams</b>  
+  
+---
+
+<span>2.</span> To find the position of $Q_1$, we have
+
+\begin{align}
+\dfrac{25}{100}\cdot 22 &= 0.25\cdot 22\\
+&=5.50\\
+&\approx 6
+\end{align}
+$\,\,\,\,\,\,$which tells to look for the <span style="color:#f37735;">data point in the 6th position</span>
+
+```{r echo = FALSE, message=FALSE}
+espresso_order %>%
+  mutate(col6 = cell_spec(col6, 
+                          "html",
+                          color = ifelse(col6 == "14", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE)
+```
+
+$\,\,\,\,\,\,$or in context <b>14 grams</b>
+
+---
+
+To find the position of $Q_2$, we have
+
+\begin{align}
+\dfrac{50}{100}\cdot 22 &= 0.50\cdot 22\\
+&=11
+\end{align}
+$\,\,$which tells to look for the <span style="color:#f37735;">data point in the 11th position</span>
+
+```{r echo = FALSE}
+
+espresso_order %>%
+  mutate(col11 = cell_spec(col11, 
+                          "html",
+                          color = ifelse(col11 == "27", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+$\,\,$or in context the *median* is <b>27 grams</b>
+
+---
+
+To find the position of $Q_3$, we have
+
+\begin{align}
+\dfrac{75}{100}\cdot 22 &= 0.75\cdot 22\\
+&=16.50\\
+&\approx 17
+\end{align}
+$\,\,$which tells to look for the <span style="color:#f37735;">data point in the 17th position</span>
+
+```{r echo = FALSE}
+
+espresso_order %>%
+  mutate(col17 = cell_spec(col17, 
+                          "html",
+                          color = ifelse( col17 == "41", "#f37735", ""))) %>%
+  kbl(col.names = NULL, 
+      table.attr = "style = \"color: #65737e;\"",
+      "html", 
+      escape = FALSE,
+      align = 'ccccccc') %>%
+  kable_styling(full_width = FALSE) 
+  
+```
+
+$\,\,$or in context <b>41 grams</b>
+
+---
+
+<span>3.</span> To find the range between quartiles, we have
+
+\begin{align}
+\text{IQR} &= 41-14\\
+&=27
+\end{align}
+$\,\,\,\,\,\,$or in context <b>27 grams</b>
+
+---
+
+<span>4.</span> To find the boundaries, we have
+<br>
+\begin{align}
+\text{LOB} &= 14-1.5\cdot27\\
+&=14-40.5\\
+&=-26.5
+\end{align}
+
+\begin{align}
+\text{UOB} &= 41+1.5\cdot27\\
+&=41+40.5\\
+&=81.5
+\end{align}
+<br>
+$\,\,\,\,\,\,$giving us <b>-26.5</b> and <b>81.5 grams</b>, respectively
+
+.footnote[Realistically this is between 0 and 81.5 grams unless you can make a good argument that coffee can have negative grams of carbohydrates]
+
+---
+
+```{r echo=FALSE, fig.align='center', fig.width=12, fig.height=10}
+    espresso_order %>%
+      gather(key,
+             value) %>%
+      select(-key) %>%
+      add_column(thing = "banana") %>%
+      ggplot(aes(x = thing,
+                 y = value,
+                 fill = factor(thing))) + 
+      scale_fill_manual(values = "#5bc0de") +
+      geom_boxplot(width = 0.6,
+                   show.legend = FALSE,
+                   color = "#ffffff") +
+      stat_boxplot(geom ='errorbar', 
+                   width = 0.1,
+                   color = "#ffffff") +
+      stat_summary(geom="text",
+                   fun = quantile,
+                   color = "#ffffff",
+                   aes(x = thing,
+                       y = value,
+                       label = sprintf("%1.1f", 10^..y..), 
+                       color = thing),
+                   position = position_nudge(x=0.45), 
+                   size = 5.5,
+                   show.legend = FALSE) +
+      scale_y_log10() +
+      coord_flip(xlim = c(0, 2),
+                 ylim = ) +
+      theme_void() +
+      theme_void(base_family = "roboto") +
+      theme(plot.background = element_rect(fill = "#212121", 
+                                           color = "#212121")) +
+      expand_limits(y=c(NA, 21))
+```
+
+---
+
+## The <span style="color:#99d2dd; font-weight: bold;">standard deviation</span>
+
+In a nutshell, a <span style="color:#99d2dd; font-style: italic;">standard deviation</span> is just a number we use to tell how measurements for a group of things are spread out from the average which in our case is the mean 
+
+.pull-left[
+<p id="center">
+<b>Population</b>
+<p>
+$$\sigma=\sqrt{\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{N}}}$$
+]
+
+--
+
+.pull-right[
+<p id="center">
+<b>Sample</b>
+</p>
+$$s=\sqrt{\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{n-1}}}$$
+]
+
+--
+
+<p id="center">
+`Y` is a data point<br><br>
+`\overline{Y}` is the mean
+</p>
+
+--
+
+.pull-left[
+<p id="center">`N` is the <b>population</b> <span style="color:#c2f2d0;">size</span><br><br>
+`\sigma` is the <b>population</b> <span style="color:#99d2dd; font-weight: bold;">standard deviation</span></p>
+]
+
+.pull-right[
+<p id="center">`n` is the <b>sample</b> <span style="color:#c2f2d0;">size</span><br><br>
+`s` is the <b>sample</b> <span style="color:#99d2dd; font-weight: bold;">standard deviation</span></p>
+]
+
+--
+
+.footnote[If you want to know why we divide by `n-1` in a sample standard deviation, that is a pretty interesting topic and you can explore more about that over at [Khan Academy](https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/more-standard-deviation/v/review-and-intuition-why-we-divide-by-n-1-for-the-unbiased-sample-variance)]
+
+---
+
+### What Do These Look Like?
+
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+mean_thing <- 10
+std_thing <- 5
+lcb <- ((mean_thing - (3 * std_thing)) - 5)
+ucb <- (((2 * mean_thing) + (3 * (2 * std_thing))) + 5)
+
+ggplot(data = data.frame(u = c(lcb, ucb)),
+       mapping = aes(x = u)) +
+  stat_function(mapping = aes(color = "Distbn. 1"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#428bca",
+                alpha = 0.9,
+                args = list(mean = 3.7 * mean_thing,
+                            sd = (1.5 * std_thing)),
+                show.legend = FALSE) +
+  stat_function(mapping = aes(color = "Distbn. 2"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#bbbbbb",
+                alpha = 0.7,
+                args = list(mean = (3.7 * mean_thing),
+                            sd = (2 * std_thing)),
+                show.legend = FALSE) +
+  stat_function(mapping = aes(color = "Distbn. 3"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#d64343",
+                alpha = 0.5,
+                args = list(mean = 3.7 * mean_thing,
+                            sd = (3 * std_thing)),
+                show.legend = FALSE) +
+  scale_color_manual(values = c("transparent", "transparent", "transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(plot.background = element_rect(fill = "#212121", 
+                                       color = "#212121")) + 
+  expand_limits(x = c(-45,0), 
+                y = 0)  +
+  annotate('text', 
+           x = -14, 
+           y = 0.045, 
+           label = 'Small standard deviation', 
+           color = '#428bca',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate('text', 
+           x = -14, 
+           y = 0.025, 
+           label = 'Medium standard deviation', 
+           color = '#bbbbbb',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate('text', 
+           x = -14, 
+           y = 0.005, 
+           label = 'Large standard deviation', 
+           color = '#d64343',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1) +
+  annotate("segment", 
+           x = -8, 
+           xend = 30, 
+           y = 0.045, 
+           yend = 0.045,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed') +
+  annotate("segment", 
+           x = -8, 
+           xend = 24, 
+           y = 0.025, 
+           yend = 0.025,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed') +
+  annotate("segment", 
+           x = -8, 
+           xend = 5.8, 
+           y = 0.005, 
+           yend = 0.005,
+           color = 'white',
+           size = 0.8,
+           linetype = 'dashed')
+```
+
+---
+
+### Example  
+
+Calculate the <b>sample</b> <span style="color:#99d2dd; ; font-weight: bold;">standard deviation</span> of the following set of data points by hand
+
+```{r echo=FALSE}
+nonsense <- 
+  tibble(
+    
+    col1 = c(46),
+    
+    col2 = c(69),
+    
+    col3 = c(32),
+    
+    col4 = c(60),
+    
+    col5 = c(52),
+    
+    col6 = c(41)
+    
+  )
+
+nonsense %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+```
+
+--
+
+<br>
+
+----
+<br>
+Again, putting the data set in numerical order can make it easier to track
+
+```{r echo=FALSE}
+nonsense_ordered <-
+nonsense %>%
+  gather() %>%
+  select(-key) %>%
+  arrange(value) %>%
+  rowid_to_column() %>%
+  add_column(text = "col") %>%
+  unite("position", text, rowid, sep = "") %>%
+  pivot_wider(names_from = position, values_from = value) 
+
+nonsense_ordered %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+```
+
+---
+
+### Steps
+
+1. Compute the mean
+
+\begin{align}
+\overline{Y} &= \dfrac{32+41+46+52+60+69}{6}\\\\
+&=\frac{300}{6}\\\\
+&=50
+\end{align}
+
+---
+
+<span>2.</span> Compute the deviations and square them
+
+```{r echo=FALSE}
+nonsense %>%
+  gather(key, value = point) %>%
+  select(-key) %>%
+  arrange(point) %>%
+  mutate(dif = point-mean(point)) %>%
+  mutate(square = dif^2) %>%
+  kbl(col.names = c("`Y`", "`Y-\\overline{Y}`", "`(Y-\\overline{Y})^2`"), 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 3)) %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em")
+```
+
+---
+
+<span>3.</span> Calculate the sum of (the) squares
+
+\begin{align}
+\left(Y-\overline{Y}\right)^2 &= 324+81+16+4+100+361\\\\
+&=886
+\end{align}
+
+---
+
+<span>4.</span> Divide by size
+
+\begin{align}
+\dfrac{886}{6-1} &= \dfrac{886}{5}\\\\
+&=177.2
+\end{align}
+
+---
+
+<span>5.</span> Take the square root
+<br>
+
+$$\sqrt{177.2}\approx 13.31$$
+
+<br>
+$\,\,\,\,\,\,$implying that ***each data point deviates from the mean by 13.31 points on average*** 
+
+---
+
+## The <span style="color:#e1e1f9; font-weight: bold;">Variance</span>
+
+In a nutshell, a <span style="color:#e1e1f9; font-style: italic">variance</span> is just a number we use to tell how measurements for a group of things are spread out from the average which in our case is the mean and the measure is always positive
+
+.pull-left[
+<p id="center">
+<b>Population</b>
+<p>
+$$\sigma^2=\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{N}}$$
+]
+
+--
+
+.pull-right[
+<p id="center">
+<b>Sample</b>
+</p>
+$$s^2=\dfrac{\sum\left(Y-\overline{Y}\right)^2}{\color{VioletRed}{n-1}}$$
+]
+
+--
+
+<p id="center">
+`Y` is a data point<br><br>
+`\overline{Y}` is the mean
+</p>
+
+--
+
+.pull-left[
+<p id="center">`N` is the <b>population</b> <span style="color:#c2f2d0;">size</span><br><br>
+`\sigma` is the <b>population</b> <span style="color:#e1e1f9; font-weight: bold;">variance</span></p>
+]
+
+.pull-right[
+<p id="center">`n` is the <b>sample</b> <span style="color:#c2f2d0;">size</span><br><br>
+`s` is the <b>sample</b> <span style="color:#e1e1f9; font-weight: bold;">variance</span></p>
+]
+
+---
+
+### Example  
+
+Calculate the **variance** of the following set of data points by hand
+
+```{r echo=FALSE}
+nonsense <- 
+  tibble(
+    
+    col1 = c(46),
+    
+    col2 = c(69),
+    
+    col3 = c(32),
+    
+    col4 = c(60),
+    
+    col5 = c(52),
+    
+    col6 = c(41)
+    
+  )
+
+nonsense %>%
+  kbl(col.names = NULL, 
+      "html", 
+      escape = FALSE,
+      align=rep('c', 6)) %>%
+  kable_styling(full_width = FALSE) 
+```
+
+---
+
+We actually already calculated this! Let's go back to step 4
+
+--
+
+<span>4.</span> Divide by size
+
+\begin{align}
+\dfrac{886}{6-1} &= \dfrac{886}{5}\\\\
+&=177.2
+\end{align}
+
+$\,\,\,\,\,\,$This is actually the <b>sample</b> <span style="color:#e1e1f9; font-weight: bold;">variance</span>
+
+---
+
+# Joined at the Hip
+
+
+<br>
+<span class="center">The <span style="color:#99d2dd; ; font-weight: bold;">standard deviation</span> is just the square root of the <span style="color:#e1e1f9; font-weight: bold;">variance</span></span>
+
+
+--
+
+<br>
+<br>
+<span class="center">or equivalently</span>
+<br>
+<br>
+
+--
+
+<span class="center">the <span style="color:#e1e1f9; font-weight: bold;">variance</span> is just the square of the <span style="color:#99d2dd; ; font-weight: bold;">standard deviation</span></span>
+<br>
+<br>
+
+--
+
+<span class="center">
+so</span>
+<br>
+<br>
+
+--
+
+<span class="center">
+you can't have one without the other</span>
+
+---
+
+## That's it. Let's take a break before working in R.
