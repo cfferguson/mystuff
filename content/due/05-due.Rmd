@@ -29,10 +29,11 @@ unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
 checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
 
 wk_post <- tibble(
-"Turn in?" = c(checked, 
-               checked,
-               unchecked,
-               unchecked),
+
+Submit = c(checked, 
+           checked,
+           unchecked,
+           unchecked),
 
 Description = c("Continue the *Dr. Semmelweis and the Discovery of Handwashing* project on Data Camp",
                "Continue the *Introduction to Statistics in R* module on Data Camp",
@@ -51,6 +52,7 @@ Location = c("[Link](/datacamp/04-module/)",
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
 kable(wk_post, 
+      col.names = c("Turn in?", "Description", "Location"),
       escape = FALSE,
       align = 'clc') %>%
   kable_styling(full_width = FALSE) %>%
