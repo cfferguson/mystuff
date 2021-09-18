@@ -82,10 +82,11 @@ Notes:
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"} by 11:59 PM next Wednesday.<br>
 -->
 
-### Solutions
-*Posted after class day and time next week.*
 <!--
-### Week 4 Problem Set
+### Solutions
+
+*Posted after class day and time next week.*
+-->
 
 #### Solutions
 
@@ -459,4 +460,3 @@ Overall, <span class="boxed">Clinton voters were younger</span>, <span class="bo
 
 </p>
 </details>
--->

@@ -1,0 +1,92 @@
+---
+title: "The Normal Distribution"
+linktitle: "Week 5: The Normal Distribution"
+output:
+  blogdown::html_page:
+    toc: true
+menu:
+  due:
+    parent: "To Do"
+    weight: 5
+type: docs
+weight: 1
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+library(dplyr)
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+```
+
+### What to do for Week 5 after class ends^[For grading.]
+
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
+
+checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
+
+wk_post <- tibble(
+"Turn in?" = c(checked, 
+               checked,
+               unchecked,
+               unchecked),
+
+Description = c("Continue the *Dr. Semmelweis and the Discovery of Handwashing* project on Data Camp",
+               "Continue the *Introduction to Statistics in R* module on Data Camp",
+               "Download the in-class Chapter 5 Slideshow",
+               "Download the in-class R Walkthrough Slideshow"
+               ),
+
+Location = c("[Link](/datacamp/04-module/)",
+             "[Link](/datacamp/04-module/)",
+             "[Link](/materials/05-content/#in-class-notes)",
+             "[Link](/materials/05-content/#r-walkthrough)"
+             )
+
+)
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_post, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "30em") %>%
+  column_spec(3, width = "10em")
+```
+
+<br />
+
+### What to do for Week 6 before coming to class^[For preparation.]
+
+```{r eval = TRUE, echo = FALSE}
+book <- as.character(fontawesome::fa("book", fill = "steelblue"))
+
+chalkboard <- as.character(fontawesome::fa("chalkboard", fill = "steelblue"))
+
+lightbulb <- as.character(fontawesome::fa("lightbulb", fill = "steelblue"))
+
+wk_pre <- tibble(
+Area = c(lightbulb),
+
+Description = c("unchecked",
+                "Study for your first exam!",
+                "[Link](/tasks/01-exam/)")
+              )
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_pre, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "30em") %>%
+  column_spec(3, width = "10em")
+```
+

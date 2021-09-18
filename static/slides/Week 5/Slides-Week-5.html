@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The Normal Distribution</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Week 5" />
+    <script src="Slides-Week-5_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="Slides-Week-5_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-5_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-Week-5_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-Week-5_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The Normal Distribution
+### Week 5
+
+---
+
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+
+text-align: center;
+
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#center {
+
+text-align: center;
+
+}
+
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+
+# Idea
+
+The area under a normal curve is equal to 1
+
+- represents a population
+
+- is probabilistic
+
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# By extension
+
+- The area under the curve between two values is a proportion of the total population
+
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Example
+
+Assuming the area under the curve between 0 to 2 is 0.20, what is
+
+a. the proportion of the population between 0 and 2?
+
+b. the proportion of the population not between 0 and 2?
+
+---
+
+## Solution
+
+a. 
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Solution
+
+b. 
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Variables
+
+We have 
+
+&lt;br&gt;
+.pull-left[
+&lt;p id="center" style="color:#dd99d2; font-weight: bold; border:1px; border-style:solid; border-color:#f0b5d3; border-radius: 25px; padding: 0.3em;"&gt;
+`\mu`&lt;br&gt;&lt;br&gt;
+population mean
+&lt;/p&gt;
+]
+
+--
+
+.pull-right[
+&lt;p id="center" style="color:#f5ebd9; font-weight: bold; border:1px; border-style:solid; border-color:#f5ebd9; border-radius: 25px; padding: 0.3em;"&gt;
+`\overline{Y}`&lt;br&gt;&lt;br&gt;
+sample mean
+&lt;/p&gt;
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.pull-left[
+&lt;p id="center" style="color:#99d2dd; font-weight: bold; border:1px; border-style:solid; border-color:#99d2dd; border-radius: 25px; padding: 0.3em;"&gt;
+`\sigma`&lt;br&gt;&lt;br&gt;
+population standard deviation
+&lt;/p&gt;
+]
+
+--
+
+.pull-right[
+&lt;p id="center" style="color:#e5d9e3; font-weight: bold; border:1px; border-style:solid; border-color:#e1e1f9; border-radius: 25px; padding: 0.3em;"&gt;
+`s`&lt;br&gt;&lt;br&gt;
+sample standard deviation
+&lt;/p&gt;
+]
+
+---
+
+# Approximate Percent Distribution
+
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The Emperical Rule
+
+
+```
+## Warning: Ignoring unknown aesthetics: arrow
+```
+
+```
+## Don't know how to automatically pick scale for object of type arrow. Defaulting to continuous.
+```
+
+```
+## Warning in rep(x$angle, length.out = maxn): 'x' is NULL so the result will be
+## NULL
+```
+
+```
+## Warning in rep(x$length, length.out = maxn): 'x' is NULL so the result will be
+## NULL
+```
+
+```
+## Warning in rep(x$ends, length.out = maxn): 'x' is NULL so the result will be
+## NULL
+```
+
+```
+## Warning in rep(x$type, length.out = maxn): 'x' is NULL so the result will be
+## NULL
+```
+
+&lt;img src="Slides-Week-5_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+## That's it. Let's take a break before working in R.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

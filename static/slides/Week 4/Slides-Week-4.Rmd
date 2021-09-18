@@ -72,8 +72,6 @@ library(knitr)
 library(kableExtra)
 library(fontawesome)
 library(here)
-library(clt)
-library(carData)
 library(DT)
 library(scales)
 library(showtext)
@@ -178,8 +176,8 @@ ggplot(data = data.frame(u = c(lcb, ucb)),
   theme(
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
-        panel.background = element_rect(fill = "#212121",colour = NA),
-        plot.background = element_rect(fill = "#212121",colour = NA)
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
         ) + 
   expand_limits(x = c(-45,0), 
                 y = 0)  +

@@ -39,16 +39,16 @@ lessons:
     examples: "04-example"
     tasks: "04-homework"
     due: "04-due"
-  
-  # - title: 'The Normal Distribution'
-  #   session: 5
-  #   date: "September 30, 2020"
-  #   readings: "05-reading"
-  #   datacamp: "05-datacamp"
-  #   examples: "05-example"
-  #   tasks: "05-homework"
-  #   due: "05-due"
-  #
+
+  - title: 'The Normal Distribution'
+    session: 5
+    date: "September 30, 2020"
+    readings: "05-reading"
+    datacamp: "05-datacamp"
+    examples: "05-example"
+    tasks: "05-homework"
+    due: "05-due"
+
   # - title: 'Sampling and Sampling Distributions Part I'
   #   session: 6
   #   date: "October 7, 2020"

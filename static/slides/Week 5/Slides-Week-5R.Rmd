@@ -1,0 +1,635 @@
+---
+title: "The Normal Curve"
+subtitle: "EDP 613"
+author: "Week 5"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
+---
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<style>
+  .hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #761756;
+    -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+
+</style>
+
+```{r setup, include=FALSE,purl=FALSE}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE, 
+                      comment = "", 
+                      cache = F,
+                      widgetframe_self_contained = TRUE)
+knitr::opts_knit$set(root.dir = getwd())
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(here)
+library(flipbookr)
+library(patchwork)
+```
+
+```{r echo = FALSE, purl = FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#bff4ee",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  code_highlight_color = "#b8e2f2",
+  code_inline_background_color = "#212121", 
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+# Prepping a New R Script
+
+1. Open up a blank R script using the menu path **File > New File > R Script**.
+
+--
+
+2. Save this script as `whatever.R` (replacing the term `whatever`) in your R folder. Remember to note where the file is!
+
+--
+
+3. After you have saved this file as `whatever.R`, go to the menu and this week try running running this shortcut to **Session > Set Working Directory > To Source File Location** at the top of your script
+
+```{r echo=TRUE,eval=FALSE}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+---
+
+# Getting ready for this session
+
+Get the files
+
+>- `Box Office.csv`
+  
+>- `teampolview.csv` 
+
+---
+
+and save it in the same location as this script. 
+
+>- Install the packages `viridis` and `patchwork`. 
+
+>- Load up `tidyverse` and `viridis`
+
+This week try using `pacman` to do it
+
+```{r echo = TRUE, eval = TRUE, message=FALSE}
+pacman::p_load(tidyverse,
+               patchwork,
+               viridis)
+``` 
+
+---
+
+# Last week's R activity
+
+---
+
+## Load up data
+
+```{r eval=FALSE}
+boxoffice <- read_csv("Box Office.csv")
+```
+
+```{r echo = FALSE, eval = TRUE, purl=FALSE}
+boxoffice <- read_csv(here::here("static", "slides", "Week 5", "Box Office.csv"))
+```
+
+---
+
+## Before we go on
+
+Thes solutions are just one of **many** ways to get to the actual answer. Your work may and will likely vary.
+
+---
+
+### 1. What is the average number of positive reviews for the top five movies?
+
+```{r sw1, include = FALSE}
+boxoffice %>%
+  arrange(Rank) %>%
+  head(5) %>%
+  summarize(mean_pos = 
+              mean(AllPos, 
+                   na.rm = TRUE)) %>%
+  pull()
+```
+
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"))`
+
+---
+
+### 2. What are the average number of negative reviews for the bottom five movies?
+  
+```{r sw2,  include = FALSE}
+boxoffice %>%
+  arrange(Rank) %>%
+  tail(5) %>%
+  summarize(mean_neg = 
+              mean(AllNeg, 
+                   na.rm = TRUE)) %>%
+  pull()
+```
+
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"))`
+
+---
+
+### 3. How were movies released over the years? Provide counts and a visualization.
+  
+```{r sw3, include = FALSE}
+boxoffice %>%
+  group_by(year) %>%
+  count(name = "number of movies") %>%
+  ungroup()
+```
+
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"))`
+
+---
+
+#### Save as a variable
+
+```{r}
+boxoffice_annualnum <- 
+  boxoffice %>%
+  group_by(year) %>%
+  count(name = "number of movies") %>%
+  ungroup()
+```
+
+---
+
+### 4. Which measure of central tendency is the best to describe the average number of movies over the years?
+
+Since the data is skewed, the median is the best indicator of the true average
+  
+- Median
+```{r sw4a, include = FALSE}
+boxoffice_annualnum %>%
+  summarize(median = 
+              median(`number of movies`, 
+                     na.rm = TRUE)) %>%
+  pull()
+```
+
+`r chunk_reveal(chunk_name = "sw4a", color = c("white", "white", "white"))`
+
+---
+
+- Mean
+```{r sw4b, include = FALSE}
+boxoffice_annualnum %>%
+  summarize(mean = 
+              mean(`number of movies`, 
+                     na.rm = TRUE)) %>%
+  pull()
+```
+
+`r chunk_reveal(chunk_name = "sw4b", color = c("white", "white", "white"))`
+
+---
+
+- Plot
+```{r sw4c, include = FALSE}
+ggplot(boxoffice_annualnum, 
+       aes(year, 
+           `number of movies`, 
+           fill = `number of movies`)) +
+  geom_bar(stat = "identity") + 
+  theme_minimal() +
+  scale_fill_viridis_c(direction = -1)
+```
+
+`r chunk_reveal(chunk_name = "sw4c", color = c("white", "white", "white"))`
+
+---
+
+```{r echo=FALSE, fig.align='center'}
+boxoffice_median <- 
+boxoffice_annualnum %>%
+  summarize(median = median(`number of movies`, na.rm = TRUE)) %>%
+  pull()
+
+boxoffice_mean <- 
+boxoffice_annualnum %>%
+  summarize(mean = mean(`number of movies`, na.rm = TRUE)) %>%
+  pull()
+
+ggplot(boxoffice_annualnum, 
+         aes(year, 
+             `number of movies`, 
+             fill = `number of movies`)) +
+  geom_bar(stat = "identity") + 
+  theme_minimal() +
+  scale_fill_viridis_c(direction = -1) +
+  geom_hline(yintercept = boxoffice_mean,
+               size = 1,
+               color = "#9ec8e7",
+               show.legend = TRUE) +
+  geom_text(aes(1960, boxoffice_mean,
+                label = "mean", 
+                vjust = -1),
+            color = "#9ec8e7",) +
+  geom_hline(yintercept = boxoffice_median,
+             size = 1,
+             color = "#6f9a91",
+             show.legend = TRUE) +
+  geom_text(aes(1960, boxoffice_median,
+                label = "median", 
+                vjust = -1),
+            color = "#6f9a91")
+```
+
+---
+
+### 5. Which year has the most number of ranked movies? 
+
+```{r sw5a,  include = FALSE}
+boxoffice %>%
+  group_by(year) %>%
+  tally(name = "number of movies") %>%
+  ungroup() %>%
+  filter(`number of movies` == 
+           max(`number of movies`))
+```
+
+`r chunk_reveal(chunk_name = "sw5a", color = c("white", "white", "white"))`
+
+---
+
+*or*
+
+```{r sw5b,  include = FALSE}
+boxoffice %>%
+  group_by(year) %>%
+  summarise(`number of movies` = n()) %>%
+  ungroup() %>%
+  filter(`number of movies` == 
+           max(`number of movies`))
+```
+
+`r chunk_reveal(chunk_name = "sw5b", color = c("white", "white", "white"))`
+
+---
+
+*or*
+
+```{r sw5c,  include = FALSE}
+boxoffice %>%
+  group_by(year) %>%
+  mutate(`number of movies` = n()) %>%
+  ungroup() %>%
+  distinct(year, .keep_all=TRUE) %>%
+  filter(`number of movies` == 
+           max(`number of movies`)) %>%
+  select(year, `number of movies`)
+```
+
+`r chunk_reveal(chunk_name = "sw5c", color = c("white", "white", "white"))`
+
+---
+
+### Imaginary bonus: What are the top ranked movie by year?
+
+```{r swiba,  include = FALSE}
+boxoffice %>%
+  group_by(year) %>%
+  filter(Rank == max(Rank)) %>%
+  select(Rank, Movie, year)%>%
+  arrange(-year) %>%
+  ungroup()
+```
+
+`r chunk_reveal(chunk_name = "swiba", color = c("white", "white", "white"))`
+
+---
+
+```{r}
+top_movie_year <- 
+  boxoffice %>%
+  group_by(year) %>%
+  filter(Rank == max(Rank)) %>%
+  select(Rank, Movie, year)%>%
+  arrange(-year) %>%
+  ungroup()
+```
+
+---
+
+#### Numerical
+
+```{r swibb,  include = FALSE}
+ggplot(top_movie_year, 
+       aes(year, 
+           Rank, 
+           fill = Movie)) +
+  geom_bar(stat = "identity",
+           show.legend = FALSE) + 
+  theme_minimal() +
+  scale_fill_viridis_d(direction = -1) +
+  labs(title = "Top Movies by Year and Rank",
+       subtitle = "According to Rotten Tomatoes")
+```
+
+`r chunk_reveal(chunk_name = "swibb", color = c("white", "white", "white"))`
+
+---
+
+#### Categorical
+
+```{r swibc,  include = FALSE}
+ggplot(top_movie_year, 
+       aes(year, 
+           Movie, 
+           fill = Movie)) +
+  geom_bar(stat = "identity",
+           show.legend = FALSE) + 
+  theme_minimal() +
+  scale_fill_viridis_d(direction = -1) +
+  labs(title = "Top Movies by Year",
+       subtitle = "According to Rotten Tomatoes")
+```
+
+`r chunk_reveal(chunk_name = "swibc", color = c("white", "white", "white"))`
+
+---
+
+That looks off. Let's try 
+
+--
+
+- reordering the bars which we can do a command called `reorder()` 
+
+--
+
+- setting limits on the horizontal axis which we can do with a command called `xlim()`
+
+--
+
+```{r swibd,  include = FALSE}
+ggplot(top_movie_year, 
+       aes(year, 
+           reorder(Movie, -year),
+           fill = Movie)) +
+  geom_bar(stat = "identity",
+           show.legend = FALSE) + 
+  theme_minimal() +
+  scale_fill_viridis_d(direction = -1) +
+  labs(title = "Top Movies by Year",
+       subtitle = "According to Rotten Tomatoes") +
+  coord_cartesian(xlim = c(1900, 2015))
+```
+
+`r chunk_reveal(chunk_name = "swibd", color = c("white", "white", "white"))`
+
+---
+
+Ok now on to the normal curve!
+
+---
+
+## Load up data
+
+```{r eval=FALSE}
+nfl_pol <- read_csv("teampolview.csv")
+```
+
+```{r echo = FALSE, eval = TRUE, purl=FALSE}
+nfl_pol <- read_csv(here::here("static", "slides", "Week 5", "teampolview.csv"))
+```
+
+---
+
+## Data Wrangling
+
+```{r swwrangle,  include = FALSE}
+nfl_pol %>%
+  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %>%
+  rowwise(Team) %>%
+  mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %>%
+  select(-c(Republican,`Other Republican`)) %>% 
+  mutate(percent_dem = round(`Total Democrats`/`Total Respondents`,2)) %>%
+  mutate(percent_rep = round(`Total Republicans`/`Total Respondents`,2))
+```
+
+`r chunk_reveal(chunk_name = "swwrangle", color = c("white", "white", "white"))`
+
+---
+
+## Give it a variable
+
+```{r}
+nfl_percentages <- 
+  nfl_pol %>%
+  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %>%
+  rowwise(Team) %>%
+  mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %>%
+  select(-c(Republican,`Other Republican`)) %>% 
+  mutate(percent_dem = round(`Total Democrats`/`Total Respondents`,2)) %>%
+  mutate(percent_rep = round(`Total Republicans`/`Total Respondents`,2))
+```
+
+---
+
+## Plot for Democrats by Team
+
+```{r swdems, include = FALSE}
+ggplot(nfl_percentages, 
+       aes(reorder(Team, percent_dem), 
+                            percent_dem,
+                            fill = percent_dem)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  theme_minimal() 
+```
+
+`r chunk_reveal(chunk_name = "swdems", color = c("white", "white", "white"))`
+
+---
+
+## Plot for Republicans by Team
+
+```{r swgops, include = FALSE}
+ggplot(nfl_percentages, aes(reorder(Team, percent_rep), 
+                            percent_rep,
+                            fill = percent_rep)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  theme_minimal() 
+```
+
+`r chunk_reveal(chunk_name = "swgops", color = c("white", "white", "white"))`
+
+---
+
+## Let's compare them!
+
+But first we need to assign variables
+
+```{r}
+p1 <- ggplot(nfl_percentages, aes(reorder(Team, percent_dem), 
+                            percent_dem,
+                            fill = percent_dem)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  theme_minimal() 
+```
+
+
+```{r}
+p2 <- ggplot(nfl_percentages, aes(reorder(Team, percent_rep), 
+                            percent_rep,
+                            fill = percent_rep)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  theme_minimal() 
+```
+
+---
+
+# Patch it together using `Patchwork`
+
+```{r}
+p1 + p2
+```
+
+---
+
+## A better way
+
+That's not really a comparison...at least not teamwise! Let's try something different
+
+---
+
+## More Data Wrangling: Going from wide to long using `pivot_longer`
+
+<center>
+<img src="pivot_longer.png" width="800" height="436" alt="Pivot Longer">
+</center>
+<br>
+
+---
+
+### Let's pivot!
+
+```{r swpivot, include = FALSE}
+nfl_percentages %>%
+  pivot_longer(c(percent_dem, percent_rep),
+               names_to = "type",
+               values_to = "political_percentages")
+```
+
+`r chunk_reveal(chunk_name = "swpivot", color = c("white", "white", "white"))`
+
+---
+
+## Give it a variable
+
+```{r}
+nlf_percentages_long <- nfl_percentages %>%
+  pivot_longer(c(percent_dem, percent_rep),
+               names_to = "type",
+               values_to = "political_percentages")
+```
+
+---
+
+---
+
+## More Data Wrangling: Pivoting
+
+```{r swfacet, include = FALSE}
+ggplot(nlf_percentages_long, aes(Team, 
+                                 political_percentages,
+                            fill =  political_percentages)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  theme_minimal() +
+  facet_wrap(.~type)
+```
+
+`r chunk_reveal(chunk_name = "swfacet", color = c("white", "white", "white"))`
+
+---
+
+# Your turn
+
+Try these on your own
+
+1. Compare how the different ethnicities within each political party differ.
+
+2. Compare how each specific ethnicity between each political party differ.
+
+3. Which ethnicity in each political party is the most conservative? the most liberal?
+
+---
+
+## That's it for today!

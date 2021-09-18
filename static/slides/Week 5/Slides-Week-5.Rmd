@@ -1,0 +1,476 @@
+---
+title: "The Normal Distribution"
+linktitle: "Week 5: The Normal Distribution"
+author: "Week 5"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+   nature:
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+        scroll: false
+---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+
+text-align: center;
+
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#center {
+
+text-align: center;
+
+}
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
+```{r echo = FALSE, purl=FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#bff4ee",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+```{r eval = TRUE}
+unchecked <- as.character(fontawesome::fa("square", fill = "#b2d8d8"))
+
+checked <- as.character(fontawesome::fa("check", fill = "#ffffff"))
+```
+
+```{r echo=FALSE}
+round2 = function(x, n) {
+  posneg = sign(x)
+  z = abs(x)*10^n
+  z = z + 0.5 + sqrt(.Machine$double.eps)
+  z = trunc(z)
+  z = z/10^n
+  z*posneg
+}
+```
+
+# Idea
+
+The area under a normal curve is equal to 1
+
+- represents a population
+
+- is probabilistic
+
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+mean_thing <- 10
+std_thing <- 10
+lcb <- ((mean_thing - (3 * std_thing)) - 5)
+ucb <- (((2 * mean_thing) + (3 * (2 * std_thing))) + 5)
+
+ggplot(data = data.frame(u = c(lcb, ucb)),
+       mapping = aes(x = u)) +
+  stat_function(mapping = aes(color = "Distbn. 1"),
+                fun = dnorm,
+                geom = "area",
+                fill = "#5bc0de",
+                alpha = 1,
+                args = list(mean = (3.7 * mean_thing),
+                            sd = (2 * std_thing)),
+                show.legend = FALSE) +
+  scale_color_manual(values = c("transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
+        ) + 
+  expand_limits(x = c(-45,0), 
+                y = 0)  +
+  annotate('text', 
+           x = 44, 
+           y = 0.010, 
+           label = 'Area = 1', 
+           color = '#ffffff',
+           size = 5,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1)
+```
+
+---
+
+# By extension
+
+- The area under the curve between two values is a proportion of the total population
+
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+ggplot(NULL, aes(c(-3,3))) +
+    geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
+  geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-2, 1)) +
+#  geom_area(stat = "function", fun = dnorm, fill = "#de795b", xlim = c(0, 3.45)) +
+  scale_color_manual(values = c("transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
+        ) +
+  annotate('text', 
+           x = 0.46, 
+           y = 0.15, 
+           label = 'Some proportion', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 1)
+```
+
+---
+
+## Example
+
+Assuming the area under the curve between 0 to 2 is 0.20, what is
+
+a. the proportion of the population between 0 and 2?
+
+b. the proportion of the population not between 0 and 2?
+
+---
+
+## Solution
+
+a. 
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+ggplot(NULL, aes(c(-3,3))) +
+    geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
+  geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(0, 2)) +
+#  geom_area(stat = "function", fun = dnorm, fill = "#de795b", xlim = c(0, 3.45)) +
+  scale_color_manual(values = c("transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
+        ) +
+  annotate('text', 
+           x = 0.66, 
+           y = 0.17, 
+           label = '20%\nhere', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 0.5)
+```
+
+---
+
+## Solution
+
+b. 
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+ggplot(NULL, aes(c(-3,3))) +
+    geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
+  geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(0, 2)) +
+#  geom_area(stat = "function", fun = dnorm, fill = "#de795b", xlim = c(0, 3.45)) +
+  scale_color_manual(values = c("transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
+        ) +
+  annotate('text', 
+           x = -0.62, 
+           y = 0.17, 
+           label = '80%\nbetween both', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 0.5) +
+  geom_segment(aes(x = -0.70, 
+                   xend = -0.98, 
+                   y = 0.135, 
+                   yend= 0.10),
+               arrow = arrow(length = unit(1.2, "mm")), 
+               lwd = 0.2,
+               color = "#ffffff") +
+  geom_segment(aes(x = -0.42, 
+                   xend = 2.20, 
+                   y = 0.135, 
+                   yend = 0.01),
+               arrow = arrow(length = unit(1.2, "mm")), 
+               lwd = 0.2,
+               color = "#ffffff")
+```
+
+---
+
+# Variables
+
+We have 
+
+<br>
+.pull-left[
+<p id="center" style="color:#dd99d2; font-weight: bold; border:1px; border-style:solid; border-color:#f0b5d3; border-radius: 25px; padding: 0.3em;">
+`\mu`<br><br>
+population mean
+</p>
+]
+
+--
+
+.pull-right[
+<p id="center" style="color:#f5ebd9; font-weight: bold; border:1px; border-style:solid; border-color:#f5ebd9; border-radius: 25px; padding: 0.3em;">
+`\overline{Y}`<br><br>
+sample mean
+</p>
+]
+
+--
+
+<br>
+<br>
+<br>
+.pull-left[
+<p id="center" style="color:#99d2dd; font-weight: bold; border:1px; border-style:solid; border-color:#99d2dd; border-radius: 25px; padding: 0.3em;">
+`\sigma`<br><br>
+population standard deviation
+</p>
+]
+
+--
+
+.pull-right[
+<p id="center" style="color:#e5d9e3; font-weight: bold; border:1px; border-style:solid; border-color:#e1e1f9; border-radius: 25px; padding: 0.3em;">
+`s`<br><br>
+sample standard deviation
+</p>
+]
+
+---
+
+# Approximate Percent Distribution
+
+```{r echo=FALSE, fig.align='center'}
+initial_mean <- 0
+initial_sd <- 1
+zscore_begin <- 2
+zscore_end <- 3
+zscore_critical <- 1.65
+
+shading_col <- "#bde5f1"
+
+x <- seq(from = initial_mean - 4*initial_sd, 
+         to = initial_mean + 4*initial_sd , 
+         by = 0.01)
+
+nc_df <- data.frame(x = x, 
+                    y = dnorm(x, 
+                              mean = initial_mean, 
+                              sd = initial_sd)) %>%
+         mutate(cum_density = cumsum(y)) 
+
+fill_uc <- function(nc_df, 
+                    zscore_begin, 
+                    zscore_end, 
+                    fill = "red", 
+                    alpha = 1){
+  geom_area(data = subset(nc_df, x >= initial_mean + zscore_begin*initial_sd
+                          & x < initial_mean + zscore_end*initial_sd),
+            aes(y = y), 
+            fill = fill, 
+            color = NA, 
+            alpha = alpha)
+          }
+
+nc_df_filtered <-
+  nc_df %>%
+  filter(x %in% c(-3.00, -2.58, -2.00, -1.65, -1.00, -0.50, 0.00, 0.50, 1.00, 1.65, 2.00, 2.58, 3.00)) %>%
+ mutate(cum_density = case_when(
+    cum_density > 49 & cum_density < 51 ~ 50.000000,
+    TRUE ~ cum_density
+      )
+    )
+
+ggplot(nc_df, aes(x = x, y = y)) + 
+  geom_line(color = "#ffffff") +
+  fill_uc(nc_df = nc_df, 
+          zscore_begin = -1, 
+          zscore_end = 1, 
+          fill = "#5bc0de", 
+          alpha = 1) +
+  fill_uc(nc_df = nc_df,
+          zscore_begin = 1, 
+          zscore_end = 2, 
+          fill = "#8cd2e7", 
+          alpha = 1) +
+  fill_uc(nc_df = nc_df, 
+          zscore_begin = -2, 
+          zscore_end = -1, 
+          fill = "#8cd2e7", 
+          alpha = 1) +
+  fill_uc(nc_df = nc_df, 
+          zscore_begin = 2, 
+          zscore_end = 6, 
+          fill = "#bde5f1", 
+          alpha = 1) +
+  fill_uc(nc_df = nc_df, 
+          zscore_begin = -3, 
+          zscore_end = -2, 
+          fill = "#bde5f1", 
+          alpha = 1) +
+  scale_x_continuous(breaks = -4:4) +
+  scale_y_continuous(breaks = NULL) +
+  theme_classic() +
+  ylab("") + 
+  xlab("") + 
+  geom_text(data = nc_df_filtered,
+            aes(x = x, 
+                y = y + 0.1, 
+                label = paste(round2(cum_density, 1),"%")),
+            color = "#ffffff",
+            nudge_x = 0,
+            nudge_y = 0,
+            check_overlap = TRUE,
+            family = "roboto",
+            size = 6) +
+  geom_segment(data = nc_df_filtered,
+               aes(x = x, 
+                   xend = x, 
+                   y = 0, 
+                   yend = y), 
+               linetype = "dashed",
+               color = "#ffffff") +
+  theme_void(base_family = "roboto") +
+  theme(
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(),
+    panel.background = element_rect(fill = "#212121",
+                                    color = NA),
+    plot.background = element_rect(fill = "#212121",
+                                   color = NA)
+  )
+```
+
+---
+
+# The Emperical Rule
+
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+ggplot(NULL, aes(c(-3,3))) +
+    geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
+    geom_area(stat = "function", fun = dnorm, fill = "#c3e7f3", xlim = c(-3, 3)) +
+  geom_area(stat = "function", fun = dnorm, fill = "#9bd8eb", xlim = c(-2, 2)) +
+    geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-1, 1)) +
+  scale_color_manual(values = c("transparent")) +
+  theme_void(base_family = "roboto") +
+  theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#212121",color = NA),
+        plot.background = element_rect(fill = "#212121",color = NA)
+        ) +
+  annotate('text', 
+           x = 0, 
+           y = 0.20, 
+           label = ' About 68%\nof data sits here', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 0.5) +
+  annotate('text', 
+           x = 0, 
+           y = 0.13, 
+           label = 'About 95%\nof data sits here', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 0.5) +
+  annotate('text', 
+           x = 0, 
+           y = 0.06, 
+           label = 'About 99.7%\nof data sits here', 
+           color = '#ffffff',
+           size = 1.7,
+           family = "roboto",
+           fontface = 2,
+           hjust = 0.5) +
+  geom_segment(aes(x = 0.2, 
+                   xend = 0.3, 
+                   y = 0.20, 
+                   yend= 0.20,
+               arrow = arrow(length = unit(1.2, "mm")), 
+               lwd = 0.2,
+               color = "#ffffff"))
+```
+
+
+---
+## That's it. Let's take a break before working in R.
