@@ -5,6 +5,13 @@ author: "Week 2"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
 ---
 
 <style>

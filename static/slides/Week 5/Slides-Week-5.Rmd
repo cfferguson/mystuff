@@ -6,12 +6,14 @@ output:
  xaringan::moon_reader:
    css: xaringan-themer.css
    nature:
+     ratio: 16:9
      highlightStyle: github
      highlightLines: true
      countIncrementalSlides: false
      navigation:
-        scroll: false
+         scroll: false
 ---
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script type="text/x-mathjax-config">
