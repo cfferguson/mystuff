@@ -89,11 +89,11 @@ pptx_location <- "/lecture_notes/Week 3/SSDS_Ch3.pptx"
 docx_location <- "/lecture_notes/Week 3/SSDS_Ch3.docx"
 
 powerpoint_link <- function() {
-  paste0("<a href=\"", pptx_location, "\">", as.character(fa("file-powerpoint")), "</a>")
+  paste0("<a href=\"", pptx_location, "\">", as.character(fa("file-powerpoint", fill = "#d04423", width = "2em")), "</a>")
 }
 
 word_link <- function() {
-  paste0("<a href=\"", docx_location, "\">", as.character(fa("file-word")), "</a>")
+  paste0("<a href=\"", docx_location, "\">", as.character(fa("file-word", fill = "#00a4ef", width = "2em")), "</a>")
 }
 
 textitems <- tibble(
@@ -118,9 +118,6 @@ kable(textitems,
   column_spec(2, width = "20em") 
 ```
 
-- [Chapter 3 PowerPoint](/lecture_notes/Week 3/SSDS_Ch3.pptx){target="_blank"} 
-- [Chapter 3 Lecture Notes](/lecture_notes/Week 3/SSDS_Ch3.docx){target="_blank"}
-
 ### In Class Notes
 <!--
 *posted during class time*
@@ -132,7 +129,7 @@ knitr::include_url("/slides/Week 3/Slides-Week-3.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 3/Slides-Week-3.html){target="_blank"}.
+Want to see a larger version of the presentation? Click this [link](/slides/Week 3/Slides-Week-3.html){target="_blank"} or download a [PDF](/slides/Week 3/Slides-Week-3.pdf){target="_blank"}. 
 
 <!--
 ### R Walkthrough

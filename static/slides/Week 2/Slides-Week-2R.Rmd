@@ -24,7 +24,15 @@ xaringanthemer::style_duo(
   header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
   text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
-xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_xaringan_extra(c("tile_view",
+                                    "animate_css",
+                                    "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em"))
 ```
 
 # Looking at Data Like You're Used to

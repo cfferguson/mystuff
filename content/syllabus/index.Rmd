@@ -83,15 +83,15 @@ Data science and statistical programming can be difficult. Computers are stupid 
 
 But there are multiple resources both online and locally that are available. Please take a moment to go through this slideshow for a short description of the main outlets.
 
-Click on the presentation itself and then you may
-
-- Move back and forth through the slideshow using the ⬅ and ⮕ buttons on your keyboard.
-- Press the letter **O** at any point to see see a tile view of the slideshow.
-- Use this [link](/slides/Descriptions/Slides-Week-4.html){target="_blank"} to view a larger version of slideshow in a new window.
-
+<center>
 ```{r echo = FALSE}
-knitr::include_url("/slides/Week 4/Slides-MRE.html")
+knitr::include_url("/slides/Descriptions/Slides-MRE.html")
 ```
+</center>
+
+You can also use this [link](/slides/Descriptions/Slides-MRE.html){target="_blank"} to view a larger version of slideshow in a new window or download it as a [PDF](/slides/Descriptions/Slides-MRE.pdf).
+
+To move back and forth, use <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd> at any point in your slideshow and a display of all slides will appear. Click on a slide to go there or press <kbd>O</kbd> to exit. For more options, press <kbd>H</kbd> for help.
 
 ## Assignments and Grades
 

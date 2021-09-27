@@ -94,6 +94,12 @@ xaringanthemer::style_duo(
 )
 
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
 ```
 
 ```{r echo = FALSE, eval = TRUE, message=FALSE}

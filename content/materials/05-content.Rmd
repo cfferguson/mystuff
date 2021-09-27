@@ -65,10 +65,58 @@ editor_options:
 }
 </style>
 
+```{r setup, include=FALSE, purl=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(latex2exp)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
 ### Textbook Notes
 
-- [Chapter 5 PowerPoint](/slides/Week 5/SSDS_Ch5.PPTX){target="_blank"}
-- [Chapter 5 Lecture Notes](/lecture_notes/Week 5/SSDS_Ch5.docx){target="_blank"}
+```{r echo=FALSE}
+
+pptx_location <- "/lecture_notes/Week 5/SSDS_Ch5.pptx"
+docx_location <- "/lecture_notes/Week 5/SSDS_Ch5.docx"
+
+powerpoint_link <- function() {
+  paste0("<a href=\"", pptx_location, "\">", as.character(fa("file-powerpoint", fill = "#d04423", width = "2em")), "</a>")
+}
+
+word_link <- function() {
+  paste0("<a href=\"", docx_location, "\">", as.character(fa("file-word", fill = "#00a4ef", width = "2em")), "</a>")
+}
+
+textitems <- tibble(
+  
+  pptx <- c("Chapter 5 PowerPoint",
+               powerpoint_link()),
+  
+  docx <- c("Chapter 5 Notes",
+            word_link())
+  
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(textitems, 
+      col.names = c("", ""),
+      escape = FALSE,
+      align = 'cc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "20em") %>%
+  column_spec(2, width = "20em") 
+```
 
 ### In Class Notes
 <!--
@@ -81,7 +129,7 @@ knitr::include_url("/slides/Week 5/Slides-Week-5.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 5/Slides-Week-5.html){target="_blank"}.
+Want to see a larger version of the presentation? Click this [link](/slides/Week 5/Slides-Week-5.html){target="_blank"} or download a [PDF](/slides/Week 5/Slides-Week-5.pdf){target="_blank"}.
 
 ### R Walkthrough
 <!--
@@ -90,7 +138,7 @@ Want to see a larger version of the presentation? Click this [link](/slides/Week
 Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
 ```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 5",  "EDP613Week5RMaterials.zip")
+loc <- here::here("static", "slides", "Week 5", "EDP613Week5RMaterials.zip")
 
 downloadthis::download_file(
   path = loc,

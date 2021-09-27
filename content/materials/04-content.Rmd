@@ -65,10 +65,59 @@ editor_options:
 }
 </style>
 
+```{r setup, include=FALSE, purl=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(latex2exp)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
 ### Textbook Notes
 
-- [Chapter 4 PowerPoint](/slides/Week 4/SSDS_Ch4.PPTX){target="_blank"}
-- [Chapter 4 Lecture Notes](/lecture_notes/Week 4/SSDS_Ch4.docx){target="_blank"}
+```{r echo=FALSE}
+
+pptx_location <- "/lecture_notes/Week 4/SSDS_Ch4.pptx"
+docx_location <- "/lecture_notes/Week 4/SSDS_Ch4.docx"
+
+powerpoint_link <- function() {
+  paste0("<a href=\"", pptx_location, "\">", as.character(fa("file-powerpoint", fill = "#d04423", width = "2em")), "</a>")
+}
+
+word_link <- function() {
+  paste0("<a href=\"", docx_location, "\">", as.character(fa("file-word", fill = "#00a4ef", width = "2em")), "</a>")
+}
+
+textitems <- tibble(
+  
+  pptx <- c("Chapter 4 PowerPoint",
+               powerpoint_link()),
+  
+  docx <- c("Chapter 4 Notes",
+            word_link())
+  
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(textitems, 
+      col.names = c("", ""),
+      escape = FALSE,
+      align = 'cc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "20em") %>%
+  column_spec(2, width = "20em") 
+```
+
 
 ### In Class Notes
 <!--
