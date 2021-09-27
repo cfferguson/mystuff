@@ -82,12 +82,13 @@ Notes:
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"} by 11:59 PM next Wednesday.<br>
 -->
 
-### Solutions
-*Posted after class day and time next week.*
 <!--
-### Week 5 Problem Set
+### Solutions
 
-#### Solutions
+*Posted after class day and time next week.*
+-->
+
+### Week 5 Problem Set
 
 ```{r echo = FALSE}
 shading_geq <- function(x, lower_bound) {
@@ -1145,4 +1146,3 @@ which is the area between $z$ and the tail, or $0.3594$ implying about the <span
 
 </details>
 </p>
--->

@@ -1294,7 +1294,7 @@ mpg %&amp;gt;%
 &lt;/div&gt;
 &lt;div id=&#34;how-to-select-the-appropriate-chart-type&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;How to select the appropriate chart type&lt;/h2&gt;
-&lt;p&gt;Many people have created many useful tools for selecting the correct chart type for a given dataset or question. Here are some of the best:&lt;/p&gt;
+&lt;p&gt;Many people have created many useful tools for selecting the correct chart type for a given dataset or question. Here are arguably some of the best put there:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://chartmaker.visualisingdata.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Chartmaker Directory&lt;/strong&gt;&lt;/a&gt;: Examples of how to create 51 different types of visualizations in 31 different software packages, including Excel, Tableau, and R.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://annkemery.com/essentials/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Emery’s Essentials&lt;/strong&gt;&lt;/a&gt;: Descriptions and examples of 26 different chart types.&lt;/li&gt;
@@ -1302,6 +1302,7 @@ mpg %&amp;gt;%
 &lt;li&gt;&lt;a href=&#34;http://www.datavizcatalogue.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Data Visualisation Catalogue&lt;/strong&gt;&lt;/a&gt;: Descriptions, explanations, examples, and tools for creating 60 different types of visualizations.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://datavizproject.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Data Viz Project&lt;/strong&gt;&lt;/a&gt;: Descriptions and examples for 150 different types of visualizations. Also allows you to search by data shape and chart function (comparison, correlation, distribution, geographical, part to whole, trend over time, etc.).&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://shinyapps.stat.ubc.ca/r-graph-catalog/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;R Graph Catalog&lt;/strong&gt;&lt;/a&gt;: R code for 124 ggplot graphs.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rstudio-education.github.io/tidyverse-cookbook/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Tidyverse Cookbook&lt;/strong&gt;&lt;/a&gt;: A bare bones collection of tidyverse commands that serves as an excellent reference.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;general-resources&#34; class=&#34;section level2&#34;&gt;

@@ -30,6 +30,7 @@ These resources are also really really helpful:
 - [**STA 112FS: Data Science**](http://www2.stat.duke.edu/courses/Fall17/sta112.01/){target="_blank"}: [Dr. Mine Çetinkaya-Rundel](https://twitter.com/minebocek){target="_blank"} at the University of Edinburgh / Duke University has an entire introductory course in R, visualization, and data science online.
 - [**Stats Illustrations**](https://github.com/allisonhorst/stats-illustrations){target="_blank"}: [Dr. Allison Horst](https://twitter.com/allison_horst){target="_blank"} created and continues to build beautiful illustrations of many R commands you will probably use.
 - [**Teacup Giraffes**](https://tinystats.github.io/teacups-giraffes-and-statistics/){target="_blank"}: A fantastic and visually stunning way to learn R using animations accessible to children but for adults by [Dr. Desirée De Leon](https://twitter.com/dcossyle){target="_blank"} at RStudio.
+- [**The Tidyverse Cookbook**](https://rstudio-education.github.io/tidyverse-cookbook/){target="_blank"}: A bare bones collection of tidyverse commands that serves as an excellent reference.
 
 
 ## R in the Wild

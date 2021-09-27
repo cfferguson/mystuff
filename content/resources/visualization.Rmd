@@ -17,7 +17,7 @@ output:
 
 ## How to select the appropriate chart type
 
-Many people have created many useful tools for selecting the correct chart type for a given dataset or question. Here are some of the best:
+Many people have created many useful tools for selecting the correct chart type for a given dataset or question. Here are arguably some of the best put there:
 
 - [**The Chartmaker Directory**](http://chartmaker.visualisingdata.com/){target="_blank"}: Examples of how to create 51 different types of visualizations in 31 different software packages, including Excel, Tableau, and R.
 - [**Emery's Essentials**](http://annkemery.com/essentials/){target="_blank"}: Descriptions and examples of 26 different chart types.
@@ -25,7 +25,6 @@ Many people have created many useful tools for selecting the correct chart type 
 - [**The Data Visualisation Catalogue**](http://www.datavizcatalogue.com/){target="_blank"}: Descriptions, explanations, examples, and tools for creating 60 different types of visualizations.
 - [**The Data Viz Project**](http://datavizproject.com/){target="_blank"}: Descriptions and examples for 150 different types of visualizations. Also allows you to search by data shape and chart function (comparison, correlation, distribution, geographical, part to whole, trend over time, etc.).
 - [**R Graph Catalog**](http://shinyapps.stat.ubc.ca/r-graph-catalog/){target="_blank"}: R code for 124 ggplot graphs.
-
 
 ## General resources
 

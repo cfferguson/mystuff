@@ -33,7 +33,7 @@ lessons:
 
   - title: 'Measures of Variability'
     session: 4
-    date: "September 23, 2020"
+    date: "September 9, 2021"
     readings: "04-reading"
     datacamp: "04-datacamp"
     examples: "04-example"
@@ -42,23 +42,29 @@ lessons:
 
   - title: 'The Normal Distribution'
     session: 5
-    date: "September 30, 2020"
+    date: "September 16, 2021"
     readings: "05-reading"
     datacamp: "05-datacamp"
     examples: "05-example"
     tasks: "05-homework"
     due: "05-due"
 
+  - title: 'Exam I'
+    session: 6
+    date: "September 23, 2021"
+    tasks: "01-exam"
+    due: "06-due"
+
   # - title: 'Sampling and Sampling Distributions Part I'
-  #   session: 6
+  #   session: 7
   #   date: "October 7, 2020"
-  #   readings: "06-reading"
-  #   datacamp: "06-datacamp"
-  #   examples: "06-example"
-  #   tasks: "06-homework"
+  #   readings: "07-reading"
+  #   datacamp: "07-datacamp"
+  #   examples: "07-example"
+  #   tasks: "07-homework"
   #
   # - title: 'Sampling and Sampling Distributions Part II'
-  #   session: 7
+  #   session: 8
   #   date: "October 14, 2020"
   #   datacamp: "07-datacamp"
   #   examples: "07-example"

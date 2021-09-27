@@ -1,6 +1,6 @@
 ---
 title: "The Normal Distribution"
-linktitle: "Week 5: The Normal Distribution"
+subtitle: "EDP 613"
 author: "Week 5"
 output: 
  xaringan::moon_reader:
@@ -133,7 +133,7 @@ The area under a normal curve is equal to 1
 
 - is probabilistic
 
-```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=1.5, fig.width=2.5}
 mean_thing <- 10
 std_thing <- 10
 lcb <- ((mean_thing - (3 * std_thing)) - 5)
@@ -160,11 +160,11 @@ ggplot(data = data.frame(u = c(lcb, ucb)),
   expand_limits(x = c(-45,0), 
                 y = 0)  +
   annotate('text', 
-           x = 44, 
+           x = 52, 
            y = 0.010, 
            label = 'Area = 1', 
            color = '#ffffff',
-           size = 5,
+           size = 4,
            family = "roboto",
            fontface = 2,
            hjust = 1)
@@ -176,7 +176,7 @@ ggplot(data = data.frame(u = c(lcb, ucb)),
 
 - The area under the curve between two values is a proportion of the total population
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.3, fig.width=2.3}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-2, 1)) +
@@ -190,14 +190,14 @@ ggplot(NULL, aes(c(-3,3))) +
         plot.background = element_rect(fill = "#212121",color = NA)
         ) +
   annotate('text', 
-           x = 0.46, 
+           x = -0.20, 
            y = 0.15, 
-           label = 'Some proportion', 
+           label = 'Some\nproportion', 
            color = '#ffffff',
-           size = 1.7,
+           size = 3,
            family = "roboto",
            fontface = 2,
-           hjust = 1)
+           hjust = 0.5)
 ```
 
 ---
@@ -215,7 +215,7 @@ b. the proportion of the population not between 0 and 2?
 ## Solution
 
 a. 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.35, fig.width=2.35}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(0, 2)) +
@@ -233,7 +233,7 @@ ggplot(NULL, aes(c(-3,3))) +
            y = 0.17, 
            label = '20%\nhere', 
            color = '#ffffff',
-           size = 1.7,
+           size = 1.8,
            family = "roboto",
            fontface = 2,
            hjust = 0.5)
@@ -244,7 +244,7 @@ ggplot(NULL, aes(c(-3,3))) +
 ## Solution
 
 b. 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.35, fig.width=2.35}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(0, 2)) +
@@ -330,7 +330,7 @@ sample standard deviation
 
 # The Emperical Rule: Idea
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.39, fig.width=2.39, warning=FALSE, message=FALSE}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
     geom_area(stat = "function", fun = dnorm, fill = "#c3e7f3", xlim = c(-3, 3)) +
@@ -419,7 +419,7 @@ ggplot(NULL, aes(c(-3,3))) +
 
 # The Emperical Rule: Statistic
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.39, fig.width=2.39, warning=FALSE, message=FALSE}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
     geom_area(stat = "function", fun = dnorm, fill = "#c3e7f3", xlim = c(-3, 3)) +
@@ -508,7 +508,7 @@ ggplot(NULL, aes(c(-3,3))) +
 
 # The Emperical Rule: Formula
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.39, fig.width=2.39, warning=FALSE, message=FALSE}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
     geom_area(stat = "function", fun = dnorm, fill = "#c3e7f3", xlim = c(-3, 3)) +
@@ -709,7 +709,7 @@ When plotting a $z$-score
 
 How much of a population is represented by the shaded area under the standard normal curve?
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.20, fig.width=2.20}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-3.5, 1.25)) +
@@ -755,7 +755,7 @@ ggplot(NULL, aes(c(-3,3))) +
 
 How much of a population is represented by the shaded area under the standard normal curve?
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.20, fig.width=2.20}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-3.5, -0.28)) +
@@ -809,7 +809,7 @@ ggplot(NULL, aes(c(-3,3))) +
 
 How much of a population is represented by the shaded area under the standard normal curve?
 
-```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.5, fig.width=2.5}
+```{r, echo=FALSE, fig.align='center', dpi=400, fig.height=1.20, fig.width=2.20}
 ggplot(NULL, aes(c(-3,3))) +
     geom_area(stat = "function", fun = dnorm, fill = NA, color = "#ffffff", xlim = c(-3.5, 3.5), size=0.6) +
   geom_area(stat = "function", fun = dnorm, fill = "#5bc0de", xlim = c(-0.75, 1.7)) +
