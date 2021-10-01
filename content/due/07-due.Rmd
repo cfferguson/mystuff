@@ -1,0 +1,94 @@
+---
+title: "Sampling and Sampling Distributions"
+linktitle: "Week 7: Sampling and Sampling Distributions"
+output:
+  blogdown::html_page:
+    toc: true
+menu:
+  due:
+    parent: "To Do"
+    weight: 7
+type: docs
+weight: 1
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+library(dplyr)
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+```
+
+
+### What to do for Week 7 after class ends
+
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
+
+checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
+
+wk_post <- tibble(
+  
+Submit = c(unchecked,
+           unchecked),
+
+Description = c("Continue the *Introduction to Statistics in R* module on Data Camp",
+                "Take a look at the `tidyverse` cookbook"),
+
+Location = c( "[Link](/datacamp/07-module/)",
+              "[Link](https://rstudio-education.github.io/tidyverse-cookbook/){target='_blank'}"
+               )
+)
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_post, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE)  %>%
+  column_spec(1, width = "10em")
+```
+
+<br />
+
+### What to do for Week 8 before coming to class^[For preparation.]
+
+```{r eval = TRUE, echo = FALSE}
+book <- as.character(fontawesome::fa("book", fill = "steelblue"))
+
+chalkboard <- as.character(fontawesome::fa("chalkboard", fill = "steelblue"))
+
+lightbulb <- as.character(fontawesome::fa("lightbulb", fill = "steelblue"))
+
+wk_pre <- tibble(
+  
+Area = c(book, 
+         chalkboard, 
+         lightbulb,
+         lightbulb),
+
+Description = c("Read *Estimation* in the text",
+               "Download Chapter 7 Powerpoint and Lecture Textbook Notes",
+               "Watch videos on the *p*-value^[Optional but recommended.]",
+               "Interactively play with statistical plots^[Optional but recommended.]"),
+
+Location = c("[Link](/readings/08-reading/#book-stuff)", 
+             "[Link](/materials/08-content/#textbook-notes)",
+             "[Link](/materials/08-example/#crash-course-statistics)",
+             "[Link](/materials/08-example/#crash-course-statistics)")
+
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_pre, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "30em") %>%
+  column_spec(3, width = "10em")
+```  

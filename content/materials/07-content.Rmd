@@ -7,7 +7,7 @@ output:
 menu:
   materials:
     parent: Content
-    weight: 5
+    weight: 7
 type: docs
 weight: 1
 editor_options: 
@@ -130,7 +130,7 @@ knitr::include_url("/slides/Week 7/Slides-Week-7p1.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 7/Slides-Week-7p1.html){target="_blank"}.
+Want to see a larger version of the presentation? Click this [link](/slides/Week 7/Slides-Week-7p1.html){target="_blank"} or download a [PDF](/slides/Week 7/Slides-Week-7p2.pdf){target="_blank"}.
 
 #### Part II
 ```{r echo = FALSE}
@@ -139,8 +139,7 @@ knitr::include_url("/slides/Week 7/Slides-Week-7p2.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 7/Slides-Week-7p2.html){target="_blank"}.
-
+Want to see a larger version of the presentation? Click this [link](/slides/Week 7/Slides-Week-7p2.html){target="_blank"} or download a [PDF](/slides/Week 7/Slides-Week-7p2.pdf){target="_blank"}.
 
 ### R Walkthrough
 *posted during class time*

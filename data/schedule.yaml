@@ -55,34 +55,22 @@ lessons:
     tasks: "01-exam"
     due: "06-due"
 
-  # - title: 'Sampling and Sampling Distributions Part I'
-  #   session: 7
-  #   date: "October 7, 2020"
-  #   readings: "07-reading"
-  #   datacamp: "07-datacamp"
-  #   examples: "07-example"
-  #   tasks: "07-homework"
-  #
-  # - title: 'Sampling and Sampling Distributions Part II'
-  #   session: 8
-  #   date: "October 14, 2020"
-  #   datacamp: "07-datacamp"
-  #   examples: "07-example"
-  #   tasks: "07-homework"
-  #
-  # - title: 'Exam I'
-  #   session: 8
-  #   date: "October 21, 2020"
-  #   tasks: "08-homework"
-  #   due: "08-due"
-  #
+  - title: 'Sampling and Sampling Distributions'
+    session: 7
+    date: "September 30, 2021"
+    readings: "07-reading"
+    datacamp: "07-datacamp"
+    examples: "07-example"
+    tasks: "07-homework"
+    due: "07-due"
+
   # - title: 'Estimations'
-  #   session: 9
+  #   session: 8
   #   date: "October 28, 2020"
-  #   readings: "09-reading"
-  #   datacamp: "09-datacamp"
-  #   examples: "09-example"
-  #   due: "09-due"
+  #   readings: "08-reading"
+  #   datacamp: "08-datacamp"
+  #   examples: "08-example"
+  #   due: "08-due"
   #
   # - title: 'Testing Hypotheses'
   #   session: 10
