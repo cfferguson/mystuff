@@ -98,7 +98,7 @@ course:
   time: "Thursdays from 4:00-6:50 PM"
   location: "Allen Hall 808"
   dates: "August 18 - December 17"
-  github: asocialdatascientist/Courses/tree/edp613
+  github: drabhikroy/Courses/tree/edp613
   copyrightYear: "2021"
   slack: "https://2021edp613.slack.com"
 
@@ -107,7 +107,7 @@ instructor:
   email: Abhik.Roy@mail.wvu.edu
   url: "https://counselingandlearningsci.wvu.edu/faculty-staff/abhik-roy"
   twitter: asocialdatasci
-  github: asocialdatascientist
+  github: drabhikroy
   office: "Allen Hall 504O"
   contact_policy: >-
     Slack is the best way to get in contact with me. Response times are typically much quicker than the standard 24-48 hours given to emails. Please remember that life is somewhat chaotic at this time!
@@ -131,7 +131,7 @@ university:
 sharing_image: "course_info.png"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter: "asocialdatascientist"
+twitter: "asocialdatasci"
 
 
 ############################
