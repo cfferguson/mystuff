@@ -98,10 +98,10 @@ word_link <- function() {
 
 textitems <- tibble(
   
-  pptx <- c("Chapter 8 PowerPoint",
+  pptx <- c("Chapter 7 PowerPoint",
                powerpoint_link()),
   
-  docx <- c("Chapter 8 Notes",
+  docx <- c("Chapter 7 Notes",
             word_link())
   
 )
