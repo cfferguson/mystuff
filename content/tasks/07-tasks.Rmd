@@ -48,13 +48,13 @@ tr:nth-child(even) { background: #ffffff;
 ```{r icontibble, echo=FALSE, message=FALSE}
 book <- tibble(
   
-  chapter <- c("7"),
+  chapter <- c("6"),
   
   exercises <- c("1, 2, 3, 4, 5, 6, 7, 8, 9"),
   
   problems <- c("Social Statistics for a Diverse Society"),
   
-  pages <- c("174-178"),
+  pages <- c("179-210"),
   
   .name_repair = "minimal"
   

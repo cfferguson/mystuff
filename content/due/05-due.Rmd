@@ -73,14 +73,22 @@ chalkboard <- as.character(fontawesome::fa("chalkboard", fill = "steelblue"))
 lightbulb <- as.character(fontawesome::fa("lightbulb", fill = "steelblue"))
 
 wk_pre <- tibble(
-Area = c(lightbulb),
+Area = c(book, 
+         chalkboard, 
+         lightbulb),
 
-Description = c("unchecked",
-                "Study for your first exam!",
-                "[Link](/tasks/01-exam/)")
-              )
+Description = c("Review Chapters 1-5",
+                "Create a cheat sheet",
+                "Bring a photocopy of Appendix B"),
+
+Location = c("[Link](/tasks/01-exam/)", 
+             "[Link](/tasks/01-exam/)",
+             "[Link](/tasks/01-exam/)")
+
+)
 
 ```
+
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
 kable(wk_pre, 
@@ -90,5 +98,4 @@ kable(wk_pre,
   column_spec(1, width = "10em") %>%
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "10em")
-```
-
+```  
