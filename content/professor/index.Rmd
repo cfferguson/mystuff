@@ -33,15 +33,15 @@ Professor of [Educational Psychology](https://lshd.wvu.edu/academics){target="_b
 
 ### This is what I research
 
-- Transference of Foundational Evaluation Concepts
-- Social Modeling using Machine Learning
-- Applications of Predictive Hierarchical Social Networks
+- Teaching of Developmental Evaluation
+- Social Simulation Modeling using Machine Learning
+- Predictive Social Networks
 
 which are just fancy ways of saying
 
 - How people learn basic concepts in evaluation
-- Programming a type of artificial intelligence and then training it to do some of my work for me^[No its not Skynet. Computers are stupid.]
-- Figuring out how things are related to each other and then making judgments^[Which is a very evaluation like thing to do!]  
+- Replicate human social behaviors using computers that can learn and do some things themselves
+- Figuring out how things are related to each other by using different types of evidence
 
 You can check out more about what I do here:
 <br>

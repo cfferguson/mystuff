@@ -38,4 +38,4 @@ This is a comprehensive exam covering content you have already been tested or qu
 <hr />
 
 ### Need Help?
-I always prefer a face to face meeting if possible but since that's not possible, you can schedule a Zoom via the [Calendar](https://calendly.com/nopiecharts/short30){target="_blank"} or contact me within [Slack](https://2021edp613.slack.com){target="_blank"} by tagging my name `@Dr. Abhik Roy` in a text box along with your message.
+I always prefer a face to face meeting if possible but since that's not possible, you can schedule a Zoom via the [Calendar](https://calendly.com/nopiecharts){target="_blank"} or contact me within [Slack](https://2021edp613.slack.com){target="_blank"} by tagging my name `@Dr. Abhik Roy` in a text box along with your message.
