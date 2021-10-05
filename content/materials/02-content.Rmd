@@ -128,7 +128,9 @@ knitr::include_url("/slides/Week 2/Slides-Week-2.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 2/Slides-Week-2.html){target="_blank"} or download a [PDF](/slides/Week 2/Slides-Week-2.pdf){target="_blank"}. 
+> Click [here](/slides/Week 2/Slides-Week-2.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 2/Slides-Week-2.pdf){target="_blank"} here for a PDF of the presentation.
 
 ### R Walkthrough
 
@@ -138,4 +140,6 @@ knitr::include_url("/slides/Week 2/Slides-Week-2R.html")
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 2/Slides-Week-2R.html){target="_blank"} or download a [PDF](/slides/Week 2/Slides-Week-2R.pdf){target="_blank"}.
+> Click [here](/slides/Week 2/Slides-Week-2R.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 2/Slides-Week-2R.pdf){target="_blank"} here for a PDF of the presentation.
