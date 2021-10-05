@@ -788,7 +788,7 @@ csl: &amp;quot;https://raw.githubusercontent.com/citation-style-language/styles/
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl&#34; target=&#34;_blank&#34;&gt;Chicago author-date&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-note-bibliography.csl&#34; target=&#34;_blank&#34;&gt;Chicago note-bibliography&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-fullnote-bibliography.csl&#34;&gt;Chicago full note-bibliography&lt;/a&gt; (no shortened notes or ibids){target=&#34;_blank&#34;}&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-fullnote-bibliography.csl&#34;&gt;Chicago full note-bibliography&lt;/a&gt; (no shortened notes or ibids){target=“_blank”}&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl&#34; target=&#34;_blank&#34;&gt;APA 7th edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/citation-style-language/styles/master/modern-language-association.csl&#34; target=&#34;_blank&#34;&gt;MLA 8th edition&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -877,6 +877,7 @@ csl: &amp;quot;https://raw.githubusercontent.com/citation-style-language/styles/
 &lt;li&gt;&lt;a href=&#34;http://www2.stat.duke.edu/courses/Fall17/sta112.01/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;STA 112FS: Data Science&lt;/strong&gt;&lt;/a&gt;: &lt;a href=&#34;https://twitter.com/minebocek&#34; target=&#34;_blank&#34;&gt;Dr. Mine Çetinkaya-Rundel&lt;/a&gt; at the University of Edinburgh / Duke University has an entire introductory course in R, visualization, and data science online.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/allisonhorst/stats-illustrations&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Stats Illustrations&lt;/strong&gt;&lt;/a&gt;: &lt;a href=&#34;https://twitter.com/allison_horst&#34; target=&#34;_blank&#34;&gt;Dr. Allison Horst&lt;/a&gt; created and continues to build beautiful illustrations of many R commands you will probably use.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://tinystats.github.io/teacups-giraffes-and-statistics/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Teacup Giraffes&lt;/strong&gt;&lt;/a&gt;: A fantastic and visually stunning way to learn R using animations accessible to children but for adults by &lt;a href=&#34;https://twitter.com/dcossyle&#34; target=&#34;_blank&#34;&gt;Dr. Desirée De Leon&lt;/a&gt; at RStudio.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rstudio-education.github.io/tidyverse-cookbook/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Tidyverse Cookbook&lt;/strong&gt;&lt;/a&gt;: A bare bones collection of tidyverse commands that serves as an excellent reference.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;r-in-the-wild&#34; class=&#34;section level2&#34;&gt;
@@ -1302,7 +1303,6 @@ mpg %&amp;gt;%
 &lt;li&gt;&lt;a href=&#34;http://www.datavizcatalogue.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Data Visualisation Catalogue&lt;/strong&gt;&lt;/a&gt;: Descriptions, explanations, examples, and tools for creating 60 different types of visualizations.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://datavizproject.com/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Data Viz Project&lt;/strong&gt;&lt;/a&gt;: Descriptions and examples for 150 different types of visualizations. Also allows you to search by data shape and chart function (comparison, correlation, distribution, geographical, part to whole, trend over time, etc.).&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://shinyapps.stat.ubc.ca/r-graph-catalog/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;R Graph Catalog&lt;/strong&gt;&lt;/a&gt;: R code for 124 ggplot graphs.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rstudio-education.github.io/tidyverse-cookbook/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Tidyverse Cookbook&lt;/strong&gt;&lt;/a&gt;: A bare bones collection of tidyverse commands that serves as an excellent reference.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;general-resources&#34; class=&#34;section level2&#34;&gt;
