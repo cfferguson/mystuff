@@ -44,7 +44,6 @@ Location = c( "[Link](/datacamp/07-module/)",
               "[Link](https://rstudio-education.github.io/tidyverse-cookbook/){target='_blank'}"
                )
 )
-
 ```
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}

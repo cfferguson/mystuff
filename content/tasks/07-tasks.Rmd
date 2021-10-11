@@ -46,7 +46,6 @@ tr:nth-child(even) { background: #ffffff;
 
 ### Homework
 ```{r icontibble, echo=FALSE, message=FALSE}
-
 book <- tibble(
   
   chapter <- c("6"),
@@ -60,7 +59,6 @@ book <- tibble(
   .name_repair = "minimal"
   
 )
-
 ```
 
 <center>
