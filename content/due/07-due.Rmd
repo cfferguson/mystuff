@@ -80,7 +80,7 @@ Description = c("Read *Estimation* in the text",
 Location = c("[Link](/readings/08-reading/#book-stuff)", 
              "[Link](/materials/08-content/#textbook-notes)",
              "[Link](/materials/08-example/#crash-course-statistics)",
-             "[Link](/materials/08-example/#crash-course-statistics)")
+             "[Link](https://rpsychologist.com/viz/)")
 
 )
 
