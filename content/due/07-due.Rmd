@@ -31,13 +31,16 @@ checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
 
 wk_post <- tibble(
   
-Submit = c(unchecked,
+Submit = c(checked,
+           checked,
            unchecked),
 
 Description = c("Continue the *Introduction to Statistics in R* module on Data Camp",
+                "Complete problems 1, 2, 3, 4, 5, 6, 7, 8, 9 in Chapter 6",
                 "Take a look at the `tidyverse` cookbook"),
 
 Location = c( "[Link](/datacamp/07-module/)",
+              "[Link](/tasks/06-tasks/#homework)",
               "[Link](https://rstudio-education.github.io/tidyverse-cookbook/){target='_blank'}"
                )
 )
