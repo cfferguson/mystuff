@@ -54,7 +54,7 @@ book <- tibble(
   
   problems <- c("Social Statistics for a Diverse Society"),
   
-  pages <- c("179-210"),
+  pages <- c("206-210"),
   
   .name_repair = "minimal"
   
@@ -87,158 +87,22 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 
 *Posted after class day and time next week.*
 
+-->
 
-### Week 7 Problem Set
-
-```{r echo = FALSE}
-shading_geq <- function(x, lower_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x < lower_bound] <- NA
-  return(y)
-}
-
-shading_leq <- function(x, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x > upper_bound] <- NA
-  return(y)
-}
-
-shading_beq <- function(x, lower_bound, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x < lower_bound | x > upper_bound] <- NA
-  return(y)
-}
-
-shading_neq <- function(x, lower_bound, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x > lower_bound | x < upper_bound] <- NA
-  return(y)
-}
-```
-
+### Solutions
 
 <details><summary>1</summary>
 <p>
 
-```{r echo = FALSE}
-m = 2.97
-n = 1014
-stdev = 3.00
-```
-
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. We are looking the area under the curve greater than $8$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 8
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll, ul, stdev),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a person who watches more than 8 hr/day is given by
-\begin{aligned}
-z &= \dfrac{8-2.97}{3.00}\\\\
-&\approx 1.68
-\end{aligned}
-So <span class="boxed">$z \approx 1.68$</span>.
-
-b. We are looking the area under the curve less than $5$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 5
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_leq, args = list(upper_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", alpha = 0.6) +
-  scale_x_continuous(breaks = seq(ll, ul, stdev),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a person who watches less than 5 hr/day is given by
-\begin{aligned}
-z &= \dfrac{5-2.97}{3.00}\\\\
-&\approx 0.68
-\end{aligned}
-So <span class="boxed">$z \approx 0.68$</span>. Since the area between $z=0.68$ and $z=0$ is $0.2517$, we have $0.5000+0.2517=0.7517$. This implies that $0.7517\cdot 1014 \approx$ <span class="boxed">$762$ or $763$ people watch television less than 5 hours/day</span>.
-
-c. We have
-\begin{aligned}
-Y&=2.97+1\cdot 3\\
-&= 5.97
-\end{aligned}
-implying that <span class="boxed">5.97</span> television hr/day corresponds to a $z$-score of $+1$.
-
-d. We are looking at the area between $1$ and $6$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-minimum = 1
-maximum = 6
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                               upper_bound = maximum), 
-                geom = "area", fill = "#3d8ba9", alpha = 0.6) +
-  scale_x_continuous(breaks = seq(ll, ul, stdev),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a person who watches more than 1 hr/day is given by
-\begin{aligned}
-z &= \dfrac{1-2.97}{3.00}\\\\
-&\approx -0.66
-\end{aligned}
-with the area between the mean and $z=0.66$ found to be $0.2454$.
-<br>
-The $z$-score for a person who watches less than 6 hr/day is given by
-\begin{aligned}
-z &= \dfrac{6-2.97}{3.00}\\\\
-&\approx 1.01
-\end{aligned}
-with the area between the mean and $z=1.01$ found to be $0.3438$.<br><br>
-So the percentage of people who watch between 1 hr/day and 6 hr/day of television can be found by $0.2454 + 0.3438 = 0.5892$, or about <span class="boxed">$59\%$</span>.
+a. Although there are problems with the collection of data from all Americans, the census is assumed to be complete, so the mean age would be a <span class="boxed">parameter</span>.
+    
+b. A <span class="boxed">statistic</span> because it is estimated from a sample.
+  
+c. A <span class="boxed">parameter</span> because the school would have information on all its students.
+  
+d. A <span class="boxed">statistic</span> because it is estimated from a sample.
+  
+e. A <span class="boxed">parameter</span> because the school has information on all employees.
 
 </p>
 </details>
@@ -246,905 +110,262 @@ So the percentage of people who watch between 1 hr/day and 6 hr/day of televisio
 <details><summary>2</summary>
 <p>
 
-```{r echo = FALSE}
-m = 250
-n = 220
-stdev = 75
-```
+a. First, the population is not clearly defined. Are the population subscribers to the newspaper? Readers of the newspaper? Or some other set of people? Even given this uncertainty, the letters to the editor would only be a random sample of a population if, clearly, they came randomly from that population. But there is no reason to assume this to be the case. People with stronger opinions, who can write reasonably well, and who have the time to write are more likely to write the editor. Since these characteristics are not distributed randomly throughout the adult population, it is improbable that the letters are a random sample.
 
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
+b. The mayor might consider forming a coalition to randomly sample landline and cell phone numbers of city residents.
 
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. The 95th percentile, or $0.9500$ is approximately equivalent to $z=1.65$. So the number of women needing shelter is
-\begin{aligned}
-Y&= 250+1.65\cdot 75\\
-&= 373.75
-\end{aligned}
-or about $374$ women. Since this figure exceeds the total capacity of 350, there will <span class="boxed">not be enough space for all abused women on 95% of all nights</span>. at minimum, the city needs <span class="boxed">$374$</span> beds.
-
-b. We are looking the area under the curve greater than $220$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 220
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll -3*stdev, ul + 3*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for exceeding the capacity is given by
-\begin{aligned}
-z &= \dfrac{220-250}{75}\\\\
-&\approx -0.40
-\end{aligned}
-The area below this value is $0.3446$, so the area exceeding this is $1 – 0.3446 = 0.6554$, or about <span class="boxed">$66\%$ of all nights</span> the number of women seeking shelter will exceed the capacity of 220.  
-
-</details>
 </p>
+</details>
+
+<details><summary>3</summary>
+<p>
+
+a. Assuming that the population is defined as all persons shopping at that shopping mall that day of the week, she is selecting a systematic random sample. A more precise definition might limit it to all persons passing by the department store at the mall that day.
+
+b. This is a stratified sample because voters were first grouped by county, and unless the counties have the same number of voters, it is a disproportionate stratified sample because the same number is chosen from each county. We can assume that it was a probability sample, but we are not told exactly how the 50 voters were chosen from the lists. However, assuming that the population is defined as all Americans, this sort of sampling technique would qualify as nonprobability sampling.
+
+c. This is neither a simple random sample nor a systematic random sample. It might be thought of as a sample stratified on last name, but even then, choosing the first 20 names is not a random selection process.
+
+d. This is not a probability sample. Instead, it is a purposive sample chosen to represent a cross section of the population in New York City.
+
+</p>
+</details>
+
+<details><summary>4</summary>
+<p>
+
+a. There are 120 students where 57 are juniors who represent $57\div120 = 47.5$, or 47.5% of the class. This implies the probability of choosing a junior is <span class="boxed">$0.475$</span>.
+
+b. The probability that the student will be a freshman is $7\div120 =$ <span class="boxed">$0.058$</span>.
+
+c. The proportion of seniors in the class is $34/120 = 0.283$. The proportion of sophomores is $22\div120 = 0.183$. Then the number of students to be chosen at each class level is:
+<div align="center">
+<div style="width: 50%; margin:0 left;text-align: left;">
+```{r, echo=FALSE, eval=TRUE}
+level <- tibble(
+  
+  class = c("Freshman", 
+            "Sophomore", 
+            "Junior", 
+            "Senior"),
+  
+  calculation = c("0.058(30)", 
+                  "0.183(30)",
+                  "0.475(30)",
+                  "0.283(30)"),
+  
+  result = c("1.74", 
+             "5.49", 
+             "14.25", 
+             "8.49")
+  
+) 
+
+level %>%
+  kable(align = 'lcc',
+        booktabs = TRUE, 
+        linesep = "",
+        col.names = c("Class Level", "Calculation", "Result")) %>%
+  kable_styling(full_width = FALSE) 
+```
+</div>
+</div>
+or about <span class="boxed">2 freshman</span>, <span class="boxed">5 sophomores</span>, <span class="boxed">14 juniors</span>, and <span class="boxed">8 seniors</span>.
+
+d. For a disproportionate sample we choose the same number of students from each class level. For example, we could have <span class="boxed">5 freshman</span>, <span class="boxed">5 sophomores</span>, <span class="boxed">5 juniors</span>, and <span class="boxed">5 seniors</span>.
+
+</p>
+</details>
 
 <details><summary>5</summary>
 <p>
+<div style="padding-left: 30px;">
 
-a. We are looking at the area between $12$ and $16$ for the Working class.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 12.03
-n = 136
-stdev = 3.24
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-minimum = 12
-maximum = 16
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                               upper_bound = maximum), 
-                geom = "area", fill = "#3d8ba9", alpha = 0.6) +
-  scale_x_continuous(breaks = seq(ll-round(stdev), ul+round(stdev), 2),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a person with more than 12 years of education is given by
-\begin{aligned}
-z &= \dfrac{12-13.05}{2.77}\\\\
-&\approx -0.38
-\end{aligned}
-with the area between the mean and $z=-0.38$ found to be $0.1480$.<br><br>
-The $z$-score for a person who watches less than 16 years of education is given by
-\begin{aligned}
-z &= \dfrac{16-13.05}{2.77}\\\\
-&\approx 1.06
-\end{aligned}
-with the area between the mean and $z=1.06$ found to be $0.3554$.<br><br> 
-So the proportion of **working-class respondents** with 12–16 years of education can be found by $0.1480 + 0.3554 =$ <span class="boxed">$0.5034$</span>.<br><br>
-We are still looking at the area between $12$ and $16$ for the Upper class.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 15.48
-n = 56
-stdev = 2.76
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-minimum = 12
-maximum = 16
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                               upper_bound = maximum), 
-                geom = "area", fill = "#3d8ba9", alpha = 0.6) +
-  scale_x_continuous(breaks = seq(ll-round(stdev), ul+round(stdev), 2),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a person with more than 12 years of education is given by
-\begin{aligned}
-z &= \dfrac{12-15.48}{2.76}\\\\
-&\approx -1.26
-\end{aligned}
-with the area between the mean and $z=-1.26$ found to be $0.3962$.<br><br>
-The $z$-score for a person who watches less than 16 years of education is given by
-\begin{aligned}
-z &= \dfrac{16-15.48}{2.67}\\\\
-&\approx 0.19
-\end{aligned}
-with the area between the mean and $z=0.19$ found to be $0.0753$.<br><br>
-So the proportion of **upper-class respondents** with 12–16 years of education can be found by $0.3962 + 0.0753 =$ <span class="boxed">$0.4715$</span>.
-
-b. We are looking the area under the curve greater than $16$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 13.05
-n = 636
-stdev = 2.77
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 16
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(stdev), ul+round(stdev), 2),
-                     limits = c(ll - stdev, ul + stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For working-class respondents, the $z$-score is given by
-\begin{aligned}
-z &= \dfrac{16-12.05}{2.77}\\\\
-&\approx 1.06
-\end{aligned}
-The area between $z=1.06$ and the tail is $0.1446$ thus implying the probability of a **working-class respondent** having more than 16 years of education is <span class="boxed">$14.46\%$</span>.<br><br>
-For middle-class respondents, the $z$-score is given by
-\begin{aligned}
-z &= \dfrac{16-14.56}{2.95}\\\\
-&\approx 0.49
-\end{aligned}
-The area between $z=0.49$ and the tail is $0.3121$ thus implying the probability of a **middle-class respondent** having more than 16 years of education is <span class="boxed">$31.21\%$</span>.
-
-c. We are looking the area under the curve less than $10$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 12.03
-n = 136
-stdev = 3.24
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 10
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_leq, 
-                args = list(upper_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(1.5*stdev), ul+round(1.5*stdev), 2),
-                     limits = c(ll - 1.5*stdev, ul + 1.5*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For middle-class respondents, the $z$-score is given by
-\begin{aligned}
-z &= \dfrac{16-14.56}{2.95}\\\\
-&\approx 0.49
-\end{aligned}
-The area beyond $z=0.63$ and the tail is $0.2643$ thus implying the probability of a **lower-class respondent** having more less 10 years of education is <span class="boxed">$26.43\%$</span>.
-
-</details>
+The relationship between the standard error and the standard deviation is $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{N}}$. Since $\sigma$ is divided by $\sqrt{N}$, $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{N}}$ must always be smaller than $\sigma$ barring the trivial case where $N = 1$. Theoretically, the dispersion of the mean must be less than the dispersion of the raw scores. This implies that <span class="boxed">the standard error of the mean is less than the standard deviation</span>.
+</div>
 </p>
-
+</details>
+      
 <details><summary>6</summary>
 <p>
+      
+<div style="padding-left: 30px;">
 
-```{r echo = FALSE}
-m = 536
-n = 2136539
-stdev = 102
-```
+First note that the standard error of the mean is proportional to $\frac{1}{\sqrt{N}}$.
+      </div>
+        
+  a. The standard error of the mean is<br><br> 
+$\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{100}}=\frac{\sigma}{10}$ for a sample size of 100<br><br>
+          $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{1600}}=\frac{\sigma}{40}$ for a sample size of 16000<br><br>
+            We compare the two by $\frac{40}{10} =4$. So $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{N}}$ <span class="boxed">is smaller by a factor of 4</span> when the sample size increases from 100 to 1600.
 
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. We are looking the area under the curve greater than $625$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 625
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 100),
-                     limits = c(ll - 3*stdev, ul + 3*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For these high school graduates, the $z$-score is given by
-\begin{aligned}
-z &= \dfrac{625-536}{102}\\\\
-&\approx 0.87
-\end{aligned}
-The area beyond $z=0.87$ and the tail is $0.1992$ thus implying the probability that a **high school graduate** having earning a score of more than 625 is <span class="boxed">$19.92\%$</span>.
-
-b. We are looking the area under the curve between than $400$ and $625$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-minimum = 400
-maximum = 625
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
- stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                              upper_bound = maximum), 
-               geom = "area", 
-               fill = "#3d8ba9", 
-               alpha = 0.6,
-               linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 100),
-                     limits = c(ll - 3*stdev, ul + 3*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For these high school graduates, the $z$-score for 625 is given by
-\begin{aligned}
-z &= \dfrac{625-536}{102}\\\\
-&\approx 0.87
-\end{aligned}
-The area between the mean and $z=0.87$ is $0.3087$.<br><br>
-For these high school graduates, the $z$-score for 400 is given by
-\begin{aligned}
-z &= \dfrac{400-536}{102}\\\\
-&\approx -1.33
-\end{aligned}
-The area between$z=-1.33$ and the mean is $0.4082$.<br><br>
-Summing these proportions yields $0.3087+0.4082=0.7168$, or <span class="boxed">$71.68\%$</span> of the high school graduates earned a score between 400 and 625.
-
-c. The 20th percentile, or $0.2000$ is equivalent to $z=-0.84$. Thus the SAT ERW equivalency can be found by $536-0.84\cdot 102=450.32$, or a score of <span class="boxed">$450$</span>.
-
-</details>
+  b. The standard error of the mean is<br><br> 
+              $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{300}}\approx\frac{\sigma}{17.32}$ for a sample size of 300<br><br>
+              $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{150}}\approx\frac{\sigma}{12.25}$ for a sample size of 150<br><br>
+              We compare the two by $\frac{17.32}{12.25} \approx 1.41$. So $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{N}}$ <span class="boxed">is greater by a factor of 1.41</span> when the sample size decreases from 300 to 150.
+            
+  c. For simplicity, assume an initial sample size of 100. We then have
+            $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{100}}=\frac{\sigma}{10}$ for a sample size of 10 0<br><br>
+              $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{4\cdot100}}=\frac{\sigma}{20}$ for a sample size of 4000<br><br>
+We compare the two by $\frac{20}{10} = 2$. So $\sigma_{\overline{Y}} =\frac{\sigma}{\sqrt{N}}$ <span class="boxed">decreases by a factor of 2</span>.
+            
 </p>
-
+</details>
+              
+              
 <details><summary>7</summary>
 <p>
-
-```{r echo = FALSE}
-m = 100
-n = 1000000
-stdev = 15
-```
-
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. We have 
-\begin{aligned}
-z &= \dfrac{150-100}{15}
-&\approx 3.33
-\end{aligned}
-or <span class="boxed">$z\approx 3.33$</span>.
-
-b. We are looking the area under the curve greater than $150$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 150
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 20),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The area beyond $z=3.33$ is $0.0004$ implying that the percentage of scores above 150 is <span class="boxed">$0.04\%$</span>^[Which is the reason you don't notice any shading in the plot]. 
-
-c. We are looking at the area between $85$ and $150$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-minimum = 85
-maximum = 150
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                               upper_bound = maximum), 
-                geom = "area", fill = "#3d8ba9", alpha = 0.6) +
-  scale_x_continuous(seq(ll-round(3*stdev), ul+round(3*stdev), 20),
-                      limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-The $z$-score for a score of 85 is
-\begin{aligned}
-z &= \dfrac{85-100}{15}\\\\
-&\approx -1
-\end{aligned}
-with the area between $z=-1$ and the mean found to be $0.3413$.
-<br>
-The $z$-score for a score of 150 is
-\begin{aligned}
-z &= \dfrac{150-100}{15}
-&\approx 3.33
-\end{aligned}
-with the area between the mean and $z=3.33$ found to be $0.4996$.<br><br>
-So the $0.3413 + 0.4996 = 0.8409$, or about <span class="boxed">$84\%$</span> of scores fall between $85$ and $150$.
-
-d. Scoring in the 95th percentile means that 95% of the sample scored below this level. This outcome can be calculated by $100 + 1.65\cdot 15 = 124.75$. So the IQ score that is associated with the 95th percentile is <span class="boxed">$124.75$</span>.
-
-</details>
+              
+  a. Facebook ® polls are most definitely not probability samples. While many reasons exists, the two noted below are likely the most important: 
+              - the *population* from which data are gathered is limited to the *friends* on one’s Facebook ® profile--and such is certainly not a representative sample from the larger population.
+            - due to Facebook ® algorithms, we can’t be sure that every Facebook ® friend would have the same opportunity to see, and thus participate, in the poll.
+            
+  b. The population is our Facebook ® friends who come across the poll.
+            
 </p>
-
-
+</details>
+              
 <details><summary>8</summary>
-<p>
+  
+  <div style="padding-left: 30px;">
 
-```{r echo = FALSE}
-m = 531
-n = 2136539
-stdev = 114
-```
-
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. We are looking the area under the curve less than $400$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 400
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_leq, 
-                args = list(upper_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.6,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 100),
-                     limits = c(ll - 3*stdev, ul + 3*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For these high school graduates, the $z$-score is given by
-\begin{aligned}
-z &= \dfrac{400-531}{114}\\\\
-&\approx -1.15
-\end{aligned}
-The area beyond $z=-1.15$ and the tail is $0.1251$ thus implying that about <span class="boxed">$12.51\%$</span>of **high school graduates** hearned a score less than 400.
-
-b. We are looking the area under the curve between than $600$ and $700$.
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-minimum = 600
-maximum = 700
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
- stat_function(fun = shading_beq, args = list(lower_bound = minimum,
-                                              upper_bound = maximum), 
-               geom = "area", 
-               fill = "#3d8ba9", 
-               alpha = 0.6,
-               linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 100),
-                     limits = c(ll - 3*stdev, ul + 3*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-For these high school graduates, the $z$-score for 600 is given by
-\begin{aligned}
-z &= \dfrac{600-531}{114}\\\\   
-&\approx 0.61
-\end{aligned}
-The area between the mean and $z=0.61$ is $0.2291$.<br><br>
-For these high school graduates, the $z$-score for 700 is given by
-\begin{aligned}
-z &= \dfrac{700-531}{114}\\\\
-&\approx 1.48
-\end{aligned}
-The area between $z=1.48$ and the mean is $0.4306$.<br><br>
-Subtracting these proportions yields $0.4306-0.2291=0.2015$, or <span class="boxed">$20.15\%$</span> of the high school graduates earned a score between 600 and 700
-
-c. For an earned score of $725$ which is greater than the mean, we have
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 725
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 100),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{725-531}{114}\\\\   
-&\approx 1.70
-\end{aligned}
-The area beyond $z=1.70$ is $0.0466$. So the percentile rank may be found by 
-$1.000-0.0466 = 0.9535$, or $95.35\%$ which implies the <span class="boxed">96th percentile</span>.
-
-</details>
+First we convert these to a vector and take the sum
+  ```{r, echo=TRUE, eval=TRUE}
+  military <- c(229634, 64564, 376034, 89826, 26384, 41441, 177336, 68440, 8579)
+  
+  total_mil <- sum(military)
+  ```
+  </div>
+  a. The mean number of active military personnel per region in 2009 was 
+      ```{r, echo=TRUE, eval=TRUE}
+      mu_mil = mean(military)
+      
+      mu_mil
+      ```
+      or about <span class="boxed">120249</span>. The standard deviation is
+      ```{r, echo=TRUE, eval=TRUE}
+      sd_pop=function(x){sd(x)*sqrt((length(x)-1)/length(x))}
+      
+      sigma_mil = sd_pop(military)
+      
+      sigma_mil
+      ```
+      or about <span class="boxed">112966</span>.
+  b. We can use the `sample` command to get our 10 sample means of size 3. We can use the `replcate` and `rnorm` commands in R to do this 
+      ```{r, echo=TRUE, eval=TRUE}
+      # replicate(size #, rnorm(#of sample means, mu, sigma))
+      
+      samples <- replicate(3,rnorm(10, mu_mil,sigma_mil))
+      
+      samples
+      ```
+  c. The mean of these 10 sets of means is 
+      ```{r, echo=TRUE, eval=TRUE}
+      mean(samples)
+      ```
+      or about <span class="boxed">105428</span>. We notice that the population mean and the mean of the sampling distribution are somewhat close, a feature that we should come to expect given the fact that $\mu_Y = \mu_{\overline{Y}}$.
+  d. The standard deviation of these 10 sets of means is
+      ```{r, echo=TRUE, eval=TRUE}
+      sd(samples)
+      ```
+      or about <span class="boxed">122991</span>.
+  e. The population distribution is positively skewed and not close to normal. Since a very small sample size is used in this problem, the histogram for the samples of size 3 does not look normal. The distributions appear unimodal. The fact that the sample distribution of the means tends toward normality because of the Central Limit Theorem would become even more apparent if we took samples of size 5 or 6. To show this, look at the plots below
+      ```{r, echo=FALSE, eval=TRUE, warning = FALSE}
+      # Convert into tibbles
+      sample_means <- samples %>% 
+        as_tibble() %>%
+        rowwise() %>% 
+        mutate(sample_mus = mean(c(V1, V2, V2))) %>%
+        select(sample_mus)
+  
+      military_tib <- military %>%
+        as_tibble() %>%
+        rename(pop = value)
+  
+      # Plot the distributions
+      p1 <- ggplot(military_tib, aes(x = pop)) + 
+        geom_histogram(aes(y =..density..,
+                       fill =..count..),
+                   binwidth = 100000,
+                   color="#333333",
+                   show.legend = FALSE) +
+        scale_fill_gradient(low = "#ff6347",
+                        high = "#4682b4",
+                        breaks = seq(0, 400000, 
+                                     by = 100000)) + 
+        scale_x_continuous(labels = function(x)                format(x, scientific = FALSE)) +
+        scale_y_continuous(labels = function(x)                format(x*1000000, scientific = FALSE)) +
+        stat_function(fun=dnorm,
+                  color="#66b2b2",
+                  size = 1.5,
+                  args=list(mean=mean(military), 
+                            sd=sd_pop(military))) +
+        theme_minimal() +
+        xlab("Population") +
+        ylab("Count") + 
+        theme(plot.margin = margin(t = 0, r = 1, b = 0, l = 0, "cm"))
+  
+      p2 <- ggplot(military_tib, aes(x = pop)) + 
+              geom_histogram(aes(y =..density..,
+                       fill =..count..),
+                   binwidth = 100000,
+                   color="#333333",
+                   show.legend = FALSE) +
+            scale_fill_gradient(low = "#ff6347",
+                        high = "#4682b4",
+                        breaks = seq(0, 400000, 
+                                     by = 100000)) + 
+          scale_x_continuous(labels = function(x) format(x, scientific = FALSE)) +
+    scale_y_continuous(labels = function(x) format(x*1000000, scientific = FALSE)) +
+    stat_function(fun=dnorm,
+                  color="#66b2b2",
+                  size = 1.5,
+                  args=list(mean=mean(military), 
+                            sd=sd_pop(military))) +
+    theme_minimal() +
+    xlab("Population") +
+    ylab("Count") + 
+    theme(plot.margin = margin(t = 0, r = 1, b = 0, l = 0, "cm"))
+  
+  
+  p2 <- ggplot(sample_means, aes(x = sample_mus)) + 
+    geom_histogram(aes(y =..density..,
+                       fill =..count..),
+                   binwidth = 50000,
+                   color="#333333",
+                   show.legend = FALSE) +
+    scale_fill_gradient(low = "#ff6347",
+                        high = "#4682b4",
+                        breaks = seq(0, 250000, 
+                                     by = 50000)) + 
+    scale_x_continuous(labels = function(x) format(x, scientific = FALSE)) +
+    scale_y_continuous(labels = function(x) format(x*1000000, scientific = FALSE)) +
+    stat_function(fun=dnorm,
+                  color="#66b2b2",
+                  size = 1.5,
+                  args=list(mean=mean(sample_means$sample_mus), 
+                            sd=sd(sample_means$sample_mus))) +
+    theme_minimal() +
+    xlab("Sample") +
+    ylab("Count") + 
+    theme(plot.margin = margin(t = 0, r = 0, b = 0, l = 1, "cm"))
+  
+  # This uses the patchwork package
+  p1 + p2
+  
+  ```
 </p>
-
-<details><summary>11</summary>
-<p>
-
-```{r echo = FALSE}
-m = 983
-n = 1000
-stdev = 33
-```
-
-```{r echo = FALSE, eval= TRUE}
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-```
-
-a. For an earned score of $990$ which is greater than the mean, we have
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-test_point = 990
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 20),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{990-981}{27.3}\\\\   
-&\approx 0.33
-\end{aligned}
-The area beyond $z=0.33$ is $0.3707$. So the percentile rank may be found by 
-$1.000-0.3707 = 0.6293$, or $62.93\%$ which implies the 62nd percentile. So the team is <span class="boxed">not in the upper quartile</span>.
-
-b. For the top 25%, or $0.0025$, the area beyond $z$ is approximated by $z = 0.67$. The cutoff score is then $981+0.67\cdot 27.3\approx$ <span class="boxed">$999.29$</span>.
-
-c. As noted above, <span class="boxed">$z = 0.67$</span>.
-
 </details>
-</p>
-
-<details><summary>12</summary>
+    
+<details><summary>9</summary>
 <p>
-
-a. For **Team A** an ***eligibility criterion*** score of $971$ is given by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 983
-n = 1000
-stdev = 33
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 971
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{971-983}{33}\\\\   
-&\approx -0.36
-\end{aligned}
-For **Team A** a ***retention criterion*** score of $958$ is given by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 976
-n = 1000
-stdev = 34.9
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 958
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{958-976}{34.9}\\\\   
-&\approx -0.52
-\end{aligned}
-For **Team B** an ***eligibility criterion*** score of $987$ is given by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 983
-n = 1000
-stdev = 33
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 987
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{987-983}{33}\\\\   
-&\approx 0.12
-\end{aligned}
-For **Team B** a ***retention criterion*** score of $970$ is given by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 976
-n = 1000
-stdev = 34.9
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 970
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_geq, 
-                args = list(lower_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-From this we can calculate the $z$-score as 
-\begin{aligned}
-z &= \dfrac{970-976}{34.9}\\\\   
-&\approx -0.17
-\end{aligned}
-So <span class="boxed">Team B is better on both eligibility and retention than Team A</span>. 
-
-b. For **Team B** a ***retention criterion*** score of $z=-0.17$ is below the mean and the corresponding proportion can be viewed by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 976
-n = 1000
-stdev = 34.9
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 970
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_leq, 
-                args = list(upper_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-which is the area between $z$ and the tail, or <span class="boxed">$0.4325$</span>.
-
-c. For **Team A** an ***eligibility criterion*** score of $z=-0.36$ is below the mean and the corresponding proportion can be viewed by
-```{r echo = FALSE, eval= TRUE, out.width = '40%'}
-m = 983
-n = 1000
-stdev = 33
-
-f <- function(x) n*x*pnorm(x)^(n-1)*dnorm(x) 
-num <- integrate(f,-Inf,Inf) 
-ci <- 2 * num$value
-
-lb <- m - ci
-ub <- m + ci
-
-ll <- round(lb)
-ul <- round(ub)
-
-test_point = 971
-
-ggplot(data.frame(x = c(lb, ub)), aes(x = x)) + 
-  stat_function(fun = dnorm, 
-                args = list(mean = m, sd = stdev)) + 
-  stat_function(fun = shading_leq, 
-                args = list(upper_bound = test_point), 
-                geom = "area", fill = "#3d8ba9", 
-                alpha = 0.8,
-                linetype = 2) +
-  scale_x_continuous(breaks = seq(ll-round(3*stdev), ul+round(3*stdev), 40),
-                     limits = c(ll - 3.1*stdev, ul + 3.1*stdev)) + 
-  geom_vline(xintercept = m, color = "#65737e") +
-  theme_minimal(base_size = 22) +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.title=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()
-        )
-```
-which is the area between $z$ and the tail, or $0.3594$ implying about the <span class="boxed">35th percentile</span>.
-
-</details>
+    
+  a. This is not a reliable sample. The students eating lunch on Tuesday are not necessarily representative of all students at the school, and you have no way of calculating the probability of inclusion of any student. Many students might, for example, rarely eat lunch at the student union and, therefore, have no chance of being represented in your sample. The fact that you selected all the students eating lunch on Tuesday makes your selection appear to be a census of a population, but that isn’t true either unless all the students ate at the student union on Tuesday.
+  
+  b. This is not a reliable sample. The majority of people in attendance at the rally would probably be in support of open borders. Students against such might not have any chance of selection.
+  
+  c. Answers will vary, but it seems the best route would be to obtain a list of all registered students from your university’s registrar. And then employ a known sampling strategy (simple random sampling, stratified sampling, etc.) to create your sample of 10% of the student body. From there, you would reach out to each person you’ve selected via e-mail, telephone, mail, and so on and ask them to complete your survey.  
+  
 </p>
+</details>
 
--->

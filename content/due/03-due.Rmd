@@ -14,8 +14,8 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
-library(dplyr)
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
 library(fontawesome)
 library(knitr)
 library(kableExtra)
@@ -44,7 +44,6 @@ Location = c( "[Link](/tasks/02-tasks/#solutions)",
               "[Link](/tasks/03-tasks/#homework)",
               "[Link](/materials/03-content/#in-class-notes)")
 )
-
 ```
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
@@ -94,4 +93,3 @@ kable(wk_pre,
   column_spec(2, width = "30em") %>%
   column_spec(3, width = "10em")
 ```
-

@@ -9,7 +9,7 @@ menu:
     parent: Content
     weight: 8
 type: docs
-weight: 1
+weight: 3
 editor_options: 
   chunk_output_type: console
 ---
@@ -119,25 +119,29 @@ kable(textitems,
 ```
 
 ### In Class Notes
-*posted during class time*
-
 <!--
+*posted during class time*
+-->
+
 ```{r echo = FALSE}
 knitr::include_url("/slides/Week 8/Slides-Week-8.html")
 ```
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 8/Slides-Week-8.html){target="_blank"} or download a [PDF](/slides/Week 8/Slides-Week-8.pdf){target="_blank"}.
--->
+> Click [here](/slides/Week 8/Slides-Week-8.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 8/Slides-Week-8.pdf){target="_blank"} here for a PDF of the presentation.
 
 ### R Walkthrough
-*posted during class time*
 <!--
+*posted during class time*
+-->
+
 Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
-``{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 8",  "EDP613Week8RMaterials.zip")
+```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
+loc <- here::here("static", "slides", "Week 8", "EDP613Week8RMaterials.zip")
 
 downloadthis::download_file(
   path = loc,
@@ -151,11 +155,12 @@ downloadthis::download_file(
 ```
 
 <br>
-``{r echo = FALSE}
+```{r echo = FALSE}
 knitr::include_url("/slides/Week 8/Slides-Week-8R.html")
 ```
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-Want to see a larger version of the presentation? Click this [link](/slides/Week 8/Slides-Week-8R.html){target="_blank"} or download a [PDF](/slides/Week 8/Slides-Week-8R.pdf){target="_blank"}.
--->
+> Click [here](/slides/Week 8/Slides-Week-8R.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 8/Slides-Week-8R.pdf){target="_blank"} here for a PDF of the presentation.

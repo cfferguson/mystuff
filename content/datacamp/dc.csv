@@ -1,30 +1,30 @@
 ﻿Group,Module,Available,Due by_long,Due by_short,Required,Course,Chapters_long,Chapters_wide,Link
-1,1,8/19/21,9/2/21,44440,checked,[Introduction to R](/datacamp/01-module/),Intro to basics,"Intro to basics, Vectors, Matrices, Factors, Data Frames, Lists",hyper
+1,1,8/19/21,9/1/21,9/1/21,checked,[Introduction to R](/datacamp/01-module/),Intro to basics,"Intro to basics, Vectors, Matrices, Factors, Data Frames, Lists",hyper
 1,,,,,,,Vectors,,
 1,,,,,,,Matrices,,
 1,,,,,,,Factors,,
 1,,,,,,,Data Frames,,
 1,,,,,,,Lists,,
 ,,,,,,,,,
-2,2,8/26/21,9/15/21,44454,checked,[Introduction to the Tidyverse](/datacamp/02-module/),Data wrangling,"Data wrangling, Data visualization, Grouping and summarizing, Types of visualizations",hyper
+2,2,8/26/21,9/8/21,9/8/21,checked,[Introduction to the Tidyverse](/datacamp/02-module/),Data wrangling,"Data wrangling, Data visualization, Grouping and summarizing, Types of visualizations",hyper
 2,,,,,,,Data visualization,,
 2,,,,,,,Grouping and summarizing,,
 2,,,,,,,Types of visualizations,,
 2,,,,,checked,,Dr. Semmelweis and the Discovery of Handwashing,,
 ,,,,,,,,,
-3,3,8/26/21,9/22/21,44461,checked,[Introduction to Statistics in R](/datacamp/03-module/),Summary Statistics,"Summary Statistics, More Distributions and the Central Limit Theorem, Correlation and Experimental Design
+3,3,8/26/21,10/6/21,10/6/21,checked,[Introduction to Statistics in R](/datacamp/03-module/),Summary Statistics,"Summary Statistics, More Distributions and the Central Limit Theorem, Correlation and Experimental Design
 Random Numbers and Probability, Measures of Central Tendency",hyper
 3,,,,,,,"
 Random Numbers and Probability",,
 3,,,,,,,More Distributions and the Central Limit Theorem,,
 3,,,,,,,Correlation and Experimental Design,,
 ,,,,,,,,,
-4,4,9/23/21,10/7/21,44476,checked,[Introduction to Data in R](/datacamp/04-module/),Language of data,"Language of data, Study types and cautionary tales, Sampling strategies and experimental design, Case study",hyper
+4,4,9/23/21,10/20/21,10/20/21,checked,[Introduction to Data in R](/datacamp/04-module/),Language of data,"Language of data, Study types and cautionary tales, Sampling strategies and experimental design, Case study",hyper
 4,,,,,,,Study types and cautionary tales,,
 4,,,,,,,Sampling strategies and experimental design,,
 4,,,,,,,Case study,,
 ,,,,,,,,,
-5,5,10/8/21,11/17/21,44517,checked,[Foundations of Inference](/datacamp/05-module/),Introduction to ideas of inference,"Introduction to ideas of inference, Completing a randomization test: gender discrimination, Hypothesis testing errors: opportunity cost, ""
+5,5,10/21/21,11/3/21,11/3/21,checked,[Foundations of Inference](/datacamp/05-module/),Introduction to ideas of inference,"Introduction to ideas of inference, Completing a randomization test: gender discrimination, Hypothesis testing errors: opportunity cost
 Confidence intervals
 Confidence intervals""",hyper
 5,,,,,,,Completing a randomization test: gender discrimination,,
@@ -32,20 +32,20 @@ Confidence intervals""",hyper
 5,,,,,,,"
 Confidence intervals",,
 ,,,,,,,,,
-6,6,11/18/21,12/1/21,44531,checked,[Inference for Categorical Data in R](/datacamp/06-module/),Inference for a single parameter,"Inference for a single parameter, Proportions: testing and power, Comparing many parameters: independence, Comparing many parameters: goodness of fit",hyper
+6,6,10/21/21,11/17/21,11/17/21,checked,[Inference for Categorical Data in R](/datacamp/06-module/),Inference for a single parameter,"Inference for a single parameter, Proportions: testing and power, Comparing many parameters: independence, Comparing many parameters: goodness of fit",hyper
 6,,,,,,,"
 Proportions: testing and power",,
 6,,,,,,,Comparing many parameters: independence,,
 6,,,,,,,Comparing many parameters: goodness of fit,,
 ,,,,,,,,,
-7,EC1,8/19/21,12/8/21,44538,unchecked,[Analyzing Survey Data in R](/datacamp/01-extra/),Introduction to survey data,"Introduction to survey data, Modeling quantitative data
+7,EC1,10/21/21,12/8/21,44538,unchecked,[Analyzing Survey Data in R](/datacamp/01-extra/),Introduction to survey data,"Introduction to survey data, Modeling quantitative data
 Exploring categorical data, 
 Exploring quantitative data, Transform your data",hyper
 7,,,,,,,Exploring categorical data,,
 7,,,,,,,Exploring quantitative data,,
 7,,,,,,,Modeling quantitative data,,
 ,,,,,,,,,
-8,EC2,8/19/21,12/8/21,44538,unchecked,[Fundamentals of Bayesian Data Analysis in R](/datacamp/02-extra/),What is Bayesian Data Analysis?,"What is Bayesian Data Analysis?, How does Bayesian inference work?, Why use Bayesian Data Analysis?, Bayesian inference with Bayes' theorem",hyper
+8,EC2,10/21/21,12/8/21,44538,unchecked,[Fundamentals of Bayesian Data Analysis in R](/datacamp/02-extra/),What is Bayesian Data Analysis?,"What is Bayesian Data Analysis?, How does Bayesian inference work?, Why use Bayesian Data Analysis?, Bayesian inference with Bayes' theorem",hyper
 8,,,,,,,How does Bayesian inference work?,,
 8,,,,,,,Why use Bayesian Data Analysis?,,
 8,,,,,,,Bayesian inference with Bayes' theorem,,

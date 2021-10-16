@@ -52,6 +52,7 @@ lessons:
   - title: 'Exam I'
     session: 6
     date: "September 23, 2021"
+    examples: "06-example"
     tasks: "01-exam"
     due: "06-due"
 
@@ -64,22 +65,23 @@ lessons:
     tasks: "07-homework"
     due: "07-due"
 
-  # - title: 'Estimations'
-  #   session: 8
-  #   date: "October 28, 2020"
-  #   readings: "08-reading"
-  #   datacamp: "08-datacamp"
-  #   examples: "08-example"
-  #   due: "08-due"
-  #
+  - title: 'Estimations'
+    session: 8
+    date: "October 14, 2021"
+    readings: "08-reading"
+    datacamp: "08-datacamp"
+    examples: "08-example"
+    tasks: "08-homework"
+    due: "08-due"
+
   # - title: 'Testing Hypotheses'
-  #   session: 10
+  #   session: 9
   #   date: "November 4, 2020"
-  #   readings: "10-reading"
-  #   datacamp: "10-datacamp"
-  #   examples: "10-example"
-  #   tasks: "10-homework"
-  #   due: "10-due"
+  #   readings: "09-reading"
+  #   datacamp: "09-datacamp"
+  #   examples: "09-example"
+  #   tasks: "09-homework"
+  #   due: "09-due"
   #
   # - title: 'Bivariate Tables'
   #   session: 11

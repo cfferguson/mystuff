@@ -18,18 +18,18 @@
  *  Version: 0.4.0
  *
  * ------------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Jost:400&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Jost:600&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap);
 
 
 :root {
   /* Fonts */
-  --text-font-family: Jost;
+  --text-font-family: 'Roboto Condensed';
   --text-font-is-google: 1;
   --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
   --text-font-base: sans-serif;
-  --header-font-family: Jost;
+  --header-font-family: 'Roboto Condensed';
   --header-font-is-google: 1;
   --header-font-family-fallback: Georgia, serif;
   --code-font-family: 'Source Code Pro';
@@ -118,7 +118,7 @@ a, a > code {
   position: absolute;
   bottom: 60px;
   padding-right: 4em;
-  font-size: 0.9em;
+  font-size: 0.6em;
 }
 .remark-code-line-highlighted {
   background-color: var(--code-highlight-color);
@@ -184,13 +184,13 @@ blockquote {
   border-bottom: 1px solid #666;
 }
 .remark-slide table thead th {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #212121;
 }
 th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #E8E8E8;
+  background: #212121;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -200,7 +200,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #E8E8E8;
+  background-color: #212121;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);

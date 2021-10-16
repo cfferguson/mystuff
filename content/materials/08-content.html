@@ -9,7 +9,7 @@ menu:
     parent: Content
     weight: 8
 type: docs
-weight: 1
+weight: 3
 editor_options: 
   chunk_output_type: console
 ---
@@ -17,6 +17,7 @@ editor_options:
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 <link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/font-awesome/js/script.js"></script>
 
 <div id="TOC">
 <ul>
@@ -108,42 +109,43 @@ Chapter 7 Notes
 </div>
 <div id="in-class-notes" class="section level3">
 <h3>In Class Notes</h3>
-<p><em>posted during class time</em></p>
 <!--
-<iframe src="/slides/Week 8/Slides-Week-8.html" width="672" height="400px" data-external="1"></iframe>
-
-You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
-
-Want to see a larger version of the presentation? Click this [link](/slides/Week 8/Slides-Week-8.html){target="_blank"} or download a [PDF](/slides/Week 8/Slides-Week-8.pdf){target="_blank"}.
+*posted during class time*
 -->
+<iframe src="/slides/Week 8/Slides-Week-8.html" width="672" height="400px" data-external="1">
+</iframe>
+<p>You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.</p>
+<blockquote>
+<p>Click <a href="/slides/Week%208/Slides-Week-8.html" target="_blank">here</a> for a larger version of the presentation.</p>
+</blockquote>
+<blockquote>
+<p>Click <a href="/slides/Week%208/Slides-Week-8.pdf" target="_blank">here</a> here for a PDF of the presentation.</p>
+</blockquote>
 </div>
 <div id="r-walkthrough" class="section level3">
 <h3>R Walkthrough</h3>
-<p><em>posted during class time</em>
 <!--
-Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
-
-``{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 8",  "EDP613Week8RMaterials.zip")
-
-downloadthis::download_file(
-  path = loc,
-  output_name = "Week 8 R Walkthrough Materials",
-  button_label = "Download",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  class = "hvr-sweep-to-left"
-  )
-```
-
-<br>
-``{r echo = FALSE}
-knitr::include_url("/slides/Week 8/Slides-Week-8R.html")
-```
-
-You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
-
-Want to see a larger version of the presentation? Click this [link](/slides/Week 8/Slides-Week-8R.html){target="_blank"} or download a [PDF](/slides/Week 8/Slides-Week-8R.pdf){target="_blank"}.
---></p>
+*posted during class time*
+-->
+<p>Download a copy of everything you need to follow along the walkthrough<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<a href="data:application/zip;base64,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" download="Week 8 R Walkthrough Materials.zip">
+<button class="btn btn-default hvr-sweep-to-left"><i class="fa fa-save"></i> Download</button>
+</a>
+<p><br>
+<iframe src="/slides/Week 8/Slides-Week-8R.html" width="672" height="400px" data-external="1"></iframe></p>
+<p>You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.</p>
+<blockquote>
+<p>Click <a href="/slides/Week%208/Slides-Week-8R.html" target="_blank">here</a> for a larger version of the presentation.</p>
+</blockquote>
+<blockquote>
+<p>Click <a href="/slides/Week%208/Slides-Week-8R.pdf" target="_blank">here</a> here for a PDF of the presentation.</p>
+</blockquote>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>For <strong>O</strong>verview<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>You will have to unzip this file. If you are unfamiliar with this process, please check the <a href="/resource/unzipping/">Unzipping files</a> section under Resources for assistance<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>For <strong>O</strong>verview<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>

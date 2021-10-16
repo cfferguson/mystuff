@@ -335,7 +335,7 @@ S &= \sqrt{\dfrac{4.922}{9}}\\\\
 \end{aligned}
 So between **1997-2017**, the average divorce rate per 1000 people was about $3$ with an approximated standard deviation of <span class="boxed">0.74</span>.
 
-c. Divorce rates may vary by state due to multiple factors which are not represented in the included data set such as variations in >span class="boxed">employment status</span>, <span class="boxed">policies and laws by region (i.e. states with no-fault divorce laws)</span>, <span class="boxed">religious beliefs</span>, etc.
+c. Divorce rates may vary by state due to multiple factors which are not represented in the included data set such as variations in <span class="boxed">employment status</span>, <span class="boxed">policies and laws by region (i.e. states with no-fault divorce laws)</span>, <span class="boxed">religious beliefs</span>, etc.
 
 </p>
 </details>
