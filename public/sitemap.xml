@@ -40,8 +40,6 @@
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/02-reading/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/02-content/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/due/03-due/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/03-reading/</loc>
@@ -52,11 +50,7 @@
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/04-reading/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/04-content/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/due/05-due/</loc>
-  </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/05-content/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/05-reading/</loc>
   </url><url>
@@ -64,17 +58,11 @@
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/due/07-due/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/07-content/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/07-reading/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/due/08-due/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/08-content/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/readings/08-reading/</loc>
-  </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/09-content/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/resources/data/</loc>
   </url><url>
@@ -86,33 +74,45 @@
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/tasks/02-tasks/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/materials/02-example/</loc>
+    <loc>https://edp613.asocialdatascientist.com/materials/02-content/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/tasks/03-tasks/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/tasks/04-tasks/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/materials/04-content/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/materials/05-content/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/tasks/05-tasks/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/materials/07-content/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/tasks/07-tasks/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/tasks/08-tasks/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/materials/09-content/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/resources/design/</loc>
+  </url><url>
+    <loc>https://edp613.asocialdatascientist.com/materials/02-example/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/03-example/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/04-example/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/tasks/04-tasks/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/05-example/</loc>
-  </url><url>
-    <loc>https://edp613.asocialdatascientist.com/tasks/05-tasks/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/06-example/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/07-example/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/tasks/07-tasks/</loc>
+    <loc>https://edp613.asocialdatascientist.com/materials/08-content/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/08-example/</loc>
   </url><url>
-    <loc>https://edp613.asocialdatascientist.com/tasks/08-tasks/</loc>
-  </url><url>
     <loc>https://edp613.asocialdatascientist.com/materials/09-example/</loc>
-  </url><url>
-    <loc>https://edp613.asocialdatascientist.com/resources/design/</loc>
   </url><url>
     <loc>https://edp613.asocialdatascientist.com/resources/install/</loc>
   </url><url>
