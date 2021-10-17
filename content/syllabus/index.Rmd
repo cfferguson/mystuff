@@ -45,10 +45,17 @@ You've probably heard an answer like this before: *At times some of the material
 ### *Is R difficult?*
 Learning R can be especially challenging at first—it's akin to learning a new language like Spanish or even mathematics. Even experienced R users get frustrated...and so much so that some of us have swear jars. However as silly as it sounds one of the best feelings is to overcome a roadblock. With that said, if you find yourself getting irritated, try the following: take a break, go let some frustration out, sleep, discuss with a peer, etc. If you are at your limit, take a few breaths and contact me!
 
+### *What if I'm a Visual/Aural/Read-write/Kinesthetic learner...*
+You're not one of those or even any of those. There's not one accepted study that supports one type of learning style over another. In fact, there aren't even any studies that support these four classifications either. You learn the best using multiple approaches. At one time I denoted multiple papers to support this, but recently a fantastic video was released and many of the sources I listed were also cited so enjoy this instead:
+
+<center>
+<iframe src="https://www.youtube.com/embed/rhgwIhB58PA" width="640" height="360" frameborder="0" allow="fullscreen" allowfullscreen style="display: block; margin: 0 auto 1rem;"></iframe>
+</center>
+
 ### *What if I find a mistake?*
 Tell me! I strive to be error free but unfortunately like everyone else, make silly mistakes including grammar and spelling errors as well! 
 
-## Materials
+## *What are the course materials?*
 There are four optional texts and two software packages necessary for this course. With that said, you will receive some supplementary materials in the course as well.
 
 ### Texts
