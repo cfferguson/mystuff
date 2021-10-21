@@ -1,550 +1,603 @@
 ---
-title: "Testing Hypotheses"
+title: "Bivariate Tables"
 subtitle: "EDP 613"
-author: "Week 10"
+author: "Week 9"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
 ---
 
+<style>
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
 ```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(tidyverse)
+library(fontawesome)
 library(here)
-library(clt)
+library(DT)
+library(scales)
+library(latex2exp)
+library(reactable)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
 ```
-
 ```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#bff4ee",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#f4eebf",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(bottom = "1em", left = "1em")
+)
+```
+
+# <span style='color:#bff4ee;'>A Note About The Slides</span>
+
+Currently the equations may not show up properly in Firefox. Other browsers such as Chrome and Safari do appear to render them correctly. 
+
+---
+
+# Terms
+
+--
+
+**bivariate** - Doing something with two variables
+
+--
+
+**bivariate analysis** 
+
+--
+
+>- *Formally*: A statistical method to detect and describe the relationship between two nominal or ordinal variables (typically independent and dependent variables) 
+
+--
+
+>- *Nutshell*: Finding out if and how two variables are related to each other
+
+--
+
+**cross-tabulation** 
+
+--
+
+>- *Formally*: A tool for analyzing the relationship between two or more nominal or ordinal variables
+
+--
+
+>- *Nutshell*: A data table to compare the values between two variables
+
+--
+
+>- *Note*: A good approach when establishing "control" variables
+
+---
+
+# Bivariate Tables 
+
+--
+
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width='40%'}
+knitr::include_graphics("img/bivaraite_table.png")
+```
+
+.footnote[*totals* are also known as *marginals*]
+
+---
+
+# Creating a Cross-Tabulation Using Raw Data
+
+--
+
+>- Column totals: Add across columns
+
+
+--
+
+>- Row totals: Add across rows
+
+---
+
+# Example of Cross-Tabulation Using Raw Data
+
+```{r eval = TRUE, echo = FALSE}
+
+movies <- tibble(
+  
+Decision = c("Yes",
+             "No",
+             ""),
+  
+Delicious = c("4",
+              "6",
+              "10"),
+
+Disgusting = c("7",
+               "9",
+               "16"),
+
+Totals = c("11",
+           "15",
+           "26")
 )
 
-xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
-```{r echo = FALSE, eval = TRUE, message=FALSE}
-library(tidyverse)
-``` 
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
 
-```{r echo = FALSE}
-shading_geq <- function(x, lower_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x < lower_bound] <- NA
-  return(y)
-}
+kable(movies, 
+      escape = FALSE,
+      align = 'cccc',
+      col.names = c("", "Delicious", "Disgusting", ""),
+      caption = "<b>Views on Candy Corn</b>") %>%
+  add_header_above(c("Sentiment" = 4), background = "#212121") %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em", bold = TRUE) %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121") 
 
-shading_leq <- function(x, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x > upper_bound] <- NA
-  return(y)
-}
-
-shading_beq <- function(x, lower_bound, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x < lower_bound | x > upper_bound] <- NA
-  return(y)
-}
-
-shading_neq <- function(x, lower_bound, upper_bound) {
-  y = dnorm(x, mean = m, sd = stdev)
-  y[x > lower_bound | x < upper_bound] <- NA
-  return(y)
-}
 ```
-
-# A Note About The Slides
-
-Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work. 
-
 ---
 
-# A Note About Previous Items
-
-We're going to use some introduce some concepts from Chapter 7 here as well.
-
----
-
-# Thin Margins
-
-The **margin of error** (MoE) is 
+# Creating a Cross-Tabulation Using Percents
 
 --
-
->- Formally - the range of values above and below a sample statistic within a confidence interval. 
-
---
-
->- In Better Terms - how many percentage points your results will differ from the real population value.
-
-
-Note: We're NOT talking about the confidence interval!
-
----
-
-# Interpretation 
-
-- Result: A 95% confidence interval with a 3% margin of error.
-
---
-
-- What it means: Your statistic will be within **3 percentage points** of the real population value *95%* of the time.
-
---
-
-The MoE is a probability!
----
-
-# Back to Hypothesis Testing
-
-Recall:
-
-The **null hypothesis** states 
-
---
-
->- Formally - that a parameter is equal to a specific value
-
---
-
->- Informally - nothing probably happened
-
---
-
-The **alternative hypothesis** states 
-
---
-
->- Formally - that a parameter differs from the value specified by the null hypothesis
-
---
-
->- Informally - something probably happened
-
----
-
-# More about Hypothesis Testing
-
-Say a null hypothesis is $H_0\colon\mu=50$. Then three things can occur from a frequentist perspective
-
---
-
-- $H_1 < 50$: alternative hypothesis states that the parameter is *less* than the value of the null.
-
->- You know to test for everything to the *left* of $H_1 = 50$.
->- Called a **left-tailed test**
-
---
-
-- $H_1 > 50$: alternative hypothesis states that the parameter is *more* than the value of the null.
-
->- You know to test for everything to the *right* of $H_1 = 50$.
->- Called a **left-tailed test**
-
---
-
-- $H_1 \neq 50$: alternative hypothesis states that the parameter is *note* the value of the null.
-
->- You know to test for everything to the *left* and *right* of $H_1 = 50$.
->- Called a **two-tailed test**
-
----
-
-# Visual Hypothesis Testing
 
 .pull-left[
-<br>
-- $H_1 < H_0$:
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-- $H_1 > H_0$:
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-- $H_1 \neq H_0$:
+<span style='color:#e5a8be;'><i>Column</i></span> <i>percentages</i> :<br><br> Use column totals as a denominator of the row values.
 ]
+
+--
 
 .pull-right[
-```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '30%'}
-ggplot(NULL, aes(c(-3,3))) +
- geom_area(stat = "function", fun = dnorm, fill = "#428bca", xlim = c(-3, 1), color = "#000000", size = 0.4) +
-  geom_area(stat = "function", fun = dnorm, fill = "#FFFFFF", xlim = c(1, 3), color = "#000000", size = 0.4) +
-  labs(x = "z", y = "") +
-  scale_y_continuous(breaks = NULL) +
-  scale_x_continuous(breaks = 1) +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.text.x = element_blank())
+<span style='color:#61b2e3;'><i>Row</i></span> <i>percentages</i> :<br><br> Use column totals as a denominator of the row values.
+]
+
+--
+
+
+<br>
+<center>
+<i>Note</i>: Percentages are typically given for the independent variable.
+</center>
+
+---
+
+
+# Example of Cross-Tabulation Using Percents
+
+```{r eval = TRUE, echo = FALSE}
+
+movies <- tibble(
+  
+Decision = c("Yes",
+             "No",
+             "<i>N</i>"),
+  
+Delicious = c("40.00% (4)",
+              "60.00% (6)",
+              "(10)"),
+
+Disgusting = c("43.75% (7)",
+               "56.25% (9)",
+               "(16)"),
+
+Totals = c("42.30% (11)",
+           "57.69% (15)",
+           "(26)")
+)
+
 ```
 
-```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '30%'}
-ggplot(NULL, aes(c(-3,3))) +
-  geom_area(stat = "function", fun = dnorm, fill = "#FFFFFF", xlim = c(-3, 1), color = "#000000", size = 0.4) +
-  geom_area(stat = "function", fun = dnorm, fill = "#428bca", xlim = c(1, 3), color = "#000000", size = 0.4) +
-  labs(x = "z", y = "") +
-  scale_y_continuous(breaks = NULL) +
-  scale_x_continuous(breaks = 1) +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.text.x = element_blank())
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+
+kable(movies, 
+      escape = FALSE,
+      align = 'cccc',
+      col.names = c("", "Delicious", "Disgusting", ""),
+      caption = "<b>Views on Candy Corn</b>") %>%
+  add_header_above(c("Sentiment" = 4), background = "#212121") %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em", bold = TRUE) %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  row_spec(0, background = "#212121") %>%
+  row_spec(2, background = "#212121") 
+
 ```
 
-```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '30%'}
-ggplot(NULL, aes(c(-3,3))) +
-  geom_area(stat = "function", fun = dnorm, fill = "#428bca", xlim = c(-3, 1), color = "#000000", size = 0.4) +
-  geom_area(stat = "function", fun = dnorm, fill = "#428bca", xlim = c(1, 3), color = "#000000", size = 0.4) +
-    geom_segment(aes(x = 1, y = 0, xend = 1, yend = 0.25), linetype=1, size = 2, color = "#FFFFFF") +
-  labs(x = "z", y = "") +
-  scale_y_continuous(breaks = NULL) +
-  scale_x_continuous(breaks = 1) +
-  theme_minimal() +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        axis.text.x = element_blank())
-```
+-- 
+
+<center>
+
+That is a <b>contingency table</b>
+
+</center>
+--
+
+<br>
+<center>
+Specifically a <b>2 x 2 contingency table</b>
+</center>
+
+---
+
+# Why Do We Care?
+
+Well we use them if we want to
+
+--
+
+- *partition* the dependent and independent variables 
+
+--
+
+- detect if a relationship *exists* between the dependent and independent variables 
+
+--
+
+- measure how *strong* a relationship may be (known as a *measure of association*)
+
+--
+
+- determine the *direction* of a relationship 
+
+---
+
+# This Way or That Way
+
+The direction of a relationship can be
+
+--
+
+.pull-left[
+**positive** if the dependent and independent both go in the same direction up or down
+]
+  
+--
+
+.pull-right[ 
+**negative** if the dependent and independent go in opposite directions
 ]
 
 ---
 
-# Testing Methods
+# Example of a Positive Relationship
 
-- Critical Value (CV)
-- $p$-value
+```{r eval = TRUE, echo = FALSE}
 
----
-
-# Critical Value
-
-- Uses a **test statistic** - determines how strong the disagreement between a sample mean and a null hypothesis. 
-
-- Idea: We should reject $H_0$ if the value of  the test statistic is unusual when we assume $H_0$ to be true.
-
-- Process
-    - We choose a CV which forms a boundary between values that are considered unusual and values that are not.
-    - The region containing the unusual values is called the **critical region**.
-    - f the value of the test statistic is in the critical regions, we *reject* $H_0$.
-
----
-
-# Transitioning (Again!)
-
->- Going from a $z$-distribution (known population variance using $z$-scores) to a $t$-distribution (known sample variance using $t$-tests)
-
----
-
->- We assume that for a large enough sample size, the $t$-distribution will closely match, or estimate, the a $z$-distribution 
-
-
----
-
-# Things to note
-
-- $t$-distribution table can be located in Appendix C.
-
-- Assumptions
-    - *Normality* - Samples are drawn from a population that fits a bell curve 
-
-    - *Independence* - Samples do not share values
-
-    - *Random Sampling* - Samples are randomized
+movies_pos <- tibble(
   
-    - ***Homogeneity*** (for more than one sample) - Samples have a similar makeup
+Health = c("Poor",
+           "Fair",
+           "Good",
+           "<i>N</i>"),
+  
+Low = c("39% (15)",
+        "36% (14)",
+        "25% (10)",
+        "(39)"),
+
+Middle = c("12% (32)",
+           "45% (114)",
+           "43% (109)",
+           "(254)"),
+
+High = c("9% (18)",
+         "28% (57)",
+         "63% (127)",
+          "(202)")
+
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+
+kable(movies_pos, 
+      escape = FALSE,
+      align = 'cccc',
+      col.names = c("", "Low", "Middle", "High"),
+      caption = "<b>Health Condition by SES</b>") %>%
+  add_header_above(c("Sentiment" = 4), background = "#212121") %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em", bold = TRUE) %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  row_spec(0:4, background = "#212121") 
+
+```
+
+*Source: General Social Survey: 1987-1992*
 
 ---
 
-# One-sample $t$-test
+# Example of a Negative Relationship
 
-- allows us to determine whether the mean of a sample data set is different than a known value
-    - used when the population variance is not known
-    - can be used when the sample size is small.
-    Uses $n$-1 **degrees of freedom** (*df*).
+```{r eval = TRUE, echo = FALSE}
+
+movies_neg <- tibble(
+  
+Health = c("Poor",
+           "Fair",
+           "Good",
+           "<i>N</i>"),
+  
+Low = c("31% (15)",
+        "22% (10)",
+        "47% (23)",
+        "(48)"),
+
+Middle = c("41% (90)",
+           "42% (92)",
+           "17% (38)",
+           "(220)"),
+
+High = c("48% (86)",
+         "20% (36)",
+         "32% (58)",
+          "(180)")
+
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+
+kable(movies_neg, 
+      escape = FALSE,
+      align = 'cccc',
+      col.names = c("", "Low", "Middle", "High"),
+      caption = "<b>Frequency of Trauma by SES</b>") %>%
+  add_header_above(c("Sentiment" = 4), background = "#212121") %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em", bold = TRUE) %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em") %>%
+  column_spec(4, width = "10em") %>%
+  row_spec(0:4, background = "#212121") 
+
+```
+
+*Source: General Social Survey: 1987-1992*
 
 ---
 
-# What the heck is a *degree of freedom*?
-
-1. Forget statistics
+# Other Explanations
 
 --
 
-2. Say you only own seven hats and want to wear a different one each day of the week.
+<center>hours studying & grades</center>
 
 --
 
-3. Process
-  - Day 1: Choose from 7
-  - Day 2: Choose from 6
-  - Day 3: ...
+<br>
+<center>partying & assessments</center>
 
 --
 
-  - Day 6: ... from 2
-  - Day 7: Only one choice left!
+<br>
+<center>sleep & performance</center>
 
 --
 
-4. You had $7-1=6$ days of hat freedom! 
+<br>
+<center>Color of your car & how well you do in EDP 613</center>
 
 --
 
-This is basically what a *df* is.
+<br>
+<center>.</center>
+
+--
+
+<br>
+<center>.</center>
+
 
 ---
 
-# Formula
+# Elaborate 
 
-- $t = \dfrac{\overline{Y}-\mu}{s/\sqrt{N}}$
+--
 
-- $df = N-1$
+- A **control variable** is a special type of variable that doesn't change. We can use it to compare the possible effects of a treatment.
+
+--
+
+- **Elaboration** is a specific type of bivariate relationship where control variables are introduced.
+
+---
+
+#  Testing for an intervening relationship
+
+- **Intervening variable** - A control variable that follows an independent variable but precedes the dependent variable in a causal sequence
+
+--
+
+- **Intervening relationships** - The control variable intervenes between the independent and dependent variables
+
+---
+
+# Example: Examining two variables before considering a third one
+
+- <span style='color:#78c4a9;'>independent</span> variable: Attending weekday parties
+
+--
+
+- <span style='color:#e5a8be;'>dependent</span> variable: Grades
+
+--
+
+- <span style='color:#b5caa8;'>intervening</span></span> variable (maybe): Hours studying
+
 
 ---
 
 # Example
 
-We want to determine if the mean per capita income of West Virginia counties is different than the national average, and we suspect based on *a priori* (fancy term for *before*) knowledge that it is lower.
-
-- $H_0$: The per capita income of West Virginia counties is not significantly less than the national average.
-- $H_1$: The per capita income of West Virginia counties is significantly less than the national average.
-
----
-
-# Step 1
-
-Determine if West Virginia county per capita income is normally distributed.
-- If *yes*, proceed with a one-sample $t$-test
-- If *no*, you may still be able to use a *t&-test but it requires additional assumptions
-
-NOTE: We do not need to know the normality of US per capita income. All we need to know is the mean.
-
----
-
-```{r eval = TRUE, echo = FALSE}
-income <- tibble(
-Region = c("United States",
-             "West Virginia"),
-
-`Per Capita Income` = c("$27,334",
-                        "$19,443"),
-
-`Median Household Income` = c("$51,914",
-                              "$38,380"),
-
-`Median Family Income` = c("$62,982",
-                           "$48,896"),
-
-Population = c("308,745,538",
-                "1,852,994"),
-
-Households = c("116,716,292",
-                "763,831")
-
-)
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(income, 
-      escape = FALSE,
-      align = 'cccccc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  column_spec(5, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")
-```
+- <span style='color:#78c4a9;'>independent</span> variable: Sale of ice cream
 
 --
 
-- From `Per Capita Income`, we suspect WV is lower but is the difference significant enough?
+- <span style='color:#e5a8be;'>dependent</span> variable: Number of outdoor crimes
 
 --
 
-- Remember that $H_0$ is based on what we see in the data.
+- <span style='color:#b5caa8;'>intervening</span></span> variable (maybe): Outdoor temperature
 
 ---
 
-# Assumptions
+###   Testing for a spurious relationship
 
-- Population mean is $27,334
+- **Spurious relationships** - Both the independent variable and the dependent variable are NOT
 
-- Take a sample of 61 people with standard deviation \$3075.28 and mean \$19253.2
+--
 
-- *df*: $61-1 = 60$
+  1. not causally linked
+  
+--
 
-- CV: $\pm 2$
+  2. influenced by some third variable 
+  
+--
 
----
+  3. explained by a control variable
 
-# Calulations
+--
 
-\begin{aligned}
-t &= \dfrac{19253.2-27334.0}{3075.28/\sqrt{50}} \\
- &\approx -18.58
-\end{aligned}
-
-So we reject $H_0$. 
-
-Interpretation: The per capita income is significantly less than the national average!
- 
-
----
-
-# Two-sample $t$-test
-
-Used to compare one sample mean to another.
-
-- We use two different test: 
-  - Equal variances
-  - Unequal variances (assumed)
-
-- **Homoscedasticity** – the assumption of equal variances.
-
----
-
-# Formulas
-
-- $S_{\overline{Y_1}-\overline{Y_1}} = \sqrt{\dfrac{(N_1-1)\cdot s_1^2+(N_2-1)\cdot s_2^2}{(N_1+N_2)-2}}\cdot\sqrt{\dfrac{N_1+N_2}{N_1\cdot N_2}}$
-
-- $t = \dfrac{\overline{Y_1}-\overline{Y_2}}{S_{\overline{Y_1}-\overline{Y_1}}}$
-
-- $df = (N_1+N_2)-2$
+- **Nonspurious relationships** - Both the independent variable and the dependent variable
+  - cannot by explained by a control variable
 
 ---
 
 # Example
 
-At the Olympic level of competition, even the smallest factors can make the difference between winning and losing. 
-
-Pelton (1983) has shown that Olympic marksmen shoot much better if they fire between heartbeats, rather than squeezing the trigger during a heartbeat.
-
-The small vibration caused by a heartbeat appears to be sufficient to affect the marksman’s aim.
-
----
-
-# Samples
-
-A sample of six (6) Olympic marksmen fires a series of rounds while a researcher records heartbeats.  For each marksman, an accuracy score (out of 100) is recorded for shots fired during heartbeats and for shots fired between heartbeats.  Do the data indicate a significant difference? 
-
-```{r eval = TRUE, echo = FALSE}
-heart <- tibble(
-`During Heartbeats` = c(93, 90, 95, 92, 95, 91),
-
-`Between Heartbeats` = c(98,94,96,91,97,97)
-
-)
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(heart, 
-      escape = FALSE,
-      align = 'cc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")
-```
-
----
-
-# Setup
-
-- Research question: Is better accuracy achieved by marksmen when firing the trigger between heartbeats than during a heartbeat?
-
-- Hypothesis: 
-  - $H_0: \mu \geq 0$ – The average accuracy score is equal to or better when measured between heartbeats than during heartbeats.
-  - $H_1: \mu < 0$  – The average accuracy score is worse when measures between heartbeats than during heartbeats.
-
-- Alpha: 𝛼= 0.05
-
----
-
-Appendix C: 
-
-- $df = 6-1 = 5$
-
-- $t_{critical} = -2.015$ 
-
-
-```{r eval = TRUE, echo = FALSE}
-heart_diff <- tibble(
-`During Heartbeats` = c(93, 90, 95, 92, 95, 91, NA),
-
-`Between Heartbeats` = c(98,94,96,91,97,97,NA),
-
-Difference = c(-5,-4,-1,1,-2,-6,-17),
-
-`Variance of Difference` = c(25,16,1,1,4,36,83)
-
-)
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(heart_diff , 
-      escape = FALSE,
-      align = 'cc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")
-```
-
----
-
-# Descriptives
-
-- Mean: $\dfrac{-17}{6}\approx -2.83$
+- <span style='color:#78c4a9;'>independent</span> variable: Number of firefighters at the scene of a crime
 
 --
 
-- SS: $83-\dfrac{(-17)^2}{6} \approx 34.83$
+- <span style='color:#e5a8be;'>dependent</span> variable: Property damage
 
 --
 
-- Variance: $\dfrac{34.83}{6-1} \approx 6.97$
+- Possible cause prior to the control variable: Size of the fire 
+
+---
+
+# Elaborate 
 
 --
 
-- Standard Deviation: $\sqrt{6.97} \approx 2.64$
-
----
-
-# Calculations
-
-- Standard Error: $\dfrac{2.64}{\sqrt{6}}\approx 1.08$
-
-- Test Statistic: $\dfrac{-2.83-0}{1.08}\approx -2.62$
-
----
-
-# Decision
-
-Since $-2.62<-2.015$, we reject $H_0$.
+- A **control variable** is a special type of variable that doesn't change. We can use it to compare the possible effects of a treatment.
 
 --
 
-Interpretation: Marksmen are significantly more accurate when they pull the trigger between heartbeats than during a heartbeat.
+- **Elaboration** is a specific type of bivariate relationship where control variables are introduced.
 
 ---
 
-## That's it. Take a break before our R session!
+# Testing
 
+Elaboration tests 
 
+- are useless on relationships that have been determined like
 
+  - *causal* : At least one variable is found to directly effect another
+  
+--
+
+- include relationships that are 
+
+  - *spurious* : Both an independent and dependent variable are influenced by some third party variable. If the third variable is unknown, it may appear that there is a causal link when there actually isn't one.
+  
+--
+
+  - *intervening* : A control variable that comes after an independent variable but is before the dependent variable in a causal chain
+  
+--
+
+  - *conditional* : An independent variable’s effect on the dependent variable depends something within a control variable
+
+---
+
+#  Testing for a control relationship
+
+<center>
+<b>control relationship</b> - An independent variable’s effect on the dependent variable depends on, or is conditioned by, a category of a control variable
+</center>
+
+--
+
+<br>
+<center>
+<i>Note</i>: The relationship between the independent and dependent variables will change according to the different conditions (or categories) of the control variable
+</center>
+
+---
+
+# Example: Examining two variables before considering a control 
+
+- <span style='color:#78c4a9;'>independent</span> variable: Number of toys owned
+
+--
+
+- <span style='color:#e5a8be;'>dependent</span> variable: Hours spent playing with toys
+
+--
+
+- <span style='color:#BDA8CA;'>conditional</span></span> variable (maybe): SES
+
+---
+
+# Goals of Elaboration
+
+--
+
+1. *to* test for spurious relationships
+
+--
+
+2. *to* clear up the causal sequence of bivariate relationships by finding possible intervening variables
+
+--
+
+3. *to* specify the different conditions under which the original bivariate relationship might hold
+
+---
 
 ## That's it. Take a break before our R session!

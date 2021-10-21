@@ -1,0 +1,100 @@
+---
+title: "Testing Hypotheses"
+linktitle: "Week 9: Testing Hypotheses"
+output:
+  blogdown::html_page:
+    toc: true
+menu:
+  due:
+    parent: "To Do"
+    weight: 9
+type: docs
+weight: 1
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+library(dplyr)
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+```
+
+
+### What to do for Week 8 after class ends
+
+```{r eval = TRUE, echo = FALSE}
+unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
+
+checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
+
+wk_post <- tibble(
+  
+Submit = c(unchecked,
+           checked,
+           checked, 
+           checked,
+           checked,
+           checked),
+
+Description = c("Review the solution set from the Chapter 7 homework set",
+                "Complete problems 1, 2, 3, 4, 5, 10 in Chapter 7",
+                "Begin the *Foundations of Inference*",
+                "Begin the first ***optional*** extra credit module *Analyzing Survey Data in R*",
+                "Begin the second ***optional*** extra credit module *Fundamentals of Bayesian Data Analysis in R*",
+                "Begin the third ***optional*** extra credit module *Reporting with R Markdown*"),
+
+
+Location = c("[Link](/tasks/08-tasks/#solutions)",
+             "[Link](/tasks/09-tasks/#homework)",
+             "[Link](/datacamp/05-module/)",
+             "[Link](/datacamp/07-module/)",
+             "[Link](/datacamp/08-module/)",
+             "[Link](/datacamp/09-module/)")
+)
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_post, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE)  %>%
+  column_spec(1, width = "10em")
+```
+
+<br />
+
+### What to do for Week 10 before coming to class^[For preparation.]
+
+```{r eval = TRUE, echo = FALSE}
+book <- as.character(fontawesome::fa("book", fill = "steelblue"))
+
+chalkboard <- as.character(fontawesome::fa("chalkboard", fill = "steelblue"))
+
+lightbulb <- as.character(fontawesome::fa("lightbulb", fill = "steelblue"))
+
+wk_pre <- tibble(
+  
+Area = c(book, 
+         chalkboard),
+
+Description = c("Read *Testing Hypotheses* in the text",
+               "Download Chapter 8 Powerpoint and Lecture Textbook Notes"),
+
+Location = c("[Link](/readings/10-reading/#book-stuff)", 
+             "[Link](/materials/10-content/#textbook-notes)")
+
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(wk_pre, 
+      escape = FALSE,
+      align = 'clc') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "30em") %>%
+  column_spec(3, width = "10em")
+```  

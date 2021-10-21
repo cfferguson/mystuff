@@ -74,22 +74,22 @@ lessons:
     tasks: "08-homework"
     due: "08-due"
 
-  # - title: 'Testing Hypotheses'
-  #   session: 9
-  #   date: "November 4, 2020"
-  #   readings: "09-reading"
-  #   datacamp: "09-datacamp"
-  #   examples: "09-example"
-  #   tasks: "09-homework"
-  #   due: "09-due"
-  #
+  - title: 'Testing Hypotheses'
+    session: 9
+    date: "October 21, 2021"
+    readings: "09-reading"
+    datacamp: "09-datacamp"
+    examples: "09-example"
+    tasks: "09-homework"
+    due: "09-due"
+
   # - title: 'Bivariate Tables'
-  #   session: 11
-  #   date: "November 11, 2020"
-  #   readings: "11-reading"
-  #   datacamp: "11-datacamp"
-  #   tasks: "11-homework"
-  #   due: "11-due"
+  #   session: 10
+  #   date: "October 28, 2021"
+  #   readings: "10-reading"
+  #   datacamp: "10-datacamp"
+  #   tasks: "10-homework"
+  #   due: "10-due"
   #
   # - title: 'The Chi-Square Test and Measures of Association'
   #   session: 12

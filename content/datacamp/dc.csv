@@ -10,7 +10,7 @@
 2,,,,,,,Data visualization,,
 2,,,,,,,Grouping and summarizing,,
 2,,,,,,,Types of visualizations,,
-2,,,,,checked,,Dr. Semmelweis and the Discovery of Handwashing,,
+2,,,,,unchecked,,Dr. Semmelweis and the Discovery of Handwashing,,
 ,,,,,,,,,
 3,3,8/26/21,10/6/21,10/6/21,checked,[Introduction to Statistics in R](/datacamp/03-module/),Summary Statistics,"Summary Statistics, More Distributions and the Central Limit Theorem, Correlation and Experimental Design
 Random Numbers and Probability, Measures of Central Tendency",hyper
@@ -38,14 +38,19 @@ Proportions: testing and power",,
 6,,,,,,,Comparing many parameters: independence,,
 6,,,,,,,Comparing many parameters: goodness of fit,,
 ,,,,,,,,,
-7,EC1,10/21/21,12/8/21,44538,unchecked,[Analyzing Survey Data in R](/datacamp/01-extra/),Introduction to survey data,"Introduction to survey data, Modeling quantitative data
+7,EC1,10/21/21,11/3/21,11/3/21,unchecked,[Analyzing Survey Data in R](/datacamp/01-extra/),Introduction to survey data,"Introduction to survey data, Modeling quantitative data
 Exploring categorical data, 
 Exploring quantitative data, Transform your data",hyper
 7,,,,,,,Exploring categorical data,,
 7,,,,,,,Exploring quantitative data,,
 7,,,,,,,Modeling quantitative data,,
 ,,,,,,,,,
-8,EC2,10/21/21,12/8/21,44538,unchecked,[Fundamentals of Bayesian Data Analysis in R](/datacamp/02-extra/),What is Bayesian Data Analysis?,"What is Bayesian Data Analysis?, How does Bayesian inference work?, Why use Bayesian Data Analysis?, Bayesian inference with Bayes' theorem",hyper
+8,EC2,11/4/21,11/18/21,11/18/21,unchecked,[Fundamentals of Bayesian Data Analysis in R](/datacamp/02-extra/),What is Bayesian Data Analysis?,"What is Bayesian Data Analysis?, How does Bayesian inference work?, Why use Bayesian Data Analysis?, Bayesian inference with Bayes' theorem",hyper
 8,,,,,,,How does Bayesian inference work?,,
 8,,,,,,,Why use Bayesian Data Analysis?,,
 8,,,,,,,Bayesian inference with Bayes' theorem,,
+,,,,,,,,,
+9,EC3,10/21/21,12/8/21,12/8/21,unchecked,[Reporting with R Markdown](/datacamp/03-extra/),Getting Started with R Markdown,"Getting Started with R Markdown, Adding Analyses and Visualizations, Improving the Report, Customizing the Report",hyper
+9,,,,,,,Adding Analyses and Visualizations,,
+9,,,,,,,Improving the Report,,
+9,,,,,,,Customizing the Report,,

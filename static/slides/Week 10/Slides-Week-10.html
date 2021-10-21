@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Testing Hypotheses</title>
+    <title>Bivariate Tables</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Week 10" />
+    <meta name="author" content="Week 9" />
     <script src="Slides-Week-10_files/header-attrs-2.11/header-attrs.js"></script>
     <link href="Slides-Week-10_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="Slides-Week-10_files/tile-view-0.2.6/tile-view.js"></script>
@@ -17,529 +17,592 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Testing Hypotheses
+# Bivariate Tables
 ## EDP 613
-### Week 10
+### Week 9
 
 ---
 
 
+&lt;style&gt;
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+&lt;/style&gt;
 
 
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+bottom:1em;left:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
+# &lt;span style='color:#bff4ee;'&gt;A Note About The Slides&lt;/span&gt;
 
-
-
-
-
-# A Note About The Slides
-
-Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work. 
-
----
-
-# A Note About Previous Items
-
-We're going to use some introduce some concepts from Chapter 7 here as well.
-
----
-
-# Thin Margins
-
-The **margin of error** (MoE) is 
-
---
-
-&gt;- Formally - the range of values above and below a sample statistic within a confidence interval. 
-
---
-
-&gt;- In Better Terms - how many percentage points your results will differ from the real population value.
-
-
-Note: We're NOT talking about the confidence interval!
-
----
-
-# Interpretation 
-
-- Result: A 95% confidence interval with a 3% margin of error.
-
---
-
-- What it means: Your statistic will be within **3 percentage points** of the real population value *95%* of the time.
-
---
-
-The MoE is a probability!
----
-
-# Back to Hypothesis Testing
-
-Recall:
-
-The **null hypothesis** states 
-
---
-
-&gt;- Formally - that a parameter is equal to a specific value
-
---
-
-&gt;- Informally - nothing probably happened
-
---
-
-The **alternative hypothesis** states 
-
---
-
-&gt;- Formally - that a parameter differs from the value specified by the null hypothesis
-
---
-
-&gt;- Informally - something probably happened
+Currently the equations may not show up properly in Firefox. Other browsers such as Chrome and Safari do appear to render them correctly. 
 
 ---
 
-# More about Hypothesis Testing
-
-Say a null hypothesis is `\(H_0\colon\mu=50\)`. Then three things can occur from a frequentist perspective
+# Terms
 
 --
 
-- `\(H_1 &lt; 50\)`: alternative hypothesis states that the parameter is *less* than the value of the null.
-
-&gt;- You know to test for everything to the *left* of `\(H_1 = 50\)`.
-&gt;- Called a **left-tailed test**
+**bivariate** - Doing something with two variables
 
 --
 
-- `\(H_1 &gt; 50\)`: alternative hypothesis states that the parameter is *more* than the value of the null.
-
-&gt;- You know to test for everything to the *right* of `\(H_1 = 50\)`.
-&gt;- Called a **left-tailed test**
+**bivariate analysis** 
 
 --
 
-- `\(H_1 \neq 50\)`: alternative hypothesis states that the parameter is *note* the value of the null.
+&gt;- *Formally*: A statistical method to detect and describe the relationship between two nominal or ordinal variables (typically independent and dependent variables) 
 
-&gt;- You know to test for everything to the *left* and *right* of `\(H_1 = 50\)`.
-&gt;- Called a **two-tailed test**
+--
+
+&gt;- *Nutshell*: Finding out if and how two variables are related to each other
+
+--
+
+**cross-tabulation** 
+
+--
+
+&gt;- *Formally*: A tool for analyzing the relationship between two or more nominal or ordinal variables
+
+--
+
+&gt;- *Nutshell*: A data table to compare the values between two variables
+
+--
+
+&gt;- *Note*: A good approach when establishing "control" variables
 
 ---
 
-# Visual Hypothesis Testing
+# Bivariate Tables 
+
+--
+
+&lt;img src="img/bivaraite_table.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+.footnote[*totals* are also known as *marginals*]
+
+---
+
+# Creating a Cross-Tabulation Using Raw Data
+
+--
+
+&gt;- Column totals: Add across columns
+
+
+--
+
+&gt;- Row totals: Add across rows
+
+---
+
+# Example of Cross-Tabulation Using Raw Data
+
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;&lt;b&gt;Views on Candy Corn&lt;/b&gt;&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Delicious &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Disgusting &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Yes &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; No &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 26 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+
+# Creating a Cross-Tabulation Using Percents
+
+--
 
 .pull-left[
-&lt;br&gt;
-- `\(H_1 &lt; H_0\)`:
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-- `\(H_1 &gt; H_0\)`:
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-- `\(H_1 \neq H_0\)`:
+&lt;span style='color:#e5a8be;'&gt;&lt;i&gt;Column&lt;/i&gt;&lt;/span&gt; &lt;i&gt;percentages&lt;/i&gt; :&lt;br&gt;&lt;br&gt; Use column totals as a denominator of the row values.
 ]
+
+--
 
 .pull-right[
-&lt;img src="Slides-Week-10_files/figure-html/unnamed-chunk-4-1.png" width="30%" /&gt;
+&lt;span style='color:#61b2e3;'&gt;&lt;i&gt;Row&lt;/i&gt;&lt;/span&gt; &lt;i&gt;percentages&lt;/i&gt; :&lt;br&gt;&lt;br&gt; Use column totals as a denominator of the row values.
+]
 
-&lt;img src="Slides-Week-10_files/figure-html/unnamed-chunk-5-1.png" width="30%" /&gt;
+--
 
-&lt;img src="Slides-Week-10_files/figure-html/unnamed-chunk-6-1.png" width="30%" /&gt;
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;i&gt;Note&lt;/i&gt;: Percentages are typically given for the independent variable.
+&lt;/center&gt;
+
+---
+
+
+# Example of Cross-Tabulation Using Percents
+
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;&lt;b&gt;Views on Candy Corn&lt;/b&gt;&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Delicious &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Disgusting &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Yes &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 40.00% (4) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 43.75% (7) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 42.30% (11) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; No &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 60.00% (6) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 56.25% (9) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 57.69% (15) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; &lt;i&gt;N&lt;/i&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (10) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (16) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (26) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+-- 
+
+&lt;center&gt;
+
+That is a &lt;b&gt;contingency table&lt;/b&gt;
+
+&lt;/center&gt;
+--
+
+&lt;br&gt;
+&lt;center&gt;
+Specifically a &lt;b&gt;2 x 2 contingency table&lt;/b&gt;
+&lt;/center&gt;
+
+---
+
+# Why Do We Care?
+
+Well we use them if we want to
+
+--
+
+- *partition* the dependent and independent variables 
+
+--
+
+- detect if a relationship *exists* between the dependent and independent variables 
+
+--
+
+- measure how *strong* a relationship may be (known as a *measure of association*)
+
+--
+
+- determine the *direction* of a relationship 
+
+---
+
+# This Way or That Way
+
+The direction of a relationship can be
+
+--
+
+.pull-left[
+**positive** if the dependent and independent both go in the same direction up or down
+]
+  
+--
+
+.pull-right[ 
+**negative** if the dependent and independent go in opposite directions
 ]
 
 ---
 
-# Testing Methods
+# Example of a Positive Relationship
 
-- Critical Value (CV)
-- `\(p\)`-value
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;&lt;b&gt;Health Condition by SES&lt;/b&gt;&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Low &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Middle &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; High &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Poor &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 39% (15) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 12% (32) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 9% (18) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Fair &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 36% (14) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 45% (114) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 28% (57) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Good &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 25% (10) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 43% (109) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 63% (127) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; &lt;i&gt;N&lt;/i&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (39) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (254) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (202) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+*Source: General Social Survey: 1987-1992*
 
 ---
 
-# Critical Value
+# Example of a Negative Relationship
 
-- Uses a **test statistic** - determines how strong the disagreement between a sample mean and a null hypothesis. 
 
-- Idea: We should reject `\(H_0\)` if the value of  the test statistic is unusual when we assume `\(H_0\)` to be true.
 
-- Process
-    - We choose a CV which forms a boundary between values that are considered unusual and values that are not.
-    - The region containing the unusual values is called the **critical region**.
-    - f the value of the test statistic is in the critical regions, we *reject* `\(H_0\)`.
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;&lt;b&gt;Frequency of Trauma by SES&lt;/b&gt;&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Low &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Middle &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; High &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Poor &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 31% (15) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 41% (90) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 48% (86) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Fair &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 22% (10) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 42% (92) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 20% (36) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Good &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 47% (23) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 17% (38) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 32% (58) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; &lt;i&gt;N&lt;/i&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (48) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (220) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (180) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+*Source: General Social Survey: 1987-1992*
 
 ---
 
-# Transitioning (Again!)
+# Other Explanations
 
-&gt;- Going from a `\(z\)`-distribution (known population variance using `\(z\)`-scores) to a `\(t\)`-distribution (known sample variance using `\(t\)`-tests)
+--
+
+&lt;center&gt;hours studying &amp; grades&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;center&gt;partying &amp; assessments&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;center&gt;sleep &amp; performance&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;center&gt;Color of your car &amp; how well you do in EDP 613&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;center&gt;.&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;center&gt;.&lt;/center&gt;
+
 
 ---
 
-&gt;- We assume that for a large enough sample size, the `\(t\)`-distribution will closely match, or estimate, the a `\(z\)`-distribution 
+# Elaborate 
+
+--
+
+- A **control variable** is a special type of variable that doesn't change. We can use it to compare the possible effects of a treatment.
+
+--
+
+- **Elaboration** is a specific type of bivariate relationship where control variables are introduced.
+
+---
+
+#  Testing for an intervening relationship
+
+- **Intervening variable** - A control variable that follows an independent variable but precedes the dependent variable in a causal sequence
+
+--
+
+- **Intervening relationships** - The control variable intervenes between the independent and dependent variables
+
+---
+
+# Example: Examining two variables before considering a third one
+
+- &lt;span style='color:#78c4a9;'&gt;independent&lt;/span&gt; variable: Attending weekday parties
+
+--
+
+- &lt;span style='color:#e5a8be;'&gt;dependent&lt;/span&gt; variable: Grades
+
+--
+
+- &lt;span style='color:#b5caa8;'&gt;intervening&lt;/span&gt;&lt;/span&gt; variable (maybe): Hours studying
 
 
 ---
 
-# Things to note
+# Example
 
-- `\(t\)`-distribution table can be located in Appendix C.
+- &lt;span style='color:#78c4a9;'&gt;independent&lt;/span&gt; variable: Sale of ice cream
 
-- Assumptions
-    - *Normality* - Samples are drawn from a population that fits a bell curve 
+--
 
-    - *Independence* - Samples do not share values
+- &lt;span style='color:#e5a8be;'&gt;dependent&lt;/span&gt; variable: Number of outdoor crimes
 
-    - *Random Sampling* - Samples are randomized
+--
+
+- &lt;span style='color:#b5caa8;'&gt;intervening&lt;/span&gt;&lt;/span&gt; variable (maybe): Outdoor temperature
+
+---
+
+###   Testing for a spurious relationship
+
+- **Spurious relationships** - Both the independent variable and the dependent variable are NOT
+
+--
+
+  1. not causally linked
   
-    - ***Homogeneity*** (for more than one sample) - Samples have a similar makeup
+--
 
----
+  2. influenced by some third variable 
+  
+--
 
-# One-sample `\(t\)`-test
-
-- allows us to determine whether the mean of a sample data set is different than a known value
-    - used when the population variance is not known
-    - can be used when the sample size is small.
-    Uses `\(n\)`-1 **degrees of freedom** (*df*).
-
----
-
-# What the heck is a *degree of freedom*?
-
-1. Forget statistics
+  3. explained by a control variable
 
 --
 
-2. Say you only own seven hats and want to wear a different one each day of the week.
-
---
-
-3. Process
-  - Day 1: Choose from 7
-  - Day 2: Choose from 6
-  - Day 3: ...
-
---
-
-  - Day 6: ... from 2
-  - Day 7: Only one choice left!
-
---
-
-4. You had `\(7-1=6\)` days of hat freedom! 
-
---
-
-This is basically what a *df* is.
-
----
-
-# Formula
-
-- `\(t = \dfrac{\overline{Y}-\mu}{s/\sqrt{N}}\)`
-
-- `\(df = N-1\)`
+- **Nonspurious relationships** - Both the independent variable and the dependent variable
+  - cannot by explained by a control variable
 
 ---
 
 # Example
 
-We want to determine if the mean per capita income of West Virginia counties is different than the national average, and we suspect based on *a priori* (fancy term for *before*) knowledge that it is lower.
-
-- `\(H_0\)`: The per capita income of West Virginia counties is not significantly less than the national average.
-- `\(H_1\)`: The per capita income of West Virginia counties is significantly less than the national average.
-
----
-
-# Step 1
-
-Determine if West Virginia county per capita income is normally distributed.
-- If *yes*, proceed with a one-sample `\(t\)`-test
-- If *no*, you may still be able to use a *t&amp;-test but it requires additional assumptions
-
-NOTE: We do not need to know the normality of US per capita income. All we need to know is the mean.
-
----
-
-
-
-&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Region &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Per Capita Income &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Household Income &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Family Income &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Population &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Households &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; United States &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $27,334 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $51,914 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $62,982 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 308,745,538 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 116,716,292 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; West Virginia &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $19,443 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $38,380 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $48,896 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 1,852,994 &lt;/td&gt;
-   &lt;td style="text-align:center;background-color: #212121 !important;"&gt; 763,831 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+- &lt;span style='color:#78c4a9;'&gt;independent&lt;/span&gt; variable: Number of firefighters at the scene of a crime
 
 --
 
-- From `Per Capita Income`, we suspect WV is lower but is the difference significant enough?
+- &lt;span style='color:#e5a8be;'&gt;dependent&lt;/span&gt; variable: Property damage
 
 --
 
-- Remember that `\(H_0\)` is based on what we see in the data.
+- Possible cause prior to the control variable: Size of the fire 
 
 ---
 
-# Assumptions
-
-- Population mean is $27,334
-
-- Take a sample of 61 people with standard deviation \$3075.28 and mean \$19253.2
-
-- *df*: `\(61-1 = 60\)`
-
-- CV: `\(\pm 2\)`
-
----
-
-# Calulations
-
-`\begin{aligned}
-t &amp;= \dfrac{19253.2-27334.0}{3075.28/\sqrt{50}} \\
- &amp;\approx -18.58
-\end{aligned}`
-
-So we reject `\(H_0\)`. 
-
-Interpretation: The per capita income is significantly less than the national average!
- 
-
----
-
-# Two-sample `\(t\)`-test
-
-Used to compare one sample mean to another.
-
-- We use two different test: 
-  - Equal variances
-  - Unequal variances (assumed)
-
-- **Homoscedasticity** – the assumption of equal variances.
-
----
-
-# Formulas
-
-- `\(S_{\overline{Y_1}-\overline{Y_1}} = \sqrt{\dfrac{(N_1-1)\cdot s_1^2+(N_2-1)\cdot s_2^2}{(N_1+N_2)-2}}\cdot\sqrt{\dfrac{N_1+N_2}{N_1\cdot N_2}}\)`
-
-- `\(t = \dfrac{\overline{Y_1}-\overline{Y_2}}{S_{\overline{Y_1}-\overline{Y_1}}}\)`
-
-- `\(df = (N_1+N_2)-2\)`
-
----
-
-# Example
-
-At the Olympic level of competition, even the smallest factors can make the difference between winning and losing. 
-
-Pelton (1983) has shown that Olympic marksmen shoot much better if they fire between heartbeats, rather than squeezing the trigger during a heartbeat.
-
-The small vibration caused by a heartbeat appears to be sufficient to affect the marksman’s aim.
-
----
-
-# Samples
-
-A sample of six (6) Olympic marksmen fires a series of rounds while a researcher records heartbeats.  For each marksman, an accuracy score (out of 100) is recorded for shots fired during heartbeats and for shots fired between heartbeats.  Do the data indicate a significant difference? 
-
-
-
-&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; During Heartbeats &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Between Heartbeats &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 93 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 98 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 90 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 94 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 95 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 96 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 92 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 91 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 95 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 97 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 91 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 97 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
----
-
-# Setup
-
-- Research question: Is better accuracy achieved by marksmen when firing the trigger between heartbeats than during a heartbeat?
-
-- Hypothesis: 
-  - `\(H_0: \mu \geq 0\)` – The average accuracy score is equal to or better when measured between heartbeats than during heartbeats.
-  - `\(H_1: \mu &lt; 0\)`  – The average accuracy score is worse when measures between heartbeats than during heartbeats.
-
-- Alpha: 𝛼= 0.05
-
----
-
-Appendix C: 
-
-- `\(df = 6-1 = 5\)`
-
-- `\(t_{critical} = -2.015\)` 
-
-
-
-
-&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; During Heartbeats &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Between Heartbeats &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Difference &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Variance of Difference &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 93 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 98 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; -5 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 25 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 90 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 94 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; -4 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 16 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 95 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 96 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; -1 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 1 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 92 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 91 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 1 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 95 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 97 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; -2 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 4 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 91 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 97 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; -6 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 36 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; -17 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 83 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
----
-
-# Descriptives
-
-- Mean: `\(\dfrac{-17}{6}\approx -2.83\)`
+# Elaborate 
 
 --
 
-- SS: `\(83-\dfrac{(-17)^2}{6} \approx 34.83\)`
+- A **control variable** is a special type of variable that doesn't change. We can use it to compare the possible effects of a treatment.
 
 --
 
-- Variance: `\(\dfrac{34.83}{6-1} \approx 6.97\)`
+- **Elaboration** is a specific type of bivariate relationship where control variables are introduced.
+
+---
+
+# Testing
+
+Elaboration tests 
+
+- are useless on relationships that have been determined like
+
+  - *causal* : At least one variable is found to directly effect another
+  
+--
+
+- include relationships that are 
+
+  - *spurious* : Both an independent and dependent variable are influenced by some third party variable. If the third variable is unknown, it may appear that there is a causal link when there actually isn't one.
+  
+--
+
+  - *intervening* : A control variable that comes after an independent variable but is before the dependent variable in a causal chain
+  
+--
+
+  - *conditional* : An independent variable’s effect on the dependent variable depends something within a control variable
+
+---
+
+#  Testing for a control relationship
+
+&lt;center&gt;
+&lt;b&gt;control relationship&lt;/b&gt; - An independent variable’s effect on the dependent variable depends on, or is conditioned by, a category of a control variable
+&lt;/center&gt;
 
 --
 
-- Standard Deviation: `\(\sqrt{6.97} \approx 2.64\)`
+&lt;br&gt;
+&lt;center&gt;
+&lt;i&gt;Note&lt;/i&gt;: The relationship between the independent and dependent variables will change according to the different conditions (or categories) of the control variable
+&lt;/center&gt;
 
 ---
 
-# Calculations
+# Example: Examining two variables before considering a control 
 
-- Standard Error: `\(\dfrac{2.64}{\sqrt{6}}\approx 1.08\)`
-
-- Test Statistic: `\(\dfrac{-2.83-0}{1.08}\approx -2.62\)`
-
----
-
-# Decision
-
-Since `\(-2.62&lt;-2.015\)`, we reject `\(H_0\)`.
+- &lt;span style='color:#78c4a9;'&gt;independent&lt;/span&gt; variable: Number of toys owned
 
 --
 
-Interpretation: Marksmen are significantly more accurate when they pull the trigger between heartbeats than during a heartbeat.
+- &lt;span style='color:#e5a8be;'&gt;dependent&lt;/span&gt; variable: Hours spent playing with toys
+
+--
+
+- &lt;span style='color:#BDA8CA;'&gt;conditional&lt;/span&gt;&lt;/span&gt; variable (maybe): SES
 
 ---
 
-## That's it. Take a break before our R session!
+# Goals of Elaboration
 
+--
 
+1. *to* test for spurious relationships
 
+--
+
+2. *to* clear up the causal sequence of bivariate relationships by finding possible intervening variables
+
+--
+
+3. *to* specify the different conditions under which the original bivariate relationship might hold
+
+---
 
 ## That's it. Take a break before our R session!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -604,7 +667,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

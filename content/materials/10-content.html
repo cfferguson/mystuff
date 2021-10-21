@@ -1,0 +1,147 @@
+---
+title: "Bivariate Tables"
+linktitle: "Week 10: Bivariate Tables"
+output:
+  blogdown::html_page:
+    toc: true
+menu:
+  materials:
+    parent: Content
+    weight: 10
+type: docs
+weight: 2
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/font-awesome/js/script.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#textbook-notes">Textbook Notes</a></li>
+<li><a href="#in-class-notes">In Class Notes</a></li>
+<li><a href="#r-walkthrough">R Walkthrough</a></li>
+</ul>
+</div>
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<style>
+  .hvr-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #761756;
+    -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+</style>
+<div id="textbook-notes" class="section level3">
+<h3>Textbook Notes</h3>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 20em; ">
+Chapter 9 PowerPoint
+</td>
+<td style="text-align:center;width: 20em; ">
+Chapter 9 Notes
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 20em; ">
+<a href="/lecture_notes/Week%2010/SSDS_Ch9.pptx"><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:2.67em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d04423;overflow:visible;position:relative;"><path d="M193.7 271.2c8.8 0 15.5 2.7 20.3 8.1 9.6 10.9 9.8 32.7-.2 44.1-4.9 5.6-11.9 8.5-21.1 8.5h-26.9v-60.7h27.9zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm53 165.2c0 90.3-88.8 77.6-111.1 77.6V436c0 6.6-5.4 12-12 12h-30.8c-6.6 0-12-5.4-12-12V236.2c0-6.6 5.4-12 12-12h81c44.5 0 72.9 32.8 72.9 77z"></path></svg></a>
+</td>
+<td style="text-align:center;width: 20em; ">
+<a href="/lecture_notes/Week%2010/SSDS_Ch9.docx"><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:2.67em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#00a4ef;overflow:visible;position:relative;"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm57.1 120H305c7.7 0 13.4 7.1 11.7 14.7l-38 168c-1.2 5.5-6.1 9.3-11.7 9.3h-38c-5.5 0-10.3-3.8-11.6-9.1-25.8-103.5-20.8-81.2-25.6-110.5h-.5c-1.1 14.3-2.4 17.4-25.6 110.5-1.3 5.3-6.1 9.1-11.6 9.1H117c-5.6 0-10.5-3.9-11.7-9.4l-37.8-168c-1.7-7.5 4-14.6 11.7-14.6h24.5c5.7 0 10.7 4 11.8 9.7 15.6 78 20.1 109.5 21 122.2 1.6-10.2 7.3-32.7 29.4-122.7 1.3-5.4 6.1-9.1 11.7-9.1h29.1c5.6 0 10.4 3.8 11.7 9.2 24 100.4 28.8 124 29.6 129.4-.2-11.2-2.6-17.8 21.6-129.2 1-5.6 5.9-9.5 11.5-9.5zM384 121.9v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="in-class-notes" class="section level3">
+<h3>In Class Notes</h3>
+<!--
+*posted during class time*
+
+
+<iframe src="/slides/Week 9/Slides-Week-9.html" width="672" height="400px" data-external="1"></iframe>
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+> Click [here](/slides/Week 9/Slides-Week-9.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 9/Slides-Week-9.pdf){target="_blank"} here for a PDF of the presentation.
+-->
+</div>
+<div id="r-walkthrough" class="section level3">
+<h3>R Walkthrough</h3>
+<p><em>posted during class time</em></p>
+<!--
+Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
+
+
+```{=html}
+<a href="data:application/zip;base64,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" download="Week 8 R Walkthrough Materials.zip">
+<button class="btn btn-default hvr-sweep-to-left"><i class="fa fa-save"></i> Download</button>
+</a>
+```
+
+<br>
+<iframe src="/slides/Week 9/Slides-Week-9R.html" width="672" height="400px" data-external="1"></iframe>
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+> Click [here](/slides/Week 9/Slides-Week-9R.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 9/Slides-Week-9R.pdf){target="_blank"} here for a PDF of the presentation.
+-->
+</div>

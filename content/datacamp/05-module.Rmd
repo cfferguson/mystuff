@@ -34,7 +34,7 @@ dc_schedule <-
                 Required == "unchecked" ~ as.character(fontawesome::fa("times-circle", fill = "#d9534f", height = "15px"))
               )) %>%
             mutate(across(everything(), as.character)) %>%
-              filter(Group == 3) %>% #CHANGE HERE
+              filter(Group == 5) %>% #CHANGE HERE
               select(-Group, -Chapters_wide, -`Due by_short`) %>%
               rename(`Due by` = `Due by_long`) %>%
               rename(Chapters = Chapters_long)  %>%

@@ -54,7 +54,7 @@ book <- tibble(
   
   problems <- c("Social Statistics for a Diverse Society"),
   
-  pages <- c("237-240"),
+  pages <- c("275-280"),
   
   .name_repair = "minimal"
   
@@ -82,12 +82,10 @@ Notes:
 to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"} by 11:59 PM next Wednesday.<br>
 -->
 
-
 ### Solutions
-
-*Posted after class day and time next week.*
-
 <!--
+*Posted after class day and time next week.*
+-->
 
 <details><summary>1</summary>
 <p>
@@ -264,4 +262,4 @@ CI &= 0.38\pm 1.65\cdot0.01\\
 implying an estimated standard error of proportions is approximately <span class="boxed">0.02</span> with a confidence interval between <span class="boxed">0.36 to 0.40</span>.
 </p>
 </details>
--->
+

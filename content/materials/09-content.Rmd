@@ -74,8 +74,7 @@ library(kableExtra)
 library(fontawesome)
 library(here)
 library(DT)
-library(scales)
-library(latex2exp)
+library(scales) 
 library(showtext)
 font_add_google("Roboto Condensed", "roboto")
 showtext_auto()
@@ -121,7 +120,7 @@ kable(textitems,
 ### In Class Notes
 <!--
 *posted during class time*
-
+-->
 
 ```{r echo = FALSE}
 knitr::include_url("/slides/Week 9/Slides-Week-9.html")
@@ -132,21 +131,20 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 > Click [here](/slides/Week 9/Slides-Week-9.html){target="_blank"} for a larger version of the presentation.
 
 > Click [here](/slides/Week 9/Slides-Week-9.pdf){target="_blank"} here for a PDF of the presentation.
--->
 
 ### R Walkthrough
-
-*posted during class time*
-
 <!--
+*posted during class time*
+-->
+
 Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
 ```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 8", "EDP613Week8RMaterials.zip")
+loc <- here::here("static", "slides", "Week 9", "EDP613Week9RMaterials.zip")
 
 downloadthis::download_file(
   path = loc,
-  output_name = "Week 8 R Walkthrough Materials",
+  output_name = "Week 9 R Walkthrough Materials",
   button_label = "Download",
   button_type = "default",
   has_icon = TRUE,
@@ -165,4 +163,3 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 > Click [here](/slides/Week 9/Slides-Week-9R.html){target="_blank"} for a larger version of the presentation.
 
 > Click [here](/slides/Week 9/Slides-Week-9R.pdf){target="_blank"} here for a PDF of the presentation.
--->

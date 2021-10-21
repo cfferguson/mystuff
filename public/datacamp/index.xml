@@ -171,13 +171,13 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-3
+5
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-8/26/21
+10/21/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-10/6/21
+11/3/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
@@ -185,10 +185,10 @@ Link
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-module/&#34;&gt;Introduction to Statistics in R&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/05-module/&#34;&gt;Foundations of Inference&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Summary Statistics
+Introduction to ideas of inference
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -206,7 +206,7 @@ Summary Statistics
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Random Numbers and Probability
+Completing a randomization test: gender discrimination
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -223,7 +223,7 @@ Random Numbers and Probability
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-More Distributions and the Central Limit Theorem
+Hypothesis testing errors: opportunity cost
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -240,7 +240,7 @@ More Distributions and the Central Limit Theorem
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Correlation and Experimental Design
+Confidence intervals
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -409,13 +409,13 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-3
+6
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-8/26/21
+10/21/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-10/6/21
+11/17/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
@@ -423,10 +423,10 @@ Link
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-module/&#34;&gt;Introduction to Statistics in R&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/06-module/&#34;&gt;Inference for Categorical Data in R&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Summary Statistics
+Inference for a single parameter
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -444,7 +444,7 @@ Summary Statistics
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Random Numbers and Probability
+Proportions: testing and power
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -461,7 +461,7 @@ Random Numbers and Probability
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-More Distributions and the Central Limit Theorem
+Comparing many parameters: independence
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -478,7 +478,7 @@ More Distributions and the Central Limit Theorem
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Correlation and Experimental Design
+Comparing many parameters: goodness of fit
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -528,13 +528,13 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-2
+4
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-8/26/21
+9/23/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-9/8/21
+10/20/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
@@ -542,10 +542,10 @@ Link
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-module/&#34;&gt;Introduction to the Tidyverse&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/04-module/&#34;&gt;Introduction to Data in R&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Data wrangling
+Language of data
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -563,7 +563,7 @@ Data wrangling
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Data visualization
+Study types and cautionary tales
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -580,7 +580,7 @@ Data visualization
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Grouping and summarizing
+Sampling strategies and experimental design
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -597,29 +597,9 @@ Grouping and summarizing
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Types of visualizations
+Case study
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
-&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 15em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 15em; &#34;&gt;
-Dr. Semmelweis and the Discovery of Handwashing
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 5em; &#34;&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -820,6 +800,125 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+8/26/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+10/6/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-module/&#34;&gt;Introduction to Statistics in R&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
+Summary Statistics
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
+Random Numbers and Probability
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
+More Distributions and the Central Limit Theorem
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
+Correlation and Experimental Design
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introduction to the Tidyverse</title>
+      <link>https://edp613.asocialdatascientist.com/datacamp/02-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/datacamp/02-module/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Module
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Available
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Due by
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Required
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;vertical-align: middle !important;&#34;&gt;
+Course
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;vertical-align: middle !important;&#34;&gt;
+Chapters
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;vertical-align: middle !important;&#34;&gt;
+Link
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
 2
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
@@ -895,23 +994,23 @@ Types of visualizations
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
-&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d9534f;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z&#34;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 15em; &#34;&gt;
+&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 15em; &#34;&gt;
+&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
 Dr. Semmelweis and the Discovery of Handwashing
 &lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 5em; &#34;&gt;
+&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -920,10 +1019,10 @@ Dr. Semmelweis and the Discovery of Handwashing
     </item>
     
     <item>
-      <title>Introduction to the Tidyverse</title>
-      <link>https://edp613.asocialdatascientist.com/datacamp/02-module/</link>
+      <title>Reporting with R Markdown</title>
+      <link>https://edp613.asocialdatascientist.com/datacamp/09-module/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://edp613.asocialdatascientist.com/datacamp/02-module/</guid>
+      <guid>https://edp613.asocialdatascientist.com/datacamp/09-module/</guid>
       <description>
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
@@ -959,24 +1058,24 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-1
+EC3
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-8/19/21
+10/21/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-9/1/21
+12/8/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
-&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d9534f;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z&#34;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/01-module/&#34;&gt;Introduction to R&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/03-extra/&#34;&gt;Reporting with R Markdown&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Intro to basics
+Getting Started with R Markdown
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -994,7 +1093,7 @@ Intro to basics
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Vectors
+Adding Analyses and Visualizations
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -1011,7 +1110,7 @@ Vectors
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Matrices
+Improving the Report
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -1028,43 +1127,9 @@ Matrices
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Factors
+Customizing the Report
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Data Frames
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;width: 15em; &#34;&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 15em; &#34;&gt;
-Lists
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;width: 5em; &#34;&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
