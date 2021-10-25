@@ -39,7 +39,7 @@ Submit = c(unchecked,
            checked),
 
 Description = c("Review the solution set from the Chapter 7 homework set",
-                "Complete problems 1, 2, 3, 4, 5, 10 in Chapter 7",
+                "Complete problems 1, 2, 3, 4, 5 in Chapter 8",
                 "Begin the *Foundations of Inference*",
                 "Begin the first ***optional*** extra credit module *Analyzing Survey Data in R*",
                 "Begin the second ***optional*** extra credit module *Fundamentals of Bayesian Data Analysis in R*",

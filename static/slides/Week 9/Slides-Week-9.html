@@ -24,9 +24,69 @@ class: center, middle, inverse, title-slide
 ---
 
 
+&lt;style&gt;
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+ol.nostyle li.nostyle {
+
+  list-style-type: none;
+  
+}
+
+.brmedium {
+            display: block;
+            margin-bottom: 7em;
+        }
+          
+.brlarge {
+            display: block;
+            margin-bottom: 17em;
+        }
+
+&lt;/style&gt;
 
 
-
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+bottom:1em;left:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 
 
@@ -40,65 +100,99 @@ Currently the equations do not show up properly in Firefox. Other browsers such 
 
 # A Note About Previous Items
 
-We're going to use some introduce some concepts from Chapter 7 here as well.
+We're going to use some introduce some concepts from Chapter 7 here as well
 
 ---
 
-# Thin Margins
+# Definitions
 
 The **margin of error** (MoE) is 
 
 --
 
-&gt;- Formally - the range of values above and below a sample statistic within a confidence interval. 
+&gt;- *Formally* : the range of values above and below a sample statistic within a confidence interval. 
 
 --
 
-&gt;- In Better Terms - how many percentage points your results will differ from the real population value.
+&gt;- *In a nutshell* : how many percentage points your results will differ from the real population value.
 
+--
 
-Note: We're NOT talking about the confidence interval!
+&gt;- NOT the same as a **confidence interval**
+
+--
+
+(Statistical) **significance** is 
+
+--
+
+&gt;- *Formally* : a measure of the probability of the null hypothesis being true compared to the acceptable level of uncertainty regarding the true answer
+
+--
+
+&gt;- *In a nutshell* : a result is probably not due to chance so it is likely real
+
+--
+
+&gt;- NOT the same as a **practical significance**
 
 ---
 
 # Interpretation 
 
-- Result: A 95% confidence interval with a 3% margin of error.
+.pull-left[
+&lt;center&gt;
+Example result:&lt;br&gt;&lt;br&gt;
+A &lt;b&gt;95%&lt;/b&gt; confidence interval with a&lt;br&gt;&lt;b&gt;3% margin of error&lt;/b&gt;
+&lt;/center&gt;
+]
 
 --
 
-- What it means: Your statistic will be within **3 percentage points** of the real population value *95%* of the time.
+.pull-right[
+&lt;center&gt;
+What it means:&lt;br&gt;&lt;br&gt;
+Your statistic will be within&lt;br&gt;&lt;b&gt;3 percentage points&lt;/b&gt; of the real population value&lt;br&gt;&lt;b&gt;95%&lt;/b&gt; of the time
+&lt;/center&gt;
+]
 
 --
 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
 The MoE is a probability!
+&lt;/center&gt;
+
 ---
 
 # Back to Hypothesis Testing
 
 Recall:
 
-The **null hypothesis** states 
+
 
 --
 
-&gt;- Formally - that a parameter is equal to a specific value
+.pull-left[
+The **null hypothesis `\(H_0\)`** states 
+
+&gt;- *Formally* : that a parameter is equal to a specific value
+
+&gt;- *Informally* : nothing probably happened
+]
 
 --
 
-&gt;- Informally - nothing probably happened
+.pull-right[
+The **alternative hypothesis `\(H_1\)`** states 
 
---
+&gt;- *Formally* : that a parameter differs from the value specified by the null hypothesis
 
-The **alternative hypothesis** states 
+&gt;- *Informally* : something probably happened
 
---
-
-&gt;- Formally - that a parameter differs from the value specified by the null hypothesis
-
---
-
-&gt;- Informally - something probably happened
+]
 
 ---
 
@@ -110,59 +204,68 @@ Say a null hypothesis is `\(H_0\colon\mu=50\)`. Then three things can occur from
 
 - `\(H_1 &lt; 50\)`: alternative hypothesis states that the parameter is *less* than the value of the null.
 
-&gt;- You know to test for everything to the *left* of `\(H_1 = 50\)`.
+--
+
+&gt;- You know to test for everything to the **left** of `\(H_1 = 50\)`.
+
+--
+
 &gt;- Called a **left-tailed test**
 
 --
 
+&lt;br&gt;
 - `\(H_1 &gt; 50\)`: alternative hypothesis states that the parameter is *more* than the value of the null.
 
-&gt;- You know to test for everything to the *right* of `\(H_1 = 50\)`.
-&gt;- Called a **left-tailed test**
+--
+
+&gt;- You know to test for everything to the **right** of `\(H_1 = 50\)`.
 
 --
 
+&gt;- Called a **right-tailed test**
+
+--
+
+&lt;br&gt;
 - `\(H_1 \neq 50\)`: alternative hypothesis states that the parameter is *note* the value of the null.
 
-&gt;- You know to test for everything to the *left* and *right* of `\(H_1 = 50\)`.
+--
+
+&gt;- You know to test for everything to the **left** and **right** of `\(H_1 = 50\)`.
+
+--
+
 &gt;- Called a **two-tailed test**
 
 ---
 
-# Visual Hypothesis Testing
+# `\(H_1 &lt; H_0\)`: Left-Tailed Test
 
-.pull-left[
-&lt;br&gt;
-- `\(H_1 &lt; H_0\)`:
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-- `\(H_1 &gt; H_0\)`:
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-- `\(H_1 \neq H_0\)`:
-]
+&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-4-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
-.pull-right[
-&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-4-1.png" width="30%" /&gt;
+---
 
-&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-5-1.png" width="30%" /&gt;
+# `\(H_1 &gt; H_0\)`: Right-Tailed Test
 
-&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-6-1.png" width="30%" /&gt;
-]
+&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-5-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# `\(H_1 \neq H_0\)`: Two-Tailed Test
+
+&lt;img src="Slides-Week-9_files/figure-html/unnamed-chunk-6-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Testing Methods
 
-- Critical Value (CV)
+--
+
+- Critical Value (*CV*)
+
+--
+
 - `\(p\)`-value
 
 ---
@@ -171,23 +274,55 @@ Say a null hypothesis is `\(H_0\colon\mu=50\)`. Then three things can occur from
 
 - Uses a **test statistic** - determines how strong the disagreement between a sample mean and a null hypothesis. 
 
-- Idea: We should reject `\(H_0\)` if the value of  the test statistic is unusual when we assume `\(H_0\)` to be true.
+--
+
+- Idea: We should reject `\(H_0\)` if the value of the test statistic is unusual when we assume `\(H_0\)` to be true.
+
+--
 
 - Process
-    - We choose a CV which forms a boundary between values that are considered unusual and values that are not.
-    - The region containing the unusual values is called the **critical region**.
-    - f the value of the test statistic is in the critical regions, we *reject* `\(H_0\)`.
+
+--
+
+   - We choose a *CV* which forms a boundary between values that are considered unusual and values that are not.
+
+--
+
+   - The region containing the unusual values is called the **critical region**.
+    
+--
+
+   - If the value of the test statistic is in the critical regions, we *reject* `\(H_0\)`.
 
 ---
 
 # Transitioning (Again!)
 
-&gt;- Going from a `\(z\)`-distribution (known population variance using `\(z\)`-scores) to a `\(t\)`-distribution (known sample variance using `\(t\)`-tests)
+&lt;center&gt;
+Going from a `z`-distribution (known population variance using `z`-scores)
+&lt;/center&gt;
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;to&lt;/center&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+&lt;center&gt;
+a `t`-distribution (known sample variance using `t`-tests)
+&lt;/center&gt;
 
 ---
 
-&gt;- We assume that for a large enough sample size, the `\(t\)`-distribution will closely match, or estimate, the a `\(z\)`-distribution 
+# Note
 
+We have to assume that for a large enough sample size, the `\(t\)`-distribution will closely match, or estimate, the a `\(z\)`-distribution 
 
 ---
 
@@ -195,27 +330,46 @@ Say a null hypothesis is `\(H_0\colon\mu=50\)`. Then three things can occur from
 
 - `\(t\)`-distribution table can be located in Appendix C.
 
+--
+
 - Assumptions
-    - *Normality* - Samples are drawn from a population that fits a bell curve 
 
-    - *Independence* - Samples do not share values
+--
 
-    - *Random Sampling* - Samples are randomized
+   - *Normality* - Samples are drawn from a population that fits a bell curve 
+    
+--
+
+   - *Independence* - Samples do not share values
+
+--
+
+  - *Random Sampling* - Samples are randomized
   
-    - ***Homogeneity*** (for more than one sample) - Samples have a similar makeup
+--
+
+  - ***Homogeneity*** (for more than one sample) - Samples have a similar makeup
 
 ---
 
 # One-sample `\(t\)`-test
 
 - allows us to determine whether the mean of a sample data set is different than a known value
-    - used when the population variance is not known
-    - can be used when the sample size is small.
-    Uses `\(n\)`-1 **degrees of freedom** (*df*).
+
+--
+
+- used when the population variance is not known
+
+--
+
+- can be used when the sample size is small ~ typically `\(N&lt;30\)`.
+
 
 ---
 
 # What the heck is a *degree of freedom*?
+
+--
 
 1. Forget statistics
 
@@ -227,60 +381,74 @@ Say a null hypothesis is `\(H_0\colon\mu=50\)`. Then three things can occur from
 
 3. Process
   - Day 1: Choose from 7
-  - Day 2: Choose from 6
-  - Day 3: ...
+  
+  - Day 2: Choose from 6&lt;br&gt;
+    &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;.&lt;br&gt;
+    &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;.
 
 --
 
-  - Day 6: ... from 2
-  - Day 7: Only one choice left!
+&lt;ol class="nostyle"&gt; 
+  &lt;li class="nostyle"&gt;
+    &lt;ul&gt; 
+      &lt;li class="nostyle"&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;.&lt;/li&gt;
+      &lt;li class="nostyle"&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;.&lt;/li&gt;
+      &lt;br&gt;
+      &lt;li&gt;Day 6: Choose from 2&lt;/li&gt;
+      &lt;br&gt;
+      &lt;li&gt;Day 7: Choose from 1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 --
 
-4. You had `\(7-1=6\)` days of hat freedom! 
+&lt;ol start=4&gt;
+You had 7 - 1 = &lt;b&gt;6&lt;/b&gt; &lt;i&gt;days of hat freedom!&lt;/i&gt;
+&lt;/ol&gt;
 
 --
 
-This is basically what a *df* is.
+&lt;center&gt;
+That's essentially a degree of freedom (written &lt;i&gt;df &lt;/i&gt;)
+&lt;/center&gt;
 
 ---
 
-# Formula
+# Formula for a `\(t\)`-distribution
 
-- `\(t = \dfrac{\overline{Y}-\mu}{s/\sqrt{N}}\)`
+.center2[
+.pull-left[
+&lt;center&gt;
+&lt;i&gt;t&lt;/i&gt;-distribution&lt;br&gt;&lt;br&gt;
+&lt;/center&gt;
 
-- `\(df = N-1\)`
+`$$t = \frac{\overline{Y}-\mu}{s/\sqrt{N}}$$`
+]
+
+.pull-right[
+&lt;center&gt;
+&lt;i&gt;with degrees of freedom&lt;br&gt;&lt;br&gt;
+&lt;/center&gt;
+
+`$$df = N-1$$`
+]
+]
 
 ---
 
 # Example
 
-We want to determine if the mean per capita income of West Virginia counties is different than the national average, and we suspect based on *a priori* (fancy term for *before*) knowledge that it is lower.
-
-- `\(H_0\)`: The per capita income of West Virginia counties is not significantly less than the national average.
-- `\(H_1\)`: The per capita income of West Virginia counties is significantly less than the national average.
-
----
-
-# Step 1
-
-Determine if West Virginia county per capita income is normally distributed.
-- If *yes*, proceed with a one-sample `\(t\)`-test
-- If *no*, you may still be able to use a *t&amp;-test but it requires additional assumptions
-
-NOTE: We do not need to know the normality of US per capita income. All we need to know is the mean.
-
----
-
+.center2[
 
 
 &lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Region &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Per Capita Income &lt;/th&gt;
    &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Household Income &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Family Income &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Male Salary &lt;/th&gt;
+   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Median Female Salary &lt;/th&gt;
    &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Population &lt;/th&gt;
    &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Households &lt;/th&gt;
   &lt;/tr&gt;
@@ -288,46 +456,66 @@ NOTE: We do not need to know the normality of US per capita income. All we need 
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;width: 10em; "&gt; United States &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $27,334 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $51,914 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; $62,982 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 308,745,538 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 116,716,292 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; $68,703 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; $57,511 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; $43,820 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 331,449,281 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 139,684,244 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; West Virginia &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $19,443 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $38,380 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $48,896 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 1,852,994 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $48,850 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $57,456 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; $47,299 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 1,793,716 &lt;/td&gt;
    &lt;td style="text-align:center;background-color: #212121 !important;"&gt; 763,831 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+]
 
 --
 
-- From `Per Capita Income`, we suspect WV is lower but is the difference significant enough?
+We want to determine if the median household income of West Virginia counties is different than the national average.
+&lt;span class="brlarge"&gt;&lt;span&gt; 
 
 --
 
-- Remember that `\(H_0\)` is based on what we see in the data.
+From &lt;b&gt;Median Household Income&lt;/b&gt;, we think WV (48,850 USD) is *practically lower* than the US (68,850 USD), but is it *significantly lower *?
 
 ---
 
-# Assumptions
+## Hypothesis
 
-- Population mean is $27,334
+&lt;span class="brmedium"&gt;&lt;span&gt; 
 
-- Take a sample of 61 people with standard deviation \$3075.28 and mean \$19253.2
+.pull-left[
+`$$H_0$$`&lt;br&gt;&lt;br&gt; 
+The &lt;b&gt;Median Household Income&lt;/b&gt; of West Virginia counties is NOT significantly less than the national average
+]
 
-- *df*: `\(61-1 = 60\)`
+--
+
+.pull-right[
+`$$H_1$$`&lt;br&gt;&lt;br&gt; The &lt;b&gt;Median Household Income&lt;/b&gt; of West Virginia counties is significantly less than the national average
+]
+
+---
+
+## Population &amp; Sample
+
+- `\(\mu = 68,703\)` USD
+
+- Sample
+  - `\(N=61\)` people with `\(s=5075.28\)` USD and `\(\overline{Y} = 45732.20\)` USD
+  
+  - *df*: `\(61-1 = 60\)`
 
 - CV: `\(\pm 2\)`
 
 ---
 
-# Calulations
+## Calulations
 
 `\begin{aligned}
 t &amp;= \dfrac{19253.2-27334.0}{3075.28/\sqrt{50}} \\
@@ -424,7 +612,7 @@ A sample of six (6) Olympic marksmen fires a series of rounds while a researcher
   - `\(H_0: \mu \geq 0\)` – The average accuracy score is equal to or better when measured between heartbeats than during heartbeats.
   - `\(H_1: \mu &lt; 0\)`  – The average accuracy score is worse when measures between heartbeats than during heartbeats.
 
-- Alpha: 𝛼= 0.05
+- Alpha: `\(\alpha=0.05\)`
 
 ---
 
@@ -534,7 +722,15 @@ Interpretation: Marksmen are significantly more accurate when they pull the trig
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -599,7 +795,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

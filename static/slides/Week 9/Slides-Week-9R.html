@@ -174,7 +174,7 @@ count: false
 .panel1-sw1-auto[
 
 ```r
-* movies
+* ggplot2movies::movies
 ```
 ]
  
@@ -207,7 +207,7 @@ count: false
 .panel1-sw1-auto[
 
 ```r
-  movies %&gt;%
+  ggplot2movies::movies %&gt;%
 * select(Action, Animation,
 *        Comedy, Drama,
 *        Documentary, Romance,
@@ -242,7 +242,7 @@ count: false
 .panel1-sw1-auto[
 
 ```r
-  movies %&gt;%
+  ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -279,7 +279,7 @@ count: false
 .panel1-sw1-auto[
 
 ```r
-  movies %&gt;%
+  ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -318,7 +318,7 @@ count: false
 .panel1-sw1-auto[
 
 ```r
-  movies %&gt;%
+  ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -387,7 +387,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-*movies
+*ggplot2movies::movies
 ```
 ]
  
@@ -420,7 +420,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
 * select(Action, Animation,
 *        Comedy, Drama,
 *        Documentary, Romance,
@@ -455,7 +455,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -492,7 +492,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -531,7 +531,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -566,7 +566,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -592,7 +592,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -620,7 +620,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -651,7 +651,7 @@ count: false
 .panel1-sw2-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   select(Action, Animation,
          Comedy, Drama,
          Documentary, Romance,
@@ -719,7 +719,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-*movies
+*ggplot2movies::movies
 ```
 ]
  
@@ -752,7 +752,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
 * ggplot(aes(x = rating,
 *            fill = ..x..))
 ```
@@ -769,7 +769,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   ggplot(aes(x = rating,
              fill = ..x..)) +
 * geom_histogram(bins = 20,
@@ -788,7 +788,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -808,7 +808,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -829,7 +829,7 @@ count: false
 .panel1-sw3-auto[
 
 ```r
-movies %&gt;%
+ggplot2movies::movies %&gt;%
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -875,7 +875,7 @@ movies %&gt;%
 
 ```r
 pop_hist &lt;-
-movies %&gt;% 
+ggplot2movies::movies %&gt;% 
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -915,7 +915,7 @@ count: false
 ```r
 set.seed(123)
 
-*movies
+*ggplot2movies::movies
 ```
 ]
  
@@ -950,7 +950,7 @@ count: false
 ```r
 set.seed(123)
 
- movies %&gt;%
+ ggplot2movies::movies %&gt;%
 * sample_n(1000)
 ```
 ]
@@ -1011,7 +1011,7 @@ set.seed(123)
 set.seed(123)
 
 movies_sample &lt;- 
-  movies %&gt;% 
+  ggplot2movies::movies %&gt;% 
   sample_n(1000)
 ```
 
@@ -1393,7 +1393,7 @@ count: false
 
 ```r
 do(10) *
-* (resample(movies) %&gt;%
+* (resample(ggplot2movies::movies) %&gt;%
 *    summarize(mean = mean(rating)))
 ```
 ]
@@ -1491,7 +1491,7 @@ count: false
 
 ```r
   do(1000) *
-* summarize(resample(movies),
+* summarize(resample(ggplot2movies::movies),
 *           mean = mean(rating))
 ```
 ]
@@ -2538,7 +2538,7 @@ count: false
 ```r
 not_tiny &lt;- 
   do(1000) *
-  summarize(resample(movies), 
+  summarize(resample(ggplot2movies::movies), 
             mean = mean(rating))
 ```
 

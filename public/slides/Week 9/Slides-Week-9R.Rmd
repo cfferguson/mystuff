@@ -173,7 +173,7 @@ kable(icon_desc,
 Now that we know how to pivot, we can just `group_by` genre type and then `tally`
 
 ```{r sw1, include = FALSE}
-  movies %>%
+  ggplot2movies::movies %>%
   select(Action, Animation, 
          Comedy, Drama, 
          Documentary, Romance, 
@@ -191,7 +191,7 @@ Now that we know how to pivot, we can just `group_by` genre type and then `tally
 ---
 
 ```{r sw2, include = FALSE}
-movies %>%
+ggplot2movies::movies %>%
   select(Action, Animation, 
          Comedy, Drama, 
          Documentary, Romance, 
@@ -221,7 +221,7 @@ Let's take a look at the ratings
 
 ```{r sw3, include = FALSE}
 
-movies %>% 
+ggplot2movies::movies %>% 
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -236,7 +236,7 @@ movies %>%
 ```{r echo=TRUE, eval=TRUE}
 
 pop_hist <-
-movies %>% 
+ggplot2movies::movies %>% 
   ggplot(aes(x = rating,
              fill = ..x..)) +
   geom_histogram(bins = 20,
@@ -255,7 +255,7 @@ We would like to produce a confidence interval for the population mean rating. L
 ```{r sw4, include = FALSE}
 set.seed(123)
 
- movies %>% 
+ ggplot2movies::movies %>% 
   sample_n(1000)
 ```
 
@@ -265,7 +265,7 @@ set.seed(123)
 set.seed(123)
 
 movies_sample <- 
-  movies %>% 
+  ggplot2movies::movies %>% 
   sample_n(1000)
 ```
 
@@ -338,7 +338,7 @@ To do a whole bunch we can run a `do` command with parentheses like so
 
 ```{r sw8, include = FALSE}
 do(10) * 
-  (resample(movies) %>% 
+  (resample(ggplot2movies::movies) %>% 
      summarize(mean = mean(rating)))
 ```
 
@@ -352,7 +352,7 @@ But a sample of 10 is so tiny. Let's try 1000 like before
 
 ```{r sw9, include = FALSE}
   do(1000) *
-  summarize(resample(movies), 
+  summarize(resample(ggplot2movies::movies), 
             mean = mean(rating))
 ```
 
@@ -363,7 +363,7 @@ But a sample of 10 is so tiny. Let's try 1000 like before
 ```{r echo=TRUE, eval=TRUE}
 not_tiny <- 
   do(1000) *
-  summarize(resample(movies), 
+  summarize(resample(ggplot2movies::movies), 
             mean = mean(rating))
 ```
 
@@ -423,7 +423,7 @@ pop_hist + rand_sample + rep_sample
 
 ```{r echo=FALSE, eval=TRUE}
 smaller_rand_samp <- 
-movies %>% 
+ggplot2movies::movies %>% 
   sample_n(100) %>%
    ggplot(aes(x = rating,
               fill = ..x..)) +
@@ -435,7 +435,7 @@ movies %>%
 
 so_tiny <-
 do(100) *
-  summarize(resample(movies), 
+  summarize(resample(ggplot2movies::movies), 
             mean = mean(rating))
 
 smaller_rep_samp <-
@@ -470,7 +470,7 @@ The repeated sample distribution does a better job for smaller samples...
 
 ```{r echo=FALSE, eval=TRUE}
 bigger_rand_samp <- 
-movies %>% 
+ggplot2movies::movies %>% 
   sample_n(10000) %>%
    ggplot(aes(x = rating,
               fill = ..x..)) +
@@ -482,7 +482,7 @@ movies %>%
 
 more_not_tiny <-
 do(10000) *
-  summarize(resample(movies), 
+  summarize(resample(ggplot2movies::movies), 
             mean = mean(rating))
 
 bigger_rep_samp <-
