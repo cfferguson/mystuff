@@ -79,7 +79,7 @@ wk_pre <- tibble(
 Area = c(book, 
          chalkboard),
 
-Description = c("Read *Testing Hypotheses* in the text",
+Description = c("Read *Bivariate Tables* in the text",
                "Download Chapter 9 Powerpoint and Lecture Textbook Notes"),
 
 Location = c("[Link](/readings/10-reading/#book-stuff)", 
