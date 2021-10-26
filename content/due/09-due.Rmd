@@ -80,7 +80,7 @@ Area = c(book,
          chalkboard),
 
 Description = c("Read *Testing Hypotheses* in the text",
-               "Download Chapter 8 Powerpoint and Lecture Textbook Notes"),
+               "Download Chapter 9 Powerpoint and Lecture Textbook Notes"),
 
 Location = c("[Link](/readings/10-reading/#book-stuff)", 
              "[Link](/materials/10-content/#textbook-notes)")
