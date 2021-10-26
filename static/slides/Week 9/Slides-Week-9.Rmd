@@ -31,6 +31,11 @@ ol.nostyle li.nostyle {
   
 }
 
+.brsmallmed {
+            display: block;
+            margin-bottom: 4em;
+        }
+
 .brmedium {
             display: block;
             margin-bottom: 7em;
@@ -107,7 +112,7 @@ shading_neq <- function(x, lower_bound, upper_bound) {
 
 # A Note About The Slides
 
-Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work. 
+Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work 
 
 ---
 
@@ -119,22 +124,25 @@ We're going to use some introduce some concepts from Chapter 7 here as well
 
 # Definitions
 
-The **margin of error** (MoE) is 
+The **margin of error** (**MoE**) is 
 
 --
 
->- *Formally* : the range of values above and below a sample statistic within a confidence interval. 
+>- *Formally* : the range of values above and below a sample statistic within a confidence interval
 
 --
 
->- *In a nutshell* : how many percentage points your results will differ from the real population value.
+>- *In a nutshell* : how many percentage points your results will differ from the real population value
 
 --
 
 >- NOT the same as a **confidence interval**
 
+
 --
 
+<br>
+<br>
 (Statistical) **significance** is 
 
 --
@@ -153,6 +161,9 @@ The **margin of error** (MoE) is
 
 # Interpretation 
 
+<br>
+<br>
+<br>
 .pull-left[
 <center>
 Example result:<br><br>
@@ -175,16 +186,18 @@ Your statistic will be within<br><b>3 percentage points</b> of the real populati
 <br>
 <br>
 <center>
-The MoE is a probability!
+The <b>MoE</b> is a probability!
 </center>
 
 ---
 
 # Back to Hypothesis Testing
 
-Recall:
-
-
+<br>
+<br>
+<center>Recall</center>
+<br>
+<br>
 
 --
 
@@ -374,24 +387,35 @@ ggplot(NULL, aes(c(-3,3))) +
 ---
 
 # Testing Methods
+<span class="brmedium"></span>
 
 --
 
-- Critical Value (*CV*)
+.pull-left[
+<center>
+<span class="brsmallmed"></span>
+<b><span style="color:#f4eebf;">Critical Value</span></b> (<b><i><span style="color:#f4eebf;">CV </span></i></b>)
+</center>
+]
 
 --
 
-- $p$-value
+.pull-right[
+<center>
+<span class="brsmallmed"></span>
+<b><span style="color:#f4eebf;">`p`</b> - <b><span style="color:#f4eebf;">value</b>
+</center>
+]
 
 ---
 
 # Critical Value
 
-- Uses a **test statistic** - determines how strong the disagreement between a sample mean and a null hypothesis. 
+- Uses a **test statistic** - determines how strong the disagreement between a sample mean and a null hypothesis 
 
 --
 
-- Idea: We should reject $H_0$ if the value of the test statistic is unusual when we assume $H_0$ to be true.
+- Idea: We should reject $H_0$ if the value of the test statistic is unusual when we assume $H_0$ to be true
 
 --
 
@@ -399,38 +423,39 @@ ggplot(NULL, aes(c(-3,3))) +
 
 --
 
-   - We choose a *CV* which forms a boundary between values that are considered unusual and values that are not.
+   - We choose a *CV* which forms a boundary between values that are considered unusual and values that are not
 
 --
 
-   - The region containing the unusual values is called the **critical region**.
+   - The region containing the unusual values is called the **critical region**
     
 --
 
-   - If the value of the test statistic is in the critical regions, we *reject* $H_0$.
+   - If the value of the test statistic is in the critical regions, we *reject* $H_0$
 
 ---
 
 # Transitioning (Again!)
-
+<span class="brmedium"><span>
 <center>
-Going from a `z`-distribution (known population variance using `z`-scores)
+Going from a `z`-distribution<br><br>
+<i>known population variance using `z`-scores</i>
 </center>
+
 
 --
 
-<br>
 <br>
 <br>
 <center>to</center>
-<br>
-<br>
-<br>
 
 --
 
+<br>
+<br>
 <center>
-a `t`-distribution (known sample variance using `t`-tests)
+a `t`-distribution<br><br>
+<i>known sample variance using `t`-tests</i>
 </center>
 
 ---
@@ -443,7 +468,7 @@ We have to assume that for a large enough sample size, the $t$-distribution will
 
 # Things to note
 
-- $t$-distribution table can be located in Appendix C.
+- $t$-distribution table can be located in Appendix C
 
 --
 
@@ -464,6 +489,24 @@ We have to assume that for a large enough sample size, the $t$-distribution will
 --
 
   - ***Homogeneity*** (for more than one sample) - Samples have a similar makeup
+
+---
+
+# Steps to Solving 
+
+1. *Interpret the Question into Layman's Terms*
+
+2. *Set Acceptable Threshold of Committing a Type I Error*
+
+3. *State the Research Hypothesis*
+
+4. *Calculate the Test Statistic*
+
+5. *Determine the Critical Value*
+
+6. *State the Decision Rule*
+
+7. *Interpret the Results*
 
 ---
 
@@ -530,7 +573,7 @@ That's essentially a degree of freedom (written <i>df </i>)
 
 ---
 
-# Formula for a $t$-distribution
+# One Sample Mean
 
 .center2[
 .pull-left[
@@ -596,16 +639,23 @@ kable(income,
 
 --
 
-We want to determine if the median household income of West Virginia counties is different than the national average.
-<span class="brlarge"><span> 
+Is the the median household income of West Virginia counties different than the national average?
 
---
+---
+
+## *Interpret the Question into Layman's Terms*
 
 From <b>Median Household Income</b>, we think WV (48,850 USD) is *practically lower* than the US (68,850 USD), but is it *significantly lower *?
 
 ---
 
-## Hypothesis
+## *Set Acceptable Threshold of Committing a Type I Error*
+
+$\alpha =0.5$
+
+---
+
+## *State the Research Hypothesis*
 
 <span class="brmedium"><span> 
 
@@ -622,171 +672,183 @@ $$H_1$$<br><br> The <b>Median Household Income</b> of West Virginia counties is 
 
 ---
 
-## Population & Sample
+## *Calculate the Test Statistic* (1/2)
 
-- $\mu = 68,703$ USD
+--
 
-- Sample
-  - $N=61$ people with $s=5075.28$ USD and $\overline{Y} = 45732.20$ USD
+.pull-left[
+<center>Population</center><br><br><br>
+$$\mu = \$68,703$$
+]
+
+--
+
+.pull-right[
+<center>Sample</center><br>
+$$N=61$$ $$s = \$5075.28$$ $$\overline{Y} = \$45732.20$$
+]
+
+--
   
-  - *df*: $61-1 = 60$
-
-- CV: $\pm 2$
+<br>
+<br>
+<center><i>df</i></center><br>
+$$61-1 = 60$$
 
 ---
 
-## Calulations
+## *Calculate the Test Statistic* (2/2)
+<span class="brmedium"><span> 
+<br>
 
 \begin{aligned}
-t &= \dfrac{19253.2-27334.0}{3075.28/\sqrt{50}} \\
- &\approx -18.58
+t &= \dfrac{45732.20-68703.00}{5075.28/\sqrt{61}} \\\\
+ &\approx -0.579
 \end{aligned}
-
-So we reject $H_0$. 
-
-Interpretation: The per capita income is significantly less than the national average!
- 
 
 ---
 
-# Two-sample $t$-test
+## *Determine the Critical Value*
+
+In Appendix C, we see that for $df = 60$ at $\alpha =0.05$, we have $t_{crit} = 1.671$ 
+
+---
+
+## *State the Decision Rule*
+
+Since $-0.579 < 1.671$ we reject $H_0$
+
+---
+
+## *Interpret the Results*
+
+*The <b>Median Household Income</b> is significantly less than the national average!*
+ 
+---
+
+# Two-sample Mean
 
 Used to compare one sample mean to another.
 
 - We use two different test: 
+
   - Equal variances
+  
   - Unequal variances (assumed)
 
 - **Homoscedasticity** – the assumption of equal variances.
 
 ---
 
-# Formulas
+# Difference Between Two Independent Means
 
-- $S_{\overline{Y_1}-\overline{Y_1}} = \sqrt{\dfrac{(N_1-1)\cdot s_1^2+(N_2-1)\cdot s_2^2}{(N_1+N_2)-2}}\cdot\sqrt{\dfrac{N_1+N_2}{N_1\cdot N_2}}$
+--
 
-- $t = \dfrac{\overline{Y_1}-\overline{Y_2}}{S_{\overline{Y_1}-\overline{Y_1}}}$
+>- Observations in each sample are not related
 
-- $df = (N_1+N_2)-2$
+>- Need to compare differences between the sample means
+
+--
+
+<br>
+.pull-left[
+<center>Estimated Standard Error</center><br>
+$$S_{\overline{Y_1}-\overline{Y_1}} = \sqrt{\dfrac{(N_1-1)\cdot s_1^2+(N_2-1)\cdot s_2^2}{(N_1+N_2)-2}}\cdot\sqrt{\dfrac{N_1+N_2}{N_1\cdot N_2}}$$
+]
+
+--
+
+.pull-right[
+<center>difference between means <i>t</i>-statistic</center><br>
+$$t = \dfrac{\overline{Y_1}-\overline{Y_2}}{S_{\overline{Y_1}-\overline{Y_1}}}$$
+]
+
+--
+  
+<br>
+<br>
+<center><i>df</i></center><br>
+$$df = (N_1+N_2)-2$$
+
+---
+
+# Difference Between Proportions
+
+<br>
+.pull-left[
+<center>Estimated Standard Error</center><br>
+$$S_{p_1 - p_2} = \sqrt{\dfrac{p_1(1-p_1)}{N_1} + \dfrac{p_2(1-p_2)}{N_2}}$$
+
+.pull-right[
+<center>difference between means <i>z</i>-statistic</center><br>
+$$z = \dfrac{p_1-p_2}{S_{p_1-p_2}}$$
+]
 
 ---
 
 # Example
 
-At the Olympic level of competition, even the smallest factors can make the difference between winning and losing. 
-
-Pelton (1983) has shown that Olympic marksmen shoot much better if they fire between heartbeats, rather than squeezing the trigger during a heartbeat.
-
-The small vibration caused by a heartbeat appears to be sufficient to affect the marksman’s aim.
+As part of the Pew Internet and American Life Project, researchers conducted two surveys in late 2009. The first survey asked a random sample of 800 U.S. teens about their use of social media and the Internet. A second survey posed similar questions to a random sample of 2253 U.S. adults. In these two studies, 73% of teens and 47% of adults said that they use social-networking sites. Use these results to construct and interpret a 95% confidence interval for the difference between the proportion of all U.S. teens and adults who use social-networking sites.
 
 ---
 
-# Samples
+## *Interpret the Question into Layman's Terms*
 
-A sample of six (6) Olympic marksmen fires a series of rounds while a researcher records heartbeats.  For each marksman, an accuracy score (out of 100) is recorded for shots fired during heartbeats and for shots fired between heartbeats.  Do the data indicate a significant difference? 
-
-```{r eval = TRUE, echo = FALSE}
-heart <- tibble(
-`During Heartbeats` = c(93, 90, 95, 92, 95, 91),
-
-`Between Heartbeats` = c(98,94,96,91,97,97)
-
-)
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(heart, 
-      escape = FALSE,
-      align = 'cc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")
-```
+Is there a difference between the percent of teens and adults who use social networking sites?
 
 ---
 
-# Setup
 
-- Research question: Is better accuracy achieved by marksmen when firing the trigger between heartbeats than during a heartbeat?
+## *Set Acceptable Threshold of Committing a Type I Error*
 
-- Hypothesis: 
-  - $H_0: \mu \geq 0$ – The average accuracy score is equal to or better when measured between heartbeats than during heartbeats.
-  - $H_1: \mu < 0$  – The average accuracy score is worse when measures between heartbeats than during heartbeats.
-
-- Alpha: $\alpha=0.05$
+$\alpha = 0.05$
 
 ---
 
-Appendix C: 
 
-- $df = 6-1 = 5$
+## *State the Research Hypothesis*
 
-- $t_{critical} = -2.015$ 
+<span class="brmedium"><span> 
 
-
-```{r eval = TRUE, echo = FALSE}
-heart_diff <- tibble(
-`During Heartbeats` = c(93, 90, 95, 92, 95, 91, NA),
-
-`Between Heartbeats` = c(98,94,96,91,97,97,NA),
-
-Difference = c(-5,-4,-1,1,-2,-6,-17),
-
-`Variance of Difference` = c(25,16,1,1,4,36,83)
-
-)
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(heart_diff , 
-      escape = FALSE,
-      align = 'cc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121")
-```
-
----
-
-# Descriptives
-
-- Mean: $\dfrac{-17}{6}\approx -2.83$
+.pull-left[
+$$H_0$$<br><br> 
+There is no difference between the proportion of teens and adults who use social media
+]
 
 --
 
-- SS: $83-\dfrac{(-17)^2}{6} \approx 34.83$
-
---
-
-- Variance: $\dfrac{34.83}{6-1} \approx 6.97$
-
---
-
-- Standard Deviation: $\sqrt{6.97} \approx 2.64$
+.pull-right[
+$$H_1$$<br><br> 
+There is a difference between the proportion of teens and adults who use social media
+]
 
 ---
 
-# Calculations
+## *Calculate the Test Statistic*
 
-- Standard Error: $\dfrac{2.64}{\sqrt{6}}\approx 1.08$
-
-- Test Statistic: $\dfrac{-2.83-0}{1.08}\approx -2.62$
+\begin{align}
+S_{p_1 - p_2} &= \sqrt{\dfrac{0.73(1-0.73)}{800} + \dfrac{0.47(1-0.47)}{2253}}\\\\
+&\approx 0.0189
+\end{align}
+<br>
+<br>
+\begin{align}
+z &= \dfrac{0.73-0.47}{0.0189}\\
+&\approx 13.76
+\end{align}
 
 ---
 
-# Decision
+## *State the Decision Rule*
 
-Since $-2.62<-2.015$, we reject $H_0$.
+$z=13.76$ is greater than $p$ value implying that we reject $H_0$
 
---
 
-Interpretation: Marksmen are significantly more accurate when they pull the trigger between heartbeats than during a heartbeat.
+---
+
+## *Interpret the Results*
+
+We are 95% confident that in late 2009 more teens than adults in the United States engaged in social media
 
 ---
 
