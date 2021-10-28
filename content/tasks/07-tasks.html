@@ -288,24 +288,24 @@ sigma_mil</code></pre>
 samples &lt;- replicate(3,rnorm(10, mu_mil,sigma_mil))
 
 samples</code></pre>
-<pre><code>##             [,1]       [,2]      [,3]
-##  [1,] 117492.796  254361.12 107296.49
-##  [2,] 182749.420 -101741.95 -49659.37
-##  [3,] 142119.326   94792.12 170237.17
-##  [4,] 180694.639  155364.88 170230.46
-##  [5,]  97549.252   87275.98  96764.74
-##  [6,] 143477.140   61879.01 -69562.64
-##  [7,]  86167.694  233084.54 150823.96
-##  [8,]  -3077.586   70450.67 228047.19
-##  [9,] -16089.190  -75623.62 -52678.87
-## [10,] 414024.226   37295.40  10980.69</code></pre></li>
+<pre><code>##            [,1]       [,2]       [,3]
+##  [1,] 190604.53 168894.244  304340.22
+##  [2,]  26747.56  58714.052  255498.95
+##  [3,] 197196.32 179517.810  124242.71
+##  [4,] 192551.17 124482.691  208702.53
+##  [5,]  89119.60 165553.294   57536.06
+##  [6,] 146383.44 -10248.663 -101937.37
+##  [7,] -16390.98 153453.254   12351.53
+##  [8,] 289388.62  43252.475   65431.40
+##  [9,]  35241.82   5970.147   26157.98
+## [10,] -64220.15 203004.668  163409.04</code></pre></li>
 <li><p>The mean of these 10 sets of means is</p>
 <pre class="r"><code>mean(samples)</code></pre>
-<pre><code>## [1] 97490.86</code></pre>
+<pre><code>## [1] 109831.6</code></pre>
 <p>or about <span class="boxed">105428</span>. We notice that the population mean and the mean of the sampling distribution are somewhat close, a feature that we should come to expect given the fact that <span class="math inline">\(\mu_Y = \mu_{\overline{Y}}\)</span>.</p></li>
 <li><p>The standard deviation of these 10 sets of means is</p>
 <pre class="r"><code>sd(samples)</code></pre>
-<pre><code>## [1] 113553.7</code></pre>
+<pre><code>## [1] 102748.5</code></pre>
 <p>or about <span class="boxed">122991</span>.</p></li>
 <li><p>The population distribution is positively skewed and not close to normal. Since a very small sample size is used in this problem, the histogram for the samples of size 3 does not look normal. The distributions appear unimodal. The fact that the sample distribution of the means tends toward normality because of the Central Limit Theorem would become even more apparent if we took samples of size 5 or 6. To show this, look at the plots below
 <img src="/tasks/07-tasks_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>

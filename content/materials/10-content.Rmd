@@ -85,8 +85,8 @@ showtext_auto()
 
 ```{r echo=FALSE}
 
-pptx_location <- "/lecture_notes/Week 10/SSDS_Ch9.pptx"
-docx_location <- "/lecture_notes/Week 10/SSDS_Ch9.docx"
+pptx_location <- "/lecture_notes/Week 12/SSDS_Ch10.pptx"
+docx_location <- "/lecture_notes/Week 12/SSDS_Ch10.docx"
 
 powerpoint_link <- function() {
   paste0("<a href=\"", pptx_location, "\">", as.character(fa("file-powerpoint", fill = "#d04423", width = "2em")), "</a>")
@@ -98,10 +98,10 @@ word_link <- function() {
 
 textitems <- tibble(
   
-  pptx <- c("Chapter 9 PowerPoint",
+  pptx <- c("Chapter 10 PowerPoint",
                powerpoint_link()),
   
-  docx <- c("Chapter 9 Notes",
+  docx <- c("Chapter 10 Notes",
             word_link())
   
 )
@@ -121,18 +121,17 @@ kable(textitems,
 ### In Class Notes
 <!--
 *posted during class time*
-
+-->
 
 ```{r echo = FALSE}
-knitr::include_url("/slides/Week 9/Slides-Week-9.html")
+knitr::include_url("/slides/Week 10/Slides-Week-10.html")
 ```
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-> Click [here](/slides/Week 9/Slides-Week-9.html){target="_blank"} for a larger version of the presentation.
+> Click [here](/slides/Week 10/Slides-Week-10.html){target="_blank"} for a larger version of the presentation.
 
-> Click [here](/slides/Week 9/Slides-Week-9.pdf){target="_blank"} here for a PDF of the presentation.
--->
+> Click [here](/slides/Week 10/Slides-Week-10.pdf){target="_blank"} here for a PDF of the presentation.
 
 ### R Walkthrough
 
@@ -157,12 +156,12 @@ downloadthis::download_file(
 
 <br>
 ```{r echo = FALSE}
-knitr::include_url("/slides/Week 9/Slides-Week-9R.html")
+knitr::include_url("/slides/Week 10/Slides-Week-10R.html")
 ```
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-> Click [here](/slides/Week 9/Slides-Week-9R.html){target="_blank"} for a larger version of the presentation.
+> Click [here](/slides/Week 10/Slides-Week-10R.html){target="_blank"} for a larger version of the presentation.
 
-> Click [here](/slides/Week 9/Slides-Week-9R.pdf){target="_blank"} here for a PDF of the presentation.
+> Click [here](/slides/Week 10/Slides-Week-10R.pdf){target="_blank"} here for a PDF of the presentation.
 -->

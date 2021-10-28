@@ -9,6 +9,8 @@ type: docs
 weight: 1
 ---
 
+# Text 
+
 ```{r echo=FALSE, message=FALSE}
 library(knitr)
 library(kableExtra)
@@ -29,7 +31,7 @@ read_schedule <- read_csv("read.csv",
                 Required == "unchecked" ~ as.character(fontawesome::fa("times-circle", fill = "#d9534f", height = "15px"))
               )) %>%
                   mutate(across(everything(), as.character)) %>%
-                    filter(Group == 10) %>% #CHANGE HERE
+                    filter(Group == "Q1") %>% #CHANGE HERE
                     select(-Group) %>%
                   filter_all(any_vars(!is.na(.))) %>% 
                   mutate(
@@ -53,3 +55,7 @@ kable(read_schedule,
   column_spec(6, width = "10em") %>%
   column_spec(7, width = "10em") 
 ```
+
+# Article
+
+Please download and read [*Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*](/handouts/Colbert&Woodrow2015) by Colbert & Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term ***regression to the mean*** and think abiut what it means in context and generally speaking. We'll be introducing this topic next week in class.

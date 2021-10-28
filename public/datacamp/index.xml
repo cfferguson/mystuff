@@ -52,24 +52,24 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-4
+EC1
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-9/23/21
+10/21/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-10/20/21
+11/3/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
-&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d9534f;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z&#34;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/04-module/&#34;&gt;Introduction to Data in R&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/01-extra/&#34;&gt;Analyzing Survey Data in R&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Language of data
+Introduction to survey data
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -87,7 +87,7 @@ Language of data
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Study types and cautionary tales
+Exploring categorical data
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -104,7 +104,7 @@ Study types and cautionary tales
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Sampling strategies and experimental design
+Exploring quantitative data
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -121,7 +121,7 @@ Sampling strategies and experimental design
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Case study
+Modeling quantitative data
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -290,24 +290,24 @@ Link
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-4
+EC2
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-9/23/21
+11/4/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-10/20/21
+11/18/21
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; vertical-align: middle !important;&#34;&gt;
-&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#428bca;overflow:visible;position:relative;&#34;&gt;
-&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;&gt;&lt;/path&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 512 512&#34; style=&#34;height:15px;width:15px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d9534f;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z&#34;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/04-module/&#34;&gt;Introduction to Data in R&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/02-extra/&#34;&gt;Fundamentals of Bayesian Data Analysis in R&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Language of data
+What is Bayesian Data Analysis?
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://edp613.asocialdatascientist.com/logos/dc-ico.png&#34; title=&#34;Slack Icon&#34; width=&#34;20&#34; alt=&#34;/logos/dc_small.png{width=20px}&#34; /&gt;&lt;/a&gt;
@@ -325,7 +325,7 @@ Language of data
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Study types and cautionary tales
+How does Bayesian inference work?
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -342,7 +342,7 @@ Study types and cautionary tales
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Sampling strategies and experimental design
+Why use Bayesian Data Analysis?
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
@@ -359,7 +359,7 @@ Sampling strategies and experimental design
 &lt;td style=&#34;text-align:center;width: 15em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 15em; vertical-align: middle !important;&#34;&gt;
-Case study
+Bayesian inference with Bayes’ theorem
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 5em; vertical-align: middle !important;&#34;&gt;
 &lt;/td&gt;

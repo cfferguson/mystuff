@@ -601,3 +601,12 @@ Elaboration tests
 ---
 
 ## That's it. Take a break before our R session!
+
+<br>
+<br>
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("img/sc.png")
+```
+
+
+.footnote[See more ridiculous correlations at [spurious correlations](https://www.tylervigen.com/spurious-correlations)]
