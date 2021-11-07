@@ -23,13 +23,84 @@ class: center, middle, inverse, title-slide
 
 
 &lt;script&gt;
-  function resizeIframe(obj) {
+function resizeIframe(obj) {
     obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
   }
 &lt;/script&gt;
 
 &lt;style&gt;
-  .hvr-sweep-to-left {
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.hvr-sweep-to-left {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -88,7 +159,7 @@ class: center, middle, inverse, title-slide
 width: 110px;
 height: 128px;
 z-index: 0;
-background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -212,20 +283,22 @@ count: false
 
 ```
 # A tibble: 87 × 14
-   name    height  mass hair_color  skin_color eye_color birth_year sex   gender
-   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
- 1 Luke S…    172    77 blond       fair       blue            19   male  mascu…
- 2 C-3PO      167    75 &lt;NA&gt;        gold       yellow         112   none  mascu…
- 3 R2-D2       96    32 &lt;NA&gt;        white, bl… red             33   none  mascu…
- 4 Darth …    202   136 none        white      yellow          41.9 male  mascu…
- 5 Leia O…    150    49 brown       light      brown           19   fema… femin…
- 6 Owen L…    178   120 brown, grey light      blue            52   male  mascu…
- 7 Beru W…    165    75 brown       light      blue            47   fema… femin…
- 8 R5-D4       97    32 &lt;NA&gt;        white, red red             NA   none  mascu…
- 9 Biggs …    183    84 black       light      brown           24   male  mascu…
-10 Obi-Wa…    182    77 auburn, wh… fair       blue-gray       57   male  mascu…
-# … with 77 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-#   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;
+   name         height  mass hair_color  skin_color eye_color
+   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;    
+ 1 Luke Skywal…    172    77 blond       fair       blue     
+ 2 C-3PO           167    75 &lt;NA&gt;        gold       yellow   
+ 3 R2-D2            96    32 &lt;NA&gt;        white, bl… red      
+ 4 Darth Vader     202   136 none        white      yellow   
+ 5 Leia Organa     150    49 brown       light      brown    
+ 6 Owen Lars       178   120 brown, grey light      blue     
+ 7 Beru Whites…    165    75 brown       light      blue     
+ 8 R5-D4            97    32 &lt;NA&gt;        white, red red      
+ 9 Biggs Darkl…    183    84 black       light      brown    
+10 Obi-Wan Ken…    182    77 auburn, wh… fair       blue-gray
+# … with 77 more rows, and 8 more variables:
+#   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
 ]
 
@@ -376,20 +449,22 @@ count: false
 
 ```
 # A tibble: 87 × 14
-   name    height  mass hair_color  skin_color eye_color birth_year sex   gender
-   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
- 1 Luke S…    172    77 blond       fair       blue            19   male  mascu…
- 2 C-3PO      167    75 &lt;NA&gt;        gold       yellow         112   none  mascu…
- 3 R2-D2       96    32 &lt;NA&gt;        white, bl… red             33   none  mascu…
- 4 Darth …    202   136 none        white      yellow          41.9 male  mascu…
- 5 Leia O…    150    49 brown       light      brown           19   fema… femin…
- 6 Owen L…    178   120 brown, grey light      blue            52   male  mascu…
- 7 Beru W…    165    75 brown       light      blue            47   fema… femin…
- 8 R5-D4       97    32 &lt;NA&gt;        white, red red             NA   none  mascu…
- 9 Biggs …    183    84 black       light      brown           24   male  mascu…
-10 Obi-Wa…    182    77 auburn, wh… fair       blue-gray       57   male  mascu…
-# … with 77 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-#   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;
+   name         height  mass hair_color  skin_color eye_color
+   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;    
+ 1 Luke Skywal…    172    77 blond       fair       blue     
+ 2 C-3PO           167    75 &lt;NA&gt;        gold       yellow   
+ 3 R2-D2            96    32 &lt;NA&gt;        white, bl… red      
+ 4 Darth Vader     202   136 none        white      yellow   
+ 5 Leia Organa     150    49 brown       light      brown    
+ 6 Owen Lars       178   120 brown, grey light      blue     
+ 7 Beru Whites…    165    75 brown       light      blue     
+ 8 R5-D4            97    32 &lt;NA&gt;        white, red red      
+ 9 Biggs Darkl…    183    84 black       light      brown    
+10 Obi-Wan Ken…    182    77 auburn, wh… fair       blue-gray
+# … with 77 more rows, and 8 more variables:
+#   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
 ]
 
@@ -507,20 +582,22 @@ count: false
 
 ```
 # A tibble: 87 × 14
-   name    height  mass hair_color  skin_color eye_color birth_year sex   gender
-   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
- 1 Luke S…    172    77 blond       fair       blue            19   male  mascu…
- 2 C-3PO      167    75 &lt;NA&gt;        gold       yellow         112   none  mascu…
- 3 R2-D2       96    32 &lt;NA&gt;        white, bl… red             33   none  mascu…
- 4 Darth …    202   136 none        white      yellow          41.9 male  mascu…
- 5 Leia O…    150    49 brown       light      brown           19   fema… femin…
- 6 Owen L…    178   120 brown, grey light      blue            52   male  mascu…
- 7 Beru W…    165    75 brown       light      blue            47   fema… femin…
- 8 R5-D4       97    32 &lt;NA&gt;        white, red red             NA   none  mascu…
- 9 Biggs …    183    84 black       light      brown           24   male  mascu…
-10 Obi-Wa…    182    77 auburn, wh… fair       blue-gray       57   male  mascu…
-# … with 77 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-#   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;
+   name         height  mass hair_color  skin_color eye_color
+   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;    
+ 1 Luke Skywal…    172    77 blond       fair       blue     
+ 2 C-3PO           167    75 &lt;NA&gt;        gold       yellow   
+ 3 R2-D2            96    32 &lt;NA&gt;        white, bl… red      
+ 4 Darth Vader     202   136 none        white      yellow   
+ 5 Leia Organa     150    49 brown       light      brown    
+ 6 Owen Lars       178   120 brown, grey light      blue     
+ 7 Beru Whites…    165    75 brown       light      blue     
+ 8 R5-D4            97    32 &lt;NA&gt;        white, red red      
+ 9 Biggs Darkl…    183    84 black       light      brown    
+10 Obi-Wan Ken…    182    77 auburn, wh… fair       blue-gray
+# … with 77 more rows, and 8 more variables:
+#   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
 ]
 
@@ -644,20 +721,22 @@ count: false
 
 ```
 # A tibble: 87 × 14
-   name    height  mass hair_color  skin_color eye_color birth_year sex   gender
-   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
- 1 Luke S…    172    77 blond       fair       blue            19   male  mascu…
- 2 C-3PO      167    75 &lt;NA&gt;        gold       yellow         112   none  mascu…
- 3 R2-D2       96    32 &lt;NA&gt;        white, bl… red             33   none  mascu…
- 4 Darth …    202   136 none        white      yellow          41.9 male  mascu…
- 5 Leia O…    150    49 brown       light      brown           19   fema… femin…
- 6 Owen L…    178   120 brown, grey light      blue            52   male  mascu…
- 7 Beru W…    165    75 brown       light      blue            47   fema… femin…
- 8 R5-D4       97    32 &lt;NA&gt;        white, red red             NA   none  mascu…
- 9 Biggs …    183    84 black       light      brown           24   male  mascu…
-10 Obi-Wa…    182    77 auburn, wh… fair       blue-gray       57   male  mascu…
-# … with 77 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-#   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;
+   name         height  mass hair_color  skin_color eye_color
+   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;    
+ 1 Luke Skywal…    172    77 blond       fair       blue     
+ 2 C-3PO           167    75 &lt;NA&gt;        gold       yellow   
+ 3 R2-D2            96    32 &lt;NA&gt;        white, bl… red      
+ 4 Darth Vader     202   136 none        white      yellow   
+ 5 Leia Organa     150    49 brown       light      brown    
+ 6 Owen Lars       178   120 brown, grey light      blue     
+ 7 Beru Whites…    165    75 brown       light      blue     
+ 8 R5-D4            97    32 &lt;NA&gt;        white, red red      
+ 9 Biggs Darkl…    183    84 black       light      brown    
+10 Obi-Wan Ken…    182    77 auburn, wh… fair       blue-gray
+# … with 77 more rows, and 8 more variables:
+#   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,
+#   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
 ]
 

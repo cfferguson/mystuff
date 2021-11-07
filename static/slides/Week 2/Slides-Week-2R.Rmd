@@ -14,10 +14,93 @@ output:
          scroll: false
 ---
 
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
 ```{r echo = FALSE, purl = FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#bff4ee",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
   table_row_border_color = "#212121",
   table_row_even_background_color = "#212121",
   footnote_font_size = "0.6em",
@@ -25,14 +108,13 @@ xaringanthemer::style_duo(
   text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
 
-xaringanExtra::use_xaringan_extra(c("tile_view",
-                                    "animate_css",
-                                    "tachyons"))
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
-  position = xaringanExtra::css_position(top = "1em", right = "1em"))
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+  )
 ```
 
 # Looking at Data Like You're Used to
@@ -85,9 +167,9 @@ library(gapminder)
 
 ## Look at the variables inside a data frame
 
->- To specify a single variable from a data frame, use the dollar sign `$`.
+To specify a single variable from a data frame, use the dollar sign `$`.
 
-```{r  echo = TRUE}
+```{r  echo = TRUE, out.width="70%"}
 head(gapminder$lifeExp)
 ```
 
@@ -99,9 +181,9 @@ summary(gapminder$lifeExp)
 
 ## Plotting
 
->- We can visualize the data.
+We can visualize the data.
 
-```{r echo = TRUE, fig.align='center', out.width="45%"}
+```{r echo = TRUE, fig.align='center', out.width="35%"}
 hist(gapminder$lifeExp)
 ```
 
@@ -146,7 +228,7 @@ table(gapminder$continent)
 
 ## And we can even plot them!
 
-```{r echo = TRUE, fig.align='center', out.width="45%"}
+```{r echo = TRUE, fig.align='center', out.width="35%"}
 barplot(table(gapminder$continent))
 ```
 

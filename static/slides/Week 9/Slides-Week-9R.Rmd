@@ -37,6 +37,27 @@ section p {
     margin: auto;
 }
 
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
 section {
     height: 600px;
     width: 60%;
@@ -57,9 +78,7 @@ section p {
 }
 
 #center {
-
 text-align: center;
-
 }
 
 .center p {
@@ -98,6 +117,9 @@ showtext_auto()
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#f4eebf",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
   table_row_border_color = "#212121",
   table_row_even_background_color = "#212121",
   footnote_font_size = "0.6em",
@@ -108,10 +130,10 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
   position = xaringanExtra::css_position(top = "1em", right = "1em")
-  )
+)
 ```
 
 # Packages needed and a Note about Icons
@@ -172,7 +194,7 @@ kable(icon_desc,
 
 Now that we know how to pivot, we can just `group_by` genre type and then `tally`
 
-```{r sw1, include = FALSE}
+```{r sw1, include = FALSE, echo=TRUE}
   ggplot2movies::movies %>%
   select(Action, Animation, 
          Comedy, Drama, 
@@ -184,7 +206,7 @@ Now that we know how to pivot, we can just `group_by` genre type and then `tally
   tally(value)
 ```
 
-`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100))`
 
 .right[`r fa("stop", fill = "#ff6347")`]
 
@@ -211,7 +233,7 @@ ggplot(aes(x = genre,
   theme_minimal()
 ```
 
-`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(95, 110))`
 
 ---
 
@@ -231,7 +253,7 @@ ggplot2movies::movies %>%
 
 ```
 
-`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), width = c(95, 115))`
 
 ```{r echo=TRUE, eval=TRUE}
 
@@ -283,7 +305,7 @@ ggplot(movies_sample,
        theme_minimal()
 ```
 
-`r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -303,7 +325,9 @@ rand_sample <-
 
 # Population Estimation
 
-We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. A good way to to this is to add parentheses around a variable declaration like so
+We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. 
+
+A good way to to this is to add parentheses around a variable declaration like so
 
 ```{r sw6, include = FALSE}
 movies_sample %>% 
@@ -342,7 +366,7 @@ do(10) *
      summarize(mean = mean(rating)))
 ```
 
-`r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"), width = c(95, 115))`
 
 .right[`r fa("forward", fill = "#4682b4")`]
 
@@ -356,7 +380,7 @@ But a sample of 10 is so tiny. Let's try 1000 like before
             mean = mean(rating))
 ```
 
-`r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -382,7 +406,7 @@ ggplot(not_tiny,
   theme_minimal()
 ```
 
-`r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -397,21 +421,6 @@ rep_sample <-
   scale_fill_viridis(direction = -1) +
   theme_minimal()
 ```
-
----
-
-# Comparison for $n=1000$
-
-- Left - original population distribution
-- Middle - random sample distribution 
-- Right - repeated sample distribution
-
-```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
-
-pop_hist + rand_sample + rep_sample
-
-```
-
 
 ---
 
@@ -453,6 +462,20 @@ ggplot(so_tiny,
 ```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
 
 pop_hist + smaller_rand_samp + smaller_rep_samp
+
+```
+
+---
+
+# Comparison for $n=1000$
+
+- Left - original population distribution
+- Middle - random sample distribution 
+- Right - repeated sample distribution
+
+```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
+
+pop_hist + rand_sample + rep_sample
 
 ```
 
@@ -571,13 +594,4 @@ The interpretation is virtually the same here.
 ---
 
 ## Thats it!
-
-<center>
-```{r tweet, echo = FALSE, eval = TRUE, out.height="30%", out.width="30%", purl=FALSE}
-tweet_embed("https://twitter.com/allison_horst/status/1190001300622036992",
-            maxwidth = 75,
-            theme = "dark",
-            plain = TRUE)
-```
-</center>
 

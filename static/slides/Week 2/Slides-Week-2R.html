@@ -22,12 +22,92 @@ class: center, middle, inverse, title-slide
 ---
 
 
+&lt;script&gt;
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+&lt;/style&gt;
+
 <div>
 <style type="text/css">.xaringan-extra-logo {
 width: 110px;
 height: 128px;
 z-index: 0;
-background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -108,7 +188,7 @@ library(gapminder)
 
 ## Look at the variables inside a data frame
 
-&gt;- To specify a single variable from a data frame, use the dollar sign `$`.
+To specify a single variable from a data frame, use the dollar sign `$`.
 
 
 ```r
@@ -116,7 +196,7 @@ head(gapminder$lifeExp)
 ```
 
 ```
-## [1] 28.801 30.332 31.997 34.020 36.088 38.438
+[1] 28.801 30.332 31.997 34.020 36.088 38.438
 ```
 
 
@@ -125,22 +205,22 @@ summary(gapminder$lifeExp)
 ```
 
 ```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   23.60   48.20   60.71   59.47   70.85   82.60
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.60   48.20   60.71   59.47   70.85   82.60 
 ```
 
 ---
 
 ## Plotting
 
-&gt;- We can visualize the data.
+We can visualize the data.
 
 
 ```r
 hist(gapminder$lifeExp)
 ```
 
-&lt;img src="Slides-Week-2R_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-2R_files/figure-html/unnamed-chunk-6-1.png" width="35%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -152,7 +232,7 @@ class(gapminder$continent)
 ```
 
 ```
-## [1] "factor"
+[1] "factor"
 ```
 
 
@@ -162,8 +242,8 @@ summary(gapminder$continent)
 ```
 
 ```
-##   Africa Americas     Asia   Europe  Oceania 
-##      624      300      396      360       24
+  Africa Americas     Asia   Europe  Oceania 
+     624      300      396      360       24 
 ```
 
 ---
@@ -176,7 +256,7 @@ levels(gapminder$continent)
 ```
 
 ```
-## [1] "Africa"   "Americas" "Asia"     "Europe"   "Oceania"
+[1] "Africa"   "Americas" "Asia"     "Europe"   "Oceania" 
 ```
 
 &gt;- The __levels__ of the factor `continent` are "Africa", "Americas", etc.
@@ -187,7 +267,7 @@ nlevels(gapminder$continent)
 ```
 
 ```
-## [1] 5
+[1] 5
 ```
 
 &gt;-  __nlevels__ tells you how many there are.
@@ -202,9 +282,9 @@ table(gapminder$continent)
 ```
 
 ```
-## 
-##   Africa Americas     Asia   Europe  Oceania 
-##      624      300      396      360       24
+
+  Africa Americas     Asia   Europe  Oceania 
+     624      300      396      360       24 
 ```
 
 ---
@@ -216,7 +296,7 @@ table(gapminder$continent)
 barplot(table(gapminder$continent))
 ```
 
-&lt;img src="Slides-Week-2R_files/figure-html/unnamed-chunk-12-1.png" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Slides-Week-2R_files/figure-html/unnamed-chunk-12-1.png" width="35%" style="display: block; margin: auto;" /&gt;
 
 ---
 

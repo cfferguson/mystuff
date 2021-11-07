@@ -99,7 +99,9 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #f4eebf;
+  color: #b2dfdb;
+  background-color: transparent;
+  padding: 2px;
 }
 .remark-slide-number {
   color: #FEFEFE;

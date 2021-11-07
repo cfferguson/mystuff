@@ -29,54 +29,75 @@ class: center, middle, inverse, title-slide
 &lt;/script&gt;
 
 &lt;style&gt;
-  .hvr-sweep-to-left {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.25s;
-    transition-duration: 0.25s;
-  }
+section {
+    display: flex;
+    display: -webkit-flex;
+}
 
-.hvr-sweep-to-left:before {
-  content: "";
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #761756;
-    -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
-  color: white;
-}
-
-.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-.remark-code{line-height: 1.5; font-size: 80%}
-@media print {
-  .has-continuation {
-    display: block;
-  }
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 &lt;/style&gt;
@@ -88,7 +109,7 @@ class: center, middle, inverse, title-slide
 width: 110px;
 height: 128px;
 z-index: 0;
-background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -127,12 +148,14 @@ top:1em;right:1em;
 
 --
 
-3. After you have saved this file as `whatever.R`, go to the menu and this week try running running this shortcut to **Session &gt; Set Working Directory &gt; To Source File Location** at the top of your script
+3. After you have saved this file as `whatever.R`, go to the menu and this week try running the following alternative to **Session &gt; Set Working Directory &gt; To Source File Location** at the top of your script
 
+.center2[
 
 ```r
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
+]
 
 ---
 
@@ -202,19 +225,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -234,19 +258,20 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -267,14 +292,15 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 5 × 10
-   Rank AllPos AllNeg TopPos TopNeg Movie      ReleaseDate ReleaseMonth Revenues
-  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
-1     1    238     48     38      3 Avatar (F… 12/18/09    Dec            7.61e8
-2     2    145     21     36      8 Titanic (… 12/19/97    Dec            6.59e8
-3     3    268     22     38      7 Marvel's … 5/4/12      May            6.23e8
-4     4    268     18     42      4 The Dark … 7/18/08     Jul            5.35e8
-5     5    107     81     19     31 Star Wars… 5/19/99     May            4.75e8
-# … with 1 more variable: year &lt;dbl&gt;
+   Rank AllPos AllNeg TopPos TopNeg Movie         ReleaseDate
+  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;      
+1     1    238     48     38      3 Avatar (Fox)  12/18/09   
+2     2    145     21     36      8 Titanic (Par… 12/19/97   
+3     3    268     22     38      7 Marvel's The… 5/4/12     
+4     4    268     18     42      4 The Dark Kni… 7/18/08    
+5     5    107     81     19     31 Star Wars: E… 5/19/99    
+# … with 3 more variables: ReleaseMonth &lt;chr&gt;,
+#   Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -331,17 +357,17 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw1-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 73.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
 .panel2-sw1-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 24.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -349,7 +375,7 @@ boxoffice %&gt;%
   color: white;
   width: NA%;
   hight: 33%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -377,19 +403,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -409,19 +436,20 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -442,14 +470,15 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 5 × 10
-   Rank AllPos AllNeg TopPos TopNeg Movie      ReleaseDate ReleaseMonth Revenues
-  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
-1   714    151     45     26     10 Cloverfie… 1/18/08     Jan          80048167
-2   715     19     15      3      1 Footloose… 2/17/84     Feb          80035796
-3   716     39     96      6     24 Dear John… 2/5/10      Feb          80014842
-4   717      5      8      0      1 A Star Is… 12/17/76    Dec          80000605
-5   718     46      2      6      0 Fantasia … 11/13/40    Nov          80000076
-# … with 1 more variable: year &lt;dbl&gt;
+   Rank AllPos AllNeg TopPos TopNeg Movie         ReleaseDate
+  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;      
+1   714    151     45     26     10 Cloverfield … 1/18/08    
+2   715     19     15      3      1 Footloose (1… 2/17/84    
+3   716     39     96      6     24 Dear John (S… 2/5/10     
+4   717      5      8      0      1 A Star Is Bo… 12/17/76   
+5   718     46      2      6      0 Fantasia (Di… 11/13/40   
+# … with 3 more variables: ReleaseMonth &lt;chr&gt;,
+#   Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -506,17 +535,17 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw2-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 73.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
 .panel2-sw2-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 24.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -524,7 +553,7 @@ boxoffice %&gt;%
   color: white;
   width: NA%;
   hight: 33%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -552,19 +581,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -585,19 +615,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -672,7 +703,7 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw3-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 42%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -680,7 +711,7 @@ boxoffice %&gt;%
 }
 .panel2-sw3-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 56%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -799,7 +830,7 @@ boxoffice_annualnum %&gt;%
 &lt;style&gt;
 .panel1-sw4a-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -807,7 +838,7 @@ boxoffice_annualnum %&gt;%
 }
 .panel2-sw4a-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -909,7 +940,7 @@ boxoffice_annualnum %&gt;%
 &lt;style&gt;
 .panel1-sw4b-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -917,7 +948,7 @@ boxoffice_annualnum %&gt;%
 }
 .panel2-sw4b-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1020,7 +1051,7 @@ ggplot(boxoffice_annualnum,
 &lt;style&gt;
 .panel1-sw4c-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1028,7 +1059,7 @@ ggplot(boxoffice_annualnum,
 }
 .panel2-sw4c-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1070,19 +1101,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1103,19 +1135,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1128,7 +1161,41 @@ count: false
 ```r
 boxoffice %&gt;%
   group_by(year) %&gt;%
-* tally(name = "number of movies")
+* tally()
+```
+]
+ 
+.panel2-sw5a-auto[
+
+```
+# A tibble: 55 × 2
+    year     n
+   &lt;dbl&gt; &lt;int&gt;
+ 1  1937     1
+ 2  1939     1
+ 3  1940     2
+ 4  1942     1
+ 5  1950     1
+ 6  1953     1
+ 7  1955     1
+ 8  1956     1
+ 9  1961     1
+10  1964     1
+# … with 45 more rows
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw5a-auto[
+
+```r
+boxoffice %&gt;%
+  group_by(year) %&gt;%
+  tally() %&gt;%
+* rename(`number of movies` = n)
 ```
 ]
  
@@ -1161,7 +1228,8 @@ count: false
 ```r
 boxoffice %&gt;%
   group_by(year) %&gt;%
-  tally(name = "number of movies") %&gt;%
+  tally() %&gt;%
+  rename(`number of movies` = n) %&gt;%
 * ungroup()
 ```
 ]
@@ -1195,7 +1263,8 @@ count: false
 ```r
 boxoffice %&gt;%
   group_by(year) %&gt;%
-  tally(name = "number of movies") %&gt;%
+  tally() %&gt;%
+  rename(`number of movies` = n) %&gt;%
   ungroup() %&gt;%
 * filter(`number of movies` ==
 *          max(`number of movies`))
@@ -1215,17 +1284,17 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw5a-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 73.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
 .panel2-sw5a-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 24.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -1233,7 +1302,7 @@ boxoffice %&gt;%
   color: white;
   width: NA%;
   hight: 33%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -1261,19 +1330,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1294,19 +1364,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1406,7 +1477,7 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw5b-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 42.9333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1414,7 +1485,7 @@ boxoffice %&gt;%
 }
 .panel2-sw5b-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 55.0666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1452,19 +1523,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1485,19 +1557,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1519,19 +1592,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 11
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 2 more variables: year &lt;dbl&gt;,
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 4 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;,
 #   number of movies &lt;int&gt;
 ```
 ]
@@ -1554,19 +1628,20 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 718 × 11
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 2 more variables: year &lt;dbl&gt;,
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 4 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;,
 #   number of movies &lt;int&gt;
 ```
 ]
@@ -1590,19 +1665,21 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 55 × 11
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 8     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
- 9    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-10    11     84     10     14      1 The Lion… 6/15/94     Jun            4.23e8
-# … with 45 more rows, and 2 more variables: year &lt;dbl&gt;, number of movies &lt;int&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 8     9     92      2     17      1 E.T.: The E… 6/11/82    
+ 9    10    119    101     16     25 Pirates of … 7/7/06     
+10    11     84     10     14      1 The Lion Ki… 6/15/94    
+# … with 45 more rows, and 4 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;,
+#   number of movies &lt;int&gt;
 ```
 ]
 
@@ -1627,10 +1704,11 @@ boxoffice %&gt;%
 
 ```
 # A tibble: 1 × 11
-   Rank AllPos AllNeg TopPos TopNeg Movie      ReleaseDate ReleaseMonth Revenues
-  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
-1    12    252      3     41      0 Toy Story… 6/18/10     Jun            4.15e8
-# … with 2 more variables: year &lt;dbl&gt;, number of movies &lt;int&gt;
+   Rank AllPos AllNeg TopPos TopNeg Movie         ReleaseDate
+  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;      
+1    12    252      3     41      0 Toy Story 3 … 6/18/10    
+# … with 4 more variables: ReleaseMonth &lt;chr&gt;,
+#   Revenues &lt;dbl&gt;, year &lt;dbl&gt;, number of movies &lt;int&gt;
 ```
 ]
 
@@ -1665,7 +1743,7 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-sw5c-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 43.1943127962085%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1673,7 +1751,7 @@ boxoffice %&gt;%
 }
 .panel2-sw5c-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 54.8056872037915%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1711,19 +1789,20 @@ count: false
 
 ```
 # A tibble: 718 × 10
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1744,19 +1823,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 718 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1     1    238     48     38      3 Avatar (… 12/18/09    Dec            7.61e8
- 2     2    145     21     36      8 Titanic … 12/19/97    Dec            6.59e8
- 3     3    268     22     38      7 Marvel's… 5/4/12      May            6.23e8
- 4     4    268     18     42      4 The Dark… 7/18/08     Jul            5.35e8
- 5     5    107     81     19     31 Star War… 5/19/99     May            4.75e8
- 6     6     63      4     15      2 Star War… 5/25/77     May            4.61e8
- 7     7    256     39     34     11 The Dark… 7/20/12     Jul            4.48e8
- 8     8    185     23     36      5 Shrek 2 … 5/19/04     May            4.41e8
- 9     9     92      2     17      1 E.T.: Th… 6/11/82     Jun            4.35e8
-10    10    119    101     16     25 Pirates … 7/7/06      Jul            4.23e8
-# … with 708 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1     1    238     48     38      3 Avatar (Fox) 12/18/09   
+ 2     2    145     21     36      8 Titanic (Pa… 12/19/97   
+ 3     3    268     22     38      7 Marvel's Th… 5/4/12     
+ 4     4    268     18     42      4 The Dark Kn… 7/18/08    
+ 5     5    107     81     19     31 Star Wars: … 5/19/99    
+ 6     6     63      4     15      2 Star Wars (… 5/25/77    
+ 7     7    256     39     34     11 The Dark Kn… 7/20/12    
+ 8     8    185     23     36      5 Shrek 2 (Dr… 5/19/04    
+ 9     9     92      2     17      1 E.T.: The E… 6/11/82    
+10    10    119    101     16     25 Pirates of … 7/7/06     
+# … with 708 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1778,19 +1858,20 @@ boxoffice %&gt;%
 ```
 # A tibble: 55 × 10
 # Groups:   year [55]
-    Rank AllPos AllNeg TopPos TopNeg Movie     ReleaseDate ReleaseMonth Revenues
-   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;
- 1   128     64      3     15      2 Gone wit… 12/15/39    Dec            1.99e8
- 2   145     39      1      6      0 Snow Whi… 12/21/37    Dec            1.85e8
- 3   249     36      1      5      0 101 Dalm… 1/25/61     Jan            1.45e8
- 4   408     36      1      4      0 American… 8/1/73      Aug            1.15e8
- 5   424     49      2      5      2 One Flew… 11/20/75    Nov            1.12e8
- 6   427     28      5      3      2 Doctor Z… 12/22/65    Dec            1.12e8
- 7   430      7     15      0      1 Porky's … 3/19/82     Mar            1.11e8
- 8   473     42      6      5      2 The Grad… 12/21/67    Dec            1.05e8
- 9   488     41      4      4      0 Bambi (D… 8/13/42     Aug            1.03e8
-10   496     40      5      3      3 Butch Ca… 9/23/69     Sep            1.02e8
-# … with 45 more rows, and 1 more variable: year &lt;dbl&gt;
+    Rank AllPos AllNeg TopPos TopNeg Movie        ReleaseDate
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      
+ 1   128     64      3     15      2 Gone with t… 12/15/39   
+ 2   145     39      1      6      0 Snow White … 12/21/37   
+ 3   249     36      1      5      0 101 Dalmati… 1/25/61    
+ 4   408     36      1      4      0 American Gr… 8/1/73     
+ 5   424     49      2      5      2 One Flew Ov… 11/20/75   
+ 6   427     28      5      3      2 Doctor Zhiv… 12/22/65   
+ 7   430      7     15      0      1 Porky's (Fo… 3/19/82    
+ 8   473     42      6      5      2 The Graduat… 12/21/67   
+ 9   488     41      4      4      0 Bambi (Disn… 8/13/42    
+10   496     40      5      3      3 Butch Cassi… 9/23/69    
+# … with 45 more rows, and 3 more variables:
+#   ReleaseMonth &lt;chr&gt;, Revenues &lt;dbl&gt;, year &lt;dbl&gt;
 ```
 ]
 
@@ -1813,18 +1894,18 @@ boxoffice %&gt;%
 ```
 # A tibble: 55 × 3
 # Groups:   year [55]
-    Rank Movie                                             year
-   &lt;dbl&gt; &lt;chr&gt;                                            &lt;dbl&gt;
- 1   128 Gone with the Wind (MGM)                          1939
- 2   145 Snow White and the Seven Dwarfs (Disney / RKO)    1937
- 3   249 101 Dalmatians (1961) (Disney)                    1961
- 4   408 American Graffiti (Universal)                     1973
- 5   424 One Flew Over the Cuckoo's Nest (United Artists)  1975
- 6   427 Doctor Zhivago (MGM)                              1965
- 7   430 Porky's (Fox)                                     1982
- 8   473 The Graduate (AVCO Embassy)                       1967
- 9   488 Bambi (Disney / RKO)                              1942
-10   496 Butch Cassidy and the Sundance Kid (Fox)          1969
+    Rank Movie                                           year
+   &lt;dbl&gt; &lt;chr&gt;                                          &lt;dbl&gt;
+ 1   128 Gone with the Wind (MGM)                        1939
+ 2   145 Snow White and the Seven Dwarfs (Disney / RKO)  1937
+ 3   249 101 Dalmatians (1961) (Disney)                  1961
+ 4   408 American Graffiti (Universal)                   1973
+ 5   424 One Flew Over the Cuckoo's Nest (United Artis…  1975
+ 6   427 Doctor Zhivago (MGM)                            1965
+ 7   430 Porky's (Fox)                                   1982
+ 8   473 The Graduate (AVCO Embassy)                     1967
+ 9   488 Bambi (Disney / RKO)                            1942
+10   496 Butch Cassidy and the Sundance Kid (Fox)        1969
 # … with 45 more rows
 ```
 ]
@@ -1839,7 +1920,7 @@ count: false
 boxoffice %&gt;%
   group_by(year) %&gt;%
   filter(Rank == max(Rank)) %&gt;%
-  select(Rank, Movie, year)%&gt;%
+  select(Rank, Movie, year) %&gt;%
 * arrange(-year)
 ```
 ]
@@ -1875,7 +1956,7 @@ count: false
 boxoffice %&gt;%
   group_by(year) %&gt;%
   filter(Rank == max(Rank)) %&gt;%
-  select(Rank, Movie, year)%&gt;%
+  select(Rank, Movie, year) %&gt;%
   arrange(-year) %&gt;%
 * ungroup()
 ```
@@ -1904,7 +1985,7 @@ boxoffice %&gt;%
 &lt;style&gt;
 .panel1-swiba-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 42%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1912,7 +1993,7 @@ boxoffice %&gt;%
 }
 .panel2-swiba-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 56%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1938,7 +2019,7 @@ top_movie_year &lt;-
   boxoffice %&gt;%
   group_by(year) %&gt;%
   filter(Rank == max(Rank)) %&gt;%
-  select(Rank, Movie, year)%&gt;%
+  select(Rank, Movie, year) %&gt;%
   arrange(-year) %&gt;%
   ungroup()
 ```
@@ -2056,7 +2137,7 @@ ggplot(top_movie_year,
 &lt;style&gt;
 .panel1-swibb-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 51.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2064,7 +2145,7 @@ ggplot(top_movie_year,
 }
 .panel2-swibb-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 46.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2195,7 +2276,7 @@ ggplot(top_movie_year,
 &lt;style&gt;
 .panel1-swibc-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 51.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2203,7 +2284,7 @@ ggplot(top_movie_year,
 }
 .panel2-swibc-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 46.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2369,7 +2450,7 @@ ggplot(top_movie_year,
 &lt;style&gt;
 .panel1-swibd-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 51.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2377,7 +2458,7 @@ ggplot(top_movie_year,
 }
 .panel2-swibd-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 46.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2430,25 +2511,25 @@ count: false
 
 ```
 # A tibble: 33 × 25
-   Team      `Total Responde… `Total Democrat… `Asian Democrat` `Black Democrat`
-   &lt;chr&gt;                &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
- 1 Arizona …              148               39                2                7
- 2 Atlanta …              188               59                3               27
- 3 Baltimor…              150               56                5               14
- 4 Buffalo …               92               22                2                3
- 5 Carolina…              164               51                4               16
- 6 Chicago …              285               94                5               16
- 7 Cincinna…              106               37                0                6
- 8 Clevelan…              105               34                2                3
- 9 Dallas C…              438              128                5               30
-10 Denver B…              313              100                4               15
-# … with 23 more rows, and 20 more variables: Hispanic Democrat &lt;dbl&gt;,
-#   White Democrat &lt;dbl&gt;, Other Democrat &lt;dbl&gt;, Total Independents &lt;dbl&gt;,
-#   Asian Independent &lt;dbl&gt;, Black Independent &lt;dbl&gt;,
-#   Hispanic Independent &lt;dbl&gt;, White Independent &lt;dbl&gt;,
-#   Other Independent &lt;dbl&gt;, Total Republican &lt;dbl&gt;, Asian Republican &lt;dbl&gt;,
-#   Black Republican &lt;dbl&gt;, Hispanic Republican &lt;dbl&gt;, Republican &lt;dbl&gt;,
-#   Other Republican &lt;dbl&gt;, GOP% &lt;chr&gt;, Dem% &lt;chr&gt;, Ind% &lt;chr&gt;, White% &lt;chr&gt;, …
+   Team    `Total Responde… `Total Democrat… `Asian Democrat`
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39                2
+ 2 Atlant…              188               59                3
+ 3 Baltim…              150               56                5
+ 4 Buffal…               92               22                2
+ 5 Caroli…              164               51                4
+ 6 Chicag…              285               94                5
+ 7 Cincin…              106               37                0
+ 8 Clevel…              105               34                2
+ 9 Dallas…              438              128                5
+10 Denver…              313              100                4
+# … with 23 more rows, and 21 more variables:
+#   Black Democrat &lt;dbl&gt;, Hispanic Democrat &lt;dbl&gt;,
+#   White Democrat &lt;dbl&gt;, Other Democrat &lt;dbl&gt;,
+#   Total Independents &lt;dbl&gt;, Asian Independent &lt;dbl&gt;,
+#   Black Independent &lt;dbl&gt;, Hispanic Independent &lt;dbl&gt;,
+#   White Independent &lt;dbl&gt;, Other Independent &lt;dbl&gt;,
+#   Total Republican &lt;dbl&gt;, Asian Republican &lt;dbl&gt;, …
 ```
 ]
 
@@ -2460,7 +2541,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-* select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`)
+* select(Team,
+*        `Total Respondents`, `Total Democrats`,
+*        Republican, `Other Republican`)
 ```
 ]
  
@@ -2468,19 +2551,20 @@ nfl_pol %&gt;%
 
 ```
 # A tibble: 33 × 5
-   Team         `Total Respondent… `Total Democrat… Republican `Other Republica…
-   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 Arizona Car…                148               39         30                 2
- 2 Atlanta Fal…                188               59         41                 3
- 3 Baltimore R…                150               56         26                 1
- 4 Buffalo Bil…                 92               22         16                 0
- 5 Carolina Pa…                164               51         44                 1
- 6 Chicago Bea…                285               94         54                 1
- 7 Cincinnati …                106               37         30                 2
- 8 Cleveland B…                105               34         26                 2
- 9 Dallas Cowb…                438              128        123                 6
-10 Denver Bron…                313              100         84                 3
-# … with 23 more rows
+   Team         `Total Responden… `Total Democrat… Republican
+   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Arizona Car…               148               39         30
+ 2 Atlanta Fal…               188               59         41
+ 3 Baltimore R…               150               56         26
+ 4 Buffalo Bil…                92               22         16
+ 5 Carolina Pa…               164               51         44
+ 6 Chicago Bea…               285               94         54
+ 7 Cincinnati …               106               37         30
+ 8 Cleveland B…               105               34         26
+ 9 Dallas Cowb…               438              128        123
+10 Denver Bron…               313              100         84
+# … with 23 more rows, and 1 more variable:
+#   Other Republican &lt;dbl&gt;
 ```
 ]
 
@@ -2492,7 +2576,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team,
+         `Total Respondents`, `Total Democrats`,
+         Republican, `Other Republican`) %&gt;%
 * rowwise(Team)
 ```
 ]
@@ -2502,19 +2588,20 @@ nfl_pol %&gt;%
 ```
 # A tibble: 33 × 5
 # Rowwise:  Team
-   Team         `Total Respondent… `Total Democrat… Republican `Other Republica…
-   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 Arizona Car…                148               39         30                 2
- 2 Atlanta Fal…                188               59         41                 3
- 3 Baltimore R…                150               56         26                 1
- 4 Buffalo Bil…                 92               22         16                 0
- 5 Carolina Pa…                164               51         44                 1
- 6 Chicago Bea…                285               94         54                 1
- 7 Cincinnati …                106               37         30                 2
- 8 Cleveland B…                105               34         26                 2
- 9 Dallas Cowb…                438              128        123                 6
-10 Denver Bron…                313              100         84                 3
-# … with 23 more rows
+   Team         `Total Responden… `Total Democrat… Republican
+   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Arizona Car…               148               39         30
+ 2 Atlanta Fal…               188               59         41
+ 3 Baltimore R…               150               56         26
+ 4 Buffalo Bil…                92               22         16
+ 5 Carolina Pa…               164               51         44
+ 6 Chicago Bea…               285               94         54
+ 7 Cincinnati …               106               37         30
+ 8 Cleveland B…               105               34         26
+ 9 Dallas Cowb…               438              128        123
+10 Denver Bron…               313              100         84
+# … with 23 more rows, and 1 more variable:
+#   Other Republican &lt;dbl&gt;
 ```
 ]
 
@@ -2526,7 +2613,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team,
+         `Total Respondents`, `Total Democrats`,
+         Republican, `Other Republican`) %&gt;%
   rowwise(Team) %&gt;%
 * mutate(`Total Republicans` = sum(c(Republican,`Other Republican`)))
 ```
@@ -2537,19 +2626,20 @@ nfl_pol %&gt;%
 ```
 # A tibble: 33 × 6
 # Rowwise:  Team
-   Team         `Total Respondent… `Total Democrat… Republican `Other Republica…
-   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 Arizona Car…                148               39         30                 2
- 2 Atlanta Fal…                188               59         41                 3
- 3 Baltimore R…                150               56         26                 1
- 4 Buffalo Bil…                 92               22         16                 0
- 5 Carolina Pa…                164               51         44                 1
- 6 Chicago Bea…                285               94         54                 1
- 7 Cincinnati …                106               37         30                 2
- 8 Cleveland B…                105               34         26                 2
- 9 Dallas Cowb…                438              128        123                 6
-10 Denver Bron…                313              100         84                 3
-# … with 23 more rows, and 1 more variable: Total Republicans &lt;dbl&gt;
+   Team         `Total Responden… `Total Democrat… Republican
+   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Arizona Car…               148               39         30
+ 2 Atlanta Fal…               188               59         41
+ 3 Baltimore R…               150               56         26
+ 4 Buffalo Bil…                92               22         16
+ 5 Carolina Pa…               164               51         44
+ 6 Chicago Bea…               285               94         54
+ 7 Cincinnati …               106               37         30
+ 8 Cleveland B…               105               34         26
+ 9 Dallas Cowb…               438              128        123
+10 Denver Bron…               313              100         84
+# … with 23 more rows, and 2 more variables:
+#   Other Republican &lt;dbl&gt;, Total Republicans &lt;dbl&gt;
 ```
 ]
 
@@ -2561,7 +2651,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team,
+         `Total Respondents`, `Total Democrats`,
+         Republican, `Other Republican`) %&gt;%
   rowwise(Team) %&gt;%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %&gt;%
 * select(-c(Republican,`Other Republican`))
@@ -2573,18 +2665,18 @@ nfl_pol %&gt;%
 ```
 # A tibble: 33 × 4
 # Rowwise:  Team
-   Team               `Total Respondents` `Total Democrats` `Total Republicans`
-   &lt;chr&gt;                            &lt;dbl&gt;             &lt;dbl&gt;               &lt;dbl&gt;
- 1 Arizona Cardinals                  148                39                  32
- 2 Atlanta Falcons                    188                59                  44
- 3 Baltimore Ravens                   150                56                  27
- 4 Buffalo Bills                       92                22                  16
- 5 Carolina Panthers                  164                51                  45
- 6 Chicago Bears                      285                94                  55
- 7 Cincinnati Bengals                 106                37                  32
- 8 Cleveland Browns                   105                34                  28
- 9 Dallas Cowboys                     438               128                 129
-10 Denver Broncos                     313               100                  87
+   Team    `Total Responde… `Total Democrat… `Total Republic…
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39               32
+ 2 Atlant…              188               59               44
+ 3 Baltim…              150               56               27
+ 4 Buffal…               92               22               16
+ 5 Caroli…              164               51               45
+ 6 Chicag…              285               94               55
+ 7 Cincin…              106               37               32
+ 8 Clevel…              105               34               28
+ 9 Dallas…              438              128              129
+10 Denver…              313              100               87
 # … with 23 more rows
 ```
 ]
@@ -2597,7 +2689,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team,
+         `Total Respondents`, `Total Democrats`,
+         Republican, `Other Republican`) %&gt;%
   rowwise(Team) %&gt;%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %&gt;%
   select(-c(Republican,`Other Republican`)) %&gt;%
@@ -2610,19 +2704,20 @@ nfl_pol %&gt;%
 ```
 # A tibble: 33 × 5
 # Rowwise:  Team
-   Team        `Total Respondent… `Total Democrat… `Total Republica… percent_dem
-   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
- 1 Arizona Ca…                148               39                32        0.26
- 2 Atlanta Fa…                188               59                44        0.31
- 3 Baltimore …                150               56                27        0.37
- 4 Buffalo Bi…                 92               22                16        0.24
- 5 Carolina P…                164               51                45        0.31
- 6 Chicago Be…                285               94                55        0.33
- 7 Cincinnati…                106               37                32        0.35
- 8 Cleveland …                105               34                28        0.32
- 9 Dallas Cow…                438              128               129        0.29
-10 Denver Bro…                313              100                87        0.32
-# … with 23 more rows
+   Team    `Total Responde… `Total Democrat… `Total Republic…
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39               32
+ 2 Atlant…              188               59               44
+ 3 Baltim…              150               56               27
+ 4 Buffal…               92               22               16
+ 5 Caroli…              164               51               45
+ 6 Chicag…              285               94               55
+ 7 Cincin…              106               37               32
+ 8 Clevel…              105               34               28
+ 9 Dallas…              438              128              129
+10 Denver…              313              100               87
+# … with 23 more rows, and 1 more variable:
+#   percent_dem &lt;dbl&gt;
 ```
 ]
 
@@ -2634,7 +2729,9 @@ count: false
 
 ```r
 nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team,
+         `Total Respondents`, `Total Democrats`,
+         Republican, `Other Republican`) %&gt;%
   rowwise(Team) %&gt;%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %&gt;%
   select(-c(Republican,`Other Republican`)) %&gt;%
@@ -2648,36 +2745,37 @@ nfl_pol %&gt;%
 ```
 # A tibble: 33 × 6
 # Rowwise:  Team
-   Team        `Total Respondent… `Total Democrat… `Total Republica… percent_dem
-   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
- 1 Arizona Ca…                148               39                32        0.26
- 2 Atlanta Fa…                188               59                44        0.31
- 3 Baltimore …                150               56                27        0.37
- 4 Buffalo Bi…                 92               22                16        0.24
- 5 Carolina P…                164               51                45        0.31
- 6 Chicago Be…                285               94                55        0.33
- 7 Cincinnati…                106               37                32        0.35
- 8 Cleveland …                105               34                28        0.32
- 9 Dallas Cow…                438              128               129        0.29
-10 Denver Bro…                313              100                87        0.32
-# … with 23 more rows, and 1 more variable: percent_rep &lt;dbl&gt;
+   Team    `Total Responde… `Total Democrat… `Total Republic…
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39               32
+ 2 Atlant…              188               59               44
+ 3 Baltim…              150               56               27
+ 4 Buffal…               92               22               16
+ 5 Caroli…              164               51               45
+ 6 Chicag…              285               94               55
+ 7 Cincin…              106               37               32
+ 8 Clevel…              105               34               28
+ 9 Dallas…              438              128              129
+10 Denver…              313              100               87
+# … with 23 more rows, and 2 more variables:
+#   percent_dem &lt;dbl&gt;, percent_rep &lt;dbl&gt;
 ```
 ]
 
 &lt;style&gt;
 .panel1-swwrangle-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 73.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
 .panel2-swwrangle-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 24.5%;
   hight: 32%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -2685,7 +2783,7 @@ nfl_pol %&gt;%
   color: white;
   width: NA%;
   hight: 33%;
-  float: left;
+  float: top;
   padding-left: 1%;
   font-size: 80%
 }
@@ -2701,10 +2799,15 @@ nfl_pol %&gt;%
 ```r
 nfl_percentages &lt;- 
   nfl_pol %&gt;%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %&gt;%
+  select(Team, 
+         `Total Respondents`, 
+         `Total Democrats`, 
+          Republican,
+         `Other Republican`) %&gt;%
   rowwise(Team) %&gt;%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %&gt;%
-  select(-c(Republican,`Other Republican`)) %&gt;% 
+  select(-c(Republican,
+            `Other Republican`)) %&gt;% 
   mutate(percent_dem = round(`Total Democrats`/`Total Respondents`,2)) %&gt;%
   mutate(percent_rep = round(`Total Republicans`/`Total Respondents`,2))
 ```
@@ -2723,8 +2826,8 @@ count: false
 ```r
 *ggplot(nfl_percentages,
 *      aes(reorder(Team, percent_dem),
-*                           percent_dem,
-*                           fill = percent_dem))
+*          percent_dem,
+*          fill = percent_dem))
 ```
 ]
  
@@ -2741,8 +2844,8 @@ count: false
 ```r
 ggplot(nfl_percentages,
        aes(reorder(Team, percent_dem),
-                            percent_dem,
-                            fill = percent_dem)) +
+           percent_dem,
+           fill = percent_dem)) +
 * geom_bar(stat="identity")
 ```
 ]
@@ -2760,8 +2863,8 @@ count: false
 ```r
 ggplot(nfl_percentages,
        aes(reorder(Team, percent_dem),
-                            percent_dem,
-                            fill = percent_dem)) +
+           percent_dem,
+           fill = percent_dem)) +
   geom_bar(stat="identity") +
 * coord_flip()
 ```
@@ -2780,8 +2883,8 @@ count: false
 ```r
 ggplot(nfl_percentages,
        aes(reorder(Team, percent_dem),
-                            percent_dem,
-                            fill = percent_dem)) +
+           percent_dem,
+           fill = percent_dem)) +
   geom_bar(stat="identity") +
   coord_flip() +
 * theme_minimal()
@@ -2795,7 +2898,7 @@ ggplot(nfl_percentages,
 &lt;style&gt;
 .panel1-swdems-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 46.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2803,7 +2906,7 @@ ggplot(nfl_percentages,
 }
 .panel2-swdems-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 51.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2833,9 +2936,10 @@ count: false
 .panel1-swgops-auto[
 
 ```r
-*ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
-*                           percent_rep,
-*                           fill = percent_rep))
+*ggplot(nfl_percentages,
+*      aes(reorder(Team, percent_rep),
+*          percent_rep,
+*          fill = percent_rep))
 ```
 ]
  
@@ -2850,9 +2954,10 @@ count: false
 .panel1-swgops-auto[
 
 ```r
-ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
-                            percent_rep,
-                            fill = percent_rep)) +
+ggplot(nfl_percentages,
+       aes(reorder(Team, percent_rep),
+           percent_rep,
+           fill = percent_rep)) +
 * geom_bar(stat="identity")
 ```
 ]
@@ -2868,9 +2973,10 @@ count: false
 .panel1-swgops-auto[
 
 ```r
-ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
-                            percent_rep,
-                            fill = percent_rep)) +
+ggplot(nfl_percentages,
+       aes(reorder(Team, percent_rep),
+           percent_rep,
+           fill = percent_rep)) +
   geom_bar(stat="identity") +
 * coord_flip()
 ```
@@ -2887,9 +2993,10 @@ count: false
 .panel1-swgops-auto[
 
 ```r
-ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
-                            percent_rep,
-                            fill = percent_rep)) +
+ggplot(nfl_percentages,
+       aes(reorder(Team, percent_rep),
+           percent_rep,
+           fill = percent_rep)) +
   geom_bar(stat="identity") +
   coord_flip() +
 * theme_minimal()
@@ -2903,7 +3010,7 @@ ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
 &lt;style&gt;
 .panel1-swgops-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 46.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2911,7 +3018,7 @@ ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
 }
 .panel2-swgops-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 51.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2937,9 +3044,11 @@ But first we need to assign variables
 
 
 ```r
-p1 &lt;- ggplot(nfl_percentages, aes(reorder(Team, percent_dem), 
-                            percent_dem,
-                            fill = percent_dem)) +
+p1 &lt;- 
+  ggplot(nfl_percentages, 
+         aes(reorder(Team, percent_dem),
+             percent_dem,
+             fill = percent_dem)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
@@ -2948,9 +3057,11 @@ p1 &lt;- ggplot(nfl_percentages, aes(reorder(Team, percent_dem),
 
 
 ```r
-p2 &lt;- ggplot(nfl_percentages, aes(reorder(Team, percent_rep), 
-                            percent_rep,
-                            fill = percent_rep)) +
+p2 &lt;- 
+  ggplot(nfl_percentages, 
+         aes(reorder(Team, percent_rep), 
+             percent_rep,
+             fill = percent_rep)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
@@ -2965,7 +3076,7 @@ p2 &lt;- ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
 p1 + p2
 ```
 
-![](Slides-Week-5R_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+&lt;img src="Slides-Week-5R_files/figure-html/unnamed-chunk-14-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -3003,19 +3114,20 @@ count: false
 ```
 # A tibble: 33 × 6
 # Rowwise:  Team
-   Team        `Total Respondent… `Total Democrat… `Total Republica… percent_dem
-   &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
- 1 Arizona Ca…                148               39                32        0.26
- 2 Atlanta Fa…                188               59                44        0.31
- 3 Baltimore …                150               56                27        0.37
- 4 Buffalo Bi…                 92               22                16        0.24
- 5 Carolina P…                164               51                45        0.31
- 6 Chicago Be…                285               94                55        0.33
- 7 Cincinnati…                106               37                32        0.35
- 8 Cleveland …                105               34                28        0.32
- 9 Dallas Cow…                438              128               129        0.29
-10 Denver Bro…                313              100                87        0.32
-# … with 23 more rows, and 1 more variable: percent_rep &lt;dbl&gt;
+   Team    `Total Responde… `Total Democrat… `Total Republic…
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39               32
+ 2 Atlant…              188               59               44
+ 3 Baltim…              150               56               27
+ 4 Buffal…               92               22               16
+ 5 Caroli…              164               51               45
+ 6 Chicag…              285               94               55
+ 7 Cincin…              106               37               32
+ 8 Clevel…              105               34               28
+ 9 Dallas…              438              128              129
+10 Denver…              313              100               87
+# … with 23 more rows, and 2 more variables:
+#   percent_dem &lt;dbl&gt;, percent_rep &lt;dbl&gt;
 ```
 ]
 
@@ -3037,26 +3149,27 @@ nfl_percentages %&gt;%
 
 ```
 # A tibble: 66 × 6
-   Team              `Total Respondents` `Total Democrat… `Total Republic… type 
-   &lt;chr&gt;                           &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;
- 1 Arizona Cardinals                 148               39               32 perc…
- 2 Arizona Cardinals                 148               39               32 perc…
- 3 Atlanta Falcons                   188               59               44 perc…
- 4 Atlanta Falcons                   188               59               44 perc…
- 5 Baltimore Ravens                  150               56               27 perc…
- 6 Baltimore Ravens                  150               56               27 perc…
- 7 Buffalo Bills                      92               22               16 perc…
- 8 Buffalo Bills                      92               22               16 perc…
- 9 Carolina Panthers                 164               51               45 perc…
-10 Carolina Panthers                 164               51               45 perc…
-# … with 56 more rows, and 1 more variable: political_percentages &lt;dbl&gt;
+   Team    `Total Responde… `Total Democrat… `Total Republic…
+   &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+ 1 Arizon…              148               39               32
+ 2 Arizon…              148               39               32
+ 3 Atlant…              188               59               44
+ 4 Atlant…              188               59               44
+ 5 Baltim…              150               56               27
+ 6 Baltim…              150               56               27
+ 7 Buffal…               92               22               16
+ 8 Buffal…               92               22               16
+ 9 Caroli…              164               51               45
+10 Caroli…              164               51               45
+# … with 56 more rows, and 2 more variables: type &lt;chr&gt;,
+#   political_percentages &lt;dbl&gt;
 ```
 ]
 
 &lt;style&gt;
 .panel1-swpivot-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 56%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -3064,7 +3177,7 @@ nfl_percentages %&gt;%
 }
 .panel2-swpivot-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 42%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -3088,13 +3201,12 @@ nfl_percentages %&gt;%
 
 
 ```r
-nlf_percentages_long &lt;- nfl_percentages %&gt;%
+nlf_percentages_long &lt;- 
+  nfl_percentages %&gt;%
   pivot_longer(c(percent_dem, percent_rep),
                names_to = "type",
                values_to = "political_percentages")
 ```
-
----
 
 ---
 
@@ -3108,9 +3220,10 @@ count: false
 .panel1-swfacet-auto[
 
 ```r
-*ggplot(nlf_percentages_long, aes(Team,
-*                                political_percentages,
-*                           fill =  political_percentages))
+*ggplot(nlf_percentages_long,
+*      aes(Team,
+*          political_percentages,
+*          fill =  political_percentages))
 ```
 ]
  
@@ -3125,9 +3238,10 @@ count: false
 .panel1-swfacet-auto[
 
 ```r
-ggplot(nlf_percentages_long, aes(Team,
-                                 political_percentages,
-                            fill =  political_percentages)) +
+ggplot(nlf_percentages_long,
+       aes(Team,
+           political_percentages,
+           fill =  political_percentages)) +
 * geom_bar(stat="identity")
 ```
 ]
@@ -3143,9 +3257,10 @@ count: false
 .panel1-swfacet-auto[
 
 ```r
-ggplot(nlf_percentages_long, aes(Team,
-                                 political_percentages,
-                            fill =  political_percentages)) +
+ggplot(nlf_percentages_long,
+       aes(Team,
+           political_percentages,
+           fill =  political_percentages)) +
   geom_bar(stat="identity") +
 * coord_flip()
 ```
@@ -3162,9 +3277,10 @@ count: false
 .panel1-swfacet-auto[
 
 ```r
-ggplot(nlf_percentages_long, aes(Team,
-                                 political_percentages,
-                            fill =  political_percentages)) +
+ggplot(nlf_percentages_long,
+       aes(Team,
+           political_percentages,
+           fill =  political_percentages)) +
   geom_bar(stat="identity") +
   coord_flip() +
 * theme_minimal()
@@ -3182,9 +3298,10 @@ count: false
 .panel1-swfacet-auto[
 
 ```r
-ggplot(nlf_percentages_long, aes(Team,
-                                 political_percentages,
-                            fill =  political_percentages)) +
+ggplot(nlf_percentages_long,
+       aes(Team,
+           political_percentages,
+           fill =  political_percentages)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() +
@@ -3199,7 +3316,7 @@ ggplot(nlf_percentages_long, aes(Team,
 &lt;style&gt;
 .panel1-swfacet-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 47.8604651162791%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -3207,7 +3324,7 @@ ggplot(nlf_percentages_long, aes(Team,
 }
 .panel2-swfacet-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 50.1395348837209%;
   hight: 32%;
   float: left;
   padding-left: 1%;

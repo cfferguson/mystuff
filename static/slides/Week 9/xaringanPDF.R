@@ -2,12 +2,12 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # library(xaringanBuilder)
-# build_pdf("Slides-Week-5.Rmd")
-# build_pdf("Slides-Week-5.html")
+# build_pdf("Slides-Week-9.Rmd")
+# build_pdf("Slides-Week-9.html")
 
-# pagedown::chrome_print("Slides-Week-5.Rmd")
-# pagedown::chrome_print("Slides-Week-5.html")
-# pagedown::chrome_print("Slides-Week-5R.Rmd")
+# pagedown::chrome_print("Slides-Week-9.Rmd")
+# pagedown::chrome_print("Slides-Week-9.html")
+# pagedown::chrome_print("Slides-Week-9R.Rmd")
 
 remotes::install_github("rstudio/chromote")
 source("https://git.io/xaringan2pdf")

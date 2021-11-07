@@ -9,23 +9,10 @@ output:
      ratio: 16:9
      highlightStyle: github
      highlightLines: true
-     countIncrementalSlides: false
+     xcountIncrementalSlides: false
      navigation:
          scroll: false
 ---
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
-    cancel: ["Extension","cancel"],
-    bcancel: ["Extension","cancel"],
-    xcancel: ["Extension","cancel"],
-    cancelto: ["Extension","cancel"]
-  });
-});
-</script>
 
 <style>
 section {
@@ -35,6 +22,27 @@ section {
 
 section p {
     margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
 }
 
 section {
@@ -57,9 +65,7 @@ section p {
 }
 
 #center {
-
 text-align: center;
-
 }
 
 .center p {
@@ -97,6 +103,9 @@ showtext_auto()
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#f4eebf",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
   table_row_border_color = "#212121",
   table_row_even_background_color = "#212121",
   footnote_font_size = "0.6em",
@@ -107,7 +116,7 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
   position = xaringanExtra::css_position(top = "1em", right = "1em")
   )
@@ -287,71 +296,60 @@ You can see more about the functionality by looking at its [documentation](https
 Let's take a look at a bar chart of the genres. But wait, those are in a bunch of columns and R likes its data in long form! To get the data set to this form, let's first select the columns we need and then use a command called `pivot_longer` which emulates a pivot table in Excel. 
 
 ```{r sw1, include = FALSE}
-movies %>%
+ggplot2movies::movies %>%
   select(Action, Animation, Comedy,
-         Drama, Documentary, Romance, Short) %>%
+         Drama, Documentary, Romance, 
+         Short) %>%
   pivot_longer(
     everything(),
     names_to = "genre"
   )
 ```
-
-`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), widths = c(85, 115))`
 
 .right[`r fa("forward", fill = "#4682b4")`]
 
 ---
 
-```{r sw2, include = FALSE}
-select_movies <- movies %>%
+```{r echo = FALSE, eval = TRUE}
+select_movies <- 
+  ggplot2movies::movies %>%
   select(Action, Animation, Comedy, Drama, Documentary, Romance, Short) %>%
   pivot_longer(
     everything(),
     names_to = "genre"
   )
-
-select_movies
 ```
 
-`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"))`
+In instances where we have to go from a 
 
----
+- <span style="color:#b85cb8">long</span> to <span style="color:#5cb85c">wide</span> data set, we'd use a command called `pivot_wider`
 
-# Pivot Wider
+- <span style="color:#5cb85c">wide</span> to <span style="color:#b85cb8">long</span> data set, we use a command called `pivot_longer`
 
-In instances where we have to go from a long to wide data set, we'd use a command called `pivot_wider`.
-
----
-
-# What Just Happened?
-
-The previous iteration of `pivot_wider` and `pivot_longer` were given by the commands `gather` and `spread`. To see what these did, let's start out with a cartoon by the very talented [Allison Horst](https://github.com/allisonhorst/stats-illustrations) out of UC Santa Barbara. 
-
-```{r, echo = FALSE, out.height="25%", fig.height=1, out.width="25%", fig.align='center', purl=FALSE}
-knitr::include_graphics("img/tidyr_spread_gather.png")
-```
-
-So the commands basically took data frames from wide to long with `gather` and back again with `spread`. The `pivot_` commands do much the same but with much more flexibility. However they can be equally as confusing so we'll go over a few basics here. If you're interested in more, take a look at this fantastic overview courtesy of [R-Ladies Sydney](https://rladiessydney.org/courses/ryouwithme/02-cleanitup-4/). For an advanced walkthrough, the [Data Wrangling](https://dcl-wrangle.stanford.edu/pivot_basic.html) site over at Stanford is a great resource. 
+.footnote[For more information, take a look at this fantastic overview courtesy of [R-Ladies Sydney](https://rladiessydney.org/courses/ryouwithme/02-cleanitup-4/). For an advanced walkthrough, the [Data Wrangling](https://dcl-wrangle.stanford.edu/pivot_basic.html) site over at Stanford is a great resource.] 
 .right[`r fa("link", fill = "#5cb85c")`]
 
 ---
 
 # pivot_longer
 
-It is pretty rare that at this stage in your academic development that you need to go from long to wide so we'll be concentrating on the converse with `pivot_longer`. First note that the original graphics in this part of the walkthrough were not created by me, but by RStudio's [Allison Hill](https://alison.rbind.io/). I did however amend them for aesthetic purposes.
+It is pretty rare that at this stage in your academic development that you need to go from long to wide so we'll be concentrating on the converse with `pivot_longer`. 
 
-Ok let's begin!
+.footnote[The original graphics here were created by RStudio's [Allison Hill](https://alison.rbind.io/). I have amended them for aesthetic purposes]
+
+OK let's begin!
 
 .right[`r fa("link", fill = "#5cb85c")`] 
 .right[`r fa("forward", fill = "#4682b4")`]
 
 ---
 
-# An overview of pivot_longer 
+# An overview of `pivot_longer` 
 
 We'll concentrate one two options in `pivot_longer`: `names_to` and `values_to`. 
 
-```{r, echo = FALSE, out.height="50%", fig.height=1, out.width="50%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center'}
 knitr::include_graphics("img/pl2.png")
 ```
 
@@ -369,7 +367,8 @@ to see other options.
 If you want to follow along with the fake data set we'll be using, run the following command to build the tibble
 
 ```{r echo = TRUE, eval = TRUE}
-juniors_multiple <- tribble(
+juniors_multiple <- 
+  tribble(
   ~ "baker", ~"cinnamon_1", ~"cardamom_2", ~"nutmeg_3",
   "Emma", 1L,   0L, 1L,
   "Harry", 1L,   1L, 1L, 
@@ -391,34 +390,34 @@ Looks good! Let's convert this!
 
 To remind you of what the `juniors_multiple` data frame looks like, we have
 
-```{r echo = FALSE, eval = TRUE, purl=FALSE}
+```{r echo = FALSE, eval = TRUE}
 juniors_multiple %>% 
   knitr::kable() %>%
-  row_spec(0, extra_css = "border-bottom: solid;
-           border-bottom-width:1px;
-           border-bottom-color: #666666;")
+  kableExtra::row_spec(0, background = "#212121") %>%
+  kableExtra::row_spec(2, background = "#212121") %>%
+  kableExtra::row_spec(4, background = "#212121") 
 ```
 
 We can assign names to the eventual columns using `names_to` and `values_to`.
 
-```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center'}
 knitr::include_graphics("img/pl3.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
 
 ---
 
-```{r echo = FALSE, eval = TRUE, purl=FALSE}
+```{r echo = FALSE, eval = TRUE}
 juniors_multiple %>% 
   knitr::kable() %>%
-  row_spec(0, extra_css = "border-bottom: solid;
-           border-bottom-width:1px;
-           border-bottom-color: #666666;") 
+  kableExtra::row_spec(0, background = "#212121") %>%
+  kableExtra::row_spec(2, background = "#212121") %>%
+  kableExtra::row_spec(4, background = "#212121") 
 ```
 
 We can assign names to the eventual columns using `names_to` and `values_to`.
 
-```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center'}
 knitr::include_graphics("img/pl4.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
@@ -428,14 +427,14 @@ knitr::include_graphics("img/pl4.png")
 ```{r echo = FALSE, eval = TRUE}
 juniors_multiple %>% 
   knitr::kable() %>%
-  row_spec(0, extra_css = "border-bottom: solid;
-           border-bottom-width:1px;
-           border-bottom-color: #666666;")
+  kableExtra::row_spec(0, background = "#212121") %>%
+  kableExtra::row_spec(2, background = "#212121") %>%
+  kableExtra::row_spec(4, background = "#212121") 
 ```
 
 Here you can see the first column `cinnamon_1` and its value `1` associated with the first row `Emma` becomes our first two values under the two columns `spice` and `correct` for our pivoted data frame.
 
-```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center'}
 knitr::include_graphics("img/pl5.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
@@ -444,7 +443,7 @@ knitr::include_graphics("img/pl5.png")
 
 This pattern continues until a whole row is used up.
 
-```{r, echo = FALSE, out.height="55%", fig.height=1, out.width="55%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="75%", fig.height=1, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/pl6.png")
 ```
 
@@ -454,15 +453,15 @@ knitr::include_graphics("img/pl6.png")
 
 Then it repeats for the next row of values...
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl7.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl8.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl9.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
@@ -471,15 +470,15 @@ knitr::include_graphics("img/pl9.png")
 
 ...and so forth...
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl10.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl11.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl12.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
@@ -488,15 +487,15 @@ knitr::include_graphics("img/pl12.png")
 
 ...until we run out of rows...
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl13.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl14.png")
 ```
 
-```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="30%", fig.height=1, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/pl15.png")
 ```
 .right[`r fa("forward", fill = "#4682b4")`]
@@ -505,7 +504,7 @@ knitr::include_graphics("img/pl15.png")
 
 ...and get the final table of pivoted values.
 
-```{r, echo = FALSE, out.height="75%", fig.height=1, out.width="75%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="75%", fig.height=1, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/pl16.png")
 ```
 
@@ -515,7 +514,7 @@ knitr::include_graphics("img/pl16.png")
 
 We can even amend the current command to include things like `order`!
 
-```{r, echo = FALSE, out.height="75%", fig.height=1, out.width="75%", fig.align='center', purl=FALSE}
+```{r, echo = FALSE, out.height="75%", fig.height=1, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/pl17.png")
 ```
 
@@ -526,15 +525,13 @@ knitr::include_graphics("img/pl17.png")
 # Shortcut
 
 Rather than accounting for every column, you can just tell R not to account for columns
-```{r sw3, include = FALSE}
+```{r echo = TRUE, eval = TRUE}
 juniors_multiple %>%
   pivot_longer(-baker,
                 names_to = c('spice', 'order'),
                 names_sep = '_',
                 values_to = 'correct')
 ```
-
-`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"))`
 
 ---
 
@@ -555,12 +552,13 @@ all we have are integers...
 ... but for the following
 
 ```{r echo = TRUE, eval = TRUE}
-juniors_multiple_full <- tribble(
+juniors_multiple_full <- 
+  tribble(
   ~ "baker", ~"score_1", ~"score_2", ~"score_3", 
   ~ "guess_1", ~"guess_2", ~"guess_3",
-    "Emma", 1L,   0L, 1L, "cinnamon", "cloves", "nutmeg",
-    "Harry", 1L,   1L, 1L, "cinnamon", "cardamom", "nutmeg",
-    "Ruby", 1L,   0L, 1L, "cinnamon", "cumin", "nutmeg",
+    "Emma", 1L, 0L, 1L, "cinnamon", "cloves", "nutmeg",
+    "Harry", 1L,  1L, 1L, "cinnamon", "cardamom", "nutmeg",
+    "Ruby", 1L, 0L, 1L, "cinnamon", "cumin", "nutmeg",
     "Zainab", 0L, NA, 0L, "cardamom", NA_character_, "cinnamon"
   )
 ```
@@ -599,17 +597,309 @@ Well since computers are stupid, you have to tell R what to look for.
 # Generalizing
 
 We can actually just tell R to treat all values the same.
-```{r echo = TRUE, eval = TRUE}
+```{r sw2, include = FALSE}
 juniors_multiple_full %>% 
   # Don't do anything with the baker column
     pivot_longer(-baker, 
-                 # Treat all columns the same and order them
+  # Treat all columns the same and order them
                  names_to = c(".value", "order"), 
-                 # Control how the column names are broken up
+  # Control how the column names are broken up
                  names_sep = "_")
+```
+
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), widths = c(120, 100))`
+
+---
+
+# Back to the bar chart
+
+Now that we know how to pivot, we can just `group_by` genre type and then `tally`
+```{r sw3, include = FALSE}
+ggplot2movies::movies %>%
+  select(Action, Animation, Comedy,
+         Drama, Documentary, Romance, 
+         Short) %>%
+  pivot_longer(everything(),
+               names_to = "genre") %>%
+  group_by(genre) %>%
+  dplyr::tally(value)
+```
+
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), widths = c(90, 120))`
+
+.right[`r fa("stop", fill = "#ff6347")`]
+
+---
+
+```{r}
+movies_by_genre <-
+  ggplot2movies::movies %>%
+  select(Action, Animation, Comedy,
+         Drama, Documentary, Romance, 
+         Short) %>%
+  pivot_longer(everything(),
+               names_to = "genre") %>%
+  group_by(genre) %>%
+  dplyr::tally(value)
 ```
 
 ---
 
+```{r sw4, include = FALSE}
+ggplot(movies_by_genre,
+       aes(x = genre, 
+           y = n, 
+           fill = -n)) +
+  geom_bar(stat='identity', 
+           show.legend = FALSE) +
+  labs(title = "Count of Genre", 
+       x = "Genre", 
+       y = "Count") +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw4", color = c("white", "white", "white"), widths = c(100, 100))`
+
+---
+
+# Back to the movies
+
+Let's take a look at the ratings
+
+```{r sw5, include = FALSE}
+ggplot2movies::movies %>% 
+  ggplot(aes(x = rating)) +
+  geom_histogram(aes(fill = -..count..),
+                 color = "white",
+                 bins = 30,
+                 show.legend = FALSE) +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"), widths = c(95, 115))`
+
+---
+
+```{r echo = TRUE, eval = TRUE, fig.asp = 0.75, fig.width = 5, fig.align="center"}
+pop <- 
+  ggplot2movies::movies %>% 
+  ggplot(aes(x = rating)) +
+  geom_histogram(aes(fill = -..count..),
+                 color = "white", 
+                 bins = 30,
+                 show.legend = FALSE) +
+  theme_minimal() +
+  ggtitle("Population")
+```
+
+---
+
+# Purpose
+
+We would like to produce a confidence interval for the population mean rating. Let's first pretend we had to take a sample of $n=70$ from the $N= 58788$ movies. To do this, we'll use the `sample_n` command from the `dplyr` package.
+
+```{r echo = TRUE, eval = TRUE}
+set.seed(999) # Random number generator
+
+movies_sample <- 
+  ggplot2movies::movies %>% 
+  sample_n(70)
+```
+
+---
+
+Let's see what this looks like
+
+```{r sw7, include = FALSE}
+ggplot(movies_sample, 
+       aes(x = rating)) +
+       geom_histogram(aes(fill = -..count..),
+                      color = "white", 
+                      bins = 30,
+                      show.legend = FALSE) +
+       theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw7", color = c("white", "white", "white"), widths = c(120, 100))`
+
+---
+
+# Population Estimation
+
+--
+
+- The histogram is an estimate of our population distribution histogram
+
+--
+
+To estimate a range of values, we use the mean of the sample 
+
+```{r echo = TRUE, eval = TRUE}
+(movies_sample_mean <- 
+   movies_sample %>% 
+   summarize(mean = mean(rating)))
+```
+
+.footnote[A good way to to this is to add parentheses around a variable]
+
+--
+
+- This is a single estimation. 
+
+--
+
+- Earlier you sampled from the population - aka **sampling with replacement**. 
+
+.right[`r fa("forward", fill = "#4682b4")`]
+
+---
+
+# Sampling with Replacement
+
+To do this, we can use the `resample` command from the `mosaic` package:
+
+```{r sw8, include = FALSE}
+resample(movies_sample) %>%
+  arrange(orig.id) %>% 
+  summarize(mean = mean(rating))
+```
+
+`r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"), widths = c(100, 100))`
+
+---
+
+This is only one sample mean!
+
+---
+
+To do a whole bunch we can run a `do` command with parentheses like so
+
+```{r sw9, include = FALSE}
+do(10) * 
+  (resample(movies_sample) %>% 
+     summarize(mean = mean(rating)))
+```
+
+`r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"), widths = c(100, 100))`
+
+.right[`r fa("forward", fill = "#4682b4")`]
+
+---
+
+But a sample of 10 is so lame. Let's think big and try 10000!
+
+--
+
+```{r echo = TRUE, eval = TRUE}
+not_lame <- 
+  do(10000) * summarize(resample(movies_sample), 
+                        mean = mean(rating))
+```
+
+...wait a bit
+
+---
+
+# Estimating the population
+
+```{r sw10, include = FALSE}
+ggplot(data = not_lame , 
+       mapping = aes(x = mean)) +
+  geom_histogram(aes(fill = -..count..),
+                 color = "white",
+                 bins = 30, 
+                 show.legend = FALSE) +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), widths = c(110, 110))`
+
+---
+
+```{r echo = TRUE, eval = TRUE}
+samp <- 
+  ggplot(data = not_lame , 
+       mapping = aes(x = mean)) +
+  geom_histogram(aes(fill = -..count..),
+                 color = "white",
+                 bins = 30,
+                 show.legend = FALSE) +
+  theme_minimal() +
+  ggtitle("Sample")
+```
+
+---
+
+# Comparison
+
+```{r echo = FALSE, eval = TRUE, fig.asp = 0.6, fig.width = 10, fig.align='center'}
+
+samp + pop
+
+```
+
+---
+
+# Confidence using **quantiles**
+
+ **quantiles** are
+
+--
+
+- cut points dividing the range of a probability distribution into continuous intervals with equal probabilities
+
+--
+
+- found by isolating the middle 95% of values which corresponds to a 95% confidence interval for the population mean rating
+
+--
+
+```{r echo = TRUE, eval = TRUE}
+(ci95_mean <- confint(not_lame, 
+                      level = 0.95, 
+                      method = "quantile"))
+```
+
+--
+
+- we can be 95% confident that the true mean rating of ALL IMDB ratings is between 5.49 and about 6.13
+
+---
+
+# Confidence using **standard error**
+
+**standard error** is
+
+--
+
+- the standard deviation of the sampling distribution 
+
+--
+
+- approximated by the bootstrap distribution or the null distribution depending on the context.
+
+--
+
+```{r echo = TRUE, eval = TRUE}
+(ci95_mean <- confint(not_lame, 
+                      level = 0.95, 
+                      method = "stderr"))
+```
+
+--
+
+- we can be 95% confident that the true mean rating of ALL IMDB ratings is between 5.49 and about 6.13
+
+---
+
 ## Thats it!
+
+<center>
+```{r tweet, echo = FALSE, eval = TRUE, out.height="30%", out.width="30%", purl=FALSE}
+tweet_embed("https://twitter.com/allison_horst/status/1190001300622036992",
+            maxwidth = 75,
+            theme = "dark",
+            plain = TRUE)
+```
+</center>
 

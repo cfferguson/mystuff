@@ -18,6 +18,8 @@ font_add("Futura", "Futura-CondensedMedium.ttf")
 showtext_auto()
 
 # Create data (this takes more sense with a numerical X axis)
+set.seed(1234)
+
 x <- 
   seq(0, 2*pi, length.out=120)
 
@@ -39,20 +41,26 @@ set <-
 
 # plot
 sin_w <- 
-  ggplot(set, aes(x=x, y=y)) +
-  geom_segment(aes(x=x, xend=x, y=0, yend=y, color=y), 
-                size=0.09, 
-                alpha=0.3,
+  ggplot(set, 
+         aes(x = x, y = y)) +
+  geom_segment(aes(x = x, xend = x, 
+                   y = 0, yend = y, 
+                   color = y), 
+               size = 0.09, 
+               alpha = 0.3,
                show.legend = FALSE) +
   scale_color_gradient(low = "#ff5b77",
                        high = "#5bc0de") +
   theme_void(); sin_w
 
 sin_light <- 
-  ggplot(set, aes(x=x, y=y)) +
-  geom_segment(aes(x=x, xend=x, y=0, yend=y, color=y), 
-               size=0.09, 
-               alpha=0.3,
+  ggplot(set, 
+         aes(x = x, y = y)) +
+  geom_segment(aes(x = x, xend = x, 
+                   y = 0, yend = y, 
+                   color = y), 
+               size = 0.09, 
+               alpha = 0.3,
                show.legend = FALSE) +
   scale_color_gradient(low = "#ff0f38",
                        high = "#28a1c5") +
@@ -60,44 +68,52 @@ sin_light <-
 
 slack_icon <-
   sin_w +
-  theme(panel.background = element_rect(fill = "#292A30",
-                                        color = "#293840")); slack_icon
-  
-ggsave(slack_icon,
-       file="slack_icon.png",
-       width = 210,
-       height = 210,
-       units = "mm"
-      )
-  
+  theme(panel.background = 
+          element_rect(fill = "#292A30",
+                       color = "#293840")); slack_icon
+
 sticker(sin_w, 
         package="Statistical Methods I", 
-        p_size=10.5, 
-        p_x=0.67,
-        p_y=1.32,
-        s_x=1.1, 
-        s_y=1.0, 
-        s_width=1.5, 
-        s_height=1.5,
-        h_fill="#292A30",
-        h_color="#293840",
+        p_size = 10.5, 
+        p_x = 0.67,
+        p_y = 1.32,
+        s_x = 1.1, 
+        s_y = 1.0, 
+        s_width = 1.5, 
+        s_height = 1.5,
+        h_fill = "#292A30",
+        h_color ="#293840",
         p_family = "Futura",
-        filename="course_hex.png")
+        filename = "course_hex.png")
 
 sticker(sin_w, 
-        package="", 
-        p_size=9.5, 
-        s_x=1.0, 
-        s_y=1.0, 
-        s_width=1.5, 
-        s_height=1.5,
-        h_fill="#292A30",
-        h_color="#293840",
-        filename="icon.png")
+        package="Statistical Methods I", 
+        p_size = 10.5, 
+        p_x = 0.67,
+        p_y = 1.32,
+        s_x = 1.1, 
+        s_y = 1.0, 
+        s_width = 1.5, 
+        s_height = 1.5,
+        h_fill = "transparent",
+        h_color ="#293840",
+        p_family = "Futura",
+        filename = "course_hex_alpha.png")
 
-ggsave("slack_icon.png",
-       sin_w,
-       width = 2480,
-       height = 2480,
-       units = "px",
-       bg = "#292a30")
+sticker(sin_w, 
+        package = "", 
+        p_size = 9.5, 
+        s_x = 1.0, 
+        s_y = 1.0, 
+        s_width = 1.5, 
+        s_height = 1.5,
+        h_fill = "#292A30",
+        h_color = "#293840",
+        filename = "icon.png")
+
+ggsave(slack_icon,
+       file = "slack_icon.png",
+       width = 210,
+       height = 210,
+       units = "mm")
+

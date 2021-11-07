@@ -24,6 +24,12 @@ xaringanthemer::style_duo(
 )
 
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(bottom = "1em", left = "1em")
+)
 ```
 
 ```{r echo = FALSE, eval = TRUE, message=FALSE}
@@ -117,9 +123,7 @@ kable(movies,
   column_spec(1, width = "10em", bold = TRUE) %>%
   column_spec(2, width = "10em") %>%
   column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121") 
+  column_spec(4, width = "10em")
 
 ```
 ---
@@ -271,9 +275,7 @@ kable(movies,
   column_spec(1, width = "10em", bold = TRUE) %>%
   column_spec(2, width = "10em") %>%
   column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0:4, background = "#212121") 
-
+  column_spec(4, width = "10em") 
 ```
 
 *Source: General Social Survey: 1987-1992*

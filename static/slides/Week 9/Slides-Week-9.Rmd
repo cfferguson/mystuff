@@ -74,10 +74,12 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
-  position = xaringanExtra::css_position(bottom = "1em", left = "1em")
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
 )
+
+opts_chunk$set(dev.args=list(bg="transparent"))
 ```
 
 ```{r echo = FALSE, eval = TRUE, message=FALSE}
@@ -217,7 +219,6 @@ The **alternative hypothesis $H_1$** states
 >- *Formally* : that a parameter differs from the value specified by the null hypothesis
 
 >- *Informally* : something probably happened
-
 ]
 
 ---
@@ -278,7 +279,7 @@ ggplot(NULL, aes(c(-3,3))) +
             size = 1) +
   geom_area(stat = "function", 
             fun = dnorm, 
-            fill = "#212121", 
+            fill = "transparent", 
             xlim = c(1.05, 3), 
             color = "#FFFFFF", 
             size = 1) +
@@ -299,8 +300,8 @@ ggplot(NULL, aes(c(-3,3))) +
                                     size = 26),
         axis.title.x = element_text(color = "#FFFFFF",
                                     size = 30),
-        panel.background = element_rect(fill = "#212121"),
-        plot.background = element_rect(fill = "#212121", 
+        panel.background = element_rect(fill = "transparent"),
+        plot.background = element_rect(fill = "transparent", 
                                        color = NA))
 ```
 
@@ -312,7 +313,7 @@ ggplot(NULL, aes(c(-3,3))) +
 ggplot(NULL, aes(c(-3,3))) +
   geom_area(stat = "function",
             fun = dnorm,
-            fill = "#212121", 
+            fill = "transparent", 
             xlim = c(-3, 0.95), 
             color = "#FFFFFF", 
             size = 1) +
@@ -339,8 +340,8 @@ ggplot(NULL, aes(c(-3,3))) +
                                     size = 26),
         axis.title.x = element_text(color = "#FFFFFF",
                                     size = 30),
-        panel.background = element_rect(fill = "#212121"),
-        plot.background = element_rect(fill = "#212121", 
+        panel.background = element_rect(fill = "transparent"),
+        plot.background = element_rect(fill = "transparent", 
                                        color = NA))
 ```
 
@@ -348,7 +349,7 @@ ggplot(NULL, aes(c(-3,3))) +
 
 # $H_1 \neq H_0$: Two-Tailed Test
 
-```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '40%', fig.align='center'}
+```{r echo = FALSE, eval= TRUE, warning = FALSE, out.width = '40%', fig.align='center', }
 ggplot(NULL, aes(c(-3,3))) +
   geom_area(stat = "function", 
             fun = dnorm, 
@@ -379,8 +380,8 @@ ggplot(NULL, aes(c(-3,3))) +
                                     size = 26),
         axis.title.x = element_text(color = "#FFFFFF",
                                     size = 30),
-        panel.background = element_rect(fill = "#212121"),
-        plot.background = element_rect(fill = "#212121", 
+        panel.background = element_rect(fill = "transparent"),
+        plot.background = element_rect(fill = "transparent", 
                                        color = NA))
 ```
 

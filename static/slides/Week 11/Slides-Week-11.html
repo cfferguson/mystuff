@@ -26,7 +26,39 @@ class: center, middle, inverse, title-slide
 
 
 
-
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+bottom:1em;left:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 
 
@@ -89,10 +121,10 @@ There are three things to consider:
  &lt;thead&gt;
 &lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Delicious &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Disgusting &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Delicious &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Disgusting &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
@@ -103,10 +135,10 @@ There are three things to consider:
    &lt;td style="text-align:center;width: 10em; "&gt; 11 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; No &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; No &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 15 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt;  &lt;/td&gt;
@@ -226,36 +258,36 @@ The direction of a relationship can be
  &lt;thead&gt;
 &lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; padding-right: 4px; padding-left: 4px; background-color: #212121 !important;" colspan="4"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Sentiment&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt;  &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Low &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Middle &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; High &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Low &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Middle &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; High &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Poor &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 39% (15) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 12% (32) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 9% (18) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Poor &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 39% (15) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 12% (32) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 9% (18) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Fair &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 36% (14) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 45% (114) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 28% (57) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Fair &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 36% (14) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 45% (114) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 28% (57) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Good &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 25% (10) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 43% (109) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 63% (127) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Good &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 25% (10) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 43% (109) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; 63% (127) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; &lt;i&gt;N&lt;/i&gt; &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (39) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (254) &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; (202) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; &lt;i&gt;N&lt;/i&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (39) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (254) &lt;/td&gt;
+   &lt;td style="text-align:center;width: 10em; "&gt; (202) &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

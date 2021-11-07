@@ -21,54 +21,75 @@ output:
 </script>
 
 <style>
-  .hvr-sweep-to-left {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.25s;
-    transition-duration: 0.25s;
-  }
+section {
+    display: flex;
+    display: -webkit-flex;
+}
 
-.hvr-sweep-to-left:before {
-  content: "";
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #761756;
-    -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
-  color: white;
-}
-
-.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-.remark-code{line-height: 1.5; font-size: 80%}
-@media print {
-  .has-continuation {
-    display: block;
-  }
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 </style>
@@ -93,10 +114,11 @@ library(patchwork)
 xaringanthemer::style_duo(
   primary_color = "#212121",
   secondary_color = "#bff4ee",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
   table_row_border_color = "#212121",
   table_row_even_background_color = "#212121",
-  code_highlight_color = "#b8e2f2",
-  code_inline_background_color = "#212121", 
   footnote_font_size = "0.6em",
   header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
   text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
@@ -105,10 +127,10 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
   position = xaringanExtra::css_position(top = "1em", right = "1em")
-)
+  )
 ```
 
 # Prepping a New R Script
@@ -121,11 +143,13 @@ xaringanExtra::use_logo(
 
 --
 
-3. After you have saved this file as `whatever.R`, go to the menu and this week try running running this shortcut to **Session > Set Working Directory > To Source File Location** at the top of your script
+3. After you have saved this file as `whatever.R`, go to the menu and this week try running the following alternative to **Session > Set Working Directory > To Source File Location** at the top of your script
 
+.center2[
 ```{r echo=TRUE,eval=FALSE}
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
+]
 
 ---
 
@@ -189,7 +213,7 @@ boxoffice %>%
   pull()
 ```
 
-`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(150, 50), float = "top")`
 
 ---
 
@@ -205,7 +229,7 @@ boxoffice %>%
   pull()
 ```
 
-`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(150, 50), float = "top")`
 
 ---
 
@@ -218,7 +242,7 @@ boxoffice %>%
   ungroup()
 ```
 
-`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), width = c(90, 120))`
 
 ---
 
@@ -247,7 +271,7 @@ boxoffice_annualnum %>%
   pull()
 ```
 
-`r chunk_reveal(chunk_name = "sw4a", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw4a", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -260,7 +284,7 @@ boxoffice_annualnum %>%
   pull()
 ```
 
-`r chunk_reveal(chunk_name = "sw4b", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw4b", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -275,7 +299,7 @@ ggplot(boxoffice_annualnum,
   scale_fill_viridis_c(direction = -1)
 ```
 
-`r chunk_reveal(chunk_name = "sw4c", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw4c", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
@@ -322,13 +346,14 @@ ggplot(boxoffice_annualnum,
 ```{r sw5a,  include = FALSE}
 boxoffice %>%
   group_by(year) %>%
-  tally(name = "number of movies") %>%
+  tally() %>%
+  rename(`number of movies` = n) %>%
   ungroup() %>%
   filter(`number of movies` == 
            max(`number of movies`))
 ```
 
-`r chunk_reveal(chunk_name = "sw5a", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw5a", color = c("white", "white", "white"), width = c(150, 50), float = "top")`
 
 ---
 
@@ -343,7 +368,7 @@ boxoffice %>%
            max(`number of movies`))
 ```
 
-`r chunk_reveal(chunk_name = "sw5b", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw5b", color = c("white", "white", "white"), width = c(92, 118))`
 
 ---
 
@@ -360,7 +385,7 @@ boxoffice %>%
   select(year, `number of movies`)
 ```
 
-`r chunk_reveal(chunk_name = "sw5c", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw5c", color = c("white", "white", "white"), width = c(93, 118))`
 
 ---
 
@@ -370,12 +395,12 @@ boxoffice %>%
 boxoffice %>%
   group_by(year) %>%
   filter(Rank == max(Rank)) %>%
-  select(Rank, Movie, year)%>%
+  select(Rank, Movie, year) %>%
   arrange(-year) %>%
   ungroup()
 ```
 
-`r chunk_reveal(chunk_name = "swiba", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swiba", color = c("white", "white", "white"), width = c(90, 120))`
 
 ---
 
@@ -384,7 +409,7 @@ top_movie_year <-
   boxoffice %>%
   group_by(year) %>%
   filter(Rank == max(Rank)) %>%
-  select(Rank, Movie, year)%>%
+  select(Rank, Movie, year) %>%
   arrange(-year) %>%
   ungroup()
 ```
@@ -406,7 +431,7 @@ ggplot(top_movie_year,
        subtitle = "According to Rotten Tomatoes")
 ```
 
-`r chunk_reveal(chunk_name = "swibb", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swibb", color = c("white", "white", "white"), width = c(110, 100))`
 
 ---
 
@@ -425,7 +450,7 @@ ggplot(top_movie_year,
        subtitle = "According to Rotten Tomatoes")
 ```
 
-`r chunk_reveal(chunk_name = "swibc", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swibc", color = c("white", "white", "white"), width = c(110, 100))`
 
 ---
 
@@ -455,7 +480,7 @@ ggplot(top_movie_year,
   coord_cartesian(xlim = c(1900, 2015))
 ```
 
-`r chunk_reveal(chunk_name = "swibd", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swibd", color = c("white", "white", "white"), width = c(110, 100))`
 
 ---
 
@@ -479,7 +504,9 @@ nfl_pol <- read_csv(here::here("static", "slides", "Week 5", "teampolview.csv"))
 
 ```{r swwrangle,  include = FALSE}
 nfl_pol %>%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %>%
+  select(Team, 
+         `Total Respondents`, `Total Democrats`, 
+         Republican, `Other Republican`) %>%
   rowwise(Team) %>%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %>%
   select(-c(Republican,`Other Republican`)) %>% 
@@ -487,7 +514,7 @@ nfl_pol %>%
   mutate(percent_rep = round(`Total Republicans`/`Total Respondents`,2))
 ```
 
-`r chunk_reveal(chunk_name = "swwrangle", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swwrangle", color = c("white", "white", "white"), width = c(150, 50), float = "top")`
 
 ---
 
@@ -496,10 +523,15 @@ nfl_pol %>%
 ```{r}
 nfl_percentages <- 
   nfl_pol %>%
-  select(Team, `Total Respondents`, `Total Democrats`, Republican, `Other Republican`) %>%
+  select(Team, 
+         `Total Respondents`, 
+         `Total Democrats`, 
+          Republican,
+         `Other Republican`) %>%
   rowwise(Team) %>%
   mutate(`Total Republicans` = sum(c(Republican,`Other Republican`))) %>%
-  select(-c(Republican,`Other Republican`)) %>% 
+  select(-c(Republican,
+            `Other Republican`)) %>% 
   mutate(percent_dem = round(`Total Democrats`/`Total Respondents`,2)) %>%
   mutate(percent_rep = round(`Total Republicans`/`Total Respondents`,2))
 ```
@@ -511,29 +543,30 @@ nfl_percentages <-
 ```{r swdems, include = FALSE}
 ggplot(nfl_percentages, 
        aes(reorder(Team, percent_dem), 
-                            percent_dem,
-                            fill = percent_dem)) +
+           percent_dem,
+           fill = percent_dem)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
 ```
 
-`r chunk_reveal(chunk_name = "swdems", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swdems", color = c("white", "white", "white"), width = c(100, 110))`
 
 ---
 
 ## Plot for Republicans by Team
 
 ```{r swgops, include = FALSE}
-ggplot(nfl_percentages, aes(reorder(Team, percent_rep), 
-                            percent_rep,
-                            fill = percent_rep)) +
+ggplot(nfl_percentages, 
+       aes(reorder(Team, percent_rep), 
+           percent_rep,
+           fill = percent_rep)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
 ```
 
-`r chunk_reveal(chunk_name = "swgops", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swgops", color = c("white", "white", "white"), width = c(100, 110))`
 
 ---
 
@@ -542,9 +575,11 @@ ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
 But first we need to assign variables
 
 ```{r}
-p1 <- ggplot(nfl_percentages, aes(reorder(Team, percent_dem), 
-                            percent_dem,
-                            fill = percent_dem)) +
+p1 <- 
+  ggplot(nfl_percentages, 
+         aes(reorder(Team, percent_dem),
+             percent_dem,
+             fill = percent_dem)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
@@ -552,9 +587,11 @@ p1 <- ggplot(nfl_percentages, aes(reorder(Team, percent_dem),
 
 
 ```{r}
-p2 <- ggplot(nfl_percentages, aes(reorder(Team, percent_rep), 
-                            percent_rep,
-                            fill = percent_rep)) +
+p2 <- 
+  ggplot(nfl_percentages, 
+         aes(reorder(Team, percent_rep), 
+             percent_rep,
+             fill = percent_rep)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() 
@@ -564,7 +601,7 @@ p2 <- ggplot(nfl_percentages, aes(reorder(Team, percent_rep),
 
 # Patch it together using `Patchwork`
 
-```{r}
+```{r fig.align='center', out.width="40%"}
 p1 + p2
 ```
 
@@ -594,14 +631,15 @@ nfl_percentages %>%
                values_to = "political_percentages")
 ```
 
-`r chunk_reveal(chunk_name = "swpivot", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swpivot", color = c("white", "white", "white"), width = c(120, 90))`
 
 ---
 
 ## Give it a variable
 
 ```{r}
-nlf_percentages_long <- nfl_percentages %>%
+nlf_percentages_long <- 
+  nfl_percentages %>%
   pivot_longer(c(percent_dem, percent_rep),
                names_to = "type",
                values_to = "political_percentages")
@@ -609,21 +647,20 @@ nlf_percentages_long <- nfl_percentages %>%
 
 ---
 
----
-
 ## More Data Wrangling: Pivoting
 
 ```{r swfacet, include = FALSE}
-ggplot(nlf_percentages_long, aes(Team, 
-                                 political_percentages,
-                            fill =  political_percentages)) +
+ggplot(nlf_percentages_long, 
+       aes(Team, 
+           political_percentages,
+           fill =  political_percentages)) +
   geom_bar(stat="identity") +
   coord_flip() +
   theme_minimal() +
   facet_wrap(.~type)
 ```
 
-`r chunk_reveal(chunk_name = "swfacet", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "swfacet", color = c("white", "white", "white"), width = c(105, 110))`
 
 ---
 
