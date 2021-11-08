@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The Not so Tiny One Sample t-test</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Week 10" />
+    <script src="Slides-Week-10aR_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="Slides-Week-10aR_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="Slides-Week-10aR_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="Slides-Week-10aR_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="Slides-Week-10aR_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <script src="Slides-Week-10aR_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="Slides-Week-10aR_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The Not so Tiny One Sample t-test
+### Week 10
+
+---
+
+
+&lt;script&gt;
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+&lt;/style&gt;
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+# Packages needed and a Note about Icons
+
+Please load up the following packages. Remember to first install the ones you don't have.
+
+
+
+&lt;br&gt;
+&lt;br&gt;
+You may come across the following icons. The table below lists what each means.
+
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;background-color: transparent !important;"&gt; Icon &lt;/th&gt;
+   &lt;th style="text-align:left;background-color: transparent !important;"&gt; Description &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #transparent !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:
+#4682b4;overflow:visible;position:relative;"&gt;&lt;path d="M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #transparent !important;"&gt; Indicates that an example continues on the following slide. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #transparent !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ff6347;overflow:visible;position:relative;"&gt;&lt;path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #transparent !important;"&gt; Indicates that a section using common syntax has ended. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #transparent !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5cb85c;overflow:visible;position:relative;"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #transparent !important;"&gt; Indicates that there is an active hyperlink on the slide. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; background-color: #transparent !important;"&gt; &lt;svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#faffbd;overflow:visible;position:relative;"&gt;&lt;path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; background-color: #transparent !important;"&gt; Indicates that a section covering a concept has ended. &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Comparing the Means Between Groups of Things
+
+The `\(t\)`-test is:
+
+--
+
+- One of the most common tests in statistics
+
+--
+
+- Used to determine whether the means of two groups are equal
+
+---
+
+# Ideas
+
+--
+
+&gt; **One-sample *t*-tests**: Compare the sample mean with a known value, when the variance of the population is unknown
+
+--
+
+&gt; **Two-sample *t*-tests**: Compare the means of two groups under the assumption that both samples are random, independent, and normally distributed with unknown but equal variances
+
+--
+
+&gt; **Paired *t*-tests**: Compare the means of two sets of paired samples, taken from two populations with unknown variance
+
+---
+
+## Packages
+
+Please load up the following packages
+
+
+```r
+library(tidyverse)
+library(patchwork)
+```
+
+---
+
+## The `t.test` Command
+
+
+```r
+t.test(x, y = NULL, 
+       alternative = c("two.sided", "less", "greater"), 
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = FALSE, 
+       conf.level = 0.95)
+```
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Option &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Function &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; x &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; a numeric vector from a data set &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; y &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; an optional numeric vector from a data set &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; mu &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; a number indicating the true value of the mean &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; alternative &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; preference on type of test you wish to run &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; paired &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; preference on whether you wish to perform a paired &lt;i&gt;t&lt;/i&gt;-test &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; var.equal &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; indicates whether or not to assume equal variances when performing a two-sample  &lt;i&gt;t&lt;/i&gt;-test &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 10em; font-family: monospace;color: #b2dfdb !important;"&gt; conf.level &lt;/td&gt;
+   &lt;td style="text-align:left;width: 40em; "&gt; the confidence level of the reported confidence interval &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### Note
+
+If `y` is
+
+– excluded, `t.test` will run as a one-sample *t*-test
+
+– included, `t.test` will run as a two-sample *t*-test
+
+- The default `t.test` command will run as a two-sided *t*-test BUT you can perform an alternative
+hypothesis by changing the `alternative` option using `greater` or `less`
+
+`t.test(x, alternative = "greater", mu = 47)`
+
+---
+
+### Example
+
+`t.test(x, alternative = "greater", mu = 47)`
+
+--
+
+- performs a one-sample *t*-test on the data contained in x where the 
+
+  - null hypothesis is `\(\mu = 47\)`, and the
+  
+  - alternative hypothesis is `\(\mu &gt; 47\)`.
+  
+--
+
+- The `paired` argument has a default setting of `FALSE` indicating that a paired *t*-test should not be run 
+  
+  - If you wish to run a paired *t*-test, this can be done by changing the setting to `TRUE`
+
+--
+
+- The `var.equals` argument has a default setting of `FALSE` indicating unequal variances and applies the Welsch approximation to the degrees of freedom. 
+  
+  - If you wish to have equal variances, this can be done by changing the setting to `TRUE`
+  
+--
+
+- The `conf.level` argument is set to 95%, or where `\(\alpha = 0.05\)`. 
+
+  - The confidence interval is determined by
+      - `\(\mu\)` for the one-sample *t*-test 
+    
+      - `\(\mu_1-\mu_2\)` for the two-sample *t*-test. 
+      
+---
+
+### Notes
+
+--
+
+- The `wilcox.test` function provides the same basic functionality and arguments
+
+--
+
+- However it is used when we **do not want to assume the data to follow a normal distribution**
+
+--
+
+- We're assuming normality
+
+--
+
+- So don't use it
+
+---
+
+# Assumptions
+
+--
+
+.pull-left[**Random sampling**] .pull-right[*Data is derived from random sampling*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Independent observations**] .pull-right[*Observations are independent from one another*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Normality**] .pull-right[*Observations are from a normally distributed population*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Homogeneity**] .pull-right[*If more than one population is sampled from, then the populations have equal variances (aka **homogeneity of variances**)*]
+
+---
+
+## Example
+
+
+```r
+head(midwest)
+```
+
+```
+## # A tibble: 6 × 28
+##     PID county   state  area poptotal popdensity popwhite popblack popamerindian
+##   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+## 1   561 ADAMS    IL    0.052    66090      1271.    63917     1702            98
+## 2   562 ALEXAND… IL    0.014    10626       759      7054     3496            19
+## 3   563 BOND     IL    0.022    14991       681.    14477      429            35
+## 4   564 BOONE    IL    0.017    30806      1812.    29344      127            46
+## 5   565 BROWN    IL    0.018     5836       324.     5264      547            14
+## 6   566 BUREAU   IL    0.05     35688       714.    35157       50            65
+## # … with 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+## #   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+## #   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+## #   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+## #   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+
+---
+
+## One-sample *t*-test
+
+Compare the differences between the average percent of college educated adults in Ohio versus Michigan
+
+
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+*midwest
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 437 × 28
+##      PID county  state  area poptotal popdensity popwhite popblack popamerindian
+##    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+##  1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+##  2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+##  3   563 BOND    IL    0.022    14991       681.    14477      429            35
+##  4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+##  5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+##  6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+##  7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+##  8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+##  9   569 CASS    IL    0.024    13437       560.    13384       16             8
+## 10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+## # … with 427 more rows, and 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;,
+## #   percwhite &lt;dbl&gt;, percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;,
+## #   percother &lt;dbl&gt;, popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;,
+## #   percprof &lt;dbl&gt;, poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;,
+## #   percbelowpoverty &lt;dbl&gt;, percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+midwest %&gt;%
+* filter(state == "OH" | state == "MI")
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 171 × 28
+##      PID county  state  area poptotal popdensity popwhite popblack popamerindian
+##    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+##  1  1197 ALCONA  MI    0.041    10145       247.    10026       27            56
+##  2  1198 ALGER   MI    0.051     8972       176.     8422      213           304
+##  3  1199 ALLEGAN MI    0.049    90509      1847.    86760     1448           543
+##  4  1200 ALPENA  MI    0.034    30605       900.    30372       35            93
+##  5  1201 ANTRIM  MI    0.031    18185       587.    17895       23           211
+##  6  1202 ARENAC  MI    0.021    14931       711     14695       10           139
+##  7  1203 BARAGA  MI    0.054     7954       147.     6971       49           918
+##  8  1204 BARRY   MI    0.034    50057      1472.    49429      104           188
+##  9  1205 BAY     MI    0.026   111723      4297.   107747     1242           726
+## 10  1206 BENZIE  MI    0.02     12200       610     11863       30           237
+## # … with 161 more rows, and 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;,
+## #   percwhite &lt;dbl&gt;, percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;,
+## #   percother &lt;dbl&gt;, popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;,
+## #   percprof &lt;dbl&gt;, poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;,
+## #   percbelowpoverty &lt;dbl&gt;, percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+midwest %&gt;%
+  filter(state == "OH" | state == "MI") %&gt;%
+* select(state, percollege)
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 171 × 2
+##    state percollege
+##    &lt;chr&gt;      &lt;dbl&gt;
+##  1 MI          14.1
+##  2 MI          16.3
+##  3 MI          18.1
+##  4 MI          18.9
+##  5 MI          19.0
+##  6 MI          11.8
+##  7 MI          14.6
+##  8 MI          17.3
+##  9 MI          18.2
+## 10 MI          21.4
+## # … with 161 more rows
+```
+]
+
+&lt;style&gt;
+.panel1-sw1-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw1-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw1-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+
+```r
+ohio_mi &lt;- 
+  midwest %&gt;%
+  filter(state == "OH" | state == "MI") %&gt;%
+  select(state, percollege)
+```
+
+---
+
+# Descriptives
+
+--
+
+.pull-left[
+
+```r
+summary(ohio_mi %&gt;% 
+          filter(state == "OH") %&gt;% 
+          .$percollege)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   7.913  13.089  15.462  16.890  18.995  32.205
+```
+]
+
+--
+
+.pull-right[
+
+```r
+summary(ohio_mi %&gt;% 
+          filter(state == "MI") %&gt;% 
+          .$percollege)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   11.31   14.61   17.43   19.42   21.31   48.08
+```
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
+Ohio appears to have slightly less college educated adults than Michigan but that means nothing!
+&lt;/center&gt;
+
+---
+
+# Boxplot
+
+
+
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+*ggplot(ohio_mi, aes(x = state,
+*                   y = percollege,
+*                   fill = state))
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10aR_files/figure-html/sw2_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+*       geom_boxplot(alpha = 0.5)
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10aR_files/figure-html/sw2_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+        geom_boxplot(alpha = 0.5) +
+*       scale_fill_manual(values = c("#00274C",
+*                                    "#BB0000"))
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10aR_files/figure-html/sw2_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+        geom_boxplot(alpha = 0.5) +
+        scale_fill_manual(values = c("#00274C",
+                                     "#BB0000")) +
+*       theme_minimal()
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10aR_files/figure-html/sw2_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw2-auto {
+  color: white;
+  width: 53.9%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw2-auto {
+  color: white;
+  width: 44.1%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw2-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Skewness
+
+
+```r
+p1 &lt;- ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..), color = "#ccccaa") +
+        scale_fill_gradient("Frequency", low = "#5cb85c", high = "#428bca") +
+        facet_wrap(~ state) +
+        theme_minimal()
+    
+
+p2 &lt;- ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..), color = "#ccccaa") +
+        scale_fill_gradient("Frequency", low = "#5cb85c", high = "#428bca") +
+        facet_wrap(~ state) + 
+        scale_x_log10() +
+        theme_minimal()
+```
+
+
+---
+
+
+```r
+p1 + p2
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+&lt;img src="Slides-Week-10aR_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## *t*-test
+
+
+```r
+t.test(percollege ~ state, data = ohio_mi)
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  percollege by state
+## t = 2.5953, df = 161.27, p-value = 0.01032
+## alternative hypothesis: true difference in means between group MI and group OH is not equal to 0
+## 95 percent confidence interval:
+##  0.6051571 4.4568579
+## sample estimates:
+## mean in group MI mean in group OH 
+##         19.42146         16.89045
+```
+
+--
+
+&lt;br&gt;
+&gt; Results below show a *p*-value &lt; .01 supporting the alternative hypothesis that `true difference in means is not equal to 0`
+
+--
+
+&lt;br&gt;
+&gt; So **there is a statistical difference between the two means**
+
+---
+
+## Using the `log`
+
+
+```r
+t.test(log(percollege) ~ state, data = ohio_mi)
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  log(percollege) by state
+## t = 2.9556, df = 168.98, p-value = 0.003567
+## alternative hypothesis: true difference in means between group MI and group OH is not equal to 0
+## 95 percent confidence interval:
+##  0.04724892 0.23732151
+## sample estimates:
+## mean in group MI mean in group OH 
+##         2.915873         2.773587
+```
+
+--
+
+&lt;br&gt;
+&gt; Results below show a *p*-value &lt; .01 supporting the alternative hypothesis that `true difference in means is not equal to 0`
+
+--
+
+&lt;br&gt;
+&gt; So **there is a statistical difference between the two means**
+
+---
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -23,17 +23,12 @@ class: center, middle, inverse, title-slide
 ---
 
 
-&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
 
-&lt;script type="text/x-mathjax-config"&gt;
-MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
-    cancel: ["Extension","cancel"],
-    bcancel: ["Extension","cancel"],
-    xcancel: ["Extension","cancel"],
-    cancelto: ["Extension","cancel"]
-  });
-});
+
+&lt;script&gt;
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
 &lt;/script&gt;
 
 &lt;style&gt;
@@ -97,6 +92,20 @@ text-align: center;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.custom-inline {
+  color: #bff4ee;
+}
 
 &lt;/style&gt;
 
@@ -219,7 +228,7 @@ library(patchwork)
 
 ---
 
-## The `t.test` Command
+# The Base R `t.test` command
 
 
 ```r
@@ -272,7 +281,84 @@ t.test(x, y = NULL,
 
 ---
 
-### Note
+### Notes
+
+- The `var.equals` argument has a default setting of &lt;span style='color: #64b5f6;'&gt;FALSE&lt;/span&gt; indicating unequal variances and applies the Welsch approximation to the degrees of freedom. 
+  
+  - If you wish to have equal variances, this can be done by changing the setting to &lt;span style='color: #64b5f6;'&gt;TRUE&lt;/span&gt;
+  
+--
+
+- The `conf.level` argument is set to 95%, or where `\(\alpha = 0.05\)`. 
+
+  - The confidence interval is determined by
+      - `\(\mu\)` for the one-sample *t*-test 
+    
+      - `\(\mu_1-\mu_2\)` for the two-sample *t*-test. 
+      
+---
+
+### Be Aware!
+
+&gt; The `wilcox.test` function provides the same basic functionality and arguments
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&gt; However it is used when we ***do not want to assume the data to follow a normal distribution***
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&gt; We're assuming normality
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&gt; So please ignore it for now!
+
+---
+
+# Assumptions
+
+--
+
+.pull-left[**Random sampling**] .pull-right[*Data is derived from random sampling*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Independent observations**] .pull-right[*Observations are independent from one another*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Normality**] .pull-right[*Observations are from a normally distributed population*]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+.pull-left[**Homogeneity**] .pull-right[*If more than one population is sampled from, then the populations have equal variances (aka **homogeneity of variances**)*]
+
+---
+
+---
+
+## One- or Two-sample *t*-tests
+
+--
 
 If `y` is
 
@@ -280,12 +366,1041 @@ If `y` is
 
 – included, `t.test` will run as a two-sample *t*-test
 
-- The default `t.test` command will run as a two-sided *t*-test BUT you can perform an alternative
-hypothesis by changing the `alternative` option using `greater` or `less`
+- default `t.test` command will run as a two-sided *t*-test
 
-`t.test(x, alternative = "greater", mu = 47)`
+- you can run a one-sided *t*-test by changing the `alternative` option to `greater` or `less`
 
 ---
+
+#### Example
+
+
+`t.test(x, alternative = "greater", mu = 47)` performs a one-sample *t*-test on the data contained in `x` where 
+
+`$$H_0: \mu = 47$$`
+  
+`$$H_1: \mu &gt; 47$$`
+      
+---
+
+## Example
+
+
+```r
+midwest %&gt;%
+  head()
+```
+
+```
+## # A tibble: 6 × 28
+##     PID county   state  area poptotal popdensity popwhite popblack popamerindian
+##   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+## 1   561 ADAMS    IL    0.052    66090      1271.    63917     1702            98
+## 2   562 ALEXAND… IL    0.014    10626       759      7054     3496            19
+## 3   563 BOND     IL    0.022    14991       681.    14477      429            35
+## 4   564 BOONE    IL    0.017    30806      1812.    29344      127            46
+## 5   565 BROWN    IL    0.018     5836       324.     5264      547            14
+## 6   566 BUREAU   IL    0.05     35688       714.    35157       50            65
+## # … with 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;, percwhite &lt;dbl&gt;,
+## #   percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;, percother &lt;dbl&gt;,
+## #   popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;, percprof &lt;dbl&gt;,
+## #   poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;, percbelowpoverty &lt;dbl&gt;,
+## #   percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+
+.footnote[Please use `?midwest` for more details on the variables]
+
+---
+
+### Purpose
+
+We want to compare the differences between the average percent of college educated adults in Ohio versus Michigan
+
+
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+*midwest
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 437 × 28
+##      PID county  state  area poptotal popdensity popwhite popblack popamerindian
+##    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+##  1   561 ADAMS   IL    0.052    66090      1271.    63917     1702            98
+##  2   562 ALEXAN… IL    0.014    10626       759      7054     3496            19
+##  3   563 BOND    IL    0.022    14991       681.    14477      429            35
+##  4   564 BOONE   IL    0.017    30806      1812.    29344      127            46
+##  5   565 BROWN   IL    0.018     5836       324.     5264      547            14
+##  6   566 BUREAU  IL    0.05     35688       714.    35157       50            65
+##  7   567 CALHOUN IL    0.017     5322       313.     5298        1             8
+##  8   568 CARROLL IL    0.027    16805       622.    16519      111            30
+##  9   569 CASS    IL    0.024    13437       560.    13384       16             8
+## 10   570 CHAMPA… IL    0.058   173025      2983.   146506    16559           331
+## # … with 427 more rows, and 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;,
+## #   percwhite &lt;dbl&gt;, percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;,
+## #   percother &lt;dbl&gt;, popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;,
+## #   percprof &lt;dbl&gt;, poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;,
+## #   percbelowpoverty &lt;dbl&gt;, percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+midwest %&gt;%
+* filter(state == "OH" | state == "MI")
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 171 × 28
+##      PID county  state  area poptotal popdensity popwhite popblack popamerindian
+##    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;         &lt;int&gt;
+##  1  1197 ALCONA  MI    0.041    10145       247.    10026       27            56
+##  2  1198 ALGER   MI    0.051     8972       176.     8422      213           304
+##  3  1199 ALLEGAN MI    0.049    90509      1847.    86760     1448           543
+##  4  1200 ALPENA  MI    0.034    30605       900.    30372       35            93
+##  5  1201 ANTRIM  MI    0.031    18185       587.    17895       23           211
+##  6  1202 ARENAC  MI    0.021    14931       711     14695       10           139
+##  7  1203 BARAGA  MI    0.054     7954       147.     6971       49           918
+##  8  1204 BARRY   MI    0.034    50057      1472.    49429      104           188
+##  9  1205 BAY     MI    0.026   111723      4297.   107747     1242           726
+## 10  1206 BENZIE  MI    0.02     12200       610     11863       30           237
+## # … with 161 more rows, and 19 more variables: popasian &lt;int&gt;, popother &lt;int&gt;,
+## #   percwhite &lt;dbl&gt;, percblack &lt;dbl&gt;, percamerindan &lt;dbl&gt;, percasian &lt;dbl&gt;,
+## #   percother &lt;dbl&gt;, popadults &lt;int&gt;, perchsd &lt;dbl&gt;, percollege &lt;dbl&gt;,
+## #   percprof &lt;dbl&gt;, poppovertyknown &lt;int&gt;, percpovertyknown &lt;dbl&gt;,
+## #   percbelowpoverty &lt;dbl&gt;, percchildbelowpovert &lt;dbl&gt;, percadultpoverty &lt;dbl&gt;,
+## #   percelderlypoverty &lt;dbl&gt;, inmetro &lt;int&gt;, category &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw1-auto[
+
+```r
+midwest %&gt;%
+  filter(state == "OH" | state == "MI") %&gt;%
+* select(state, percollege)
+```
+]
+ 
+.panel2-sw1-auto[
+
+```
+## # A tibble: 171 × 2
+##    state percollege
+##    &lt;chr&gt;      &lt;dbl&gt;
+##  1 MI          14.1
+##  2 MI          16.3
+##  3 MI          18.1
+##  4 MI          18.9
+##  5 MI          19.0
+##  6 MI          11.8
+##  7 MI          14.6
+##  8 MI          17.3
+##  9 MI          18.2
+## 10 MI          21.4
+## # … with 161 more rows
+```
+]
+
+&lt;style&gt;
+.panel1-sw1-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw1-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw1-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+
+```r
+ohio_mi &lt;- 
+  midwest %&gt;%
+  filter(state == "OH" | state == "MI") %&gt;%
+  select(state, percollege)
+```
+
+---
+
+### Descriptives
+
+--
+
+.pull-left[
+&lt;img src="Slides-Week-10R_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+
+
+```r
+ohio_mi %&gt;% 
+  filter(state == "OH") %&gt;%
+  summary()
+```
+
+```
+##     state             percollege    
+##  Length:88          Min.   : 7.913  
+##  Class :character   1st Qu.:13.089  
+##  Mode  :character   Median :15.462  
+##                     Mean   :16.890  
+##                     3rd Qu.:18.995  
+##                     Max.   :32.205
+```
+]
+
+--
+
+.pull-right[
+&lt;img src="Slides-Week-10R_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" /&gt;
+
+
+```r
+ohio_mi %&gt;% 
+  filter(state == "MI") %&gt;%
+  summary()
+```
+
+```
+##     state             percollege   
+##  Length:83          Min.   :11.31  
+##  Class :character   1st Qu.:14.61  
+##  Mode  :character   Median :17.43  
+##                     Mean   :19.42  
+##                     3rd Qu.:21.31  
+##                     Max.   :48.08
+```
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
+Ohio appears to have slightly less college educated adults than Michigan but let's see if that's actually true
+&lt;/center&gt;
+
+---
+
+### Boxplot
+
+
+
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+*ggplot(ohio_mi, aes(x = state,
+*                   y = percollege,
+*                   fill = state))
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10R_files/figure-html/sw2_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+*       geom_boxplot(alpha = 0.7,
+*                    outlier.size = 2.5)
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10R_files/figure-html/sw2_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+        geom_boxplot(alpha = 0.7,
+                     outlier.size = 2.5) +
+*       scale_fill_manual(values = c("#00274C",
+*                                    "#BB0000"))
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10R_files/figure-html/sw2_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+        geom_boxplot(alpha = 0.7,
+                     outlier.size = 2.5) +
+        scale_fill_manual(values = c("#00274C",
+                                     "#BB0000")) +
+*       theme_minimal()
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10R_files/figure-html/sw2_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw2-auto[
+
+```r
+ggplot(ohio_mi, aes(x = state,
+                    y = percollege,
+                    fill = state)) +
+        geom_boxplot(alpha = 0.7,
+                     outlier.size = 2.5) +
+        scale_fill_manual(values = c("#00274C",
+                                     "#BB0000")) +
+        theme_minimal() +
+*       theme(panel.grid.major.x = element_blank(),
+*             panel.grid.minor.x = element_blank())
+```
+]
+ 
+.panel2-sw2-auto[
+![](Slides-Week-10R_files/figure-html/sw2_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw2-auto {
+  color: white;
+  width: 53.9%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw2-auto {
+  color: white;
+  width: 44.1%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw2-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+### Shifting Skewness
+
+
+
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+*ggplot(ohio_mi, aes(x = percollege))
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+*       geom_histogram(aes(fill = ..count..),
+*                      bins = 20)
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+*       scale_fill_viridis_c("Frequency")
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+*       facet_wrap(. ~ state)
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+        facet_wrap(. ~ state) +
+*       theme_minimal()
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw3-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+        facet_wrap(. ~ state) +
+        theme_minimal() +
+*       scale_x_log10()
+```
+]
+ 
+.panel2-sw3-auto[
+![](Slides-Week-10R_files/figure-html/sw3_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw3-auto {
+  color: white;
+  width: 53.9%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw3-auto {
+  color: white;
+  width: 44.1%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw3-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+### More Shifting Skewness
+
+
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+*ggplot(ohio_mi, aes(x = percollege))
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+*       geom_histogram(aes(fill = ..count..),
+*                      bins = 20)
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+*       scale_fill_viridis_c("Frequency")
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+*       facet_wrap(. ~ state, ncol = 1)
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+        facet_wrap(. ~ state, ncol = 1) +
+*       theme_minimal()
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-sw4-auto[
+
+```r
+ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..),
+                       bins = 20) +
+        scale_fill_viridis_c("Frequency") +
+        facet_wrap(. ~ state, ncol = 1) +
+        theme_minimal() +
+*       scale_x_log10()
+```
+]
+ 
+.panel2-sw4-auto[
+![](Slides-Week-10R_files/figure-html/sw4_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-sw4-auto {
+  color: white;
+  width: 53.9%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw4-auto {
+  color: white;
+  width: 44.1%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw4-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+--
+
+.pull-left[
+
+```r
+regularplot &lt;- 
+  ggplot(ohio_mi, aes(x = percollege)) +
+  geom_histogram(aes(fill = ..count..),
+                 bins = 20) +
+  scale_fill_viridis_c("Frequency") +
+  facet_wrap(~ state, ncol = 1) +
+  theme_minimal() +
+  ggtitle("Regular")
+```
+]
+
+--
+
+.pull-right[
+
+```r
+scaledplot &lt;- 
+  ggplot(ohio_mi, aes(x = percollege)) +
+  geom_histogram(aes(fill = ..count..),
+                 bins = 20) +
+  scale_fill_viridis_c("Frequency") +
+  facet_wrap(~ state, ncol = 1) + 
+  theme_minimal() +
+  ggtitle("Scaled") +
+  scale_x_log10() # this line was added
+```
+]
+
+---
+
+
+```r
+regularplot + scaledplot
+```
+
+&lt;img src="Slides-Week-10R_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Testing as is
+
+
+```r
+t.test(percollege ~ state, data = ohio_mi)
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  percollege by state
+## t = 2.5953, df = 161.27, p-value = 0.01032
+## alternative hypothesis: true difference in means between group MI and group OH is not equal to 0
+## 95 percent confidence interval:
+##  0.6051571 4.4568579
+## sample estimates:
+## mean in group MI mean in group OH 
+##         19.42146         16.89045
+```
+
+--
+
+&lt;br&gt;
+&gt; Results show a *p*-value &lt; .01 so **there is a statistical difference between the two means**
+
+--
+
+&lt;br&gt;
+&gt; This supports the alternative hypothesis that there is a difference between the average percent of college educated adults in Ohio versus Michigan
+
+---
+
+### Testing using a `log` function
+
+
+```r
+t.test(log(percollege) ~ state, data = ohio_mi)
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  log(percollege) by state
+## t = 2.9556, df = 168.98, p-value = 0.003567
+## alternative hypothesis: true difference in means between group MI and group OH is not equal to 0
+## 95 percent confidence interval:
+##  0.04724892 0.23732151
+## sample estimates:
+## mean in group MI mean in group OH 
+##         2.915873         2.773587
+```
+
+--
+
+&lt;br&gt;
+&gt; Results show a *p*-value &lt; .01 so **there is a statistical difference between the two means**
+
+--
+
+&lt;br&gt;
+&gt; So **there is a statistical difference between the two means**
+
+---
+
+## Paired-samples *t*-test 
+
+--
+
+Same `t.test` command as in the previous sections but just change your option to `paired =` &lt;span style='color: #64b5f6;'&gt;TRUE&lt;/span&gt;
+
+
+```r
+t.test(x, y = NULL, 
+       alternative = c("two.sided", "less", "greater"), 
+       mu = 0, 
+       paired = TRUE, 
+       var.equal = FALSE, 
+       conf.level = 0.95)
+```
+
+---
+
+## Example
+
+
+```r
+sleep %&gt;%
+  head()
+```
+
+```
+##   extra group ID
+## 1   0.7     1  1
+## 2  -1.6     1  2
+## 3  -0.2     1  3
+## 4  -1.2     1  4
+## 5  -0.1     1  5
+## 6   3.4     1  6
+```
+
+.footnote[Please use `?sleep` for more details on the variables]
+
+---
+
+## Purpose
+
+We are assessing if there is a statistically significant effect of a particular drug on sleep (increase in hours of sleep compared to control) for 10 patients
+
+
+count: false
+ 
+
+.panel1-sw5-auto[
+
+```r
+*sleep
+```
+]
+ 
+.panel2-sw5-auto[
+
+```
+##    extra group ID
+## 1    0.7     1  1
+## 2   -1.6     1  2
+## 3   -0.2     1  3
+## 4   -1.2     1  4
+## 5   -0.1     1  5
+## 6    3.4     1  6
+## 7    3.7     1  7
+## 8    0.8     1  8
+## 9    0.0     1  9
+## 10   2.0     1 10
+## 11   1.9     2  1
+## 12   0.8     2  2
+## 13   1.1     2  3
+## 14   0.1     2  4
+## 15  -0.1     2  5
+## 16   4.4     2  6
+## 17   5.5     2  7
+## 18   1.6     2  8
+## 19   4.6     2  9
+## 20   3.4     2 10
+```
+]
+
+---
+count: false
+ 
+
+.panel1-sw5-auto[
+
+```r
+sleep %&gt;%
+* select(-ID)
+```
+]
+ 
+.panel2-sw5-auto[
+
+```
+##    extra group
+## 1    0.7     1
+## 2   -1.6     1
+## 3   -0.2     1
+## 4   -1.2     1
+## 5   -0.1     1
+## 6    3.4     1
+## 7    3.7     1
+## 8    0.8     1
+## 9    0.0     1
+## 10   2.0     1
+## 11   1.9     2
+## 12   0.8     2
+## 13   1.1     2
+## 14   0.1     2
+## 15  -0.1     2
+## 16   4.4     2
+## 17   5.5     2
+## 18   1.6     2
+## 19   4.6     2
+## 20   3.4     2
+```
+]
+
+&lt;style&gt;
+.panel1-sw5-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-sw5-auto {
+  color: white;
+  width: 49%;
+  hight: 32%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-sw5-auto {
+  color: white;
+  width: NA%;
+  hight: 33%;
+  float: top;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Descriptives
+
+
+```r
+sleep %&gt;% 
+  summary()
+```
+
+```
+##      extra        group        ID   
+##  Min.   :-1.600   1:10   1      :2  
+##  1st Qu.:-0.025   2:10   2      :2  
+##  Median : 0.950          3      :2  
+##  Mean   : 1.540          4      :2  
+##  3rd Qu.: 3.400          5      :2  
+##  Max.   : 5.500          6      :2  
+##                          (Other):8
+```
+
+
+---
+
+## Boxplot
+
+--
+
+.pull-left[
+
+```r
+sleep %&gt;%
+  ggplot(aes(group, extra, fill = group)) +
+  geom_boxplot(alpha = 0.8) +
+  scale_fill_manual(
+    values = c("#428bca", "#d9534f")
+    ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+    )
+```
+]
+
+--
+
+.pull-right[
+&lt;img src="Slides-Week-10R_files/figure-html/unnamed-chunk-23-1.png" width="68%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+Asessing if there is a statistically significant effect of a particular drug on sleep (increase in hours of sleep compared to control) for 10 patients
+
+---
+
+### Testing
+
+We want to see if the mean values for the extra variable differs between group 1 and group 2
+
+
+```r
+t.test(extra ~ group, data = sleep, paired = TRUE)
+```
+
+```
+## 
+## 	Paired t-test
+## 
+## data:  extra by group
+## t = -4.0621, df = 9, p-value = 0.002833
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -2.4598858 -0.7001142
+## sample estimates:
+## mean of the differences 
+##                   -1.58
+```
+
+--
+
+&lt;br&gt;
+&gt; Results show a *p*-value &lt; .01 so **there is a statistical difference between the two means**
+
+--
+
+&lt;br&gt;
+&gt; This supports the alternative hypothesis that suggesting that the drug increases sleep on average by 1.58 hours
+
+---
+
+## Thats it!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,0 +1,512 @@
+---
+title: "The Not so Tiny One Sample t-test"
+linktitle: "Week 10: The Not so Tiny One Sample t-test"
+author: "Week 10"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
+---
+
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+library(patchwork)
+library(flipbookr)
+```
+
+```{r echo = FALSE, purl=FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#bff4ee",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+  )
+```
+
+# Packages needed and a Note about Icons
+
+Please load up the following packages. Remember to first install the ones you don't have.
+```{r echo = FALSE, eval = TRUE, message=FALSE}
+library(tidyverse)
+library(mosaic)
+library(ggplot2movies)
+``` 
+
+```{r echo = FALSE, eval = TRUE, message=FALSE}
+suppressMessages(library(tidyverse))
+suppressMessages(library(mosaic))
+suppressMessages(library(ggplot2movies))
+``` 
+<br>
+<br>
+You may come across the following icons. The table below lists what each means.
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
+forward <- as.character(fontawesome::fa("forward", fill = "
+#4682b4"))
+
+stop <- as.character(fontawesome::fa("stop", fill = "#ff6347"))
+
+link <- as.character(fontawesome::fa("link", fill = "#5cb85c"))
+
+bookmark <- as.character(fontawesome::fa("bookmark", fill = "#faffbd"))
+
+
+icon_desc <- tibble(
+  
+  Icon = c(forward,
+           stop, 
+           link,
+           bookmark),
+  
+  Description = c("Indicates that an example continues on the following slide.",
+                  "Indicates that a section using common syntax has ended.",
+                  "Indicates that there is an active hyperlink on the slide.",
+                  "Indicates that a section covering a concept has ended.")
+  
+)
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE, purl=FALSE}
+kable(icon_desc, 
+      escape = FALSE,
+      align = 'cl') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "40em") %>%
+  row_spec(0, background = "transparent") %>%
+  row_spec(1, background = "#transparent") %>%
+  row_spec(2, background = "#transparent") %>%
+  row_spec(3, background = "#transparent") %>%
+  row_spec(4, background = "#transparent") 
+```
+
+---
+
+# Comparing the Means Between Groups of Things
+
+The $t$-test is:
+
+--
+
+- One of the most common tests in statistics
+
+--
+
+- Used to determine whether the means of two groups are equal
+
+---
+
+# Ideas
+
+--
+
+> **One-sample *t*-tests**: Compare the sample mean with a known value, when the variance of the population is unknown
+
+--
+
+> **Two-sample *t*-tests**: Compare the means of two groups under the assumption that both samples are random, independent, and normally distributed with unknown but equal variances
+
+--
+
+> **Paired *t*-tests**: Compare the means of two sets of paired samples, taken from two populations with unknown variance
+
+---
+
+## Packages
+
+Please load up the following packages
+
+```{r echo = TRUE, eval = TRUE}
+library(tidyverse)
+library(patchwork)
+```
+
+---
+
+## The `t.test` Command
+
+```{r ttest_definition, eval=FALSE}
+t.test(x, y = NULL, 
+       alternative = c("two.sided", "less", "greater"), 
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = FALSE, 
+       conf.level = 0.95)
+```
+
+```{r echo=FALSE}
+
+tibble(
+
+option = c("x", "y", "mu", "alternative", "paired", "var.equal", "conf.level"),
+
+what <- c("a numeric vector from a data set",
+          "an optional numeric vector from a data set",
+          "a number indicating the true value of the mean",
+          "preference on type of test you wish to run",
+          "preference on whether you wish to perform a paired <i>t</i>-test",
+          "indicates whether or not to assume equal variances when performing a two-sample  <i>t</i>-test",
+          "the confidence level of the reported confidence interval")
+
+) %>%
+  kbl(col.names = c("Option", "Function"), 
+      "html", 
+      escape = FALSE,
+      align = 'cl') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em", 
+              color = "#b2dfdb", 
+              monospace = TRUE) %>%
+  column_spec(2, width = "40em")
+
+```
+
+---
+
+### Note
+
+If `y` is
+
+– excluded, `t.test` will run as a one-sample *t*-test
+
+– included, `t.test` will run as a two-sample *t*-test
+
+- The default `t.test` command will run as a two-sided *t*-test BUT you can perform an alternative
+hypothesis by changing the `alternative` option using `greater` or `less`
+
+`t.test(x, alternative = "greater", mu = 47)`
+
+---
+
+### Example
+
+`t.test(x, alternative = "greater", mu = 47)`
+
+--
+
+- performs a one-sample *t*-test on the data contained in x where the 
+
+  - null hypothesis is $\mu = 47$, and the
+  
+  - alternative hypothesis is $\mu > 47$.
+  
+--
+
+- The `paired` argument has a default setting of `FALSE` indicating that a paired *t*-test should not be run 
+  
+  - If you wish to run a paired *t*-test, this can be done by changing the setting to `TRUE`
+
+--
+
+- The `var.equals` argument has a default setting of `FALSE` indicating unequal variances and applies the Welsch approximation to the degrees of freedom. 
+  
+  - If you wish to have equal variances, this can be done by changing the setting to `TRUE`
+  
+--
+
+- The `conf.level` argument is set to 95%, or where $\alpha = 0.05$. 
+
+  - The confidence interval is determined by
+      - $\mu$ for the one-sample *t*-test 
+    
+      - $\mu_1-\mu_2$ for the two-sample *t*-test. 
+      
+---
+
+### Notes
+
+--
+
+- The `wilcox.test` function provides the same basic functionality and arguments
+
+--
+
+- However it is used when we **do not want to assume the data to follow a normal distribution**
+
+--
+
+- We're assuming normality
+
+--
+
+- So don't use it
+
+---
+
+# Assumptions
+
+--
+
+.pull-left[**Random sampling**] .pull-right[*Data is derived from random sampling*]
+
+--
+
+<br>
+<br>
+<br>
+<br> 
+.pull-left[**Independent observations**] .pull-right[*Observations are independent from one another*]
+
+--
+
+<br>
+<br>
+<br>
+<br> 
+.pull-left[**Normality**] .pull-right[*Observations are from a normally distributed population*]
+
+--
+
+<br>
+<br>
+<br>
+<br> 
+.pull-left[**Homogeneity**] .pull-right[*If more than one population is sampled from, then the populations have equal variances (aka **homogeneity of variances**)*]
+
+---
+
+## Example
+
+```{r}
+head(midwest)
+```
+
+---
+
+## One-sample *t*-test
+
+Compare the differences between the average percent of college educated adults in Ohio versus Michigan
+
+```{r sw1, include = FALSE}
+midwest %>%
+  filter(state == "OH" | state == "MI") %>%
+  select(state, percollege)
+```
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100), float = "top")`
+
+---
+
+```{r}
+ohio_mi <- 
+  midwest %>%
+  filter(state == "OH" | state == "MI") %>%
+  select(state, percollege)
+```
+
+---
+
+# Descriptives
+
+--
+
+.pull-left[
+```{r}
+summary(ohio_mi %>% 
+          filter(state == "OH") %>% 
+          .$percollege)
+```
+]
+
+--
+
+.pull-right[
+```{r}
+summary(ohio_mi %>% 
+          filter(state == "MI") %>% 
+          .$percollege)
+```
+]
+
+--
+
+<br>
+<br>
+<center>
+Ohio appears to have slightly less college educated adults than Michigan but that means nothing!
+</center>
+
+---
+
+# Boxplot
+
+```{r sw2, include = FALSE}
+ggplot(ohio_mi, aes(x = state, 
+                    y = percollege, 
+                    fill = state)) +
+        geom_boxplot(alpha = 0.5) +
+        scale_fill_manual(values = c("#00274C", 
+                                     "#BB0000")) +
+        theme_minimal() 
+```
+
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(110, 90))`
+
+---
+
+## Skewness
+
+```{r}
+p1 <- ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..), color = "#ccccaa") +
+        scale_fill_gradient("Frequency", low = "#5cb85c", high = "#428bca") +
+        facet_wrap(~ state) +
+        theme_minimal()
+    
+
+p2 <- ggplot(ohio_mi, aes(x = percollege)) +
+        geom_histogram(aes(fill = ..count..), color = "#ccccaa") +
+        scale_fill_gradient("Frequency", low = "#5cb85c", high = "#428bca") +
+        facet_wrap(~ state) + 
+        scale_x_log10() +
+        theme_minimal()
+```
+
+
+---
+
+```{r fig.align='center', fig.width=14}
+p1 + p2
+```
+
+---
+
+## *t*-test
+
+```{r}
+t.test(percollege ~ state, data = ohio_mi)
+```
+
+--
+
+<br>
+> Results below show a *p*-value < .01 supporting the alternative hypothesis that `true difference in means is not equal to 0`
+
+--
+
+<br>
+> So **there is a statistical difference between the two means**
+
+---
+
+## Using the `log`
+
+```{r}
+t.test(log(percollege) ~ state, data = ohio_mi)
+```
+
+--
+
+<br>
+> Results below show a *p*-value < .01 supporting the alternative hypothesis that `true difference in means is not equal to 0`
+
+--
+
+<br>
+> So **there is a statistical difference between the two means**
+
+---
+
+

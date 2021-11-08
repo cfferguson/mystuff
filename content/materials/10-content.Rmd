@@ -134,18 +134,18 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 > Click [here](/slides/Week 10/Slides-Week-10.pdf){target="_blank"} here for a PDF of the presentation.
 
 ### R Walkthrough
-
+<!--
 *posted during class time*
 
-<!--
+
 Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
 ```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 8", "EDP613Week8RMaterials.zip")
+loc <- here::here("static", "slides", "Week 10", "EDP613Week10RMaterials.zip")
 
 downloadthis::download_file(
   path = loc,
-  output_name = "Week 8 R Walkthrough Materials",
+  output_name = "Week 10 R Walkthrough Materials",
   button_label = "Download",
   button_type = "default",
   has_icon = TRUE,
@@ -155,6 +155,7 @@ downloadthis::download_file(
 ```
 
 <br>
+-->
 ```{r echo = FALSE}
 knitr::include_url("/slides/Week 10/Slides-Week-10R.html")
 ```
@@ -164,4 +165,3 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 > Click [here](/slides/Week 10/Slides-Week-10R.html){target="_blank"} for a larger version of the presentation.
 
 > Click [here](/slides/Week 10/Slides-Week-10R.pdf){target="_blank"} here for a PDF of the presentation.
--->

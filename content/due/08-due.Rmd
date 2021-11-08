@@ -72,8 +72,8 @@ Area = c(book,
          lightbulb),
 
 Description = c("Read *Testing Hypotheses* in the text",
-               "Download Chapter 8 Powerpoint and Lecture Textbook Notes",
-               "Watch videos on the *p*-value^[Optional but recommended.]"),
+                "Download Chapter 8 Powerpoint and Lecture Textbook Notes",
+                "Watch videos on the *p*-value^[Optional but recommended.]"),
 
 Location = c("[Link](/readings/09-reading/#book-stuff)", 
              "[Link](/materials/09-content/#textbook-notes)",

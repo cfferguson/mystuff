@@ -32,6 +32,7 @@ checked <- as.character(fontawesome::fa("check-square", fill = "steelblue"))
 wk_post <- tibble(
   
 Submit = c(unchecked,
+           unchecked,
            checked,
            checked, 
            checked,
@@ -39,6 +40,7 @@ Submit = c(unchecked,
            checked),
 
 Description = c("Review the solution set from the Chapter 8 homework set",
+                "Downlaod a copy of the R walkthrough on the `t.test`",
                 "Complete problems 1, 2, 3, 4, 5 in Chapter 9",
                 "Continue the *Foundations of Inference*",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
@@ -47,6 +49,7 @@ Description = c("Review the solution set from the Chapter 8 homework set",
 
 
 Location = c("[Link](/tasks/09-tasks/#solutions)",
+             "[Link](/materials/10-content/#r-walkthrough)",
              "[Link](/tasks/10-tasks/#homework)^[Due week 12]",
              "[Link](/datacamp/05-module/)",
              "[Link](/datacamp/07-module/)",
