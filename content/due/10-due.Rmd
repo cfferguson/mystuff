@@ -7,7 +7,7 @@ output:
 menu:
   due:
     parent: "To Do"
-    weight: 9
+    weight: 10
 type: docs
 weight: 1
 editor_options: 
