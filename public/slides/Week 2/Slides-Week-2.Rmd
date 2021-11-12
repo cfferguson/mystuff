@@ -44,6 +44,15 @@ section p {
     color: #bff4ee;
 }
 
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 </style>
 
 ```{r setup, include=FALSE, purl=FALSE}
@@ -75,7 +84,7 @@ xaringanthemer::style_duo(
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
   position = xaringanExtra::css_position(top = "1em", right = "1em"))
 ```
@@ -203,9 +212,10 @@ datasetSalaries %>%
 
 # Pie Charts
 
->- discrete data .pull-right[.footnote[*Friends don't let friends use pie charts!*]]
+> discrete data .pull-right[.footnote[*Friends don't let friends use pie charts!*]]
 
-```{r echo=FALSE, fig.align='center', out.width="55%"}
+.center2[
+```{r echo=FALSE, fig.align='center', out.width="90%"}
 # Create Data
 data <- data.frame(
   group=c("Thing 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5"),
@@ -234,15 +244,16 @@ print(p,
       newpage = FALSE)
 
 ```
-
+]
 
 ---
 
 # Bar Plot
 
->- discrete data
+> discrete data
 
-```{r echo=FALSE, fig.align='center', out.width="55%"}
+.center2[
+```{r echo=FALSE, fig.align='center', out.width="90%"}
 
 # Create data
 data <- data.frame(
@@ -268,14 +279,16 @@ print(p,
       newpage = FALSE)
 
 ```
+]
 
 ---
 
 # Histogram
 
->- continuous data 
+> continuous data 
 
-```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="55%"}
+.center2[
+```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="90%"}
 
 # dataset:
 set.seed(1)
@@ -310,14 +323,16 @@ grid::grid.draw(grid::rectGrob(
 print(p, 
       newpage = FALSE)
 ```
+]
 
 ---
 
 # Line graph
 
->- continuous data 
+> continuous data 
 
-```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="55%"}
+.center2[ 
+```{r echo=FALSE, fig.align='center', warning=FALSE, out.width="90%"}
 
 # dataset:
 set.seed(2021)
@@ -353,6 +368,7 @@ grid::grid.draw(grid::rectGrob(
 print(p, 
       newpage = FALSE)
 ```
+]
 
 ---
 
@@ -360,7 +376,7 @@ print(p,
 
 ---
 
->- Skewed left OR Negative skew
+> Skewed left OR Negative skew
 
 ```{r echo = FALSE, fig.align='center'}
 n <- 10000
@@ -400,7 +416,7 @@ mode < median < mean
 
 ---
 
->- Skewed right OR Positive skew
+> Skewed right OR Positive skew
 
 ```{r echo = FALSE, fig.align='center'}
 reverselog_trans <- 
@@ -450,7 +466,7 @@ mode > median > mean
 
 ---
 
->- Normal distribution
+> Normal distribution
 
 ```{r echo = FALSE, fig.align='center'}
 n = 1000

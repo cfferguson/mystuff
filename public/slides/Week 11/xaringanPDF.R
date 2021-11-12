@@ -1,6 +1,15 @@
 # Set the working directory as source ----
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-pagedown::chrome_print("Slides-Week-11.Rmd", format = "pdf", timeout = 90)
-pagedown::chrome_print("Slides-Week-11R.Rmd", format = "pdf", timeout = 90)
+# library(xaringanBuilder)
+# build_pdf("Slides-Week-11.Rmd")
+# build_pdf("Slides-Week-11.html")
 
+# pagedown::chrome_print("Slides-Week-11.Rmd")
+# pagedown::chrome_print("Slides-Week-11.html")
+# pagedown::chrome_print("Slides-Week-11R.Rmd")
+
+remotes::install_github("rstudio/chromote")
+source("https://git.io/xaringan2pdf")
+xaringan_to_pdf("Slides-Week-11.html")
+xaringan_to_pdf("Slides-Week-11R.html")

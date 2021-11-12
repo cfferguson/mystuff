@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Chi Square</title>
+    <title>The Chi Square Test and Measures of Association</title>
     <meta charset="utf-8" />
     <meta name="author" content="Week 12" />
     <script src="Slides-Week-12_files/header-attrs-2.11/header-attrs.js"></script>
@@ -17,16 +17,127 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Chi Square
+# The Chi Square Test and Measures of Association
 ## EDP 613
 ### Week 12
 
 ---
 
 
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+&lt;/style&gt;
 
 
 
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 
 
@@ -47,291 +158,353 @@ Two variables that have no association with each other are **statistically indep
 --
 
 - **expected frequencies**
-  - written `\(f_e\)`
-  - is what you would *expect* in a bivariate table if two variables were statistically independent. 
-  - calculated by assuming the null hypothesis is true.
+
+  &gt; written `\(f_e\)`
+  
+--
+  
+  &gt; what you would *expect* in a bivariate table if two variables were statistically independent 
+  
+--
+  
+  &gt; only assumption: the null hypothesis is true
+  
+--
+
+  &gt; calculated by `$$f_e = \dfrac{\text{column marginal}\cdot\text{row marginal}}{\text{total sample size}}$$`
   
 --
 
 - **observed frequencies**
-  - written `\(f_o\)`
-  - is what you would *observe* in a bivariate table given what you have. 
-  - you know this already.
 
+--
+
+  &gt; written `\(f_o\)`
+  
+--
+
+  &gt; what you would *observe* in a bivariate table given what you have
+  
+--
+
+ &gt; calculated by you or given
 
 ---
 
 # Chi-Square Test
 
-&gt;- Written `\(\chi^2\)`.
+--
 
-&gt;- Is an inferential test to find significant relationships between two variables.
+&gt; written `\(\chi^2\)`.
 
 --
 
-&gt;- Calculated by `$$\chi^2 =\sum\dfrac{(f_o-f_e)^2}{f_e}$$`
+&gt; assumes *random sampling*
 
 --
 
-&gt;- with `$$df = (r-1)(c-1)$$`
+&gt; Is an inferential test to find significant relationships between two variables.
+
+--
+
+&gt; Calculated by `$$\chi^2 =\sum\dfrac{(f_o-f_e)^2}{f_e}$$`
+
+--
+
+&gt; with `$$df = (r-1)(c-1)$$`
 
 ---
 
-# Assumptions
+### Example: Social Media
 
-Only that the data is derived from *random sampling*.
+The percent of people using at least one social media outlet is given below by age groups
+.footnote[Source: [*Pew Research Center: Social Media Fact Sheet*](https://www.pewresearch.org/internet/fact-sheet/social-media/)]
 
----
-
-
-
-# Example
-
-Fake scenario: From 2 political parties and 1 other group (Democrats, Republicans, and Independent), you take a poll from a sample of US citizens asking which category they support (i.e., their likely vote). You might wonder whether the people’s likely votes are equally distributed between the 3 political parties (your `\(H_0\)`).
-
---
-
-Samples
-- Democrats: 587
-- Republicans: 552
-- Independents: 480
-
---
-
-Total&lt;br&gt;&lt;br&gt;
-`\(587+552+480=1619\)`.
-
---
-
-Proportions
-- Democrats: `\(587/1619\approx 0.3626\)` 
-- Republicans: `\(552/1619\approx 0.3410\)` 
-- Independents: `\(480/1619\approx 0.2965\)`
-
----
-
-Expected Frequencies
-&gt;- We have three categories
-
---
-
-&gt;- `\(H_0:\)` voters are equally distributed across the categories
-
---
-
-&gt;- Expected value is found by dividing the total by `\(1/3 \approx 0.3333\)`. So &lt;br&gt;&lt;br&gt; `\(1619\cdot 0.3333 \approx 539.7\)`
-
---
-
-
-
+.pull-left[
+&lt;center&gt;In 2011:&lt;/center&gt; 
+&lt;br&gt;
 &lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Democrats &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Republicans &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Independents &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Portion &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 18 - 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 820 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Observed &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 587 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 552 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 480 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 - 49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 590 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Expected &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 50 - 64 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 65+ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 120 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
----
-
-So 
-
-`\begin{aligned}
-\chi^2 &amp;= \dfrac{(587−539.67)^2}{539.67} + \dfrac{(552−539.67)^2}{539.67} + \dfrac{(480−539.67)^2}{539.67} \\\\
- &amp;\approx 11.03
-\end{aligned}`
-
-with 
-
-`\begin{aligned}
-df &amp;= (2-1)\cdot(3-1)\\
-&amp;=2
-\end{aligned}`
-
----
-
-# Now let's try this in R!
-
-
-```r
-votes = c(D=587, R=552, I=480); votes
-```
-
-```
-##   D   R   I 
-## 587 552 480
-```
-
----
-
-# Calculate observed proportions
-
-
-```r
-N = sum(votes); N
-```
-
-```
-## [1] 1619
-```
+]
 
 --
 
-
-```r
-votes_freq = votes/N
-
-votes_freq
-```
-
-```
-##         D         R         I 
-## 0.3625695 0.3409512 0.2964793
-```
-
----
-
-
-# Determine expected frequencies
-
-
-```r
-prop = 1/3; prop
-```
-
-```
-## [1] 0.3333333
-```
-
---
-
-
-```r
-f_e = N * prop; f_e
-```
-
-```
-## [1] 539.6667
-```
-
----
-
+.pull-right[
+&lt;center&gt;In 2021:&lt;/center&gt; 
+&lt;br&gt;
 &lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Type &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Democrats &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Republicans &lt;/th&gt;
-   &lt;th style="text-align:center;background-color: #212121 !important;"&gt; Independents &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Responses &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 18 - 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `840` &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;background-color: #212121 !important;"&gt; Observed &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 587 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 552 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; background-color: #212121 !important;"&gt; 480 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 - 49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `810` &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;width: 10em; font-weight: bold;"&gt; Expected &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
-   &lt;td style="text-align:center;width: 10em; "&gt; 539.67 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 50 - 64 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `730` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 65+ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `450` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+a. Test the assumption that *users are equally likely* to be in each of the four age groups listed.
+
+b. Which age group contributes the largest amount to the test statistic?
+
+---
+
+### Example: Solution for 2011
+
+a. We have 
+
+--
+
+`$$H_0: \text{Users are equally likely to be in each of the four groups listed}$$`
+--
+
+`$$H_1: \text{Users are NOT equally likely to be in each of the four groups listed}$$`
+
+--
+
+&gt; Step 1: Find `\(N\)`
+&lt;br&gt;
+&lt;br&gt;
+ 
+
+--
+
+.pull-left[
+We have `\(820+590+360+120=1890\)` total responses
+]
+
+--
+
+.pull-right[
+If the distribution was uniform across all four categories, we would expect that each had `\(1890/4\approx472\)` respondents
+]
+
+---
+
+&gt; Step 2: Caluclate the `\(\chi^2\)` statistic
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Responses &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\chi^2` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 18 - 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `820` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(820-472)^2}{472} \approx 256.576` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 30 - 49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `590` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(590-472)^2}{472} \approx 29.500` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 50 - 64 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `360` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(360-472)^2}{472} \approx 26.576` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 65+ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `120` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(120-472)^2}{472} \approx 62.509` &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
 --
 
+with the total `$$256.576 + 29.500 + 26.576 + 62.509 = 375.161$$` 
 
-```r
-chisq_rs = (587 - 539.67)^2/539.67 + (552-539.67)^2/539.67 + (480 - 539.67)^2/539.67
+--
 
-chisq_rs
-```
-
-```
-## [1] 11.0302
-```
-
-with
-
-
-```
-## [1] 2
-```
+and `$$df = 4-1 = 3$$`
 
 ---
 
-# Significance
+&gt; Step 3: Make a Decision
 
+--
 
-```r
-p_val = pchisq(chisq_rs, df = 2, lower.tail = FALSE)
+In Appendix D
 
-p_val
-```
+  - Look at `\(df = 3\)`
+ 
+--
+ 
+  - `\(\chi^2=375.161\)` &lt; the greatest `\(p\)`-value so `\(p&lt;0.001\)`
+ 
+--
 
-```
-## [1] 0.00402553
-```
-
----
-
-# I lied. This is not the easiest way!
-
-You can actually do this in one line.
-
-
-```r
-not_a_lie = chisq.test(votes); not_a_lie
-```
-
-```
-## 
-## 	Chi-squared test for given probabilities
-## 
-## data:  votes
-## X-squared = 11.03, df = 2, p-value = 0.004025
-```
+  - We reject `\(H_0\)` implying that
+  
+--
+  
+&lt;center&gt;  
+ &lt;i&gt; respondents are not equally likely to be in each of the four age ranges listed&lt;/i&gt;
+&lt;/center&gt;
 
 ---
 
-## That's it. Take a break before our real R session!
+b . 
+  
+  - 65+ contributes the greatest amount to the sum for the test statistic
+  
+--
+
+  - The observed count is much smaller than expected
+
+---
+
+### Example: Solution for 2021
+
+We have 
+
+
+`$$H_0: \text{Users are equally likely to be in each of the four groups listed}$$`
+
+`$$H_1: \text{Users are NOT equally likely to be in each of the four groups listed}$$`
+
+---
+
+&gt; Step 1: Find `\(N\)`
+&lt;br&gt;
+&lt;br&gt;
+ 
+
+--
+
+.pull-left[
+We have `\(840+810+730+450=2830\)` total responses
+]
+
+--
+
+.pull-right[
+If the distribution was uniform across all four categories, we would expect that each had `\(2830/4\approx707\)` respondents
+]
+
+---
+
+&gt; Step 2: Caluclate the `\(\chi^2\)` statistic
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Responses &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\chi^2` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 18 - 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `840` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(840-707)^2}{707} \approx 25.020` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 30 - 49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `810` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(810-707)^2}{707} \approx 15.006` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 50 - 64 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `730` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(730-707)^2}{707} \approx 0.748` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 65+ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `450` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\frac{(450-707)^2}{707} \approx 93.422` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+with the total `$$5.020+15.006+0.748+93.422 = 134.196$$` 
+
+and `$$df = 4-1 = 3$$`
+
+---
+
+&gt; Step 3: Make a Decision
+
+--
+
+In Appendix D
+
+  - Look at `\(df = 3\)`
+ 
+  - `\(\chi^2=33.526\)` &lt; the greatest `\(p\)`-value so `\(p&lt;0.001\)`
+ 
+--
+
+  - We reject `\(H_0\)` implying that
+  
+&lt;center&gt;  
+ &lt;i&gt; respondents are not equally likely to be in each of the four age ranges listed&lt;/i&gt;
+&lt;/center&gt;
+
+---
+
+## That's it. Take a break before our R session!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -396,7 +569,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

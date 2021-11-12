@@ -46,6 +46,27 @@ section p {
     margin: auto;
 }
 
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
 section {
     height: 600px;
     width: 60%;
@@ -66,9 +87,7 @@ section p {
 }
 
 #center {
-
 text-align: center;
-
 }
 
 .center p {
@@ -88,7 +107,7 @@ text-align: center;
 width: 110px;
 height: 128px;
 z-index: 0;
-background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex.png);
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -349,7 +368,7 @@ count: false
 &lt;style&gt;
 .panel1-sw1-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 49%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -357,7 +376,7 @@ count: false
 }
 .panel2-sw1-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 49%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -679,7 +698,7 @@ ggplot(aes(x = genre,
 &lt;style&gt;
 .panel1-sw2-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 45.4146341463415%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -687,7 +706,7 @@ ggplot(aes(x = genre,
 }
 .panel2-sw2-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 52.5853658536585%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -846,7 +865,7 @@ ggplot2movies::movies %&gt;%
 &lt;style&gt;
 .panel1-sw3-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -854,7 +873,7 @@ ggplot2movies::movies %&gt;%
 }
 .panel2-sw3-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1102,7 +1121,7 @@ ggplot(movies_sample,
 &lt;style&gt;
 .panel1-sw5-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1110,7 +1129,7 @@ ggplot(movies_sample,
 }
 .panel2-sw5-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1147,7 +1166,9 @@ rand_sample &lt;-
 
 # Population Estimation
 
-We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. A good way to to this is to add parentheses around a variable declaration like so
+We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. 
+
+A good way to to this is to add parentheses around a variable declaration like so
 
 
 
@@ -1418,7 +1439,7 @@ do(10) *
 &lt;style&gt;
 .panel1-sw8-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -1426,7 +1447,7 @@ do(10) *
 }
 .panel2-sw8-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2506,7 +2527,7 @@ count: false
 &lt;style&gt;
 .panel1-sw9-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2514,7 +2535,7 @@ count: false
 }
 .panel2-sw9-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2630,7 +2651,7 @@ ggplot(not_tiny,
 &lt;style&gt;
 .panel1-sw10-auto {
   color: white;
-  width: 38.6060606060606%;
+  width: 44.3333333333333%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2638,7 +2659,7 @@ ggplot(not_tiny,
 }
 .panel2-sw10-auto {
   color: white;
-  width: 59.3939393939394%;
+  width: 53.6666666666667%;
   hight: 32%;
   float: left;
   padding-left: 1%;
@@ -2673,17 +2694,6 @@ rep_sample &lt;-
 
 ---
 
-# Comparison for `\(n=1000\)`
-
-- Left - original population distribution
-- Middle - random sample distribution 
-- Right - repeated sample distribution
-
-&lt;img src="Slides-Week-9R_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
-
-
----
-
 # Comparison for `\(n=100\)`
 
 - Left - original population distribution
@@ -2691,6 +2701,16 @@ rep_sample &lt;-
 - Right - repeated sample distribution
 
 
+
+&lt;img src="Slides-Week-9R_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Comparison for `\(n=1000\)`
+
+- Left - original population distribution
+- Middle - random sample distribution 
+- Right - repeated sample distribution
 
 &lt;img src="Slides-Week-9R_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
 
@@ -2894,11 +2914,6 @@ The interpretation is virtually the same here.
 ---
 
 ## Thats it!
-
-&lt;center&gt;
-<blockquote class="twitter-tweet" data-width="220" data-lang="en" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Yeah I just taught pivot_longer() in a class of 100 and the reaction was just a collective &quot;OK cool whatever&quot; while I&#39;m up there like <a href="https://t.co/gLuOuzoCmf">pic.twitter.com/gLuOuzoCmf</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1190001300622036992?ref_src=twsrc%5Etfw">October 31, 2019</a></blockquote>
-
-&lt;/center&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

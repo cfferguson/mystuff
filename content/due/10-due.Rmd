@@ -40,7 +40,7 @@ Submit = c(unchecked,
            checked),
 
 Description = c("Review the solution set from the Chapter 8 homework set",
-                "Downlaod a copy of the R walkthrough on the `t.test`",
+                "Download a copy of the R walkthrough on the `t.test`",
                 "Complete problems 1, 2, 3, 4, 5 in Chapter 9",
                 "Continue the *Foundations of Inference*",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
@@ -85,11 +85,10 @@ Area = c(book,
 Description = c("Study for your Quiz!",
                "Download  and read the article *Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*"),
 
-Location = c("[Link](/quiz/01-quiz)", 
+Location = c("[Link](/tasks/01-quiz/)", 
              "[Link](/readings/10-content/#article)")
 
 )
-
 ```
 
 ```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}

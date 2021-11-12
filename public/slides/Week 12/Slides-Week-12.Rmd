@@ -1,29 +1,151 @@
 ---
-title: "Chi Square"
+title: "The Chi Square Test and Measures of Association"
 subtitle: "EDP 613"
 author: "Week 12"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
 ---
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+</style>
+
 ```{r setup, include=FALSE, purl=FALSE}
+library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(tidyverse)
+library(fontawesome)
 library(here)
-library(clt)
+library(DT)
+library(scales)
+library(latex2exp)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
+```{r echo = FALSE, message = FALSE, purl=FALSE}
+library(tidyverse)
+library(ggplot2movies)
+library(mosaic)
+library(viridis)
+library(flipbookr)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(latex2exp)
+library(tweetrmd)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
 ```
 
 ```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#bff4ee",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#f4eebf",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
 
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
 ```
 
 ```{r echo = FALSE, eval = TRUE, message=FALSE}
@@ -47,244 +169,317 @@ Two variables that have no association with each other are **statistically indep
 --
 
 - **expected frequencies**
-  - written $f_e$
-  - is what you would *expect* in a bivariate table if two variables were statistically independent. 
-  - calculated by assuming the null hypothesis is true.
+
+  > written $f_e$
+  
+--
+  
+  > what you would *expect* in a bivariate table if two variables were statistically independent 
+  
+--
+  
+  > only assumption: the null hypothesis is true
+  
+--
+
+  > calculated by $$f_e = \dfrac{\text{column marginal}\cdot\text{row marginal}}{\text{total sample size}}$$
   
 --
 
 - **observed frequencies**
-  - written $f_o$
-  - is what you would *observe* in a bivariate table given what you have. 
-  - you know this already.
 
+--
+
+  > written $f_o$
+  
+--
+
+  > what you would *observe* in a bivariate table given what you have
+  
+--
+
+ > calculated by you or given
 
 ---
 
 # Chi-Square Test
 
->- Written $\chi^2$.
+--
 
->- Is an inferential test to find significant relationships between two variables.
+> written $\chi^2$.
 
 --
 
->- Calculated by $$\chi^2 =\sum\dfrac{(f_o-f_e)^2}{f_e}$$
+> assumes *random sampling*
 
 --
 
->- with $$df = (r-1)(c-1)$$
+> Is an inferential test to find significant relationships between two variables.
+
+--
+
+> Calculated by $$\chi^2 =\sum\dfrac{(f_o-f_e)^2}{f_e}$$
+
+--
+
+> with $$df = (r-1)(c-1)$$
 
 ---
 
-# Assumptions
+### Example: Social Media
 
-Only that the data is derived from *random sampling*.
+The percent of people using at least one social media outlet is given below by age groups
+.footnote[Source: [*Pew Research Center: Social Media Fact Sheet*](https://www.pewresearch.org/internet/fact-sheet/social-media/)]
 
----
-
-
-
-# Example
-
-Fake scenario: From 2 political parties and 1 other group (Democrats, Republicans, and Independent), you take a poll from a sample of US citizens asking which category they support (i.e., their likely vote). You might wonder whether the people’s likely votes are equally distributed between the 3 political parties (your $H_0$).
-
---
-
-Samples
-- Democrats: 587
-- Republicans: 552
-- Independents: 480
-
---
-
-Total<br><br>
-$587+552+480=1619$.
-
---
-
-Proportions
-- Democrats: $587/1619\approx 0.3626$ 
-- Republicans: $552/1619\approx 0.3410$ 
-- Independents: $480/1619\approx 0.2965$
-
----
-
-Expected Frequencies
->- We have three categories
-
---
-
->- $H_0:$ voters are equally distributed across the categories
-
---
-
->- Expected value is found by dividing the total by $1/3 \approx 0.3333$. So <br><br> $1619\cdot 0.3333 \approx 539.7$
-
---
-
-```{r eval = TRUE, echo = FALSE}
-
-pols <- tibble(
+.pull-left[
+<center>In 2011:</center> 
+<br>
+```{r, echo=FALSE}
+tibble(
   
-Type = c("",
-         "Observed",
-         "Expected"),
+group <- c("18 - 29",
+           "30 - 49",
+           "50 - 64",
+           "65+"),
+
+counts <- c("820",
+            "590",
+            "360",
+            "120"),
   
-Democrats = c("",
-              "587",
-              "539.67"),
-
-Republicans = c("",
-                "552",
-                "539.67"),
-
-Independents = c("",
-                 "480",
-                 "539.67")
-)
-
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-
-kable(pols, 
+) %>%
+  kbl(col.names = c("Age", "Portion"),
       escape = FALSE,
-      align = 'cccc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em", bold = TRUE) %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121") 
+      align = 'lc') %>%
+  kable_styling(full_width = FALSE)
+  
 
 ```
-
----
-
-So 
-
-\begin{aligned}
-\chi^2 &= \dfrac{(587−539.67)^2}{539.67} + \dfrac{(552−539.67)^2}{539.67} + \dfrac{(480−539.67)^2}{539.67} \\\\
- &\approx 11.03
-\end{aligned}
-
-with 
-
-\begin{aligned}
-df &= (2-1)\cdot(3-1)\\
-&=2
-\end{aligned}
-
----
-
-# Now let's try this in R!
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-
-votes = c(D=587, R=552, I=480); votes
-
-```
-
----
-
-# Calculate observed proportions
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-
-N = sum(votes); N
-```
+]
 
 --
 
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-votes_freq = votes/N
+.pull-right[
+<center>In 2021:</center> 
+<br>
+```{r, echo=FALSE}
+tibble(
+  
+group <- c("18 - 29",
+           "30 - 49",
+           "50 - 64",
+           "65+"),
 
-votes_freq
-```
-
----
-
-
-# Determine expected frequencies
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-
-prop = 1/3; prop
-
-```
-
---
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-
-f_e = N * prop; f_e
-
-```
-
----
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-
-kable(pols, 
+counts <- c("`840`",
+            "`810`",
+            "`730`",
+            "`450`"),
+  
+) %>%
+  kbl(col.names = c("Age", "Responses"),
       escape = FALSE,
-      align = 'cccc') %>%
-  kable_styling(full_width = FALSE) %>%
-  column_spec(1, width = "10em", bold = TRUE) %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em") %>%
-  column_spec(4, width = "10em") %>%
-  row_spec(0, background = "#212121") %>%
-  row_spec(2, background = "#212121") 
+      align = 'lc') %>%
+  kable_styling(full_width = FALSE)
+
+```
+]
+
+--
+
+a. Test the assumption that *users are equally likely* to be in each of the four age groups listed.
+
+b. Which age group contributes the largest amount to the test statistic?
+
+---
+
+### Example: Solution for 2011
+
+a. We have 
+
+--
+
+$$H_0: \text{Users are equally likely to be in each of the four groups listed}$$
+--
+
+$$H_1: \text{Users are NOT equally likely to be in each of the four groups listed}$$
+
+--
+
+> Step 1: Find $N$
+<br>
+<br>
+ 
+
+--
+
+.pull-left[
+We have $820+590+360+120=1890$ total responses
+]
+
+--
+
+.pull-right[
+If the distribution was uniform across all four categories, we would expect that each had $1890/4\approx472$ respondents
+]
+
+---
+
+> Step 2: Caluclate the $\chi^2$ statistic
+
+```{r, echo=FALSE}
+tibble(
+  
+group <- c("18 - 29",
+           "30 - 49",
+           "50 - 64",
+           "65+"),
+
+counts <- c("`820`",
+            "`590`",
+            "`360`",
+            "`120`"),
+
+chi_sq <- c("`\\frac{(820-472)^2}{472} \\approx 256.576`",
+            "`\\frac{(590-472)^2}{472} \\approx 29.500`",
+            "`\\frac{(360-472)^2}{472} \\approx 26.576`",
+            "`\\frac{(120-472)^2}{472} \\approx 62.509`"),
+
+  
+) %>%
+  kbl(col.names = c("Age", "Responses", "`\\chi^2`"),
+      escape = FALSE,
+      align = 'lcc') %>%
+  kable_styling(full_width = FALSE)
 
 ```
 
 --
 
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
+with the total $$256.576 + 29.500 + 26.576 + 62.509 = 375.161$$ 
 
-chisq_rs = (587 - 539.67)^2/539.67 + (552-539.67)^2/539.67 + (480 - 539.67)^2/539.67
+--
 
-chisq_rs
-
-
-```
-
-with
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-
-df = (2-1)*(3-1)
-
-df
-
-```
+and $$df = 4-1 = 3$$
 
 ---
 
-# Significance
+> Step 3: Make a Decision
 
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
+--
 
-p_val = pchisq(chisq_rs, df = 2, lower.tail = FALSE)
+In Appendix D
 
-p_val
+  - Look at $df = 3$
+ 
+--
+ 
+  - $\chi^2=375.161$ < the greatest $p$-value so $p<0.001$
+ 
+--
 
-```
+  - We reject $H_0$ implying that
+  
+--
+  
+<center>  
+ <i> respondents are not equally likely to be in each of the four age ranges listed</i>
+</center>
 
 ---
 
-# I lied. This is not the easiest way!
+b . 
+  
+  - 65+ contributes the greatest amount to the sum for the test statistic
+  
+--
 
-You can actually do this in one line.
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = TRUE}
-
-not_a_lie = chisq.test(votes); not_a_lie
-
-```
+  - The observed count is much smaller than expected
 
 ---
 
-## That's it. Take a break before our real R session!
+### Example: Solution for 2021
+
+We have 
+
+
+$$H_0: \text{Users are equally likely to be in each of the four groups listed}$$
+
+$$H_1: \text{Users are NOT equally likely to be in each of the four groups listed}$$
+
+---
+
+> Step 1: Find $N$
+<br>
+<br>
+ 
+
+--
+
+.pull-left[
+We have $840+810+730+450=2830$ total responses
+]
+
+--
+
+.pull-right[
+If the distribution was uniform across all four categories, we would expect that each had $2830/4\approx707$ respondents
+]
+
+---
+
+> Step 2: Caluclate the $\chi^2$ statistic
+
+```{r, echo=FALSE}
+tibble(
+  
+group <- c("18 - 29",
+           "30 - 49",
+           "50 - 64",
+           "65+"),
+
+counts <- c("`840`",
+            "`810`",
+            "`730`",
+            "`450`"),
+
+chi_sq <- c("`\\frac{(840-707)^2}{707} \\approx 25.020`",
+            "`\\frac{(810-707)^2}{707} \\approx 15.006`",
+            "`\\frac{(730-707)^2}{707} \\approx 0.748`",
+            "`\\frac{(450-707)^2}{707} \\approx 93.422`"),
+
+  
+) %>%
+  kbl(col.names = c("Age", "Responses", "`\\chi^2`"),
+      escape = FALSE,
+      align = 'lcc') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+with the total $$5.020+15.006+0.748+93.422 = 134.196$$ 
+
+and $$df = 4-1 = 3$$
+
+---
+
+> Step 3: Make a Decision
+
+--
+
+In Appendix D
+
+  - Look at $df = 3$
+ 
+  - $\chi^2=33.526$ < the greatest $p$-value so $p<0.001$
+ 
+--
+
+  - We reject $H_0$ implying that
+  
+<center>  
+ <i> respondents are not equally likely to be in each of the four age ranges listed</i>
+</center>
+
+---
+
+## That's it. Take a break before our R session!

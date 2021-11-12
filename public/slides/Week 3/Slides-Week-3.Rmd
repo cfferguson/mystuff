@@ -77,7 +77,7 @@ xaringanExtra::use_xaringan_extra(c("tile_view",
                                     "tachyons"))
 
 xaringanExtra::use_logo(
-  image_url = here::here("static", "img", "course_hex.png"),
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
   link_url = "https://edp613.asocialdatascientist.com",
   position = xaringanExtra::css_position(top = "1em", right = "1em"))
 ```
@@ -143,7 +143,7 @@ distribution_list <-
                                   color = "#FFFFFF"))
 ```
 
-```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=4}
+```{r, echo=FALSE, fig.align='center', dpi=300, fig.height=3}
 distribution_list + 
   facet_wrap("example",
              scales = "free_x",
@@ -173,7 +173,7 @@ distribution_list +
 
 --
 
-```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="25%"}
 knitr::include_graphics("img/mean balancing point.png")
 ```
 
@@ -193,7 +193,7 @@ knitr::include_graphics("img/mean balancing point.png")
 
 --
 
-```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="25%"}
 knitr::include_graphics("img/median balancing point.png")
 ```
 
@@ -214,7 +214,7 @@ knitr::include_graphics("img/median balancing point.png")
 
 --
 
-```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="30%"}
+```{r eval = TRUE, echo = FALSE, fig.align='center', out.width="25%"}
 knitr::include_graphics("img/mode balancing point.png")
 ```
 
@@ -226,7 +226,7 @@ knitr::include_graphics("img/mode balancing point.png")
   - Add the numbers up, divide by the total number of values in the set.
   - Denoted by $\overline{Y}$
 
---
+---
 
 ## Example
 
@@ -236,8 +236,8 @@ Compute the mean for the following sample: $\{21.3, 31.4, 12.7, 41.6\}$
 ### Solution
 
 \begin{aligned}
-\overline{Y}&=\dfrac{21.3+31.4+12.7+41.6}{4}\\
-&=\dfrac{107}{4}\\
+\overline{Y}&=\dfrac{21.3+31.4+12.7+41.6}{4}\\\\
+&=\dfrac{107}{4}\\\\
 &=26.75
 \end{aligned}
 
@@ -262,16 +262,16 @@ Compute the mean for the following sample: $\{2, 5, 5, 7, 7, 8, 9\}$
 # Basic Procedure: The Median
 
 >- **Median** 
-  - Put the numbers in order from least to greatest or greatest to least and find the middle number. 
-  - If there are two middle numbers, average them.
+    - Put the numbers in order from least to greatest or greatest to least and find the middle number. 
+    - If there are two middle numbers, average them.
 
---
+---
 
 ## Example
 
 Compute the median for the following sample: $\{2, 5, 5, 7, 7\}$
 
----
+--
 
 ### Solution
 
