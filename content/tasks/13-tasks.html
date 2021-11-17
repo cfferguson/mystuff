@@ -1,0 +1,258 @@
+---
+title: "Regression and Correlation & Analysis of Variance"
+linktitle: "Week 13: Regression and Correlation & Analysis of Variance"
+menu:
+  tasks:
+    parent: Homeworks
+    weight: 13
+type: docs
+weight: 2
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<style>
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+</style>
+<div id="homework" class="section level3">
+<h3>Homework</h3>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Chapter
+</th>
+<th style="text-align:left;">
+Problems
+</th>
+<th style="text-align:left;">
+Source
+</th>
+<th style="text-align:left;">
+Pages
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+11
+</td>
+<td style="text-align:left;">
+1, 2, 6
+</td>
+<td style="text-align:left;">
+Social Statistics for a Diverse Society
+</td>
+<td style="text-align:left;">
+394-400
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+12
+</td>
+<td style="text-align:left;">
+1, 2
+</td>
+<td style="text-align:left;">
+Social Statistics for a Diverse Society
+</td>
+<td style="text-align:left;">
+446-458
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Notes:</p>
+<ul>
+<li>Please submit this at the beginning of class next week.</li>
+<li>Remember to follow the <a href="/tasks/#homeworks">homework guidelines</a> for consideration.</li>
+</ul>
+<!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"} by 11:59 PM next Wednesday.<br>
+-->
+</div>
+<div id="solutions" class="section level3">
+<h3>Solutions</h3>
+<p><em>Posted after the next class session.</em></p>
+<!--
+*Note: The* $z$ *value obtained will be referenced by the variable* $z_{obt}$.
+
+<details><summary>1</summary>
+<p>
+a. We have 
+\begin{align}
+H_0:\,\mu_Y=13.5\,\,\text{years}\\
+H_1:\,\mu_Y<13.5\,\,\text{years}
+\end{align}
+
+b. We have 
+\begin{align}
+z &= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
+&\approx -4.19
+\end{align}
+yielding that $z$ value, or $z_{obt} = -4.19$. The $p$-value for this $z_{obt} < 0.001$ for a one-tailed test where $\alpha = 0.01$. Since $z_{obt} < 0.001$ and $0.001 < \alpha$, we <span class="boxed">reject $H_0$ and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.</span> 
+</p>
+</details>
+
+<details><summary>2</summary>
+<p>
+a. We have  
+\begin{align}
+s_{p_1-p_2} &=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
+&= \sqrt{0.0313}\\
+&\approx 0.03
+\end{align}
+implying 
+\begin{align}
+z &= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
+&\approx -2.33
+\end{align}
+so $z_{obt} = -2.33$ and the probability of obtaining this $z$ statistic is $0.0099\cdot 2=0.0198$ which is less than $\alpha = 0.01$. So we <span class="boxed">reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have $0.43-0.50=-0.07$, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.
+
+b. We have  
+\begin{align}
+s_{p_1-p_2} &=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
+&= \sqrt{0.0229}\\
+&\approx 0.02
+\end{align}
+implying 
+\begin{align}
+z &= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
+&\approx 3.50
+\end{align}
+so $z_{obt} = 3.50$ and the probability of obtaining this $z$ statistic is $0.002\cdot 2=0.0004$ which is less than $\alpha = 0.01$. So we <span class="boxed">reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have $0.58-0.51=0.07$, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.
+
+</p>
+</details>
+ 
+
+<details><summary>3</summary>
+<p>
+<div align="center">
+<div style="width: 50%; margin:0 left;text-align: left;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Item </th>
+   <th style="text-align:left;"> Test </th>
+   <th style="text-align:center;"> Research Hypothesis </th>
+   <th style="text-align:center;"> Null Hypothesis </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> $\text{a}$ </td>
+   <td style="text-align:left;"> Two-tailed </td>
+   <td style="text-align:center;"> $\mu\neq53657$ </td>
+   <td style="text-align:center;"> $\mu=53657$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\text{b}$ </td>
+   <td style="text-align:left;"> One-tailed </td>
+   <td style="text-align:center;"> $\mu>3.2$ </td>
+   <td style="text-align:center;"> $\mu=3.2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\text{c}$ </td>
+   <td style="text-align:left;"> One-tailed </td>
+   <td style="text-align:center;"> $\mu_1<\mu_2$ </td>
+   <td style="text-align:center;"> $\mu_1=\mu_2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\text{d}$ </td>
+   <td style="text-align:left;"> Two-tailed </td>
+   <td style="text-align:center;"> $\mu_1\neq\mu_2$ </td>
+   <td style="text-align:center;"> $\mu_1=\mu_2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\text{e}$ </td>
+   <td style="text-align:left;"> One-tailed </td>
+   <td style="text-align:center;"> $\mu_1>\mu_2$ </td>
+   <td style="text-align:center;"> $\mu_1=\mu_2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\text{f}$ </td>
+   <td style="text-align:left;"> One-tailed </td>
+   <td style="text-align:center;"> $\mu_1<\mu_2$ </td>
+   <td style="text-align:center;"> $\mu_1=\mu_2$ </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+</p>
+</details>
+
+<details><summary>4</summary>
+<p>
+a. We have 
+\begin{align}
+H_0:\,\pi_1=\pi_2\\
+H_1:\,\pi_1<\pi_2
+\end{align}
+
+b. We have 
+\begin{align}
+s_{p_1-p_2} &=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
+&= \sqrt{0.0003664}\\
+&\approx 0.02
+\end{align}
+implying
+\begin{align}
+z &= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
+&\approx -3.50
+\end{align}
+yielding that <span class="boxed">$z_{obt}=-3.50 <\alpha = 0.05$</span> (and less than $0.0002$ from Appendix A). So <span class="boxed">the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents</span>. The difference given by $0.41-0.34$ is likely significant at the $0.05$ level.
+</p>
+</details>
+
+<details><summary>5</summary>
+<p>
+a. We have 
+\begin{align}
+H_0:\,\mu = 37.8\\
+H_1:\,\mu\neq 37.8
+\end{align}
+
+b. We have 
+\begin{align}
+t &= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
+&\approx 23.17
+\end{align}
+yielding that <span class="boxed">$t_{obt}=23.17$</span> with <span class="boxed">$p < 0.001$</span> (and is greater than $3.291$ from Appendix B). 
+
+c. We can say that $H_0$ should likely be rejected in favor of the $H_1$. So <span class="boxed">there is a difference between the mean age of the GSS sample and the mean age of all American adults</span>. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older). 
+
+</p>
+</details>
+-->
+</div>

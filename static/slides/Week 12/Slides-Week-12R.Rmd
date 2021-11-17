@@ -1,0 +1,597 @@
+---
+title: "Multiple Sampling"
+linktitle: "EDP 613"
+author: "Week 9"
+output: 
+ xaringan::moon_reader:
+   css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
+---
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+</style>
+
+```{r setup, include=FALSE, purl=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(ggplot2movies)
+library(mosaic)
+library(viridis)
+library(flipbookr)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
+library(here)
+library(DT)
+library(scales)
+library(latex2exp)
+library(tweetrmd)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
+```
+
+```{r echo = FALSE, purl=FALSE}
+xaringanthemer::style_duo(
+  primary_color = "#212121",
+  secondary_color = "#f4eebf",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
+)
+
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+# Packages needed and a Note about Icons
+
+Please load up the following packages. Remember to first install the ones you don't have.
+```{r echo = TRUE, eval = FALSE, message=FALSE}
+library(tidyverse)
+library(mosaic)
+library(ggplot2movies)
+library(viridis)
+library(patchwork)
+``` 
+
+You may come across the following icons. The table below lists what each means.
+```{r eval = TRUE, echo = FALSE, purl=FALSE}
+forward <- as.character(fontawesome::fa("forward", fill = "
+#4682b4"))
+
+stop <- as.character(fontawesome::fa("stop", fill = "#ff6347"))
+
+link <- as.character(fontawesome::fa("link", fill = "#5cb85c"))
+
+bookmark <- as.character(fontawesome::fa("bookmark", fill = "#5cb85c"))
+
+
+icon_desc <- tibble(
+  
+  Icon = c(forward,
+           stop, 
+           link,
+           bookmark),
+  
+  Description = c("Indicates that an example continues on the following slide.",
+                  "Indicates that a section using common syntax has ended.",
+                  "Indicates that there is an active hyperlink on the slide.",
+                  "Indicates that a section covering a concept has ended.")
+  
+)
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE, purl=FALSE}
+kable(icon_desc, 
+      escape = FALSE,
+      align = 'cl') %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "40em") %>%
+  row_spec(0, background = "#181818") %>%
+  row_spec(1, background = "#181818") %>%
+  row_spec(2, background = "#181818") %>%
+  row_spec(3, background = "#181818") %>%
+  row_spec(4, background = "#181818") 
+```
+
+---
+
+# Using bars
+
+Now that we know how to pivot, we can just `group_by` genre type and then `tally`
+
+```{r sw1, include = FALSE, echo=TRUE}
+  ggplot2movies::movies %>%
+  select(Action, Animation, 
+         Comedy, Drama, 
+         Documentary, Romance, 
+         Short) %>%
+  pivot_longer(everything(),
+               names_to = "genre") %>%
+  group_by(genre) %>%
+  tally(value)
+```
+
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100))`
+
+.right[`r fa("stop", fill = "#ff6347")`]
+
+---
+
+```{r sw2, include = FALSE}
+ggplot2movies::movies %>%
+  select(Action, Animation, 
+         Comedy, Drama, 
+         Documentary, Romance, 
+         Short) %>%
+  pivot_longer(everything(),
+               names_to = "genre") %>%
+  group_by(genre) %>%
+  tally(value) %>%
+ggplot(aes(x = genre, 
+           y = n, 
+           fill = -n)) +
+  geom_bar(stat='identity', 
+           show.legend = FALSE) +
+  labs(title = "Count of Genre", 
+       x = "Genre", 
+       y = "Count") +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(95, 110))`
+
+---
+
+# Back to the movies
+
+Let's take a look at the ratings
+
+```{r sw3, include = FALSE}
+
+ggplot2movies::movies %>% 
+  ggplot(aes(x = rating,
+             fill = ..x..)) +
+  geom_histogram(bins = 20,
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+
+```
+
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), width = c(95, 115))`
+
+```{r echo=TRUE, eval=TRUE}
+
+pop_hist <-
+ggplot2movies::movies %>% 
+  ggplot(aes(x = rating,
+             fill = ..x..)) +
+  geom_histogram(bins = 20,
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+
+```
+
+---
+
+# Purpose
+
+We would like to produce a confidence interval for the population mean rating. Let's first pretend we had to take a sample of $n=1000$ from the $N = 58788$ movies. To do this, we'll use the `sample_n` command from the `dplyr` package.
+
+```{r sw4, include = FALSE}
+set.seed(123)
+
+ ggplot2movies::movies %>% 
+  sample_n(1000)
+```
+
+`r chunk_reveal(chunk_name = "sw4", color = c("white", "white", "white"))`
+
+```{r echo=TRUE, eval = TRUE}
+set.seed(123)
+
+movies_sample <- 
+  ggplot2movies::movies %>% 
+  sample_n(1000)
+```
+
+---
+
+Let's see what this looks like
+```{r sw5, include = FALSE}
+ggplot(movies_sample, 
+       aes(x = rating,
+           fill = ..x..)) +
+       geom_histogram(color = "white", 
+                      bins = 20,
+                      show.legend = FALSE) +
+       scale_fill_viridis(direction = -1) +
+       theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r echo = TRUE, eval = TRUE, fig.asp = 0.8, fig.width = 3, fig.align='center'}
+rand_sample <- 
+  ggplot(movies_sample, 
+         aes(x = rating,
+             fill = ..x..)) +
+  geom_histogram(color = "white", 
+                 bins = 20,
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+```
+
+---
+
+# Population Estimation
+
+We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. 
+
+A good way to to this is to add parentheses around a variable declaration like so
+
+```{r sw6, include = FALSE}
+movies_sample %>% 
+   summarize(mean = mean(rating))
+```
+
+`r chunk_reveal(chunk_name = "sw6", color = c("white", "white", "white"))`
+
+This values is only a single estimation. What you did earlier was top keep sampling from the population, or what is known as **sampling with replacement**. 
+
+.right[`r fa("forward", fill = "#4682b4")`]
+
+---
+
+# Sampling with Replacement
+
+To do this, we can use the `resample` command from the `mosaic` package. Let's see one instance of this.
+
+```{r sw7, include = FALSE}
+resample(movies_sample) %>%
+  arrange(orig.id) %>% 
+  summarize(mean = mean(rating))
+```
+
+`r chunk_reveal(chunk_name = "sw7", color = c("white", "white", "white"))`
+
+But again, this is only one sample mean. 
+
+---
+
+To do a whole bunch we can run a `do` command with parentheses like so
+
+```{r sw8, include = FALSE}
+do(10) * 
+  (resample(ggplot2movies::movies) %>% 
+     summarize(mean = mean(rating)))
+```
+
+`r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"), width = c(95, 115))`
+
+.right[`r fa("forward", fill = "#4682b4")`]
+
+---
+
+But a sample of 10 is so tiny. Let's try 1000 like before
+
+```{r sw9, include = FALSE}
+  do(1000) *
+  summarize(resample(ggplot2movies::movies), 
+            mean = mean(rating))
+```
+
+`r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r echo=TRUE, eval=TRUE}
+not_tiny <- 
+  do(1000) *
+  summarize(resample(ggplot2movies::movies), 
+            mean = mean(rating))
+```
+
+---
+
+# Estimating the population
+
+```{r sw10, include = FALSE}
+ggplot(not_tiny, 
+       mapping = aes(x = mean,
+                     fill = ..x..)) +
+  geom_histogram(bins = 20, 
+                 color = "white",
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r echo = TRUE, eval = TRUE, fig.asp = 0.8, fig.width = 5, , fig.align='center'}
+rep_sample <- 
+  ggplot(data = not_tiny , 
+         mapping = aes(x = mean,
+                       fill = ..x..)) +
+  geom_histogram(bins = 20, 
+                 color = "white",
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+```
+
+---
+
+# Comparison for $n=100$
+
+- Left - original population distribution
+- Middle - random sample distribution 
+- Right - repeated sample distribution
+
+```{r echo=FALSE, eval=TRUE}
+smaller_rand_samp <- 
+ggplot2movies::movies %>% 
+  sample_n(100) %>%
+   ggplot(aes(x = rating,
+              fill = ..x..)) +
+   geom_histogram(color = "white", 
+                  bins = 20,
+                  show.legend = FALSE) +
+   scale_fill_viridis(direction = -1) +
+   theme_minimal()
+
+so_tiny <-
+do(100) *
+  summarize(resample(ggplot2movies::movies), 
+            mean = mean(rating))
+
+smaller_rep_samp <-
+ggplot(so_tiny,
+         mapping = aes(x = mean,
+                       fill = ..x..)) +
+  geom_histogram(color = "white",
+                 bins = 20,
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+
+```
+
+```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
+
+pop_hist + smaller_rand_samp + smaller_rep_samp
+
+```
+
+---
+
+# Comparison for $n=1000$
+
+- Left - original population distribution
+- Middle - random sample distribution 
+- Right - repeated sample distribution
+
+```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
+
+pop_hist + rand_sample + rep_sample
+
+```
+
+--
+
+The repeated sample distribution does a better job for smaller samples...
+
+---
+
+# Comparison for $n=10000$
+
+- Left - original population distribution
+- Middle - random sample distribution 
+- Right - repeated sample distribution
+
+```{r echo=FALSE, eval=TRUE}
+bigger_rand_samp <- 
+ggplot2movies::movies %>% 
+  sample_n(10000) %>%
+   ggplot(aes(x = rating,
+              fill = ..x..)) +
+   geom_histogram(color = "white", 
+                  bins = 20,
+                  show.legend = FALSE) +
+   scale_fill_viridis(direction = -1) +
+   theme_minimal()
+
+more_not_tiny <-
+do(10000) *
+  summarize(resample(ggplot2movies::movies), 
+            mean = mean(rating))
+
+bigger_rep_samp <-
+ggplot(more_not_tiny,
+         mapping = aes(x = mean,
+                       fill = ..x..)) +
+  geom_histogram(color = "white",
+                 bins = 20,
+                 show.legend = FALSE) +
+  scale_fill_viridis(direction = -1) +
+  theme_minimal()
+
+```
+
+```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
+
+pop_hist + bigger_rand_samp + bigger_rep_samp
+
+```
+
+--
+
+...but oversampling sample means leads to a normal distribution!
+
+---
+
+# Shortcut: Naming and Outputting a Data Frame
+
+There are many approaches that you can take to shorten the number of steps taken to get what you want. While knowing the "long" way gives you the greatest flexibility, if you absolutely know where you're going then knowing shortcuts will make your life easier. Here are two ways to name a data frame and see the output at the same time:
+
+.pull-left[
+<center>
+<i>Add parentheses to the entire chunk</i>
+</center>
+```{r echo = TRUE, eval = TRUE}
+(way1 <- 
+    starwars %>%
+    head() %>%
+    select(name, height, hair_color))
+```
+]
+
+.pull-right[
+<center>
+<i>Add a semicolon and name after the chunk </i>
+</center>
+```{r echo = TRUE, eval = TRUE}
+way2 <- 
+    starwars %>%
+    head() %>%
+    select(name, height, hair_color); way2
+```
+]
+
+---
+
+# Confidence using quantiles
+
+We can now calculate a confidence interval using many options. Let's first isolate the middle 95% of values which corresponds to a 95% confidence interval for the population mean rating.
+
+```{r sw12, include = FALSE}
+confint(not_tiny, 
+        level = 0.95, 
+        method = "quantile")
+```
+
+`r chunk_reveal(chunk_name = "sw12", color = c("white", "white", "white"))`
+
+Based on the sample data and bootstrapping techniques, we can be 95% confident that the true mean rating of ALL IMDB ratings is between 5.49 and about 6.13.
+
+---
+
+# Confidence using the standard error
+
+Recall that the **standard error** is the standard deviation of the sampling distribution and is approximated by the bootstrap distribution or the null distribution depending on the context. To do this we can use the same function as before but only by changing the method
+
+```{r sw13, include = FALSE}
+confint(not_tiny, 
+         level = 0.95, 
+         method = "stderr")
+```
+`r chunk_reveal(chunk_name = "sw13", color = c("white", "white", "white"))`
+
+The interpretation is virtually the same here.
+
+---
+
+## Thats it!
+

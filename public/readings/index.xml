@@ -107,13 +107,13 @@ Quiz 1
 &lt;/div&gt;
 &lt;div id=&#34;article&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Article&lt;/h1&gt;
-&lt;p&gt;Please download and read &lt;a href=&#34;https://edp613.asocialdatascientist.com/handouts/Colbert&amp;amp;Woodrow2015&#34;&gt;&lt;em&gt;Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance&lt;/em&gt;&lt;/a&gt; by Colbert &amp;amp; Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term &lt;strong&gt;&lt;em&gt;regression to the mean&lt;/em&gt;&lt;/strong&gt; and think abiut what it means in context and generally speaking. We’ll be introducing this topic next week in class.&lt;/p&gt;
+&lt;p&gt;Please download and read &lt;a href=&#34;https://edp613.asocialdatascientist.com/handouts/Colbert&amp;amp;Woodrow2015&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance&lt;/em&gt;&lt;/a&gt; by Colbert &amp;amp; Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term &lt;strong&gt;&lt;em&gt;regression to the mean&lt;/em&gt;&lt;/strong&gt; and think about what it means in context and generally speaking. We’ll be introducing this topic next week in class.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>The Chi Square Test and Measures of Assosciation</title>
+      <title>The Chi Square Test and Measures of Association</title>
       <link>https://edp613.asocialdatascientist.com/readings/12-reading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://edp613.asocialdatascientist.com/readings/12-reading/</guid>
@@ -177,6 +177,7 @@ The Chi-Square Test and Measures of Association
 &lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+327-350
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/12-reading/&#34;&gt;Week 12&lt;/a&gt;
@@ -216,7 +217,7 @@ The Chi-Square Test and Measures of Association
     </item>
     
     <item>
-      <title>The Chi Square Test and Measures of Assosciation</title>
+      <title>Regression and Correlation &amp; Analysis of Variance</title>
       <link>https://edp613.asocialdatascientist.com/readings/13-reading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://edp613.asocialdatascientist.com/readings/13-reading/</guid>
@@ -275,11 +276,12 @@ Data Camp
 13
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 20em; &#34;&gt;
-Regression and Correlation
+Regression and Correlation &amp;amp; Analysis of Variance
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;width: 12em; &#34;&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 5em; &#34;&gt;
+373-429
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/readings/13-reading/&#34;&gt;Week 13&lt;/a&gt;
@@ -305,7 +307,7 @@ Regression and Correlation
 &lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/13-example/&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp/05-module/&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/datacamp&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;

@@ -1,6 +1,6 @@
 ---
-title: "Analysis of Variance"
-linktitle: "Week 13: Analysis of Variance"
+title: "Regression and Correlation & Analysis of Variance"
+linktitle: "Week 13: Regression and Correlation & Analysis of Variance"
 menu:
   readings:
     parent: Readings
@@ -9,7 +9,7 @@ type: docs
 weight: 1
 ---
 
-# Text 
+## Text 
 
 ```{r echo=FALSE, message=FALSE}
 library(knitr)
@@ -55,7 +55,3 @@ kable(read_schedule,
   column_spec(6, width = "10em") %>%
   column_spec(7, width = "10em") 
 ```
-
-# Article
-
-Please download and read [*Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*](/handouts/Colbert&Woodrow2015) by Colbert & Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term ***regression to the mean*** and think abiut what it means in context and generally speaking. We'll be introducing this topic next week in class.

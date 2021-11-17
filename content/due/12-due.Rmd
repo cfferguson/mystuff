@@ -1,6 +1,6 @@
 ---
-title: "The Chi Square Test and Measures of Assosciation"
-linktitle: "Week 12: The Chi Square Test and Measures of Assosciation"
+title: "The Chi Square Test and Measures of Association"
+linktitle: "Week 12: The Chi Square Test and Measures of Association"
 output:
   blogdown::html_page:
     toc: true
@@ -22,7 +22,7 @@ library(kableExtra)
 ```
 
 
-### What to do for Week 13 after class ends
+### What to do for Week 12 after class ends
 
 ```{r eval = TRUE, echo = FALSE}
 unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
@@ -40,7 +40,7 @@ Submit = c(unchecked,
 
 Description = c("Review the solution set from the Chapter 9 homework set",
                 "Complete problems 1, 2, 3, 5, 7, 13 in Chapter 10",
-                "Continue the *Foundations of Inference*",
+                "Finish the *Foundations of Inference*",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
                 "Begin or continue the second ***optional*** extra credit module *Fundamentals of Bayesian Data Analysis in R*",
                 "Begin or continue the third ***optional*** extra credit module *Reporting with R Markdown*"),
@@ -79,8 +79,8 @@ wk_pre <- tibble(
 Area = c(book, 
          chalkboard),
 
-Description = c("Read *Analysis of Variance* in the text",
-               "Download Chapter 11 Powerpoint and Lecture Textbook Notes"),
+Description = c("Read *Regression and Correlation* & *Analysis of Variance* in the text",
+               "Download Chapter 11 & 12 Powerpoints and Lecture Textbook Notes"),
 
 Location = c("[Link](/readings/13-reading/#book-stuff)", 
              "[Link](/materials/13-content/#textbook-notes)")

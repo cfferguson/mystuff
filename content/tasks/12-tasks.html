@@ -1,10 +1,10 @@
 ---
-title: "Testing Hypotheses"
-linktitle: "Week 9: Testing Hypotheses"
+title: "The Chi Square Test and Measures of Association"
+linktitle: "Week 12: The Chi Square Test and Measures of Association"
 menu:
   tasks:
     parent: Homeworks
-    weight: 9
+    weight: 12
 type: docs
 weight: 2
 editor_options: 
@@ -62,16 +62,16 @@ Pages
 <tbody>
 <tr>
 <td style="text-align:center;font-weight: bold;">
-8
+10
 </td>
 <td style="text-align:left;">
-1, 2, 3, 4, 5
+1, 2, 3, 5, 7, 13
 </td>
 <td style="text-align:left;">
 Social Statistics for a Diverse Society
 </td>
 <td style="text-align:left;">
-237-240
+364-372
 </td>
 </tr>
 </tbody>
@@ -90,221 +90,231 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 <h3>Solutions</h3>
 <!--
 *Posted after class day and time next week.*
--->
-<p><em>Note: The</em> <span class="math inline">\(z\)</span> <em>value obtained will be referenced by the variable</em> <span class="math inline">\(z_{obt}\)</span>.</p>
-<details>
-<summary>
-1
-</summary>
+
+*Note: To stay consistent with the general literature, the* $\chi^2$ *value obtained will be referenced by the variable* $\chi^2_{obt}$.
+<details><summary>1</summary>
 <p>
-<ol style="list-style-type: lower-alpha">
-<li><p>We have
-<span class="math display">\[\begin{align}
-H_0:\,\mu_Y=13.5\,\,\text{years}\\
-H_1:\,\mu_Y&lt;13.5\,\,\text{years}
-\end{align}\]</span></p></li>
-<li><p>We have
-<span class="math display">\[\begin{align}
-z &amp;= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
-&amp;\approx -4.19
-\end{align}\]</span>
-yielding that <span class="math inline">\(z\)</span> value, or <span class="math inline">\(z_{obt} = -4.19\)</span>. The <span class="math inline">\(p\)</span>-value for this <span class="math inline">\(z_{obt} &lt; 0.001\)</span> for a one-tailed test where <span class="math inline">\(\alpha = 0.01\)</span>. Since <span class="math inline">\(z_{obt} &lt; 0.001\)</span> and <span class="math inline">\(0.001 &lt; \alpha\)</span>, we <span class="boxed">reject <span class="math inline">\(H_0\)</span> and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.</span></p></li>
-</ol>
+
+a. We have 
+\begin{align}
+df &= (3-1)\cdot(2-1)\\
+   &= 2
+\end{align}
+yielding <span class="boxed">2 degrees of freedom</span>.
+
+b. We have $\chi^2 = 3.311$. With $\chi^2_{obt} =  0.191 > \alpha = 0.01$, <span class="boxed">we fail to reject $H_0$ and conclude that sex and opinion of whether or not people can be trusted are likely independent</span>. Specifically, similar percentages of men ($34.94$%) and women ($29.7$%) felt that people can be trusted.
+
+c. If $\alpha = 0.05$, $\chi^2_{obt} =  0.191$ would still be greater and thus <span class="boxed">we would still reject $H_0$</span>.
+
+d. We have $\lambda = 0.000$ implying that there <span class="boxed">is no proportional reduction of error using sex to predict whether or not people can be trusted</span>.
+
 </p>
 </details>
-<details>
-<summary>
-2
-</summary>
+
+<details><summary>2</summary>
 <p>
-<ol style="list-style-type: lower-alpha">
-<li><p>We have<br />
-<span class="math display">\[\begin{align}
-s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
-&amp;= \sqrt{0.0313}\\
-&amp;\approx 0.03
-\end{align}\]</span>
-implying
-<span class="math display">\[\begin{align}
-z &amp;= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
-&amp;\approx -2.33
-\end{align}\]</span>
-so <span class="math inline">\(z_{obt} = -2.33\)</span> and the probability of obtaining this <span class="math inline">\(z\)</span> statistic is <span class="math inline">\(0.0099\cdot 2=0.0198\)</span> which is less than <span class="math inline">\(\alpha = 0.01\)</span>. So we <span class="boxed">reject <span class="math inline">\(H_0\)</span> and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have <span class="math inline">\(0.43-0.50=-0.07\)</span>, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.</p></li>
-<li><p>We have<br />
-<span class="math display">\[\begin{align}
-s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
-&amp;= \sqrt{0.0229}\\
-&amp;\approx 0.02
-\end{align}\]</span>
-implying
-<span class="math display">\[\begin{align}
-z &amp;= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
-&amp;\approx 3.50
-\end{align}\]</span>
-so <span class="math inline">\(z_{obt} = 3.50\)</span> and the probability of obtaining this <span class="math inline">\(z\)</span> statistic is <span class="math inline">\(0.002\cdot 2=0.0004\)</span> which is less than <span class="math inline">\(\alpha = 0.01\)</span>. So we <span class="boxed">reject <span class="math inline">\(H_0\)</span> and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have <span class="math inline">\(0.58-0.51=0.07\)</span>, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.</p></li>
-</ol>
-</p>
-</details>
-<details>
-<summary>
-3
-</summary>
-<p>
+a. There does not appear to be a relationship between gender and views on restoring the voting rights of felons in prison. $30$% of respondents supported restoring the voting rights of felons in prison, with only a slightly greater percentage of men ($31$%) reporting such compared to women ($28$%). 
 <div align="center">
 <div style="width: 50%; margin:0 left;text-align: left;">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Item
-</th>
-<th style="text-align:left;">
-Test
-</th>
-<th style="text-align:center;">
-Research Hypothesis
-</th>
-<th style="text-align:center;">
-Null Hypothesis
-</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Restoring Voting Rights </th>
+   <th style="text-align:center;"> Men </th>
+   <th style="text-align:center;"> Women </th>
+   <th style="text-align:center;"> Total </th>
+  </tr>
+ </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{a}\)</span>
-</td>
-<td style="text-align:left;">
-Two-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu\neq53657\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu=53657\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{b}\)</span>
-</td>
-<td style="text-align:left;">
-One-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu&gt;3.2\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu=3.2\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{c}\)</span>
-</td>
-<td style="text-align:left;">
-One-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1&lt;\mu_2\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1=\mu_2\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{d}\)</span>
-</td>
-<td style="text-align:left;">
-Two-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1\neq\mu_2\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1=\mu_2\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{e}\)</span>
-</td>
-<td style="text-align:left;">
-One-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1&gt;\mu_2\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1=\mu_2\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\text{f}\)</span>
-</td>
-<td style="text-align:left;">
-One-tailed
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1&lt;\mu_2\)</span>
-</td>
-<td style="text-align:center;">
-<span class="math inline">\(\mu_1=\mu_2\)</span>
-</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> Support </td>
+   <td style="text-align:center;"> 31% </td>
+   <td style="text-align:center;"> 28% </td>
+   <td style="text-align:center;"> 30% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oppose </td>
+   <td style="text-align:center;"> 69% </td>
+   <td style="text-align:center;"> 71% </td>
+   <td style="text-align:center;"> 70% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Total </td>
+   <td style="text-align:center;"> 100% </td>
+   <td style="text-align:center;"> 99% </td>
+   <td style="text-align:center;"> 100% </td>
+  </tr>
 </tbody>
 </table>
 </div>
 </div>
+
+b. We <span class="boxed">fail to reject $H_0$ of no relationship and conclude that there is not a relationship between gender and views on restoring the voting rights of felons in prison at the $0.05$ $\alpha$ level</span>. 
 </p>
 </details>
-<details>
-<summary>
-4
-</summary>
+
+<details><summary>3</summary>
 <p>
-<ol style="list-style-type: lower-alpha">
-<li><p>We have
-<span class="math display">\[\begin{align}
-H_0:\,\pi_1=\pi_2\\
-H_1:\,\pi_1&lt;\pi_2
-\end{align}\]</span></p></li>
-<li><p>We have
-<span class="math display">\[\begin{align}
-s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
-&amp;= \sqrt{0.0003664}\\
-&amp;\approx 0.02
-\end{align}\]</span>
-implying
-<span class="math display">\[\begin{align}
-z &amp;= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
-&amp;\approx -3.50
-\end{align}\]</span>
-yielding that <span class="boxed"><span class="math inline">\(z_{obt}=-3.50 &lt;\alpha = 0.05\)</span></span> (and less than <span class="math inline">\(0.0002\)</span> from Appendix A). So <span class="boxed">the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents</span>. The difference given by <span class="math inline">\(0.41-0.34\)</span> is likely significant at the <span class="math inline">\(0.05\)</span> level.</p></li>
-</ol>
+a. <span class="boxed">A higher percentage of White respondents ($38.14$%), compared to Black respondents ($23$%), reported that people could be trusted</span>.
+
+b. <span class="boxed">For Black respondents, a slightly higher percentage of men ($15.1$%) compared to women ($12.5$%) reported that people could be trusted</span>.
+
+c. For 
+- Whites with $\chi^2 = 2.395$, <span class="boxed">we fail to reject $H_0$.</span>
+- Blacks with $\chi^2 = 0.233$, <span class="boxed">we fail to reject $H_0$</span>.
+It is also worth noting that two of the cells have expected counts less than 5 so results should be cautiously interpreted. It would likely be beneficial to repeat the study with a larger sample size.
+
 </p>
 </details>
-<details>
-<summary>
-5
-</summary>
+
+<details><summary>5</summary>
 <p>
-<ol style="list-style-type: lower-alpha">
-<li><p>We have
-<span class="math display">\[\begin{align}
-H_0:\,\mu = 37.8\\
-H_1:\,\mu\neq 37.8
-\end{align}\]</span></p></li>
-<li><p>We have
-<span class="math display">\[\begin{align}
-t &amp;= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
-&amp;\approx 23.17
-\end{align}\]</span>
-yielding that <span class="boxed"><span class="math inline">\(t_{obt}=23.17\)</span></span> with <span class="boxed"><span class="math inline">\(p &lt; 0.001\)</span></span> (and is greater than <span class="math inline">\(3.291\)</span> from Appendix B).</p></li>
-<li><p>We can say that <span class="math inline">\(H_0\)</span> should likely be rejected in favor of the <span class="math inline">\(H_1\)</span>. So <span class="boxed">there is a difference between the mean age of the GSS sample and the mean age of all American adults</span>. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older).</p></li>
-</ol>
+a. <span class="boxed">We will make 2,973 errors</span> since we predict that all victims fall in the modal category (White) where
+\begin{align}
+E_1 &= 6084 – 3111\\
+   &= 2973
+\end{align}
+
+b. For 
+- White offenders, we could make <span class="boxed">373 errors</span>
+- Black offenders, we could make <span class="boxed">493 errors</span>
+- Other offenders, we would make <span class="boxed">42 errors</span> given $E_2 = 908$. 
+
+c.  The proportional reduction in error is then 
+\begin{align}
+\dfrac{2973 – 908}{2973} & \approx 0.6946
+\end{align}
+This indicates a very strong relationship between the two variables. <span class="boxed">We can reduce the error in predicting victim’s race based upon race of offender by 69.46%</span>.
+
 </p>
 </details>
+
+<details><summary>7</summary>
+<p>
+<div style="padding-left: 30px;">
+We have
+</div>
+<div align="center">
+<div style="width: 90%; margin:0 left;text-align: left;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Race/Status </th>
+   <th style="text-align:center;"> $f_0$ </th>
+   <th style="text-align:center;"> $f_e$ </th>
+   <th style="text-align:center;"> $f_0-f_e$ </th>
+   <th style="text-align:center;"> $(f_0-f_e)^2$ </th>
+   <th style="text-align:center;"> $\dfrac{(f_0-f_e)^2}{f_e}$ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> White/First-Generation </td>
+   <td style="text-align:center;"> 1742 </td>
+   <td style="text-align:center;"> 1749.6 </td>
+   <td style="text-align:center;"> -7.6 </td>
+   <td style="text-align:center;"> 57.76 </td>
+   <td style="text-align:center;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> White/Nonfirst-Generation </td>
+   <td style="text-align:center;"> 2392 </td>
+   <td style="text-align:center;"> 2384.4 </td>
+   <td style="text-align:center;"> 7.6 </td>
+   <td style="text-align:center;"> 57.76 </td>
+   <td style="text-align:center;"> 0.02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Black/First-Generation </td>
+   <td style="text-align:center;"> 102 </td>
+   <td style="text-align:center;"> 93.5 </td>
+   <td style="text-align:center;"> 8.5 </td>
+   <td style="text-align:center;"> 72.25 </td>
+   <td style="text-align:center;"> 0.77 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Black/Nonfirst-Generation </td>
+   <td style="text-align:center;"> 119 </td>
+   <td style="text-align:center;"> 127.5 </td>
+   <td style="text-align:center;"> -8.5 </td>
+   <td style="text-align:center;"> 72.25 </td>
+   <td style="text-align:center;"> 0.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Native American/First-Generation </td>
+   <td style="text-align:center;"> 41 </td>
+   <td style="text-align:center;"> 36.4 </td>
+   <td style="text-align:center;"> 4.6 </td>
+   <td style="text-align:center;"> 21.16 </td>
+   <td style="text-align:center;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Native American/Nonfirst-Generation </td>
+   <td style="text-align:center;"> 45 </td>
+   <td style="text-align:center;"> 49.6 </td>
+   <td style="text-align:center;"> -4.6 </td>
+   <td style="text-align:center;"> 21.16 </td>
+   <td style="text-align:center;"> 0.43 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hispanic/First-Generation </td>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> 18.6 </td>
+   <td style="text-align:center;"> 0.4 </td>
+   <td style="text-align:center;"> 0.16 </td>
+   <td style="text-align:center;"> 0.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hispanic/Nonfirst-Generation </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 25.4 </td>
+   <td style="text-align:center;"> -0.4 </td>
+   <td style="text-align:center;"> 0.16 </td>
+   <td style="text-align:center;"> 0.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Asian American/First-Generation </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 11.9 </td>
+   <td style="text-align:center;"> -5.9 </td>
+   <td style="text-align:center;"> 34.81 </td>
+   <td style="text-align:center;"> 2.93 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Asian American/Nonfirst-Generation </td>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> 16.1 </td>
+   <td style="text-align:center;"> 5.9 </td>
+   <td style="text-align:center;"> 34.81 </td>
+   <td style="text-align:center;"> 2.16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $\chi^2 = 7.51$ </td>
+   <td style="text-align:center;">  </td>
+   <td style="text-align:center;">  </td>
+   <td style="text-align:center;">  </td>
+   <td style="text-align:center;">  </td>
+   <td style="text-align:center;">  </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="padding-left: 30px;">
+<span class="boxed">So $\chi^2 = 7.51$ with $df = (2-1)\cdot(5-1) = 4$ implying we would fail to reject $H_0$</span>. The probability of $\chi^2_{obt}$ is between $(0.20, 0.10)>\alpha = 0.05$.
+</div>
+</p>
+</details>
+
+<details><summary>13</summary>
+<p>
+<div style="padding-left: 30px;">
+For
+</div>
+- Gender, the model is significant at the $0.01 \alpha$ level, <span class="boxed">indicating a likely significant relationship between the variables</span>. Though males contribute to more violent onset, in proportional terms, females exhibit a higher prevalence rate, in that $18.32$% of females exhibit violent onset compared with $11.71$% of males. 
+
+- Age at first offense, the model is significant at the $0.01 \alpha$ level, <span class="boxed">indicating a likely significant relationship between age at first offense and violent onset</span>. Violent onset is more likely among the group 14 years and older ($14.74$%) than those less than 14 years of age at first onset ($9.67$%). 
+</p>
+</details>
+-->
 </div>

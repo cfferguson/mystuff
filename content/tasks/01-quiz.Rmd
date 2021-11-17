@@ -51,7 +51,7 @@ book <- tibble(
   
   desc <- c("A written portion"),
   
-  cheat <- c("You may bring a single page standard A4 paper with formulas and definitions as needed. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included."),
+  cheat <- c("You may bring a single page standard A4 paper with formulas and definitions as needed as well as any Appendices that we have been using. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included."),
   
   procedure <- c("You will be given the latter half of the class length to complete this one part quiz The paper portion will be administered first and you may only use your cheat sheet and a calculator as resources."),
   

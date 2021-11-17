@@ -92,6 +92,85 @@ You will be given the entire class length to complete this two part exam. The pa
     </item>
     
     <item>
+      <title>Exam 2</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/02-exam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/02-exam/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapters
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Date
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Cheat Sheet?
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Process
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+5-10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+12/2/21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+A written portion is followed by an R task
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+You may bring a single page standard A4 paper with formulas and definitions as needed as well as any Appendices that we have been using. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included.
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+You will be given the entire class length to complete this two part exam. The paper portion will be administered first and you may only use your cheat sheet and a calculator as resources. After submitting that potrtion, you will be given an R task. You may at that time use any online resources or notes you have brought to class.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Quiz 1</title>
       <link>https://edp613.asocialdatascientist.com/tasks/01-quiz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -158,7 +237,7 @@ Process
 A written portion
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-You may bring a single page standard A4 paper with formulas and definitions as needed. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included.
+You may bring a single page standard A4 paper with formulas and definitions as needed as well as any Appendices that we have been using. Example problems are not allowed. You are of course always free to reach out to verify if certain items may be included.
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
 You will be given the latter half of the class length to complete this one part quiz The paper portion will be administered first and you may only use your cheat sheet and a calculator as resources.
@@ -167,6 +246,882 @@ You will be given the latter half of the class length to complete this one part 
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/center&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bivariate Tables</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/10-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/10-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 3, 4, 5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+237-240
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;!--
+*Posted after class day and time next week.*
+--&gt;
+&lt;p&gt;&lt;em&gt;Note: To stay consistent with the general literature, the&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\chi^2\)&lt;/span&gt; &lt;em&gt;value obtained will be referenced by the variable&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\chi^2_{obt}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+1
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+H_0:\,\mu_Y=13.5\,\,\text{years}\\
+H_1:\,\mu_Y&amp;lt;13.5\,\,\text{years}
+\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+z &amp;amp;= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
+&amp;amp;\approx -4.19
+\end{align}\]&lt;/span&gt;
+yielding that &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; value, or &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -4.19\)&lt;/span&gt;. The &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-value for this &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; for a one-tailed test where &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. Since &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.001 &amp;lt; \alpha\)&lt;/span&gt;, we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+2
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
+&amp;amp;= \sqrt{0.0313}\\
+&amp;amp;\approx 0.03
+\end{align}\]&lt;/span&gt;
+implying
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+z &amp;amp;= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
+&amp;amp;\approx -2.33
+\end{align}\]&lt;/span&gt;
+so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -2.33\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.0099\cdot 2=0.0198\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.43-0.50=-0.07\)&lt;/span&gt;, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
+&amp;amp;= \sqrt{0.0229}\\
+&amp;amp;\approx 0.02
+\end{align}\]&lt;/span&gt;
+implying
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+z &amp;amp;= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
+&amp;amp;\approx 3.50
+\end{align}\]&lt;/span&gt;
+so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = 3.50\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.002\cdot 2=0.0004\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.58-0.51=0.07\)&lt;/span&gt;, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+3
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Item
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Test
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Research Hypothesis
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Null Hypothesis
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{a}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Two-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu\neq53657\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu=53657\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{b}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+One-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu&amp;gt;3.2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu=3.2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{c}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+One-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{d}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Two-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1\neq\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{e}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+One-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;gt;\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\text{f}\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+One-tailed
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+4
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+H_0:\,\pi_1=\pi_2\\
+H_1:\,\pi_1&amp;lt;\pi_2
+\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
+&amp;amp;= \sqrt{0.0003664}\\
+&amp;amp;\approx 0.02
+\end{align}\]&lt;/span&gt;
+implying
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+z &amp;amp;= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
+&amp;amp;\approx -3.50
+\end{align}\]&lt;/span&gt;
+yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{obt}=-3.50 &amp;lt;\alpha = 0.05\)&lt;/span&gt;&lt;/span&gt; (and less than &lt;span class=&#34;math inline&#34;&gt;\(0.0002\)&lt;/span&gt; from Appendix A). So &lt;span class=&#34;boxed&#34;&gt;the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents&lt;/span&gt;. The difference given by &lt;span class=&#34;math inline&#34;&gt;\(0.41-0.34\)&lt;/span&gt; is likely significant at the &lt;span class=&#34;math inline&#34;&gt;\(0.05\)&lt;/span&gt; level.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+5
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+H_0:\,\mu = 37.8\\
+H_1:\,\mu\neq 37.8
+\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+t &amp;amp;= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
+&amp;amp;\approx 23.17
+\end{align}\]&lt;/span&gt;
+yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(t_{obt}=23.17\)&lt;/span&gt;&lt;/span&gt; with &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(p &amp;lt; 0.001\)&lt;/span&gt;&lt;/span&gt; (and is greater than &lt;span class=&#34;math inline&#34;&gt;\(3.291\)&lt;/span&gt; from Appendix B).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We can say that &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; should likely be rejected in favor of the &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt;. So &lt;span class=&#34;boxed&#34;&gt;there is a difference between the mean age of the GSS sample and the mean age of all American adults&lt;/span&gt;. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Chi Square Test and Measures of Association</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/12-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/12-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 3, 5, 7, 13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+364-372
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;!--
+*Posted after class day and time next week.*
+
+*Note: To stay consistent with the general literature, the* $\chi^2$ *value obtained will be referenced by the variable* $\chi^2_{obt}$.
+&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+&lt;p&gt;
+
+a. We have 
+\begin{align}
+df &amp;= (3-1)\cdot(2-1)\\
+   &amp;= 2
+\end{align}
+yielding &lt;span class=&#34;boxed&#34;&gt;2 degrees of freedom&lt;/span&gt;.
+
+b. We have $\chi^2 = 3.311$. With $\chi^2_{obt} =  0.191 &gt; \alpha = 0.01$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$ and conclude that sex and opinion of whether or not people can be trusted are likely independent&lt;/span&gt;. Specifically, similar percentages of men ($34.94$%) and women ($29.7$%) felt that people can be trusted.
+
+c. If $\alpha = 0.05$, $\chi^2_{obt} =  0.191$ would still be greater and thus &lt;span class=&#34;boxed&#34;&gt;we would still reject $H_0$&lt;/span&gt;.
+
+d. We have $\lambda = 0.000$ implying that there &lt;span class=&#34;boxed&#34;&gt;is no proportional reduction of error using sex to predict whether or not people can be trusted&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;p&gt;
+a. There does not appear to be a relationship between gender and views on restoring the voting rights of felons in prison. $30$% of respondents supported restoring the voting rights of felons in prison, with only a slightly greater percentage of men ($31$%) reporting such compared to women ($28$%). 
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Restoring Voting Rights &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Men &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Women &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Support &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 31% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 28% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 30% &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Oppose &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 69% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 71% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 70% &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Total &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 100% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 99% &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 100% &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+b. We &lt;span class=&#34;boxed&#34;&gt;fail to reject $H_0$ of no relationship and conclude that there is not a relationship between gender and views on restoring the voting rights of felons in prison at the $0.05$ $\alpha$ level&lt;/span&gt;. 
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;p&gt;
+a. &lt;span class=&#34;boxed&#34;&gt;A higher percentage of White respondents ($38.14$%), compared to Black respondents ($23$%), reported that people could be trusted&lt;/span&gt;.
+
+b. &lt;span class=&#34;boxed&#34;&gt;For Black respondents, a slightly higher percentage of men ($15.1$%) compared to women ($12.5$%) reported that people could be trusted&lt;/span&gt;.
+
+c. For 
+- Whites with $\chi^2 = 2.395$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$.&lt;/span&gt;
+- Blacks with $\chi^2 = 0.233$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$&lt;/span&gt;.
+It is also worth noting that two of the cells have expected counts less than 5 so results should be cautiously interpreted. It would likely be beneficial to repeat the study with a larger sample size.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;p&gt;
+a. &lt;span class=&#34;boxed&#34;&gt;We will make 2,973 errors&lt;/span&gt; since we predict that all victims fall in the modal category (White) where
+\begin{align}
+E_1 &amp;= 6084 – 3111\\
+   &amp;= 2973
+\end{align}
+
+b. For 
+- White offenders, we could make &lt;span class=&#34;boxed&#34;&gt;373 errors&lt;/span&gt;
+- Black offenders, we could make &lt;span class=&#34;boxed&#34;&gt;493 errors&lt;/span&gt;
+- Other offenders, we would make &lt;span class=&#34;boxed&#34;&gt;42 errors&lt;/span&gt; given $E_2 = 908$. 
+
+c.  The proportional reduction in error is then 
+\begin{align}
+\dfrac{2973 – 908}{2973} &amp; \approx 0.6946
+\end{align}
+This indicates a very strong relationship between the two variables. &lt;span class=&#34;boxed&#34;&gt;We can reduce the error in predicting victim’s race based upon race of offender by 69.46%&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;7&lt;/summary&gt;
+&lt;p&gt;
+&lt;div style=&#34;padding-left: 30px;&#34;&gt;
+We have
+&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 90%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Race/Status &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; $f_0$ &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; $f_e$ &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; $f_0-f_e$ &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; $(f_0-f_e)^2$ &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; $\dfrac{(f_0-f_e)^2}{f_e}$ &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White/First-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1742 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 1749.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; -7.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 57.76 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.03 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; White/Nonfirst-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2392 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2384.4 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 7.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 57.76 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.02 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Black/First-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 102 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 93.5 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 8.5 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 72.25 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.77 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Black/Nonfirst-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 119 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 127.5 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; -8.5 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 72.25 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.57 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Native American/First-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 41 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 36.4 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 4.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 21.16 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.58 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Native American/Nonfirst-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 45 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 49.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; -4.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 21.16 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.43 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Hispanic/First-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 19 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 18.6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.4 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.16 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Hispanic/Nonfirst-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 25 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 25.4 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; -0.4 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.16 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 0.01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Asian American/First-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 6 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 11.9 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; -5.9 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 34.81 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2.93 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Asian American/Nonfirst-Generation &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 22 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 16.1 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 5.9 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 34.81 &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; 2.16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\chi^2 = 7.51$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;padding-left: 30px;&#34;&gt;
+&lt;span class=&#34;boxed&#34;&gt;So $\chi^2 = 7.51$ with $df = (2-1)\cdot(5-1) = 4$ implying we would fail to reject $H_0$&lt;/span&gt;. The probability of $\chi^2_{obt}$ is between $(0.20, 0.10)&gt;\alpha = 0.05$.
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;13&lt;/summary&gt;
+&lt;p&gt;
+&lt;div style=&#34;padding-left: 30px;&#34;&gt;
+For
+&lt;/div&gt;
+- Gender, the model is significant at the $0.01 \alpha$ level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between the variables&lt;/span&gt;. Though males contribute to more violent onset, in proportional terms, females exhibit a higher prevalence rate, in that $18.32$% of females exhibit violent onset compared with $11.71$% of males. 
+
+- Age at first offense, the model is significant at the $0.01 \alpha$ level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between age at first offense and violent onset&lt;/span&gt;. Violent onset is more likely among the group 14 years and older ($14.74$%) than those less than 14 years of age at first onset ($9.67$%). 
+&lt;/p&gt;
+&lt;/details&gt;
+--&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Regression and Correlation &amp; Analysis of Variance</title>
+      <link>https://edp613.asocialdatascientist.com/tasks/13-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://edp613.asocialdatascientist.com/tasks/13-tasks/</guid>
+      <description>
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;style&gt;
+span.boxed {
+  border: 0px solid #FFFFFF;
+  padding: 5px;
+  color: #FFFFFF;
+  background-color: #005b96;
+  display: inline;
+} 
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table thead th { border-bottom: 1px solid #ddd; 
+}
+
+th, td { padding: 5px; 
+}
+
+tr:nth-child(even) { background: #ffffff; 
+}
+&lt;/style&gt;
+&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Chapter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Problems
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Source
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Pages
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2, 6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+394-400
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1, 2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Social Statistics for a Diverse Society
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+446-458
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
+&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
+--&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Solutions&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Posted after the next class session.&lt;/em&gt;&lt;/p&gt;
+&lt;!--
+*Note: The* $z$ *value obtained will be referenced by the variable* $z_{obt}$.
+
+&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+&lt;p&gt;
+a. We have 
+\begin{align}
+H_0:\,\mu_Y=13.5\,\,\text{years}\\
+H_1:\,\mu_Y&lt;13.5\,\,\text{years}
+\end{align}
+
+b. We have 
+\begin{align}
+z &amp;= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
+&amp;\approx -4.19
+\end{align}
+yielding that $z$ value, or $z_{obt} = -4.19$. The $p$-value for this $z_{obt} &lt; 0.001$ for a one-tailed test where $\alpha = 0.01$. Since $z_{obt} &lt; 0.001$ and $0.001 &lt; \alpha$, we &lt;span class=&#34;boxed&#34;&gt;reject $H_0$ and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.&lt;/span&gt; 
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;p&gt;
+a. We have  
+\begin{align}
+s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
+&amp;= \sqrt{0.0313}\\
+&amp;\approx 0.03
+\end{align}
+implying 
+\begin{align}
+z &amp;= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
+&amp;\approx -2.33
+\end{align}
+so $z_{obt} = -2.33$ and the probability of obtaining this $z$ statistic is $0.0099\cdot 2=0.0198$ which is less than $\alpha = 0.01$. So we &lt;span class=&#34;boxed&#34;&gt;reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have $0.43-0.50=-0.07$, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.
+
+b. We have  
+\begin{align}
+s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
+&amp;= \sqrt{0.0229}\\
+&amp;\approx 0.02
+\end{align}
+implying 
+\begin{align}
+z &amp;= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
+&amp;\approx 3.50
+\end{align}
+so $z_{obt} = 3.50$ and the probability of obtaining this $z$ statistic is $0.002\cdot 2=0.0004$ which is less than $\alpha = 0.01$. So we &lt;span class=&#34;boxed&#34;&gt;reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have $0.58-0.51=0.07$, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.
+
+&lt;/p&gt;
+&lt;/details&gt;
+ 
+
+&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;p&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Item &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; Test &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Research Hypothesis &lt;/th&gt;
+   &lt;th style=&#34;text-align:center;&#34;&gt; Null Hypothesis &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{a}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Two-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu\neq53657$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu=53657$ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{b}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; One-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu&gt;3.2$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu=3.2$ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{c}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; One-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1&lt;\mu_2$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1=\mu_2$ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{d}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Two-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1\neq\mu_2$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1=\mu_2$ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{e}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; One-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1&gt;\mu_2$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1=\mu_2$ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; $\text{f}$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; One-tailed &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1&lt;\mu_2$ &lt;/td&gt;
+   &lt;td style=&#34;text-align:center;&#34;&gt; $\mu_1=\mu_2$ &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;4&lt;/summary&gt;
+&lt;p&gt;
+a. We have 
+\begin{align}
+H_0:\,\pi_1=\pi_2\\
+H_1:\,\pi_1&lt;\pi_2
+\end{align}
+
+b. We have 
+\begin{align}
+s_{p_1-p_2} &amp;=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
+&amp;= \sqrt{0.0003664}\\
+&amp;\approx 0.02
+\end{align}
+implying
+\begin{align}
+z &amp;= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
+&amp;\approx -3.50
+\end{align}
+yielding that &lt;span class=&#34;boxed&#34;&gt;$z_{obt}=-3.50 &lt;\alpha = 0.05$&lt;/span&gt; (and less than $0.0002$ from Appendix A). So &lt;span class=&#34;boxed&#34;&gt;the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents&lt;/span&gt;. The difference given by $0.41-0.34$ is likely significant at the $0.05$ level.
+&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;p&gt;
+a. We have 
+\begin{align}
+H_0:\,\mu = 37.8\\
+H_1:\,\mu\neq 37.8
+\end{align}
+
+b. We have 
+\begin{align}
+t &amp;= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
+&amp;\approx 23.17
+\end{align}
+yielding that &lt;span class=&#34;boxed&#34;&gt;$t_{obt}=23.17$&lt;/span&gt; with &lt;span class=&#34;boxed&#34;&gt;$p &lt; 0.001$&lt;/span&gt; (and is greater than $3.291$ from Appendix B). 
+
+c. We can say that $H_0$ should likely be rejected in favor of the $H_1$. So &lt;span class=&#34;boxed&#34;&gt;there is a difference between the mean age of the GSS sample and the mean age of all American adults&lt;/span&gt;. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older). 
+
+&lt;/p&gt;
+&lt;/details&gt;
+--&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -3321,312 +4276,6 @@ implying an estimated standard error of proportions is approximately &lt;span cl
       <link>https://edp613.asocialdatascientist.com/tasks/09-tasks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://edp613.asocialdatascientist.com/tasks/09-tasks/</guid>
-      <description>
-&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-
-
-&lt;style&gt;
-span.boxed {
-  border: 0px solid #FFFFFF;
-  padding: 5px;
-  color: #FFFFFF;
-  background-color: #005b96;
-  display: inline;
-} 
-
-table {
-   margin-left: auto;
-   margin-right: auto;
-}
-
-table thead th { border-bottom: 1px solid #ddd; 
-}
-
-th, td { padding: 5px; 
-}
-
-tr:nth-child(even) { background: #ffffff; 
-}
-&lt;/style&gt;
-&lt;div id=&#34;homework&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Homework&lt;/h3&gt;
-&lt;center&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center;&#34;&gt;
-Chapter
-&lt;/th&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Problems
-&lt;/th&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Source
-&lt;/th&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Pages
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center;font-weight: bold;&#34;&gt;
-8
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-1, 2, 3, 4, 5
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-Social Statistics for a Diverse Society
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-237-240
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/center&gt;
-&lt;p&gt;Notes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Please submit this at the beginning of class next week.&lt;/li&gt;
-&lt;li&gt;Remember to follow the &lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/#homeworks&#34;&gt;homework guidelines&lt;/a&gt; for consideration.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!--
-to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_blank&#34;} by 11:59 PM next Wednesday.&lt;br&gt;
---&gt;
-&lt;/div&gt;
-&lt;div id=&#34;solutions&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Solutions&lt;/h3&gt;
-&lt;!--
-*Posted after class day and time next week.*
---&gt;
-&lt;p&gt;&lt;em&gt;Note: The&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; &lt;em&gt;value obtained will be referenced by the variable&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(z_{obt}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;
-1
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\mu_Y=13.5\,\,\text{years}\\
-H_1:\,\mu_Y&amp;lt;13.5\,\,\text{years}
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
-&amp;amp;\approx -4.19
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; value, or &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -4.19\)&lt;/span&gt;. The &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-value for this &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; for a one-tailed test where &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. Since &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.001 &amp;lt; \alpha\)&lt;/span&gt;, we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;
-2
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0313}\\
-&amp;amp;\approx 0.03
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
-&amp;amp;\approx -2.33
-\end{align}\]&lt;/span&gt;
-so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -2.33\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.0099\cdot 2=0.0198\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.43-0.50=-0.07\)&lt;/span&gt;, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0229}\\
-&amp;amp;\approx 0.02
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
-&amp;amp;\approx 3.50
-\end{align}\]&lt;/span&gt;
-so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = 3.50\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.002\cdot 2=0.0004\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.58-0.51=0.07\)&lt;/span&gt;, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;
-3
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;div align=&#34;center&#34;&gt;
-&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
-&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Item
-&lt;/th&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Test
-&lt;/th&gt;
-&lt;th style=&#34;text-align:center;&#34;&gt;
-Research Hypothesis
-&lt;/th&gt;
-&lt;th style=&#34;text-align:center;&#34;&gt;
-Null Hypothesis
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{a}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-Two-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu\neq53657\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu=53657\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{b}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu&amp;gt;3.2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu=3.2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{c}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{d}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-Two-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1\neq\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{e}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;gt;\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{f}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;
-4
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\pi_1=\pi_2\\
-H_1:\,\pi_1&amp;lt;\pi_2
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0003664}\\
-&amp;amp;\approx 0.02
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
-&amp;amp;\approx -3.50
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{obt}=-3.50 &amp;lt;\alpha = 0.05\)&lt;/span&gt;&lt;/span&gt; (and less than &lt;span class=&#34;math inline&#34;&gt;\(0.0002\)&lt;/span&gt; from Appendix A). So &lt;span class=&#34;boxed&#34;&gt;the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents&lt;/span&gt;. The difference given by &lt;span class=&#34;math inline&#34;&gt;\(0.41-0.34\)&lt;/span&gt; is likely significant at the &lt;span class=&#34;math inline&#34;&gt;\(0.05\)&lt;/span&gt; level.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;
-5
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\mu = 37.8\\
-H_1:\,\mu\neq 37.8
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-t &amp;amp;= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
-&amp;amp;\approx 23.17
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(t_{obt}=23.17\)&lt;/span&gt;&lt;/span&gt; with &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(p &amp;lt; 0.001\)&lt;/span&gt;&lt;/span&gt; (and is greater than &lt;span class=&#34;math inline&#34;&gt;\(3.291\)&lt;/span&gt; from Appendix B).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We can say that &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; should likely be rejected in favor of the &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt;. So &lt;span class=&#34;boxed&#34;&gt;there is a difference between the mean age of the GSS sample and the mean age of all American adults&lt;/span&gt;. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Testing Hypotheses</title>
-      <link>https://edp613.asocialdatascientist.com/tasks/12-tasks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://edp613.asocialdatascientist.com/tasks/12-tasks/</guid>
       <description>
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://edp613.asocialdatascientist.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;

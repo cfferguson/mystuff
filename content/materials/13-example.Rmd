@@ -1,6 +1,6 @@
 ---
-title: "Analysis of Variance"
-linktitle: "Week 13: Analysis of Variance"
+title: "Regression and Correlation & Analysis of Variance"
+linktitle: "Week 13: Regression and Correlation & Analysis of Variance"
 output:
   blogdown::html_page:
     toc: true
@@ -15,7 +15,7 @@ editor_options:
 ---
 
 ### Crash Course Statistics
-This week we are combing the next two weeks because it makes sense to do so. In opposite order of you text, we have *regression* followed by the idea and implementation of an ANOVA.
+This week we are combing the next two chapters because it makes sense to do so. In opposite order of you text, we have *regression* followed by the idea and implementation of an *ANOVA*.
 
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WWqE7YHR4Jc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -22,7 +22,7 @@ library(kableExtra)
 ```
 
 
-### What to do for Week 8 after class ends
+### What to do for Week 10 after class ends
 
 ```{r eval = TRUE, echo = FALSE}
 unchecked <- as.character(fontawesome::fa("square", fill = "steelblue"))
@@ -33,6 +33,7 @@ wk_post <- tibble(
   
 Submit = c(unchecked,
            unchecked,
+           unchecked,
            checked,
            checked, 
            checked,
@@ -41,6 +42,7 @@ Submit = c(unchecked,
 
 Description = c("Review the solution set from the Chapter 8 homework set",
                 "Download a copy of the R walkthrough on the `t.test`",
+                "Download a copy of the R bonus walkthrough on the `compareGroups`",
                 "Complete problems 1, 2, 3, 4, 5 in Chapter 9",
                 "Continue the *Foundations of Inference*",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
@@ -48,7 +50,8 @@ Description = c("Review the solution set from the Chapter 8 homework set",
                 "Begin or continue the third ***optional*** extra credit module *Reporting with R Markdown*"),
 
 
-Location = c("[Link](/tasks/09-tasks/#solutions)",
+Location = c("[Link](/tasks/9-tasks/#solutions)",
+             "[Link](/materials/10-content/#r-walkthrough)",
              "[Link](/materials/10-content/#r-walkthrough)",
              "[Link](/tasks/10-tasks/#homework)^[Due week 12]",
              "[Link](/datacamp/05-module/)",
@@ -68,7 +71,7 @@ kable(wk_post,
 
 <br />
 
-### What to do for Week 10 before coming to class^[For preparation.]
+### What to do for Week 12 before coming to class^[For preparation.]
 
 ```{r eval = TRUE, echo = FALSE}
 book <- as.character(fontawesome::fa("book", fill = "steelblue"))
@@ -82,11 +85,11 @@ wk_pre <- tibble(
 Area = c(book, 
          chalkboard),
 
-Description = c("Study for your Quiz!",
-               "Download  and read the article *Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*"),
+Description = c("Study for your one and only Quiz!",
+               "Download and read the article *Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*"),
 
 Location = c("[Link](/tasks/01-quiz/)", 
-             "[Link](/readings/10-content/#article)")
+             "[Link](/readings/10-readings/#article)")
 
 )
 ```

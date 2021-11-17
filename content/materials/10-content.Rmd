@@ -133,12 +133,12 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 
 > Click [here](/slides/Week 10/Slides-Week-10.pdf){target="_blank"} here for a PDF of the presentation.
 
-### R Walkthrough
+### R Walkthroughs
 <!--
 *posted during class time*
 -->
 
-Download a copy of everything you need to follow along the walkthrough^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
+Download a copy of everything you need to follow along the walkthroughs^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
 ```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
 loc <- here::here("static", "slides", "Week 10", "EDP613Week10RMaterials.zip")
@@ -155,6 +155,7 @@ downloadthis::download_file(
 ```
 
 <br>
+#### The *t*-test
 
 ```{r echo = FALSE}
 knitr::include_url("/slides/Week 10/Slides-Week-10R.html")
@@ -165,3 +166,16 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 > Click [here](/slides/Week 10/Slides-Week-10R.html){target="_blank"} for a larger version of the presentation.
 
 > Click [here](/slides/Week 10/Slides-Week-10R.pdf){target="_blank"} here for a PDF of the presentation.
+
+<br>
+#### Bonus: Groupwise Comparisons
+
+```{r echo = FALSE}
+knitr::include_url("/slides/Week 10/Slides-Week-10R-Extra.html")
+```
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+> Click [here](/slides/Week 10/Slides-Week-10R-Extra.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Week 10/Slides-Week-10R-Extra.pdf){target="_blank"} here for a PDF of the presentation.

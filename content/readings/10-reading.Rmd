@@ -58,4 +58,4 @@ kable(read_schedule,
 
 # Article
 
-Please download and read [*Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*](/handouts/Colbert&Woodrow2015) by Colbert & Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term ***regression to the mean*** and think abiut what it means in context and generally speaking. We'll be introducing this topic next week in class.
+Please download and read [*Do Colleges Get What They Pay For? Evidence on Football Coach Pay and Team Performance*](/handouts/Colbert&Woodrow2015){target='_blank'} by Colbert & Eckard (2015). You may not be familiar with all of the statistical measures, but pay special attention to the term ***regression to the mean*** and think about what it means in context and generally speaking. We'll be introducing this topic next week in class.

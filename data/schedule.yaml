@@ -8,7 +8,7 @@ lessons:
     readings: "01-reading"
     materials: "01-content"
     datacamp: "01-module"
-    tasks: "01-homework"
+    tasks: "01-tasks"
     due: "01-due"
 
   - title: 'The Organization and Graphic Presentation of Data'
@@ -18,7 +18,7 @@ lessons:
     materials: "02-content"
     datacamp: "02-datacamp"
     examples: "02-example"
-    tasks: "02-homework"
+    tasks: "02-tasks"
     due: "02-due"
 
   - title: 'Measures of Central Tendency'
@@ -28,25 +28,27 @@ lessons:
     materials: "03-content"
     datacamp: "03-datacamp"
     examples: "03-example"
-    tasks: "03-homework"
+    tasks: "03-tasks"
     due: "03-due"
 
   - title: 'Measures of Variability'
     session: 4
     date: "September 9, 2021"
     readings: "04-reading"
+    materials: "04-content"
     datacamp: "04-datacamp"
     examples: "04-example"
-    tasks: "04-homework"
+    tasks: "04-tasks"
     due: "04-due"
 
   - title: 'The Normal Distribution'
     session: 5
     date: "September 16, 2021"
     readings: "05-reading"
+    materials: "05-content"
     datacamp: "05-datacamp"
     examples: "05-example"
-    tasks: "05-homework"
+    tasks: "05-tasks"
     due: "05-due"
 
   - title: 'Exam I'
@@ -60,62 +62,73 @@ lessons:
     session: 7
     date: "September 30, 2021"
     readings: "07-reading"
+    materials: "07-content"
     datacamp: "07-datacamp"
     examples: "07-example"
-    tasks: "07-homework"
+    tasks: "07-tasks"
     due: "07-due"
 
   - title: 'Estimations'
     session: 8
     date: "October 14, 2021"
     readings: "08-reading"
+    materials: "08-content"
     datacamp: "08-datacamp"
     examples: "08-example"
-    tasks: "08-homework"
+    tasks: "08-tasks"
     due: "08-due"
 
   - title: 'Testing Hypotheses'
     session: 9
     date: "October 21, 2021"
     readings: "09-reading"
+    materials: "09-content"
     datacamp: "09-datacamp"
     examples: "09-example"
-    tasks: "09-homework"
+    tasks: "09-tasks"
     due: "09-due"
 
-  # - title: 'Bivariate Tables'
-  #   session: 10
-  #   date: "October 28, 2021"
-  #   readings: "10-reading"
-  #   datacamp: "10-datacamp"
-  #   tasks: "10-homework"
-  #   due: "10-due"
-  #
-  # - title: 'The Chi-Square Test and Measures of Association'
-  #   session: 12
-  #   date: "November 18, 2020"
-  #   readings: "12-reading"
-  #   datacamp: "12-datacamp"
-  #   examples: "12-example"
-  #   due: "12-due"
-  #
-  # - title: 'Chi-Square and ANOVAs'
+  - title: 'Bivariate Tables'
+    session: 10
+    date: "October 28, 2021"
+    readings: "10-reading"
+    materials: "10-content"
+    datacamp: "10-datacamp"
+    tasks: "10-tasks"
+    due: "10-due"
+
+  - title: 'Quiz I'
+    session: 1
+    date: "November 4, 2021"
+    tasks: "01-quiz"
+
+  - title: 'The Chi-Square Test and Measures of Association'
+    session: 12
+    date: "November 11, 2021"
+    readings: "12-reading"
+    materials: "12-content"
+    datacamp: "12-datacamp"
+    tasks: "12-tasks"
+    examples: "12-example"
+    due: "12-due"
+
+  # - title: 'Regression and Correlation & Analysis of Variance'
   #   session: 13
-  #   date: "November 25, 2020"
+  #   date: "November 18, 2021"
   #   readings: "13-reading"
+  #   materials: "13-content"
   #   datacamp: "13-datacamp"
   #   examples: "13-example"
-  #   tasks: "13-homework"
+  #   tasks: "13-tasks"
   #   due: "13-due"
   #
   # - title: 'Exam II'
   #   session: 14
-  #   date: "December 2, 2020"
-  #   tasks: "14-homework"
-  #   due: "14-due"
+  #   tasks: "02-exam"
+  #   date: "December 2, 2021"
   #
   # - title: 'Sentiment Analysis'
-  #   session: 15
+  #   session: 16
   #   date: "December 9, 2020"
   #   datacamp: "15-datacamp"
   #   due: "15-due"
