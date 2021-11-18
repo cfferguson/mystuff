@@ -23,9 +23,12 @@ While I do not grade with a rubric, you can get an idea of what to address by us
 ## Homeworks
 On most weeks, you will be asked to create and completed an array of deliverable. These must be submitted at the start of the next class unless otherwise noted.^[Should we move to an online format, homeworks must be submitted as a single document on the Submission Portal within [ecampus](https://ecampus.wvu.edu/){target="_blank"} as a single cohesive document (in either in docx or pdf format).] Please adhere to the following format:
 
-1. Each item must be submitted on a separate page^[Front and back is fine].
+1. Each item must be submitted on a separate page^[Front and back is fine] and written in pencil.
 2. Show all work and do not assume any step.
 3. Write neatly and leave plenty of space for comments. If you have difficulties in presenting neat work or in spacing, then use a computer program like Word. Again, if you learn how to type your homework in [Rmarkdown](https://rmarkdown.rstudio.com/){target="_blank"}, you will earn an extra 5% on each submission where this is done. 
+4. Staple all of your pages together.
+
+
 
 ## Quizzes and Regular Exams
 

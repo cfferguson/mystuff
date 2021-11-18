@@ -91,91 +91,53 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 
 <details><summary>1</summary>
 <p>
-a. We have 
-\begin{align}
-H_0:\,\mu_Y=13.5\,\,\text{years}\\
-H_1:\,\mu_Y<13.5\,\,\text{years}
-\end{align}
 
-b. We have 
-\begin{align}
-z &= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
-&\approx -4.19
-\end{align}
-yielding that $z$ value, or $z_{obt} = -4.19$. The $p$-value for this $z_{obt} < 0.001$ for a one-tailed test where $\alpha = 0.01$. Since $z_{obt} < 0.001$ and $0.001 < \alpha$, we <span class="boxed">reject $H_0$ and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.</span> 
-</p>
-</details>
-
-<details><summary>2</summary>
-<p>
-a. We have  
-\begin{align}
-s_{p_1-p_2} &=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
-&= \sqrt{0.0313}\\
-&\approx 0.03
-\end{align}
-implying 
-\begin{align}
-z &= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
-&\approx -2.33
-\end{align}
-so $z_{obt} = -2.33$ and the probability of obtaining this $z$ statistic is $0.0099\cdot 2=0.0198$ which is less than $\alpha = 0.01$. So we <span class="boxed">reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have $0.43-0.50=-0.07$, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.
-
-b. We have  
-\begin{align}
-s_{p_1-p_2} &=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
-&= \sqrt{0.0229}\\
-&\approx 0.02
-\end{align}
-implying 
-\begin{align}
-z &= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
-&\approx 3.50
-\end{align}
-so $z_{obt} = 3.50$ and the probability of obtaining this $z$ statistic is $0.002\cdot 2=0.0004$ which is less than $\alpha = 0.01$. So we <span class="boxed">reject $H_0$ and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have $0.58-0.51=0.07$, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans</span>.
-
-</p>
-</details>
- 
-
-<details><summary>3</summary>
-<p>
+a. <span class="boxed">The *independent variable* is sex</span> while <span class="boxed">the *dependent variable* is fear of walking alone at night</span>.
 <div align="center">
 <div style="width: 50%; margin:0 left;text-align: left;">
 ```{r, echo=FALSE, eval=TRUE}
-tails <- tibble(
+walking1 <- tibble(
   
-  Item = c("$\\text{a}$", 
-           "$\\text{b}$", 
-           "$\\text{c}$", 
-           "$\\text{d}$",
-           "$\\text{e}$",
-           "$\\text{f}$"),
+  Choice = c("Yes", 
+             "No"),
   
-  Test = c("Two-tailed", 
-           "One-tailed",
-           "One-tailed",
-           "Two-tailed",
-           "One-tailed",
-           "One-tailed"),
+  Male = c("2 (22%)", 
+           "7 (78%)"),
   
-  `Research Hypothesis` = c("$\\mu\\neq53657$", 
-                            "$\\mu>3.2$", 
-                            "$\\mu_1<\\mu_2$", 
-                            "$\\mu_1\\neq\\mu_2$",
-                            "$\\mu_1>\\mu_2$",
-                            "$\\mu_1<\\mu_2$"),
-  
-  `Null Hypothesis` = c("$\\mu=53657$",
-                        "$\\mu=3.2$",
-                        "$\\mu_1=\\mu_2$",
-                        "$\\mu_1=\\mu_2$",
-                        "$\\mu_1=\\mu_2$",
-                        "$\\mu_1=\\mu_2$")
+  Female = c("8 (73%)", 
+             "3 (27%)"),
 ) 
 
-tails %>%
-  kable(align = 'llcc',
+walking1 %>%
+  kable(align = 'lcc',
+        booktabs = TRUE, 
+        linesep = "",
+        escape = FALSE) %>%
+  kable_styling(full_width = FALSE) 
+```
+</div>
+</div>
+
+b. Approximately $73$% of women are afraid to walk alone in their neighborhoods at night, whereas approximately $22$% of men said the same. This amounts to about a <span class="boxed">$51$% difference between women and men who are not afraid to walk alone at night</span>, indicating a strong relationship. It is important to keep in mind that our small sample size limits the generalizability of these results. 
+
+c. There does not appear to be much of a relationship between homeownership and fear of walking alone at night. The majority in both homeownership categories ($54$% and $55$%) indicated that <span class="boxed">they were not afraid of walking alone at night in their neighborhood</span>. 
+<div align="center">
+<div style="width: 50%; margin:0 left;text-align: left;">
+```{r, echo=FALSE, eval=TRUE}
+walking2 <- tibble(
+  
+  Response = c("Yes", 
+               "No"),
+  
+  Male = c("4 (44%)", 
+           "5 (54%)"),
+  
+  Female = c("5 (45%)", 
+             "6 (55%)"),
+) 
+
+walking2 %>%
+  kable(align = 'lcc',
         booktabs = TRUE, 
         linesep = "",
         escape = FALSE) %>%
@@ -186,45 +148,132 @@ tails %>%
 </p>
 </details>
 
-<details><summary>4</summary>
+<details><summary>3</summary>
 <p>
-a. We have 
-\begin{align}
-H_0:\,\pi_1=\pi_2\\
-H_1:\,\pi_1<\pi_2
-\end{align}
+a. Based on the student’s argument, <span class="boxed">the *independent variable* is race</span> and <span class="boxed">the *dependent variable* is home ownership</span>.
 
-b. We have 
-\begin{align}
-s_{p_1-p_2} &=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
-&= \sqrt{0.0003664}\\
-&\approx 0.02
-\end{align}
-implying
-\begin{align}
-z &= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
-&\approx -3.50
-\end{align}
-yielding that <span class="boxed">$z_{obt}=-3.50 <\alpha = 0.05$</span> (and less than $0.0002$ from Appendix A). So <span class="boxed">the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents</span>. The difference given by $0.41-0.34$ is likely significant at the $0.05$ level.
+b. We have $$\dfrac{539}{857} \approx 0.6289$$ or about <span class="boxed">$63$%</span>.
+
+c. <span class="boxed">There appears to be a relationship between race and home ownership</span>. While $63$% of those surveyed report owning a home, far less Black respondents report such ($41.3$%) than White respondents ($67.7$%). Furthermore, $58.7$% of Black respondents rent as compared to $32.3$% of White respondents.  
+
 </p>
 </details>
 
 <details><summary>5</summary>
 <p>
-a. We have 
-\begin{align}
-H_0:\,\mu = 37.8\\
-H_1:\,\mu\neq 37.8
-\end{align}
+<span class="boxed">There appears to be a relationship between race and the frequency of being drunk in the last 12 months</span>. The majority of students ($60$%) are likely to report not being drunk in the last 12 months. However, the percentage of students being drunk at least 3 or more times is highest for Whites ($28$%), followed by Hispanic ($16$%) and Black ($11$%) students.  
+<div align="center">
+<div style="width: 50%; margin:0 left;text-align: left;">
+```{r, echo=FALSE, eval=TRUE}
+drunk <- tibble(
+  
+  Frequency = c("None", 
+                "1-2 times",
+                "3-5 times",
+                "> 6 times",
+                "Total"),
+  
+  Black = c("359 (75%)", 
+            "63 (13%)",
+            "24 (5%)",
+            "31 (6%)",
+            "477 (99%)"),
+  
+  White = c("1081 (55%)", 
+            "342 (17%)",
+            "168 (8%)",
+            "389 (20%)",
+            "1980 (100%)"),
+  
+  Hispanic = c("480 (67%)", 
+               "125 (17%)",
+               "50 (7%)",
+               "64 (9%)",
+               "719 (100%)"),
+  
+  Total = c("1920 (60%)", 
+            "530 (17%)",
+            "242 (8%)",
+            "484 (15%)",
+            "3176 (100%)")
+  
+) 
 
-b. We have 
-\begin{align}
-t &= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
-&\approx 23.17
-\end{align}
-yielding that <span class="boxed">$t_{obt}=23.17$</span> with <span class="boxed">$p < 0.001$</span> (and is greater than $3.291$ from Appendix B). 
+drunk %>%
+  kable(align = 'lccccc',
+        booktabs = TRUE, 
+        linesep = "",
+        escape = FALSE) %>%
+  kable_styling(full_width = FALSE) 
+```
+</div>
+</div>
 
-c. We can say that $H_0$ should likely be rejected in favor of the $H_1$. So <span class="boxed">there is a difference between the mean age of the GSS sample and the mean age of all American adults</span>. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older). 
+</p>
+</details>
 
+<details><summary>6</summary>
+<p>
+<span class="boxed">The death penalty is more likely in cases where the victim was female or White</span>. The percentage difference is greater between female versus male victims ($57.5 – 45.4 = 12.1$%) than White versus Black victims ($52.7 – 46.5 = 6.2$%). When considering the interactive effects of gender and race, death sentences are more likely in cases with White and Black female victims ($55$% or higher). Death sentences are least likely in cases with a Black male victim. 
+
+a. We have $$\dfrac{703}{766}\approx 0.9177$$ or about <span class="boxed">$91.8$%</span>.
+
+b. <span class="boxed">14</span>.
+
+c. There are a total of $187+197=384$ individuals in this class. Of those, there are $4+19=23$ that feel discriminated against. So we have $$\dfrac{23}{384}\approx 0.0599$$ or about <span class="boxed">$5.99$%</span>.
+
+d. <span class="boxed">There appears to be a relationship between age and feeling of age discrimination</span>. $8.2$% of all respondents felt discriminated against because of their age. However, those between 18 and 29 were more likely to feel discriminated against because of their age than any other age category represented in the cross-tabulation.
+```{r, echo=FALSE, eval=TRUE}
+discrimination <- tibble(
+  
+  Response = c("Yes", 
+               "No",
+               "Total"),
+  
+  "18-29" = c("26 (16%)", 
+              "136 (84%)",
+              "162 (100%)"),
+  
+  "30-39" = c("14 (6%)", 
+              "206 (94%)",
+              "220 (100%)"),
+  
+  "40-49" = c("4 (2%)", 
+              "183 (98%)",
+              "187 (100%)"),
+  
+  "50-59" = c("19 (10%)", 
+              "178 (90%)",
+              "197 (100%)"),
+  
+  "Total" = c("63 (8%)", 
+              "703 (92%)",
+              "766 (100%)"),
+  
+) 
+
+discrimination %>%
+  kable(align = 'lccccc',
+        booktabs = TRUE, 
+        linesep = "",
+        escape = FALSE) %>%
+  kable_styling(full_width = FALSE) 
+```
+</p>
+</details>
+
+<details><summary>7</summary>
+<p>
+a. <span class="boxed">The *dependent variable* is housework disagreement</span>.
+b. <span class="boxed">$n = 7144$</span> is the total sample size.
+c. We have $$\dfrac{3953}{7144} \approx 0.5533$$ or about <span class="boxed">$55.33$%</span>.
+d. <span class="boxed">There is a relationship between perceived unfairness of housework divisions and housework disagreement for women</span>. $33.68$% of women reported never having housework disagreement. However, women who felt housework divisions were fair to women ($43.65$%) were more likely to report never having disagreement over housework than women who felt housework divisions were unfair to women ($25.62$%).
+
+</p>
+</details>
+
+<details><summary>9</summary>
+<p>
+Yes, <span class="boxed">there is a relationship between political party affiliation and attitudes toward the Affordable Care Act</span>. The majority of physicians who reported being Republican or Other party were strongly against or against ACA. The largest reporting percentage was among $31.08$% + $52.99$% $=$ $84.07$% Republicans. Only $11.20$% + $36$% $=$ $47.2$% of Democrats were strongly against or against the act. 
 </p>
 </details>

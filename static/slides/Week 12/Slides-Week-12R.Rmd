@@ -1,7 +1,7 @@
 ---
-title: "Multiple Sampling"
+title: "Inferentials with `Infer`"
 linktitle: "EDP 613"
-author: "Week 9"
+author: "Week 12"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
@@ -95,11 +95,10 @@ text-align: center;
 knitr::opts_chunk$set(echo = FALSE)
 
 library(tidyverse)
-library(ggplot2movies)
-library(mosaic)
-library(viridis)
-library(flipbookr)
+library(infer)
 library(patchwork)
+library(flipbookr)
+library(viridis)
 library(knitr)
 library(kableExtra)
 library(fontawesome)
@@ -141,9 +140,7 @@ xaringanExtra::use_logo(
 Please load up the following packages. Remember to first install the ones you don't have.
 ```{r echo = TRUE, eval = FALSE, message=FALSE}
 library(tidyverse)
-library(mosaic)
-library(ggplot2movies)
-library(viridis)
+library(infer)
 library(patchwork)
 ``` 
 
@@ -190,20 +187,41 @@ kable(icon_desc,
 
 ---
 
-# Using bars
+# Load up General Social Survey
 
-Now that we know how to pivot, we can just `group_by` genre type and then `tally`
+```{r}
+gss <- 
+  infer::gss
+
+gss %>%
+  head()
+```
+
+--
+
+Check the unique values for each
+
+```{r}
+unique(gss$college)
+unique(gss$income)
+unique(gss$finrela)
+```
+
+---
+
+Let's test the association between income (`income`) and educational attainment (`college`) and family income (`finrela`)
 
 ```{r sw1, include = FALSE, echo=TRUE}
-  ggplot2movies::movies %>%
-  select(Action, Animation, 
-         Comedy, Drama, 
-         Documentary, Romance, 
-         Short) %>%
-  pivot_longer(everything(),
-               names_to = "genre") %>%
-  group_by(genre) %>%
-  tally(value)
+gss %>%
+  filter(finrela != "DK") %>%
+  ggplot() +
+  aes(x = finrela, fill = college) +
+  geom_bar(position = "fill") +
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(axis.text.x = element_text(size = 12,
+                                   angle = 45,
+                                   vjust = 0.5)) +
+  theme_minimal()
 ```
 
 `r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100))`
@@ -212,172 +230,210 @@ Now that we know how to pivot, we can just `group_by` genre type and then `tally
 
 ---
 
+Now calculate the observed statistic
+
 ```{r sw2, include = FALSE}
-ggplot2movies::movies %>%
-  select(Action, Animation, 
-         Comedy, Drama, 
-         Documentary, Romance, 
-         Short) %>%
-  pivot_longer(everything(),
-               names_to = "genre") %>%
-  group_by(genre) %>%
-  tally(value) %>%
-ggplot(aes(x = genre, 
-           y = n, 
-           fill = -n)) +
-  geom_bar(stat='identity', 
-           show.legend = FALSE) +
-  labs(title = "Count of Genre", 
-       x = "Genre", 
-       y = "Count") +
-  theme_minimal()
+gss %>%
+  specify(college ~ finrela) %>% # compare variables
+  hypothesise(null = "independence") %>% # declare null hypothesis
+  calculate(stat = "Chisq") # tell infer what test to run
 ```
 
 `r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(95, 110))`
 
 ---
 
-# Back to the movies
+```{r calc-obs-stat-indep, warning = FALSE, message = FALSE}
+observed_indep_statistic <- 
+  gss %>%
+  specify(college ~ finrela) %>%
+  hypothesise(null = "independence") %>%
+  calculate(stat = "Chisq")
+```
+
+---
+
+The observed $\chi^2$ statistic is `r observed_indep_statistic`. Now, we want to compare this statistic to a null distribution, generated under the assumption that these variables are not actually related, to get a sense of how likely it would be for us to see this observed statistic if there were actually no association between education and income.
+
+---
+
+# Null Distribution Simulation
 
 Let's take a look at the ratings
 
 ```{r sw3, include = FALSE}
-
-ggplot2movies::movies %>% 
-  ggplot(aes(x = rating,
-             fill = ..x..)) +
-  geom_histogram(bins = 20,
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
+gss %>%
+  specify(college ~ finrela) %>%
+  assume(distribution = "Chisq")
 
 ```
 
 `r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), width = c(95, 115))`
 
-```{r echo=TRUE, eval=TRUE}
+---
 
-pop_hist <-
-ggplot2movies::movies %>% 
-  ggplot(aes(x = rating,
-             fill = ..x..)) +
-  geom_histogram(bins = 20,
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
-
+```{r}
+null_dist_sim <-
+  gss %>%
+  specify(college ~ finrela) %>%
+  assume(distribution = "Chisq")
 ```
 
 ---
 
-# Purpose
+Either way, it looks like our observed test statistic would be quite unlikely if there were actually no association between education and income. More exactly, we can approximate the *p*-value with `get_p_value`:
 
-We would like to produce a confidence interval for the population mean rating. Let's first pretend we had to take a sample of $n=1000$ from the $N = 58788$ movies. To do this, we'll use the `sample_n` command from the `dplyr` package.
+---
 
 ```{r sw4, include = FALSE}
-set.seed(123)
-
- ggplot2movies::movies %>% 
-  sample_n(1000)
+gss %>%
+  specify(college ~ finrela) %>%
+  hypothesise(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  assume(distribution = "Chisq")
 ```
 
-`r chunk_reveal(chunk_name = "sw4", color = c("white", "white", "white"))`
+`r chunk_reveal(chunk_name = "sw4", color = c("white", "white", "white"), width = c(95, 115))`
 
-```{r echo=TRUE, eval = TRUE}
-set.seed(123)
+---
 
-movies_sample <- 
-  ggplot2movies::movies %>% 
-  sample_n(1000)
+```{r}
+null_distribution <- 
+  gss %>%
+  specify(college ~ finrela) %>%
+  hypothesise(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  assume(distribution = "Chisq")
 ```
 
 ---
 
-Let's see what this looks like
 ```{r sw5, include = FALSE}
-ggplot(movies_sample, 
-       aes(x = rating,
-           fill = ..x..)) +
-       geom_histogram(color = "white", 
-                      bins = 20,
-                      show.legend = FALSE) +
-       scale_fill_viridis(direction = -1) +
-       theme_minimal()
+null_distribution %>%
+  visualize() +
+  shade_p_value(observed_indep_statistic,
+                direction = "greater")
 ```
 
 `r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-```{r echo = TRUE, eval = TRUE, fig.asp = 0.8, fig.width = 3, fig.align='center'}
-rand_sample <- 
-  ggplot(movies_sample, 
-         aes(x = rating,
-             fill = ..x..)) +
-  geom_histogram(color = "white", 
-                 bins = 20,
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
+# $\chi^2$ statistic
+
+```{r}
+chisq_stat(gss,
+           college ~ finrela)
 ```
 
 ---
 
-# Population Estimation
-
-We can think of the histogram as an estimate of our population distribution histogram that we plotted earlier so a population mean rating will provide a good estimate. To estimate a plausible range of values, we can start by using the mean of the sample. 
-
-A good way to to this is to add parentheses around a variable declaration like so
+# $\chi^2$ Goodness of Fit
 
 ```{r sw6, include = FALSE}
-movies_sample %>% 
-   summarize(mean = mean(rating))
+gss %>%
+  specify(response = finrela) %>%
+  hypothesise(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  calculate(stat = "Chisq") 
 ```
 
-`r chunk_reveal(chunk_name = "sw6", color = c("white", "white", "white"))`
-
-This values is only a single estimation. What you did earlier was top keep sampling from the population, or what is known as **sampling with replacement**. 
-
-.right[`r fa("forward", fill = "#4682b4")`]
+`r chunk_reveal(chunk_name = "sw6", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-# Sampling with Replacement
+```{r echo=TRUE, eval=TRUE}
+observed_gof_statistic <-
+  gss %>%
+  specify(response = finrela) %>%
+  hypothesise(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  calculate(stat = "Chisq")
+```
 
-To do this, we can use the `resample` command from the `mosaic` package. Let's see one instance of this.
+---
+
+```{r echo=TRUE, eval=TRUE}
+null_dist_gof <-
+gss %>%
+  specify(response = finrela) %>%
+  hypothesise(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  generate(reps = 1000, type = "draw") %>% # we only added this!
+  calculate(stat = "Chisq")
+```
+
+---
 
 ```{r sw7, include = FALSE}
-resample(movies_sample) %>%
-  arrange(orig.id) %>% 
-  summarize(mean = mean(rating))
+null_dist_gof %>%
+  visualize() +
+  shade_p_value(observed_gof_statistic,
+                direction = "greater") 
 ```
 
-`r chunk_reveal(chunk_name = "sw7", color = c("white", "white", "white"))`
-
-But again, this is only one sample mean. 
+`r chunk_reveal(chunk_name = "sw7", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-To do a whole bunch we can run a `do` command with parentheses like so
-
 ```{r sw8, include = FALSE}
-do(10) * 
-  (resample(ggplot2movies::movies) %>% 
-     summarize(mean = mean(rating)))
+gss %>%
+  ggplot() +
+  aes(x = finrela, fill = college) +
+  geom_bar(position = "fill") +
+  scale_fill_brewer(type = "qual") +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   vjust = .5)) +
+    labs(x = "finrela: Self-Identification of Income Class",
+         y = "Proportion") +
+  theme_minimal()
 ```
 
 `r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"), width = c(95, 115))`
 
-.right[`r fa("forward", fill = "#4682b4")`]
+---
+
+- If there were no relationship, we would expect to see the purple bars reaching to the same height, regardless of income class. 
+
+--
+
+- Are the differences we see in the plot just due to random noise?
+
+--
+
+- We can `generate` the null distribution in one of two ways
+
+  - using randomization: approximates the null distribution by permuting the response and explanatory variables, so that each person's educational attainment is matched up with a random income from the sample in order to break up any association between the two
+  
+--
+  
+  - theory-based methods: the general approximation
 
 ---
 
-But a sample of 10 is so tiny. Let's try 1000 like before
+# Generate the null distribution using randomization
 
 ```{r sw9, include = FALSE}
-  do(1000) *
-  summarize(resample(ggplot2movies::movies), 
-            mean = mean(rating))
+gss %>%
+  specify(college ~ finrela) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "Chisq")
 ```
 
 `r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"), width = c(95, 115))`
@@ -385,211 +441,269 @@ But a sample of 10 is so tiny. Let's try 1000 like before
 ---
 
 ```{r echo=TRUE, eval=TRUE}
-not_tiny <- 
-  do(1000) *
-  summarize(resample(ggplot2movies::movies), 
-            mean = mean(rating))
+null_dist_sim <- 
+  gss %>%
+  specify(college ~ finrela) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "Chisq")
 ```
 
 ---
 
-# Estimating the population
+# Generate the null distribution using theory based methods
 
 ```{r sw10, include = FALSE}
-ggplot(not_tiny, 
-       mapping = aes(x = mean,
-                     fill = ..x..)) +
-  geom_histogram(bins = 20, 
-                 color = "white",
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
+gss %>%
+  specify(college ~ finrela) %>%
+  assume(distribution = "Chisq")
 ```
 
 `r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-```{r echo = TRUE, eval = TRUE, fig.asp = 0.8, fig.width = 5, , fig.align='center'}
-rep_sample <- 
-  ggplot(data = not_tiny , 
-         mapping = aes(x = mean,
-                       fill = ..x..)) +
-  geom_histogram(bins = 20, 
-                 color = "white",
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
+```{r echo=TRUE, eval=TRUE}
+null_dist_theory <- 
+  gss %>%
+  specify(college ~ finrela) %>%
+  assume(distribution = "Chisq")
 ```
 
 ---
 
-# Comparison for $n=100$
+# Visualize the randomized null distribution and test statistic
 
-- Left - original population distribution
-- Middle - random sample distribution 
-- Right - repeated sample distribution
-
-```{r echo=FALSE, eval=TRUE}
-smaller_rand_samp <- 
-ggplot2movies::movies %>% 
-  sample_n(100) %>%
-   ggplot(aes(x = rating,
-              fill = ..x..)) +
-   geom_histogram(color = "white", 
-                  bins = 20,
-                  show.legend = FALSE) +
-   scale_fill_viridis(direction = -1) +
-   theme_minimal()
-
-so_tiny <-
-do(100) *
-  summarize(resample(ggplot2movies::movies), 
-            mean = mean(rating))
-
-smaller_rep_samp <-
-ggplot(so_tiny,
-         mapping = aes(x = mean,
-                       fill = ..x..)) +
-  geom_histogram(color = "white",
-                 bins = 20,
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
-
+```{r sw11, include = FALSE}
+null_dist_sim %>%
+  visualize() + 
+  shade_p_value(observed_indep_statistic,
+                direction = "greater")
 ```
 
-```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
-
-pop_hist + smaller_rand_samp + smaller_rep_samp
-
-```
+`r chunk_reveal(chunk_name = "sw11", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-# Comparison for $n=1000$
-
-- Left - original population distribution
-- Middle - random sample distribution 
-- Right - repeated sample distribution
-
-```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
-
-pop_hist + rand_sample + rep_sample
-
-```
-
---
-
-The repeated sample distribution does a better job for smaller samples...
-
----
-
-# Comparison for $n=10000$
-
-- Left - original population distribution
-- Middle - random sample distribution 
-- Right - repeated sample distribution
-
-```{r echo=FALSE, eval=TRUE}
-bigger_rand_samp <- 
-ggplot2movies::movies %>% 
-  sample_n(10000) %>%
-   ggplot(aes(x = rating,
-              fill = ..x..)) +
-   geom_histogram(color = "white", 
-                  bins = 20,
-                  show.legend = FALSE) +
-   scale_fill_viridis(direction = -1) +
-   theme_minimal()
-
-more_not_tiny <-
-do(10000) *
-  summarize(resample(ggplot2movies::movies), 
-            mean = mean(rating))
-
-bigger_rep_samp <-
-ggplot(more_not_tiny,
-         mapping = aes(x = mean,
-                       fill = ..x..)) +
-  geom_histogram(color = "white",
-                 bins = 20,
-                 show.legend = FALSE) +
-  scale_fill_viridis(direction = -1) +
-  theme_minimal()
-
-```
-
-```{r echo = FALSE, eval = TRUE, fig.asp = 0.4, fig.width = 8.8, fig.align='center'}
-
-pop_hist + bigger_rand_samp + bigger_rep_samp
-
-```
-
---
-
-...but oversampling sample means leads to a normal distribution!
-
----
-
-# Shortcut: Naming and Outputting a Data Frame
-
-There are many approaches that you can take to shorten the number of steps taken to get what you want. While knowing the "long" way gives you the greatest flexibility, if you absolutely know where you're going then knowing shortcuts will make your life easier. Here are two ways to name a data frame and see the output at the same time:
-
-.pull-left[
-<center>
-<i>Add parentheses to the entire chunk</i>
-</center>
-```{r echo = TRUE, eval = TRUE}
-(way1 <- 
-    starwars %>%
-    head() %>%
-    select(name, height, hair_color))
-```
-]
-
-.pull-right[
-<center>
-<i>Add a semicolon and name after the chunk </i>
-</center>
-```{r echo = TRUE, eval = TRUE}
-way2 <- 
-    starwars %>%
-    head() %>%
-    select(name, height, hair_color); way2
-```
-]
-
----
-
-# Confidence using quantiles
-
-We can now calculate a confidence interval using many options. Let's first isolate the middle 95% of values which corresponds to a 95% confidence interval for the population mean rating.
+# Visualize the *theoretical* null distribution and test statistic
 
 ```{r sw12, include = FALSE}
-confint(not_tiny, 
-        level = 0.95, 
-        method = "quantile")
+null_dist_sim %>%
+  visualize() + 
+  shade_p_value(observed_indep_statistic,
+                direction = "greater")
 ```
 
-`r chunk_reveal(chunk_name = "sw12", color = c("white", "white", "white"))`
-
-Based on the sample data and bootstrapping techniques, we can be 95% confident that the true mean rating of ALL IMDB ratings is between 5.49 and about 6.13.
+`r chunk_reveal(chunk_name = "sw12", color = c("white", "white", "white"), width = c(95, 115))`
 
 ---
 
-# Confidence using the standard error
-
-Recall that the **standard error** is the standard deviation of the sampling distribution and is approximated by the bootstrap distribution or the null distribution depending on the context. To do this we can use the same function as before but only by changing the method
+# Visualize both null distributions and the test statistic
 
 ```{r sw13, include = FALSE}
-confint(not_tiny, 
-         level = 0.95, 
-         method = "stderr")
+null_dist_sim %>%
+  visualize(method = "both") + 
+  shade_p_value(observed_indep_statistic,
+                direction = "greater")
 ```
-`r chunk_reveal(chunk_name = "sw13", color = c("white", "white", "white"))`
 
-The interpretation is virtually the same here.
+`r chunk_reveal(chunk_name = "sw13", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+# Calculate the *p*-value from the observed statistic and null distribution
+```{r sw14, include = FALSE}
+null_dist_sim %>%
+  get_p_value(obs_stat = observed_indep_statistic,
+              direction = "greater")
+```
+
+`r chunk_reveal(chunk_name = "sw14", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r p-value-indep, warning = FALSE, message = FALSE}
+p_value_independence <- 
+  null_dist_sim %>%
+  get_p_value(obs_stat = observed_indep_statistic,
+              direction = "greater")
+```
+
+---
+
+If there were really no relationship between education and income, our approximation of the probability that we would see a statistic as or more extreme than `r observed_indep_statistic` is approximately `r p_value_independence`
+
+---
+
+# Calculate the *p*-value using the true $\chi^2$ distribution
+
+```{r}
+pchisq(observed_indep_statistic$stat, 
+       5, 
+       lower.tail = FALSE)
+```
+
+--
+
+```{r chisq-indep-wrapper, message = FALSE, warning = FALSE}
+chisq_test(gss, college ~ finrela)
+```
+
+---
+
+Take a look at the self-identified income class of our survey respondents. Suppose our null hypothesis is that `finrela` follows a uniform distribution (i.e. there's actually an equal number of people that describe their income as far below average, below average, average, above average, far above average, or that don't know their income.) 
+
+---
+
+```{r sw15, include = FALSE}
+gss %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(x = finrela) +
+  ggplot2::geom_bar() +
+  ggplot2::geom_hline(yintercept = 466.3, 
+                      col = "red") +
+  ggplot2::labs(x = "finrela: Self-Identification of Income Class",
+                y = "Number of Responses") +
+  theme_minimal()
+```
+
+`r chunk_reveal(chunk_name = "sw15", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+It seems like a uniform distribution may not be the most appropriate description of the data--many more people describe their income as average than than any of the other options. Lets now test whether this difference in distributions is statistically significant.
+
+---
+
+# Calculate the null distribution
+
+```{r sw16, include = FALSE}
+gss %>%
+  specify(response = finrela) %>%
+  hypothesize(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  calculate(stat = "Chisq")
+```
+
+`r chunk_reveal(chunk_name = "sw16", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r}
+observed_gof_statistic <- gss %>%
+  specify(response = finrela) %>%
+  hypothesize(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  calculate(stat = "Chisq")
+```
+
+---
+
+# Generate a null distribution assuming each income class is equally likely
+
+```{r sw17, include = FALSE}
+gss %>%
+  specify(response = finrela) %>%
+  hypothesize(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  generate(reps = 1000, type = "draw") %>%
+  calculate(stat = "Chisq")
+```
+
+`r chunk_reveal(chunk_name = "sw17", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r null-distribution-gof, warning = FALSE, message = FALSE}
+# generating a null distribution, assuming each income class is equally likely
+null_dist_gof <- gss %>%
+  specify(response = finrela) %>%
+  hypothesize(null = "point",
+              p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6)) %>%
+  generate(reps = 1000, type = "draw") %>%
+  calculate(stat = "Chisq")
+```
+
+---
+
+# Visualize the null distribution and test statistic
+
+```{r sw18, include = FALSE}
+null_dist_gof %>%
+  visualize() + 
+  shade_p_value(observed_gof_statistic,
+                direction = "greater")
+```
+
+`r chunk_reveal(chunk_name = "sw18", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+# Calculate the *p*-value
+
+```{r sw19, include = FALSE}
+null_dist_gof %>%
+  get_p_value(observed_gof_statistic,
+              direction = "greater")
+```
+
+`r chunk_reveal(chunk_name = "sw19", color = c("white", "white", "white"), width = c(95, 115))`
+
+---
+
+```{r get-p-value-gof, warning = FALSE, message = FALSE}
+p_value_gof <- 
+null_dist_gof %>%
+  get_p_value(observed_gof_statistic,
+              direction = "greater")
+```
+
+---
+
+If each self-identified income class was equally likely to occur, our approximation of the probability that we would see a distribution like the one we did is approximately `r p_value_gof`
+
+---
+
+# Calculate the *p*-value using the true $\chi^2$ distribution
+
+```{r}
+pchisq(observed_gof_statistic$stat, 
+       5, 
+       lower.tail = FALSE)
+```
+
+---
+
+```{r sw20, include = FALSE}
+chisq_test(gss, 
+           response = finrela,
+           p = c("far below average" = 1/6,
+                    "below average" = 1/6,
+                    "average" = 1/6,
+                    "above average" = 1/6,
+                    "far above average" = 1/6,
+                    "DK" = 1/6))
+```
 
 ---
 

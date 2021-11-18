@@ -342,50 +342,95 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_bla
 &lt;/summary&gt;
 &lt;p&gt;
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\mu_Y=13.5\,\,\text{years}\\
-H_1:\,\mu_Y&amp;lt;13.5\,\,\text{years}
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{10.9-13.5}{7.6/\sqrt{150}}\\[0.5ex]
-&amp;amp;\approx -4.19
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; value, or &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -4.19\)&lt;/span&gt;. The &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-value for this &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; for a one-tailed test where &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. Since &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} &amp;lt; 0.001\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.001 &amp;lt; \alpha\)&lt;/span&gt;, we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume that the doctors at the HMO do have less experience than the population of doctors at all HMOs.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;
-2
-&lt;/summary&gt;
-&lt;p&gt;
-&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.43\cdot(1-0.43)}{899}+\dfrac{0.50\cdot(1-0.50)}{351}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0313}\\
-&amp;amp;\approx 0.03
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.43-0.50}{0.03}\\[0.5ex]
-&amp;amp;\approx -2.33
-\end{align}\]&lt;/span&gt;
-so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = -2.33\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.0099\cdot 2=0.0198\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Hispanic Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.43-0.50=-0.07\)&lt;/span&gt;, there is a lower proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have&lt;br /&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.58\cdot(1-0.58)}{2684}+\dfrac{0.51\cdot(1-0.51)}{566}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0229}\\
-&amp;amp;\approx 0.02
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.58-0.51}{0.02}\\[0.5ex]
-&amp;amp;\approx 3.50
-\end{align}\]&lt;/span&gt;
-so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = 3.50\)&lt;/span&gt; and the probability of obtaining this &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; statistic is &lt;span class=&#34;math inline&#34;&gt;\(0.002\cdot 2=0.0004\)&lt;/span&gt; which is less than &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.01\)&lt;/span&gt;. So we &lt;span class=&#34;boxed&#34;&gt;reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and can likely assume there is a significant difference in the proportion of homeowners between first-generation and second-generation Asian Americans. In fact given we have &lt;span class=&#34;math inline&#34;&gt;\(0.58-0.51=0.07\)&lt;/span&gt;, there is a higher proportion of home ownership among first-generation Hispanic Americans than second-generation Hispanic Americans&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;The &lt;em&gt;independent variable&lt;/em&gt; is sex&lt;/span&gt; while &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;dependent variable&lt;/em&gt; is fear of walking alone at night&lt;/span&gt;.&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Choice
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Male
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Female
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2 (22%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+8 (73%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+No
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+7 (78%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+3 (27%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Approximately &lt;span class=&#34;math inline&#34;&gt;\(73\)&lt;/span&gt;% of women are afraid to walk alone in their neighborhoods at night, whereas approximately &lt;span class=&#34;math inline&#34;&gt;\(22\)&lt;/span&gt;% of men said the same. This amounts to about a &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(51\)&lt;/span&gt;% difference between women and men who are not afraid to walk alone at night&lt;/span&gt;, indicating a strong relationship. It is important to keep in mind that our small sample size limits the generalizability of these results.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There does not appear to be much of a relationship between homeownership and fear of walking alone at night. The majority in both homeownership categories (&lt;span class=&#34;math inline&#34;&gt;\(54\)&lt;/span&gt;% and &lt;span class=&#34;math inline&#34;&gt;\(55\)&lt;/span&gt;%) indicated that &lt;span class=&#34;boxed&#34;&gt;they were not afraid of walking alone at night in their neighborhood&lt;/span&gt;.&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Response
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Male
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Female
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+4 (44%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+5 (45%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+No
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+5 (54%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+6 (55%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
@@ -394,108 +439,126 @@ so &lt;span class=&#34;math inline&#34;&gt;\(z_{obt} = 3.50\)&lt;/span&gt; and t
 3
 &lt;/summary&gt;
 &lt;p&gt;
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;Based on the student’s argument, &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;independent variable&lt;/em&gt; is race&lt;/span&gt; and &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;dependent variable&lt;/em&gt; is home ownership&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have &lt;span class=&#34;math display&#34;&gt;\[\dfrac{539}{857} \approx 0.6289\]&lt;/span&gt; or about &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(63\)&lt;/span&gt;%&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and home ownership&lt;/span&gt;. While &lt;span class=&#34;math inline&#34;&gt;\(63\)&lt;/span&gt;% of those surveyed report owning a home, far less Black respondents report such (&lt;span class=&#34;math inline&#34;&gt;\(41.3\)&lt;/span&gt;%) than White respondents (&lt;span class=&#34;math inline&#34;&gt;\(67.7\)&lt;/span&gt;%). Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(58.7\)&lt;/span&gt;% of Black respondents rent as compared to &lt;span class=&#34;math inline&#34;&gt;\(32.3\)&lt;/span&gt;% of White respondents.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+5
+&lt;/summary&gt;
+&lt;p&gt;
+&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and the frequency of being drunk in the last 12 months&lt;/span&gt;. The majority of students (&lt;span class=&#34;math inline&#34;&gt;\(60\)&lt;/span&gt;%) are likely to report not being drunk in the last 12 months. However, the percentage of students being drunk at least 3 or more times is highest for Whites (&lt;span class=&#34;math inline&#34;&gt;\(28\)&lt;/span&gt;%), followed by Hispanic (&lt;span class=&#34;math inline&#34;&gt;\(16\)&lt;/span&gt;%) and Black (&lt;span class=&#34;math inline&#34;&gt;\(11\)&lt;/span&gt;%) students.&lt;br /&gt;
+
 &lt;div align=&#34;center&#34;&gt;
 &lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
 &lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style=&#34;text-align:left;&#34;&gt;
-Item
-&lt;/th&gt;
-&lt;th style=&#34;text-align:left;&#34;&gt;
-Test
+Frequency
 &lt;/th&gt;
 &lt;th style=&#34;text-align:center;&#34;&gt;
-Research Hypothesis
+Black
 &lt;/th&gt;
 &lt;th style=&#34;text-align:center;&#34;&gt;
-Null Hypothesis
+White
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Hispanic
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Total
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{a}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-Two-tailed
+None
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu\neq53657\)&lt;/span&gt;
+359 (75%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu=53657\)&lt;/span&gt;
+1081 (55%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+480 (67%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1920 (60%)
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{b}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
+1-2 times
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu&amp;gt;3.2\)&lt;/span&gt;
+63 (13%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu=3.2\)&lt;/span&gt;
+342 (17%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+125 (17%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+530 (17%)
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{c}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
+3-5 times
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
+24 (5%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+168 (8%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+50 (7%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+242 (8%)
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{d}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-Two-tailed
+&amp;gt; 6 times
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1\neq\mu_2\)&lt;/span&gt;
+31 (6%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+389 (20%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+64 (9%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+484 (15%)
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{e}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
+Total
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;gt;\mu_2\)&lt;/span&gt;
+477 (99%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\text{f}\)&lt;/span&gt;
-&lt;/td&gt;
-&lt;td style=&#34;text-align:left;&#34;&gt;
-One-tailed
+1980 (100%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1&amp;lt;\mu_2\)&lt;/span&gt;
+719 (100%)
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_1=\mu_2\)&lt;/span&gt;
+3176 (100%)
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -506,49 +569,123 @@ One-tailed
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;
-4
+6
 &lt;/summary&gt;
 &lt;p&gt;
+&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;The death penalty is more likely in cases where the victim was female or White&lt;/span&gt;. The percentage difference is greater between female versus male victims (&lt;span class=&#34;math inline&#34;&gt;\(57.5 – 45.4 = 12.1\)&lt;/span&gt;%) than White versus Black victims (&lt;span class=&#34;math inline&#34;&gt;\(52.7 – 46.5 = 6.2\)&lt;/span&gt;%). When considering the interactive effects of gender and race, death sentences are more likely in cases with White and Black female victims (&lt;span class=&#34;math inline&#34;&gt;\(55\)&lt;/span&gt;% or higher). Death sentences are least likely in cases with a Black male victim.&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\pi_1=\pi_2\\
-H_1:\,\pi_1&amp;lt;\pi_2
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-s_{p_1-p_2} &amp;amp;=\sqrt{\dfrac{0.34\cdot(1-0.34)}{1799}+\dfrac{0.41\cdot(1-0.41)}{1001}}\\[0.5ex]
-&amp;amp;= \sqrt{0.0003664}\\
-&amp;amp;\approx 0.02
-\end{align}\]&lt;/span&gt;
-implying
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-z &amp;amp;= \dfrac{0.34-0.41}{0.02}\\[0.5ex]
-&amp;amp;\approx -3.50
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(z_{obt}=-3.50 &amp;lt;\alpha = 0.05\)&lt;/span&gt;&lt;/span&gt; (and less than &lt;span class=&#34;math inline&#34;&gt;\(0.0002\)&lt;/span&gt; from Appendix A). So &lt;span class=&#34;boxed&#34;&gt;the proportion of White respondents who support the tactic of bringing people of different racial backgrounds together to talk about race is lower than the proportion of Black respondents&lt;/span&gt;. The difference given by &lt;span class=&#34;math inline&#34;&gt;\(0.41-0.34\)&lt;/span&gt; is likely significant at the &lt;span class=&#34;math inline&#34;&gt;\(0.05\)&lt;/span&gt; level.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have &lt;span class=&#34;math display&#34;&gt;\[\dfrac{703}{766}\approx 0.9177\]&lt;/span&gt; or about &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(91.8\)&lt;/span&gt;%&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;14&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There are a total of &lt;span class=&#34;math inline&#34;&gt;\(187+197=384\)&lt;/span&gt; individuals in this class. Of those, there are &lt;span class=&#34;math inline&#34;&gt;\(4+19=23\)&lt;/span&gt; that feel discriminated against. So we have &lt;span class=&#34;math display&#34;&gt;\[\dfrac{23}{384}\approx 0.0599\]&lt;/span&gt; or about &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(5.99\)&lt;/span&gt;%&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between age and feeling of age discrimination&lt;/span&gt;. &lt;span class=&#34;math inline&#34;&gt;\(8.2\)&lt;/span&gt;% of all respondents felt discriminated against because of their age. However, those between 18 and 29 were more likely to feel discriminated against because of their age than any other age category represented in the cross-tabulation.&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;p&gt;Response&lt;/p&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;18-29&lt;/p&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;30-39&lt;/p&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;40-49&lt;/p&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;50-59&lt;/p&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;Total&lt;/p&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;p&gt;Yes&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;26 (16%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;14 (6%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;4 (2%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;19 (10%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;63 (8%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;p&gt;No&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;136 (84%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;206 (94%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;183 (98%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;178 (90%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;703 (92%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;p&gt;Total&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;162 (100%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;220 (100%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;187 (100%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;197 (100%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;p&gt;766 (100%)&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;
-5
+7
 &lt;/summary&gt;
 &lt;p&gt;
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-H_0:\,\mu = 37.8\\
-H_1:\,\mu\neq 37.8
-\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We have
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-t &amp;amp;= \dfrac{48.69-37.80}{17.99/\sqrt{1495}}\\[0.5ex]
-&amp;amp;\approx 23.17
-\end{align}\]&lt;/span&gt;
-yielding that &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(t_{obt}=23.17\)&lt;/span&gt;&lt;/span&gt; with &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(p &amp;lt; 0.001\)&lt;/span&gt;&lt;/span&gt; (and is greater than &lt;span class=&#34;math inline&#34;&gt;\(3.291\)&lt;/span&gt; from Appendix B).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;We can say that &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; should likely be rejected in favor of the &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt;. So &lt;span class=&#34;boxed&#34;&gt;there is a difference between the mean age of the GSS sample and the mean age of all American adults&lt;/span&gt;. Relative to age, the GSS sample is not representative of all American adults (the GSS sample is significantly older).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;boxed&#34;&gt;The &lt;em&gt;dependent variable&lt;/em&gt; is housework disagreement&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(n = 7144\)&lt;/span&gt;&lt;/span&gt; is the total sample size.&lt;/li&gt;
+&lt;li&gt;We have &lt;span class=&#34;math display&#34;&gt;\[\dfrac{3953}{7144} \approx 0.5533\]&lt;/span&gt; or about &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(55.33\)&lt;/span&gt;%&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;boxed&#34;&gt;There is a relationship between perceived unfairness of housework divisions and housework disagreement for women&lt;/span&gt;. &lt;span class=&#34;math inline&#34;&gt;\(33.68\)&lt;/span&gt;% of women reported never having housework disagreement. However, women who felt housework divisions were fair to women (&lt;span class=&#34;math inline&#34;&gt;\(43.65\)&lt;/span&gt;%) were more likely to report never having disagreement over housework than women who felt housework divisions were unfair to women (&lt;span class=&#34;math inline&#34;&gt;\(25.62\)&lt;/span&gt;%).&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+9
+&lt;/summary&gt;
+&lt;p&gt;
+Yes, &lt;span class=&#34;boxed&#34;&gt;there is a relationship between political party affiliation and attitudes toward the Affordable Care Act&lt;/span&gt;. The majority of physicians who reported being Republican or Other party were strongly against or against ACA. The largest reporting percentage was among &lt;span class=&#34;math inline&#34;&gt;\(31.08\)&lt;/span&gt;% + &lt;span class=&#34;math inline&#34;&gt;\(52.99\)&lt;/span&gt;% &lt;span class=&#34;math inline&#34;&gt;\(=\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(84.07\)&lt;/span&gt;% Republicans. Only &lt;span class=&#34;math inline&#34;&gt;\(11.20\)&lt;/span&gt;% + &lt;span class=&#34;math inline&#34;&gt;\(36\)&lt;/span&gt;% &lt;span class=&#34;math inline&#34;&gt;\(=\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(47.2\)&lt;/span&gt;% of Democrats were strongly against or against the act.
 &lt;/p&gt;
 &lt;/details&gt;
 &lt;/div&gt;
