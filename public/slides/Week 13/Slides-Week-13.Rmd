@@ -141,7 +141,7 @@ library(tidyverse)
 
 # A Note About The Slides
 
-Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work. 
+Currently the equations do not show up properly in Firefox with additional options. Other browsers such as Chrome and Safari do work properly. 
 
 ---
 
@@ -151,7 +151,7 @@ A **proportional reduction of error** (PRE)
 
 --
 
-- is a general term for statistical measures that tells us how much we can improve predictive the vale of a dependent variable based on available information on the independent variable.
+- is a general term for statistical measures that tells us how much we can improve predictive the value of a dependent variable based on available information on the independent variable.
 
 --
  
