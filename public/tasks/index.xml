@@ -442,9 +442,7 @@ No
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
 &lt;li&gt;&lt;p&gt;The &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;independent variable&lt;/em&gt; is AGE&lt;/span&gt; independent variable and measured in categories.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The independent variable &lt;span class=&#34;boxed&#34;&gt;&lt;em&gt;AGE&lt;/em&gt;&lt;/span&gt; is ordinal while the dependent variable &lt;span class=&#34;boxed&#34;&gt;&lt;em&gt;PRES16&lt;/em&gt; is nominal&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;There appears to be a relationship between age and who a respondent voted for in the 2016 U.S. presidential election. Of those surveyed, &lt;span class=&#34;math inline&#34;&gt;\(55.4\)&lt;/span&gt;% voted for Clinton, whereas only &lt;span class=&#34;math inline&#34;&gt;\(35.4\)&lt;/span&gt;% voted for Trump. However, far more younger people voted for Clinton than Trump. Take for example the categories 18–29 and 30–39. Of those 18–29 years of age, &lt;span class=&#34;math inline&#34;&gt;\(65.7\)&lt;/span&gt;% voted for Clinton as compared to &lt;span class=&#34;math inline&#34;&gt;\(19.2\)&lt;/span&gt;% of those of the same age group that voted for Trump (&lt;span class=&#34;math inline&#34;&gt;\(19.2\)&lt;/span&gt;%). Similarly, &lt;span class=&#34;math inline&#34;&gt;\(61.1\)&lt;/span&gt;% of those between 30 and 39 voted for Clinton, whereas only &lt;span class=&#34;math inline&#34;&gt;\(26.8\)&lt;/span&gt;% of the same age group voted for Trump.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There appears to be a relationship between age and who a respondent voted for in the 2016 U.S. presidential election. Of those surveyed, &lt;span class=&#34;math inline&#34;&gt;\(55.4\)&lt;/span&gt;% voted for Clinton, whereas only &lt;span class=&#34;math inline&#34;&gt;\(35.4\)&lt;/span&gt;% voted for Trump. However, far more younger people voted for Clinton than Trump. Take for example the categories 18–29 and 30–39. Of those 18–29 years of age, &lt;span class=&#34;math inline&#34;&gt;\(65.7\)&lt;/span&gt;% voted for Clinton as compared to &lt;span class=&#34;math inline&#34;&gt;\(19.2\)&lt;/span&gt;% of those of the same age group that voted for Trump (&lt;span class=&#34;math inline&#34;&gt;\(19.2\)&lt;/span&gt;%). Similarly, &lt;span class=&#34;math inline&#34;&gt;\(61.1\)&lt;/span&gt;% of those between 30 and 39 voted for Clinton, whereas only &lt;span class=&#34;math inline&#34;&gt;\(26.8\)&lt;/span&gt;% of the same age group voted for Trump.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
@@ -456,10 +454,7 @@ No
 &lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
 &lt;li&gt;&lt;p&gt;Based on the student’s argument, &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;independent variable&lt;/em&gt; is race&lt;/span&gt; and &lt;span class=&#34;boxed&#34;&gt;the &lt;em&gt;dependent variable&lt;/em&gt; is home ownership&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;We have &lt;span class=&#34;math display&#34;&gt;\[\dfrac{539}{857} \approx 0.6289\]&lt;/span&gt; or about &lt;span class=&#34;boxed&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(63\)&lt;/span&gt;%&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and home ownership&lt;/span&gt;. While &lt;span class=&#34;math inline&#34;&gt;\(63\)&lt;/span&gt;% of those surveyed report owning a home, far less Black respondents report such (&lt;span class=&#34;math inline&#34;&gt;\(41.3\)&lt;/span&gt;%) than White respondents (&lt;span class=&#34;math inline&#34;&gt;\(67.7\)&lt;/span&gt;%). Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(58.7\)&lt;/span&gt;% of Black respondents rent as compared to &lt;span class=&#34;math inline&#34;&gt;\(32.3\)&lt;/span&gt;% of White respondents.&lt;br /&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and home ownership&lt;/span&gt;. While &lt;span class=&#34;math inline&#34;&gt;\(63\)&lt;/span&gt;% of those surveyed report owning a home, far less Black respondents report such (&lt;span class=&#34;math inline&#34;&gt;\(41.3\)&lt;/span&gt;%) than White respondents (&lt;span class=&#34;math inline&#34;&gt;\(67.7\)&lt;/span&gt;%). Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(58.7\)&lt;/span&gt;% of Black respondents rent as compared to &lt;span class=&#34;math inline&#34;&gt;\(32.3\)&lt;/span&gt;% of White respondents.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
@@ -473,8 +468,6 @@ No
 &lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;Yes&lt;/span&gt;, there appears to be a relationship between age and home ownership. While &lt;span class=&#34;math inline&#34;&gt;\(51\)&lt;/span&gt;% of all those surveyed are home owners, a far greater percentage of those 50–59 years-of-age are home owners (&lt;span class=&#34;math inline&#34;&gt;\(65.7\)&lt;/span&gt;%) than all other age categories, especially those between 18 and 29 years-of-age.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;em&gt;Possible answers&lt;/em&gt;: student loan debt - a person might not be able to save up for a down payment - and city of residence - home ownership in San Francisco or New York City is impossible for many people due to home values.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
@@ -482,8 +475,7 @@ No
 5
 &lt;/summary&gt;
 &lt;p&gt;
-&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and the frequency of being drunk in the last 12 months&lt;/span&gt;. The majority of students (&lt;span class=&#34;math inline&#34;&gt;\(60\)&lt;/span&gt;%) are likely to report not being drunk in the last 12 months. However, the percentage of students being drunk at least 3 or more times is highest for Whites (&lt;span class=&#34;math inline&#34;&gt;\(28\)&lt;/span&gt;%), followed by Hispanic (&lt;span class=&#34;math inline&#34;&gt;\(16\)&lt;/span&gt;%) and Black (&lt;span class=&#34;math inline&#34;&gt;\(11\)&lt;/span&gt;%) students.&lt;br /&gt;
-
+&lt;span class=&#34;boxed&#34;&gt;There appears to be a relationship between race and the frequency of being drunk in the last 12 months&lt;/span&gt;. The majority of students (&lt;span class=&#34;math inline&#34;&gt;\(60\)&lt;/span&gt;%) are likely to report not being drunk in the last 12 months. However, the percentage of students being drunk at least 3 or more times is highest for Whites (&lt;span class=&#34;math inline&#34;&gt;\(28\)&lt;/span&gt;%), followed by Hispanic (&lt;span class=&#34;math inline&#34;&gt;\(16\)&lt;/span&gt;%) and Black (&lt;span class=&#34;math inline&#34;&gt;\(11\)&lt;/span&gt;%) students.
 &lt;div align=&#34;center&#34;&gt;
 &lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
 &lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
