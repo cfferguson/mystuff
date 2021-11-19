@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Chi-Square and ANOVAs</title>
+    <title>Analysis of Variance</title>
     <meta charset="utf-8" />
     <meta name="author" content="Week 13" />
     <script src="Slides-Week-13_files/header-attrs-2.11/header-attrs.js"></script>
@@ -17,16 +17,125 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Chi-Square and ANOVAs
+# Analysis of Variance
 ## EDP 613
 ### Week 13
 
 ---
 
 
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+&lt;/script&gt;
+
+&lt;style&gt;
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+&lt;/style&gt;
 
 
 
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(/Users/skynet/Documents/WVU/Teaching/GitHub.nosync/Workspace/edp613/static/img/course_hex_alpha.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://edp613.asocialdatascientist.com'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 
 
@@ -46,29 +155,63 @@ A **proportional reduction of error** (PRE)
 
 --
  
-- includes variables 
+&gt;- includes variables
+
+--
+
   - `\(E_1\)`: errors of predictions made when the independent variable is *ignored*
+  
+--
+
   - `\(E_2\)`: errors of predictions made when the independent variable is *included*
 
 --
 
-- is found by `$$PRE = \dfrac{E_1-E_2}{E_1}$$`
+&gt;- is found by `$$PRE = \dfrac{E_1-E_2}{E_1}$$`
 
 --
 
-- takes on values between (0,1) with
+&gt;- takes on values between (0,1) with
   - 0: no reduction in error
   - 1: perfect prediction—the error is completely eliminated.
 
 ---
 
+
+
+---
+
+# Measures for Strength of Association
+
+--
+
+
 ## Very General Rule of Thumb
 
 --
 
-- 0 - 0.1: weak
-- 0.1 - 0.4: moderate
-- 0.4 - 1: is strong
+&lt;table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Range &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Strength &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 - 0.1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Weak &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &amp;gt; 0.1 - 0.4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Moderate &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; &amp;gt; 0.4 - 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Strong &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -189,6 +332,7 @@ A **proportional reduction of error** (PRE)
 ## Example
 
 &gt;- A clinical trial is run to compare three (3) weight loss programs and participants are randomly assigned to one of the comparison programs and are counseled on the details of the assigned program. 
+
   - low-calorie diet
   - low fat diet
   - low carbohydrate diet
@@ -366,7 +510,15 @@ Since `\(8.43\geq 3.24\)`, we reject `\(H_0\)` and say that *there is a statisti
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -431,7 +583,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

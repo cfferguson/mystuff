@@ -1,29 +1,138 @@
 ---
-title: "Chi-Square and ANOVAs"
+title: "Analysis of Variance"
 subtitle: "EDP 613"
 author: "Week 13"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
 ---
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+</style>
+
 ```{r setup, include=FALSE, purl=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(infer)
+library(patchwork)
+library(flipbookr)
+library(viridis)
 library(knitr)
 library(kableExtra)
-library(tidyverse)
+library(fontawesome)
 library(here)
-library(clt)
+library(DT)
+library(scales)
+library(latex2exp)
+library(tweetrmd)
+library(showtext)
+font_add_google("Roboto Condensed", "roboto")
+showtext_auto()
 ```
 
 ```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#bff4ee",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#f4eebf",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
 
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
 ```
 
 ```{r echo = FALSE, eval = TRUE, message=FALSE}
@@ -32,7 +141,7 @@ library(tidyverse)
 
 # A Note About The Slides
 
-Currently the equations do not show up properly in Firefox. Other browsers such as Chrome and Safari do work. 
+Currently the equations do not show up properly in Firefox with additional options. Other browsers such as Chrome and Safari do work properly. 
 
 ---
 
@@ -42,33 +151,59 @@ A **proportional reduction of error** (PRE)
 
 --
 
-- is a general term for statistical measures that tells us how much we can improve predictive the vale of a dependent variable based on available information on the independent variable.
+- is a general term for statistical measures that tells us how much we can improve predictive the value of a dependent variable based on available information on the independent variable.
 
 --
  
-- includes variables 
+>- includes variables
+
+--
+
   - $E_1$: errors of predictions made when the independent variable is *ignored*
+  
+--
+
   - $E_2$: errors of predictions made when the independent variable is *included*
 
 --
 
-- is found by $$PRE = \dfrac{E_1-E_2}{E_1}$$
+>- is found by $$PRE = \dfrac{E_1-E_2}{E_1}$$
 
 --
 
-- takes on values between (0,1) with
+>- takes on values between (0,1) with
   - 0: no reduction in error
   - 1: perfect prediction—the error is completely eliminated.
 
 ---
 
+
+
+---
+
+# Measures for Strength of Association
+
+--
+
+
 ## Very General Rule of Thumb
 
 --
 
-- 0 - 0.1: weak
-- 0.1 - 0.4: moderate
-- 0.4 - 1: is strong
+```{r echo=FALSE}
+impact <- tibble::tribble(
+         ~Range,  ~Strength,
+      "0 - 0.1",     "Weak",
+  "> 0.1 - 0.4", "Moderate",
+    "> 0.4 - 1",   "Strong"
+  )
+
+kable_styling(
+              kable(impact, digits = 3, row.names = FALSE, align = "c",
+              caption = NULL, format = "html"),
+        bootstrap_options = c("striped", "hover", "condensed"),
+        position = "center", full_width = FALSE) 
+```
 
 ---
 
@@ -189,6 +324,7 @@ A **proportional reduction of error** (PRE)
 ## Example
 
 >- A clinical trial is run to compare three (3) weight loss programs and participants are randomly assigned to one of the comparison programs and are counseled on the details of the assigned program. 
+
   - low-calorie diet
   - low fat diet
   - low carbohydrate diet
