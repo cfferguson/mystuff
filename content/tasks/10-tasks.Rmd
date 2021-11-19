@@ -150,7 +150,11 @@ walking2 %>%
 
 <details><summary>2</summary>
 <p>
+a. The <span class="boxed">the *independent variable* is AGE</span> independent variable  and measured in categories.
 
+b. The independent variable <span class="boxed">*AGE*</span> is ordinal while the dependent variable <span class="boxed">*PRES16* is nominal</span>. 
+
+c. There appears to be a relationship between age and who a respondent voted for in the 2016 U.S. presidential election. Of those surveyed, $55.4$% voted for Clinton, whereas only $35.4$% voted for Trump. However, far more younger people voted for Clinton than Trump. Take for example the categories 18–29 and 30–39. Of those 18–29 years of age, $65.7$% voted for Clinton as compared to $19.2$% of those of the same age group that voted for Trump ($19.2$%). Similarly, $61.1$% of those between 30 and 39 voted for Clinton, whereas only $26.8$% of the same age group voted for Trump.
 </div>
 </div>
 </p>
@@ -163,13 +167,18 @@ a. Based on the student’s argument, <span class="boxed">the *independent varia
 b. We have $$\dfrac{539}{857} \approx 0.6289$$ or about <span class="boxed">$63$%</span>.
 
 c. <span class="boxed">There appears to be a relationship between race and home ownership</span>. While $63$% of those surveyed report owning a home, far less Black respondents report such ($41.3$%) than White respondents ($67.7$%). Furthermore, $58.7$% of Black respondents rent as compared to $32.3$% of White respondents.  
-
+</div>
+</div>
 </p>
 </details>
 
 <details><summary>4</summary>
 <p>
+a. The <span class="boxed">*independent variable* is the respondent's age</span> while the <span class="boxed">*dependent variable* is home ownership</span>. 
 
+b. <span class="boxed">Yes</span>, there appears to be a relationship between age and home ownership. While $51$% of all those surveyed are home owners, a far greater percentage of those 50–59 years-of-age are home owners ($65.7$%) than all other age categories, especially those between 18 and 29 years-of-age.
+
+c. *Possible answers*: student loan debt - a person might not be able to save up for a down payment - and city of residence - home ownership in San Francisco or New York City is impossible for many people due to home values.
 </div>
 </div>
 </p>
@@ -227,4 +236,3 @@ drunk %>%
 
 </p>
 </details>
-
