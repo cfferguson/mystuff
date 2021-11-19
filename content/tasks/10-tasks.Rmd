@@ -148,6 +148,14 @@ walking2 %>%
 </p>
 </details>
 
+<details><summary>2</summary>
+<p>
+
+</div>
+</div>
+</p>
+</details>
+
 <details><summary>3</summary>
 <p>
 a. Based on the student’s argument, <span class="boxed">the *independent variable* is race</span> and <span class="boxed">the *dependent variable* is home ownership</span>.
@@ -156,6 +164,14 @@ b. We have $$\dfrac{539}{857} \approx 0.6289$$ or about <span class="boxed">$63$
 
 c. <span class="boxed">There appears to be a relationship between race and home ownership</span>. While $63$% of those surveyed report owning a home, far less Black respondents report such ($41.3$%) than White respondents ($67.7$%). Furthermore, $58.7$% of Black respondents rent as compared to $32.3$% of White respondents.  
 
+</p>
+</details>
+
+<details><summary>4</summary>
+<p>
+
+</div>
+</div>
 </p>
 </details>
 
@@ -212,68 +228,3 @@ drunk %>%
 </p>
 </details>
 
-<details><summary>6</summary>
-<p>
-<span class="boxed">The death penalty is more likely in cases where the victim was female or White</span>. The percentage difference is greater between female versus male victims ($57.5 – 45.4 = 12.1$%) than White versus Black victims ($52.7 – 46.5 = 6.2$%). When considering the interactive effects of gender and race, death sentences are more likely in cases with White and Black female victims ($55$% or higher). Death sentences are least likely in cases with a Black male victim. 
-
-a. We have $$\dfrac{703}{766}\approx 0.9177$$ or about <span class="boxed">$91.8$%</span>.
-
-b. <span class="boxed">14</span>.
-
-c. There are a total of $187+197=384$ individuals in this class. Of those, there are $4+19=23$ that feel discriminated against. So we have $$\dfrac{23}{384}\approx 0.0599$$ or about <span class="boxed">$5.99$%</span>.
-
-d. <span class="boxed">There appears to be a relationship between age and feeling of age discrimination</span>. $8.2$% of all respondents felt discriminated against because of their age. However, those between 18 and 29 were more likely to feel discriminated against because of their age than any other age category represented in the cross-tabulation.
-```{r, echo=FALSE, eval=TRUE}
-discrimination <- tibble(
-  
-  Response = c("Yes", 
-               "No",
-               "Total"),
-  
-  "18-29" = c("26 (16%)", 
-              "136 (84%)",
-              "162 (100%)"),
-  
-  "30-39" = c("14 (6%)", 
-              "206 (94%)",
-              "220 (100%)"),
-  
-  "40-49" = c("4 (2%)", 
-              "183 (98%)",
-              "187 (100%)"),
-  
-  "50-59" = c("19 (10%)", 
-              "178 (90%)",
-              "197 (100%)"),
-  
-  "Total" = c("63 (8%)", 
-              "703 (92%)",
-              "766 (100%)"),
-  
-) 
-
-discrimination %>%
-  kable(align = 'lccccc',
-        booktabs = TRUE, 
-        linesep = "",
-        escape = FALSE) %>%
-  kable_styling(full_width = FALSE) 
-```
-</p>
-</details>
-
-<details><summary>7</summary>
-<p>
-a. <span class="boxed">The *dependent variable* is housework disagreement</span>.
-b. <span class="boxed">$n = 7144$</span> is the total sample size.
-c. We have $$\dfrac{3953}{7144} \approx 0.5533$$ or about <span class="boxed">$55.33$%</span>.
-d. <span class="boxed">There is a relationship between perceived unfairness of housework divisions and housework disagreement for women</span>. $33.68$% of women reported never having housework disagreement. However, women who felt housework divisions were fair to women ($43.65$%) were more likely to report never having disagreement over housework than women who felt housework divisions were unfair to women ($25.62$%).
-
-</p>
-</details>
-
-<details><summary>9</summary>
-<p>
-Yes, <span class="boxed">there is a relationship between political party affiliation and attitudes toward the Affordable Care Act</span>. The majority of physicians who reported being Republican or Other party were strongly against or against ACA. The largest reporting percentage was among $31.08$% + $52.99$% $=$ $84.07$% Republicans. Only $11.20$% + $36$% $=$ $47.2$% of Democrats were strongly against or against the act. 
-</p>
-</details>
