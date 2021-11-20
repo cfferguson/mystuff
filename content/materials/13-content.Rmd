@@ -142,7 +142,7 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 Download a copy of everything you need to follow along the walkthroughs^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
 
 ```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 10", "EDP610Week10RMaterials.zip")
+loc <- here::here("static", "slides", "Week 10", "EDP613Week10RMaterials.zip")
 
 downloadthis::download_file(
   path = loc,

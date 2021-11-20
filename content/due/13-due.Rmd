@@ -37,6 +37,7 @@ Submit = c(unchecked,
            checked,
            checked,
            checked,
+           unchecked,
            unchecked),
 
 Description = c("Review the solution set from the Chapter 10 homework set",
@@ -45,6 +46,7 @@ Description = c("Review the solution set from the Chapter 10 homework set",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
                 "Begin or continue the second ***optional*** extra credit module *Fundamentals of Bayesian Data Analysis in R*",
                 "Begin or continue the third ***optional*** extra credit module *Reporting with R Markdown*",
+                "Watch videos on the Regression & Correlation and ANOVAs^[Optional but recommended.]",
                 "Watch a fantastic explanation on a concept called *Regression to the Mean*"),
 
 
@@ -54,7 +56,9 @@ Location = c("[Link](/tasks/12-tasks/#solutions)",
              "[Link](/datacamp/07-module/)",
              "[Link](/datacamp/08-module/)",
              "[Link](/datacamp/09-module/)",
-             "[Link](/datacamp/09-module/)")
+             "[Link](/materials/13-example/#crash-course-statistics)",
+             "[Link](/materials/13-example/#veritasium)"
+             )
 )
 ```
 
