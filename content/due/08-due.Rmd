@@ -77,7 +77,7 @@ Description = c("Read *Testing Hypotheses* in the text",
 
 Location = c("[Link](/readings/09-reading/#book-stuff)", 
              "[Link](/materials/09-content/#textbook-notes)",
-             "[Link](/materials/09-example/#crash-course-statistics)")
+             "[Link](/extras/09-example/#crash-course-statistics)")
 
 )
 

@@ -39,7 +39,7 @@ Description = c("Review the solution set from the Chapter 5 homework set",
 
 Location = c( "[Link](/tasks/05-tasks/#solutions)",
               "[Link](/datacamp/03-module/)",
-              "[Link](/materials/06-example/)"
+              "[Link](/extras/06-example/)"
                )
 )
 

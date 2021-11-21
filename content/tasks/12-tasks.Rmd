@@ -85,7 +85,7 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target="_blank"}
 ### Solutions
 <!--
 *Posted after class day and time next week.*
-
+-->
 *Note: To stay consistent with the general literature, the* $\chi^2$ *value obtained will be referenced by the variable* $\chi^2_{obt}$.
 <details><summary>1</summary>
 <p>
@@ -291,4 +291,3 @@ For
 - Age at first offense, the model is significant at the $0.01 \alpha$ level, <span class="boxed">indicating a likely significant relationship between age at first offense and violent onset</span>. Violent onset is more likely among the group 14 years and older ($14.74$%) than those less than 14 years of age at first onset ($9.67$%). 
 </p>
 </details>
--->

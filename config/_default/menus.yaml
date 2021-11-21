@@ -14,24 +14,27 @@ main:
   - name: Materials
     url: /materials/
     weight: 5
+  - name: Extras
+    url: /extras/
+    weight: 6
   - name: Tasks
     url: /tasks/
-    weight: 6
+    weight: 7
   - name: To Do List
     url: /due/
-    weight: 7
+    weight: 8
   - name: Resources
     url: /resources/
-    weight: 8
+    weight: 9
   - name: Professor
     url: /professor/
-    weight: 9
+    weight: 10
   - name: '<i class="fab fa-slack"></i>'
     url: "https://2021edp613.slack.com"
-    weight: 10
+    weight: 11
   - name: '<i class="fab fa-r-project"></i>'
     url: "https://rstudio.cloud/"
-    weight: 11
+    weight: 12
 
 readings:
   - name: Overview
@@ -48,8 +51,11 @@ materials:
     weight: 1
   - name: Content
     weight: 2
+extras:
+  - name: Overview
+    weight: 1
   - name: Examples
-    weight: 3
+    weight: 2
 tasks:
   - name: Overview
     weight: 1

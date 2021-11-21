@@ -34,6 +34,7 @@ wk_post <- tibble(
 Submit = c(unchecked,
            checked,
            checked,
+           unchecked,
            checked,
            checked,
            checked,
@@ -43,6 +44,7 @@ Submit = c(unchecked,
 Description = c("Review the solution set from the Chapter 10 homework set",
                 "Complete problems 1, 2, 6 in Chapter 11",
                 "Complete ***optional*** problems 1, 2 in Chapter 12",
+                "Take a look at a compilation of statistical commands in R",
                 "Begin or continue the first ***optional*** extra credit module *Analyzing Survey Data in R*",
                 "Begin or continue the second ***optional*** extra credit module *Fundamentals of Bayesian Data Analysis in R*",
                 "Begin or continue the third ***optional*** extra credit module *Reporting with R Markdown*",
@@ -53,11 +55,12 @@ Description = c("Review the solution set from the Chapter 10 homework set",
 Location = c("[Link](/tasks/12-tasks/#solutions)",
              "[Link](/tasks/13-tasks/#homework)",
              "[Link](/tasks/13-tasks/#homework)",
+             "[Link](/tasks/13-tasks/#homework)",
              "[Link](/datacamp/07-module/)",
              "[Link](/datacamp/08-module/)",
              "[Link](/datacamp/09-module/)",
              "[Link](/materials/13-example/#crash-course-statistics)",
-             "[Link](/materials/13-example/#veritasium)"
+             "[Link](/extras/13-example/#veritasium)"
              )
 )
 ```
@@ -72,7 +75,7 @@ kable(wk_post,
 
 <br />
 
-### What to do for Week 13 before coming to class^[For preparation.]
+### What to do for Week 14 before coming to class^[For preparation.]
 
 ```{r eval = TRUE, echo = FALSE}
 book <- as.character(fontawesome::fa("book", fill = "steelblue"))

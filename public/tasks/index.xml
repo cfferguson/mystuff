@@ -679,233 +679,419 @@ to the Submission Portal on [ecampus](https://ecampus.wvu.edu/){target=&#34;_bla
 &lt;h3&gt;Solutions&lt;/h3&gt;
 &lt;!--
 *Posted after class day and time next week.*
-
-*Note: To stay consistent with the general literature, the* $\chi^2$ *value obtained will be referenced by the variable* $\chi^2_{obt}$.
-&lt;details&gt;&lt;summary&gt;1&lt;/summary&gt;
+--&gt;
+&lt;em&gt;Note: To stay consistent with the general literature, the&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\chi^2\)&lt;/span&gt; &lt;em&gt;value obtained will be referenced by the variable&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\chi^2_{obt}\)&lt;/span&gt;.
+&lt;details&gt;
+&lt;summary&gt;
+1
+&lt;/summary&gt;
 &lt;p&gt;
-
-a. We have 
-\begin{align}
-df &amp;= (3-1)\cdot(2-1)\\
-   &amp;= 2
-\end{align}
-yielding &lt;span class=&#34;boxed&#34;&gt;2 degrees of freedom&lt;/span&gt;.
-
-b. We have $\chi^2 = 3.311$. With $\chi^2_{obt} =  0.191 &gt; \alpha = 0.01$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$ and conclude that sex and opinion of whether or not people can be trusted are likely independent&lt;/span&gt;. Specifically, similar percentages of men ($34.94$%) and women ($29.7$%) felt that people can be trusted.
-
-c. If $\alpha = 0.05$, $\chi^2_{obt} =  0.191$ would still be greater and thus &lt;span class=&#34;boxed&#34;&gt;we would still reject $H_0$&lt;/span&gt;.
-
-d. We have $\lambda = 0.000$ implying that there &lt;span class=&#34;boxed&#34;&gt;is no proportional reduction of error using sex to predict whether or not people can be trusted&lt;/span&gt;.
-
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;We have
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+df &amp;amp;= (3-1)\cdot(2-1)\\
+&amp;amp;= 2
+\end{align}\]&lt;/span&gt;
+yielding &lt;span class=&#34;boxed&#34;&gt;2 degrees of freedom&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have &lt;span class=&#34;math inline&#34;&gt;\(\chi^2 = 3.311\)&lt;/span&gt;. With &lt;span class=&#34;math inline&#34;&gt;\(\chi^2_{obt} = 0.191 &amp;gt; \alpha = 0.01\)&lt;/span&gt;, &lt;span class=&#34;boxed&#34;&gt;we fail to reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and conclude that sex and opinion of whether or not people can be trusted are likely independent&lt;/span&gt;. Specifically, similar percentages of men (&lt;span class=&#34;math inline&#34;&gt;\(34.94\)&lt;/span&gt;%) and women (&lt;span class=&#34;math inline&#34;&gt;\(29.7\)&lt;/span&gt;%) felt that people can be trusted.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.05\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\chi^2_{obt} = 0.191\)&lt;/span&gt; would still be greater and thus &lt;span class=&#34;boxed&#34;&gt;we would still reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have &lt;span class=&#34;math inline&#34;&gt;\(\lambda = 0.000\)&lt;/span&gt; implying that there &lt;span class=&#34;boxed&#34;&gt;is no proportional reduction of error using sex to predict whether or not people can be trusted&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
-
-&lt;details&gt;&lt;summary&gt;2&lt;/summary&gt;
+&lt;details&gt;
+&lt;summary&gt;
+2
+&lt;/summary&gt;
 &lt;p&gt;
-a. There does not appear to be a relationship between gender and views on restoring the voting rights of felons in prison. $30$% of respondents supported restoring the voting rights of felons in prison, with only a slightly greater percentage of men ($31$%) reporting such compared to women ($28$%). 
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;There does not appear to be a relationship between gender and views on restoring the voting rights of felons in prison. &lt;span class=&#34;math inline&#34;&gt;\(30\)&lt;/span&gt;% of respondents supported restoring the voting rights of felons in prison, with only a slightly greater percentage of men (&lt;span class=&#34;math inline&#34;&gt;\(31\)&lt;/span&gt;%) reporting such compared to women (&lt;span class=&#34;math inline&#34;&gt;\(28\)&lt;/span&gt;%).
 &lt;div align=&#34;center&#34;&gt;
 &lt;div style=&#34;width: 50%; margin:0 left;text-align: left;&#34;&gt;
 &lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style=&#34;text-align:left;&#34;&gt; Restoring Voting Rights &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; Men &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; Women &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; Total &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Restoring Voting Rights
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Men
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Women
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+Total
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
 &lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Support &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 31% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 28% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 30% &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Oppose &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 69% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 71% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 70% &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Total &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 100% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 99% &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 100% &lt;/td&gt;
-  &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Support
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+31%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+28%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+30%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Oppose
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+69%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+71%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+70%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Total
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+100%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+99%
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+100%
+&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-
-b. We &lt;span class=&#34;boxed&#34;&gt;fail to reject $H_0$ of no relationship and conclude that there is not a relationship between gender and views on restoring the voting rights of felons in prison at the $0.05$ $\alpha$ level&lt;/span&gt;. 
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;We &lt;span class=&#34;boxed&#34;&gt;fail to reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; of no relationship and conclude that there is not a relationship between gender and views on restoring the voting rights of felons in prison at the &lt;span class=&#34;math inline&#34;&gt;\(0.05\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; level&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
-
-&lt;details&gt;&lt;summary&gt;3&lt;/summary&gt;
+&lt;details&gt;
+&lt;summary&gt;
+3
+&lt;/summary&gt;
 &lt;p&gt;
-a. &lt;span class=&#34;boxed&#34;&gt;A higher percentage of White respondents ($38.14$%), compared to Black respondents ($23$%), reported that people could be trusted&lt;/span&gt;.
-
-b. &lt;span class=&#34;boxed&#34;&gt;For Black respondents, a slightly higher percentage of men ($15.1$%) compared to women ($12.5$%) reported that people could be trusted&lt;/span&gt;.
-
-c. For 
-- Whites with $\chi^2 = 2.395$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$.&lt;/span&gt;
-- Blacks with $\chi^2 = 0.233$, &lt;span class=&#34;boxed&#34;&gt;we fail to reject $H_0$&lt;/span&gt;.
-It is also worth noting that two of the cells have expected counts less than 5 so results should be cautiously interpreted. It would likely be beneficial to repeat the study with a larger sample size.
-
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;A higher percentage of White respondents (&lt;span class=&#34;math inline&#34;&gt;\(38.14\)&lt;/span&gt;%), compared to Black respondents (&lt;span class=&#34;math inline&#34;&gt;\(23\)&lt;/span&gt;%), reported that people could be trusted&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;For Black respondents, a slightly higher percentage of men (&lt;span class=&#34;math inline&#34;&gt;\(15.1\)&lt;/span&gt;%) compared to women (&lt;span class=&#34;math inline&#34;&gt;\(12.5\)&lt;/span&gt;%) reported that people could be trusted&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Whites with &lt;span class=&#34;math inline&#34;&gt;\(\chi^2 = 2.395\)&lt;/span&gt;, &lt;span class=&#34;boxed&#34;&gt;we fail to reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Blacks with &lt;span class=&#34;math inline&#34;&gt;\(\chi^2 = 0.233\)&lt;/span&gt;, &lt;span class=&#34;boxed&#34;&gt;we fail to reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;&lt;/span&gt;.
+It is also worth noting that two of the cells have expected counts less than 5 so results should be cautiously interpreted. It would likely be beneficial to repeat the study with a larger sample size.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/p&gt;
 &lt;/details&gt;
-
-&lt;details&gt;&lt;summary&gt;5&lt;/summary&gt;
+&lt;details&gt;
+&lt;summary&gt;
+5
+&lt;/summary&gt;
 &lt;p&gt;
-a. &lt;span class=&#34;boxed&#34;&gt;We will make 2,973 errors&lt;/span&gt; since we predict that all victims fall in the modal category (White) where
-\begin{align}
-E_1 &amp;= 6084 – 3111\\
-   &amp;= 2973
-\end{align}
-
-b. For 
-- White offenders, we could make &lt;span class=&#34;boxed&#34;&gt;373 errors&lt;/span&gt;
-- Black offenders, we could make &lt;span class=&#34;boxed&#34;&gt;493 errors&lt;/span&gt;
-- Other offenders, we would make &lt;span class=&#34;boxed&#34;&gt;42 errors&lt;/span&gt; given $E_2 = 908$. 
-
-c.  The proportional reduction in error is then 
-\begin{align}
-\dfrac{2973 – 908}{2973} &amp; \approx 0.6946
-\end{align}
-This indicates a very strong relationship between the two variables. &lt;span class=&#34;boxed&#34;&gt;We can reduce the error in predicting victim’s race based upon race of offender by 69.46%&lt;/span&gt;.
-
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;We will make 2,973 errors&lt;/span&gt; since we predict that all victims fall in the modal category (White) where
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+E_1 &amp;amp;= 6084 – 3111\\
+&amp;amp;= 2973
+\end{align}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;White offenders, we could make &lt;span class=&#34;boxed&#34;&gt;373 errors&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Black offenders, we could make &lt;span class=&#34;boxed&#34;&gt;493 errors&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Other offenders, we would make &lt;span class=&#34;boxed&#34;&gt;42 errors&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(E_2 = 908\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34; style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;The proportional reduction in error is then
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+\dfrac{2973 – 908}{2973} &amp;amp; \approx 0.6946
+\end{align}\]&lt;/span&gt;
+This indicates a very strong relationship between the two variables. &lt;span class=&#34;boxed&#34;&gt;We can reduce the error in predicting victim’s race based upon race of offender by 69.46%&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/p&gt;
 &lt;/details&gt;
-
-&lt;details&gt;&lt;summary&gt;7&lt;/summary&gt;
+&lt;details&gt;
+&lt;summary&gt;
+7
+&lt;/summary&gt;
 &lt;p&gt;
 &lt;div style=&#34;padding-left: 30px;&#34;&gt;
-We have
+&lt;p&gt;We have&lt;/p&gt;
 &lt;/div&gt;
 &lt;div align=&#34;center&#34;&gt;
 &lt;div style=&#34;width: 90%; margin:0 left;text-align: left;&#34;&gt;
 &lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style=&#34;text-align:left;&#34;&gt; Race/Status &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; $f_0$ &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; $f_e$ &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; $f_0-f_e$ &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; $(f_0-f_e)^2$ &lt;/th&gt;
-   &lt;th style=&#34;text-align:center;&#34;&gt; $\dfrac{(f_0-f_e)^2}{f_e}$ &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Race/Status
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(f_e\)&lt;/span&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(f_0-f_e\)&lt;/span&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\((f_0-f_e)^2\)&lt;/span&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\dfrac{(f_0-f_e)^2}{f_e}\)&lt;/span&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
 &lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; White/First-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 1742 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 1749.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; -7.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 57.76 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.03 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; White/Nonfirst-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 2392 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 2384.4 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 7.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 57.76 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.02 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Black/First-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 102 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 93.5 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 8.5 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 72.25 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.77 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Black/Nonfirst-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 119 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 127.5 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; -8.5 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 72.25 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.57 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Native American/First-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 41 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 36.4 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 4.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 21.16 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.58 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Native American/Nonfirst-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 45 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 49.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; -4.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 21.16 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.43 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Hispanic/First-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 19 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 18.6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.4 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.16 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.01 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Hispanic/Nonfirst-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 25 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 25.4 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; -0.4 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.16 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 0.01 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Asian American/First-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 6 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 11.9 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; -5.9 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 34.81 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 2.93 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; Asian American/Nonfirst-Generation &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 22 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 16.1 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 5.9 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 34.81 &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt; 2.16 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style=&#34;text-align:left;&#34;&gt; $\chi^2 = 7.51$ &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
-   &lt;td style=&#34;text-align:center;&#34;&gt;  &lt;/td&gt;
-  &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+White/First-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1742
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1749.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-7.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+57.76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.03
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+White/Nonfirst-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2392
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2384.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+7.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+57.76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.02
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Black/First-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+93.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+8.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+72.25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.77
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Black/Nonfirst-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+119
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+127.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-8.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+72.25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.57
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Native American/First-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+36.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+4.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+21.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.58
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Native American/Nonfirst-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+49.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-4.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+21.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.43
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hispanic/First-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+18.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.01
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hispanic/Nonfirst-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+25.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.01
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Asian American/First-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+11.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-5.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+34.81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2.93
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Asian American/Nonfirst-Generation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+16.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+5.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+34.81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2.16
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\chi^2 = 7.51\)&lt;/span&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div style=&#34;padding-left: 30px;&#34;&gt;
-&lt;span class=&#34;boxed&#34;&gt;So $\chi^2 = 7.51$ with $df = (2-1)\cdot(5-1) = 4$ implying we would fail to reject $H_0$&lt;/span&gt;. The probability of $\chi^2_{obt}$ is between $(0.20, 0.10)&gt;\alpha = 0.05$.
+&lt;p&gt;&lt;span class=&#34;boxed&#34;&gt;So &lt;span class=&#34;math inline&#34;&gt;\(\chi^2 = 7.51\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(df = (2-1)\cdot(5-1) = 4\)&lt;/span&gt; implying we would fail to reject &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;&lt;/span&gt;. The probability of &lt;span class=&#34;math inline&#34;&gt;\(\chi^2_{obt}\)&lt;/span&gt; is between &lt;span class=&#34;math inline&#34;&gt;\((0.20, 0.10)&amp;gt;\alpha = 0.05\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;/details&gt;
-
-&lt;details&gt;&lt;summary&gt;13&lt;/summary&gt;
+&lt;details&gt;
+&lt;summary&gt;
+13
+&lt;/summary&gt;
 &lt;p&gt;
 &lt;div style=&#34;padding-left: 30px;&#34;&gt;
-For
+&lt;p&gt;For&lt;/p&gt;
 &lt;/div&gt;
-- Gender, the model is significant at the $0.01 \alpha$ level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between the variables&lt;/span&gt;. Though males contribute to more violent onset, in proportional terms, females exhibit a higher prevalence rate, in that $18.32$% of females exhibit violent onset compared with $11.71$% of males. 
-
-- Age at first offense, the model is significant at the $0.01 \alpha$ level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between age at first offense and violent onset&lt;/span&gt;. Violent onset is more likely among the group 14 years and older ($14.74$%) than those less than 14 years of age at first onset ($9.67$%). 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Gender, the model is significant at the &lt;span class=&#34;math inline&#34;&gt;\(0.01 \alpha\)&lt;/span&gt; level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between the variables&lt;/span&gt;. Though males contribute to more violent onset, in proportional terms, females exhibit a higher prevalence rate, in that &lt;span class=&#34;math inline&#34;&gt;\(18.32\)&lt;/span&gt;% of females exhibit violent onset compared with &lt;span class=&#34;math inline&#34;&gt;\(11.71\)&lt;/span&gt;% of males.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Age at first offense, the model is significant at the &lt;span class=&#34;math inline&#34;&gt;\(0.01 \alpha\)&lt;/span&gt; level, &lt;span class=&#34;boxed&#34;&gt;indicating a likely significant relationship between age at first offense and violent onset&lt;/span&gt;. Violent onset is more likely among the group 14 years and older (&lt;span class=&#34;math inline&#34;&gt;\(14.74\)&lt;/span&gt;%) than those less than 14 years of age at first onset (&lt;span class=&#34;math inline&#34;&gt;\(9.67\)&lt;/span&gt;%).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/p&gt;
 &lt;/details&gt;
---&gt;
 &lt;/div&gt;
 </description>
     </item>

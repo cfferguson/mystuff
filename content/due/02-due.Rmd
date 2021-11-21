@@ -85,7 +85,7 @@ Description = c("Read *Measures of Central Tendency* in the text",
 
 Location = c("[Link](/readings/03-reading/#book-stuff)", 
              "[Link](/materials/03-content/#textbook-notes)",
-             "[Link](/materials/03-example/#crash-course-statistics)")
+             "[Link](/extras/03-example/#crash-course-statistics)")
 
 )
 

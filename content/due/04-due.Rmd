@@ -85,7 +85,7 @@ Description = c("Read *The Normal Distribution* in the text",
 
 Location = c("[Link](/readings/05-reading/#book-stuff)", 
              "[Link](/materials/05-content/#textbook-notes)",
-             "[Link](/materials/05-example/#crash-course-statistics)")
+             "[Link](/extras/05-example/#crash-course-statistics)")
 
 )
 

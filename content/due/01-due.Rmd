@@ -99,7 +99,7 @@ Description = c("Read *The Organization and Graphic Representation of Data* in t
 
 Location = c("[Link](/readings/02-reading/#book-stuff)", 
              "[Link](/materials/02-content/#textbook-notes)",
-             "[Link](/materials/02-example/#crash-course-statistics)")
+             "[Link](/extras/02-example/#crash-course-statistics)")
 )
 
 ```

@@ -135,49 +135,45 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 
 
 ### R Walkthroughs
+
+Please download the file below to get a mostly comprehensive list of statistical commands in R.
+
+```{r echo=FALSE}
+
+pdf_location <- "/handouts/Statistical-Tests-in-R.pdf"
+
+pdf_link <- function() {
+  paste0("<a href=\"", pdf_location, "\">", as.character(fa("file-pdf", fill = "#ff330f", width = "2em")), "</a>")
+}
+
+textitems <- tibble(
+  
+pdf <- c("An Incomplete Survey of Fundamental Statistical Tests in R",
+         pdf_link())
+)
+
+```
+
+```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
+kable(textitems, 
+      col.names = c(""),
+      escape = FALSE,
+      align = 'c') %>%
+  kable_styling(full_width = FALSE,
+                position = "center") %>%
+  column_spec(1, width = "20em") 
+```
 <!--
 *posted during class time*
-
-
-Download a copy of everything you need to follow along the walkthroughs^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
-
-```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
-loc <- here::here("static", "slides", "Week 10", "EDP613Week10RMaterials.zip")
-
-downloadthis::download_file(
-  path = loc,
-  output_name = "Week 10 R Walkthrough Materials",
-  button_label = "Download",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  class = "hvr-sweep-to-left"
-  )
-```
-
-<br>
-#### The *t*-test
-
-```{r echo = FALSE}
-knitr::include_url("/slides/Week 10/Slides-Week-10R.html")
-```
-
-You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
-
-> Click [here](/slides/Week 10/Slides-Week-10R.html){target="_blank"} for a larger version of the presentation.
-
-> Click [here](/slides/Week 10/Slides-Week-10R.pdf){target="_blank"} here for a PDF of the presentation.
-
-<br>
-#### Bonus: Groupwise Comparisons
-
-```{r echo = FALSE}
-knitr::include_url("/slides/Week 10/Slides-Week-10R-Extra.html")
-```
-
-You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
-
-> Click [here](/slides/Week 10/Slides-Week-10R-Extra.html){target="_blank"} for a larger version of the presentation.
-
-> Click [here](/slides/Week 10/Slides-Week-10R-Extra.pdf){target="_blank"} here for a PDF of the presentation.
 -->
+
+<br>
+```{r echo = FALSE}
+knitr::include_url("/slides/Descriptions/Slides-Week-Descriptives.html")
+```
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+> Click [here](/slides/Descriptions/Slides-Week-Descriptives.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Descriptions/Slides-Week-Descriptives.pdf){target="_blank"} here for a PDF of the presentation.

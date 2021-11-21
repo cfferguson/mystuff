@@ -394,7 +394,7 @@ Download Chapter 11 &amp;amp; 12 Powerpoints and Lecture Textbook Notes
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-13-after-class-ends&#34;&gt;What to do for Week 13 after class ends&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-13-before-coming-to-class&#34;&gt;What to do for Week 13 before coming to class&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-to-do-for-week-14-before-coming-to-class&#34;&gt;What to do for Week 14 before coming to class&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
@@ -457,6 +457,19 @@ Complete &lt;strong&gt;&lt;em&gt;optional&lt;/em&gt;&lt;/strong&gt; problems 1, 
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
 &lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Take a look at a compilation of statistical commands in R
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/tasks/13-tasks/#homework&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
 &lt;path d=&#34;M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z&#34;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/td&gt;
@@ -500,18 +513,31 @@ Begin or continue the third &lt;strong&gt;&lt;em&gt;optional&lt;/em&gt;&lt;/stro
 &lt;/svg&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:left;&#34;&gt;
+Watch videos on the Regression &amp;amp; Correlation and ANOVAs&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/13-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
+&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewbox=&#34;0 0 448 512&#34; style=&#34;height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;
+&lt;path d=&#34;M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z&#34;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
 Watch a fantastic explanation on a concept called &lt;em&gt;Regression to the Mean&lt;/em&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/13-example/&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/13-example/#veritasium&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;what-to-do-for-week-13-before-coming-to-class&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;What to do for Week 13 before coming to class&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div id=&#34;what-to-do-for-week-14-before-coming-to-class&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What to do for Week 14 before coming to class&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -572,7 +598,8 @@ Take a look at at an introduction to Bayesian Statistics
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;For preparation.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Optional but recommended.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;For preparation.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -760,7 +787,7 @@ Download Chapter 2 Powerpoint and Lecture Textbook Notes
 Watch a video on Data Visualization&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; vertical-align: middle !important;&#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/02-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/02-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -946,7 +973,7 @@ Download Chapter 3 Powerpoint and Lecture Textbook Notes
 Watch a video on the Measures of Central Tendency.&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/03-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/03-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1106,7 +1133,7 @@ Download Chapter 4 Powerpoint and Lecture Textbook Notes
 Watch a video on the Measures of Central Tendency.&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/04-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/04-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1293,7 +1320,7 @@ Download Chapter 5 Powerpoint and Lecture Textbook Notes
 Watch a video on the Normal Distribution.&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/05-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/05-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1539,7 +1566,7 @@ Continue the &lt;em&gt;Introduction to Statistics in R&lt;/em&gt; module on Data
 Try the R package &lt;code&gt;esquisse&lt;/code&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/06-example/&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/06-example/&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1758,7 +1785,7 @@ Download Chapter 7 Powerpoint and Lecture Textbook Notes
 Watch videos on the &lt;em&gt;p&lt;/em&gt;-value&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/08-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/08-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1918,7 +1945,7 @@ Download Chapter 8 Powerpoint and Lecture Textbook Notes
 Watch videos on the &lt;em&gt;p&lt;/em&gt;-value&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;
 &lt;/td&gt;
 &lt;td style=&#34;text-align:center;width: 10em; &#34;&gt;
-&lt;a href=&#34;https://edp613.asocialdatascientist.com/materials/09-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
+&lt;a href=&#34;https://edp613.asocialdatascientist.com/extras/09-example/#crash-course-statistics&#34;&gt;Link&lt;/a&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;

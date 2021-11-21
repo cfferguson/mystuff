@@ -111,17 +111,17 @@ lessons:
     tasks: "12-tasks"
     examples: "12-example"
     due: "12-due"
-  #
-  # - title: 'Regression and Correlation & Analysis of Variance'
-  #   session: 13
-  #   date: "November 18, 2021"
-  #   readings: "13-reading"
-  #   materials: "13-content"
-  #   datacamp: "13-datacamp"
-  #   examples: "13-example"
-  #   tasks: "13-tasks"
-  #   due: "13-due"
-  #
+
+  - title: 'Regression and Correlation & Analysis of Variance'
+    session: 13
+    date: "November 18, 2021"
+    readings: "13-reading"
+    materials: "13-content"
+    datacamp: "13-datacamp"
+    examples: "13-example"
+    tasks: "13-tasks"
+    due: "13-due"
+
   # - title: 'Exam II'
   #   session: 14
   #   tasks: "02-exam"

@@ -1,29 +1,124 @@
 ---
-title: "An Incomplete Review of Descriptive Statistics Commands in R"
+title: "A Very Incomplete Survey of Descriptive Statistics Commands in R"
 subtitle: "EDP 613"
-author: "Week 7"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
+   nature:
+     ratio: 16:9
+     highlightStyle: github
+     highlightLines: true
+     countIncrementalSlides: false
+     navigation:
+         scroll: false
 ---
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+
+<style>
+section {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section p {
+    margin: auto;
+}
+
+.hljs-github .hljs {
+    background: transparent;
+    color: #b2dfdb;
+}
+
+.hljs-github .hljs-keyword {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-literal {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-number {
+    color: #64b5f6;
+}
+
+.hljs-github .hljs-string {
+    color: #b7b3ef;
+}
+
+section {
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #212121;
+}
+
+section p {
+    text-align: center;
+    font-size: 30px;
+    background-color: #212121;
+    border-radius: 20px;
+    font-family: Roboto Condensed;
+    font-style: bold;
+    padding: 15px;
+    color: #bff4ee;
+}
+
+#center {
+text-align: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+</style>
 
 ```{r setup, include=FALSE, purl=FALSE}
 library(tidyverse)
 library(fontawesome)
 library(knitr)
 library(kableExtra)
+library(flipbookr)
 ```
 
 ```{r echo = FALSE, purl=FALSE}
 xaringanthemer::style_duo(
   primary_color = "#212121",
-  secondary_color = "#fcbb86",
-  text_bold_color = "#fc868c",
-  code_inline_color = "#86c7fc",
-  header_font_google = xaringanthemer::google_font("Jost", "600"),
-  text_font_google   = xaringanthemer::google_font("Jost", "400")
+  secondary_color = "#c4e0f2",
+  code_inline_background_color = "transparent",
+  code_inline_color = "#b2dfdb",
+  code_highlight_color = "#db6464",
+  table_row_border_color = "#212121",
+  table_row_even_background_color = "#212121",
+  footnote_font_size = "0.6em",
+  header_font_google = xaringanthemer::google_font("Roboto Condensed", "700"),
+  text_font_google   = xaringanthemer::google_font("Roboto Condensed", "400")
 )
+
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_logo(
+  image_url = here::here("static", "img", "course_hex_alpha.png"),
+  link_url = "https://edp613.asocialdatascientist.com",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
 ```
 
 # Packages needed and a Note about Icons
@@ -102,11 +197,11 @@ head(starwars)
 
 **Total number of names**
 
-Tidy approach <br>
+tidy approach <br>
 ```{r echo = TRUE, eval = TRUE}
-    starwars %>%
-       select(name) %>%
-       nrow()
+starwars %>%
+  select(name) %>%
+  nrow()
 ```
 
 Base R approach <br>
@@ -140,10 +235,12 @@ glimpse(starwars)
 
 ## Frequencies
 
-```{r echo = TRUE, eval = TRUE}
+```{r sw1, include = FALSE, echo=TRUE}
 starwars %>%
   count(sex)
 ```
+
+`r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100))`
 
 .right[`r fontawesome::fa(name = "stop", fill = "#ff6347")`]
 
@@ -151,36 +248,50 @@ starwars %>%
 
 ## Measures of Central Tendency
 **Mean**
-```{r echo = TRUE, eval = TRUE}
+```{r sw2, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(mean(birth_year)) %>%
-  rename(`mean age by species` = `mean(birth_year)`) %>%
+  rename(`mean age by species` = 
+           `mean(birth_year)`) %>%
   ungroup()
 ```
 
+`r chunk_reveal(chunk_name = "sw2", color = c("white", "white", "white"), width = c(90, 110))`
+
 ---
 
-### Side Note: Using Base R vs. Tidy
+
+
+---
+
+### Side Note: Using Base R vs. tidy
 
 Either is fine but think about the outcome and what you're going to do with it. Let's take the `mean` again with a fake data set from taste test ratings using two varieties of bananas: cavendish and ice cream.
 
 ```{r echo = TRUE, eval = TRUE}
-banana_data <- tibble(
-  id = c(1,2,3,4,5),
-  cav_cat = c("Excellent", "Above Average", "Very Poor", "Average", 
-              "Excellent"),
-  cav_code = c(5,4,1,3,5),
-  ic_cat = c("Excellent", "Excellent", "Above Average", "Excellent", 
-             "Excellent"), 
-  ic_code = c(5,5,4,5,5)
-)
+banana_data <- 
+  tibble(
+    id = c(1,2,3,4,5),
+    cav_cat = c("Excellent", 
+                "Above Average", 
+                "Very Poor", 
+                "Average", 
+                "Excellent"),
+    cav_code = c(5,4,1,3,5),
+    ic_cat = c("Excellent", 
+               "Excellent", 
+               "Above Average", 
+               "Excellent", 
+               "Excellent"), 
+    ic_code = c(5,5,4,5,5)
+    )
 ```
 
 .right[`r fa("forward", fill = "#4682b4")`]
 
-.pull-right[.footnote[If you are wondering, the blue java - aka the [ice cream banana](https://www.abc15.com/news/state/planet-arizona-blue-bananas-exist-and-they-taste-like-vanilla-ice-cream) is real.]]
+.pull-right[.footnote[If you are wondering, the blue java - aka the [ice cream banana](https://www.abc15.com/news/state/planet-arizona-blue-bananas-exist-and-they-taste-like-vanilla-ice-cream) is real!]]
 
 ---
 ```{r echo = TRUE, eval = TRUE}
@@ -200,25 +311,33 @@ mean(banana_data$cav_code)
 mean(banana_data$ic_code)
 ```
 
-but if we wanted to pass that output along say to find the range of the means, the Tidy way is a simpler and more efficient approach
-```{r echo = TRUE, eval = TRUE}
+---
+
+but if we wanted to pass that output along say to find the range of the means, the tidy way is a simpler and more efficient approach
+
+```{r sw3, include = FALSE, echo=TRUE}
 banana_data %>%
   summarise(mean_cav = mean(cav_code), 
             mean_ic = mean(ic_code)) %>%
   mutate(range_means = mean_ic - mean_cav)
 ```
 
+`r chunk_reveal(chunk_name = "sw3", color = c("white", "white", "white"), width = c(100, 100))`
+
 ---
 
 **Median**
-```{r echo = TRUE, eval = TRUE}
+```{r sw4, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(median(birth_year)) %>%
-  rename(`median age by species` = `median(birth_year)`) %>%
+  rename(`median age by species` =
+           `median(birth_year)`) %>%
   ungroup()
 ```
+
+`r chunk_reveal(chunk_name = "sw4", color = c("white", "white", "white"), width = c(90, 110))`
 
 ---
 
@@ -236,43 +355,53 @@ Mode <- function(x) {
 ---
 
 Then you can find the `Mode`
-```{r echo = TRUE, eval = TRUE}
+
+```{r sw5, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(Mode(birth_year)) %>%
-  rename(`mode age by species` = `Mode(birth_year)`) %>%
+  rename(`mode age by species` =
+           `Mode(birth_year)`) %>%
   ungroup()
 ```
+
+`r chunk_reveal(chunk_name = "sw5", color = c("white", "white", "white"), width = c(90, 110))`
 
 ---
 
 **Mean by Value**
 Sometimes you need to find a measure for a particular subgroup. In this example, we only want to find the birth year for the female classification of each species. One way to accomplish this is to use the `filter` command to get what we want. 
-```{r echo = TRUE, eval = TRUE}
+```{r sw6, include = FALSE, echo=TRUE}
 starwars %>%
   filter(gender == "feminine") %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(mean(birth_year)) %>%
-  rename(`female mean age by species` = `mean(birth_year)`) %>%
+  rename(`female mean age by species` =
+           `mean(birth_year)`) %>%
   ungroup() %>%
   na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw6", color = c("white", "white", "white"), width = c(90, 110))`
 
 ---
 
 ## Measures of Spread
 **Sample Standard Deviation**
-```{r echo = TRUE, eval = TRUE}
+```{r sw7, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(sd(birth_year)) %>%
-  rename(`age standard deviation by species` = `sd(birth_year)`) %>%
+  rename(`age standard deviation by species` =
+           `sd(birth_year)`) %>%
   ungroup() %>%
   na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw7", color = c("white", "white", "white"), width = c(100, 100))`
 
 ---
 
@@ -282,50 +411,67 @@ Reflecting common assumptions and practice, most descriptive statistics in R do 
 pop_sd <- function(x) sd(x) * (length(x)-1) / length(x)
 ```
 
-and then calculate the population standard deviation
-```{r echo = TRUE, eval = TRUE}
+...
+
+---
+
+... and then calculate the population standard deviation
+```{r sw8, include = FALSE, echo=TRUE}
 starwars %>%
- group_by(species) %>%
- na.omit() %>%
- summarise(pop_sd(birth_year)) %>%
- rename(`age standard deviation by species` = `pop_sd(birth_year)`) %>%
- ungroup() %>%
- na.omit()
+  group_by(species) %>%
+  na.omit() %>%
+  summarise(pop_sd(birth_year)) %>%
+  rename(`age standard deviation by species` =
+           `pop_sd(birth_year)`) %>%
+  ungroup() %>%
+  na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw8", color = c("white", "white", "white"), width = c(100, 100))`
 
 ---
 
 **Sample Variance**
-```{r echo = TRUE, eval = TRUE}
+```{r sw9, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(var(birth_year)) %>%
-  rename(`age variance by species` = `var(birth_year)`) %>%
+  rename(`age variance by species` =
+           `var(birth_year)`) %>%
   ungroup() %>%
   na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw9", color = c("white", "white", "white"), width = c(100, 100))`
 <br>
 .pull-right[.footnote[You can find a list of commands that may be used with `summarise` [here](https://www.guru99.com/r-aggregate-function.html)]]
 
 ---
 
 **Population Variance**<br><br>
-Paralleling the arguement given about the population standard deviation, when you have a known population and want to find the varaince, first run
+Paralleling the arguement given about the population standard deviation, when you have a known population and want to find the variance, first run
 ```{r echo = TRUE, eval = TRUE}
 pop_var <- function(x) var(x) * (length(x)-1) / length(x)
 ```
 
-and then you can calculate the population variance
-```{r echo = TRUE, eval = TRUE}
+...
+
+---
+
+... and then you can calculate the population variance
+```{r sw10, include = FALSE, echo=TRUE}
 starwars %>%
- group_by(species) %>%
- na.omit() %>%
- summarise(pop_var(birth_year)) %>%
- rename(`age variance by species` = `pop_var(birth_year)`) %>%
- ungroup() %>%
- na.omit()
+  group_by(species) %>%
+  na.omit() %>%
+  summarise(pop_var(birth_year)) %>%
+  rename(`age variance by species` =
+           `pop_var(birth_year)`) %>%
+  ungroup() %>%
+  na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), width = c(90, 110))`
 
 .right[`r fa("stop", fill = "#ff6347")`]
 
@@ -341,37 +487,44 @@ You can find a list of commands that may be used with `summarise` [here](https:/
 
 # Range
 **Maximum**
-```{r echo = TRUE, eval = TRUE}
+```{r sw11, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(max(birth_year)) %>%
-  rename(`maximum age by species` = `max(birth_year)`) %>%
+  rename(`maximum age by species` =
+           `max(birth_year)`) %>%
   ungroup() %>%
   na.omit()
 ```
+
+`r chunk_reveal(chunk_name = "sw11", color = c("white", "white", "white"), width = c(90, 110))`
 
 ---
 
 **Minimum**
-```{r echo = TRUE, eval = TRUE}
+```{r sw12, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(min(birth_year)) %>%
-  rename(`minimum age by species` = `min(birth_year)`) %>%
+  rename(`minimum age by species` =
+           `min(birth_year)`) %>%
   ungroup() %>%
   na.omit()
 ```
 
+`r chunk_reveal(chunk_name = "sw12", color = c("white", "white", "white"), width = c(90, 110))`
+
 ---
 
 **Range**
-```{r echo = TRUE, eval = TRUE}
+```{r sw13, include = FALSE, echo=TRUE}
 starwars %>%
   group_by(species) %>%
   na.omit() %>%
-  summarise(max(birth_year), min(birth_year)) %>%
+  summarise(max(birth_year), 
+            min(birth_year)) %>%
   rename(`max` = `max(birth_year)`) %>%
   rename(`min` = `min(birth_year)`) %>%
   ungroup() %>%
@@ -379,21 +532,25 @@ starwars %>%
   mutate(`age range by species` = max - min) 
 ```
 
+`r chunk_reveal(chunk_name = "sw13", color = c("white", "white", "white"), width = c(90, 110))`
+
 .left[`r fa("bookmark", fill = "#5bc0de")`]
 
 ---
 
 # Plots
 
-We'll use the sample mean age for all of the species
-```{r echo = TRUE, eval = TRUE}
-starwars_by_species <- starwars %>%
+To start, we'll use the sample mean age for all of the species
+```{r echo=TRUE}
+starwars_by_species <- 
+  starwars %>%
   group_by(species) %>%
   na.omit() %>%
   summarise(mean(birth_year)) %>%
-  rename(`mean age by species` = `mean(birth_year)`) %>%
+  rename(`mean age` = 
+           `mean(birth_year)`) %>%
   ungroup() %>%
-  arrange(`mean age by species`)
+  arrange(`mean age`)
 ```
 
 ---
@@ -407,130 +564,141 @@ Want some inspiration or just want to copy code? Good! Head over to [The R Graph
 ---
 
 ## Bar Plot
-```{r echo = TRUE, eval = TRUE, fig.align='center', out.width = "40%"}
-ggplot(starwars_by_species, aes(x = species, 
-                                y = `mean age by species`, 
-                                fill = `mean age by species`)) +
+```{r sw15, include = FALSE, echo=TRUE}
+ggplot(starwars_by_species, 
+       aes(x = species, 
+           y = `mean age`, 
+           fill = `mean age`)) +
   geom_bar(stat='identity') +
-  scale_fill_gradient(low = "tomato", 
-                      high = "steelblue") +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45))
 ```
 
+`r chunk_reveal(chunk_name = "sw15", color = c("white", "white", "white"), width = c(100, 100))`
 ---
 
 ## Ordered Bar Plot 
 Use `reorder` to order the bars from least to greatest. 
-```{r echo = TRUE, eval = TRUE, fig.align='center', out.width = "35%"}
-ggplot(starwars_by_species, aes(x = reorder(species, 
-                                            `mean age by species`), 
-                                y = `mean age by species`, 
-                                fill = `mean age by species`)) +
-       geom_bar(stat='identity') +
-       scale_fill_gradient(low = "tomato", 
-                           high = "steelblue") +
-       theme_minimal() +
+```{r sw16, include = FALSE, echo=TRUE}
+ggplot(starwars_by_species, 
+       aes(x = reorder(species, 
+                       `mean age`), 
+           y = `mean age`, 
+           fill = `mean age`)) +
+  geom_bar(stat='identity') +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45))
 ```
+
+`r chunk_reveal(chunk_name = "sw16", color = c("white", "white", "white"), width = c(100, 100))`
 
 ---
 
 ### Side Note: The Other Direction
 Want greatest to least? Stick a `-` in front of `mean age by species` within `reorder()`.
-```{r echo = TRUE, eval = TRUE, fig.align='center', out.width = "25%"}
-ggplot(starwars_by_species, aes(x = reorder(species, 
-                                            -`mean age by species`), 
-                                y = `mean age by species`, 
-                                fill = `mean age by species`)) +
-       geom_bar(stat='identity') +
-       scale_fill_gradient(low = "tomato", 
-                           high = "steelblue") +
-       theme_minimal() +
+```{r sw17, include = FALSE, echo=TRUE}
+ggplot(starwars_by_species, 
+       aes(x = reorder(species, 
+                       -`mean age`), 
+           y = `mean age`, 
+           fill = `mean age`)) +
+  geom_bar(stat='identity') +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45))
 ```
+
+`r chunk_reveal(chunk_name = "sw17", color = c("white", "white", "white"), width = c(100, 100))`
 
 .right[`r fa("stop", fill = "#ff6347")`]
 
 ---
 
-### Side Note: Using Hex Color Codes
-
-You could have used the hex color codes `#ff6347` for `tomato` and `#4682b4` for `steelblue`. 
-
-You can find more about hex colors using a web search for "hex color codes". For example, here is a [site](https://www.color-hex.com/) I use.
-
-.right[`r fa("link", fill = "#5cb85c")`]
-
----
-
 ## Line Plot
-```{r echo = TRUE, eval = TRUE, fig.align='center', out.width = "35%"}
-ggplot(starwars_by_species, aes(x = reorder(species, 
-                                            `mean age by species`),
-                                y = `mean age by species`,
-                                group = 1,
-                                fill = `mean age by species`)) +
- geom_line(size = 1.5)+
+```{r sw18, include = FALSE, echo=TRUE}
+ggplot(starwars_by_species, 
+       aes(x = reorder(species, 
+                       `mean age`),
+           y = `mean age`,
+           group = 1,
+           color = `mean age`)) +
+  geom_line(size = 1.5,
+            color = "#cccccc") +
   geom_point(size = 4) +
-  scale_fill_gradient(low = "tomato", 
-                      high = "steelblue") +
-  theme_minimal()
+  scale_color_gradient(low = "#d9534f", 
+                       high = "#428bca") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   vjust = 0.6,
+                                   hjust = 0.5),
+        axis.title.y = element_blank()) +
+   labs(x = "species")
 ```
+
+`r chunk_reveal(chunk_name = "sw18", color = c("white", "white", "white"), width = c(105, 95))`
 
 ---
 
 ## Pie Chart (Useless)
-```{r echo = TRUE, eval = FALSE, fig.align='center', out.width = "40%"}
-starwars_by_species_pc <- starwars_by_species %>%
-  arrange(desc(`mean age by species`)) %>%
-  mutate(prop = `mean age by species` / 
-           sum(starwars_by_species$`mean age by species`) *100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop )
-```
 
-```{r echo = TRUE, eval = FALSE, fig.align='center', out.width = "40%"}
- ggplot(starwars_by_species_pc, aes(x = "", 
-                                   y = prop, 
-                                   fill = `mean age by species`)) +
-  geom_bar(stat="identity", 
-           width=1, 
-           color="white")  +
+```{r sw19, include = FALSE, echo=TRUE}
+starwars_by_species %>%
+  filter(species %in% c("Human", "Twi'lek", "Mon Calamari", "Wookiee")) %>%
+  arrange(desc(`mean age`)) %>%
+  mutate(prop = `mean age` / 
+           sum(starwars_by_species$`mean age`) *100) %>%
+  mutate(ypos = cumsum(prop)- 0.5*prop) %>%
+ ggplot(aes(x = "", 
+            y = prop)) +
+  geom_bar(aes(fill = `mean age`),
+           stat = "identity", 
+           width = 1, 
+           color = "white") +
   coord_polar("y", start = 0) +
   geom_label(aes(y = ypos, 
-                 label = `species`), 
+                 label = paste0(`species`, " (", round(prop, 0), "%)"), 
              color = "white", 
-             size=6) +
-  scale_fill_gradient(low = "tomato", 
-                      high = "steelblue") +
+             size = 6)) +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
   theme_void()
 ```
+
+`r chunk_reveal(chunk_name = "sw19", color = c("white", "white", "white"), width = c(100, 100))`
 
 .right[`r fa("forward", fill = "#4682b4")`]
 
 ---
-
-```{r echo = FALSE, eval = TRUE, fig.align='center', out.width = "75%"}
-starwars_by_species_pc <- starwars_by_species %>%
-  arrange(desc(`mean age by species`)) %>%
-  mutate(prop = `mean age by species` / sum(starwars_by_species$`mean age by species`) * 100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop )
-
- ggplot(starwars_by_species_pc, aes(x = "", 
-                                   y = prop, 
-                                   fill = `mean age by species`)) +
-  geom_bar(stat="identity", 
-           width=1, 
-           color="white")  +
+  
+```{r sw20, include = FALSE, echo=TRUE}
+starwars_by_species %>%
+  arrange(desc(`mean age`)) %>%
+  mutate(prop = `mean age` / sum(starwars_by_species$`mean age`) * 100) %>%
+  mutate(ypos = cumsum(prop)- 0.5*prop) %>%
+ggplot(aes(x = "", 
+           y = prop, 
+           fill = `mean age`)) +
+  geom_bar(stat = "identity", 
+           width = 1, 
+           color = "white")  +
   coord_polar("y", start = 0) +
   geom_label(aes(y = ypos, 
                  label = `species`), 
              color = "white", 
-             size=6) +
-  scale_fill_gradient(low = "tomato", 
-                      high = "steelblue") +
+             size = 6, 
+             show.legend = FALSE) +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
   theme_void()
+  
 ```
+
+`r chunk_reveal(chunk_name = "sw20", color = c("white", "white", "white"), width = c(100, 100))`
 
 ---
 

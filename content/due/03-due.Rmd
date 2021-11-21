@@ -78,7 +78,7 @@ Description = c("Read *Measures of Variability* in the text",
 
 Location = c("[Link](/readings/04-reading/#book-stuff)", 
              "[Link](/materials/04-content/#textbook-notes)",
-             "[Link](/materials/04-example/#crash-course-statistics)")
+             "[Link](/extras/04-example/#crash-course-statistics)")
 
 )
 

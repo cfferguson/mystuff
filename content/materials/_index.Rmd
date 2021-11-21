@@ -8,7 +8,7 @@ type: docs
 weight: 1
 ---
 
-This section contains materials to help you understand concepts covered for a given week. Sometimes this just consists of additional information while other times there are R walkthroughs.
+This section consists primarily of preview content, in-class notes, R walkthroughs and related materials. Items are released on a weekly basis.
 
 <hr />
 
