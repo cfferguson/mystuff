@@ -13,8 +13,8 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # pagedown::chrome_print("Slides-Week-Descriptives.Rmd")
 # pagedown::chrome_print("Slides-Week-Descriptives.html")
 
-
 remotes::install_github("rstudio/chromote")
 source("https://git.io/xaringan2pdf")
-xaringan_to_pdf("Slides-Week-Descriptives.html")
+xaringan_to_pdf("Descriptive-statistics-in-R.html")
+xaringan_to_pdf("Statistical-Tests-in-R.html")
 

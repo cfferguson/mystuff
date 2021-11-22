@@ -153,7 +153,7 @@ stop <- as.character(fontawesome::fa("stop", fill = "#ff6347"))
 
 link <- as.character(fontawesome::fa("link", fill = "#5cb85c"))
 
-bookmark <- as.character(fontawesome::fa("bookmark", fill = "#5cb85c"))
+bookmark <- as.character(fontawesome::fa("bookmark", fill = "#faffbd"))
 
 
 icon_desc <- tibble(
@@ -177,12 +177,7 @@ kable(icon_desc,
       align = 'cl') %>%
   kable_styling(full_width = FALSE) %>%
   column_spec(1, width = "10em") %>%
-  column_spec(2, width = "40em") %>%
-  row_spec(0, background = "#181818") %>%
-  row_spec(1, background = "#181818") %>%
-  row_spec(2, background = "#181818") %>%
-  row_spec(3, background = "#181818") %>%
-  row_spec(4, background = "#181818") 
+  column_spec(2, width = "40em")
 ```
 
 ---

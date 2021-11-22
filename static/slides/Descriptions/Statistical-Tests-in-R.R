@@ -14,7 +14,7 @@ some_exercise_data <- read_csv("some_exercise_data.csv")
 some_survey_data <- read_csv("some_survey_data.csv")
 
 
-# Tests ---
+# Tests ----
 
 # ~ ANCOVA (Analysis of Covariance) ----
 summary(aov(some_ed_data$write ~ some_ed_data$prog + some_ed_data$read))
@@ -27,7 +27,7 @@ prop.test(sum(some_ed_data$female),
 )
 
 
-# ~ Canonical Correlation
+# ~ Canonical Correlation ----
 cc(
   cbind(
     some_ed_data$read,
@@ -40,17 +40,17 @@ cc(
 )
 
 
-# ~ Chi-square ($\chi^2$) test
+# ~ Chi-square Test ----
 chisq.test(table(some_ed_data$female, some_ed_data$schtyp))
 
 
-# ~ Chi-square ($\chi^2$) Goodness of Fit
+# ~ Chi-square Goodness of Fit ----
 chisq.test(table(some_ed_data$race),
   p = c(10, 10, 10, 70) / 100
 )
 
 
-# ~ Correlation
+# ~ Correlation ----
 cor(
   some_ed_data$read,
   some_ed_data$write
@@ -62,7 +62,7 @@ cor.test(
 )
 
 
-# ~ Discriminant analysis
+# ~ Discriminant Analysis ----
 fit <- lda(factor(some_ed_data$prog) ~ some_ed_data$read + some_ed_data$write + some_ed_data$math,
   data = some_ed_data
 )
@@ -70,7 +70,7 @@ fit <- lda(factor(some_ed_data$prog) ~ some_ed_data$read + some_ed_data$write + 
 fit
 
 
-# ~ Factor analysis
+# ~ Factor Analysis ----
 fa(
   r = cor(model.matrix(~ read + write + math + science + socst - 1,
     data = some_ed_data
@@ -80,13 +80,13 @@ fa(
 )
 
 
-# ~ Factorial ANOVA (Analysis of Variance)
+# ~ Factorial Analysis of Variance (ANOVA) ----
 anova(lm(write ~ female * ses,
   xdata = some_ed_data
 ))
 
 
-# ~ Factorial Logistic Regression
+# ~ Factorial Logistic Regression ----
 summary(glm(female ~ prog * schtyp,
   data = some_ed_data,
   family = binomial
@@ -99,10 +99,10 @@ friedman.test(cbind(
   some_ed_data$math
 ))
 
-# ~ Kruskal Wallis test
+# ~ Kruskal Wallis Test ----
 kruskal.test(some_ed_data$write, some_ed_data$prog)
 
-# ~ McNemar test
+# ~ McNemar Test ----
 made_up_matrixdata <- matrix(c(150, 22, 21, 12), 2, 2)
 mcnemar.test(made_up_matrixdata)
 
@@ -124,27 +124,27 @@ mmrlm <- lm(cbind(write, read) ~ female + math + science + socst,
 summary(Anova(mmrlm))
 
 
-# ~ Non-parametric Correlation
+# ~ Non-parametric Correlation ----
 cor.test(some_ed_data$read,
   some_ed_data$write,
   method = "spearman"
 )
 
 
-# ~ One Sample *t*-test
+# ~ One Sample *t*-test ----
 t.test(some_ed_data$read,
   mu = 50
 )
 
 
-# ~ One-way ANOVA (Analysis of Variance)
+# ~ One-way Analysis of Variance (ANOVA) ----
 summary(aov(some_ed_data$read ~ some_ed_data$prog))
 
 
-# ~ One-way MANOVA (Multivariate Analysis of Variance)
+# ~ One-way Multivariate Analysis of Variance (MANOVA) ----
 summary(manova(cbind(some_ed_data$read, some_ed_data$write, some_ed_data$math) ~ some_ed_data$prog))
 
-# ~ One-way Repeated Measures ANOVA (Analysis of Variance)
+# ~ One-way Repeated Measures Analysis of Variance (ANOVA) ----
 model <- lm(gender ~ item_1 + item_2,
   data = some_survey_data
 )
@@ -157,7 +157,7 @@ analysis <- Anova(model,
 print(analysis)
 
 
-# ~ Ordered Logistic Regression
+# ~ Ordered Logistic Regression ----
 some_ed_data$write3 <- cut(some_ed_data$write,
   c(0, 48, 57, 70),
   right = TRUE,
@@ -174,44 +174,43 @@ some_write_data <- polr(write3 ~ female + read + socst,
 summary(some_write_data)
 
 
-# ~ Paired *t*-test
+# ~ Paired *t*-test ----
 t.test(some_ed_data$write, some_ed_data$read, paired = TRUE)
 
 
-# ~ Principal Components Analysis
+# ~ Principal Components Analysis (PCA) ----
 princomp(
   formula = ~ read + write + math + science + socst,
   data = some_ed_data
 )
 
 
-# ~ Repeated Measures Logistic Regression
+# ~ Repeated Measures Logistic Regression ----
 glmer(highpulse ~ diet + (1 | id),
   data = some_exercise_data,
   family = binomial
 )
 
 
-# ~ Simple Linear Regression
+# ~ Simple Linear Regression ----
 lm(some_ed_data$write ~ some_ed_data$read)
 
 
-# ~ Simple logistic regression
+# ~ Simple Logistic Regression
 glm(some_ed_data$female ~ some_ed_data$read,
   family = binomial
 )
 
-# ~ Two independent samples *t*-test
+# ~ Two Independent Samples *t*-test ----
 t.test(some_ed_data$read ~ some_ed_data$female)
 
 
-# ~ Wilcoxon-Mann-Whitney Test
+# ~ Wilcoxon-Mann-Whitney Test ----
 wilcox.test(some_ed_data$read ~ some_ed_data$female)
 
 
-# ~ Wilcoxon Signed Rank Sum Test
+# ~ Wilcoxon Signed Rank Sum Test ----
 wilcox.test(some_ed_data$write,
   some_ed_data$read,
   paired = TRUE
 )
-

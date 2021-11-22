@@ -1,6 +1,7 @@
 ---
 title: "A Very Incomplete Survey of Descriptive Statistics Commands in R"
-subtitle: "EDP 613"
+author: "EDP 613"
+linktitle: "EDP 613"
 output: 
  xaringan::moon_reader:
    css: xaringan-themer.css
@@ -80,6 +81,11 @@ section p {
 text-align: center;
 }
 
+#right {
+  text-align: right;
+} 
+
+
 .center p {
   margin: 0;
   position: absolute;
@@ -87,6 +93,7 @@ text-align: center;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
 
 </style>
 
@@ -128,17 +135,16 @@ Please load up the `tidyverse` package
 library(tidyverse)
 ``` 
 <br>
-<br>
 You may come across the following icons. The table below lists what each means.
 ```{r eval = TRUE, echo = FALSE, purl=FALSE}
-forward <- as.character(fontawesome::fa("forward", fill = "
-#4682b4"))
+forward <- fontawesome::fa("forward", fill = "#4682b4")
 
-stop <- as.character(fontawesome::fa("stop", fill = "#ff6347"))
+stop <- fontawesome::fa("stop", fill = "#ff6347")
 
-link <- as.character(fontawesome::fa("link", fill = "#5cb85c"))
+link <- fontawesome::fa("link", fill = "#5cb85c")
 
-bookmark <- as.character(fontawesome::fa("bookmark", fill = "#5cb85c"))
+bookmark <- fontawesome::fa("bookmark", fill = "#faffbd")
+
 
 icon_desc <- tibble(
   
@@ -161,12 +167,7 @@ kable(icon_desc,
       align = 'cl') %>%
   kable_styling(full_width = FALSE) %>%
   column_spec(1, width = "10em") %>%
-  column_spec(2, width = "40em") %>%
-  row_spec(0, background = "#181818") %>%
-  row_spec(1, background = "#181818") %>%
-  row_spec(2, background = "#181818") %>%
-  row_spec(3, background = "#181818") %>%
-  row_spec(4, background = "#181818") 
+  column_spec(2, width = "40em")
 ```
 
 ---
@@ -200,7 +201,7 @@ head(starwars)
 tidy approach <br>
 ```{r echo = TRUE, eval = TRUE}
 starwars %>%
-  select(name) %>%
+  dplyr::select(name) %>%
   nrow()
 ```
 
@@ -209,7 +210,9 @@ Base R approach <br>
 length(starwars$name)
 ```
 
-.right[`r fa("stop", fill = "#ff6347")`]
+
+.right[.footnote[`r fontawesome::fa("stop", fill = "#ff6347")`]]
+
 
 ---
 
@@ -229,7 +232,7 @@ Using `glimpse`
 glimpse(starwars)
 ```
 
-.right[`r fa("stop", fill = "#ff6347")`]
+.right[.footnote[`r fontawesome::fa("stop", fill = "#ff6347")`]]
 
 ---
 
@@ -242,7 +245,7 @@ starwars %>%
 
 `r chunk_reveal(chunk_name = "sw1", color = c("white", "white", "white"), width = c(100, 100))`
 
-.right[`r fontawesome::fa(name = "stop", fill = "#ff6347")`]
+.right[.footnote[`r fontawesome::fa(name = "stop", fill = "#ff6347")`]]
 
 ---
 
@@ -289,7 +292,7 @@ banana_data <-
     )
 ```
 
-.right[`r fa("forward", fill = "#4682b4")`]
+.right[.footnote[`r fontawesome::fa("forward", fill = "#4682b4")`]]
 
 .pull-right[.footnote[If you are wondering, the blue java - aka the [ice cream banana](https://www.abc15.com/news/state/planet-arizona-blue-bananas-exist-and-they-taste-like-vanilla-ice-cream) is real!]]
 
@@ -298,7 +301,7 @@ banana_data <-
 banana_data
 ```
 
-.right[`r fa("forward", fill = "#4682b4")`]
+.right[.footnote[`r fontawesome::fa("forward", fill = "#4682b4")`]]
 
 ---
 
@@ -350,7 +353,7 @@ Mode <- function(x) {
 }
 ```
 
-.right[`r fa("forward", fill = "#4682b4")`]
+.right[.footnote[`r fontawesome::fa("forward", fill = "#4682b4")`]]
 
 ---
 
@@ -473,7 +476,7 @@ starwars %>%
 
 `r chunk_reveal(chunk_name = "sw10", color = c("white", "white", "white"), width = c(90, 110))`
 
-.right[`r fa("stop", fill = "#ff6347")`]
+.right[.footnote[`r fontawesome::fa("stop", fill = "#ff6347")`]]
 
 ---
 
@@ -481,7 +484,7 @@ starwars %>%
 
 You can find a list of commands that may be used with `summarise` [here](https://www.guru99.com/r-aggregate-function.html)
 
-.right[`r fa("link", fill = "#5cb85c")`]
+.right[.footnote[`r fontawesome::fa("link", fill = "#5cb85c")`]]
 
 ---
 
@@ -534,7 +537,7 @@ starwars %>%
 
 `r chunk_reveal(chunk_name = "sw13", color = c("white", "white", "white"), width = c(90, 110))`
 
-.left[`r fa("bookmark", fill = "#5bc0de")`]
+.left[`r fontawesome::fa("bookmark", fill = "#5bc0de")`]
 
 ---
 
@@ -559,7 +562,7 @@ starwars_by_species <-
 
 Want some inspiration or just want to copy code? Good! Head over to [The R Graph Gallery](https://www.r-graph-gallery.com/) to see some examples of basic visualizations and plots you can do in R right now.
 
-.right[`r fa("link", fill = "#5cb85c")`]
+.right[.footnote[`r fontawesome::fa("link", fill = "#5cb85c")`]]
 
 ---
 
@@ -577,6 +580,7 @@ ggplot(starwars_by_species,
 ```
 
 `r chunk_reveal(chunk_name = "sw15", color = c("white", "white", "white"), width = c(100, 100))`
+
 ---
 
 ## Ordered Bar Plot 
@@ -615,7 +619,7 @@ ggplot(starwars_by_species,
 
 `r chunk_reveal(chunk_name = "sw17", color = c("white", "white", "white"), width = c(100, 100))`
 
-.right[`r fa("stop", fill = "#ff6347")`]
+.right[.footnote[`r fontawesome::fa("stop", fill = "#ff6347")`]]
 
 ---
 
@@ -645,41 +649,13 @@ ggplot(starwars_by_species,
 ---
 
 ## Pie Chart (Useless)
-
+  
 ```{r sw19, include = FALSE, echo=TRUE}
 starwars_by_species %>%
-  filter(species %in% c("Human", "Twi'lek", "Mon Calamari", "Wookiee")) %>%
   arrange(desc(`mean age`)) %>%
   mutate(prop = `mean age` / 
-           sum(starwars_by_species$`mean age`) *100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop) %>%
- ggplot(aes(x = "", 
-            y = prop)) +
-  geom_bar(aes(fill = `mean age`),
-           stat = "identity", 
-           width = 1, 
-           color = "white") +
-  coord_polar("y", start = 0) +
-  geom_label(aes(y = ypos, 
-                 label = paste0(`species`, " (", round(prop, 0), "%)"), 
-             color = "white", 
-             size = 6)) +
-  scale_fill_gradient(low = "#d9534f", 
-                      high = "#428bca") +
-  theme_void()
-```
-
-`r chunk_reveal(chunk_name = "sw19", color = c("white", "white", "white"), width = c(100, 100))`
-
-.right[`r fa("forward", fill = "#4682b4")`]
-
----
-  
-```{r sw20, include = FALSE, echo=TRUE}
-starwars_by_species %>%
-  arrange(desc(`mean age`)) %>%
-  mutate(prop = `mean age` / sum(starwars_by_species$`mean age`) * 100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop) %>%
+           sum(starwars_by_species$`mean age`) * 100) %>%
+  mutate(ypos = cumsum(prop) - 0.5*prop) %>%
 ggplot(aes(x = "", 
            y = prop, 
            fill = `mean age`)) +
@@ -698,7 +674,43 @@ ggplot(aes(x = "",
   
 ```
 
-`r chunk_reveal(chunk_name = "sw20", color = c("white", "white", "white"), width = c(100, 100))`
+`r chunk_reveal(chunk_name = "sw19", color = c("white", "white", "white"), width = c(100, 100))`
+
+---
+
+## Filtered Pie Chart (A Little Less Useless)
+
+```{r sw20, include = FALSE, echo=TRUE, message=FALSE}
+starwars_by_species %>%
+  filter(species %in% c("Human", 
+                        "Twi'lek", 
+                        "Mon Calamari", 
+                        "Wookiee")) %>%
+  arrange(desc(`mean age`)) %>%
+  mutate(prop = `mean age` / 
+           sum(starwars_by_species$`mean age`) *100) %>%
+  mutate(ypos = cumsum(prop)- 0.5*prop) %>%
+ ggplot(aes(x = "", 
+            y = prop)) +
+  geom_bar(aes(fill = `mean age`),
+           stat = "identity", 
+           width = 1, 
+           color = "white") +
+  coord_polar("y", start = 0) +
+  geom_label(aes(y = ypos, 
+                 label = paste0(`species`, 
+                                " (", round(prop, 0), "%)"), 
+             color = "white", 
+             size = 6),
+             show.legend = FALSE) +
+  scale_fill_gradient(low = "#d9534f", 
+                      high = "#428bca") +
+  theme_void()
+```
+
+`r chunk_reveal(chunk_name = "sw20", color = c("white", "white", "white"), width = c(110, 90))`
+
+.right[.footnote[`r fontawesome::fa("forward", fill = "#4682b4")`]]
 
 ---
 

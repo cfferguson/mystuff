@@ -17,6 +17,7 @@ editor_options:
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 <link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/font-awesome/js/script.js"></script>
 
 <div id="TOC">
 <ul>
@@ -123,44 +124,45 @@ Chapters 11 &amp; 12 Notes
 </div>
 <div id="r-walkthroughs" class="section level3">
 <h3>R Walkthroughs</h3>
-<p>Please download the file below to get a mostly comprehensive list of statistical commands in R.</p>
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;">
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 20em; ">
-An Incomplete Survey of Fundamental Statistical Tests in R
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 20em; ">
-<a href="/handouts/Statistical-Tests-in-R.pdf"><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:2.67em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ff330f;overflow:visible;position:relative;"><path d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg></a>
-</td>
-</tr>
-</tbody>
-</table>
 <!--
 *posted during class time*
 -->
-<p><br>
-<iframe src="/slides/Descriptions/Slides-Week-Descriptives.html" width="672" height="400px" data-external="1"></iframe></p>
-<p>You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.</p>
+<p>Download a copy of everything you need to follow along the walkthroughs<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<a href="data:application/zip;base64,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" download="Descriptive and Tests Walkthrough Materials.zip">
+<button class="btn btn-default hvr-sweep-to-left"><i class="fa fa-save"></i> Download</button>
+</a>
+<div id="descriptive-statistics" class="section level4">
+<h4>Descriptive Statistics</h4>
+<iframe src="/slides/Descriptions/Descriptive-statistics-in-R.html" width="672" height="400px" data-external="1">
+</iframe>
+<p>You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.</p>
 <blockquote>
-<p>Click <a href="/slides/Descriptions/Slides-Week-Descriptives.html" target="_blank">here</a> for a larger version of the presentation.</p>
+<p>Click <a href="/slides/Descriptions/Descriptive-statistics-in-R.html" target="_blank">here</a> for a larger version of the presentation.</p>
 </blockquote>
 <blockquote>
-<p>Click <a href="/slides/Descriptions/Slides-Week-Descriptives.pdf" target="_blank">here</a> here for a PDF of the presentation.</p>
+<p>Click <a href="/slides/Descriptions/Descriptive-statistics-in-R.pdf" target="_blank">here</a> here for a PDF of the presentation.</p>
 </blockquote>
+<p><br></p>
+</div>
+<div id="statistical-tests" class="section level4">
+<h4>Statistical Tests</h4>
+<iframe src="/slides/Descriptions/Statistical-Tests-in-R.html" width="672" height="400px" data-external="1">
+</iframe>
+<p>You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.</p>
+<blockquote>
+<p>Click <a href="/slides/Descriptions/Statistical-Tests-in-R.html" target="_blank">here</a> for a larger version of the presentation.</p>
+</blockquote>
+<blockquote>
+<p>Click <a href="/slides/Descriptions/Statistical-Tests-in-R.pdf" target="_blank">here</a> here for a PDF of the presentation.</p>
+</blockquote>
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>For <strong>O</strong>verview<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>For <strong>O</strong>verview<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>You will have to unzip this file. If you are unfamiliar with this process, please check the <a href="/resource/unzipping/">Unzipping files</a> section under Resources for assistance<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>For <strong>O</strong>verview<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>For <strong>O</strong>verview<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

@@ -136,44 +136,47 @@ You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle f
 
 ### R Walkthroughs
 
-Please download the file below to get a mostly comprehensive list of statistical commands in R.
-
-```{r echo=FALSE}
-
-pdf_location <- "/handouts/Statistical-Tests-in-R.pdf"
-
-pdf_link <- function() {
-  paste0("<a href=\"", pdf_location, "\">", as.character(fa("file-pdf", fill = "#ff330f", width = "2em")), "</a>")
-}
-
-textitems <- tibble(
-  
-pdf <- c("An Incomplete Survey of Fundamental Statistical Tests in R",
-         pdf_link())
-)
-
-```
-
-```{r message=FALSE, warning=FALSE, eval = TRUE, echo = FALSE}
-kable(textitems, 
-      col.names = c(""),
-      escape = FALSE,
-      align = 'c') %>%
-  kable_styling(full_width = FALSE,
-                position = "center") %>%
-  column_spec(1, width = "20em") 
-```
 <!--
 *posted during class time*
 -->
 
-<br>
+Download a copy of everything you need to follow along the walkthroughs^[You will have to unzip this file. If you are unfamiliar with this process, please check the [Unzipping files](/resource/unzipping/) section under Resources for assistance]
+
+```{r echo=FALSE,eval=TRUE,message=FALSE,purl=FALSE}
+loc <- here::here("static", "slides", "Descriptions", "EDP613RStatsMaterials.zip")
+
+downloadthis::download_file(
+  path = loc,
+  output_name = "Descriptive and Tests Walkthrough Materials",
+  button_label = "Download",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  class = "hvr-sweep-to-left"
+  )
+```
+
+#### Descriptive Statistics
+
 ```{r echo = FALSE}
-knitr::include_url("/slides/Descriptions/Slides-Week-Descriptives.html")
+knitr::include_url("/slides/Descriptions/Descriptive-statistics-in-R.html")
 ```
 
 You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
 
-> Click [here](/slides/Descriptions/Slides-Week-Descriptives.html){target="_blank"} for a larger version of the presentation.
+> Click [here](/slides/Descriptions/Descriptive-statistics-in-R.html){target="_blank"} for a larger version of the presentation.
 
-> Click [here](/slides/Descriptions/Slides-Week-Descriptives.pdf){target="_blank"} here for a PDF of the presentation.
+> Click [here](/slides/Descriptions/Descriptive-statistics-in-R.pdf){target="_blank"} here for a PDF of the presentation.
+
+<br>
+
+#### Statistical Tests
+```{r echo = FALSE}
+knitr::include_url("/slides/Descriptions/Statistical-Tests-in-R.html")
+```
+
+You can move back and forth using <kbd>←</kbd> and <kbd>→</kbd> and toggle fullscreen by pressing <kbd>F</kbd>. Just press <kbd>O</kbd>^[For **O**verview] at any point in your slideshow and a display of all slides, called tile view, will appear. Click on a slide to go there or press <kbd>O</kbd> to exit tile view. For more options, press <kbd>H</kbd> for help.
+
+> Click [here](/slides/Descriptions/Statistical-Tests-in-R.html){target="_blank"} for a larger version of the presentation.
+
+> Click [here](/slides/Descriptions/Statistical-Tests-in-R.pdf){target="_blank"} here for a PDF of the presentation.
