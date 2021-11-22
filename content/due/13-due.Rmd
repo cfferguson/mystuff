@@ -91,7 +91,7 @@ Area = c(book,
          lightbulb),
 
 Description = c("Study for your second exam!",
-                "If you like stats in R but hate the fact that there's a lot of clicking, check out the software Jamovi",
+                "If you like stats in R but hate the fact that there's not enough clicking, check out the software Jamovi",
                 "Take a look at at an introduction to Bayesian Statistics"),
 
 Location = c("[Link](/tasks/02-exam/)",
