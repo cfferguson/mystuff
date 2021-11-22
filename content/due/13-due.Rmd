@@ -96,7 +96,7 @@ Description = c("Study for your second exam!",
 
 Location = c("[Link](/tasks/02-exam/)",
              "[Link](https://www.jamovi.org/){target='_blank'}",
-             "[Link](/materials/14-example)")
+             "[Link](/extras/14-example)")
 
 )
 ```
