@@ -15,7 +15,8 @@ library(fontawesome)
 ```{r icontibble, echo=FALSE, message=FALSE}
 faread <-  as.character(fa("book", fill = "#739670", height = "17px"))
 fadc <-  as.character(fa("chalkboard", fill = "#764874", height = "17px"))
-faexample <-  as.character(fa("lightbulb", fill = "#eb7b59", height = "17px"))
+famat <-  as.character(fa("lightbulb", fill = "#eb7b59", height = "17px"))
+faextra <-  as.character(fa("plus-square", fill = "#4f5bd5", height = "17px"))
 fatask <- as.character(fa("tasks", fill = "#cf4647", height = "17px"))
 fadue <- as.character(fa("folder-open", fill = "#2a6e84", height = "17px"))
 
@@ -25,24 +26,28 @@ tableofcontent <- tibble(
   type <- c("Readings", 
             "Data Camp",
             "Materials",
+            "Extras",
             "Tasks",
             "To Do List"),
   
   location <- c("[Go](/readings/)",
                 "[Go](/datacamp/)",
                 "[Go](/materials/)",
+                "[Go](/extras/)",
                 "[Go](/tasks/)",
                 "[Go](/due/)"),
   
   icon <- c(faread,
             fadc,
-            faexample,
+            famat,
+            faextra,
             fatask,
             fadue),
   
   descr <- c("Weekly readings.",
              "R/RStudio Training modules.",
-             "Interactive R lessons, examples, and other specific content",
+             "Interactive R lessons and other specific content",
+             "Additional examples to help with understanding",
              "Weekly tasks and deliverables.",
              "Weekly submission information."
              ),

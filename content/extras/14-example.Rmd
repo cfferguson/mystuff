@@ -37,7 +37,7 @@ To be honest most of you will leave this class likely not thinking or caring abo
 ### Full Disclosure
 Firstly I am a Bayesian statistician through and through, so there is an inherent bias and uncertainty in this writing which will be apparent later. The benefit here is that unlike a frequentist approach that rejects or minimizes bias and favors outcomes with certainty, Bayesians recognize and utilize bias in their statistics where both uncertainty exists as part of the problem, and solutions are given as multiple possibilities with varying levels of probabilities^[Fun fact: The fact you are able to view this exact page right now is based on [based on probability](https://www.americanscientist.org/article/programs-and-probability){target="_blank"}]. 
 
-### 
+### Bit of History
 The Bayesian way of thinking was quite popular in the 18th and 19th centuries, but fell out of favor in the 20th century which gave way to the frequentists. During that time, the few Bayesian statisticians that were active were often shunned and even ridiculed by academics and practitioners alike. It looked like we knew everything about the foundation of statistics and anything that needed a new approach was simply a matter of furthering that viewpoint. But in the mid to late 2000 large sets consisting of a combination of structured, semistructured, and unstructured data - aka "big data" - began to pop up everywhere. However technology, in particular computing technology was simply not able to handle and analyze these data sets. Moreover for most of the public, computers were just a means to create or run an application - the idea that they could do anything beyond that was deemed to be science fiction that could be science one day in the distant future. But as life would have it, not only were we able to figure out how to teach a computer to learn and make decisions - aka machine learning (ML) - many ML algorithms were significant improved by attaching prior beliefs about how a data set should be looked at creating a situation where a person get choice of multiple statistical models and are able to pick the one that works out the best for an analyses. 
 
 ### A Line is Drawn
@@ -61,7 +61,7 @@ Statisticians who view ***the world as probabilistic, allow for prior beliefs ab
 
 This is the idea of something being deterministic where probabilities are used to describe *multiple values* which in this case may be 50-50, but could also be 40-60, 60-40, 20 - 80 and so on, each associated with some chance of being true. For any social scientists, the epistemological perspective is that Bayesian for the most part believe in multiple truths with some more likely than others.
 
-### A Mostly Non Stats Example
+### Mostly Non Stats Example
 Rather than provide an example that uses a bunch of statistics, let's look at it practically. 
 
 *Situation*: You have misplaced your iPhone somewhere in your apartment or home. You can use the Find My app ® to find it and hear beeping.
@@ -74,7 +74,7 @@ Rather than provide an example that uses a bunch of statistics, let's look at it
 
 - Bayesian: You hear the phone beeping and along with some approach using a mental model, you also know all of the rooms you have misplaced the phone before which combined help to figure out what room the beeping is coming from. So you used ***inferences from the beeps*** and  ***prior knowledge *** to locate the room in your home you must search to find the phone.  
 
-### A Table of Differences
+### Table of Differences
 
 There are multiple differences in how the sides view not just how problems should be viewed and solved, but on the nature of reality itself. The table below gives some overarching ones.
 
